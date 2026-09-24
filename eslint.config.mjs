@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // scripts/copy-maplibre-worker.mjs 复制过来的第三方文件
+    "public/maplibre/**",
   ]),
 ]);
 

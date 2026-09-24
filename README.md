@@ -14,12 +14,23 @@ npm run dev                  # http://localhost:3000
 
 | 位置 | 内容 |
 |---|---|
-| `src/app/[locale]/` | 页面。`zh-Hans` 简体、`zh-Hant` 繁体；`src/proxy.ts` 按浏览器语言跳转 |
-| `src/i18n/` | 界面文案。简体撰写，繁体用 OpenCC 自动转换（台湾用语） |
-| `src/data/parks.ts` | 7 个公园的基础信息：定位点、常用机场、是否收非居民附加费 |
-| `src/lib/nps.ts` | NPS 公告、门票 |
-| `src/lib/nlr.ts` | NLR 充电桩，含可靠度标记 |
-| `src/components/park/` | 公园页的各个区块，接口失败时单独显示错误，不影响其他区块 |
+| `src/app/[locale]/` | 页面：首页、公园页 `parks/[code]`、行程页 `plan`。`zh-Hans` 简体、`zh-Hant` 繁体；`src/proxy.ts` 按浏览器语言跳转 |
+| `src/i18n/` | 界面文案。简体撰写，繁体用 OpenCC 自动转换（台湾用语，“米”转“公尺”） |
+| `src/data/parks.ts` | 7 个公园：特色介绍、园内片区、定位点、时区、常用机场、非居民附加费 |
+| `src/data/attractions/` | 每个公园一个文件的景点数据；`*.generated.ts` 由脚本生成，不要手改 |
+| `src/lib/planner.ts` | 排行程：公园内按路线排序 → 按天切分（让最累的一天尽量轻松）→ 当天按日出日落排顺序 |
+| `src/lib/trip-store.ts` | 行程存在浏览器 localStorage，自用阶段不需要账号 |
+| `src/lib/nps.ts`、`src/lib/nlr.ts` | NPS 公告和门票、NLR 充电桩 |
+| `src/components/map/park-map.tsx` | MapLibre 地图：OpenFreeMap 底图 + 地形阴影 + USGS 卫星图 + 3D 地形，都不需要 key |
+
+新增或修改景点后，重新生成照片署名和车程表：
+
+```bash
+npm run data:photos   # 按 photoFile 到 Wikimedia Commons 查缩略图、作者、授权
+npm run data:travel   # 用 OSRM 按道路算各景点之间的车程
+```
+
+`npm run dev` / `npm run build` 前会自动把 MapLibre 的 worker 文件复制到 `public/maplibre/`（v6 的 worker 是单独的 ES 模块，打包工具处理不了）。
 
 ## 目标用户
 
@@ -45,21 +56,24 @@ npm run dev                  # http://localhost:3000
 
 ## 路线图
 
-### v1 按日期的公园知识库
+### v1 基础功能：地图、景点、规划
 
-- [x] 公园页骨架：实时公告、门票、周边充电桩（含可靠度标记）
+- [x] 景点地图：7 个公园共 68 个景点，地图和列表联动；照片、坐标、出发点、徒步数据、开放季节、许可证
+- [x] 公园特色介绍，按园内片区分组
+- [x] 行程规划：加入行程 → 设日期和天数 → 自动排好每天几点到哪、开车多久
+- [x] 按当天日出日落安排日出 / 日落景点，提示季节性关闭、许可证、天黑还在徒步、安排太满
+- [x] 手动调整（上下移、换天、完成 / 跳过），按实际进度重排剩余行程
+- [x] 实时信息：NPS 公告、门票、周边充电桩（含可靠度标记）
+
+### v2 差异化
+
 - [ ] 日期开放：选日期 → 哪些路、区域、设施开放（历年开关日期 + NPS 实时 alerts），需要哪些预约 / permit
-- [ ] 补能地图：充电桩（含 Tesla）、加油站、手机信号；桩的可靠度评分 + 打卡（能用 / 坏了 / 找不到）
+- [ ] 补能地图：充电桩和加油站画到地图上、手机信号；桩的可靠度评分 + 打卡（能用 / 坏了 / 找不到）
 - [ ] 亚洲补给：沿途中超、韩超、日超、东南亚超市，合口味的餐厅，"进园前最后补给点"
 - [ ] 预算估算：门票（含非居民规则、年卡是否划算）、油 / 电、餐饮、住宿
-- [ ] 特色与拍照点：每个公园 Top N，标注最佳季节和时段
-
-### v2 行程规划 + 动态调整
-
-- 行程项分硬约束（已订住宿、permit、timed entry）和软约束（trail、观景点），带优先级，重排只动软约束
-- 根据实际打卡学习个人配速，自动重算后续行程
-- LLM 出方案，程序校验车程、开放状态、日落时间、硬约束
-- PWA 离线可用，每天预先算好 Plan B
+- [ ] 住宿：行程里加上每晚住哪，车程从住处算起
+- [ ] 根据实际打卡学习个人配速，自动调整后续时间估算
+- [ ] PWA 离线可用（公园里经常没信号）
 
 ### v3 机票 / 租车
 
@@ -78,9 +92,11 @@ npm run dev                  # http://localhost:3000
 | 空气质量 / 山火烟雾 | AirNow API | 单独申请 |
 | 油价 | EIA API | 单独申请 |
 | 餐饮、住宿成本基准 | GSA Per Diem API | api.data.gov |
-| 加油站、亚洲超市、医院等 POI | OpenStreetMap Overpass | 不需要 |
-| 评分、照片 | Google Places API | Google Cloud |
-| 拍照热点 | Flickr / Wikimedia Commons 带坐标的照片 | 单独申请 |
+| 景点坐标、加油站、亚洲超市等 POI | OpenStreetMap（Overpass） | 不需要 |
+| 景点照片 | Wikimedia Commons（按授权署名） | 不需要 |
+| 车程 | OSRM 公共服务（预先生成车程表） | 不需要 |
+| 地图底图 / 地形 / 卫星 | OpenFreeMap、AWS Terrain Tiles、USGS The National Map | 不需要 |
+| 评分 | Google Places API | Google Cloud |
 
 ## 注意事项
 

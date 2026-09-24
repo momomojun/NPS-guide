@@ -20,6 +20,9 @@
 # production
 /build
 
+# 由 scripts/copy-maplibre-worker.mjs 在 dev / build 前复制
+/public/maplibre/
+
 # misc
 .DS_Store
 *.pem
