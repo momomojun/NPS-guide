@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 
+/** 公园页的信息区块：墨色细线下是衬线标题，右边小字写数据来源 */
 export function Section({
   title,
   source,
@@ -10,12 +11,12 @@ export function Section({
   children: ReactNode;
 }) {
   return (
-    <section className="rounded-2xl border border-stone-200 bg-white p-5 dark:border-stone-800 dark:bg-stone-900">
-      <header className="mb-4 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-        <h2 className="text-lg font-semibold">{title}</h2>
-        {source && <p className="text-xs text-stone-500 dark:text-stone-400">{source}</p>}
+    <section>
+      <header className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-t border-ink pt-5">
+        <h3 className="font-serif text-2xl">{title}</h3>
+        {source && <p className="text-xs text-mute">{source}</p>}
       </header>
-      {children}
+      <div className="pt-7">{children}</div>
     </section>
   );
 }
@@ -23,10 +24,10 @@ export function Section({
 export function SectionSkeleton({ title }: { title: string }) {
   return (
     <Section title={title}>
-      <div className="space-y-2" aria-busy="true">
-        <div className="h-4 w-2/3 animate-pulse rounded bg-stone-200 dark:bg-stone-800" />
-        <div className="h-4 w-1/2 animate-pulse rounded bg-stone-200 dark:bg-stone-800" />
-        <div className="h-4 w-3/5 animate-pulse rounded bg-stone-200 dark:bg-stone-800" />
+      <div className="space-y-3" aria-busy="true">
+        <div className="h-3 w-2/3 animate-pulse bg-ink/10" />
+        <div className="h-3 w-1/2 animate-pulse bg-ink/10" />
+        <div className="h-3 w-3/5 animate-pulse bg-ink/10" />
       </div>
     </Section>
   );

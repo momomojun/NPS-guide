@@ -2,6 +2,7 @@
 
 import type { DragEvent, ReactNode } from "react";
 import { KIND_COLORS } from "@/components/attractions/kinds";
+import { IconAlert, IconBed, IconCar, IconCheck, IconGrip, IconPause, IconSunrise, IconSunset } from "@/components/icons";
 import type { AttractionWithPhoto } from "@/data/attractions";
 import { fill, formatDuration, formatMonths } from "@/i18n/format";
 import { monthOf } from "@/lib/dates";
@@ -94,25 +95,29 @@ export function DayCard({
   ].filter((warning): warning is string => warning !== null);
 
   return (
-    <section className="rounded-2xl border border-stone-200 bg-white dark:border-stone-800 dark:bg-stone-900">
-      <header className="flex flex-wrap items-start justify-between gap-3 border-b border-stone-100 px-4 py-3 dark:border-stone-800">
-        <div className="flex items-center gap-3">
-          <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-sm font-semibold text-white">
-            {day + 1}
+    <section className="border-t border-ink">
+      <header className="flex flex-wrap items-start justify-between gap-4 py-5">
+        <div className="flex items-baseline gap-4">
+          <span className="font-serif text-4xl leading-none text-clay-700 tabular-nums">
+            {String(day + 1).padStart(2, "0")}
           </span>
           <div>
-            <h2 className="font-semibold">
+            <h2 className="font-serif text-xl">
               {fill(t.day, { n: day + 1 })}{" "}
-              {dateLabel && <span className="text-sm font-normal text-stone-500">{dateLabel}</span>}
+              {dateLabel && <span className="ml-1 font-sans text-sm text-mute">{dateLabel}</span>}
             </h2>
-            {parkNames.length > 0 && <p className="text-xs text-stone-500">{parkNames.join(" → ")}</p>}
+            {parkNames.length > 0 && <p className="eyebrow mt-1.5 text-mute">{parkNames.join(" · ")}</p>}
           </div>
         </div>
-        <div className="text-right text-xs text-stone-500">
+        <div className="space-y-1 text-right text-xs text-mute">
           {sun.kind === "normal" && (
-            <p>
-              🌅 {fill(t.sunrise, { time: formatClock(sun.window.sunrise) })} · 🌇{" "}
-              {fill(t.sunset, { time: formatClock(sun.window.sunset) })}
+            <p className="inline-flex items-center gap-3">
+              <span className="inline-flex items-center gap-1">
+                <IconSunrise className="text-sm" /> {fill(t.sunrise, { time: formatClock(sun.window.sunrise) })}
+              </span>
+              <span className="inline-flex items-center gap-1">
+                <IconSunset className="text-sm" /> {fill(t.sunset, { time: formatClock(sun.window.sunset) })}
+              </span>
             </p>
           )}
           {sun.kind === "polar-day" && <p>{t.polarDay}</p>}
@@ -124,26 +129,28 @@ export function DayCard({
       </header>
 
       {dayWarnings.length > 0 && (
-        <ul className="space-y-0.5 bg-red-50 px-4 py-2 text-xs text-red-800 dark:bg-red-950/60 dark:text-red-200">
+        <ul className="mb-4 space-y-1 border-l border-clay-600 pl-4 text-xs text-clay-800">
           {dayWarnings.map((warning) => (
-            <li key={warning}>⚠ {warning}</li>
+            <li key={warning} className="flex items-center gap-1.5">
+              <IconAlert /> {warning}
+            </li>
           ))}
         </ul>
       )}
 
-      <div className="space-y-3 p-4">
+      <div className="space-y-4 pb-8">
         {header}
         {from && timeline.departAt !== undefined && (
-          <p className="pl-1 text-xs text-stone-500">
-            🏨 {fill(t.lodging.depart, { time: formatClock(timeline.departAt), name: from.name })}
+          <p className="flex items-center gap-2 pl-1 text-xs text-mute">
+            <IconBed className="text-sm" /> {fill(t.lodging.depart, { time: formatClock(timeline.departAt), name: from.name })}
           </p>
         )}
 
         {rows.length === 0 ? (
           <div
             {...dropHere({ day, index: 0 })}
-            className={`rounded-lg border-2 border-dashed py-5 text-center text-sm text-stone-400 ${
-              isTarget(0) ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40" : "border-stone-200 dark:border-stone-700"
+            className={`border border-dashed py-6 text-center text-sm text-mute ${
+              isTarget(0) ? "border-clay-600 bg-clay-50" : "border-line"
             }`}
           >
             {t.empty_day}
@@ -168,52 +175,54 @@ export function DayCard({
                   }}
                   onDragEnd={drag.end}
                   {...dropHere({ day, index })}
-                  className={`group scroll-mt-24 border-t-2 ${isTarget(index) ? "border-emerald-500" : "border-transparent"} ${
+                  className={`group scroll-mt-24 border-t-2 ${isTarget(index) ? "border-clay-600" : "border-transparent"} ${
                     isSource(index) ? "opacity-40" : ""
                   }`}
                 >
                   {entry.driveMin > 0 && (
-                    <p className="py-0.5 pl-8 text-xs text-stone-400">🚗 {fill(t.drive, { d: duration(entry.driveMin) })}</p>
+                    <p className="flex items-center gap-2 py-1 pl-8 text-xs text-mute">
+                      <IconCar className="text-sm" /> {fill(t.drive, { d: duration(entry.driveMin) })}
+                    </p>
                   )}
                   {entry.waitMin >= 30 && (
-                    <p className="py-0.5 pl-8 text-xs text-stone-400">☕ {fill(t.free, { d: duration(entry.waitMin) })}</p>
+                    <p className="flex items-center gap-2 py-1 pl-8 text-xs text-mute">
+                      <IconPause className="text-sm" /> {fill(t.free, { d: duration(entry.waitMin) })}
+                    </p>
                   )}
                   <div
-                    className={`flex items-start gap-2 rounded-lg px-1.5 py-2 ${
-                      stop.id === selectedId ? "bg-emerald-50 dark:bg-emerald-950/40" : "hover:bg-stone-50 dark:hover:bg-stone-800/50"
+                    className={`flex items-start gap-2 px-1.5 py-2.5 transition-colors ${
+                      stop.id === selectedId ? "bg-paper-deep" : "hover:bg-paper-deep/60"
                     }`}
                   >
                     <span
                       aria-hidden
                       title={t.dragHint}
-                      className="cursor-grab pt-0.5 text-stone-300 select-none group-hover:text-stone-500 active:cursor-grabbing"
+                      className="cursor-grab pt-1 text-line select-none group-hover:text-mute active:cursor-grabbing"
                     >
-                      ⠿
+                      <IconGrip />
                     </span>
-                    <span className="w-[5.5rem] shrink-0 pt-0.5 text-xs text-stone-500 tabular-nums">
+                    <span className="w-[5.5rem] shrink-0 pt-1 font-serif text-sm text-ink-soft tabular-nums">
                       {formatClock(entry.start)}–{formatClock(entry.end)}
                     </span>
                     <button type="button" onClick={() => onSelect(stop.id)} className="min-w-0 flex-1 text-left">
-                      <p className={`text-sm font-medium ${finished ? "text-stone-400" : ""} ${item.status === "done" ? "line-through" : ""}`}>
+                      <p className={`font-serif text-base ${finished ? "text-mute" : ""} ${item.status === "done" ? "line-through" : ""}`}>
                         <span
-                          className="mr-1.5 inline-block size-2 rounded-full align-middle"
+                          className="mr-2 inline-block size-1.5 rounded-full align-middle"
                           style={{ backgroundColor: KIND_COLORS[stop.kind] }}
                         />
-                        {stop.nameZh} <span className="text-xs font-normal text-stone-400">{stop.nameEn}</span>
+                        {stop.nameZh} <span className="ml-1 font-sans text-[11px] tracking-[0.12em] text-mute uppercase">{stop.nameEn}</span>
                       </p>
-                      <p className="text-xs text-stone-500">
+                      <p className="mt-0.5 text-xs text-mute">
                         {text.kinds[stop.kind]} · {duration(stop.durationMin)}
                         {finished && ` · ${t.status[item.status as "done" | "skipped"]}`}
                       </p>
                       {notes.length > 0 && (
-                        <span className="mt-1 flex flex-wrap gap-1">
+                        <span className="mt-2 flex flex-wrap gap-1.5">
                           {notes.map((note) => (
                             <span
                               key={note.text}
-                              className={`rounded px-1.5 py-0.5 text-[11px] ${
-                                note.tone === "warn"
-                                  ? "bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-200"
-                                  : "bg-sky-100 text-sky-900 dark:bg-sky-950 dark:text-sky-200"
+                              className={`border px-1.5 py-0.5 text-[11px] ${
+                                note.tone === "warn" ? "border-clay-600/40 text-clay-700" : "border-line text-ink-soft"
                               }`}
                             >
                               {note.text}
@@ -231,15 +240,15 @@ export function DayCard({
                       onClick={() =>
                         onEdit((trip) => setItemStatus(trip, day, index, item.status === "planned" ? "done" : "planned"))
                       }
-                      className={`mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-md border text-xs ${
+                      className={`mt-0.5 flex size-6 shrink-0 items-center justify-center border text-sm transition-colors ${
                         item.status === "done"
-                          ? "border-emerald-600 bg-emerald-600 text-white"
+                          ? "border-pine-600 bg-pine-600 text-paper"
                           : item.status === "skipped"
-                            ? "border-stone-300 bg-stone-100 text-stone-400 dark:border-stone-600 dark:bg-stone-800"
-                            : "border-stone-300 hover:border-emerald-500 dark:border-stone-600"
+                            ? "border-line bg-paper-deep text-mute"
+                            : "border-ink/25 hover:border-pine-600"
                       }`}
                     >
-                      {item.status === "done" ? "✓" : item.status === "skipped" ? "–" : ""}
+                      {item.status === "done" ? <IconCheck /> : item.status === "skipped" ? "–" : ""}
                     </button>
                     <ActionMenu
                       label={t.more}
@@ -285,7 +294,7 @@ export function DayCard({
             <li
               aria-hidden
               {...dropHere({ day, index: itemCount })}
-              className={`h-3 border-t-2 ${isTarget(itemCount) ? "border-emerald-500" : "border-transparent"}`}
+              className={`h-3 border-t-2 ${isTarget(itemCount) ? "border-clay-600" : "border-transparent"}`}
             />
           </ol>
         )}

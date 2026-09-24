@@ -18,11 +18,14 @@ const MAX_ROWS = 12;
 
 type ChargerText = Dictionary["park"]["chargers"];
 
+// 状态用小圆点 + 文字，不用彩色底块
 const flagStyles: Record<StationFlag, string> = {
-  unavailable: "bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-200",
-  stale: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-200",
-  nonNetworked: "bg-stone-100 text-stone-700 dark:bg-stone-800 dark:text-stone-300",
+  unavailable: "text-clay-700 before:bg-clay-600",
+  stale: "text-[#9a6a1f] before:bg-[#c08a3e]",
+  nonNetworked: "text-mute before:bg-mute",
 };
+
+const statusClass = "inline-flex items-center gap-1.5 text-xs whitespace-nowrap before:size-1.5 before:rounded-full before:content-['']";
 
 export async function ChargersSection({ park, dict }: { park: Park; dict: Dictionary }) {
   const t = dict.park.chargers;
@@ -41,7 +44,7 @@ export async function ChargersSection({ park, dict }: { park: Park; dict: Dictio
 
 function ChargerReport({ stations, t }: { stations: ChargingStation[]; t: ChargerText }) {
   if (stations.length === 0) {
-    return <p className="text-sm text-stone-500">{fill(t.empty, { radius: RADIUS_MILES })}</p>;
+    return <p className="text-sm text-mute">{fill(t.empty, { radius: RADIUS_MILES })}</p>;
   }
 
   const dcFast = stations.filter(isDcFast);
@@ -54,14 +57,14 @@ function ChargerReport({ stations, t }: { stations: ChargingStation[]; t: Charge
   ];
 
   return (
-    <div className="space-y-4">
-      <p className="text-sm text-stone-500">{fill(t.scope, { radius: RADIUS_MILES })}</p>
+    <div className="space-y-8">
+      <p className="text-sm text-mute">{fill(t.scope, { radius: RADIUS_MILES })}</p>
 
-      <dl className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <dl className="grid grid-cols-2 gap-y-8 sm:grid-cols-4">
         {stats.map(([label, value]) => (
-          <div key={label} className="rounded-xl bg-stone-50 p-3 dark:bg-stone-800/60">
-            <dt className="text-xs text-stone-500">{label}</dt>
-            <dd className="text-2xl font-semibold tabular-nums">{value}</dd>
+          <div key={label} className="flex flex-col-reverse border-l border-line pl-5">
+            <dt className="mt-2 text-xs text-mute">{label}</dt>
+            <dd className="font-serif text-5xl leading-none tabular-nums">{value}</dd>
           </div>
         ))}
       </dl>
@@ -74,22 +77,22 @@ function ChargerReport({ stations, t }: { stations: ChargingStation[]; t: Charge
           })}
         </p>
       ) : (
-        <p className="rounded-lg bg-red-50 p-3 text-sm text-red-800 dark:bg-red-950/60 dark:text-red-200">
+        <p className="border-l border-clay-600 pl-5 text-sm text-clay-800">
           {fill(t.noDcFast, { radius: RADIUS_MILES })}
         </p>
       )}
 
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
-          <thead className="text-left text-xs text-stone-500">
+          <thead className="border-b border-ink text-left text-xs text-mute">
             <tr>
-              <th className="py-2 pr-3 font-normal">{t.columns.name}</th>
-              <th className="py-2 pr-3 font-normal whitespace-nowrap">{t.columns.distance}</th>
-              <th className="py-2 pr-3 font-normal">{t.columns.type}</th>
-              <th className="py-2 font-normal">{t.columns.status}</th>
+              <th className="pb-3 pr-3 font-normal">{t.columns.name}</th>
+              <th className="pb-3 pr-3 font-normal whitespace-nowrap">{t.columns.distance}</th>
+              <th className="pb-3 pr-3 font-normal">{t.columns.type}</th>
+              <th className="pb-3 font-normal">{t.columns.status}</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-stone-100 dark:divide-stone-800">
+          <tbody className="divide-y divide-line">
             {stations.slice(0, MAX_ROWS).map((station) => (
               <StationRow key={station.id} station={station} t={t} />
             ))}
@@ -98,7 +101,7 @@ function ChargerReport({ stations, t }: { stations: ChargingStation[]; t: Charge
       </div>
 
       {stations.length > MAX_ROWS && (
-        <p className="text-xs text-stone-500">
+        <p className="text-xs text-mute">
           {fill(t.more, { shown: MAX_ROWS, total: stations.length })}
         </p>
       )}
@@ -118,28 +121,28 @@ function StationRow({ station, t }: { station: ChargingStation; t: ChargerText }
 
   return (
     <tr className="align-top">
-      <td className="py-2 pr-3">
+      <td className="py-3.5 pr-3">
         <div className="font-medium">{station.station_name}</div>
-        <div className="text-xs text-stone-500">
+        <div className="text-xs text-mute">
           {station.city}, {station.state}
         </div>
       </td>
-      <td className="py-2 pr-3 tabular-nums whitespace-nowrap">{station.distance.toFixed(1)} mi</td>
-      <td className="py-2 pr-3">
+      <td className="py-3.5 pr-3 tabular-nums whitespace-nowrap">{station.distance.toFixed(1)} mi</td>
+      <td className="py-3.5 pr-3">
         <div>{network}</div>
-        <div className="text-xs text-stone-500">{ports.join(" · ")}</div>
+        <div className="text-xs text-mute">{ports.join(" · ")}</div>
       </td>
-      <td className="py-2">
+      <td className="py-3.5">
         <div className="flex flex-wrap gap-1">
           {flags.length === 0 ? (
-            <span className="rounded bg-emerald-100 px-1.5 py-0.5 text-xs whitespace-nowrap text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200">
+            <span className={`${statusClass} text-pine-700 before:bg-pine-500`}>
               {t.ok}
             </span>
           ) : (
             flags.map((flag) => (
               <span
                 key={flag}
-                className={`rounded px-1.5 py-0.5 text-xs whitespace-nowrap ${flagStyles[flag]}`}
+                className={`${statusClass} ${flagStyles[flag]}`}
               >
                 {t.flags[flag]}
               </span>

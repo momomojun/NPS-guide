@@ -22,16 +22,16 @@ export async function FeesSection({ parkCode, dict }: { parkCode: string; dict: 
       {!result.ok ? (
         <ApiUnavailable error={result.error} dict={dict} />
       ) : fees.length === 0 ? (
-        <p className="text-sm text-stone-500">{t.empty}</p>
+        <p className="text-sm text-mute">{t.empty}</p>
       ) : (
-        <dl className="divide-y divide-stone-100 dark:divide-stone-800">
+        <dl className="divide-y divide-line">
           {fees.map((fee, index) => (
             <div
               key={`${fee.entranceFeeType}-${index}`}
-              className="flex items-baseline justify-between gap-4 py-2 text-sm"
+              className="flex items-baseline justify-between gap-4 py-3.5 text-sm first:pt-0"
             >
               <dt>{t.types[fee.entranceFeeType]}</dt>
-              <dd className="font-semibold tabular-nums">{usd.format(Number(fee.cost))}</dd>
+              <dd className="font-serif text-2xl tabular-nums">{usd.format(Number(fee.cost))}</dd>
             </div>
           ))}
         </dl>

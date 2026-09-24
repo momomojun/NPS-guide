@@ -7,6 +7,12 @@ export interface Park {
   nameZh: string;
   nameEn: string;
   region: RegionId;
+  /** 一句话的特色，首页和公园页标题下用 */
+  tagline: string;
+  /** 所在州（英文），小号大写显示 */
+  stateEn: string;
+  /** 首屏大图用哪个景点的照片 */
+  hero: string;
   /** 公园特色，两三句话 */
   intro: string;
   /** 最适合去的月份 */
@@ -33,6 +39,9 @@ export const parks: Park[] = [
     nameZh: "优胜美地",
     nameEn: "Yosemite",
     region: "sierra",
+    tagline: "花岗岩巨壁与瀑布",
+    stateEn: "California",
+    hero: "yose-tunnel-view",
     intro:
       "花岗岩巨壁和瀑布的天下：酋长岩、半穹顶、优胜美地瀑布都挤在一条约 11 公里长的冰川山谷里。春季（4–6 月）瀑布最壮观；夏秋可以走 Tioga Road 去高山草甸；南边的 Mariposa Grove 有 500 多棵巨杉。",
     bestMonths: [4, 5, 6, 9, 10],
@@ -53,6 +62,9 @@ export const parks: Park[] = [
     nameZh: "红杉与国王峡谷",
     nameEn: "Sequoia & Kings Canyon",
     region: "sierra",
+    tagline: "地球上体积最大的树",
+    stateEn: "California",
+    hero: "seki-zumwalt-meadow",
     intro:
       "两个相连的公园，主角是巨杉：谢尔曼将军树按体积是地球上最大的树。红杉公园在南（Giant Forest），国王峡谷在北（Grant Grove、Cedar Grove），两边开车约 1 小时。",
     bestMonths: [5, 6, 7, 8, 9, 10],
@@ -73,6 +85,9 @@ export const parks: Park[] = [
     nameZh: "死亡谷",
     nameEn: "Death Valley",
     region: "vegas",
+    tagline: "北美最低、最热、最干燥",
+    stateEn: "California · Nevada",
+    hero: "deva-zabriskie",
     intro:
       "北美最低、最热、最干的地方，Badwater 盐滩低于海平面 86 米。最佳季节是 11 月到 3 月；夏天白天常超过 46°C，只适合清晨开车看景。园内加油点少、油价贵，充电只有慢充。",
     bestMonths: [11, 12, 1, 2, 3],
@@ -93,6 +108,9 @@ export const parks: Park[] = [
     nameZh: "锡安",
     nameEn: "Zion",
     region: "vegas",
+    tagline: "红色峡谷与天使降临",
+    stateEn: "Utah",
+    hero: "zion-canyon-overlook",
     intro:
       "在红色砂岩峡谷底部，抬头看 600 多米高的岩壁。招牌是天使降临（需要许可证）和窄缝（在维珍河里逆流徒步）。主峡谷大部分时间只能坐免费班车，停车是最大难题。",
     bestMonths: [4, 5, 9, 10, 11],
@@ -113,6 +131,9 @@ export const parks: Park[] = [
     nameZh: "布莱斯峡谷",
     nameEn: "Bryce Canyon",
     region: "vegas",
+    tagline: "岩柱林立的圆形剧场",
+    stateEn: "Utah",
+    hero: "brca-bryce-point",
     intro:
       "其实不是峡谷，而是高原边缘被侵蚀出的一连串“圆形剧场”，里面站满了叫 hoodoo 的石柱，密度世界第一。海拔 2,400–2,800 米，夏天凉快、冬天积雪；也是国际暗夜公园，星空极好。",
     bestMonths: [5, 6, 7, 8, 9, 10],
@@ -132,6 +153,9 @@ export const parks: Park[] = [
     nameZh: "大峡谷",
     nameEn: "Grand Canyon",
     region: "vegas",
+    tagline: "二十亿年的地层",
+    stateEn: "Arizona",
+    hero: "grca-hopi-point",
     intro:
       "科罗拉多河切出的约 1.6 公里深的大峡谷，从南缘看出去是近 20 亿年的岩层，日出日落时颜色变化最大。南缘全年开放、设施齐全；北缘只在夏秋开放，2025 年受山火影响，出发前查官网。",
     bestMonths: [3, 4, 5, 9, 10, 11],
@@ -151,6 +175,9 @@ export const parks: Park[] = [
     nameZh: "德纳里",
     nameEn: "Denali",
     region: "alaska",
+    tagline: "北美最高峰与苔原",
+    stateEn: "Alaska",
+    hero: "dena-mount-healy",
     intro:
       "北美最高峰德纳里（6,190 米）所在地，更是看野生动物的地方：灰熊、驼鹿、驯鹿、大角羊和狼。夏季私家车只能开到 Mile 15，再往里坐巴士；冬季大部分区域关闭，但能看极光、参观雪橇犬。",
     bestMonths: [6, 7, 8, 9],

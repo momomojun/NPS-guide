@@ -21,7 +21,8 @@ export default async function PlanPage({ params }: PageProps<"/[locale]/plan">) 
   const dict = getDictionary(locale);
 
   return (
-    <Planner
+    <div className="mx-auto max-w-[1600px] px-5 pt-14 pb-28 sm:px-10">
+      <Planner
       locale={locale}
       attractions={attractions.map((a) => localizeAttraction(a, locale))}
       lodgingOptions={lodgingOptions.map((option) => localizeLodging(option, locale))}
@@ -37,6 +38,7 @@ export default async function PlanPage({ params }: PageProps<"/[locale]/plan">) 
         };
       })}
       text={{ plan: dict.plan, kinds: dict.kinds, units: dict.units, map: dict.map, trip: dict.trip }}
-    />
+      />
+    </div>
   );
 }

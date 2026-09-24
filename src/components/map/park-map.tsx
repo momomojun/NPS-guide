@@ -44,9 +44,10 @@ const IMAGERY_TILES =
 // worker 文件由 scripts/copy-maplibre-worker.mjs 复制到 public/
 const WORKER_URL = "/maplibre/maplibre-gl-worker.mjs";
 
-const TRAIL_COLOR = "#b45309";
-const TRAIL_HIGHLIGHT = "#dc2626";
-const ROAD_COLOR = "#2563eb";
+// 步道用砂岩红，选中的步道加深加粗；开车路线用深石板蓝
+const TRAIL_COLOR = "#b85f3c";
+const TRAIL_HIGHLIGHT = "#6b2a16";
+const ROAD_COLOR = "#2f4a5a";
 
 const EMPTY: GeoJSON.FeatureCollection = { type: "FeatureCollection", features: [] };
 
@@ -221,7 +222,7 @@ export function ParkMap({
           id: "route",
           type: "line",
           source: "route",
-          paint: { "line-color": "#0f766e", "line-width": 2.5, "line-dasharray": [2, 2] },
+          paint: { "line-color": "#45413a", "line-width": 2, "line-dasharray": [2, 2] },
         });
         instance.addSource("points", { type: "geojson", data: EMPTY });
         instance.addLayer({
@@ -233,7 +234,7 @@ export function ParkMap({
             "circle-radius": 15,
             "circle-color": "rgba(0,0,0,0)",
             "circle-stroke-width": 3,
-            "circle-stroke-color": "#111827",
+            "circle-stroke-color": "#1c1b18",
           },
         });
         instance.addLayer({
@@ -289,7 +290,7 @@ export function ParkMap({
             "text-optional": true,
             "symbol-sort-key": ["case", ["==", ["get", "emphasis"], true], 0, 1],
           },
-          paint: { "text-color": "#1c1917", "text-halo-color": "#ffffff", "text-halo-width": 1.5 },
+          paint: { "text-color": "#1c1b18", "text-halo-color": "#f4efe7", "text-halo-width": 1.6 },
         });
 
         instance.on("click", "points", (event) => {
@@ -363,21 +364,21 @@ export function ParkMap({
   }, [ready, terrain]);
 
   const toggle = (active: boolean) =>
-    `rounded-md px-2 py-1 ${active ? "bg-stone-900 text-white" : "text-stone-700 hover:bg-stone-100"}`;
+    `px-3 py-1.5 transition-colors ${active ? "bg-ink text-paper" : "text-ink hover:bg-paper-deep"}`;
   const hasTrails = (trails?.length ?? 0) > 0;
   const showStraightRoute = !roadPath && route && route.length > 1;
 
   return (
-    <div className={`relative overflow-hidden rounded-2xl border border-stone-200 bg-stone-100 dark:border-stone-800 ${className}`}>
+    <div className={`relative overflow-hidden bg-paper-deep ${className}`}>
       {/* maplibre 的 CSS 会把容器设成 position: relative，所以用 h-full 而不是 inset-0 撑满 */}
       <div ref={containerRef} className={`h-full w-full transition-opacity duration-500 ${ready ? "opacity-100" : "opacity-0"}`} />
       {!ready && (
-        <div className="absolute inset-0 flex animate-pulse items-center justify-center text-sm text-stone-400">
+        <div className="eyebrow absolute inset-0 flex animate-pulse items-center justify-center text-mute">
           {text.loading}
         </div>
       )}
-      <div className="absolute top-2 left-2 space-y-1.5">
-        <div className="flex gap-1 rounded-lg bg-white/95 p-1 text-xs shadow">
+      <div className="absolute top-3 left-3 space-y-2">
+        <div className="flex bg-paper/95 text-[11px] tracking-[0.12em] shadow-sm">
           <button type="button" className={toggle(!satellite)} onClick={() => setSatellite(false)}>
             {text.map}
           </button>
@@ -394,16 +395,16 @@ export function ParkMap({
           </button>
         </div>
         {(hasTrails || roadPath || showStraightRoute) && (
-          <div className="flex w-fit flex-col gap-0.5 rounded-lg bg-white/90 px-2 py-1 text-[11px] text-stone-600 shadow">
+          <div className="flex w-fit flex-col gap-1 bg-paper/90 px-3 py-2 text-[11px] text-ink-soft shadow-sm">
             {roadPath && (
               <span className="flex items-center gap-1.5">
-                <span className="inline-block h-1 w-4 rounded" style={{ backgroundColor: ROAD_COLOR }} />
+                <span className="inline-block h-[3px] w-5" style={{ backgroundColor: ROAD_COLOR }} />
                 {text.roadLegend}
               </span>
             )}
             {hasTrails && (
               <span className="flex items-center gap-1.5">
-                <span className="inline-block w-4 border-t-2 border-dashed" style={{ borderColor: TRAIL_COLOR }} />
+                <span className="inline-block w-5 border-t-2 border-dashed" style={{ borderColor: TRAIL_COLOR }} />
                 {text.trailLegend}
               </span>
             )}

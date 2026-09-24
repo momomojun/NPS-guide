@@ -12,7 +12,7 @@ export function ApiUnavailable({ error, dict }: { error: unknown; dict: Dictiona
     : null;
 
   return (
-    <div className="rounded-lg bg-amber-50 p-3 text-sm text-amber-900 dark:bg-amber-950/60 dark:text-amber-200">
+    <div className="border-l border-clay-600 pl-5 text-sm leading-7 text-ink-soft">
       <p>{dict.common.dataUnavailable}</p>
       {detail && <p className="mt-1 text-xs opacity-80">{detail}</p>}
     </div>

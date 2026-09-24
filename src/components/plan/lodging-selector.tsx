@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { IconBed } from "@/components/icons";
 import { buttonPrimary, buttonSecondary } from "@/components/ui";
 import { fill, formatDuration } from "@/i18n/format";
 import { searchPlaces, type PlaceResult } from "@/lib/geocode";
@@ -87,10 +88,8 @@ export function LodgingSelector({
   const tag = (lodging: ResolvedLodging) =>
     lodging.custom ? null : (
       <span
-        className={`ml-1.5 rounded px-1 py-px text-[10px] ${
-          lodging.inPark
-            ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200"
-            : "bg-stone-200 text-stone-700 dark:bg-stone-700 dark:text-stone-200"
+        className={`ml-2 border px-1.5 text-[10px] ${
+          lodging.inPark ? "border-pine-600/50 text-pine-700" : "border-line text-mute"
         }`}
       >
         {lodging.inPark ? t.inPark : t.outside}
@@ -98,24 +97,24 @@ export function LodgingSelector({
     );
 
   return (
-    <div className="rounded-xl bg-indigo-50/70 px-3 py-2.5 text-sm dark:bg-indigo-950/40">
+    <div className="bg-paper-deep/70 px-4 py-3.5 text-sm">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="min-w-0">
-          <p>
-            <span className="mr-1.5">🏨</span>
-            <span className="text-stone-500">{label}：</span>
+          <p className="flex flex-wrap items-center gap-x-1">
+            <IconBed className="mr-1 text-base text-mute" />
+            <span className="text-mute">{label}：</span>
             {current ? (
-              <span className="font-medium">
+              <span className="font-serif text-base">
                 {current.name}
                 {tag(current)}
               </span>
             ) : (
-              <span className="text-stone-400">{t.unset}</span>
+              <span className="text-mute">{t.unset}</span>
             )}
           </p>
-          {current && status && <p className="mt-0.5 pl-6 text-xs text-stone-500">{status}</p>}
-          {!current && hint && <p className="mt-0.5 pl-6 text-xs text-stone-400">{hint}</p>}
-          {notice && <p className="mt-0.5 pl-6 text-xs text-amber-700 dark:text-amber-400">{notice}</p>}
+          {current && status && <p className="mt-1 pl-6 text-xs text-mute">{status}</p>}
+          {!current && hint && <p className="mt-1 pl-6 text-xs text-mute">{hint}</p>}
+          {notice && <p className="mt-1 pl-6 text-xs text-clay-700">{notice}</p>}
         </div>
         <div className="flex flex-wrap gap-1.5">
           {!current &&
@@ -129,7 +128,7 @@ export function LodgingSelector({
                 onClick={() => choose({ kind: "option", id: rank.lodging.id })}
               >
                 {rank.lodging.name}
-                {rank.backMin !== undefined && <span className="ml-1 text-stone-400">{duration(rank.backMin)}</span>}
+                {rank.backMin !== undefined && <span className="ml-1 text-mute">{duration(rank.backMin)}</span>}
               </button>
             ))}
           <button type="button" className={buttonSecondary} onClick={() => setOpen((value) => !value)}>
@@ -144,7 +143,7 @@ export function LodgingSelector({
       </div>
 
       {open && (
-        <div className="mt-3 space-y-3 border-t border-indigo-100 pt-3 dark:border-indigo-900">
+        <div className="mt-4 space-y-4 border-t border-line pt-4">
           {previous && previous.id !== current?.id && (
             <button type="button" className={buttonSecondary} onClick={() => choose(previous)}>
               {t.sameAsLast}
@@ -153,17 +152,17 @@ export function LodgingSelector({
 
           {ranked.length > 0 && (
             <div>
-              <p className="mb-1.5 text-xs font-medium text-stone-500">{t.suggested}</p>
-              <ul className="divide-y divide-indigo-100 rounded-lg bg-white dark:divide-stone-800 dark:bg-stone-900">
+              <p className="eyebrow mb-2 text-mute">{t.suggested}</p>
+              <ul className="divide-y divide-line bg-paper">
                 {ranked.slice(0, 6).map((rank) => (
-                  <li key={rank.lodging.id} className="flex items-start justify-between gap-3 px-3 py-2">
+                  <li key={rank.lodging.id} className="flex items-start justify-between gap-3 px-4 py-3">
                     <div className="min-w-0">
-                      <p className="font-medium">
+                      <p className="font-serif text-base">
                         {rank.lodging.name}
                         {tag(rank.lodging)}
                       </p>
-                      {rank.lodging.note && <p className="text-xs text-stone-500">{rank.lodging.note}</p>}
-                      <p className="text-xs text-indigo-700 dark:text-indigo-300">{legs(rank)}</p>
+                      {rank.lodging.note && <p className="mt-0.5 text-xs text-mute">{rank.lodging.note}</p>}
+                      <p className="mt-0.5 text-xs text-ink-soft">{legs(rank)}</p>
                     </div>
                     <button
                       type="button"
@@ -183,21 +182,21 @@ export function LodgingSelector({
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder={t.searchPlaceholder}
-              className="min-w-0 flex-1 rounded-lg border border-stone-300 bg-white px-2 py-1.5 text-sm dark:border-stone-700 dark:bg-stone-900"
+              className="min-w-0 flex-1 border-b border-ink/30 bg-transparent py-1.5 text-sm focus:border-ink focus:outline-none"
             />
             <button type="submit" className={buttonSecondary} disabled={busy !== null}>
               {busy === "searching" ? t.searching : t.search}
             </button>
           </form>
-          {busy === "measuring" && <p className="text-xs text-stone-500">{t.measuring}</p>}
-          {results && results.length === 0 && <p className="text-xs text-stone-500">{t.noResults}</p>}
+          {busy === "measuring" && <p className="text-xs text-mute">{t.measuring}</p>}
+          {results && results.length === 0 && <p className="text-xs text-mute">{t.noResults}</p>}
           {results && results.length > 0 && (
-            <ul className="divide-y divide-indigo-100 rounded-lg bg-white dark:divide-stone-800 dark:bg-stone-900">
+            <ul className="divide-y divide-line bg-paper">
               {results.map((place) => (
-                <li key={place.id} className="flex items-center justify-between gap-3 px-3 py-2">
+                <li key={place.id} className="flex items-center justify-between gap-3 px-4 py-3">
                   <div className="min-w-0">
-                    <p className="truncate font-medium">{place.name}</p>
-                    <p className="truncate text-xs text-stone-500">{place.detail}</p>
+                    <p className="truncate font-serif text-base">{place.name}</p>
+                    <p className="truncate text-xs text-mute">{place.detail}</p>
                   </div>
                   <button
                     type="button"

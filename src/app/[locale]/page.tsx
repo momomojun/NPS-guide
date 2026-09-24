@@ -2,20 +2,31 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ContinueTrip } from "@/components/home/continue-trip";
-import { ParksOverviewMap } from "@/components/parks-overview-map";
-import { AddManyButton } from "@/components/trip/add-many-button";
-import { buttonSecondary } from "@/components/ui";
-import { getParkAttractions } from "@/data/attractions";
-import { parks, regionOrder } from "@/data/parks";
+import { Hero, type HeroSlide } from "@/components/home/hero";
+import { Intro } from "@/components/home/intro";
+import { ParkIndex, type ParkIndexItem } from "@/components/home/park-index";
+import { WestMap } from "@/components/home/west-map";
+import { IconArrowRight } from "@/components/icons";
+import { Reveal } from "@/components/site/reveal";
+import { buttonLarge } from "@/components/ui";
+import { attractions } from "@/data/attractions";
+import { alaskaMap, westMap } from "@/data/map.generated";
+import { parks } from "@/data/parks";
 import { hasLocale } from "@/i18n/config";
-import { localizeAttraction, localizePark } from "@/i18n/content";
+import { localizePark } from "@/i18n/content";
+import { localize } from "@/i18n/convert";
 import { getDictionary } from "@/i18n/dictionaries";
 import { fill, formatMonths } from "@/i18n/format";
 
-// “本月适合去”按当前月份计算，页面每天重新生成一次
+// “当季”按当前月份计算，页面每天重新生成一次
 export const revalidate = 86400;
 
-const HERO_ATTRACTION = "yose-tunnel-view";
+const FINAL_PHOTO = "yose-glacier-point";
+const container = "mx-auto max-w-[1600px] px-5 sm:px-10";
+
+const photoOf = (id: string) => attractions.find((attraction) => attraction.id === id)?.photo;
+/** Commons 缩略图换成 1920 宽，做全屏大图 */
+const large = (url: string) => url.replace("/960px-", "/1920px-");
 
 export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const { locale } = await params;
@@ -24,211 +35,226 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const t = dict.home;
 
   const localParks = parks.map((park) => localizePark(park, locale));
-  const parkNames = Object.fromEntries(localParks.map((park) => [park.code, park.nameZh]));
-  const heroPhoto = getParkAttractions("yose").find((a) => a.id === HERO_ATTRACTION)?.photo;
   const month = new Date().getMonth() + 1;
   const inSeason = localParks.filter((park) => park.bestMonths.includes(month));
+  const credit = (photo: { author: string; license: string }) => fill(t.photoCredit, photo);
+
+  const slides: HeroSlide[] = localParks.flatMap((park) => {
+    const photo = photoOf(park.hero);
+    if (!photo) return [];
+    return [
+      {
+        code: park.code,
+        href: `/${locale}/parks/${park.code}`,
+        nameZh: park.nameZh,
+        nameEn: park.nameEn,
+        stateEn: park.stateEn,
+        tagline: park.tagline,
+        image: large(photo.url),
+        credit: credit(photo),
+        creditHref: photo.page,
+      },
+    ];
+  });
+
+  const indexItems: ParkIndexItem[] = localParks.map((park) => ({
+    code: park.code,
+    href: `/${locale}/parks/${park.code}`,
+    nameZh: park.nameZh,
+    nameEn: park.nameEn,
+    stateEn: park.stateEn,
+    region: dict.regions[park.region],
+    tagline: park.tagline,
+    months: fill(t.bestMonths, { months: formatMonths(park.bestMonths, dict.units) }),
+    attractions: fill(t.attractions, { n: attractions.filter((a) => a.park === park.code).length }),
+    inSeason: park.bestMonths.includes(month),
+    image: photoOf(park.hero)?.url ?? "",
+  }));
+
+  const stats = [
+    { value: localParks.length, label: t.stats.parks },
+    { value: attractions.length, label: t.stats.attractions },
+    { value: attractions.filter((a) => a.trailLine).length, label: t.stats.trails },
+  ];
+  const cityNames = Object.fromEntries(
+    [...westMap.cities, ...alaskaMap.cities].map((city) => [city.id, localize(city.nameZh, locale)]),
+  );
+  const finalPhoto = photoOf(FINAL_PHOTO);
 
   return (
-    <div className="space-y-14">
-      <section className="relative isolate -mt-2 overflow-hidden rounded-3xl bg-stone-800">
-        {heroPhoto && (
-          <Image
-            // 主视觉用 1920 宽的缩略图，Wikimedia 支持这一档
-            src={heroPhoto.url.replace("/960px-", "/1920px-")}
-            alt=""
-            fill
-            priority
-            sizes="(min-width: 1280px) 1248px, 100vw"
-            className="-z-10 object-cover"
+    <>
+      <Intro
+        wordmark={dict.site.wordmark}
+        tagline={t.introTagline}
+        words={localParks.map((park) => ({ zh: park.nameZh, en: park.nameEn }))}
+        skipLabel={t.skip}
+      />
+
+      <Hero
+        slides={slides}
+        planHref={`/${locale}/plan`}
+        text={{
+          eyebrow: t.heroEyebrow,
+          title: t.heroTitle,
+          subtitle: t.heroSubtitle,
+          planCta: t.planCta,
+          browseCta: t.browseCta,
+          explore: t.explore,
+        }}
+        aside={
+          <ContinueTrip
+            href={`/${locale}/plan`}
+            parkNames={Object.fromEntries(localParks.map((park) => [park.code, park.nameZh]))}
+            locale={locale}
+            text={t}
           />
-        )}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/80 via-black/35 to-black/10" />
-        <div className="flex min-h-[28rem] flex-col justify-end gap-6 p-6 sm:p-10 lg:min-h-[34rem]">
-          <div className="max-w-2xl text-white">
-            <h1 className="text-3xl leading-tight font-bold sm:text-5xl">{t.heroTitle}</h1>
-            <p className="mt-4 text-base leading-relaxed text-white/85 sm:text-lg">{t.heroSubtitle}</p>
-          </div>
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href={`/${locale}/plan`}
-                className="rounded-xl bg-emerald-500 px-5 py-2.5 font-medium text-white shadow hover:bg-emerald-400"
-              >
-                {t.planCta}
-              </Link>
-              <a
-                href="#parks"
-                className="rounded-xl bg-white/15 px-5 py-2.5 font-medium text-white backdrop-blur hover:bg-white/25"
-              >
-                {t.browseCta}
-              </a>
-            </div>
-            <ContinueTrip href={`/${locale}/plan`} parkNames={parkNames} locale={locale} text={t} />
+        }
+      />
+
+      {/* 关于：一段大字 + 三个数字 */}
+      <section className={`${container} py-28 lg:py-44`}>
+        <div className="grid gap-10 lg:grid-cols-12">
+          <p className="eyebrow text-mute lg:col-span-3">{t.aboutEyebrow}</p>
+          <div className="lg:col-span-9">
+            <Reveal>
+              <p className="font-serif text-[clamp(1.45rem,2.5vw,2.35rem)] leading-[1.75] text-ink">{t.aboutText}</p>
+            </Reveal>
+            <dl className="mt-20 grid grid-cols-3 border-t border-line">
+              {stats.map((stat, i) => (
+                <Reveal key={stat.label} delay={i * 120} className="flex flex-col-reverse pt-7 pr-4">
+                  <dt className="mt-4 text-sm text-mute">{stat.label}</dt>
+                  <dd className="font-serif text-[clamp(2.8rem,6vw,5.5rem)] leading-none">{stat.value}</dd>
+                </Reveal>
+              ))}
+            </dl>
           </div>
         </div>
-        {heroPhoto && (
-          <a
-            href={heroPhoto.page}
-            target="_blank"
-            rel="noreferrer"
-            className="absolute top-3 right-4 text-[10px] text-white/60 hover:text-white"
-          >
-            {fill(dict.attraction.photoCredit, { author: heroPhoto.author, license: heroPhoto.license })}
-          </a>
-        )}
       </section>
 
-      <section>
-        <h2 className="mb-4 text-xl font-semibold">{t.stepsTitle}</h2>
-        <ol className="grid gap-4 md:grid-cols-3">
-          {t.steps.map((step, i) => (
-            <li
-              key={step.title}
-              className="rounded-2xl border border-stone-200 bg-white p-5 dark:border-stone-800 dark:bg-stone-900"
-            >
-              <span className="flex size-8 items-center justify-center rounded-full bg-emerald-100 text-sm font-semibold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
-                {i + 1}
-              </span>
-              <h3 className="mt-3 font-semibold">{step.title}</h3>
-              <p className="mt-1 text-sm leading-relaxed text-stone-600 dark:text-stone-400">{step.text}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      {inSeason.length > 0 && (
-        <section>
-          <div className="mb-4 flex flex-wrap items-baseline gap-x-3">
-            <h2 className="text-xl font-semibold">{fill(t.seasonTitle, { month })}</h2>
-            <p className="text-sm text-stone-500">{t.seasonHint}</p>
+      {/* 公园目录 */}
+      <section id="parks" className={`${container} scroll-mt-16 pb-28 lg:pb-44`}>
+        <div className="mb-14 grid gap-6 lg:mb-20 lg:grid-cols-12">
+          <p className="eyebrow text-mute lg:col-span-3">{t.parksEyebrow}</p>
+          <div className="lg:col-span-9">
+            <Reveal>
+              <h2 className="font-serif text-[clamp(2.2rem,4.5vw,4rem)] leading-tight">{t.parksTitle}</h2>
+            </Reveal>
+            <p className="mt-5 max-w-xl text-sm leading-7 text-ink-soft">{t.parksHint}</p>
           </div>
-          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {inSeason.map((park) => (
-              <li key={park.code}>
-                <Link
-                  href={`/${locale}/parks/${park.code}`}
-                  className="block h-full rounded-2xl border-l-4 border-emerald-500 bg-white p-4 transition hover:shadow-md dark:bg-stone-900"
-                >
-                  <p className="font-semibold">
-                    {park.nameZh} <span className="text-sm font-normal text-stone-500">{park.nameEn}</span>
-                  </p>
-                  <p className="mt-1 text-sm text-stone-600 dark:text-stone-400">{park.seasonNote}</p>
-                </Link>
-              </li>
-            ))}
-          </ul>
+        </div>
+        <ParkIndex items={indexItems} inSeasonLabel={t.inSeason} />
+      </section>
+
+      {/* 当季 */}
+      {inSeason.length > 0 && (
+        <section className="bg-paper-deep">
+          <div className={`${container} grid gap-14 py-28 lg:grid-cols-12 lg:py-36`}>
+            <div className="lg:col-span-4">
+              <p className="eyebrow text-mute">{t.seasonEyebrow}</p>
+              <Reveal>
+                <p className="mt-8 font-serif text-[clamp(6rem,14vw,11rem)] leading-[0.85] text-clay-700">
+                  {String(month).padStart(2, "0")}
+                </p>
+              </Reveal>
+              <h2 className="mt-8 font-serif text-3xl">{fill(t.seasonTitle, { month })}</h2>
+              <p className="mt-3 text-sm text-mute">{t.seasonHint}</p>
+            </div>
+            <ul className="grid content-start gap-x-12 sm:grid-cols-2 lg:col-span-8">
+              {inSeason.map((park, i) => (
+                <Reveal key={park.code} as="li" delay={(i % 2) * 120} className="border-t border-ink/15 py-8">
+                  <Link href={`/${locale}/parks/${park.code}`} className="group block">
+                    <p className="flex flex-wrap items-baseline gap-x-3">
+                      <span className="font-serif text-2xl transition-colors duration-500 group-hover:text-clay-700">
+                        {park.nameZh}
+                      </span>
+                      <span className="eyebrow text-mute">{park.nameEn}</span>
+                    </p>
+                    <p className="mt-3 text-sm leading-7 text-ink-soft">{park.seasonNote}</p>
+                    <p className="eyebrow mt-5 inline-flex items-center gap-2 text-ink">
+                      {t.explore}
+                      <IconArrowRight className="transition-transform duration-500 group-hover:translate-x-1" />
+                    </p>
+                  </Link>
+                </Reveal>
+              ))}
+            </ul>
+          </div>
         </section>
       )}
 
-      <section>
-        <h2 className="mb-4 text-xl font-semibold">{t.mapTitle}</h2>
-        <ParksOverviewMap
-          locale={locale}
-          text={dict.map}
-          className="h-80 sm:h-[26rem]"
-          // 本土 6 个公园放在一张图上，阿拉斯加单独给个入口，免得地图缩得太小
-          parks={localParks
-            .filter((park) => park.region !== "alaska")
-            .map((park) => ({ code: park.code, name: park.nameZh, lat: park.gateway.lat, lon: park.gateway.lon }))}
-        >
-          <Link
-            href={`/${locale}/parks/dena`}
-            className="absolute bottom-10 left-3 rounded-lg bg-white/95 px-3 py-2 text-sm font-medium text-stone-800 shadow hover:bg-white"
-          >
-            {t.alaska}
-          </Link>
-        </ParksOverviewMap>
+      {/* 怎么用 */}
+      <section className={`${container} py-28 lg:py-40`}>
+        <div className="grid gap-14 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <p className="eyebrow text-mute">{t.stepsEyebrow}</p>
+            <Reveal>
+              <h2 className="mt-8 max-w-sm font-serif text-[clamp(1.9rem,3vw,2.8rem)] leading-snug">{t.stepsTitle}</h2>
+            </Reveal>
+          </div>
+          <ol className="grid gap-12 sm:grid-cols-3 lg:col-span-8">
+            {t.steps.map((step, i) => (
+              <Reveal key={step.title} as="li" delay={i * 140} className="border-t border-ink pt-7">
+                <span className="font-serif text-5xl text-clay-600">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="mt-8 font-serif text-xl">{step.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-ink-soft">{step.text}</p>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
       </section>
 
-      <section id="parks" className="scroll-mt-24 space-y-8">
-        <h2 className="text-xl font-semibold">{t.parksTitle}</h2>
-        {regionOrder.map((region) => (
-          <div key={region}>
-            <h3 className="mb-3 text-sm font-semibold text-stone-500">{dict.regions[region]}</h3>
-            <ul className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-              {localParks
-                .filter((park) => park.region === region)
-                .map((park) => {
-                  const parkAttractions = getParkAttractions(park.code).map((a) => localizeAttraction(a, locale));
-                  const mustSee = parkAttractions.filter((a) => a.mustSee);
-                  const cover = mustSee.find((a) => a.photo)?.photo;
-                  return (
-                    <li
-                      key={park.code}
-                      className="flex flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white dark:border-stone-800 dark:bg-stone-900"
-                    >
-                      <Link href={`/${locale}/parks/${park.code}`} className="group relative block h-48 bg-stone-200">
-                        {cover && (
-                          <Image
-                            src={cover.url}
-                            alt=""
-                            fill
-                            sizes="(min-width: 1280px) 400px, (min-width: 640px) 50vw, 100vw"
-                            className="object-cover transition duration-500 group-hover:scale-105"
-                          />
-                        )}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
-                        <div className="absolute bottom-3 left-4 text-white">
-                          <p className="text-xl font-bold">{park.nameZh}</p>
-                          <p className="text-sm text-white/80">{park.nameEn}</p>
-                        </div>
-                        {park.nonresidentSurcharge && (
-                          <span className="absolute top-3 right-3 rounded-full bg-amber-100/95 px-2 py-0.5 text-xs text-amber-900">
-                            {t.nonresident}
-                          </span>
-                        )}
-                      </Link>
-                      {cover && (
-                        <a
-                          href={cover.page}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="truncate px-4 pt-1.5 text-[10px] text-stone-400 hover:text-stone-600"
-                        >
-                          {fill(dict.attraction.photoCredit, { author: cover.author, license: cover.license })}
-                        </a>
-                      )}
-                      <div className="flex flex-1 flex-col gap-2.5 p-4 pt-2">
-                        <p className="line-clamp-2 text-sm leading-relaxed text-stone-600 dark:text-stone-400">
-                          {park.intro}
-                        </p>
-                        <p className="text-sm">
-                          🔥{" "}
-                          {fill(t.hottest, {
-                            names: parkAttractions
-                              .filter((a) => a.hotRank !== undefined)
-                              .sort((a, b) => a.hotRank! - b.hotRank!)
-                              .slice(0, 3)
-                              .map((a) => a.nameZh)
-                              .join("、"),
-                          })}
-                        </p>
-                        <p className="text-xs text-stone-500">
-                          {fill(t.bestMonths, { months: formatMonths(park.bestMonths, dict.units) })} ·{" "}
-                          {fill(t.attractions, { n: parkAttractions.length })} · {t.airports}{" "}
-                          {park.airports.join(" · ")}
-                        </p>
-                        <div className="mt-auto flex flex-wrap gap-2 pt-2">
-                          <Link href={`/${locale}/parks/${park.code}`} className={buttonSecondary}>
-                            {t.viewPark}
-                          </Link>
-                          {mustSee.length > 0 && (
-                            <AddManyButton
-                              ids={mustSee.map((a) => a.id)}
-                              label={fill(t.addMustSee, { n: mustSee.length })}
-                              doneLabel={t.addedMustSee}
-                            />
-                          )}
-                        </div>
-                      </div>
-                    </li>
-                  );
-                })}
-            </ul>
+      {/* 地图 */}
+      <section className="border-t border-line">
+        <div className={`${container} grid gap-14 py-28 lg:grid-cols-12 lg:py-40`}>
+          <div className="lg:col-span-4">
+            <p className="eyebrow text-mute">{t.mapEyebrow}</p>
+            <Reveal>
+              <h2 className="mt-8 font-serif text-[clamp(1.9rem,3vw,2.8rem)] leading-snug">{t.mapTitle}</h2>
+            </Reveal>
+            <p className="mt-6 max-w-sm text-sm leading-7 text-ink-soft">{t.mapText}</p>
           </div>
-        ))}
+          <Reveal className="lg:col-span-8">
+            <WestMap
+              parks={localParks.map((park) => ({
+                code: park.code,
+                href: `/${locale}/parks/${park.code}`,
+                nameZh: park.nameZh,
+                nameEn: park.nameEn,
+              }))}
+              cityNames={cityNames}
+              alaskaLabel={`Alaska · ${dict.regions.alaska}`}
+            />
+          </Reveal>
+        </div>
       </section>
-    </div>
+
+      {/* 收尾：一张大图 + 开始规划 */}
+      <section className="relative h-[82svh] min-h-[540px] overflow-hidden bg-ink text-white">
+        {finalPhoto && (
+          <Image src={large(finalPhoto.url)} alt="" fill sizes="100vw" className="object-cover" />
+        )}
+        <div className="absolute inset-0 bg-black/45" />
+        <div className="relative z-10 flex h-full flex-col items-center justify-center px-5 text-center">
+          <p className="eyebrow text-white/70">{t.finalEyebrow}</p>
+          <Reveal>
+            <h2 className="mt-8 font-serif text-[clamp(2.2rem,5vw,4.6rem)] leading-tight">{t.finalTitle}</h2>
+          </Reveal>
+          <Link href={`/${locale}/plan`} className={`${buttonLarge} mt-12 bg-paper text-ink hover:bg-white`}>
+            {t.finalCta}
+            <IconArrowRight className="text-base" />
+          </Link>
+        </div>
+        {finalPhoto && (
+          <a
+            href={finalPhoto.page}
+            target="_blank"
+            rel="noreferrer"
+            className="absolute right-5 bottom-4 z-10 text-[10px] text-white/45 hover:text-white/80 sm:right-10"
+          >
+            {credit(finalPhoto)}
+          </a>
+        )}
+      </section>
+    </>
   );
 }

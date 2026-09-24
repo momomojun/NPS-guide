@@ -1,8 +1,8 @@
 "use client";
 
 import { CreditedPhoto } from "@/components/credited-photo";
+import { IconTrail } from "@/components/icons";
 import { AddToTripButton } from "@/components/trip/add-to-trip-button";
-import { buttonSecondary } from "@/components/ui";
 import type { AttractionWithPhoto } from "@/data/attractions";
 import { googleMapsUrl, googleSnapshotDate } from "@/data/attractions/google";
 import type { Dictionary } from "@/i18n/dictionaries";
@@ -21,18 +21,21 @@ export function PopularityBadge({ attraction, text }: { attraction: AttractionWi
   const t = text.attraction;
   return (
     <span
-      className="inline-flex flex-wrap items-center gap-x-1.5 text-[11px]"
+      className="inline-flex flex-wrap items-baseline gap-x-3 text-xs"
       title={fill(t.googleSource, { name: google.name, date: googleSnapshotDate })}
     >
-      {hotRank !== undefined && (
-        <span className="font-medium text-orange-700 dark:text-orange-400">🔥 {fill(t.hotRank, { n: hotRank })}</span>
-      )}
-      <span className="text-stone-500">
+      {hotRank !== undefined && <span className="text-clay-700">{fill(t.hotRank, { n: hotRank })}</span>}
+      <span className="text-mute">
         {fill(t.googleRating, { rating: google.rating.toFixed(1), reviews: formatCount(google.reviews) })}
       </span>
     </span>
   );
 }
+
+/** 细线框的小标签：必去、开放月份、许可证 */
+const tag = "border px-2 py-0.5 text-[11px] leading-5";
+
+export const linkButton = "link-line text-xs tracking-[0.1em] text-ink";
 
 export function AttractionCard({
   attraction: a,
@@ -49,94 +52,84 @@ export function AttractionCard({
 }) {
   const t = text.attraction;
   const destination = a.start ?? a;
+  const meta = [
+    fill(t.duration, { d: formatDuration(a.durationMin, text.units) }),
+    a.hike?.distanceMi ? `${formatKm(a.hike.distanceMi, text.units)}${a.hike.loop ? ` · ${t.loop}` : ""}` : null,
+    a.hike?.gainFt ? formatMeters(a.hike.gainFt, text.units) : null,
+    a.hike ? text.difficulty[a.hike.difficulty] : null,
+    a.bestTime ? a.bestTime.map((time) => text.timeOfDay[time]).join(" / ") : null,
+  ].filter((item): item is string => item !== null);
 
   return (
-    <article
-      id={`attraction-${a.id}`}
-      className={`scroll-mt-24 overflow-hidden rounded-2xl border bg-white transition dark:bg-stone-900 ${
-        selected ? "border-emerald-500 ring-2 ring-emerald-500/40" : "border-stone-200 dark:border-stone-800"
-      }`}
-    >
+    <article id={`attraction-${a.id}`} className="group scroll-mt-24 border-b border-line pb-12">
       {a.photo && (
         <CreditedPhoto
           photo={a.photo}
           alt={`${a.nameZh} ${a.nameEn}`}
           creditTemplate={t.photoCredit}
-          sizes="(min-width: 1024px) 400px, 100vw"
-          className="h-44"
+          sizes="(min-width: 1024px) 560px, 100vw"
+          className="aspect-[3/2]"
+          imageClassName="transition-transform duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
         />
       )}
 
-      <div className="space-y-3 p-4">
+      <div className="space-y-5 pt-6">
         <header>
-          <div className="flex flex-wrap items-center gap-2">
-            <h3 className="text-base font-semibold">{a.nameZh}</h3>
-            {a.mustSee && (
-              <span className="rounded-full bg-emerald-600 px-2 py-0.5 text-[11px] font-medium text-white">
-                {t.mustSee}
-              </span>
-            )}
-            {a.outsidePark && (
-              <span className="rounded-full bg-stone-200 px-2 py-0.5 text-[11px] text-stone-700 dark:bg-stone-700 dark:text-stone-200">
-                {t.outsidePark}
-              </span>
-            )}
-          </div>
-          <div className="mt-0.5 flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
-            <p className="text-sm text-stone-500">{a.nameEn}</p>
-            <PopularityBadge attraction={a} text={text} />
-          </div>
+          <PopularityBadge attraction={a} text={text} />
+          <h3
+            className={`mt-3 font-serif text-[1.7rem] leading-tight transition-colors duration-500 ${selected ? "text-clay-700" : ""}`}
+          >
+            {a.nameZh}
+          </h3>
+          <p className="eyebrow mt-2 text-mute">{a.nameEn}</p>
         </header>
 
-        <ul className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-stone-600 dark:text-stone-400">
-          <li className="flex items-center gap-1">
-            <span className="size-2 rounded-full" style={{ backgroundColor: KIND_COLORS[a.kind] }} />
+        <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-ink-soft">
+          <span className="inline-flex items-center gap-1.5">
+            <span className="size-1.5 rounded-full" style={{ backgroundColor: KIND_COLORS[a.kind] }} />
             {text.kinds[a.kind]}
-          </li>
-          <li>{fill(t.duration, { d: formatDuration(a.durationMin, text.units) })}</li>
-          {a.hike?.distanceMi && (
-            <li>
-              {formatKm(a.hike.distanceMi, text.units)}
-              {a.hike.loop ? ` · ${t.loop}` : ""}
-            </li>
-          )}
-          {a.hike?.gainFt && <li>{formatMeters(a.hike.gainFt, text.units)}</li>}
-          {a.hike && <li>{text.difficulty[a.hike.difficulty]}</li>}
-          {a.bestTime && <li>{a.bestTime.map((time) => text.timeOfDay[time]).join(" / ")}</li>}
-        </ul>
+          </span>
+          {meta.map((item) => (
+            <span key={item} className="before:mr-3 before:text-line before:content-['/']">
+              {item}
+            </span>
+          ))}
+        </p>
 
-        {(a.openMonths || a.bestMonths || a.permit) && (
-          <ul className="flex flex-wrap gap-1.5 text-[11px]">
+        {(a.mustSee || a.outsidePark || a.openMonths || a.bestMonths || a.permit) && (
+          <ul className="flex flex-wrap gap-2">
+            {a.mustSee && <li className={`${tag} border-ink bg-ink text-paper`}>{t.mustSee}</li>}
+            {a.outsidePark && <li className={`${tag} border-line text-mute`}>{t.outsidePark}</li>}
             {a.openMonths && (
-              <li className="rounded bg-amber-100 px-1.5 py-0.5 text-amber-900 dark:bg-amber-950 dark:text-amber-200">
+              <li className={`${tag} border-clay-600/40 text-clay-700`}>
                 {fill(t.openMonths, { months: formatMonths(a.openMonths, text.units) })}
               </li>
             )}
             {a.bestMonths && (
-              <li className="rounded bg-sky-100 px-1.5 py-0.5 text-sky-900 dark:bg-sky-950 dark:text-sky-200">
+              <li className={`${tag} border-line text-ink-soft`}>
                 {fill(t.bestMonths, { months: formatMonths(a.bestMonths, text.units) })}
               </li>
             )}
-            {a.permit && (
-              <li className="rounded bg-red-100 px-1.5 py-0.5 text-red-900 dark:bg-red-950 dark:text-red-200">
-                {t.permit}
-              </li>
-            )}
+            {a.permit && <li className={`${tag} border-clay-600/40 text-clay-700`}>{t.permit}</li>}
           </ul>
         )}
 
-        <p className="text-sm leading-relaxed text-stone-700 dark:text-stone-300">{a.summary}</p>
+        <p className="text-[15px] leading-7 text-ink-soft">{a.summary}</p>
 
         {a.trailLine && (
-          <p className="text-xs text-amber-800 dark:text-amber-400">
-            🥾 {fill(t.trailLength, { km: a.trailLine.km.toFixed(1), type: a.trailLine.loop ? t.loopTrail : t.oneWay })}
+          <p className="inline-flex items-center gap-2 text-xs text-clay-700">
+            <IconTrail className="text-base" />
+            {fill(t.trailLength, { km: a.trailLine.km.toFixed(1), type: a.trailLine.loop ? t.loopTrail : t.oneWay })}
           </p>
         )}
 
         {(a.tips || a.permit || a.start) && (
-          <details className="text-sm">
-            <summary className="cursor-pointer text-emerald-700 dark:text-emerald-400">{t.tips}</summary>
-            <ul className="mt-2 list-disc space-y-1 pl-5 text-stone-600 dark:text-stone-400">
+          <details className="group/tips border-t border-line pt-4 text-sm">
+            <summary className="flex cursor-pointer list-none items-center justify-between text-xs tracking-[0.1em] text-ink [&::-webkit-details-marker]:hidden">
+              {t.tips}
+              <span className="text-base leading-none text-mute transition-transform duration-300 group-open/tips:rotate-45">+</span>
+            </summary>
+            <ul className="mt-4 space-y-2 text-sm leading-7 text-ink-soft">
               {a.permit && <li>{a.permit}</li>}
               {a.tips?.map((tip) => (
                 <li key={tip}>{tip}</li>
@@ -146,22 +139,16 @@ export function AttractionCard({
           </details>
         )}
 
-        <div className="flex flex-wrap gap-2 pt-1">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-1">
           <AddToTripButton id={a.id} text={text.trip} />
-          <button type="button" className={buttonSecondary} onClick={onShowOnMap}>
+          <button type="button" className={linkButton} onClick={onShowOnMap}>
             {t.showOnMap}
           </button>
-          <a
-            className={buttonSecondary}
-            href={googleMapsUrl(a, parkNameEn)}
-            target="_blank"
-            rel="noreferrer"
-            title={t.googleMapsHint}
-          >
+          <a className={linkButton} href={googleMapsUrl(a, parkNameEn)} target="_blank" rel="noreferrer" title={t.googleMapsHint}>
             {t.googleMaps}
           </a>
           <a
-            className={buttonSecondary}
+            className={linkButton}
             href={`https://www.google.com/maps/dir/?api=1&destination=${destination.lat},${destination.lon}`}
             target="_blank"
             rel="noreferrer"

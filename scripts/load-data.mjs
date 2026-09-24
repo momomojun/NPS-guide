@@ -21,6 +21,6 @@ export const attractions = [
   ...denali,
 ];
 
-export const USER_AGENT = "park-pilot/0.1 (personal trip planner; https://github.com/momomojun/park-pilot)";
+export const USER_AGENT = "nps-guide/0.1 (personal trip planner; https://github.com/momomojun/NPS-guide)";
 
 export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));

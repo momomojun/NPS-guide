@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import { IconArrowRight } from "@/components/icons";
 import { fill } from "@/i18n/format";
 import { tripIds, useTrip } from "@/lib/trip-store";
 
-/** 已经有行程时，在首页显示一张“继续规划”的卡片 */
+/** 已经有行程时，首屏右下角显示“继续你的行程” */
 export function ContinueTrip({
   href,
   parkNames,
@@ -32,17 +33,17 @@ export function ContinueTrip({
     : null;
 
   return (
-    <Link
-      href={href}
-      className="block rounded-2xl bg-white/95 p-4 text-stone-900 shadow-lg backdrop-blur transition hover:bg-white sm:max-w-sm"
-    >
-      <p className="text-xs font-medium text-emerald-700">{text.continueTitle}</p>
-      <p className="mt-1 font-semibold">{parks.join(" · ")}</p>
-      <p className="mt-0.5 text-sm text-stone-600">
+    <Link href={href} className="group block w-72 border-t border-white/40 pt-4 text-white">
+      <p className="eyebrow text-white/60">{text.continueTitle}</p>
+      <p className="mt-3 font-serif text-xl leading-snug">{parks.join(" · ")}</p>
+      <p className="mt-1.5 text-sm text-white/70">
         {fill(text.continueSummary, { n: ids.length, days: trip.dayCount })}
         {start && ` · ${fill(text.continueStart, { date: start })}`}
       </p>
-      <p className="mt-2 text-sm font-medium text-emerald-700">{text.continueCta}</p>
+      <p className="eyebrow mt-4 inline-flex items-center gap-2">
+        {text.continueCta}
+        <IconArrowRight className="transition-transform duration-500 group-hover:translate-x-1" />
+      </p>
     </Link>
   );
 }

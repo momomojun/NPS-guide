@@ -26,6 +26,7 @@ export function localizePark(park: Park, locale: Locale): Park {
   return {
     ...park,
     nameZh: t(park.nameZh),
+    tagline: t(park.tagline),
     intro: t(park.intro),
     seasonNote: t(park.seasonNote),
     areas: Object.fromEntries(Object.entries(park.areas).map(([key, name]) => [key, t(name)])),

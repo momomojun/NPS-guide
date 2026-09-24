@@ -1,9 +1,13 @@
-// 几个反复用到的按钮样式
-export const buttonPrimary =
-  "rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-emerald-700 disabled:opacity-50";
+// 反复用到的按钮样式：直角、细线、字距略宽，不用圆角和彩色块
+const base =
+  "inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs tracking-[0.06em] transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-40";
 
-export const buttonSecondary =
-  "rounded-lg border border-stone-300 px-3 py-1.5 text-xs text-stone-700 hover:bg-stone-50 dark:border-stone-700 dark:text-stone-300 dark:hover:bg-stone-800";
+export const buttonPrimary = `${base} bg-ink text-paper hover:bg-clay-700`;
 
-export const buttonAdded =
-  "rounded-lg border border-emerald-600 px-3 py-1.5 text-xs font-medium text-emerald-700 hover:bg-emerald-50 dark:text-emerald-400 dark:hover:bg-emerald-950";
+export const buttonSecondary = `${base} border border-ink/20 text-ink hover:border-ink`;
+
+export const buttonAdded = `${base} border border-pine-600/60 text-pine-700 hover:border-pine-700`;
+
+/** 首屏、页尾这类大号按钮 */
+export const buttonLarge =
+  "inline-flex items-center justify-center gap-3 px-7 py-3.5 text-[13px] tracking-[0.14em] transition-colors duration-300";

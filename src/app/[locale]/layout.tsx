@@ -1,11 +1,22 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Cormorant_Garamond, Jost, Noto_Serif_SC, Noto_Serif_TC } from "next/font/google";
 import { notFound } from "next/navigation";
-import { LocaleSwitcher } from "@/components/locale-switcher";
-import { TripNavLink } from "@/components/trip/trip-nav-link";
+import { SiteFooter } from "@/components/site/site-footer";
+import { SiteHeader } from "@/components/site/site-header";
 import { hasLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import "../globals.css";
+
+// 标题：英文 Cormorant Garamond + 中文思源宋体；正文：Jost + 系统黑体
+const jost = Jost({ subsets: ["latin"], variable: "--font-jost" });
+const cormorant = Cormorant_Garamond({ subsets: ["latin"], variable: "--font-cormorant" });
+// 中文字体按字符分片，浏览器只下载页面用到的分片，所以不预加载
+const serifSc = Noto_Serif_SC({ variable: "--font-serif-sc", preload: false });
+const serifTc = Noto_Serif_TC({ variable: "--font-serif-tc", preload: false });
+
+// 页面绘制前执行：标记 JS 可用（滚动渐显的元素这时才先藏起来）；本次会话看过开场动画就不再播
+const bootScript =
+  'document.documentElement.classList.add("js");try{if(sessionStorage.getItem("nps-intro"))document.documentElement.classList.add("intro-seen")}catch(e){}';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -27,32 +38,23 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   const dict = getDictionary(locale);
 
   return (
-    <html lang={locale}>
-      <body className="flex min-h-screen flex-col bg-stone-50 text-stone-900 antialiased dark:bg-stone-950 dark:text-stone-100">
-        <header className="sticky top-0 z-40 border-b border-stone-200 bg-white/85 backdrop-blur dark:border-stone-800 dark:bg-stone-900/85">
-          <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
-            <div className="flex items-center gap-6">
-              <Link href={`/${locale}`} className="flex items-baseline gap-2">
-                <span className="text-lg font-bold tracking-tight">{dict.site.name}</span>
-                <span className="hidden text-sm text-stone-500 lg:inline">{dict.site.tagline}</span>
-              </Link>
-              <nav className="flex items-center gap-1">
-                <Link
-                  href={`/${locale}`}
-                  className="rounded-lg px-2 py-1 text-sm text-stone-600 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100"
-                >
-                  {dict.nav.parks}
-                </Link>
-                <TripNavLink href={`/${locale}/plan`} label={dict.nav.plan} />
-              </nav>
-            </div>
-            <LocaleSwitcher current={locale} />
-          </div>
-        </header>
-        <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-8">{children}</main>
-        <footer className="border-t border-stone-200 py-6 text-center text-xs text-stone-500 dark:border-stone-800">
-          <p className="mx-auto max-w-7xl px-4">{dict.footer.sources}</p>
-        </footer>
+    <html
+      lang={locale}
+      // bootScript 会在水合前给 html 加 class
+      suppressHydrationWarning
+      className={`${jost.variable} ${cormorant.variable} ${serifSc.variable} ${serifTc.variable}`}
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: bootScript }} />
+      </head>
+      <body className="flex min-h-screen flex-col bg-paper text-ink">
+        <SiteHeader
+          locale={locale}
+          wordmark={dict.site.wordmark}
+          text={{ parks: dict.nav.parks, plan: dict.nav.plan, start: dict.nav.start }}
+        />
+        <main className="flex-1">{children}</main>
+        <SiteFooter locale={locale} dict={dict} />
       </body>
     </html>
   );

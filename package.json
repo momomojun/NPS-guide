@@ -1,5 +1,5 @@
 {
-  "name": "park-pilot",
+  "name": "nps-guide",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,7 +11,8 @@
     "lint": "eslint",
     "data:photos": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-photos.mjs",
     "data:travel": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-travel.mjs",
-    "data:trails": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-trails.mjs"
+    "data:trails": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-trails.mjs",
+    "data:map": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-map.mjs"
   },
   "dependencies": {
     "maplibre-gl": "^6.11.1",

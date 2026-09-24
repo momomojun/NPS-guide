@@ -34,7 +34,22 @@ export interface Trip {
 
 export const MAX_DAYS = 14;
 
-const STORAGE_KEY = "park-pilot:trip";
+const STORAGE_KEY = "nps-guide:trip";
+/** 项目改名（park-pilot → NPS Guide）前存行程用的 key */
+const LEGACY_KEY = "park-pilot:trip";
+
+// 第一次加载时把旧 key 里的行程搬到新 key，免得改名后行程丢了
+if (typeof window !== "undefined") {
+  try {
+    const legacy = window.localStorage.getItem(LEGACY_KEY);
+    if (legacy !== null) {
+      if (window.localStorage.getItem(STORAGE_KEY) === null) window.localStorage.setItem(STORAGE_KEY, legacy);
+      window.localStorage.removeItem(LEGACY_KEY);
+    }
+  } catch {
+    // 隐私模式等拿不到 localStorage 时跳过
+  }
+}
 
 const EMPTY_TRIP: Trip = {
   version: 2,

@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { KIND_COLORS } from "@/components/attractions/kinds";
+import { IconBed, IconClose, IconGrip } from "@/components/icons";
 import { ParkMap, type MapPoint, type MapTrail } from "@/components/map/park-map";
 import { AddToTripButton } from "@/components/trip/add-to-trip-button";
 import { buttonPrimary, buttonSecondary } from "@/components/ui";
@@ -30,7 +31,7 @@ import { DayCard } from "./day-card";
 import { LodgingSelector } from "./lodging-selector";
 import type { DayView, DragSpot, PlannerPark, PlannerText, ResolvedLodging, SunInfo } from "./types";
 
-const LODGING_COLOR = "#3730a3";
+const LODGING_COLOR = "#2f4a5a";
 /** 自定义住处只查这个范围内公园的景点车程 */
 const MEASURE_RADIUS_KM = 400;
 
@@ -273,24 +274,25 @@ export function Planner({
   const parkNameEn = (code: string) => parkByCode.get(code)?.nameEn ?? "";
 
   const chip = (active: boolean) =>
-    `rounded-full px-3 py-1 text-xs ${
-      active
-        ? "bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900"
-        : "bg-stone-100 text-stone-700 hover:bg-stone-200 dark:bg-stone-800 dark:text-stone-300"
+    `pb-1 text-[13px] transition-colors ${
+      active ? "border-b border-ink text-ink" : "border-b border-transparent text-mute hover:text-ink"
     }`;
-  const card = "rounded-2xl border border-stone-200 bg-white dark:border-stone-800 dark:bg-stone-900";
+  const card = "bg-paper-deep/70";
+  // 下划线式输入框
   const field =
-    "mt-1 block rounded-lg border border-stone-300 bg-transparent px-2 py-1 text-sm text-stone-900 dark:border-stone-700 dark:text-stone-100";
+    "mt-2 block border-b border-ink/30 bg-transparent py-1.5 text-sm text-ink focus:border-ink focus:outline-none";
+  const select = "border-b border-ink/30 bg-transparent py-1 text-sm focus:border-ink focus:outline-none";
 
   return (
-    <div className="space-y-6">
-      <header>
-        <h1 className="text-2xl font-bold">{t.title}</h1>
-        <p className="mt-2 max-w-3xl text-sm text-stone-600 dark:text-stone-400">{t.intro}</p>
+    <div className="space-y-10">
+      <header className="max-w-3xl">
+        <p className="eyebrow text-mute">Itinerary · {t.title}</p>
+        <h1 className="mt-5 font-serif text-[clamp(2.2rem,4vw,3.4rem)] leading-tight">{t.title}</h1>
+        <p className="mt-5 text-sm leading-7 text-ink-soft">{t.intro}</p>
       </header>
 
-      <div className={`${card} flex flex-wrap items-end gap-4 p-4`}>
-        <label className="text-xs text-stone-500">
+      <div className={`${card} flex flex-wrap items-end gap-x-8 gap-y-5 p-6`}>
+        <label className="eyebrow text-mute">
           {t.startDate}
           <input
             type="date"
@@ -299,7 +301,7 @@ export function Planner({
             className={field}
           />
         </label>
-        <label className="text-xs text-stone-500">
+        <label className="eyebrow text-mute">
           {t.days}
           <select
             value={trip.dayCount}
@@ -317,37 +319,38 @@ export function Planner({
           {t.autoPlan}
         </button>
         <button type="button" className={buttonSecondary} onClick={fillLodging} disabled={!hasEmptyNight} title={t.lodging.fillHint}>
-          🏨 {t.lodging.fillAll}
+          <IconBed className="text-sm" />
+          {t.lodging.fillAll}
         </button>
         <button type="button" className={buttonSecondary} onClick={clearTrip} disabled={allIds.length === 0}>
           {t.clear}
         </button>
-        {!trip.startDate && <p className="basis-full text-xs text-amber-700 dark:text-amber-400">{t.noDate}</p>}
-        {plannedCount > 0 && <p className="basis-full text-xs text-stone-500">{t.lodging.fillHint}</p>}
+        {!trip.startDate && <p className="basis-full text-xs text-clay-700">{t.noDate}</p>}
+        {plannedCount > 0 && <p className="basis-full text-xs text-mute">{t.lodging.fillHint}</p>}
       </div>
 
       {allIds.length === 0 && (
-        <p className={`${card} p-4 text-sm text-stone-600 dark:text-stone-400`}>{t.empty}</p>
+        <p className="border-l border-clay-600 pl-5 text-sm leading-7 text-ink-soft">{t.empty}</p>
       )}
 
-      <div className="grid gap-6 lg:grid-cols-5">
-        <div className="space-y-4 lg:col-span-3">
+      <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
+        <div className="space-y-6 lg:col-span-7">
           {trip.pool.length > 0 && (
-            <section className="rounded-2xl border border-dashed border-emerald-400 p-4">
-              <h2 className="font-semibold">{fill(t.pool, { n: trip.pool.length })}</h2>
-              <p className="text-xs text-stone-500">{t.poolHint}</p>
-              <ul className="mt-3 flex flex-wrap gap-2">
+            <section className="border border-dashed border-ink/30 p-6">
+              <h2 className="font-serif text-xl">{fill(t.pool, { n: trip.pool.length })}</h2>
+              <p className="mt-1 text-xs text-mute">{t.poolHint}</p>
+              <ul className="mt-4 flex flex-wrap gap-2">
                 {trip.pool.map((id) => (
-                  <li key={id} className="flex items-center gap-1 rounded-full bg-stone-100 py-1 pr-1 pl-3 text-xs dark:bg-stone-800">
+                  <li key={id} className="flex items-center gap-1 border border-line bg-paper py-1 pr-1 pl-3 text-xs">
                     {byId.get(id)?.nameZh ?? id}
                     <button
                       type="button"
                       aria-label={t.actions.remove}
                       title={t.actions.remove}
-                      className="rounded-full px-1.5 text-stone-400 hover:bg-stone-200 hover:text-stone-700"
+                      className="p-1 text-mute hover:text-ink"
                       onClick={() => removeFromTrip(id)}
                     >
-                      ✕
+                      <IconClose />
                     </button>
                   </li>
                 ))}
@@ -355,7 +358,11 @@ export function Planner({
             </section>
           )}
 
-          {plannedCount > 0 && <p className="text-xs text-stone-400">⠿ {t.dragHint}</p>}
+          {plannedCount > 0 && (
+            <p className="flex items-center gap-1.5 text-xs text-mute">
+              <IconGrip /> {t.dragHint}
+            </p>
+          )}
 
           {dayViews.map((view) => {
             const night = view.day + 1;
@@ -412,16 +419,16 @@ export function Planner({
           })}
 
           {plannedCount > 0 && trip.days.length > 1 && (
-            <section className={`${card} p-4`}>
-              <h2 className="font-semibold">{t.replan}</h2>
-              <p className="mt-1 text-xs text-stone-500">{t.replanHint}</p>
-              <div className="mt-3 flex flex-wrap items-center gap-2 text-sm">
+            <section className={`${card} p-6`}>
+              <h2 className="font-serif text-xl">{t.replan}</h2>
+              <p className="mt-1 text-xs leading-6 text-mute">{t.replanHint}</p>
+              <div className="mt-4 flex flex-wrap items-center gap-4 text-sm">
                 <label className="flex items-center gap-2">
                   {t.replanToday}
                   <select
                     value={Math.min(today, trip.days.length - 1)}
                     onChange={(event) => setToday(Number(event.target.value))}
-                    className="rounded-lg border border-stone-300 bg-transparent px-2 py-1 dark:border-stone-700"
+                    className={select}
                   >
                     {trip.days.map((_, day) => (
                       <option key={day} value={day}>
@@ -437,14 +444,14 @@ export function Planner({
             </section>
           )}
 
-          <section className={`${card} p-4`}>
+          <section className="border-t border-ink pt-5">
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <h2 className="font-semibold">{t.add}</h2>
+              <h2 className="font-serif text-xl">{t.add}</h2>
               <select
                 value={pickerPark}
                 aria-label={t.addPlaceholder}
                 onChange={(event) => setPickerPark(event.target.value)}
-                className="rounded-lg border border-stone-300 bg-transparent px-2 py-1 text-sm dark:border-stone-700"
+                className={select}
               >
                 {parks.map((park) => (
                   <option key={park.code} value={park.code}>
@@ -453,16 +460,16 @@ export function Planner({
                 ))}
               </select>
             </div>
-            <ul className="mt-3 divide-y divide-stone-100 dark:divide-stone-800">
+            <ul className="mt-4 divide-y divide-line">
               {attractions
                 .filter((a) => a.park === pickerPark)
                 .map((a) => (
-                  <li key={a.id} className="flex items-center justify-between gap-3 py-2 text-sm">
+                  <li key={a.id} className="flex items-center justify-between gap-3 py-3 text-sm">
                     <span className="min-w-0">
-                      <span className="mr-1.5 inline-block size-2 rounded-full align-middle" style={{ backgroundColor: KIND_COLORS[a.kind] }} />
-                      {a.nameZh}
-                      {a.mustSee && <span className="ml-1.5 text-[11px] text-emerald-700 dark:text-emerald-400">★</span>}
-                      <span className="ml-2 text-xs text-stone-500">{duration(a.durationMin)}</span>
+                      <span className="mr-2 inline-block size-1.5 rounded-full align-middle" style={{ backgroundColor: KIND_COLORS[a.kind] }} />
+                      <span className="font-serif text-base">{a.nameZh}</span>
+                      {a.mustSee && <span className="ml-1.5 text-[11px] text-clay-600">★</span>}
+                      <span className="ml-2 text-xs text-mute">{duration(a.durationMin)}</span>
                     </span>
                     <AddToTripButton id={a.id} text={text.trip} />
                   </li>
@@ -471,10 +478,10 @@ export function Planner({
           </section>
         </div>
 
-        <div className="lg:col-span-2">
-          <div className="space-y-2 lg:sticky lg:top-20">
+        <div className="lg:col-span-5">
+          <div className="space-y-4 lg:sticky lg:top-24">
             {trip.days.length > 1 && (
-              <div className="flex flex-wrap gap-1" role="group" aria-label={t.showOnMap}>
+              <div className="flex flex-wrap gap-x-5 gap-y-2" role="group" aria-label={t.showOnMap}>
                 {trip.days.map((_, day) => (
                   <button key={day} type="button" className={chip(day === mapIndex)} onClick={() => setMapDay(day)}>
                     {fill(t.day, { n: day + 1 })}
@@ -493,13 +500,13 @@ export function Planner({
                 if (!id.startsWith("lodging-")) selectOnMap(id);
               }}
               text={text.map}
-              className="h-96 lg:h-[calc(100vh-9rem)]"
+              className="h-96 lg:h-[calc(100vh-10rem)]"
             />
           </div>
         </div>
       </div>
 
-      <p className="text-xs text-stone-500">{t.credit}</p>
+      <p className="text-xs text-mute">{t.credit}</p>
     </div>
   );
 }

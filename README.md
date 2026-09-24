@@ -1,6 +1,6 @@
-# park-pilot
+# NPS Guide
 
-面向中文用户的美国国家公园旅行规划工具（项目代号，品牌名以后再定）。
+面向中文用户的美国国家公园旅行规划工具。非官方项目，与美国国家公园管理局（National Park Service）无关。
 
 按**日期**回答：公园里什么开了、要不要预约、去哪充电加油、去哪吃饭补给、大概花多少钱；出发后还能根据实际进度调整后面的行程。
 
@@ -24,6 +24,9 @@ npm run dev                  # http://localhost:3000
 | `src/lib/geocode.ts`、`src/lib/osrm-client.ts` | 自定义住处：Photon 搜酒店 / 地址，OSRM 在浏览器里算到各景点的车程 |
 | `src/lib/nps.ts`、`src/lib/nlr.ts` | NPS 公告和门票、NLR 充电桩 |
 | `src/components/map/park-map.tsx` | MapLibre 地图：OpenFreeMap 底图 + 地形阴影 + USGS 卫星图 + 3D 地形，都不需要 key |
+| `src/app/globals.css` | 设计基调：纸色底、墨色字、砂岩红强调色；标题 Cormorant Garamond + 思源宋体，正文 Jost；开场动画、滚动渐显 |
+| `src/components/home/` | 首页：开场动画、全屏轮播、公园目录、线描地图（`src/data/map.generated.ts`） |
+| `src/components/site/` | 页头（压在大图上时透明，滚动后变纸色）、页脚、滚动渐显 |
 
 新增或修改景点、推荐住宿后，重新生成对应的数据（都是 `src/data/attractions/*.generated.ts`）：
 
@@ -31,6 +34,7 @@ npm run dev                  # http://localhost:3000
 npm run data:photos      # 按 photoFile 到 Wikimedia Commons 查缩略图、作者、授权
 npm run data:travel      # 用 OSRM 按道路算各景点、住宿之间的车程
 npm run data:trails      # 按 trail 途经点，用 Valhalla 沿 OpenStreetMap 步道生成徒步路线
+npm run data:map         # 首页线描地图：Natural Earth 州界按 Albers 投影成 SVG，公园和城市位置一起算好
 ```
 
 新增景点后，到 Google Maps 查它的评分和评论数，补进 `src/data/attractions/google.ts`（没有的话不参与热度排名）。
@@ -72,7 +76,7 @@ npm run data:trails      # 按 trail 途经点，用 Valhalla 沿 OpenStreetMap 
 - [x] 按当天日出日落安排日出 / 日落景点，提示季节性关闭、许可证、天黑还在徒步、安排太满
 - [x] 手动调整（拖拽排序、换天、完成 / 跳过），按实际进度重排剩余行程
 - [x] 住宿：每晚住哪（推荐园内酒店和门户小镇，或搜任意酒店 / 地址），车程从住处算起，一键按车程安排住宿
-- [x] 首页：主视觉、继续行程、本月适合去、公园分布地图、公园卡片一键加入必去景点
+- [x] 首页：开场动画、七座公园全屏轮播、公园目录（悬停换图）、当季推荐、线描地图；整站换成纸色底 + 衬线标题的杂志风格
 - [x] 实时信息：NPS 公告、门票、周边充电桩（含可靠度标记）
 
 ### v2 差异化
@@ -108,6 +112,8 @@ npm run data:trails      # 按 trail 途经点，用 Valhalla 沿 OpenStreetMap 
 | 徒步路线 | Valhalla 公共服务（FOSSGIS），OpenStreetMap 步道 | 不需要 |
 | 热度、评分 | Google Maps 评分和评论数（自用阶段在浏览器里手动快照）；公开后换 Google Places API | 公开后需要 Google Cloud |
 | 地图底图 / 地形 / 卫星 | OpenFreeMap、AWS Terrain Tiles、USGS The National Map | 不需要 |
+| 首页线描地图 | Natural Earth 州界（公共领域） | 不需要 |
+| 字体 | Google Fonts（Cormorant Garamond、Jost、思源宋体），next/font 构建时下载、自托管 | 不需要 |
 
 ## 注意事项
 
