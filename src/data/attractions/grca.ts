@@ -41,6 +41,7 @@ export const grandCanyon: Attraction[] = [
     lat: 36.05728,
     lon: -112.14363,
     durationMin: 180,
+    trail: { via: [{ lat: 36.06045, lon: -112.13929 }] },
     hike: { distanceMi: 3, gainFt: 1131, difficulty: "moderate" },
     summary:
       "从村子直接下到峡谷里的经典步道，沿途有休息站和季节性饮水点。这里的数据按第一站 1.5 Mile Resthouse 往返计算。",
@@ -62,6 +63,7 @@ export const grandCanyon: Attraction[] = [
     lon: -112.08704,
     start: { lat: 36.05294, lon: -112.08374, nameZh: "South Kaibab 步道口" },
     durationMin: 120,
+    trail: {},
     hike: { distanceMi: 1.8, gainFt: 790, difficulty: "moderate" },
     mustSee: true,
     summary: "沿着山脊往下走，视野比光明天使步道开阔得多。到 Ooh Aah Point 往返不到 3 公里，就能看到大片峡谷。",

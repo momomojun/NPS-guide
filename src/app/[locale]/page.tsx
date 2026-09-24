@@ -194,7 +194,15 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
                           {park.intro}
                         </p>
                         <p className="text-sm">
-                          {fill(t.mustSee, { names: mustSee.map((a) => a.nameZh).slice(0, 4).join("、") })}
+                          🔥{" "}
+                          {fill(t.hottest, {
+                            names: parkAttractions
+                              .filter((a) => a.hotRank !== undefined)
+                              .sort((a, b) => a.hotRank! - b.hotRank!)
+                              .slice(0, 3)
+                              .map((a) => a.nameZh)
+                              .join("、"),
+                          })}
                         </p>
                         <p className="text-xs text-stone-500">
                           {fill(t.bestMonths, { months: formatMonths(park.bestMonths, dict.units) })} ·{" "}

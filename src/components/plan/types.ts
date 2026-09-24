@@ -8,6 +8,7 @@ export type PlannerText = Pick<Dictionary, "plan" | "kinds" | "units" | "map" | 
 export interface PlannerPark {
   code: string;
   nameZh: string;
+  nameEn: string;
   lat: number;
   lon: number;
   timeZone: string;

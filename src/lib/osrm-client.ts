@@ -1,5 +1,17 @@
-// 浏览器里直接调用 OSRM 公共服务（支持跨域），只在加自定义住处时用一次，结果存进行程
+// 浏览器里直接调用 OSRM 公共服务（支持跨域）：加自定义住处时查一次车程表，行程地图上查当天的真实开车路线
 const TABLE_URL = "https://router.project-osrm.org/table/v1/driving/";
+const ROUTE_URL = "https://router.project-osrm.org/route/v1/driving/";
+
+/** 按顺序经过各点的开车路线，coords 形如 "lon,lat;lon,lat"；返回 [经度, 纬度] 折线 */
+export async function drivingRoute(coords: string): Promise<[number, number][]> {
+  const res = await fetch(`${ROUTE_URL}${coords}?overview=full&geometries=geojson`);
+  const data = (await res.json()) as {
+    code: string;
+    routes?: { geometry: { coordinates: [number, number][] } }[];
+  };
+  if (data.code !== "Ok" || !data.routes?.[0]) throw new Error(`OSRM: ${data.code}`);
+  return data.routes[0].geometry.coordinates;
+}
 const BATCH = 60;
 
 interface Point {

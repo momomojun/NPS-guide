@@ -45,6 +45,11 @@ export function formatKm(miles: number, units: UnitText): string {
   return fill(units.km, { km: (miles * 1.609).toFixed(1), mi: miles });
 }
 
+/** 12130 → "12,130"；固定用英文分隔，服务端和浏览器输出一致 */
+export function formatCount(n: number): string {
+  return n.toLocaleString("en-US");
+}
+
 export function formatMeters(feet: number, units: UnitText): string {
   return fill(units.meters, { m: Math.round((feet * 0.3048) / 10) * 10 });
 }

@@ -17,7 +17,7 @@ npm run dev                  # http://localhost:3000
 | `src/app/[locale]/` | 页面：首页、公园页 `parks/[code]`、行程页 `plan`。`zh-Hans` 简体、`zh-Hant` 繁体；`src/proxy.ts` 按浏览器语言跳转 |
 | `src/i18n/` | 界面文案。简体撰写，繁体用 OpenCC 自动转换（台湾用语，“米”转“公尺”） |
 | `src/data/parks.ts` | 7 个公园：特色介绍、园内片区、定位点、时区、常用机场、非居民附加费 |
-| `src/data/attractions/` | 每个公园一个文件的景点数据；`*.generated.ts` 由脚本生成，不要手改 |
+| `src/data/attractions/` | 每个公园一个文件的景点数据；`*.generated.ts` 由脚本生成，不要手改；`google.ts` 是 Google Maps 评分和评论数的手动快照 |
 | `src/data/lodging.ts` | 各公园的推荐住宿：园内酒店 + 门户小镇，车程已算进车程表 |
 | `src/lib/planner.ts` | 排行程：公园内按路线排序 → 按天切分（让最累的一天尽量轻松）→ 当天按日出日落排顺序；早上从前一晚住处出发、晚上回当晚住处都算进去 |
 | `src/lib/trip-store.ts` | 行程（含每晚住处）存在浏览器 localStorage，自用阶段不需要账号 |
@@ -25,12 +25,15 @@ npm run dev                  # http://localhost:3000
 | `src/lib/nps.ts`、`src/lib/nlr.ts` | NPS 公告和门票、NLR 充电桩 |
 | `src/components/map/park-map.tsx` | MapLibre 地图：OpenFreeMap 底图 + 地形阴影 + USGS 卫星图 + 3D 地形，都不需要 key |
 
-新增或修改景点、推荐住宿后，重新生成照片署名和车程表：
+新增或修改景点、推荐住宿后，重新生成对应的数据（都是 `src/data/attractions/*.generated.ts`）：
 
 ```bash
-npm run data:photos   # 按 photoFile 到 Wikimedia Commons 查缩略图、作者、授权
-npm run data:travel   # 用 OSRM 按道路算各景点之间的车程
+npm run data:photos      # 按 photoFile 到 Wikimedia Commons 查缩略图、作者、授权
+npm run data:travel      # 用 OSRM 按道路算各景点、住宿之间的车程
+npm run data:trails      # 按 trail 途经点，用 Valhalla 沿 OpenStreetMap 步道生成徒步路线
 ```
+
+新增景点后，到 Google Maps 查它的评分和评论数，补进 `src/data/attractions/google.ts`（没有的话不参与热度排名）。
 
 `npm run dev` / `npm run build` 前会自动把 MapLibre 的 worker 文件复制到 `public/maplibre/`（v6 的 worker 是单独的 ES 模块，打包工具处理不了）。
 
@@ -61,6 +64,9 @@ npm run data:travel   # 用 OSRM 按道路算各景点之间的车程
 ### v1 基础功能：地图、景点、规划
 
 - [x] 景点地图：7 个公园共 68 个景点，地图和列表联动；照片、坐标、出发点、徒步数据、开放季节、许可证
+- [x] 中英文对照（地图标签、卡片），一键到 Google Maps 核对位置和评分
+- [x] 24 条徒步路线按 OpenStreetMap 真实步道画出，标出步道口；行程地图显示真实开车路线
+- [x] 热度排名：按 Google Maps 评论数在每个公园内排名（2026-09-23 快照），卡片上显示 Google 评分和评论数，默认按热度排序
 - [x] 公园特色介绍，按园内片区分组
 - [x] 行程规划：加入行程 → 设日期和天数 → 自动排好每天几点到哪、开车多久
 - [x] 按当天日出日落安排日出 / 日落景点，提示季节性关闭、许可证、天黑还在徒步、安排太满
@@ -99,15 +105,17 @@ npm run data:travel   # 用 OSRM 按道路算各景点之间的车程
 | 景点照片 | Wikimedia Commons（按授权署名） | 不需要 |
 | 车程 | OSRM 公共服务（景点和推荐住宿预先生成车程表；自定义住处在浏览器里实时查） | 不需要 |
 | 搜索酒店 / 地址 | Photon（基于 OpenStreetMap） | 不需要 |
+| 徒步路线 | Valhalla 公共服务（FOSSGIS），OpenStreetMap 步道 | 不需要 |
+| 热度、评分 | Google Maps 评分和评论数（自用阶段在浏览器里手动快照）；公开后换 Google Places API | 公开后需要 Google Cloud |
 | 地图底图 / 地形 / 卫星 | OpenFreeMap、AWS Terrain Tiles、USGS The National Map | 不需要 |
-| 评分 | Google Places API | Google Cloud |
 
 ## 注意事项
 
 - NPS API 只有"现在"的状态，季节性开放规律要自己整理历年数据；部分字段（如 trail 时长、Yosemite 路况）是空的
 - NLR 充电桩数据里有"暂时不可用"和很久没确认的站，要做可靠度评分
 - OSM 亚洲超市数据有误报（地名 Chinese Camp、China Peak 滑雪场）和漏报（Fresno、Visalia 一家没有），需要 Google Places 补漏 + 人工校对
-- Google Places 按字段计费；除 place_id 外不长期缓存，按要求署名
+- Google 评分和评论数目前是手动快照，不会自动更新。Google 条款不允许复制保存这些数据，自用可以；公开上线前要换成 Google Places API 实时查询（按字段计费，除 place_id 外不能长期缓存，要署名），或者去掉数字只留跳转链接
+- 同一景点在 Google 上常分成景点、步道口、观景台几个条目，评论分散；快照取评论最多的条目。从观景台出发的步道（比如从日落点下去的纳瓦霍环线）评论容易记在观景台上，名次会偏低。游客中心不参与排名
 - 不爬小红书（没有 API，有法律风险）；博主内容只做摘要 + 链接 / 嵌入
 
 ## 待办

@@ -2,29 +2,41 @@
 
 import Image from "next/image";
 import { useMemo, useRef, useState } from "react";
-import { ParkMap, type MapPoint } from "@/components/map/park-map";
+import { ParkMap, type MapPoint, type MapTrail } from "@/components/map/park-map";
 import { AddManyButton } from "@/components/trip/add-many-button";
 import { AddToTripButton } from "@/components/trip/add-to-trip-button";
 import { buttonSecondary } from "@/components/ui";
 import type { AttractionKind, AttractionWithPhoto } from "@/data/attractions";
+import { googleMapsUrl, googleSnapshotDate } from "@/data/attractions/google";
 import { fill, formatDuration } from "@/i18n/format";
-import { AttractionCard, type AttractionText } from "./attraction-card";
+import { AttractionCard, PopularityBadge, type AttractionText } from "./attraction-card";
 import { KIND_COLORS } from "./kinds";
 
 type Filter = "all" | "mustSee" | AttractionKind;
+type Sort = "rank" | "area";
+
+/** 按热度名次；不排名的游客中心按评论数接在后面，没有 Google 数据的放最后 */
+function byPopularity(a: AttractionWithPhoto, b: AttractionWithPhoto) {
+  return (
+    (a.hotRank ?? Infinity) - (b.hotRank ?? Infinity) || (b.google?.reviews ?? 0) - (a.google?.reviews ?? 0)
+  );
+}
 
 export function AttractionsExplorer({
   attractions,
   areas,
+  parkNameEn,
   text,
 }: {
   attractions: AttractionWithPhoto[];
-  /** 片区 key → 名称，决定列表分组和顺序 */
+  /** 片区 key → 名称，决定按片区分组时的顺序 */
   areas: Record<string, string>;
+  parkNameEn: string;
   text: AttractionText;
 }) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [filter, setFilter] = useState<Filter>("all");
+  const [sort, setSort] = useState<Sort>("rank");
   const mapRef = useRef<HTMLDivElement>(null);
   const t = text.attraction;
 
@@ -36,20 +48,35 @@ export function AttractionsExplorer({
     [attractions, filter],
   );
   const points = useMemo<MapPoint[]>(
-    () =>
-      visible.map((a) => ({
+    () => [
+      // 步道口的小白点画在下面，景点标记盖在上面
+      ...visible.flatMap((a) =>
+        a.trailLine
+          ? [{ id: `${a.id}:trailhead`, lat: a.trailLine.path[0][1], lon: a.trailLine.path[0][0], label: "", color: "#ffffff", small: true }]
+          : [],
+      ),
+      ...visible.map((a) => ({
         id: a.id,
         lat: a.lat,
         lon: a.lon,
         label: a.nameZh,
+        sublabel: a.nameEn,
         color: KIND_COLORS[a.kind],
         emphasis: a.mustSee,
       })),
+    ],
     [visible],
   );
-  const groups = Object.entries(areas)
-    .map(([key, name]) => ({ key, name, items: visible.filter((a) => a.area === key) }))
-    .filter((group) => group.items.length > 0);
+  const trails = useMemo<MapTrail[]>(
+    () => visible.flatMap((a) => (a.trailLine ? [{ id: a.id, path: a.trailLine.path }] : [])),
+    [visible],
+  );
+  const groups =
+    sort === "rank"
+      ? [{ key: "rank", name: "", items: [...visible].sort(byPopularity) }]
+      : Object.entries(areas)
+          .map(([key, name]) => ({ key, name, items: visible.filter((a) => a.area === key) }))
+          .filter((group) => group.items.length > 0);
   const kinds = [...new Set(attractions.map((a) => a.kind))];
   const mustSeeIds = attractions.filter((a) => a.mustSee).map((a) => a.id);
   const selected = attractions.find((a) => a.id === selectedId);
@@ -81,6 +108,8 @@ export function AttractionsExplorer({
         <div ref={mapRef} className="scroll-mt-20 lg:sticky lg:top-20">
           <ParkMap
             points={points}
+            trails={trails}
+            highlightTrailId={selectedId}
             selectedId={selectedId}
             onSelect={selectFromMap}
             text={text.map}
@@ -89,13 +118,16 @@ export function AttractionsExplorer({
             {selected && (
               <div className="absolute right-3 bottom-10 left-3 flex max-w-md gap-3 rounded-xl bg-white p-2.5 shadow-lg dark:bg-stone-900">
                 {selected.photo && (
-                  <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-lg bg-stone-100">
+                  <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-stone-100">
                     <Image src={selected.photo.url} alt="" fill sizes="96px" className="object-cover" />
                   </div>
                 )}
                 <div className="min-w-0 flex-1">
                   <div className="flex items-start justify-between gap-2">
-                    <p className="truncate font-semibold">{selected.nameZh}</p>
+                    <div className="min-w-0">
+                      <p className="truncate font-semibold">{selected.nameZh}</p>
+                      <p className="truncate text-xs text-stone-500">{selected.nameEn}</p>
+                    </div>
                     <button
                       type="button"
                       aria-label={t.close}
@@ -105,11 +137,32 @@ export function AttractionsExplorer({
                       ✕
                     </button>
                   </div>
-                  <p className="truncate text-xs text-stone-500">
-                    {text.kinds[selected.kind]} · {fill(t.duration, { d: formatDuration(selected.durationMin, text.units) })}
+                  <p className="mt-0.5 flex flex-wrap items-center gap-x-2 text-xs text-stone-500">
+                    <span>
+                      {text.kinds[selected.kind]} · {fill(t.duration, { d: formatDuration(selected.durationMin, text.units) })}
+                    </span>
+                    <PopularityBadge attraction={selected} text={text} />
                   </p>
+                  {selected.trailLine && (
+                    <p className="text-xs text-amber-800 dark:text-amber-400">
+                      🥾{" "}
+                      {fill(t.trailLength, {
+                        km: selected.trailLine.km.toFixed(1),
+                        type: selected.trailLine.loop ? t.loopTrail : t.oneWay,
+                      })}
+                    </p>
+                  )}
                   <div className="mt-2 flex flex-wrap gap-1.5">
                     <AddToTripButton id={selected.id} text={text.trip} />
+                    <a
+                      className={buttonSecondary}
+                      href={googleMapsUrl(selected, parkNameEn)}
+                      target="_blank"
+                      rel="noreferrer"
+                      title={t.googleMapsHint}
+                    >
+                      {t.googleMaps}
+                    </a>
                     <button type="button" className={buttonSecondary} onClick={() => scrollToCard(selected.id)}>
                       {t.details}
                     </button>
@@ -123,6 +176,29 @@ export function AttractionsExplorer({
 
       <div className="space-y-6 lg:col-span-2">
         <div className="space-y-3">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div className="flex rounded-lg border border-stone-200 p-0.5 text-xs dark:border-stone-700">
+              {(["rank", "area"] as const).map((mode) => (
+                <button
+                  key={mode}
+                  type="button"
+                  onClick={() => setSort(mode)}
+                  className={`rounded-md px-2.5 py-1 ${
+                    sort === mode ? "bg-stone-900 text-white dark:bg-stone-100 dark:text-stone-900" : "text-stone-600"
+                  }`}
+                >
+                  {mode === "rank" ? `🔥 ${t.sortByRank}` : t.sortByArea}
+                </button>
+              ))}
+            </div>
+            {mustSeeIds.length > 0 && (
+              <AddManyButton
+                ids={mustSeeIds}
+                label={fill(t.addAllMustSee, { n: mustSeeIds.length })}
+                doneLabel={t.allMustSeeAdded}
+              />
+            )}
+          </div>
           <div className="flex flex-wrap gap-2">
             <button type="button" className={chip(filter === "all")} onClick={() => setFilter("all")}>
               {t.all} {attractions.length}
@@ -137,23 +213,22 @@ export function AttractionsExplorer({
               </button>
             ))}
           </div>
-          {mustSeeIds.length > 0 && (
-            <AddManyButton
-              ids={mustSeeIds}
-              label={fill(t.addAllMustSee, { n: mustSeeIds.length })}
-              doneLabel={t.allMustSeeAdded}
-            />
+          {sort === "rank" && (
+            <p className="text-[11px] leading-relaxed text-stone-400">
+              {fill(t.popularityNote, { date: googleSnapshotDate })}
+            </p>
           )}
         </div>
 
         {groups.map((group) => (
           <section key={group.key}>
-            <h3 className="mb-3 text-sm font-semibold text-stone-500">{group.name}</h3>
+            {group.name && <h3 className="mb-3 text-sm font-semibold text-stone-500">{group.name}</h3>}
             <div className="space-y-4">
               {group.items.map((attraction) => (
                 <AttractionCard
                   key={attraction.id}
                   attraction={attraction}
+                  parkNameEn={parkNameEn}
                   text={text}
                   selected={attraction.id === selectedId}
                   onShowOnMap={() => selectFromList(attraction.id)}

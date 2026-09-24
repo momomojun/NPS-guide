@@ -19,6 +19,13 @@ export interface Hike {
   loop?: boolean;
 }
 
+/** 步道路线怎么画：从出发点（没有就用景点位置）按顺序经过 via，环线最后回到出发点 */
+export interface TrailPlan {
+  /** 途经点，最后一个是终点；不填就直接走到景点位置 */
+  via?: { lat: number; lon: number }[];
+  loop?: boolean;
+}
+
 export interface Attraction {
   id: string;
   /** NPS parkCode */
@@ -52,6 +59,16 @@ export interface Attraction {
   tips?: string[];
   /** Wikimedia Commons 文件名，作者和授权由 scripts/build-photos.mjs 生成 */
   photoFile?: string;
+  /** 步道路线，由 scripts/build-trails.mjs 按 OpenStreetMap 步道生成 */
+  trail?: TrailPlan;
+}
+
+/** Google Maps 上对应条目的评分快照，见 google.ts */
+export interface GooglePlace {
+  /** Google Maps 上的条目名，可能是步道口、观景台 */
+  name: string;
+  rating: number;
+  reviews: number;
 }
 
 export interface Photo {

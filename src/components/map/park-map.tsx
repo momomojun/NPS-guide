@@ -9,11 +9,21 @@ export interface MapPoint {
   lat: number;
   lon: number;
   label: string;
+  /** 第二行小字，一般是英文名，方便对照 Google Maps */
+  sublabel?: string;
   color: string;
   /** 必去景点画大一点，标签优先显示 */
   emphasis?: boolean;
   /** 圆点里显示的字：行程序号，或住处的“住” */
   badge?: string;
+  /** 小白点（步道口），不显示标签、不能点 */
+  small?: boolean;
+}
+
+export interface MapTrail {
+  id: string;
+  /** [经度, 纬度] */
+  path: [number, number][];
 }
 
 export interface MapText {
@@ -22,6 +32,8 @@ export interface MapText {
   terrain: string;
   routeNote: string;
   loading: string;
+  trailLegend: string;
+  roadLegend: string;
 }
 
 // 都是免费、不需要 key 的服务
@@ -31,6 +43,10 @@ const IMAGERY_TILES =
   "https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}";
 // worker 文件由 scripts/copy-maplibre-worker.mjs 复制到 public/
 const WORKER_URL = "/maplibre/maplibre-gl-worker.mjs";
+
+const TRAIL_COLOR = "#b45309";
+const TRAIL_HIGHLIGHT = "#dc2626";
+const ROAD_COLOR = "#2563eb";
 
 const EMPTY: GeoJSON.FeatureCollection = { type: "FeatureCollection", features: [] };
 
@@ -45,23 +61,24 @@ function pointsToGeoJSON(points: MapPoint[]): GeoJSON.FeatureCollection {
         label: point.label,
         color: point.color,
         emphasis: point.emphasis ?? false,
+        small: point.small ?? false,
+        ...(point.sublabel ? { sublabel: point.sublabel } : {}),
         ...(point.badge === undefined ? {} : { badge: point.badge }),
       },
     })),
   };
 }
 
-function routeToGeoJSON(route: { lat: number; lon: number }[] | undefined): GeoJSON.FeatureCollection {
-  if (!route || route.length < 2) return EMPTY;
+function linesToGeoJSON(lines: { id: string; coordinates: [number, number][] }[]): GeoJSON.FeatureCollection {
   return {
     type: "FeatureCollection",
-    features: [
-      {
+    features: lines
+      .filter((line) => line.coordinates.length > 1)
+      .map((line) => ({
         type: "Feature",
-        geometry: { type: "LineString", coordinates: route.map((p) => [p.lon, p.lat]) },
-        properties: {},
-      },
-    ],
+        geometry: { type: "LineString", coordinates: line.coordinates },
+        properties: { id: line.id },
+      })),
   };
 }
 
@@ -79,7 +96,7 @@ function fitToPoints(map: MapLibreMap, points: MapPoint[], animate: boolean) {
       [Math.min(...lons), Math.min(...lats)],
       [Math.max(...lons), Math.max(...lats)],
     ],
-    { padding: 56, maxZoom: 13, duration },
+    { padding: 64, maxZoom: 13, duration },
   );
 }
 
@@ -87,7 +104,10 @@ export function ParkMap({
   points,
   selectedId = null,
   onSelect,
+  trails,
+  highlightTrailId = null,
   route,
+  roadPath,
   text,
   className = "",
   children,
@@ -95,8 +115,14 @@ export function ParkMap({
   points: MapPoint[];
   selectedId?: string | null;
   onSelect?: (id: string) => void;
-  /** 按顺序用虚线连起来（行程模式），可以和标记点不同，比如最后回到住处 */
+  /** 徒步路线 */
+  trails?: MapTrail[];
+  /** 高亮哪条步道（一般是选中的景点） */
+  highlightTrailId?: string | null;
+  /** 按顺序用虚线连起来（行程模式，还没拿到真实道路时） */
   route?: { lat: number; lon: number }[];
+  /** 真实开车路线 [经度, 纬度]，有它就不画虚线 */
+  roadPath?: [number, number][];
   text: MapText;
   className?: string;
   /** 叠在地图上的内容，比如选中景点的卡片 */
@@ -166,6 +192,30 @@ export function ParkMap({
           firstLabel,
         );
 
+        instance.addSource("road", { type: "geojson", data: EMPTY });
+        instance.addLayer({
+          id: "road",
+          type: "line",
+          source: "road",
+          layout: { "line-join": "round", "line-cap": "round" },
+          paint: { "line-color": ROAD_COLOR, "line-width": 4, "line-opacity": 0.75 },
+        });
+        instance.addSource("trails", { type: "geojson", data: EMPTY });
+        instance.addLayer({
+          id: "trails",
+          type: "line",
+          source: "trails",
+          layout: { "line-join": "round", "line-cap": "round" },
+          paint: { "line-color": TRAIL_COLOR, "line-width": 2.5, "line-dasharray": [2, 1.2] },
+        });
+        instance.addLayer({
+          id: "trails-highlight",
+          type: "line",
+          source: "trails",
+          filter: ["==", ["get", "id"], ""],
+          layout: { "line-join": "round", "line-cap": "round" },
+          paint: { "line-color": TRAIL_HIGHLIGHT, "line-width": 4.5 },
+        });
         instance.addSource("route", { type: "geojson", data: EMPTY });
         instance.addLayer({
           id: "route",
@@ -191,10 +241,19 @@ export function ParkMap({
           type: "circle",
           source: "points",
           paint: {
-            "circle-radius": ["case", ["has", "badge"], 10, ["==", ["get", "emphasis"], true], 8, 6],
+            "circle-radius": [
+              "case",
+              ["==", ["get", "small"], true],
+              3.5,
+              ["has", "badge"],
+              10,
+              ["==", ["get", "emphasis"], true],
+              8,
+              6,
+            ],
             "circle-color": ["get", "color"],
-            "circle-stroke-width": 2,
-            "circle-stroke-color": "#ffffff",
+            "circle-stroke-width": ["case", ["==", ["get", "small"], true], 1.5, 2],
+            "circle-stroke-color": ["case", ["==", ["get", "small"], true], "#57534e", "#ffffff"],
           },
         });
         instance.addLayer({
@@ -214,8 +273,15 @@ export function ParkMap({
           id: "points-label",
           type: "symbol",
           source: "points",
+          filter: ["!=", ["get", "small"], true],
           layout: {
-            "text-field": ["get", "label"],
+            // 中文名一行，英文名小一号放第二行
+            "text-field": [
+              "case",
+              ["has", "sublabel"],
+              ["format", ["get", "label"], {}, "\n", {}, ["get", "sublabel"], { "font-scale": 0.8 }],
+              ["get", "label"],
+            ],
             "text-font": ["Noto Sans Regular"],
             "text-size": 12,
             "text-offset": [0, 1.1],
@@ -227,8 +293,9 @@ export function ParkMap({
         });
 
         instance.on("click", "points", (event) => {
-          const id = event.features?.[0]?.properties?.id;
-          if (typeof id === "string") handleSelect(id);
+          const feature = event.features?.[0];
+          const id = feature?.properties?.id;
+          if (typeof id === "string" && feature?.properties?.small !== true) handleSelect(id);
         });
         instance.on("mouseenter", "points", () => {
           instance.getCanvas().style.cursor = "pointer";
@@ -253,22 +320,33 @@ export function ParkMap({
     const map = mapRef.current;
     if (!ready || !map) return;
     (map.getSource("points") as GeoJSONSource).setData(pointsToGeoJSON(points));
-    (map.getSource("route") as GeoJSONSource).setData(routeToGeoJSON(route));
+    (map.getSource("trails") as GeoJSONSource).setData(
+      linesToGeoJSON((trails ?? []).map((trail) => ({ id: trail.id, coordinates: trail.path }))),
+    );
+    (map.getSource("road") as GeoJSONSource).setData(
+      linesToGeoJSON(roadPath ? [{ id: "road", coordinates: roadPath }] : []),
+    );
+    (map.getSource("route") as GeoJSONSource).setData(
+      linesToGeoJSON(
+        route && !roadPath ? [{ id: "route", coordinates: route.map((p) => [p.lon, p.lat] as [number, number]) }] : [],
+      ),
+    );
     const key = points.map((p) => p.id).join("|");
     if (key !== fittedKeyRef.current) {
       // 第一次直接跳过去，之后换点集再用动画
       fitToPoints(map, points, fittedKeyRef.current !== "");
       fittedKeyRef.current = key;
     }
-  }, [ready, points, route]);
+  }, [ready, points, trails, route, roadPath]);
 
   useEffect(() => {
     const map = mapRef.current;
     if (!ready || !map) return;
     map.setFilter("points-selected", ["==", ["get", "id"], selectedId ?? ""]);
+    map.setFilter("trails-highlight", ["==", ["get", "id"], highlightTrailId ?? ""]);
     const point = points.find((p) => p.id === selectedId);
     if (point) map.easeTo({ center: [point.lon, point.lat], zoom: Math.max(map.getZoom(), 12), duration: 800 });
-  }, [ready, points, selectedId]);
+  }, [ready, points, selectedId, highlightTrailId]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -286,6 +364,8 @@ export function ParkMap({
 
   const toggle = (active: boolean) =>
     `rounded-md px-2 py-1 ${active ? "bg-stone-900 text-white" : "text-stone-700 hover:bg-stone-100"}`;
+  const hasTrails = (trails?.length ?? 0) > 0;
+  const showStraightRoute = !roadPath && route && route.length > 1;
 
   return (
     <div className={`relative overflow-hidden rounded-2xl border border-stone-200 bg-stone-100 dark:border-stone-800 ${className}`}>
@@ -296,27 +376,41 @@ export function ParkMap({
           {text.loading}
         </div>
       )}
-      <div className="absolute top-2 left-2 flex gap-1 rounded-lg bg-white/95 p-1 text-xs shadow">
-        <button type="button" className={toggle(!satellite)} onClick={() => setSatellite(false)}>
-          {text.map}
-        </button>
-        <button type="button" className={toggle(satellite)} onClick={() => setSatellite(true)}>
-          {text.satellite}
-        </button>
-        <button
-          type="button"
-          className={toggle(terrain)}
-          aria-pressed={terrain}
-          onClick={() => setTerrain((value) => !value)}
-        >
-          {text.terrain}
-        </button>
+      <div className="absolute top-2 left-2 space-y-1.5">
+        <div className="flex gap-1 rounded-lg bg-white/95 p-1 text-xs shadow">
+          <button type="button" className={toggle(!satellite)} onClick={() => setSatellite(false)}>
+            {text.map}
+          </button>
+          <button type="button" className={toggle(satellite)} onClick={() => setSatellite(true)}>
+            {text.satellite}
+          </button>
+          <button
+            type="button"
+            className={toggle(terrain)}
+            aria-pressed={terrain}
+            onClick={() => setTerrain((value) => !value)}
+          >
+            {text.terrain}
+          </button>
+        </div>
+        {(hasTrails || roadPath || showStraightRoute) && (
+          <div className="flex w-fit flex-col gap-0.5 rounded-lg bg-white/90 px-2 py-1 text-[11px] text-stone-600 shadow">
+            {roadPath && (
+              <span className="flex items-center gap-1.5">
+                <span className="inline-block h-1 w-4 rounded" style={{ backgroundColor: ROAD_COLOR }} />
+                {text.roadLegend}
+              </span>
+            )}
+            {hasTrails && (
+              <span className="flex items-center gap-1.5">
+                <span className="inline-block w-4 border-t-2 border-dashed" style={{ borderColor: TRAIL_COLOR }} />
+                {text.trailLegend}
+              </span>
+            )}
+            {showStraightRoute && <span>{text.routeNote}</span>}
+          </div>
+        )}
       </div>
-      {route && route.length > 1 && (
-        <p className="absolute top-12 left-2 rounded bg-white/90 px-1.5 py-0.5 text-[11px] text-stone-600">
-          {text.routeNote}
-        </p>
-      )}
       {children}
     </div>
   );

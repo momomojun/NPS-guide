@@ -75,6 +75,7 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
         <AttractionsExplorer
           attractions={attractions}
           areas={park.areas}
+          parkNameEn={park.nameEn}
           text={{
             attraction: dict.attraction,
             kinds: dict.kinds,

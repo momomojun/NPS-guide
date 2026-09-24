@@ -30,6 +30,7 @@ export default async function PlanPage({ params }: PageProps<"/[locale]/plan">) 
         return {
           code: park.code,
           nameZh: park.nameZh,
+          nameEn: park.nameEn,
           lat: park.gateway.lat,
           lon: park.gateway.lon,
           timeZone: park.timeZone,

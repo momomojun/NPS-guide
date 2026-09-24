@@ -1,15 +1,16 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { KIND_COLORS } from "@/components/attractions/kinds";
-import { ParkMap, type MapPoint } from "@/components/map/park-map";
+import { ParkMap, type MapPoint, type MapTrail } from "@/components/map/park-map";
 import { AddToTripButton } from "@/components/trip/add-to-trip-button";
 import { buttonPrimary, buttonSecondary } from "@/components/ui";
 import type { AttractionWithPhoto } from "@/data/attractions";
+import { googleMapsUrl } from "@/data/attractions/google";
 import type { LodgingOption } from "@/data/lodging";
 import { fill, formatDuration } from "@/i18n/format";
 import { addDays } from "@/lib/dates";
-import { drivingMinutesFrom } from "@/lib/osrm-client";
+import { drivingMinutesFrom, drivingRoute } from "@/lib/osrm-client";
 import { buildTimeline, NOMINAL_SUN, rankLodging, type PlanStop } from "@/lib/planner";
 import { formatClock, minutesOfDay, sunTimes } from "@/lib/sun";
 import { moveItem, setNight } from "@/lib/trip-edit";
@@ -62,6 +63,8 @@ export function Planner({
   const [pickerPark, setPickerPark] = useState(parks[0]?.code ?? "");
   const [dragSource, setDragSource] = useState<DragSpot | null>(null);
   const [dragTarget, setDragTarget] = useState<DragSpot | null>(null);
+  // 真实开车路线，按途经点缓存；null 表示查失败，退回画虚线
+  const [roadRoutes, setRoadRoutes] = useState<Record<string, [number, number][] | null>>({});
 
   const byId = useMemo(() => new Map(attractions.map((a) => [a.id, a])), [attractions]);
   const parkByCode = useMemo(() => new Map(parks.map((p) => [p.code, p])), [parks]);
@@ -220,6 +223,8 @@ export function Planner({
     badge: "住",
   });
   const mapPoints: MapPoint[] = [];
+  const mapTrails: MapTrail[] = [];
+  // 开车是开到停车场 / 步道口，再沿步道走到景点
   const mapRoute: { lat: number; lon: number }[] = [];
   if (mapView && mapView.rows.length > 0) {
     if (mapView.from) {
@@ -227,8 +232,21 @@ export function Planner({
       mapRoute.push(mapView.from);
     }
     mapView.rows.forEach(({ stop }, k) => {
-      mapPoints.push({ id: stop.id, lat: stop.lat, lon: stop.lon, label: stop.nameZh, color: KIND_COLORS[stop.kind], badge: String(k + 1) });
-      mapRoute.push(stop);
+      if (stop.trailLine) {
+        const [lon, lat] = stop.trailLine.path[0];
+        mapPoints.push({ id: `${stop.id}:trailhead`, lat, lon, label: "", color: "#ffffff", small: true });
+        mapTrails.push({ id: stop.id, path: stop.trailLine.path });
+      }
+      mapPoints.push({
+        id: stop.id,
+        lat: stop.lat,
+        lon: stop.lon,
+        label: stop.nameZh,
+        sublabel: stop.nameEn,
+        color: KIND_COLORS[stop.kind],
+        badge: String(k + 1),
+      });
+      mapRoute.push(stop.start ?? stop);
     });
     if (mapView.to) {
       if (mapView.to.id !== mapView.from?.id) mapPoints.push(lodgingPoint(mapView.to, "lodging-to"));
@@ -237,9 +255,22 @@ export function Planner({
   } else {
     for (const id of allIds) {
       const stop = byId.get(id);
-      if (stop) mapPoints.push({ id, lat: stop.lat, lon: stop.lon, label: stop.nameZh, color: KIND_COLORS[stop.kind] });
+      if (stop) {
+        mapPoints.push({ id, lat: stop.lat, lon: stop.lon, label: stop.nameZh, sublabel: stop.nameEn, color: KIND_COLORS[stop.kind] });
+      }
     }
   }
+
+  const routeKey = mapRoute.length > 1 ? mapRoute.map((p) => `${p.lon.toFixed(5)},${p.lat.toFixed(5)}`).join(";") : "";
+  useEffect(() => {
+    if (!routeKey || routeKey in roadRoutes) return;
+    drivingRoute(routeKey).then(
+      (path) => setRoadRoutes((current) => ({ ...current, [routeKey]: path })),
+      () => setRoadRoutes((current) => ({ ...current, [routeKey]: null })),
+    );
+  }, [routeKey, roadRoutes]);
+  const roadPath = (routeKey && roadRoutes[routeKey]) || undefined;
+  const parkNameEn = (code: string) => parkByCode.get(code)?.nameEn ?? "";
 
   const chip = (active: boolean) =>
     `rounded-full px-3 py-1 text-xs ${
@@ -347,6 +378,7 @@ export function Planner({
                 selectedId={selectedId}
                 onSelect={(id) => selectInList(view.day, id)}
                 onEdit={updateTrip}
+                mapsUrl={(stop) => googleMapsUrl(stop, parkNameEn(stop.park))}
                 drag={drag}
                 header={
                   view.day === 0 && view.rows.length > 0 ? (
@@ -452,7 +484,10 @@ export function Planner({
             )}
             <ParkMap
               points={mapPoints}
+              trails={mapTrails}
+              highlightTrailId={selectedId}
               route={mapRoute}
+              roadPath={roadPath}
               selectedId={selectedId}
               onSelect={(id) => {
                 if (!id.startsWith("lodging-")) selectOnMap(id);

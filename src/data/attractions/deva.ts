@@ -49,6 +49,7 @@ export const deathValley: Attraction[] = [
     lon: -116.83776,
     start: { lat: 36.42076, lon: -116.84656, nameZh: "Golden Canyon 步道口" },
     durationMin: 120,
+    trail: { via: [{ lat: 36.4246, lon: -116.83194 }, { lat: 36.42757, lon: -116.82501 }] },
     hike: { distanceMi: 3, difficulty: "moderate" },
     bestMonths: COOL_SEASON,
     summary: "走进金黄色岩壁的峡谷，尽头是红色的 Red Cathedral 岩壁；也可以一路走到 Zabriskie Point。",

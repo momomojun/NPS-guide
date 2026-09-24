@@ -4,8 +4,9 @@ import { CreditedPhoto } from "@/components/credited-photo";
 import { AddToTripButton } from "@/components/trip/add-to-trip-button";
 import { buttonSecondary } from "@/components/ui";
 import type { AttractionWithPhoto } from "@/data/attractions";
+import { googleMapsUrl, googleSnapshotDate } from "@/data/attractions/google";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { fill, formatDuration, formatKm, formatMeters, formatMonths } from "@/i18n/format";
+import { fill, formatCount, formatDuration, formatKm, formatMeters, formatMonths } from "@/i18n/format";
 import { KIND_COLORS } from "./kinds";
 
 export type AttractionText = Pick<
@@ -13,13 +14,35 @@ export type AttractionText = Pick<
   "attraction" | "kinds" | "difficulty" | "timeOfDay" | "units" | "trip" | "map"
 >;
 
+/** 热度名次（按 Google 评论数）+ Google 评分和评论数；没有 Google 数据时不显示 */
+export function PopularityBadge({ attraction, text }: { attraction: AttractionWithPhoto; text: AttractionText }) {
+  const { google, hotRank } = attraction;
+  if (!google) return null;
+  const t = text.attraction;
+  return (
+    <span
+      className="inline-flex flex-wrap items-center gap-x-1.5 text-[11px]"
+      title={fill(t.googleSource, { name: google.name, date: googleSnapshotDate })}
+    >
+      {hotRank !== undefined && (
+        <span className="font-medium text-orange-700 dark:text-orange-400">🔥 {fill(t.hotRank, { n: hotRank })}</span>
+      )}
+      <span className="text-stone-500">
+        {fill(t.googleRating, { rating: google.rating.toFixed(1), reviews: formatCount(google.reviews) })}
+      </span>
+    </span>
+  );
+}
+
 export function AttractionCard({
   attraction: a,
+  parkNameEn,
   text,
   selected,
   onShowOnMap,
 }: {
   attraction: AttractionWithPhoto;
+  parkNameEn: string;
   text: AttractionText;
   selected: boolean;
   onShowOnMap: () => void;
@@ -59,7 +82,10 @@ export function AttractionCard({
               </span>
             )}
           </div>
-          <p className="text-xs text-stone-500">{a.nameEn}</p>
+          <div className="mt-0.5 flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+            <p className="text-sm text-stone-500">{a.nameEn}</p>
+            <PopularityBadge attraction={a} text={text} />
+          </div>
         </header>
 
         <ul className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-stone-600 dark:text-stone-400">
@@ -101,6 +127,12 @@ export function AttractionCard({
 
         <p className="text-sm leading-relaxed text-stone-700 dark:text-stone-300">{a.summary}</p>
 
+        {a.trailLine && (
+          <p className="text-xs text-amber-800 dark:text-amber-400">
+            🥾 {fill(t.trailLength, { km: a.trailLine.km.toFixed(1), type: a.trailLine.loop ? t.loopTrail : t.oneWay })}
+          </p>
+        )}
+
         {(a.tips || a.permit || a.start) && (
           <details className="text-sm">
             <summary className="cursor-pointer text-emerald-700 dark:text-emerald-400">{t.tips}</summary>
@@ -119,6 +151,15 @@ export function AttractionCard({
           <button type="button" className={buttonSecondary} onClick={onShowOnMap}>
             {t.showOnMap}
           </button>
+          <a
+            className={buttonSecondary}
+            href={googleMapsUrl(a, parkNameEn)}
+            target="_blank"
+            rel="noreferrer"
+            title={t.googleMapsHint}
+          >
+            {t.googleMaps}
+          </a>
           <a
             className={buttonSecondary}
             href={`https://www.google.com/maps/dir/?api=1&destination=${destination.lat},${destination.lon}`}

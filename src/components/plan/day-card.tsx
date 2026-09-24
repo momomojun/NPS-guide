@@ -32,6 +32,7 @@ export function DayCard({
   selectedId,
   onSelect,
   onEdit,
+  mapsUrl,
   drag,
   header,
   footer,
@@ -46,6 +47,8 @@ export function DayCard({
   selectedId: string | null;
   onSelect: (id: string) => void;
   onEdit: (change: (trip: Trip) => Trip) => void;
+  /** 景点在 Google Maps 上的搜索链接 */
+  mapsUrl: (stop: AttractionWithPhoto) => string;
   drag: DragHandlers;
   /** 卡片顶部的内容，比如第 1 天的出发地 */
   header?: ReactNode;
@@ -263,6 +266,10 @@ export function DayCard({
                             onEdit((trip) =>
                               setItemStatus(trip, day, index, item.status === "skipped" ? "planned" : "skipped"),
                             ),
+                        },
+                        {
+                          label: t.openGoogleMaps,
+                          onSelect: () => window.open(mapsUrl(stop), "_blank", "noopener"),
                         },
                         {
                           label: t.actions.remove,
