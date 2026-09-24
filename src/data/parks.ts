@@ -9,6 +9,10 @@ export interface Park {
   region: RegionId;
   /** 公园特色，两三句话 */
   intro: string;
+  /** 最适合去的月份 */
+  bestMonths: number[];
+  /** 一句话说明季节 */
+  seasonNote: string;
   /** 园内片区名称，景点按片区分组 */
   areas: Record<string, string>;
   /** 查询周边充电桩、补给点，以及排行程时的起点 */
@@ -31,6 +35,8 @@ export const parks: Park[] = [
     region: "sierra",
     intro:
       "花岗岩巨壁和瀑布的天下：酋长岩、半穹顶、优胜美地瀑布都挤在一条约 11 公里长的冰川山谷里。春季（4–6 月）瀑布最壮观；夏秋可以走 Tioga Road 去高山草甸；南边的 Mariposa Grove 有 500 多棵巨杉。",
+    bestMonths: [4, 5, 6, 9, 10],
+    seasonNote: "4–6 月瀑布最盛；9–10 月人少，Tioga Road 还开着。",
     areas: {
       valley: "优胜美地山谷",
       "glacier-point": "冰川点路",
@@ -49,6 +55,8 @@ export const parks: Park[] = [
     region: "sierra",
     intro:
       "两个相连的公园，主角是巨杉：谢尔曼将军树按体积是地球上最大的树。红杉公园在南（Giant Forest），国王峡谷在北（Grant Grove、Cedar Grove），两边开车约 1 小时。",
+    bestMonths: [5, 6, 7, 8, 9, 10],
+    seasonNote: "5–10 月最方便；冬季山路要带雪链，Cedar Grove 封路。",
     areas: {
       "giant-forest": "Giant Forest（红杉）",
       lodgepole: "Lodgepole",
@@ -67,6 +75,8 @@ export const parks: Park[] = [
     region: "vegas",
     intro:
       "北美最低、最热、最干的地方，Badwater 盐滩低于海平面 86 米。最佳季节是 11 月到 3 月；夏天白天常超过 46°C，只适合清晨开车看景。园内加油点少、油价贵，充电只有慢充。",
+    bestMonths: [11, 12, 1, 2, 3],
+    seasonNote: "11–3 月气温舒适；夏天酷热，只适合清晨开车看景。",
     areas: {
       "furnace-creek": "Furnace Creek",
       badwater: "Badwater Road 沿线",
@@ -85,6 +95,8 @@ export const parks: Park[] = [
     region: "vegas",
     intro:
       "在红色砂岩峡谷底部，抬头看 600 多米高的岩壁。招牌是天使降临（需要许可证）和窄缝（在维珍河里逆流徒步）。主峡谷大部分时间只能坐免费班车，停车是最大难题。",
+    bestMonths: [4, 5, 9, 10, 11],
+    seasonNote: "春秋最舒服；夏天炎热、7–9 月有山洪，窄缝 6–10 月水温合适。",
     areas: {
       canyon: "锡安峡谷（班车区）",
       south: "南入口 / Springdale",
@@ -103,6 +115,8 @@ export const parks: Park[] = [
     region: "vegas",
     intro:
       "其实不是峡谷，而是高原边缘被侵蚀出的一连串“圆形剧场”，里面站满了叫 hoodoo 的石柱，密度世界第一。海拔 2,400–2,800 米，夏天凉快、冬天积雪；也是国际暗夜公园，星空极好。",
+    bestMonths: [5, 6, 7, 8, 9, 10],
+    seasonNote: "高海拔夏天也凉快；冬天常有雪，雪中石林很美。",
     areas: {
       amphitheater: "布莱斯圆形剧场",
       "scenic-drive": "南段景观道",
@@ -120,6 +134,8 @@ export const parks: Park[] = [
     region: "vegas",
     intro:
       "科罗拉多河切出的约 1.6 公里深的大峡谷，从南缘看出去是近 20 亿年的岩层，日出日落时颜色变化最大。南缘全年开放、设施齐全；北缘只在夏秋开放，2025 年受山火影响，出发前查官网。",
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    seasonNote: "春秋最舒服；夏天南缘不算太热，但峡谷里非常热。",
     areas: {
       village: "南缘村（游客中心）",
       hermit: "Hermit Road（西段）",
@@ -137,6 +153,8 @@ export const parks: Park[] = [
     region: "alaska",
     intro:
       "北美最高峰德纳里（6,190 米）所在地，更是看野生动物的地方：灰熊、驼鹿、驯鹿、大角羊和狼。夏季私家车只能开到 Mile 15，再往里坐巴士；冬季大部分区域关闭，但能看极光、参观雪橇犬。",
+    bestMonths: [6, 7, 8, 9],
+    seasonNote: "6–8 月巴士运营、野生动物最多；9 月有秋色，冬季看极光。",
     areas: {
       entrance: "入口区",
       "park-road": "公园路（Mile 13–15）",

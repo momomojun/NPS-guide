@@ -18,12 +18,14 @@ npm run dev                  # http://localhost:3000
 | `src/i18n/` | 界面文案。简体撰写，繁体用 OpenCC 自动转换（台湾用语，“米”转“公尺”） |
 | `src/data/parks.ts` | 7 个公园：特色介绍、园内片区、定位点、时区、常用机场、非居民附加费 |
 | `src/data/attractions/` | 每个公园一个文件的景点数据；`*.generated.ts` 由脚本生成，不要手改 |
-| `src/lib/planner.ts` | 排行程：公园内按路线排序 → 按天切分（让最累的一天尽量轻松）→ 当天按日出日落排顺序 |
-| `src/lib/trip-store.ts` | 行程存在浏览器 localStorage，自用阶段不需要账号 |
+| `src/data/lodging.ts` | 各公园的推荐住宿：园内酒店 + 门户小镇，车程已算进车程表 |
+| `src/lib/planner.ts` | 排行程：公园内按路线排序 → 按天切分（让最累的一天尽量轻松）→ 当天按日出日落排顺序；早上从前一晚住处出发、晚上回当晚住处都算进去 |
+| `src/lib/trip-store.ts` | 行程（含每晚住处）存在浏览器 localStorage，自用阶段不需要账号 |
+| `src/lib/geocode.ts`、`src/lib/osrm-client.ts` | 自定义住处：Photon 搜酒店 / 地址，OSRM 在浏览器里算到各景点的车程 |
 | `src/lib/nps.ts`、`src/lib/nlr.ts` | NPS 公告和门票、NLR 充电桩 |
 | `src/components/map/park-map.tsx` | MapLibre 地图：OpenFreeMap 底图 + 地形阴影 + USGS 卫星图 + 3D 地形，都不需要 key |
 
-新增或修改景点后，重新生成照片署名和车程表：
+新增或修改景点、推荐住宿后，重新生成照片署名和车程表：
 
 ```bash
 npm run data:photos   # 按 photoFile 到 Wikimedia Commons 查缩略图、作者、授权
@@ -62,7 +64,9 @@ npm run data:travel   # 用 OSRM 按道路算各景点之间的车程
 - [x] 公园特色介绍，按园内片区分组
 - [x] 行程规划：加入行程 → 设日期和天数 → 自动排好每天几点到哪、开车多久
 - [x] 按当天日出日落安排日出 / 日落景点，提示季节性关闭、许可证、天黑还在徒步、安排太满
-- [x] 手动调整（上下移、换天、完成 / 跳过），按实际进度重排剩余行程
+- [x] 手动调整（拖拽排序、换天、完成 / 跳过），按实际进度重排剩余行程
+- [x] 住宿：每晚住哪（推荐园内酒店和门户小镇，或搜任意酒店 / 地址），车程从住处算起，一键按车程安排住宿
+- [x] 首页：主视觉、继续行程、本月适合去、公园分布地图、公园卡片一键加入必去景点
 - [x] 实时信息：NPS 公告、门票、周边充电桩（含可靠度标记）
 
 ### v2 差异化
@@ -71,7 +75,6 @@ npm run data:travel   # 用 OSRM 按道路算各景点之间的车程
 - [ ] 补能地图：充电桩和加油站画到地图上、手机信号；桩的可靠度评分 + 打卡（能用 / 坏了 / 找不到）
 - [ ] 亚洲补给：沿途中超、韩超、日超、东南亚超市，合口味的餐厅，"进园前最后补给点"
 - [ ] 预算估算：门票（含非居民规则、年卡是否划算）、油 / 电、餐饮、住宿
-- [ ] 住宿：行程里加上每晚住哪，车程从住处算起
 - [ ] 根据实际打卡学习个人配速，自动调整后续时间估算
 - [ ] PWA 离线可用（公园里经常没信号）
 
@@ -94,7 +97,8 @@ npm run data:travel   # 用 OSRM 按道路算各景点之间的车程
 | 餐饮、住宿成本基准 | GSA Per Diem API | api.data.gov |
 | 景点坐标、加油站、亚洲超市等 POI | OpenStreetMap（Overpass） | 不需要 |
 | 景点照片 | Wikimedia Commons（按授权署名） | 不需要 |
-| 车程 | OSRM 公共服务（预先生成车程表） | 不需要 |
+| 车程 | OSRM 公共服务（景点和推荐住宿预先生成车程表；自定义住处在浏览器里实时查） | 不需要 |
+| 搜索酒店 / 地址 | Photon（基于 OpenStreetMap） | 不需要 |
 | 地图底图 / 地形 / 卫星 | OpenFreeMap、AWS Terrain Tiles、USGS The National Map | 不需要 |
 | 评分 | Google Places API | Google Cloud |
 

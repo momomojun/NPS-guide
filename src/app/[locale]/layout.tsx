@@ -29,7 +29,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   return (
     <html lang={locale}>
       <body className="flex min-h-screen flex-col bg-stone-50 text-stone-900 antialiased dark:bg-stone-950 dark:text-stone-100">
-        <header className="border-b border-stone-200 bg-white dark:border-stone-800 dark:bg-stone-900">
+        <header className="sticky top-0 z-40 border-b border-stone-200 bg-white/85 backdrop-blur dark:border-stone-800 dark:bg-stone-900/85">
           <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
             <div className="flex items-center gap-6">
               <Link href={`/${locale}`} className="flex items-baseline gap-2">

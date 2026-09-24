@@ -1,8 +1,8 @@
 // 用 OSRM（OpenStreetMap 路网）预先算好车程表，排行程时直接查表，不在网页里实时调用。
-// 每个公园一张表（公园定位点 + 各景点的出发点），外加公园之间的一张表。
-// 新增景点后重新跑：node scripts/build-travel.mjs
+// 每个公园一张表（公园定位点 + 各景点的出发点 + 推荐住宿），外加公园之间的一张表。
+// 新增景点或住宿后重新跑：npm run data:travel
 import { writeFileSync } from "node:fs";
-import { attractions, parks, sleep, USER_AGENT } from "./load-data.mjs";
+import { attractions, lodgingOptions, parks, sleep, USER_AGENT } from "./load-data.mjs";
 
 const OUTPUT = new URL("../src/data/attractions/travel.generated.ts", import.meta.url);
 
@@ -20,8 +20,9 @@ async function durationTable(points) {
 const parkTravel = {};
 for (const park of parks) {
   const stops = attractions.filter((a) => a.park === park.code);
-  const nodes = ["gateway", ...stops.map((a) => a.id)];
-  const points = [park.gateway, ...stops.map((a) => a.start ?? a)];
+  const stays = lodgingOptions.filter((l) => l.park === park.code);
+  const nodes = ["gateway", ...stops.map((a) => a.id), ...stays.map((l) => l.id)];
+  const points = [park.gateway, ...stops.map((a) => a.start ?? a), ...stays];
   parkTravel[park.code] = { nodes, minutes: await durationTable(points) };
   console.log(`${park.code}: ${nodes.length} 个点`);
   await sleep(1100); // OSRM 公共服务要求每秒最多 1 次请求

@@ -6,9 +6,10 @@ import { bryceCanyon } from "../src/data/attractions/brca.ts";
 import { sequoiaKingsCanyon } from "../src/data/attractions/seki.ts";
 import { yosemite } from "../src/data/attractions/yose.ts";
 import { zion } from "../src/data/attractions/zion.ts";
+import { lodgingOptions } from "../src/data/lodging.ts";
 import { parks } from "../src/data/parks.ts";
 
-export { parks };
+export { lodgingOptions, parks };
 
 export const attractions = [
   ...yosemite,

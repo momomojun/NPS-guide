@@ -30,7 +30,7 @@ export function AttractionCard({
   return (
     <article
       id={`attraction-${a.id}`}
-      className={`scroll-mt-4 overflow-hidden rounded-2xl border bg-white transition dark:bg-stone-900 ${
+      className={`scroll-mt-24 overflow-hidden rounded-2xl border bg-white transition dark:bg-stone-900 ${
         selected ? "border-emerald-500 ring-2 ring-emerald-500/40" : "border-stone-200 dark:border-stone-800"
       }`}
     >

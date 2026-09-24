@@ -2,7 +2,7 @@
 
 import "maplibre-gl/dist/maplibre-gl.css";
 import type { GeoJSONSource, Map as MapLibreMap } from "maplibre-gl";
-import { useEffect, useEffectEvent, useRef, useState } from "react";
+import { useEffect, useEffectEvent, useRef, useState, type ReactNode } from "react";
 
 export interface MapPoint {
   id: string;
@@ -12,8 +12,8 @@ export interface MapPoint {
   color: string;
   /** 必去景点画大一点，标签优先显示 */
   emphasis?: boolean;
-  /** 行程模式下的序号 */
-  order?: number;
+  /** 圆点里显示的字：行程序号，或住处的“住” */
+  badge?: string;
 }
 
 export interface MapText {
@@ -21,6 +21,7 @@ export interface MapText {
   satellite: string;
   terrain: string;
   routeNote: string;
+  loading: string;
 }
 
 // 都是免费、不需要 key 的服务
@@ -28,7 +29,6 @@ const STYLE_URL = "https://tiles.openfreemap.org/styles/liberty";
 const TERRAIN_TILES = "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png";
 const IMAGERY_TILES =
   "https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}";
-
 // worker 文件由 scripts/copy-maplibre-worker.mjs 复制到 public/
 const WORKER_URL = "/maplibre/maplibre-gl-worker.mjs";
 
@@ -45,20 +45,20 @@ function pointsToGeoJSON(points: MapPoint[]): GeoJSON.FeatureCollection {
         label: point.label,
         color: point.color,
         emphasis: point.emphasis ?? false,
-        ...(point.order === undefined ? {} : { order: point.order }),
+        ...(point.badge === undefined ? {} : { badge: point.badge }),
       },
     })),
   };
 }
 
-function routeToGeoJSON(points: MapPoint[]): GeoJSON.FeatureCollection {
-  if (points.length < 2) return EMPTY;
+function routeToGeoJSON(route: { lat: number; lon: number }[] | undefined): GeoJSON.FeatureCollection {
+  if (!route || route.length < 2) return EMPTY;
   return {
     type: "FeatureCollection",
     features: [
       {
         type: "Feature",
-        geometry: { type: "LineString", coordinates: points.map((p) => [p.lon, p.lat]) },
+        geometry: { type: "LineString", coordinates: route.map((p) => [p.lon, p.lat]) },
         properties: {},
       },
     ],
@@ -87,17 +87,20 @@ export function ParkMap({
   points,
   selectedId = null,
   onSelect,
-  showRoute = false,
+  route,
   text,
   className = "",
+  children,
 }: {
   points: MapPoint[];
   selectedId?: string | null;
   onSelect?: (id: string) => void;
-  /** 按顺序用虚线连起来（行程模式） */
-  showRoute?: boolean;
+  /** 按顺序用虚线连起来（行程模式），可以和标记点不同，比如最后回到住处 */
+  route?: { lat: number; lon: number }[];
   text: MapText;
   className?: string;
+  /** 叠在地图上的内容，比如选中景点的卡片 */
+  children?: ReactNode;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
@@ -188,19 +191,19 @@ export function ParkMap({
           type: "circle",
           source: "points",
           paint: {
-            "circle-radius": ["case", ["has", "order"], 10, ["==", ["get", "emphasis"], true], 8, 6],
+            "circle-radius": ["case", ["has", "badge"], 10, ["==", ["get", "emphasis"], true], 8, 6],
             "circle-color": ["get", "color"],
             "circle-stroke-width": 2,
             "circle-stroke-color": "#ffffff",
           },
         });
         instance.addLayer({
-          id: "points-order",
+          id: "points-badge",
           type: "symbol",
           source: "points",
-          filter: ["has", "order"],
+          filter: ["has", "badge"],
           layout: {
-            "text-field": ["to-string", ["get", "order"]],
+            "text-field": ["get", "badge"],
             "text-font": ["Noto Sans Bold"],
             "text-size": 11,
             "text-allow-overlap": true,
@@ -250,14 +253,14 @@ export function ParkMap({
     const map = mapRef.current;
     if (!ready || !map) return;
     (map.getSource("points") as GeoJSONSource).setData(pointsToGeoJSON(points));
-    (map.getSource("route") as GeoJSONSource).setData(showRoute ? routeToGeoJSON(points) : EMPTY);
+    (map.getSource("route") as GeoJSONSource).setData(routeToGeoJSON(route));
     const key = points.map((p) => p.id).join("|");
     if (key !== fittedKeyRef.current) {
       // 第一次直接跳过去，之后换点集再用动画
       fitToPoints(map, points, fittedKeyRef.current !== "");
       fittedKeyRef.current = key;
     }
-  }, [ready, points, showRoute]);
+  }, [ready, points, route]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -287,7 +290,12 @@ export function ParkMap({
   return (
     <div className={`relative overflow-hidden rounded-2xl border border-stone-200 bg-stone-100 dark:border-stone-800 ${className}`}>
       {/* maplibre 的 CSS 会把容器设成 position: relative，所以用 h-full 而不是 inset-0 撑满 */}
-      <div ref={containerRef} className="h-full w-full" />
+      <div ref={containerRef} className={`h-full w-full transition-opacity duration-500 ${ready ? "opacity-100" : "opacity-0"}`} />
+      {!ready && (
+        <div className="absolute inset-0 flex animate-pulse items-center justify-center text-sm text-stone-400">
+          {text.loading}
+        </div>
+      )}
       <div className="absolute top-2 left-2 flex gap-1 rounded-lg bg-white/95 p-1 text-xs shadow">
         <button type="button" className={toggle(!satellite)} onClick={() => setSatellite(false)}>
           {text.map}
@@ -304,11 +312,12 @@ export function ParkMap({
           {text.terrain}
         </button>
       </div>
-      {showRoute && points.length > 1 && (
-        <p className="absolute bottom-9 left-2 rounded bg-white/90 px-1.5 py-0.5 text-[11px] text-stone-600">
+      {route && route.length > 1 && (
+        <p className="absolute top-12 left-2 rounded bg-white/90 px-1.5 py-0.5 text-[11px] text-stone-600">
           {text.routeNote}
         </p>
       )}
+      {children}
     </div>
   );
 }

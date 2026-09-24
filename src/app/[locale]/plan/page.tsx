@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Planner } from "@/components/plan/planner";
 import { attractions } from "@/data/attractions";
+import { lodgingOptions } from "@/data/lodging";
 import { parks } from "@/data/parks";
 import { hasLocale } from "@/i18n/config";
-import { localizeAttraction, localizePark } from "@/i18n/content";
+import { localizeAttraction, localizeLodging, localizePark } from "@/i18n/content";
 import { getDictionary } from "@/i18n/dictionaries";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/plan">): Promise<Metadata> {
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/plan">):
   return { title: getDictionary(locale).plan.title };
 }
 
-// 行程存在浏览器里，页面本身只提供景点和公园数据
+// 行程存在浏览器里，页面本身只提供景点、公园和住宿数据
 export default async function PlanPage({ params }: PageProps<"/[locale]/plan">) {
   const { locale } = await params;
   if (!hasLocale(locale)) notFound();
@@ -23,6 +24,7 @@ export default async function PlanPage({ params }: PageProps<"/[locale]/plan">) 
     <Planner
       locale={locale}
       attractions={attractions.map((a) => localizeAttraction(a, locale))}
+      lodgingOptions={lodgingOptions.map((option) => localizeLodging(option, locale))}
       parks={parks.map((source) => {
         const park = localizePark(source, locale);
         return {

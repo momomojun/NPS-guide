@@ -7,6 +7,22 @@ export interface PlanStop {
   kind: AttractionKind;
   durationMin: number;
   bestTime?: TimeOfDay[];
+  lat: number;
+  lon: number;
+  /** 停车 / 出发点，开车按这里算 */
+  start?: { lat: number; lon: number };
+}
+
+/**
+ * 住处。推荐住宿的 id 以公园代码开头，车程查预先生成的表；
+ * 自定义住处（id 以 "custom-" 开头）带着加入时向 OSRM 查好的车程。
+ */
+export interface LodgingPoint {
+  id: string;
+  lat: number;
+  lon: number;
+  /** 自定义住处到各景点的车程（分钟） */
+  minutes?: Record<string, number>;
 }
 
 /** 当天第几分钟（当地时间） */
@@ -18,12 +34,28 @@ export interface SunWindow {
 /** 没设出发日期时用的大致日出日落 */
 export const NOMINAL_SUN: SunWindow = { sunrise: 6 * 60 + 30, sunset: 18 * 60 + 30 };
 
+export interface DayContext {
+  sun: SunWindow;
+  /** 前一晚住处，当天从这里出发 */
+  from?: LodgingPoint;
+  /** 当晚住处 */
+  to?: LodgingPoint;
+  /** 前一天最后去的景点；没设住处时用来算跨公园的来程 */
+  previous?: PlanStop;
+}
+
 /** 每段车程额外算上停车、走到步道口的时间 */
 const TRANSITION_MIN = 10;
-/** 没有日出安排时，一天从几点开始 */
+/** 从住处出发的时间（没有日出安排时） */
+const DEPART_FROM_LODGING = 8 * 60;
+/** 不知道住哪时，第一个景点几点开始 */
 const DAY_START = 8 * 60 + 30;
 /** 活动 + 开车超过这个时长，算安排太满 */
 const DAY_LIMIT_MIN = 11 * 60;
+/** 晚于这个时间才回到住处，提示太晚 */
+const LATE_RETURN = 22 * 60;
+/** 早上开车超过这个时长，就不安排赶日出了 */
+const SUNRISE_MAX_DRIVE = 60;
 /** 单段车程超过这个时长，建议飞过去或者拆成两段旅行 */
 export const FAR_TRANSFER_MIN = 10 * 60;
 /** 超过这个数量就不逐一比较当天的顺序了（8! = 40320 种） */
@@ -31,6 +63,27 @@ const MAX_PERMUTE = 8;
 
 export function legMinutes(from: string, to: string): number {
   return travelMinutes(from, to) + TRANSITION_MIN;
+}
+
+const RAD = Math.PI / 180;
+
+function distanceKm(a: { lat: number; lon: number }, b: { lat: number; lon: number }): number {
+  const h =
+    Math.sin(((b.lat - a.lat) * RAD) / 2) ** 2 +
+    Math.cos(a.lat * RAD) * Math.cos(b.lat * RAD) * Math.sin(((b.lon - a.lon) * RAD) / 2) ** 2;
+  return 2 * 6371 * Math.asin(Math.sqrt(h));
+}
+
+/** 住处到景点（out）或景点回住处（back）的车程 */
+export function lodgingLeg(lodging: LodgingPoint, stop: PlanStop, direction: "out" | "back"): number {
+  const known = lodging.minutes?.[stop.id];
+  if (known !== undefined) return known + TRANSITION_MIN;
+  if (!lodging.id.startsWith("custom-")) {
+    const minutes = direction === "out" ? travelMinutes(lodging.id, stop.id) : travelMinutes(stop.id, lodging.id);
+    return minutes + TRANSITION_MIN;
+  }
+  // 没查到路网车程时按直线估算：绕路系数 1.35、平均时速 55 公里
+  return Math.round(((distanceKm(lodging, stop.start ?? stop) * 1.35) / 55) * 60) + TRANSITION_MIN;
 }
 
 function routeCost(start: string, route: PlanStop[]): number {
@@ -104,11 +157,22 @@ function inboundMinutes(previous: PlanStop | undefined, first: PlanStop | undefi
   return legMinutes(previous.id, first.id);
 }
 
+function morningMinutes(context: Omit<DayContext, "sun">, first: PlanStop | undefined): number {
+  if (!first) return 0;
+  return context.from ? lodgingLeg(context.from, first, "out") : inboundMinutes(context.previous, first);
+}
+
+function eveningMinutes(context: Omit<DayContext, "sun">, last: PlanStop | undefined): number {
+  return last && context.to ? lodgingLeg(context.to, last, "back") : 0;
+}
+
+export type LodgingLookup = (day: number) => { from?: LodgingPoint; to?: LodgingPoint };
+
 /**
  * 把排好顺序的景点切成 dayCount 天，让最忙的一天尽量轻松（线性划分，动态规划）。
- * 一天的工作量 = 景点停留时间 + 当天的车程（含跨公园的来程）。
+ * 一天的工作量 = 景点停留时间 + 当天的车程（含从住处出发、回住处，或跨公园的来程）。
  */
-export function splitIntoDays(sequence: PlanStop[], dayCount: number): PlanStop[][] {
+export function splitIntoDays(sequence: PlanStop[], dayCount: number, lodgingFor?: LodgingLookup): PlanStop[][] {
   const n = sequence.length;
   const duration = [0];
   const legs = [0];
@@ -116,11 +180,18 @@ export function splitIntoDays(sequence: PlanStop[], dayCount: number): PlanStop[
     duration.push(duration[k] + sequence[k].durationMin);
     legs.push(legs[k] + (k > 0 ? legMinutes(sequence[k - 1].id, sequence[k].id) : 0));
   }
-  // 第 i..j-1 个景点放在同一天的工作量
-  const load = (i: number, j: number) =>
-    j <= i
-      ? 0
-      : duration[j] - duration[i] + (legs[j] - legs[i + 1]) + inboundMinutes(sequence[i - 1], sequence[i]);
+  // 第 day 天走第 i..j-1 个景点的工作量
+  const load = (i: number, j: number, day: number) => {
+    if (j <= i) return 0;
+    const lodging = { ...lodgingFor?.(day), previous: sequence[i - 1] };
+    return (
+      duration[j] -
+      duration[i] +
+      (legs[j] - legs[i + 1]) +
+      morningMinutes(lodging, sequence[i]) +
+      eveningMinutes(lodging, sequence[j - 1])
+    );
+  };
 
   // best[d][j]：前 j 个景点分成 d 天时，最忙那天的最小工作量；cut 记录最后一天从哪开始
   const best = Array.from({ length: dayCount + 1 }, () => new Array<number>(n + 1).fill(Infinity));
@@ -129,7 +200,7 @@ export function splitIntoDays(sequence: PlanStop[], dayCount: number): PlanStop[
   for (let d = 1; d <= dayCount; d++) {
     for (let j = 0; j <= n; j++) {
       for (let i = 0; i <= j; i++) {
-        const value = Math.max(best[d - 1][i], load(i, j));
+        const value = Math.max(best[d - 1][i], load(i, j, d - 1));
         // 取等号时选更靠后的切点，让空闲日留在行程末尾
         if (value <= best[d][j]) {
           best[d][j] = value;
@@ -151,16 +222,16 @@ export function splitIntoDays(sequence: PlanStop[], dayCount: number): PlanStop[
 
 type Slot = "sunrise" | "sunset" | "night" | "any";
 
-/** 只有当天第一个景点能卡日出（当天要长途转场时不卡），最后一个能卡日落或夜晚 */
-function slotsFor(stops: PlanStop[], hasInbound: boolean): Slot[] {
+/** 只有当天第一个景点能卡日出（早上要开很久时不卡），最后一个能卡日落或夜晚 */
+function slotsFor(stops: PlanStop[], allowSunrise: boolean): Slot[] {
   const slots: Slot[] = stops.map(() => "any");
   if (stops.length === 0) return slots;
   const prefers = (i: number, time: TimeOfDay) => stops[i].bestTime?.includes(time) ?? false;
   const last = stops.length - 1;
-  const onlyStopPrefersSunrise = stops.length === 1 && stops[0].bestTime?.[0] === "sunrise" && !hasInbound;
+  const onlyStopPrefersSunrise = stops.length === 1 && stops[0].bestTime?.[0] === "sunrise" && allowSunrise;
   if (prefers(last, "night")) slots[last] = "night";
   else if (prefers(last, "sunset") && !onlyStopPrefersSunrise) slots[last] = "sunset";
-  if (!hasInbound && slots[0] === "any" && prefers(0, "sunrise")) slots[0] = "sunrise";
+  if (allowSunrise && slots[0] === "any" && prefers(0, "sunrise")) slots[0] = "sunrise";
   return slots;
 }
 
@@ -168,7 +239,7 @@ export type StopWarning = "missSunset" | "dark" | "farTransfer";
 
 export interface TimelineEntry {
   id: string;
-  /** 开过来的分钟数；当天第一个只在跨公园时才有 */
+  /** 开过来的分钟数；当天第一个是从住处（或跨公园）开过来的 */
   driveMin: number;
   /** 为了赶日落、等天黑而空出来的分钟数 */
   waitMin: number;
@@ -180,17 +251,38 @@ export interface TimelineEntry {
 
 export interface DayTimeline {
   entries: TimelineEntry[];
+  /** 从前一晚住处出发的时间；不知道住哪时没有 */
+  departAt?: number;
+  returnDriveMin: number;
+  /** 回到当晚住处的时间；不知道住哪时没有 */
+  returnAt?: number;
   driveMin: number;
   activeMin: number;
   overloaded: boolean;
+  lateReturn: boolean;
 }
 
-/** drives[k] = 开到第 k 个景点的分钟数（第 0 个是跨公园来程，没有则为 0） */
-function simulate(stops: PlanStop[], drives: number[], sun: SunWindow): DayTimeline {
-  const slots = slotsFor(stops, drives[0] > 0);
-  let clock = slots[0] === "sunrise" ? sun.sunrise - 20 : DAY_START;
-  let driveTotal = 0;
-  let activeTotal = 0;
+/**
+ * drives[k] = 开到第 k 个景点的分钟数（第 0 个是从住处或跨公园开过来的），returnDrive = 回住处的分钟数
+ */
+function simulate(
+  stops: PlanStop[],
+  drives: number[],
+  returnDrive: number,
+  sun: SunWindow,
+  fromLodging: boolean,
+): DayTimeline {
+  const morning = drives[0] ?? 0;
+  const slots = slotsFor(stops, fromLodging ? morning <= SUNRISE_MAX_DRIVE : morning === 0);
+  const sunriseStart = sun.sunrise - 20;
+  const departAt = fromLodging
+    ? slots[0] === "sunrise"
+      ? sunriseStart - morning
+      : DEPART_FROM_LODGING
+    : undefined;
+  let clock = departAt ?? (slots[0] === "sunrise" ? sunriseStart : DAY_START);
+  let driveTotal = returnDrive;
+  let activeTotal = returnDrive;
 
   const entries = stops.map((stop, index): TimelineEntry => {
     const warnings: StopWarning[] = [];
@@ -215,20 +307,30 @@ function simulate(stops: PlanStop[], drives: number[], sun: SunWindow): DayTimel
     return { id: stop.id, driveMin, waitMin: start - arrive, start, end, slot: slots[index], warnings };
   });
 
-  return { entries, driveMin: driveTotal, activeMin: activeTotal, overloaded: activeTotal > DAY_LIMIT_MIN };
+  const returnAt = returnDrive > 0 && entries.length > 0 ? clock + returnDrive : undefined;
+  return {
+    entries,
+    departAt: entries.length > 0 ? departAt : undefined,
+    returnDriveMin: returnDrive,
+    returnAt,
+    driveMin: driveTotal,
+    activeMin: activeTotal,
+    overloaded: activeTotal > DAY_LIMIT_MIN,
+    lateReturn: returnAt !== undefined && returnAt > LATE_RETURN,
+  };
 }
 
-/** 按当天顺序推算每个景点几点到、几点走；previous 是前一天最后去的景点 */
-export function buildTimeline(stops: PlanStop[], sun: SunWindow, previous?: PlanStop): DayTimeline {
+/** 按当天顺序推算几点出发、几点到每个景点、几点回到住处 */
+export function buildTimeline(stops: PlanStop[], context: DayContext): DayTimeline {
   const drives = stops.map((stop, index) =>
-    index === 0 ? inboundMinutes(previous, stop) : legMinutes(stops[index - 1].id, stop.id),
+    index === 0 ? morningMinutes(context, stop) : legMinutes(stops[index - 1].id, stop.id),
   );
-  return simulate(stops, drives, sun);
+  return simulate(stops, drives, eveningMinutes(context, stops.at(-1)), context.sun, context.from !== undefined);
 }
 
-/** 一种当天顺序的代价：车程为主，天黑还在徒步、赶不上日落要扣分，卡上日出日落加分 */
+/** 一种当天顺序的代价：车程为主，天黑还在徒步、赶不上日落、回住处太晚要扣分，卡上日出日落加分 */
 function orderCost(timeline: DayTimeline, stops: PlanStop[]): number {
-  let cost = timeline.driveMin;
+  let cost = timeline.driveMin + (timeline.lateReturn ? 60 : 0);
   timeline.entries.forEach((entry, k) => {
     const prefers = stops[k].bestTime ?? [];
     if (entry.warnings.includes("dark")) cost += 240;
@@ -241,18 +343,20 @@ function orderCost(timeline: DayTimeline, stops: PlanStop[]): number {
 }
 
 /** 当天的最佳顺序：景点不多时逐一比较所有顺序（Heap 算法），太多时保持路线顺序 */
-export function arrangeDay(stops: PlanStop[], sun: SunWindow, previous?: PlanStop): PlanStop[] {
+export function arrangeDay(stops: PlanStop[], context: DayContext): PlanStop[] {
   const n = stops.length;
   if (n <= 1 || n > MAX_PERMUTE) return stops;
 
-  // 先把当天景点两两之间的车程算好，比较顺序时只查数组
+  // 先把当天用到的车程都算好，比较顺序时只查数组
   const legs = stops.map((a) => stops.map((b) => (a === b ? 0 : legMinutes(a.id, b.id))));
-  const inbound = stops.map((stop) => inboundMinutes(previous, stop));
+  const morning = stops.map((stop) => morningMinutes(context, stop));
+  const evening = stops.map((stop) => eveningMinutes(context, stop));
   const order = stops.map((_, i) => i);
   const evaluate = () => {
     const ordered = order.map((i) => stops[i]);
-    const drives = order.map((i, k) => (k === 0 ? inbound[i] : legs[order[k - 1]][i]));
-    return orderCost(simulate(ordered, drives, sun), ordered);
+    const drives = order.map((i, k) => (k === 0 ? morning[i] : legs[order[k - 1]][i]));
+    const timeline = simulate(ordered, drives, evening[order[n - 1]], context.sun, context.from !== undefined);
+    return orderCost(timeline, ordered);
   };
 
   let bestOrder = [...order];
@@ -277,4 +381,27 @@ export function arrangeDay(stops: PlanStop[], sun: SunWindow, previous?: PlanSto
     }
   }
   return bestOrder.map((k) => stops[k]);
+}
+
+export interface LodgingRank<T extends LodgingPoint> {
+  lodging: T;
+  /** 当天最后一个景点回到这里 */
+  backMin?: number;
+  /** 第二天从这里去第一个景点 */
+  outMin?: number;
+}
+
+/** 按“今晚回去 + 明早出发”的总车程给候选住处排序 */
+export function rankLodging<T extends LodgingPoint>(
+  candidates: T[],
+  lastStop: PlanStop | undefined,
+  nextStop: PlanStop | undefined,
+): LodgingRank<T>[] {
+  return candidates
+    .map((lodging) => ({
+      lodging,
+      backMin: lastStop ? lodgingLeg(lodging, lastStop, "back") : undefined,
+      outMin: nextStop ? lodgingLeg(lodging, nextStop, "out") : undefined,
+    }))
+    .sort((a, b) => (a.backMin ?? 0) + (a.outMin ?? 0) - ((b.backMin ?? 0) + (b.outMin ?? 0)));
 }

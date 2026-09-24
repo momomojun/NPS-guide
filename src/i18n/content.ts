@@ -1,10 +1,11 @@
 import "server-only";
 import type { AttractionWithPhoto } from "@/data/attractions";
+import type { LodgingOption } from "@/data/lodging";
 import type { Park } from "@/data/parks";
 import type { Locale } from "./config";
 import { localize } from "./convert";
 
-// 景点和公园的中文内容都用简体撰写，繁体页面在服务端转换后再交给客户端组件
+// 景点、公园、住宿的中文内容都用简体撰写，繁体页面在服务端转换后再交给客户端组件
 
 export function localizeAttraction(attraction: AttractionWithPhoto, locale: Locale): AttractionWithPhoto {
   if (locale === "zh-Hans") return attraction;
@@ -26,7 +27,13 @@ export function localizePark(park: Park, locale: Locale): Park {
     ...park,
     nameZh: t(park.nameZh),
     intro: t(park.intro),
+    seasonNote: t(park.seasonNote),
     areas: Object.fromEntries(Object.entries(park.areas).map(([key, name]) => [key, t(name)])),
     gateway: { ...park.gateway, nameZh: t(park.gateway.nameZh) },
   };
+}
+
+export function localizeLodging(option: LodgingOption, locale: Locale): LodgingOption {
+  if (locale === "zh-Hans") return option;
+  return { ...option, nameZh: localize(option.nameZh, locale), note: localize(option.note, locale) };
 }
