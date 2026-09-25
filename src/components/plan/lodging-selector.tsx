@@ -20,6 +20,7 @@ export function LodgingSelector({
   text,
   onChange,
   measure,
+  airbnbHref,
 }: {
   label: string;
   hint?: string;
@@ -35,6 +36,8 @@ export function LodgingSelector({
   onChange: (lodging: TripLodging | null) => void;
   /** 自定义住处：向 OSRM 查到各景点的车程 */
   measure: (place: { lat: number; lon: number }) => Promise<Record<string, number>>;
+  /** 这晚（连住就是整段）的 Airbnb 搜索链接；住处没有 Airbnb 地名时返回 undefined */
+  airbnbHref?: (lodging: ResolvedLodging) => string | undefined;
 }) {
   const t = text.plan.lodging;
   const [open, setOpen] = useState(false);
@@ -89,12 +92,52 @@ export function LodgingSelector({
     lodging.custom ? null : (
       <span
         className={`ml-2 border px-1.5 text-[10px] ${
-          lodging.inPark ? "border-pine-600/50 text-pine-700" : "border-line text-mute"
+          lodging.rental
+            ? "border-clay-600/50 text-clay-700"
+            : lodging.inPark
+              ? "border-pine-600/50 text-pine-700"
+              : "border-line text-mute"
         }`}
       >
-        {lodging.inPark ? t.inPark : t.outside}
+        {lodging.rental ? t.rental : lodging.inPark ? t.inPark : t.outside}
       </span>
     );
+  const airbnbLink = (lodging: ResolvedLodging) => {
+    const href = airbnbHref?.(lodging);
+    return href ? (
+      <a href={href} target="_blank" rel="noreferrer" title={t.airbnbHint} className="link-line text-xs text-clay-700">
+        {t.airbnb}
+      </a>
+    ) : null;
+  };
+  const hotels = ranked.filter((rank) => !rank.lodging.rental);
+  const rentals = ranked.filter((rank) => rank.lodging.rental);
+  const optionList = (list: LodgingRank<ResolvedLodging>[]) => (
+    <ul className="divide-y divide-line bg-paper">
+      {list.map((rank) => (
+        <li key={rank.lodging.id} className="flex items-start justify-between gap-3 px-4 py-3">
+          <div className="min-w-0">
+            <p className="font-serif text-base">
+              {rank.lodging.name}
+              {tag(rank.lodging)}
+            </p>
+            {rank.lodging.note && <p className="mt-0.5 text-xs text-mute">{rank.lodging.note}</p>}
+            <p className="mt-0.5 flex flex-wrap items-center gap-x-3 text-xs text-ink-soft">
+              {legs(rank)}
+              {airbnbLink(rank.lodging)}
+            </p>
+          </div>
+          <button
+            type="button"
+            className={`${buttonPrimary} shrink-0`}
+            onClick={() => choose({ kind: "option", id: rank.lodging.id })}
+          >
+            {t.pick}
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
 
   return (
     <div className="bg-paper-deep/70 px-4 py-3.5 text-sm">
@@ -113,6 +156,7 @@ export function LodgingSelector({
             )}
           </p>
           {current && status && <p className="mt-1 pl-6 text-xs text-mute">{status}</p>}
+          {current && airbnbHref?.(current) && <p className="mt-1 pl-6">{airbnbLink(current)}</p>}
           {!current && hint && <p className="mt-1 pl-6 text-xs text-mute">{hint}</p>}
           {notice && <p className="mt-1 pl-6 text-xs text-clay-700">{notice}</p>}
         </div>
@@ -150,30 +194,16 @@ export function LodgingSelector({
             </button>
           )}
 
-          {ranked.length > 0 && (
+          {hotels.length > 0 && (
             <div>
               <p className="eyebrow mb-2 text-mute">{t.suggested}</p>
-              <ul className="divide-y divide-line bg-paper">
-                {ranked.slice(0, 6).map((rank) => (
-                  <li key={rank.lodging.id} className="flex items-start justify-between gap-3 px-4 py-3">
-                    <div className="min-w-0">
-                      <p className="font-serif text-base">
-                        {rank.lodging.name}
-                        {tag(rank.lodging)}
-                      </p>
-                      {rank.lodging.note && <p className="mt-0.5 text-xs text-mute">{rank.lodging.note}</p>}
-                      <p className="mt-0.5 text-xs text-ink-soft">{legs(rank)}</p>
-                    </div>
-                    <button
-                      type="button"
-                      className={`${buttonPrimary} shrink-0`}
-                      onClick={() => choose({ kind: "option", id: rank.lodging.id })}
-                    >
-                      {t.pick}
-                    </button>
-                  </li>
-                ))}
-              </ul>
+              {optionList(hotels.slice(0, 6))}
+            </div>
+          )}
+          {rentals.length > 0 && (
+            <div>
+              <p className="eyebrow mb-2 text-mute">{t.rentals}</p>
+              {optionList(rentals.slice(0, 4))}
             </div>
           )}
 

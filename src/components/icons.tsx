@@ -110,3 +110,21 @@ export const IconClose = (props: IconProps) => (
     <path d="M6 6l12 12M18 6 6 18" />
   </Icon>
 );
+
+export const IconChevronLeft = (props: IconProps) => (
+  <Icon {...props}>
+    <path d="M15 5 8 12l7 7" />
+  </Icon>
+);
+
+export const IconChevronRight = (props: IconProps) => (
+  <Icon {...props}>
+    <path d="m9 5 7 7-7 7" />
+  </Icon>
+);
+
+export const IconExpand = (props: IconProps) => (
+  <Icon {...props}>
+    <path d="M14 4h6v6M10 20H4v-6M20 4l-6.5 6.5M4 20l6.5-6.5" />
+  </Icon>
+);

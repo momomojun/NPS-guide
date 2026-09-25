@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
+import { CommonsImage } from "@/components/commons-image";
 import { IconArrowRight } from "@/components/icons";
 import { buttonLarge } from "@/components/ui";
 
@@ -20,7 +20,13 @@ export interface HeroSlide {
 }
 
 /** 第一张多停一会儿，给开场动画留时间 */
-const FIRST_MS = 9000;
+const FIRST_MS = 7500;
+
+/** 第一张大图加载好了：告诉开场动画可以拉开幕布了 */
+function announceReady() {
+  document.documentElement.dataset.heroReady = "1";
+  window.dispatchEvent(new Event("nps:hero-ready"));
+}
 const SLIDE_MS = 6500;
 
 const order = (i: number) => ({ "--i": i }) as CSSProperties;
@@ -47,6 +53,13 @@ export function Hero({
 }) {
   const [index, setIndex] = useState(0);
   const [previous, setPrevious] = useState<number | null>(null);
+  const firstImage = useRef<HTMLImageElement>(null);
+
+  // 第一张图在 React 接手之前就从缓存里加载好了的话，onLoad 不会再触发，这里补一次
+  useEffect(() => {
+    const image = firstImage.current;
+    if (image?.complete && image.naturalWidth > 0) announceReady();
+  }, []);
   const count = slides.length;
   const current = slides[index];
 
@@ -79,11 +92,13 @@ export function Hero({
           className={`absolute inset-0 transition-opacity duration-[1800ms] ease-out ${i === index ? "opacity-100" : "opacity-0"}`}
         >
           {mounted(i) && (
-            <Image
+            <CommonsImage
               src={slide.image}
               alt=""
               fill
               priority={i === 0}
+              ref={i === 0 ? firstImage : undefined}
+              onLoad={i === 0 ? announceReady : undefined}
               sizes="100vw"
               className={`object-cover ${animated(i) ? "animate-kenburns" : ""}`}
             />

@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useMemo, useRef, useState } from "react";
+import { CommonsImage } from "@/components/commons-image";
 import { IconClose, IconTrail } from "@/components/icons";
 import { ParkMap, type MapPoint, type MapTrail } from "@/components/map/park-map";
 import { AddManyButton } from "@/components/trip/add-many-button";
@@ -117,7 +117,7 @@ export function AttractionsExplorer({
               <div className="absolute right-3 bottom-10 left-3 flex max-w-md gap-4 bg-paper p-3 shadow-[0_12px_40px_rgba(28,27,24,0.18)]">
                 {selected.photo && (
                   <div className="relative h-28 w-24 shrink-0 overflow-hidden bg-paper-deep">
-                    <Image src={selected.photo.url} alt="" fill sizes="96px" className="object-cover" />
+                    <CommonsImage src={selected.photo.url} alt="" fill sizes="96px" className="object-cover" />
                   </div>
                 )}
                 <div className="min-w-0 flex-1">

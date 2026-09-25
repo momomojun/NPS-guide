@@ -1,3 +1,5 @@
+import { fixedMinutes } from "@/data/attractions/route-fixes";
+
 // 浏览器里直接调用 OSRM 公共服务（支持跨域）：加自定义住处时查一次车程表，行程地图上查当天的真实开车路线
 const TABLE_URL = "https://router.project-osrm.org/table/v1/driving/";
 const ROUTE_URL = "https://router.project-osrm.org/route/v1/driving/";
@@ -33,7 +35,7 @@ export async function drivingMinutesFrom(
     if (data.code !== "Ok" || !data.durations) throw new Error(`OSRM: ${data.code}`);
     batch.forEach((destination, k) => {
       const seconds = data.durations![0][k + 1];
-      if (seconds != null) result[destination.id] = Math.round(seconds / 60);
+      if (seconds != null) result[destination.id] = fixedMinutes(Math.round(seconds / 60), destination.id);
     });
   }
   return result;

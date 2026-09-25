@@ -1,4 +1,5 @@
-import Image from "next/image";
+import type { ReactNode } from "react";
+import { CommonsImage } from "@/components/commons-image";
 import type { Photo } from "@/data/attractions/types";
 import { fill } from "@/i18n/format";
 
@@ -11,6 +12,7 @@ export function CreditedPhoto({
   className = "",
   imageClassName = "",
   linkCredit = true,
+  children,
 }: {
   photo: Photo;
   alt: string;
@@ -20,6 +22,8 @@ export function CreditedPhoto({
   imageClassName?: string;
   /** 外层已经是链接时不能再嵌套链接，改成纯文字 */
   linkCredit?: boolean;
+  /** 叠在照片上、署名下面的内容，比如点开大图的按钮 */
+  children?: ReactNode;
 }) {
   const credit = fill(creditTemplate, { author: photo.author, license: photo.license });
   const creditClass =
@@ -27,7 +31,8 @@ export function CreditedPhoto({
 
   return (
     <div className={`relative overflow-hidden bg-paper-deep ${className}`}>
-      <Image src={photo.url} alt={alt} fill sizes={sizes} className={`object-cover ${imageClassName}`} />
+      <CommonsImage src={photo.url} alt={alt} fill sizes={sizes} className={`object-cover ${imageClassName}`} />
+      {children}
       {linkCredit ? (
         <a href={photo.page} target="_blank" rel="noreferrer" className={`${creditClass} hover:bg-black/70`}>
           {credit}

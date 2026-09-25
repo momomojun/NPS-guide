@@ -1,0 +1,532 @@
+import type { Attraction } from "./types";
+
+// Teton Park Road 从 Taggart Lake 步道口到 Signal Mountain Lodge 这一段每年 11 月 1 日到次年 4 月 30 日不通车
+// （冬天压雪后可以滑雪、穿雪鞋），珍妮湖、弦湖、Lupine Meadows 都在这一段上
+const TETON_PARK_ROAD = [5, 6, 7, 8, 9, 10];
+// 珍妮湖渡船：2026 年 5 月 15 日–9 月 30 日
+const JENNY_LAKE_BOAT = [5, 6, 7, 8, 9];
+// Moose-Wilson Road 每年 11 月 1 日起中段封路不扫雪，通常 5 月重新通车；2026–2027 年北段还在施工
+const MOOSE_WILSON = [5, 6, 7, 8, 9, 10];
+const SOUTH_JENNY_LAKE = { lat: 43.75067, lon: -110.72346, nameZh: "South Jenny Lake 停车场" };
+const EAST_BOAT_DOCK = { lat: 43.75186, lon: -110.72573, nameZh: "珍妮湖东岸码头（渡船售票处）" };
+// 渡船对岸的西岸码头，步道从这里开始（Valhalla 会走 OSM 里的渡船航线过湖）
+const WEST_BOAT_DOCK = { lat: 43.76728, lon: -110.74405 };
+
+export const grandTeton: Attraction[] = [
+  {
+    id: "grte-jenny-lake",
+    park: "grte",
+    nameZh: "珍妮湖",
+    nameEn: "Jenny Lake",
+    kind: "experience",
+    area: "jenny-lake",
+    lat: 43.75186,
+    lon: -110.72573,
+    start: SOUTH_JENNY_LAKE,
+    durationMin: 60,
+    openMonths: TETON_PARK_ROAD,
+    closedNote:
+      "11 月到次年 4 月 Teton Park Road 从 Taggart Lake 步道口往北不通车，珍妮湖只能滑雪或穿雪鞋进去，渡船和游船也停运；冬天开车可以改去 Moose 一带和 191 号公路沿线的观景点看雪山。",
+    mustSee: true,
+    summary:
+      "冰川从 Cascade 峡谷流出、退去后被冰碛拦成的湖，对岸就是 Teewinot、Mount Owen 和峡谷口。南岸有游客中心、码头和环湖步道，可以坐渡船去对岸的隐秘瀑布，也可以租独木舟、皮划艇或坐约 1 小时的湖上游船。",
+    tips: [
+      "渡船和游船 2026 年 5 月 15 日–9 月 30 日运营；游船可以在 Jenny Lake Boating 官网预订，独木舟和皮划艇 6 月中旬起现场租，先到先得",
+      "South Jenny Lake 停车场夏天 9 点前后就满，尽量早到",
+      "东岸单行的 Jenny Lake Scenic Drive 上有 Jenny Lake Overlook，可以从高处看湖",
+    ],
+    photoFile: "Jenny Lake boat ride.jpg",
+  },
+  {
+    id: "grte-hidden-falls",
+    park: "grte",
+    nameZh: "隐秘瀑布 · 灵感点",
+    nameEn: "Hidden Falls & Inspiration Point",
+    kind: "hike",
+    area: "jenny-lake",
+    lat: 43.76632,
+    lon: -110.7512,
+    start: EAST_BOAT_DOCK,
+    durationMin: 150,
+    // 坐渡船到西岸码头，先去隐秘瀑布观景处，再爬到灵感点（终点）
+    trail: {
+      via: [WEST_BOAT_DOCK, { lat: 43.76501, lon: -110.75081 }, { lat: 43.76701, lon: -110.74826 }],
+    },
+    hike: { distanceMi: 1.8, gainFt: 550, difficulty: "easy" },
+    bestTime: ["morning"],
+    openMonths: JENNY_LAKE_BOAT,
+    closedNote:
+      "渡船只在 5 月中旬到 9 月底运营（11 月到次年 4 月 Teton Park Road 也不通车）；10 月可以沿珍妮湖南岸步道走过去，到灵感点往返约 9.2 公里、爬升约 270 米。",
+    mustSee: true,
+    permit: "渡船不用预约，在东岸码头现场买票（2026 年成人往返 $20、单程 $15）。",
+    summary:
+      "坐渡船横渡珍妮湖，从西岸码头走约 800 米到约 30 米高的隐秘瀑布，再沿石阶往上约 800 米到灵感点，脚下是珍妮湖，远处是整个 Jackson Hole 谷地。",
+    tips: [
+      "渡船约 10–15 分钟一班；2026 年 6 月 6 日–9 月 7 日 7:00–19:00 运营，5 月和 9 月是 9:00–17:00，末班船在关门时间开出",
+      "不坐船也可以沿南岸步道走：到隐秘瀑布往返约 7.9 公里，到灵感点往返约 9.2 公里",
+      "去灵感点有几段石阶和裸露的树根，春季和初夏常有残雪湿滑",
+    ],
+    photoFile: "Hidden Falls (48915972552).jpg",
+  },
+  {
+    id: "grte-teton-park-road",
+    park: "grte",
+    nameZh: "提顿公园路",
+    nameEn: "Teton Park Road",
+    kind: "drive",
+    area: "jenny-lake",
+    lat: 43.78962,
+    lon: -110.71342,
+    durationMin: 60,
+    bestTime: ["morning"],
+    openMonths: TETON_PARK_ROAD,
+    closedNote:
+      "每年 11 月 1 日到次年 4 月 30 日，Taggart Lake 步道口到 Signal Mountain Lodge 这段不通车：约 12 月中到 3 月中压雪后可以越野滑雪、穿雪鞋，4 月雪化后可以步行和骑车；开车看雪山可以改走全年通车的 191 号公路。",
+    mustSee: true,
+    summary:
+      "从 Moose 沿提顿山脚往北到 Jackson Lake Junction，全长约 32 公里，一路正对群峰；Teton Glacier、Cathedral Group、Mount Moran 等路边观景点和珍妮湖、弦湖、信号山都在这条路上。",
+    tips: [
+      "群峰朝东，上午顺光最好拍；看风景和动物只停在路边停车区，别停在草地上",
+      "北珍妮湖路口进去可以接单行的 Jenny Lake Scenic Drive，沿湖东岸绕一圈",
+      "2026–2027 年 Moose 入口站北边在修环岛，施工期间可能要多等约 20 分钟",
+    ],
+  },
+  {
+    id: "grte-oxbow-bend",
+    park: "grte",
+    nameZh: "牛轭湾",
+    nameEn: "Oxbow Bend",
+    kind: "viewpoint",
+    area: "jackson-lake",
+    lat: 43.86608,
+    lon: -110.54758,
+    durationMin: 30,
+    bestTime: ["sunrise"],
+    bestMonths: [9, 10],
+    mustSee: true,
+    summary:
+      "蛇河流出杰克逊湖后在这里绕了个大弯，水面平缓，无风的清晨 Mount Moran 倒映在河湾里；岸边柳丛常有驼鹿、水獭、河狸和秃鹰，9 月底到 10 月初山杨变黄时最美。",
+    tips: [
+      "在 Jackson Lake Junction 以东约 1.6 公里的路边停车区，日出前后常挤满摄影师，早点到",
+      "全年通车；和驼鹿至少保持 25 码（约 23 米），别为了拍照下到河边",
+      "秋天傍晚可以去西边不远的 Cattleman's Bridge 一带听马鹿求偶的叫声",
+    ],
+    photoFile: "Oxbow Bend Fall (54485677673).jpg",
+  },
+  {
+    id: "grte-mormon-row",
+    park: "grte",
+    nameZh: "摩门街谷仓",
+    nameEn: "Mormon Row Historic District",
+    kind: "landmark",
+    area: "hwy-191",
+    lat: 43.66069,
+    lon: -110.665,
+    durationMin: 45,
+    bestTime: ["sunrise"],
+    openMonths: [4, 5, 6, 7, 8, 9, 10, 11],
+    closedNote:
+      "积雪后（大约 12 月到次年 3 月）Antelope Flats Road 封路不扫雪，车开不进来，只能把车停在 191 号公路边，步行、滑雪或穿雪鞋约 3 公里进去；不想走可以改去 191 号公路边的 Glacier View 观景点。",
+    mustSee: true,
+    summary:
+      "1890 年代起摩门教移民在这里开垦的定居点，留下几座木头谷仓和农舍。T. A. Moulton 谷仓背靠提顿群峰，是公园最经典的照片之一；周围的 Antelope Flats 草原常有野牛和叉角羚。",
+    tips: [
+      "日出时群峰先被照亮，谷仓在前景里；清晨常有一排摄影师，注意别挡别人",
+      "2026 年保护修缮工程还在进行，部分建筑不能进去，可以在外面拍",
+      "野牛就在路边吃草时也要保持 25 码（约 23 米）以上，别下车靠近",
+    ],
+    photoFile: "Barns grand tetons.jpg",
+  },
+  {
+    id: "grte-schwabacher-landing",
+    park: "grte",
+    nameZh: "施瓦巴赫码头",
+    nameEn: "Schwabacher Landing",
+    kind: "viewpoint",
+    area: "hwy-191",
+    lat: 43.71151,
+    lon: -110.67059,
+    durationMin: 45,
+    hike: { distanceMi: 0.5, difficulty: "easy" },
+    bestTime: ["sunrise"],
+    openMonths: [5, 6, 7, 8, 9, 10, 11],
+    closedNote:
+      "下到河边的 Schwabacher Road 是土路，冬天积雪封闭，春天雪化后才开；这时可以改去 191 号公路边的蛇河观景台或 Glacier View 观景点。",
+    mustSee: true,
+    summary:
+      "蛇河边一串河狸筑坝形成的静水池，无风的早晨整排提顿群峰倒映在水里，是公园最有名的倒影机位；河边柳丛常有驼鹿和河狸。",
+    tips: [
+      "从 191 号公路（Moose Junction 以北约 6.4 公里）拐进约 1.6 公里的土路到河边停车场，沿河边步道走几百米就是最经典的倒影池",
+      "日出前后风最小、倒影最完整；夏天蚊子多，带驱蚊液",
+    ],
+    photoFile: "Schwabachers Landing at Sunrise.jpg",
+  },
+  {
+    id: "grte-snake-river-overlook",
+    park: "grte",
+    nameZh: "蛇河观景台",
+    nameEn: "Snake River Overlook",
+    kind: "viewpoint",
+    area: "hwy-191",
+    lat: 43.7539,
+    lon: -110.62409,
+    durationMin: 20,
+    bestTime: ["sunrise", "sunset"],
+    mustSee: true,
+    summary:
+      "1942 年安塞尔·亚当斯（Ansel Adams）在这里拍下名作《提顿山与蛇河》：蛇河在脚下拐出 S 形大弯，背后是整排提顿群峰。如今坡下的树长高了，挡住了一部分河湾，但视野依然开阔。",
+    tips: ["就在 191 号公路边，全年通车，停车方便", "日出时群峰被照亮最好看；傍晚逆光，适合拍剪影"],
+    photoFile: "Snake River Overlook in fall (29903369661).jpg",
+  },
+  {
+    id: "grte-craig-thomas-vc",
+    park: "grte",
+    nameZh: "克雷格·托马斯游客中心",
+    nameEn: "Craig Thomas Discovery and Visitor Center",
+    kind: "visitor",
+    area: "moose",
+    lat: 43.6533,
+    lon: -110.71853,
+    durationMin: 45,
+    openMonths: [4, 5, 6, 7, 8, 9, 10],
+    closedNote:
+      "游客中心 11 月到次年 4 月初关闭（2026 年开放期 4 月 10 日–10 月 31 日）；冬天可以去 Jackson 镇北边全年开放的 Jackson Hole & Greater Yellowstone 游客中心问路况、领地图。",
+    summary:
+      "公园的主游客中心，在 Moose，大落地窗正对提顿群峰；展厅讲这里的山、野生动物和人与土地的故事，可以领地图、问步道和路况。",
+    tips: ["从 Jackson 开车约 25 分钟，在 Moose 入口站外，不买门票也能进来", "附近的 Dornans（Moose 村）有加油站、商店和餐厅"],
+  },
+  {
+    id: "grte-chapel-transfiguration",
+    park: "grte",
+    nameZh: "显圣容教堂 · 梅诺渡口",
+    nameEn: "Chapel of the Transfiguration & Menor's Ferry",
+    kind: "landmark",
+    area: "moose",
+    lat: 43.66013,
+    lon: -110.71537,
+    durationMin: 45,
+    hike: { distanceMi: 0.5, difficulty: "easy", loop: true },
+    openMonths: [5, 6, 7, 8, 9, 10],
+    closedNote:
+      "教堂一般只在 5–9 月开门，冬季 Menors Ferry Road 积雪、不一定能开进来；冬天可以在 Moose 一带远眺群峰，或穿雪鞋走进去看教堂外观（以现场为准）。",
+    summary:
+      "1925 年建成的小木教堂，祭坛后的窗户正好框住提顿群峰。旁边的梅诺渡口保留着 1890 年代拓荒者 Bill Menor 的木屋、杂货店和蛇河渡船的复制品，沿河边小环线走一圈约 800 米。",
+    tips: [
+      "教堂属于圣公会，夏天周日有礼拜，其他时间白天开门参观，请保持安静",
+      "2026 年修环岛施工期间 Menors Ferry Road 工作日封闭、只在周末开放，停车位也减少了，出发前查 NPS 路况",
+    ],
+  },
+  {
+    id: "grte-lsr-preserve",
+    park: "grte",
+    nameZh: "洛克菲勒保护区 · 菲尔普斯湖",
+    nameEn: "Laurance S. Rockefeller Preserve – Phelps Lake",
+    kind: "hike",
+    area: "moose",
+    lat: 43.64135,
+    lon: -110.7887,
+    start: { lat: 43.62661, lon: -110.77345, nameZh: "LSR 保护区中心停车场" },
+    durationMin: 150,
+    hike: { distanceMi: 3, difficulty: "easy", loop: true },
+    openMonths: MOOSE_WILSON,
+    closedNote:
+      "每年 11 月起 Moose-Wilson Road 中段封路不扫雪，保护区停车场开不进去，要到次年 5 月前后才通车；冬天可以改去全年能开车到的 Taggart Lake 步道口。",
+    summary:
+      "洛克菲勒家族原来的 JY 牧场，2008 年起作为保护区开放，停车位只有约 50 个，所以人少安静。从保护区中心沿 Lake Creek 和 Woodland 两条步道绕一圈到菲尔普斯湖边，湖对面就是 Death Canyon 的出口。",
+    tips: [
+      "2026 年 9 月 8 日–11 月 15 日 Moose 到保护区这段路施工封闭，只能从南边 Teton Village 方向（Granite Canyon 入口）进来；工程持续到 2027 年",
+      "夏天停车场 9 点到 16 点基本是满的，满了要在入口排队等车位",
+      "保护区中心 2026 年开放期 6 月 1 日–9 月 20 日；想多走可以绕菲尔普斯湖一整圈（约 10.3 公里、爬升约 320 米）",
+    ],
+  },
+  {
+    id: "grte-moose-wilson-road",
+    park: "grte",
+    nameZh: "穆斯-威尔逊路",
+    nameEn: "Moose-Wilson Road",
+    kind: "drive",
+    area: "moose",
+    lat: 43.65409,
+    lon: -110.73795,
+    durationMin: 60,
+    bestTime: ["morning", "sunset"],
+    openMonths: MOOSE_WILSON,
+    closedNote:
+      "每年 11 月 1 日起中段（Death Canyon 路口到 Granite Canyon 步道口）封路不扫雪，只能滑雪、穿雪鞋或步行，通常 5 月重新通车；冬天看野生动物可以去 Jackson 镇边的国家麋鹿保护区。",
+    summary:
+      "连接 Moose 和 Teton Village 的林间小路，园内一段约 13 公里，路窄弯多；北端 Sawmill Ponds 一带的湿地常有驼鹿在水边吃草，夏末秋初常见黑熊在路边吃浆果。",
+    tips: [
+      "2026 年 9 月 8 日–11 月 15 日 Moose 到 LSR 保护区这段施工封闭（之后接着冬季封路），整个工程持续到 2027 年，出发前查 NPS 路况",
+      "禁止房车和拖车；只能停在指定的路边停车处，熊或驼鹿在路边时别下车",
+      "和熊保持 100 码（约 91 米）以上，和驼鹿至少 25 码（约 23 米）",
+    ],
+  },
+  {
+    id: "grte-cascade-canyon",
+    park: "grte",
+    nameZh: "卡斯卡德峡谷",
+    nameEn: "Cascade Canyon (to the Forks)",
+    kind: "hike",
+    area: "jenny-lake",
+    lat: 43.76451,
+    lon: -110.81691,
+    start: EAST_BOAT_DOCK,
+    durationMin: 360,
+    // 坐渡船到西岸码头，经灵感点进峡谷，终点是南北两条支谷的分岔口
+    trail: { via: [WEST_BOAT_DOCK, { lat: 43.76451, lon: -110.81691 }] },
+    hike: { distanceMi: 9.4, gainFt: 1480, difficulty: "hard" },
+    bestTime: ["morning"],
+    openMonths: [6, 7, 8, 9],
+    bestMonths: [7, 8, 9],
+    closedNote:
+      "峡谷里的积雪常到 6、7 月才化完，渡船 10 月起停运（不坐船往返要多走约 6.4 公里），11 月到次年 4 月 Teton Park Road 也不通车；这些时候可以改走隐秘瀑布 · 灵感点或 Taggart Lake。",
+    permit: "渡船不用预约，在东岸码头现场买票（2026 年成人往返 $20）。",
+    summary:
+      "从灵感点继续往西，走进冰川切出的 U 形峡谷，沿 Cascade Creek 平缓上行约 5.5 公里到南北两条支谷的分岔口；南侧抬头就是 Mount Owen 和 Grand Teton 的北壁，沿途常见驼鹿、黑熊和鼠兔。",
+    tips: [
+      "距离按坐渡船计算；不坐船要绕珍妮湖南岸，往返约 21.4 公里、爬升约 520 米",
+      "峡谷里熊和驼鹿很常见，结伴走、带防熊喷雾，和熊保持 100 码（约 91 米）以上",
+      "体力好可以从分岔口沿北支谷继续走到 Lake Solitude，往返还要再加约 9 公里",
+    ],
+  },
+  {
+    id: "grte-string-leigh-lake",
+    park: "grte",
+    nameZh: "弦湖 · 利湖",
+    nameEn: "String Lake & Leigh Lake",
+    kind: "hike",
+    area: "jenny-lake",
+    lat: 43.79731,
+    lon: -110.72908,
+    start: { lat: 43.78445, lon: -110.72739, nameZh: "String Lake 步道口停车场" },
+    durationMin: 90,
+    trail: {},
+    hike: { distanceMi: 1.8, gainFt: 110, difficulty: "easy" },
+    openMonths: TETON_PARK_ROAD,
+    closedNote:
+      "11 月到次年 4 月 Teton Park Road 北段不通车，弦湖一带只能滑雪或穿雪鞋进去；冬天可以改去全年能开车到的 Taggart Lake 步道口。",
+    summary:
+      "弦湖是夹在利湖和珍妮湖之间的一段狭长浅湖，湖水清澈，是园内游泳、划独木舟和野餐最热门的地方；沿东岸平坦的步道走约 1.5 公里就到利湖南岸，湖对面是 Mount Moran。",
+    tips: [
+      "夏天周末停车场上午就满，早点来；湖边有野餐桌和厕所",
+      "想多走可以绕弦湖一圈（约 6 公里、爬升约 160 米）",
+      "自带独木舟、皮划艇或桨板下水，要先办园内船只许可并通过入侵物种检查",
+    ],
+  },
+  {
+    id: "grte-taggart-lake",
+    park: "grte",
+    nameZh: "塔格特湖",
+    nameEn: "Taggart Lake",
+    kind: "hike",
+    area: "jenny-lake",
+    lat: 43.70149,
+    lon: -110.7519,
+    start: { lat: 43.69314, lon: -110.73294, nameZh: "Taggart Lake 步道口停车场" },
+    durationMin: 120,
+    trail: {},
+    hike: { distanceMi: 3, gainFt: 360, difficulty: "easy" },
+    summary:
+      "穿过 1985 年山火过火区里重新长起来的山杨林和鼠尾草地，走到冰碛围成的小湖边，湖后就是 Grand Teton 和 Nez Perce 等山峰，是园内最受欢迎的短途步道之一。",
+    tips: [
+      "2026 年步道北段封闭改造，只能走南线，往返约 6.8 公里、坡更陡，恢复时间以 NPS 公告为准",
+      "停车场夏天上午就满（2026 年也在施工），早点到",
+      "步道口在冬季封路段的南端，全年能开车到；冬天可以穿雪鞋、滑雪去湖边，约 12 月下旬到 3 月中旬还有免费的护林员带队雪鞋徒步（要电话预约）",
+    ],
+  },
+  {
+    id: "grte-delta-lake",
+    park: "grte",
+    nameZh: "三角洲湖",
+    nameEn: "Delta Lake",
+    kind: "hike",
+    area: "jenny-lake",
+    lat: 43.7325,
+    lon: -110.77176,
+    start: { lat: 43.73458, lon: -110.74153, nameZh: "Lupine Meadows 步道口" },
+    durationMin: 360,
+    trail: {},
+    hike: { distanceMi: 7.4, gainFt: 2300, difficulty: "hard" },
+    bestTime: ["morning"],
+    openMonths: [7, 8, 9],
+    closedNote:
+      "高处的积雪通常 7 月才化完，10 月又可能下雪，乱石坡有冰雪时很危险；其他月份可以改走 Taggart Lake 或隐秘瀑布 · 灵感点。",
+    summary:
+      "Grand Teton 正下方的高山湖（海拔约 2,748 米），湖水被上游 Teton 冰川磨出的岩粉染成青绿色，湖后就是 Grand Teton 和 Mount Owen 的岩壁，是近年最火的步道之一。",
+    tips: [
+      "大部分路程走去 Surprise / Amphitheater Lake 的官方步道，一路之字形上坡；最后一段是 NPS 不维护的非正式路线，要翻过乱石坡，需要一点找路能力",
+      "Lupine Meadows 停车场不大，夏天早上 7 点前后就可能停满",
+      "距离和爬升是常用的估算值，NPS 没有公布；2026 年夏天 NPS 在这条路线上修整路径、设路标，按标出的路线走，别踩出新的小路",
+    ],
+  },
+  {
+    id: "grte-jenny-lake-vc",
+    park: "grte",
+    nameZh: "珍妮湖游客中心",
+    nameEn: "Jenny Lake Visitor Center",
+    kind: "visitor",
+    area: "jenny-lake",
+    lat: 43.75148,
+    lon: -110.72233,
+    durationMin: 20,
+    openMonths: TETON_PARK_ROAD,
+    closedNote:
+      "游客中心约 10 月中旬到次年 5 月中旬关闭（2026 年开放期 5 月 15 日–10 月 12 日），11 月起 Teton Park Road 这段也不通车；冬天可以去 Jackson 镇上全年开放的 Jackson Hole & Greater Yellowstone 游客中心。",
+    summary:
+      "设在 1920 年代摄影师 Harrison Crandall 的老照相馆里，展出早年描绘提顿山的画作和照片；门前 Discovery Trail 的解说牌讲冰川怎样造出珍妮湖。",
+    tips: [
+      "渡船码头、环湖步道和 South Jenny Lake 停车场都在旁边，停车场夏天 9 点前后就满",
+      "旁边的 Jenny Lake Ranger Station 夏季（2026 年 6 月 6 日–9 月 7 日）提供登山和野营咨询",
+    ],
+  },
+  {
+    id: "grte-signal-mountain",
+    park: "grte",
+    nameZh: "信号山",
+    nameEn: "Signal Mountain Summit Road",
+    kind: "drive",
+    area: "jackson-lake",
+    lat: 43.84589,
+    lon: -110.57561,
+    durationMin: 60,
+    bestTime: ["sunset"],
+    openMonths: [5, 6, 7, 8, 9, 10],
+    closedNote:
+      "山顶路每年 11 月 1 日起封闭，春天要等雪化后才开（通常比 Teton Park Road 晚，一般在 5 月中下旬），冬天只能滑雪、穿雪鞋上去；可以改去山下的杰克逊湖大坝或牛轭湾。",
+    summary:
+      "从 Teton Park Road 拐上山，盘山约 8 公里、爬升约 240 米。Jackson Point 观景台俯瞰杰克逊湖和整排提顿群峰，山顶另一侧的观景点能看到蛇河流过的 Jackson Hole 谷地。",
+    tips: [
+      "山路窄、弯急，禁止房车和拖车",
+      "春天开放日期每年不同，以 NPS 路况公告为准",
+      "日落时群峰成剪影；山顶风大、气温低，带件外套",
+    ],
+  },
+  {
+    id: "grte-jackson-lake-dam",
+    park: "grte",
+    nameZh: "杰克逊湖大坝",
+    nameEn: "Jackson Lake Dam",
+    kind: "viewpoint",
+    area: "jackson-lake",
+    lat: 43.85727,
+    lon: -110.58939,
+    durationMin: 30,
+    summary:
+      "1911–1916 年建成的灌溉水坝，把杰克逊湖的最高水位抬高了约 9 米，湖水主要供下游爱达荷州的农田灌溉。坝顶和南侧停车场正对湖面和 Mount Moran，坝下的蛇河里常能看到鹈鹕、鱼鹰捕鱼。",
+    tips: [
+      "北边约 2 公里的 Willow Flats 观景台是一大片柳树湿地，清晨和傍晚常有驼鹿、马鹿",
+      "旁边 Jackson Lake Lodge 的大堂有约 18 米高的落地窗正对群峰，不住店也可以进去看（酒店约 5 月中到 10 月初营业）",
+      "2026 年干旱加上下游放水灌溉，杰克逊湖水位降到很低，湖边露出大片湖床，Colter Bay 码头 7 月就提前停业",
+    ],
+  },
+  {
+    id: "grte-colter-bay",
+    park: "grte",
+    nameZh: "科尔特湾 · 苍鹭池环线",
+    nameEn: "Colter Bay – Heron Pond & Swan Lake Loop",
+    kind: "hike",
+    area: "jackson-lake",
+    lat: 43.88587,
+    lon: -110.63581,
+    start: { lat: 43.90112, lon: -110.64154, nameZh: "Colter Bay 游客中心旁 Hermitage Point 步道口" },
+    durationMin: 120,
+    // 先沿步道往南到苍鹭池，再经天鹅湖绕回
+    trail: {
+      via: [
+        { lat: 43.88587, lon: -110.63581 },
+        { lat: 43.89114, lon: -110.63624 },
+      ],
+      loop: true,
+    },
+    hike: { distanceMi: 3.1, gainFt: 320, difficulty: "easy", loop: true },
+    openMonths: [5, 6, 7, 8, 9, 10],
+    closedNote:
+      "Colter Bay 的游客中心、商店和码头只在 5–9 月营业，冬天整个村子关闭、道路积雪；可以改去全年通车路边的牛轭湾或 Willow Flats 看湖光山色和野生动物。",
+    summary:
+      "杰克逊湖东岸的度假村，有游客中心、码头、商店和木屋。从这里出发的苍鹭池—天鹅湖环线平缓好走，池塘里常见河狸和水鸟，偶尔有驼鹿，苍鹭池对面就是 Mount Moran。",
+    tips: [
+      "游客中心 2026 年开放期 5 月 8 日–9 月 30 日；想更轻松可以走旁边沿湖的 Lakeshore Trail",
+      "杰克逊湖上的观光游船和早餐、晚餐游船从 Colter Bay 码头出发，2026 年因水位太低 7 月中旬就提前停航",
+      "码头旁有马厩，夏季有 1–2 小时的骑马游，要预约",
+    ],
+  },
+  {
+    id: "grte-cunningham-cabin",
+    park: "grte",
+    nameZh: "坎宁安小屋",
+    nameEn: "Cunningham Cabin Historic Site",
+    kind: "landmark",
+    area: "hwy-191",
+    lat: 43.77861,
+    lon: -110.5583,
+    durationMin: 20,
+    summary:
+      "1888 年 Pierce 和 Margaret Cunningham 夫妇在这里建起的原木小屋，是 Jackson Hole 最早的拓荒者住所之一；从停车处走几百米平路就到，背后是开阔的鼠尾草原和提顿群峰。",
+    tips: ["在 191 号公路边、Moran Junction 以南约 9 公里，全年能开车到", "周围草原常有野牛和叉角羚，别靠近"],
+  },
+  {
+    id: "grte-jackson-town-square",
+    park: "grte",
+    nameZh: "杰克逊镇广场 · 鹿角公园",
+    nameEn: "Jackson Town Square (Antler Arches)",
+    kind: "landmark",
+    area: "jackson",
+    lat: 43.47997,
+    lon: -110.76181,
+    durationMin: 60,
+    outsidePark: true,
+    summary:
+      "Jackson 镇中心的小广场，四个角各有一座用马鹿脱落的鹿角堆成的拱门；周围是西部风格的木板人行道、画廊、餐厅和户外用品店，晚上逛街吃饭都在这一带。",
+    tips: [
+      "鹿角来自镇北国家麋鹿保护区里马鹿每年春天自然脱落的角，由童子军收集",
+      "广场周围停车难，住镇上可以走过来；镇上有大超市和 Tesla 超充，进园前在这里补给",
+    ],
+  },
+  {
+    id: "grte-aerial-tram",
+    park: "grte",
+    nameZh: "杰克逊霍尔空中缆车",
+    nameEn: "Jackson Hole Aerial Tram",
+    kind: "experience",
+    area: "jackson",
+    lat: 43.59714,
+    lon: -110.87113,
+    start: { lat: 43.58798, lon: -110.82799, nameZh: "Teton Village 缆车站" },
+    durationMin: 120,
+    openMonths: [1, 2, 3, 5, 6, 7, 8, 9, 12],
+    closedNote:
+      "缆车在 10 月初到 12 月初、4 月初到 5 月中旬停运（滑雪季和夏季观光季之间的淡季）；这时可以在 Teton Village 附近散步，或回 Jackson 镇上逛逛。",
+    outsidePark: true,
+    permit: "要买票（2026 年夏季成人窗口价 $67，官网提前买通常更便宜）。",
+    summary:
+      "从 Teton Village 坐约 10 分钟缆车爬升约 1,260 米，到海拔 3,185 米的 Rendezvous 山顶，四周是提顿山南段、Jackson Hole 谷地和远处的群山；山顶小木屋卖现做的华夫饼。",
+    tips: [
+      "2026 年夏季运营期 5 月 16 日–10 月 4 日（9:00–17:00）；冬季主要载滑雪者，也卖观光票，天气不好会停",
+      "山顶比山下冷得多、风大，夏天也带外套；山顶有步道和观景平台",
+      "从 Jackson 开车约 25 分钟",
+    ],
+  },
+  {
+    id: "grte-elk-refuge",
+    park: "grte",
+    nameZh: "国家麋鹿保护区 · 马拉雪橇",
+    nameEn: "National Elk Refuge Sleigh Rides",
+    kind: "experience",
+    area: "jackson",
+    lat: 43.48626,
+    lon: -110.76176,
+    durationMin: 90,
+    openMonths: [1, 2, 3, 4, 12],
+    closedNote:
+      "马鹿只在冬天下山到保护区过冬，雪橇也只在 12 月中下旬到 4 月初运营；其他季节可以去旁边的游客中心看展览，或到园内的牛轭湾、Willow Flats 找马鹿和驼鹿。",
+    outsidePark: true,
+    permit: "雪橇票在游客中心停车场的售票点买（2025–26 季成人 $42、5–12 岁 $27），先到先得，旺季建议提前预约。",
+    summary:
+      "Jackson 镇北边的野生动物保护区，每年冬天有几千头马鹿（elk，常被译作麋鹿）从山里下来过冬；坐马拉雪橇驶进鹿群，近距离看公鹿的大角，是 Jackson 冬天最有名的活动。",
+    tips: [
+      "从镇北的 Jackson Hole & Greater Yellowstone 游客中心坐接驳车去雪橇上车点，全程约 1 小时",
+      "游客中心全年开放，可以顺便问大提顿和黄石的路况",
+      "雪橇上很冷，穿厚外套、戴帽子和手套",
+    ],
+  },
+];

@@ -12,8 +12,17 @@ type Side = "left" | "right" | "below";
 
 /** 公园名放在圆点哪一侧，避开旁边的公园和城市 */
 const LABEL_SIDE: Record<string, Side> = {
+  olym: "left",
+  noca: "right",
+  mora: "right",
+  crla: "right",
+  redw: "left",
+  lavo: "right",
   yose: "right",
   seki: "left",
+  chis: "left",
+  yell: "right",
+  grte: "left",
   deva: "below",
   zion: "left",
   brca: "right",
@@ -23,7 +32,8 @@ const LABEL_SIDE: Record<string, Side> = {
 
 /** 州名默认放在州的中心，挡住公园的挪开 */
 const STATE_LABEL_AT: Record<string, [number, number]> = {
-  CALIFORNIA: [395, 585],
+  CALIFORNIA: [255, 745],
+  WASHINGTON: [410, 140],
 };
 
 const SIDE_CLASS: Record<Side, string> = {
@@ -118,7 +128,7 @@ function Marker({ park, view }: { park: MapPark; view: MapView }) {
   );
 }
 
-/** 首页的线描地图：美国西南六座公园 + 阿拉斯加小图 */
+/** 首页的线描地图：美国西部的公园 + 阿拉斯加小图（放在右上角蒙大拿一带的空白处） */
 export function WestMap({
   parks,
   cityNames,
@@ -139,7 +149,7 @@ export function WestMap({
         ))}
       </div>
 
-      <div className="mt-6 w-2/3 border border-line bg-paper p-4 sm:absolute sm:bottom-0 sm:left-0 sm:mt-0 sm:w-[32%]">
+      <div className="mt-6 w-2/3 border border-line bg-paper p-4 sm:absolute sm:top-0 sm:right-0 sm:mt-0 sm:w-[30%]">
         <p className="eyebrow text-mute">{alaskaLabel}</p>
         <div className="relative mt-2" style={{ aspectRatio: `${alaskaMap.width} / ${alaskaMap.height}` }}>
           <Shapes view={alaskaMap} cityNames={cityNames} textScale={3} />

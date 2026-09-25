@@ -90,8 +90,16 @@ for (const attraction of attractions.filter((a) => a.trail)) {
     continue;
   }
 
-  const path = data.trip.legs.flatMap((leg, i) => decodePolyline6(leg.shape).slice(i === 0 ? 0 : 1));
-  const km = Math.round(data.trip.summary.length * 100) / 100;
+  const legs = data.trip.legs.map((leg) => ({ length: leg.summary.length, points: decodePolyline6(leg.shape) }));
+  // 途经点首尾是同一个路口（比如布莱斯躲猫猫环线：走连接步道下去、绕一圈再从同一条路上来），
+  // 最后一段就是第一段原路返回。OSM 里有的连接段标成了单行，直接让 Valhalla 算会绕一大圈
+  const firstVia = via[0];
+  const lastVia = via.at(-1);
+  if (attraction.trail.loop && via.length > 1 && firstVia.lat === lastVia.lat && firstVia.lon === lastVia.lon) {
+    legs[legs.length - 1] = { length: legs[0].length, points: [...legs[0].points].reverse() };
+  }
+  const path = legs.flatMap((leg, i) => leg.points.slice(i === 0 ? 0 : 1));
+  const km = Math.round(legs.reduce((sum, leg) => sum + leg.length, 0) * 100) / 100;
   trails[attraction.id] = {
     km,
     loop: Boolean(attraction.trail.loop),

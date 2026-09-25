@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CommonsImage } from "@/components/commons-image";
 import { ContinueTrip } from "@/components/home/continue-trip";
 import { Hero, type HeroSlide } from "@/components/home/hero";
 import { Intro } from "@/components/home/intro";
@@ -22,6 +22,8 @@ import { fill, formatMonths } from "@/i18n/format";
 export const revalidate = 86400;
 
 const FINAL_PHOTO = "yose-glacier-point";
+/** 开场动画依次闪过的公园（按这个顺序），最后一个停住 */
+const INTRO_PARKS = ["yose", "yell", "grca", "crla", "dena"];
 const container = "mx-auto max-w-[1600px] px-5 sm:px-10";
 
 const photoOf = (id: string) => attractions.find((attraction) => attraction.id === id)?.photo;
@@ -86,7 +88,10 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       <Intro
         wordmark={dict.site.wordmark}
         tagline={t.introTagline}
-        words={localParks.map((park) => ({ zh: park.nameZh, en: park.nameEn }))}
+        words={INTRO_PARKS.flatMap((code) => localParks.filter((park) => park.code === code)).map((park) => ({
+          zh: park.nameZh,
+          en: park.nameEn,
+        }))}
         skipLabel={t.skip}
       />
 
@@ -137,7 +142,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
           <p className="eyebrow text-mute lg:col-span-3">{t.parksEyebrow}</p>
           <div className="lg:col-span-9">
             <Reveal>
-              <h2 className="font-serif text-[clamp(2.2rem,4.5vw,4rem)] leading-tight">{t.parksTitle}</h2>
+              <h2 className="font-serif text-[clamp(2.2rem,4.5vw,4rem)] leading-tight">{fill(t.parksTitle, { n: localParks.length })}</h2>
             </Reveal>
             <p className="mt-5 max-w-xl text-sm leading-7 text-ink-soft">{t.parksHint}</p>
           </div>
@@ -231,7 +236,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       {/* 收尾：一张大图 + 开始规划 */}
       <section className="relative h-[82svh] min-h-[540px] overflow-hidden bg-ink text-white">
         {finalPhoto && (
-          <Image src={large(finalPhoto.url)} alt="" fill sizes="100vw" className="object-cover" />
+          <CommonsImage src={large(finalPhoto.url)} alt="" fill sizes="100vw" className="object-cover" />
         )}
         <div className="absolute inset-0 bg-black/45" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-5 text-center">

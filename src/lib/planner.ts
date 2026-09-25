@@ -86,29 +86,31 @@ export function lodgingLeg(lodging: LodgingPoint, stop: PlanStop, direction: "ou
   return Math.round(((distanceKm(lodging, stop.start ?? stop) * 1.35) / 55) * 60) + TRANSITION_MIN;
 }
 
-function routeCost(start: string, route: PlanStop[]): number {
-  let cost = 0;
-  let previous = start;
-  for (const stop of route) {
-    cost += travelMinutes(previous, stop.id);
-    previous = stop.id;
-  }
-  return cost;
+/** 路线两头：从出发点到每个景点的车程；知道终点时，再加上从每个景点回终点的车程 */
+interface RouteEnds {
+  from: (stop: PlanStop) => number;
+  to?: (stop: PlanStop) => number;
 }
 
-/** 同一公园内：从公园定位点出发，最近邻排出初始路线，再用 2-opt 消掉绕路 */
-function orderWithinPark(stops: PlanStop[], start: string): PlanStop[] {
+function routeCost(route: PlanStop[], ends: RouteEnds): number {
+  if (route.length === 0) return 0;
+  let cost = ends.from(route[0]);
+  for (let k = 1; k < route.length; k++) cost += travelMinutes(route[k - 1].id, route[k].id);
+  return cost + (ends.to?.(route[route.length - 1]) ?? 0);
+}
+
+/** 同一公园内：从出发点最近邻排出初始路线，再用 2-opt 消掉绕路（有终点时连回终点一起算） */
+function orderWithinPark(stops: PlanStop[], ends: RouteEnds): PlanStop[] {
   const remaining = [...stops];
   const route: PlanStop[] = [];
-  let current = start;
   while (remaining.length > 0) {
+    const last = route.at(-1);
+    const cost = (stop: PlanStop) => (last ? travelMinutes(last.id, stop.id) : ends.from(stop));
     let best = 0;
     for (let i = 1; i < remaining.length; i++) {
-      if (travelMinutes(current, remaining[i].id) < travelMinutes(current, remaining[best].id)) best = i;
+      if (cost(remaining[i]) < cost(remaining[best])) best = i;
     }
-    const [next] = remaining.splice(best, 1);
-    route.push(next);
-    current = next.id;
+    route.push(...remaining.splice(best, 1));
   }
 
   let improved = true;
@@ -117,7 +119,7 @@ function orderWithinPark(stops: PlanStop[], start: string): PlanStop[] {
     for (let i = 0; i < route.length - 1; i++) {
       for (let j = i + 1; j < route.length; j++) {
         const candidate = [...route.slice(0, i), ...route.slice(i, j + 1).reverse(), ...route.slice(j + 1)];
-        if (routeCost(start, candidate) < routeCost(start, route)) {
+        if (routeCost(candidate, ends) < routeCost(route, ends)) {
           route.splice(0, route.length, ...candidate);
           improved = true;
         }
@@ -139,15 +141,33 @@ function orderParks(parks: string[]): string[] {
   return order;
 }
 
+/** 整段行程从哪出发、最后到哪（第一天出发前、最后一晚住的地方），知道的话路线从起点排到终点 */
+export interface SequenceEnds {
+  start?: LodgingPoint;
+  end?: LodgingPoint;
+}
+
 /** 把景点排成一条游览顺序：公园之间按距离串起来，公园内按路线就近 */
-export function sequenceStops(stops: PlanStop[]): PlanStop[] {
+export function sequenceStops(stops: PlanStop[], ends: SequenceEnds = {}): PlanStop[] {
   if (stops.length === 0) return [];
-  const parks = [...new Set(stops.map((stop) => stop.park))];
-  return orderParks(parks).flatMap((park) =>
-    orderWithinPark(
-      stops.filter((stop) => stop.park === park),
-      gatewayNode(park),
-    ),
+  const { start, end } = ends;
+  const parkStops = (park: string) => stops.filter((stop) => stop.park === park);
+  let parks = [...new Set(stops.map((stop) => stop.park))];
+  // 有起点时，先去离起点最近的公园
+  if (start && parks.length > 1) {
+    const reach = (park: string) => Math.min(...parkStops(park).map((stop) => lodgingLeg(start, stop, "out")));
+    const first = parks.reduce((best, park) => (reach(park) < reach(best) ? park : best));
+    parks = [first, ...parks.filter((park) => park !== first)];
+  }
+  const order = orderParks(parks);
+  return order.flatMap((park, index) =>
+    orderWithinPark(parkStops(park), {
+      from:
+        index === 0 && start
+          ? (stop) => lodgingLeg(start, stop, "out")
+          : (stop) => travelMinutes(gatewayNode(park), stop.id),
+      to: index === order.length - 1 && end ? (stop) => lodgingLeg(end, stop, "back") : undefined,
+    }),
   );
 }
 

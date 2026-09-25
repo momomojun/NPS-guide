@@ -38,7 +38,9 @@ export function planTrip(
   const toPlan = [...unfinished, ...trip.pool]
     .map((id) => stops.get(id))
     .filter((stop): stop is PlanStop => stop !== undefined);
-  const split = splitIntoDays(sequenceStops(toPlan), after.length, (d) => lodgingFor(from + d));
+  // 路线从这段行程开始前住的地方排到最后一晚住的地方（设了的话）
+  const sequence = sequenceStops(toPlan, { start: nightAt(from), end: nightAt(trip.days.length) });
+  const split = splitIntoDays(sequence, after.length, (d) => lodgingFor(from + d));
 
   const keep = (day: TripItem[]) => day.filter((item) => item.status !== "planned");
   // 从前一天最后去的地方接着排（没设住处时，跨公园要算来程）

@@ -1,19 +1,24 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { KIND_COLORS } from "@/components/attractions/kinds";
 import { IconBed, IconClose, IconGrip } from "@/components/icons";
-import { ParkMap, type MapPoint, type MapTrail } from "@/components/map/park-map";
+import { ParkMap, type MapLeg, type MapPoint, type MapTrail } from "@/components/map/park-map";
 import { AddToTripButton } from "@/components/trip/add-to-trip-button";
 import { buttonPrimary, buttonSecondary } from "@/components/ui";
+import type { ParkActivity } from "@/data/activities";
+import type { Airport } from "@/data/airports";
 import type { AttractionWithPhoto } from "@/data/attractions";
 import { googleMapsUrl } from "@/data/attractions/google";
+import type { Photo } from "@/data/attractions/types";
 import type { LodgingOption } from "@/data/lodging";
 import { fill, formatDuration } from "@/i18n/format";
-import { addDays } from "@/lib/dates";
+import { addDays, monthOf, nominalDate } from "@/lib/dates";
+import { airbnbUrl } from "@/lib/airbnb";
+import { generateTrip, guideParks } from "@/lib/generate-trip";
 import { drivingMinutesFrom, drivingRoute } from "@/lib/osrm-client";
 import { buildTimeline, NOMINAL_SUN, rankLodging, type PlanStop } from "@/lib/planner";
-import { formatClock, minutesOfDay, sunTimes } from "@/lib/sun";
+import { minutesOfDay, sunTimes } from "@/lib/sun";
 import { moveItem, setNight } from "@/lib/trip-edit";
 import { planTrip } from "@/lib/trip-plan";
 import {
@@ -28,10 +33,17 @@ import {
   type TripLodging,
 } from "@/lib/trip-store";
 import { DayCard } from "./day-card";
+import { dayColor } from "./day-colors";
+import { GuideSummary } from "./guide-summary";
 import { LodgingSelector } from "./lodging-selector";
+import { StopDetails } from "./stop-details";
+import { TripOverview } from "./trip-overview";
+import { TripWizard, type WizardInput, type WizardPlace } from "./trip-wizard";
 import type { DayView, DragSpot, PlannerPark, PlannerText, ResolvedLodging, SunInfo } from "./types";
 
 const LODGING_COLOR = "#2f4a5a";
+/** 地图显示整个行程（每天一种颜色） */
+const ALL_DAYS = -1;
 /** 自定义住处只查这个范围内公园的景点车程 */
 const MEASURE_RADIUS_KM = 400;
 
@@ -47,23 +59,37 @@ export function Planner({
   attractions,
   parks,
   lodgingOptions,
+  airports,
+  activities,
   text,
   locale,
 }: {
   attractions: AttractionWithPhoto[];
   parks: PlannerPark[];
   lodgingOptions: LodgingOption[];
+  airports: Record<string, Airport>;
+  /** 各公园的特别活动，攻略说明里按月份列出 */
+  activities: ParkActivity[];
   text: PlannerText;
   locale: string;
 }) {
   const t = text.plan;
   const trip = useTrip();
-  const [mapDay, setMapDay] = useState(0);
+  const [mapDay, setMapDay] = useState(ALL_DAYS);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  // 行程里展开详情的景点；“添加景点”列表里展开的另算
+  const [openId, setOpenId] = useState<string | null>(null);
+  const [browseId, setBrowseId] = useState<string | null>(null);
+  // 图集按公园懒加载：点开详情时才去取
+  const [galleries, setGalleries] = useState<Record<string, Record<string, Photo[]>>>({});
+  const requestedGalleries = useRef(new Set<string>());
   const [today, setToday] = useState(0);
-  const [pickerPark, setPickerPark] = useState(parks[0]?.code ?? "");
+  const [pickedPark, setPickedPark] = useState<string | null>(null);
   const [dragSource, setDragSource] = useState<DragSpot | null>(null);
   const [dragTarget, setDragTarget] = useState<DragSpot | null>(null);
+  const [wizardOpen, setWizardOpen] = useState<boolean | null>(null);
+  const [generating, setGenerating] = useState(false);
+  const [generateError, setGenerateError] = useState<string | null>(null);
   // 真实开车路线，按途经点缓存；null 表示查失败，退回画虚线
   const [roadRoutes, setRoadRoutes] = useState<Record<string, [number, number][] | null>>({});
 
@@ -82,20 +108,39 @@ export function Planner({
   );
 
   const duration = (minutes: number) => formatDuration(minutes, text.units);
+  /** 显示用的日期：只有定了具体出发日期才有 */
   const dateOf = (day: number) => (trip.startDate ? addDays(trip.startDate, day) : null);
+  /** 算日出日落、季节提示用的日期：只定了月份时按那个月的 15 号 */
+  const refDateOf = (day: number) =>
+    trip.startDate ? addDays(trip.startDate, day) : trip.month ? addDays(nominalDate(trip.month), day) : null;
+  const tripMonth = trip.startDate ? monthOf(trip.startDate) : (trip.month ?? null);
 
   const resolve = (lodging: TripLodging | null | undefined): ResolvedLodging | undefined => {
     if (!lodging) return undefined;
-    if (lodging.kind === "custom") return { ...lodging, custom: true };
+    if (lodging.kind === "custom") {
+      // 出发 / 回程机场按当前语言显示名字（生成攻略时存下的是当时页面语言的名字）
+      const airport = lodging.endpoint ? airports[lodging.id.replace(/^custom-(origin|destination)-/, "")] : undefined;
+      return { ...lodging, name: airport ? `${airport.nameZh}（${airport.code}）` : lodging.name, custom: true };
+    }
     const option = optionById.get(lodging.id);
     return option
-      ? { id: option.id, lat: option.lat, lon: option.lon, name: option.nameZh, custom: false, inPark: option.inPark, note: option.note }
+      ? {
+          id: option.id,
+          lat: option.lat,
+          lon: option.lon,
+          name: option.nameZh,
+          custom: false,
+          inPark: option.inPark,
+          note: option.note,
+          rental: option.rental,
+          airbnb: option.airbnb,
+        }
       : undefined;
   };
   const nightAt = (night: number) => resolve(trip.nights[night]);
 
   const sunInfo = (day: number, parkCode: string | undefined): SunInfo => {
-    const date = dateOf(day);
+    const date = refDateOf(day);
     const park = parkCode ? parkByCode.get(parkCode) : undefined;
     if (!date || !park) return { kind: "unknown" };
     const sun = sunTimes(date, park.lat, park.lon);
@@ -125,7 +170,7 @@ export function Planner({
       rows.map((row) => row.stop),
       { sun: sun.kind === "normal" ? sun.window : NOMINAL_SUN, from, to, previous },
     );
-    dayViews.push({ day, date: dateOf(day), rows, sun, timeline, from, to });
+    dayViews.push({ day, date: refDateOf(day), rows, sun, timeline, from, to });
     previous = rows.at(-1)?.stop ?? previous;
   }
 
@@ -138,6 +183,16 @@ export function Planner({
       .filter((option) => parksNearby.has(option.park))
       .map((option) => resolve({ kind: "option", id: option.id })!);
     return rankLodging(candidates, lastStop, nextStop);
+  };
+  /** 第 night 晚住 lodging 的话，在 Airbnb 上按整段连住的日期搜 */
+  const airbnbFor = (night: number) => (lodging: ResolvedLodging) => {
+    if (!lodging.airbnb) return undefined;
+    const same = (k: number) => trip.nights[k]?.id === lodging.id;
+    let first = night;
+    let last = night;
+    while (first - 1 >= 1 && same(first - 1)) first--;
+    while (last + 1 < trip.dayCount && same(last + 1)) last++;
+    return airbnbUrl(lodging.airbnb, dateOf(first - 1), dateOf(last));
   };
   const searchNearFor = (night: number) => {
     const stop = dayViews[night - 1]?.rows.at(-1)?.stop ?? dayViews[night]?.rows[0]?.stop;
@@ -156,6 +211,8 @@ export function Planner({
   };
 
   const allIds = tripIds(trip);
+  // “添加景点”默认显示行程里第一个景点所在的公园（景点 id 以公园代码开头）
+  const pickerPark = pickedPark ?? allIds[0]?.split("-")[0] ?? parks[0]?.code ?? "";
   const plannedCount = trip.days.flat().filter((item) => item.status === "planned").length;
 
   const runPlan = (fromDay: number) =>
@@ -183,6 +240,70 @@ export function Planner({
     });
   const hasEmptyNight = trip.nights.slice(1).some((night) => night === null) && plannedCount > 0;
 
+  // 自动生成攻略：查出发地、回程地到各景点的车程，再挑景点、排每天、定住宿
+  const generate = async (input: WizardInput) => {
+    if (allIds.length > 0 && !window.confirm(t.wizard.replaceConfirm)) return;
+    setGenerating(true);
+    setGenerateError(null);
+    try {
+      const park = parkByCode.get(input.parks[0]);
+      if (!park) return;
+      const stops = attractions.filter((a) => input.parks.includes(a.park));
+      const targets = stops.map((a) => ({ id: a.id, ...(a.start ?? a) }));
+      const originMinutes = await drivingMinutesFrom(input.origin, targets);
+      const destinationMinutes =
+        input.destination.id === input.origin.id ? originMinutes : await drivingMinutesFrom(input.destination, targets);
+      const endpoint = (place: WizardPlace, minutes: Record<string, number>, role: "origin" | "destination") => ({
+        kind: "custom" as const,
+        id: `custom-${role}-${place.id}`,
+        name: place.name,
+        lat: place.lat,
+        lon: place.lon,
+        minutes,
+        endpoint: role,
+      });
+      const sunFor = (day: number) => {
+        const sun = sunTimes(addDays(input.startDate || nominalDate(input.month), day), park.lat, park.lon);
+        return sun.kind === "normal"
+          ? { sunrise: minutesOfDay(sun.sunrise, park.timeZone), sunset: minutesOfDay(sun.sunset, park.timeZone) }
+          : NOMINAL_SUN;
+      };
+      const { trip: generated } = generateTrip(
+        {
+          ...input,
+          origin: endpoint(input.origin, originMinutes, "origin"),
+          destination: endpoint(input.destination, destinationMinutes, "destination"),
+        },
+        {
+          stops,
+          lodging: lodgingOptions
+            .filter((option) => input.parks.includes(option.park))
+            .map((option) => ({
+              id: option.id,
+              lat: option.lat,
+              lon: option.lon,
+              inPark: option.inPark,
+              rental: option.rental,
+              airbnb: option.airbnb,
+            })),
+          sunFor,
+        },
+      );
+      updateTrip(() => generated);
+      setMapDay(ALL_DAYS);
+      setOpenId(null);
+      setWizardOpen(false);
+    } catch {
+      setGenerateError(t.wizard.error);
+    } finally {
+      setGenerating(false);
+    }
+  };
+  const showWizard = wizardOpen ?? allIds.length === 0;
+  const guideParkList = trip.guide
+    ? guideParks(trip.guide).flatMap((code) => parks.filter((park) => park.code === code))
+    : [];
+
   const drag = {
     source: dragSource,
     target: dragTarget,
@@ -203,74 +324,156 @@ export function Planner({
     },
   };
 
+  const loadGallery = (park: string) => {
+    if (requestedGalleries.current.has(park)) return;
+    requestedGalleries.current.add(park);
+    fetch(`/api/gallery/${park}`)
+      .then((res) => (res.ok ? (res.json() as Promise<Record<string, Photo[]>>) : {}))
+      .catch(() => ({}))
+      .then((photos) => setGalleries((current) => ({ ...current, [park]: photos })));
+  };
+  /** 还没取到时是 undefined */
+  const photosOf = (stop: AttractionWithPhoto) => {
+    const park = galleries[stop.park];
+    return park ? (park[stop.id] ?? []) : undefined;
+  };
+
   const selectOnMap = (id: string) => {
     setSelectedId(id);
-    document.getElementById(`plan-item-${id}`)?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    const stop = byId.get(id);
+    if (!stop || !allIds.includes(id)) return;
+    setOpenId(id);
+    loadGallery(stop.park);
+    // 等详情展开后再滚过去
+    requestAnimationFrame(() =>
+      document.getElementById(`plan-item-${id}`)?.scrollIntoView({ behavior: "smooth", block: "start" }),
+    );
   };
   const selectInList = (day: number, id: string) => {
     setSelectedId(id);
-    setMapDay(day);
+    // 看整个行程时保持全程视图，只高亮这个景点
+    if (mapDay !== ALL_DAYS) setMapDay(day);
+    const opening = openId !== id;
+    setOpenId(opening ? id : null);
+    const stop = byId.get(id);
+    if (opening && stop) loadGallery(stop.park);
   };
+  const toggleBrowse = (id: string) => {
+    const opening = browseId !== id;
+    setBrowseId(opening ? id : null);
+    const stop = byId.get(id);
+    if (opening && stop) loadGallery(stop.park);
+  };
+  const parkHref = (stop: AttractionWithPhoto) => `/${locale}/parks/${stop.park}#attraction-${stop.id}`;
+  const detailsFor = (stop: AttractionWithPhoto, month: number | null, onClose: () => void, actions?: ReactNode) => (
+    <StopDetails
+      stop={stop}
+      photos={photosOf(stop)}
+      month={month}
+      parkNameEn={parkNameEn(stop.park)}
+      parkHref={parkHref(stop)}
+      text={text}
+      actions={actions}
+      onClose={onClose}
+    />
+  );
 
-  // 地图：选中那天的住处 → 景点 → 当晚住处；那天没有景点时显示整个行程的景点
-  const mapIndex = Math.min(mapDay, trip.days.length - 1);
-  const mapView = dayViews[mapIndex];
-  const lodgingPoint = (lodging: ResolvedLodging, id: string): MapPoint => ({
-    id,
+  // 地图：整个行程（每天一种颜色）或者某一天：前一晚住处 → 景点 → 当晚住处
+  const scheduledDays = dayViews.filter((view) => view.rows.length > 0);
+  const showAll = mapDay === ALL_DAYS && trip.days.length > 1;
+  const mapIndex = Math.min(Math.max(mapDay, 0), trip.days.length - 1);
+  const mapViews = showAll ? scheduledDays : dayViews[mapIndex]?.rows.length ? [dayViews[mapIndex]] : [];
+  const lodgingPoint = (lodging: ResolvedLodging): MapPoint => ({
+    id: `lodging-${lodging.id}`,
     lat: lodging.lat,
     lon: lodging.lon,
     label: lodging.name,
     color: LODGING_COLOR,
-    badge: "住",
+    badge: lodging.endpoint === "origin" ? "起" : lodging.endpoint === "destination" ? "终" : "住",
   });
   const mapPoints: MapPoint[] = [];
   const mapTrails: MapTrail[] = [];
-  // 开车是开到停车场 / 步道口，再沿步道走到景点
-  const mapRoute: { lat: number; lon: number }[] = [];
-  if (mapView && mapView.rows.length > 0) {
-    if (mapView.from) {
-      mapPoints.push(lodgingPoint(mapView.from, "lodging-from"));
-      mapRoute.push(mapView.from);
+  // 开车是开到停车场 / 步道口，再沿步道走到景点；每天一段路线
+  const dayRoutes: { day: number; points: { lat: number; lon: number }[] }[] = [];
+  const pointIds = new Set<string>();
+  const addPoint = (point: MapPoint) => {
+    if (pointIds.has(point.id)) return;
+    pointIds.add(point.id);
+    mapPoints.push(point);
+  };
+  for (const view of mapViews) {
+    const route: { lat: number; lon: number }[] = [];
+    if (view.from) {
+      addPoint(lodgingPoint(view.from));
+      route.push(view.from);
     }
-    mapView.rows.forEach(({ stop }, k) => {
+    view.rows.forEach(({ stop }, k) => {
       if (stop.trailLine) {
         const [lon, lat] = stop.trailLine.path[0];
-        mapPoints.push({ id: `${stop.id}:trailhead`, lat, lon, label: "", color: "#ffffff", small: true });
+        addPoint({ id: `${stop.id}:trailhead`, lat, lon, label: "", color: "#ffffff", small: true });
         mapTrails.push({ id: stop.id, path: stop.trailLine.path });
       }
-      mapPoints.push({
+      addPoint({
         id: stop.id,
         lat: stop.lat,
         lon: stop.lon,
         label: stop.nameZh,
-        sublabel: stop.nameEn,
-        color: KIND_COLORS[stop.kind],
+        sublabel: showAll ? fill(t.day, { n: view.day + 1 }) : stop.nameEn,
+        color: showAll ? dayColor(view.day) : KIND_COLORS[stop.kind],
         badge: String(k + 1),
       });
-      mapRoute.push(stop.start ?? stop);
+      route.push(stop.start ?? stop);
     });
-    if (mapView.to) {
-      if (mapView.to.id !== mapView.from?.id) mapPoints.push(lodgingPoint(mapView.to, "lodging-to"));
-      mapRoute.push(mapView.to);
+    if (view.to) {
+      addPoint(lodgingPoint(view.to));
+      route.push(view.to);
     }
-  } else {
+    if (route.length > 1) dayRoutes.push({ day: view.day, points: route });
+  }
+  if (mapViews.length === 0) {
     for (const id of allIds) {
       const stop = byId.get(id);
-      if (stop) {
-        mapPoints.push({ id, lat: stop.lat, lon: stop.lon, label: stop.nameZh, sublabel: stop.nameEn, color: KIND_COLORS[stop.kind] });
-      }
+      if (stop) addPoint({ id, lat: stop.lat, lon: stop.lon, label: stop.nameZh, sublabel: stop.nameEn, color: KIND_COLORS[stop.kind] });
     }
   }
 
-  const routeKey = mapRoute.length > 1 ? mapRoute.map((p) => `${p.lon.toFixed(5)},${p.lat.toFixed(5)}`).join(";") : "";
+  const keyOf = (points: { lat: number; lon: number }[]) =>
+    points.map((p) => `${p.lon.toFixed(5)},${p.lat.toFixed(5)}`).join(";");
+  const routeKeys = dayRoutes.map((route) => keyOf(route.points));
+  const routeKeyList = routeKeys.join("|");
+  // 真实开车路线一段一段地查（OSRM 公共服务，别一下子并发太多）
+  const pendingRoutes = useRef(new Set<string>());
   useEffect(() => {
-    if (!routeKey || routeKey in roadRoutes) return;
-    drivingRoute(routeKey).then(
-      (path) => setRoadRoutes((current) => ({ ...current, [routeKey]: path })),
-      () => setRoadRoutes((current) => ({ ...current, [routeKey]: null })),
+    const missing = (routeKeyList ? routeKeyList.split("|") : []).filter(
+      (key) => !(key in roadRoutes) && !pendingRoutes.current.has(key),
     );
-  }, [routeKey, roadRoutes]);
-  const roadPath = (routeKey && roadRoutes[routeKey]) || undefined;
+    if (missing.length === 0) return;
+    missing.forEach((key) => pendingRoutes.current.add(key));
+    (async () => {
+      for (const key of missing) {
+        try {
+          const path = await drivingRoute(key);
+          setRoadRoutes((current) => ({ ...current, [key]: path }));
+        } catch {
+          setRoadRoutes((current) => ({ ...current, [key]: null }));
+        } finally {
+          pendingRoutes.current.delete(key);
+        }
+      }
+    })();
+  }, [routeKeyList, roadRoutes]);
+  const mapLegs: MapLeg[] = dayRoutes.map((route, k) => {
+    const road = roadRoutes[routeKeys[k]];
+    return {
+      id: `day-${route.day}`,
+      color: dayColor(route.day),
+      path: road ?? route.points.map((p) => [p.lon, p.lat] as [number, number]),
+      straight: !road,
+    };
+  });
+  const mapLegend = showAll
+    ? dayRoutes.map((route) => ({ color: dayColor(route.day), label: fill(t.day, { n: route.day + 1 }) }))
+    : undefined;
   const parkNameEn = (code: string) => parkByCode.get(code)?.nameEn ?? "";
 
   const chip = (active: boolean) =>
@@ -291,15 +494,67 @@ export function Planner({
         <p className="mt-5 text-sm leading-7 text-ink-soft">{t.intro}</p>
       </header>
 
+      <section className="border-t border-ink pt-6">
+        <div className="flex flex-wrap items-baseline justify-between gap-4">
+          <div className="max-w-2xl">
+            <p className="eyebrow text-mute">{t.wizard.eyebrow}</p>
+            <h2 className="mt-4 font-serif text-2xl leading-snug">{t.wizard.title}</h2>
+            {showWizard && <p className="mt-3 text-sm leading-7 text-ink-soft">{t.wizard.intro}</p>}
+          </div>
+          <button type="button" className="link-line text-xs tracking-[0.1em]" onClick={() => setWizardOpen(!showWizard)}>
+            {showWizard ? t.wizard.collapse : t.wizard.open}
+          </button>
+        </div>
+        {showWizard && (
+          <div className="mt-8">
+            <TripWizard
+              parks={parks}
+              airports={airports}
+              text={text}
+              busy={generating}
+              error={generateError}
+              onGenerate={generate}
+            />
+          </div>
+        )}
+      </section>
+
       <div className={`${card} flex flex-wrap items-end gap-x-8 gap-y-5 p-6`}>
         <label className="eyebrow text-mute">
           {t.startDate}
           <input
             type="date"
             value={trip.startDate}
-            onChange={(event) => updateTrip((current) => ({ ...current, startDate: event.target.value }))}
+            onChange={(event) =>
+              updateTrip((current) => ({
+                ...current,
+                startDate: event.target.value,
+                month: event.target.value ? undefined : current.month,
+              }))
+            }
             className={field}
           />
+        </label>
+        <label className="eyebrow text-mute">
+          {t.month}
+          <select
+            value={trip.startDate ? "" : (trip.month ?? "")}
+            onChange={(event) =>
+              updateTrip((current) => ({
+                ...current,
+                startDate: "",
+                month: event.target.value ? Number(event.target.value) : undefined,
+              }))
+            }
+            className={field}
+          >
+            <option value="">{t.monthUnset}</option>
+            {Array.from({ length: 12 }, (_, i) => i + 1).map((m) => (
+              <option key={m} value={m}>
+                {fill(t.monthOption, { m })}
+              </option>
+            ))}
+          </select>
         </label>
         <label className="eyebrow text-mute">
           {t.days}
@@ -325,12 +580,52 @@ export function Planner({
         <button type="button" className={buttonSecondary} onClick={clearTrip} disabled={allIds.length === 0}>
           {t.clear}
         </button>
-        {!trip.startDate && <p className="basis-full text-xs text-clay-700">{t.noDate}</p>}
+        {!trip.startDate && !trip.month && <p className="basis-full text-xs text-clay-700">{t.noDate}</p>}
         {plannedCount > 0 && <p className="basis-full text-xs text-mute">{t.lodging.fillHint}</p>}
       </div>
 
       {allIds.length === 0 && (
         <p className="border-l border-clay-600 pl-5 text-sm leading-7 text-ink-soft">{t.empty}</p>
+      )}
+
+      {trip.days.some((day) => day.length > 0) && (
+        <TripOverview
+          views={dayViews}
+          dateLabels={dayViews.map((view) =>
+            trip.startDate ? dateFormat.format(new Date(`${dateOf(view.day)}T00:00:00Z`)) : null,
+          )}
+          parkName={(code) => parkByCode.get(code)?.nameZh ?? code}
+          month={tripMonth}
+          startDate={trip.startDate}
+          dayCount={trip.dayCount}
+          text={text}
+          onJump={(day) => document.getElementById(`plan-day-${day}`)?.scrollIntoView({ behavior: "smooth", block: "start" })}
+        />
+      )}
+
+      {trip.guide && guideParkList.length > 0 && allIds.length > 0 && (
+        <GuideSummary
+          guide={trip.guide}
+          parks={guideParkList}
+          month={tripMonth}
+          origin={nightAt(0)}
+          destination={nightAt(trip.dayCount)}
+          outboundMin={dayViews[0]?.timeline.entries[0]?.driveMin}
+          inboundMin={dayViews.at(-1)?.timeline.returnDriveMin || undefined}
+          nights={Array.from({ length: Math.max(trip.dayCount - 1, 0) }, (_, i) => ({
+            night: i + 1,
+            lodging: nightAt(i + 1),
+            ranked: rankedFor(i + 1),
+            airbnbHref: airbnbFor(i + 1),
+          }))}
+          nameOf={(id) => byId.get(id)?.nameZh ?? id}
+          tripIds={allIds}
+          permitOf={(id) => byId.get(id)?.permit}
+          closedNoteOf={(id) => byId.get(id)?.closedNote}
+          activities={activities.filter((activity) => guideParkList.some((p) => p.code === activity.park))}
+          attractionExists={(id) => byId.has(id)}
+          text={text}
+        />
       )}
 
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
@@ -369,20 +664,19 @@ export function Planner({
             const parkNames = [...new Set(view.rows.map((row) => row.stop.park))].map(
               (code) => parkByCode.get(code)?.nameZh ?? code,
             );
-            const status =
-              view.to && view.timeline.returnAt !== undefined
-                ? `${fill(t.lodging.back, { name: view.to.name, time: formatClock(view.timeline.returnAt) })} · ${fill(t.drive, { d: duration(view.timeline.returnDriveMin) })}`
-                : undefined;
             return (
               <DayCard
                 key={view.day}
                 view={view}
+                color={dayColor(view.day)}
                 dayCount={trip.days.length}
                 itemCount={trip.days[view.day].length}
-                dateLabel={view.date ? dateFormat.format(new Date(`${view.date}T00:00:00Z`)) : null}
+                dateLabel={trip.startDate ? dateFormat.format(new Date(`${dateOf(view.day)}T00:00:00Z`)) : null}
                 parkNames={parkNames}
                 text={text}
                 selectedId={selectedId}
+                openId={openId}
+                details={(stop) => detailsFor(stop, view.date ? monthOf(view.date) : tripMonth, () => setOpenId(null))}
                 onSelect={(id) => selectInList(view.day, id)}
                 onEdit={updateTrip}
                 mapsUrl={(stop) => googleMapsUrl(stop, parkNameEn(stop.park))}
@@ -398,20 +692,26 @@ export function Planner({
                       text={text}
                       onChange={(lodging) => updateTrip((current) => setNight(current, 0, lodging))}
                       measure={measure}
+                      airbnbHref={airbnbFor(0)}
                     />
                   ) : undefined
                 }
                 footer={
                   <LodgingSelector
-                    label={t.lodging.tonight}
+                    label={(() => {
+                      const lodging = trip.nights[night];
+                      return lodging?.kind === "custom" && lodging.endpoint === "destination"
+                        ? t.lodging.end
+                        : t.lodging.tonight;
+                    })()}
                     current={view.to}
-                    status={status}
                     ranked={rankedFor(night)}
                     previous={trip.nights[night - 1]}
                     searchNear={searchNearFor(night)}
                     text={text}
                     onChange={(lodging) => updateTrip((current) => setNight(current, night, lodging))}
                     measure={measure}
+                    airbnbHref={night < trip.dayCount ? airbnbFor(night) : undefined}
                   />
                 }
               />
@@ -450,7 +750,7 @@ export function Planner({
               <select
                 value={pickerPark}
                 aria-label={t.addPlaceholder}
-                onChange={(event) => setPickerPark(event.target.value)}
+                onChange={(event) => setPickedPark(event.target.value)}
                 className={select}
               >
                 {parks.map((park) => (
@@ -460,18 +760,33 @@ export function Planner({
                 ))}
               </select>
             </div>
+            <p className="mt-1 text-xs text-mute">{t.addHint}</p>
             <ul className="mt-4 divide-y divide-line">
               {attractions
                 .filter((a) => a.park === pickerPark)
                 .map((a) => (
-                  <li key={a.id} className="flex items-center justify-between gap-3 py-3 text-sm">
-                    <span className="min-w-0">
-                      <span className="mr-2 inline-block size-1.5 rounded-full align-middle" style={{ backgroundColor: KIND_COLORS[a.kind] }} />
-                      <span className="font-serif text-base">{a.nameZh}</span>
-                      {a.mustSee && <span className="ml-1.5 text-[11px] text-clay-600">★</span>}
-                      <span className="ml-2 text-xs text-mute">{duration(a.durationMin)}</span>
-                    </span>
-                    <AddToTripButton id={a.id} text={text.trip} />
+                  <li key={a.id} className="py-3 text-sm">
+                    <div className="flex items-center justify-between gap-3">
+                      <button
+                        type="button"
+                        className="group/stop min-w-0 text-left"
+                        aria-expanded={browseId === a.id}
+                        onClick={() => toggleBrowse(a.id)}
+                      >
+                        <span className="mr-2 inline-block size-1.5 rounded-full align-middle" style={{ backgroundColor: KIND_COLORS[a.kind] }} />
+                        <span className="font-serif text-base group-hover/stop:text-clay-700">{a.nameZh}</span>
+                        {a.mustSee && <span className="ml-1.5 text-[11px] text-clay-600">★</span>}
+                        <span className="ml-2 text-xs text-mute">{duration(a.durationMin)}</span>
+                        {a.hotRank !== undefined && (
+                          <span className="ml-2 text-xs text-clay-700">{fill(text.attraction.hotRank, { n: a.hotRank })}</span>
+                        )}
+                        <span className="ml-2 text-xs text-ink-soft group-hover/stop:text-clay-700">
+                          {browseId === a.id ? t.hideDetails : t.showDetails}
+                        </span>
+                      </button>
+                      <AddToTripButton id={a.id} text={text.trip} />
+                    </div>
+                    {browseId === a.id && <div className="mt-3">{detailsFor(a, tripMonth, () => setBrowseId(null))}</div>}
                   </li>
                 ))}
             </ul>
@@ -482,8 +797,24 @@ export function Planner({
           <div className="space-y-4 lg:sticky lg:top-24">
             {trip.days.length > 1 && (
               <div className="flex flex-wrap gap-x-5 gap-y-2" role="group" aria-label={t.showOnMap}>
+                <button type="button" className={chip(showAll)} aria-pressed={showAll} onClick={() => {
+                    setMapDay(ALL_DAYS);
+                    setSelectedId(null);
+                  }}
+                >
+                  {t.wholeTrip}
+                </button>
                 {trip.days.map((_, day) => (
-                  <button key={day} type="button" className={chip(day === mapIndex)} onClick={() => setMapDay(day)}>
+                  <button
+                    key={day}
+                    type="button"
+                    className={chip(!showAll && day === mapIndex)}
+                    aria-pressed={!showAll && day === mapIndex}
+                    onClick={() => {
+                      setMapDay(day);
+                      setSelectedId(null);
+                    }}
+                  >
                     {fill(t.day, { n: day + 1 })}
                   </button>
                 ))}
@@ -493,8 +824,9 @@ export function Planner({
               points={mapPoints}
               trails={mapTrails}
               highlightTrailId={selectedId}
-              route={mapRoute}
-              roadPath={roadPath}
+              legs={mapLegs}
+              legend={mapLegend}
+              fitKey={showAll ? "all" : String(mapIndex)}
               selectedId={selectedId}
               onSelect={(id) => {
                 if (!id.startsWith("lodging-")) selectOnMap(id);

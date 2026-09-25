@@ -165,22 +165,24 @@ body {
   }
 }
 
-.intro {
-  animation: intro-curtain 1.1s var(--ease-expo) 2.5s forwards;
+/* 幕布：首屏大图加载好（或者最晚 2.6 秒、用户跳过）时由 Intro 组件加上 intro-lift 往上拉开 */
+.intro-lift {
+  animation: intro-curtain 0.85s var(--ease-expo) forwards;
 }
 .intro-seen .intro {
   display: none;
 }
 
 /*
- * 首屏文字等开场动画拉开幕布再出现；本次会话看过开场、或者跳过了，就立刻出现。
- * --i 是同一组里的顺序，用来错开。
+ * 首屏文字：开场动画播放时（html 带 intro-playing）先停在起点，幕布拉开时一起出来；
+ * 本次会话看过开场就直接出来。--i 是同一组里的顺序，用来错开。
  */
 :root {
-  --intro-delay: 2.7s;
-}
-.intro-seen {
   --intro-delay: 0.15s;
+}
+.intro-playing .hero-rise,
+.intro-playing .hero-fade {
+  animation-play-state: paused;
 }
 .hero-rise {
   animation: rise 1.3s var(--ease-expo) both;

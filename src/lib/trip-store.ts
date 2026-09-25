@@ -1,4 +1,5 @@
 import { useSyncExternalStore } from "react";
+import type { GuideInfo } from "./generate-trip";
 
 export type ItemStatus = "planned" | "done" | "skipped";
 
@@ -18,18 +19,24 @@ export type TripLodging =
       lon: number;
       /** 到各景点的车程（分钟），查不到时为空，按直线估算 */
       minutes: Record<string, number>;
+      /** 自动生成攻略时的出发地 / 回程地（机场、城市），不是住处 */
+      endpoint?: "origin" | "destination";
     };
 
 export interface Trip {
   version: 2;
   /** 形如 "2026-10-05"；空字符串表示还没定 */
   startDate: string;
+  /** 只定了月份、没定具体日期时的月份（1–12），日出日落和季节提示按这个月算 */
+  month?: number;
   dayCount: number;
   days: TripItem[][];
   /** 已加入但还没排进哪一天的景点 */
   pool: string[];
   /** 长度为 dayCount + 1：nights[0] 是第 1 天出发前住的地方，nights[d] 是第 d 天晚上住的地方 */
   nights: (TripLodging | null)[];
+  /** 自动生成攻略时记下的说明（哪些景点没排进去、为什么） */
+  guide?: GuideInfo;
 }
 
 export const MAX_DAYS = 14;

@@ -7,3 +7,9 @@ export function addDays(date: string, days: number): string {
 export function monthOf(date: string): number {
   return Number(date.slice(5, 7));
 }
+
+/** 只定了月份时，按最近一次这个月的 15 号算日出日落 */
+export function nominalDate(month: number, today = new Date()): string {
+  const year = today.getFullYear() + (month < today.getMonth() + 1 ? 1 : 0);
+  return `${year}-${String(month).padStart(2, "0")}-15`;
+}

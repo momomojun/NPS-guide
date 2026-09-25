@@ -45,19 +45,23 @@ export interface Attraction {
   durationMin: number;
   hike?: Hike;
   bestTime?: TimeOfDay[];
-  /** 通常能去的月份，不填表示全年；每年随天气变化 */
+  /** 通常能去的月份，不填表示全年；每年随天气变化。空数组表示目前整年关闭（比如施工） */
   openMonths?: number[];
+  /** 不开放时的说明：为什么关、大概什么时候开、有什么替代；所选月份不在 openMonths 里（或整年关闭）时显示 */
+  closedNote?: string;
   /** 最佳月份 */
   bestMonths?: number[];
   /** 需要的许可证 / 预约 */
   permit?: string;
+  /** 许可证要抽签，抽不中就去不了（自动生成攻略时不排）；不填表示提前订就行 */
+  lottery?: boolean;
   mustSee?: boolean;
   /** 不在国家公园范围内，但常和公园一起玩 */
   outsidePark?: boolean;
   /** 一两句话：为什么值得去 */
   summary: string;
   tips?: string[];
-  /** Wikimedia Commons 文件名，作者和授权由 scripts/build-photos.mjs 生成 */
+  /** 手选的 Wikimedia Commons 文件名，作为图集第一张；图集由 scripts/build-gallery.mjs 生成 */
   photoFile?: string;
   /** 步道路线，由 scripts/build-trails.mjs 按 OpenStreetMap 步道生成 */
   trail?: TrailPlan;
@@ -73,6 +77,8 @@ export interface GooglePlace {
 
 export interface Photo {
   url: string;
+  /** 灯箱用的大图 */
+  large?: string;
   width: number;
   height: number;
   /** Commons 文件页，用于署名链接 */

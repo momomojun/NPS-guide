@@ -1,0 +1,188 @@
+import type { Attraction } from "./types";
+
+// 岛上没有车：每个上岛一日游是一个景点，lat/lon 是岛上的登岸点，start 是大陆上的出发码头，
+// durationMin 含往返坐船和在岛上的时间，所以不填 trail / hike（步道长度写在 tips 里）
+const VENTURA_DOCK = { lat: 34.24418, lon: -119.26529, nameZh: "Ventura 港 Island Packers 码头" };
+
+export const channelIslands: Attraction[] = [
+  {
+    id: "chis-scorpion-anchorage",
+    park: "chis",
+    nameZh: "圣克鲁斯岛 · 蝎子湾一日游",
+    nameEn: "Santa Cruz Island – Scorpion Anchorage",
+    kind: "experience",
+    area: "santa-cruz",
+    lat: 34.04933,
+    lon: -119.55621,
+    start: VENTURA_DOCK,
+    durationMin: 540,
+    mustSee: true,
+    permit: "船票要提前向 Island Packers 预订（不是抽签），夏季和周末常提前售罄",
+    summary:
+      "Santa Cruz 岛东端的主登岸点，坐船约 1–1.5 小时，是海峡群岛去的人最多的地方。下船就是卵石滩和历史牧场，步道通往海崖观景点，常能见到只生活在加州海峡群岛的岛狐。",
+    tips: [
+      "推荐顺时针走 Cavern Point 环线（约 3.2 公里，看海崖，季节对时能看到鲸），体力好再沿北崖走到 Potato Harbor 观景点（从码头往返约 8 公里）；去 Smugglers Cove 往返约 12 公里，路上没有水",
+      "通常上午 8–9 点开船、下午 3:30–4:30 从岛上返航，以船票为准；岛上不卖任何东西，食物和水带足，吃的收进储物箱，岛狐和渡鸦会偷",
+      "风浪大时船会停航，行程里留一天机动；容易晕船的提前吃药",
+    ],
+    photoFile: "Potato Harbor Santa Cruz Island.jpg",
+  },
+  {
+    id: "chis-anacapa-island",
+    park: "chis",
+    nameZh: "阿纳卡帕岛一日游",
+    nameEn: "Anacapa Island",
+    kind: "experience",
+    area: "anacapa",
+    lat: 34.01658,
+    lon: -119.36211,
+    start: VENTURA_DOCK,
+    durationMin: 450,
+    bestMonths: [2, 3, 4],
+    mustSee: true,
+    permit: "船票要提前向 Island Packers 预订（不是抽签），Ventura 和 Oxnard 都有班次，淡季每周只有几班",
+    summary:
+      "离大陆最近的岛，坐船约 1 小时。Anacapa 其实是三座小岛，游客只能登东岛：爬上 157 级台阶后是约 3 公里的平缓步道，走到 Inspiration Point 能俯瞰中、西两岛，2–4 月野花开时满岛金黄。",
+    tips: [
+      "下船要先爬几级铁梯上码头、再爬 157 级台阶；岛上没有水、几乎没有树荫，带足水、帽子和防晒",
+      "这里的码头最受风浪影响，船长到现场才决定能否靠岸，靠不了就改为海上巡游、退部分票款；3–5 月风大，更容易取消",
+      "4 月底到 7 月是西美鸥繁殖期，步道两旁都是鸟巢，亲鸟会俯冲护巢；坐船靠近时能看到东端约 12 米高的拱门岩（Arch Rock）",
+    ],
+    photoFile: "Anacapa Island, Arch Rock.jpg",
+  },
+  {
+    id: "chis-sea-cave-kayak",
+    park: "chis",
+    nameZh: "海蚀洞皮划艇团",
+    nameEn: "Sea Cave Kayak Tour",
+    kind: "experience",
+    area: "santa-cruz",
+    lat: 34.04752,
+    lon: -119.55188,
+    start: VENTURA_DOCK,
+    durationMin: 540,
+    bestMonths: [8, 9, 10],
+    permit:
+      "要提前预订授权向导公司（如 Channel Islands Adventure Company）的皮划艇团，并买好同一天去蝎子湾的船票，订团时可以一起加购",
+    summary:
+      "在蝎子湾跟授权向导划海上皮划艇，钻进悬崖下的海蚀洞、穿过海藻林，没有经验也能参加，是海峡群岛最受欢迎的玩法之一。",
+    tips: [
+      "最常见的 Adventure 团约 4 小时（划 2.5–3 小时），上午 9:30 或 10:30 在岛上集合，要坐早班船、订 15:30 以后的回程船；5 岁以上可以参加",
+      "和蝎子湾一日游是同一班船、同一个登岸点，一般二选一；想都玩就在岛上露营一晚",
+      "8–10 月风浪最小；天气不好向导公司会取消，可以改期或退款。NPS 不建议没经验的人自己租船下海",
+    ],
+    photoFile: "Santa Cruz Island 6.jpg",
+  },
+  {
+    id: "chis-prisoners-harbor",
+    park: "chis",
+    nameZh: "圣克鲁斯岛 · 囚犯港一日游",
+    nameEn: "Santa Cruz Island – Prisoners Harbor",
+    kind: "experience",
+    area: "santa-cruz",
+    lat: 34.01996,
+    lon: -119.68428,
+    start: VENTURA_DOCK,
+    durationMin: 540,
+    permit: "船票要提前向 Island Packers 预订（不是抽签），班次比蝎子湾少",
+    summary:
+      "Santa Cruz 岛北岸更偏远的登岸点，人少、有老牧场和树林，是找圣克鲁斯岛丛鸦（只生活在这座岛上）的好地方；步道通往 Del Norte 观景点（往返约 4.8 公里）和 Pelican Bay。",
+    tips: [
+      "要从船上爬铁梯上码头，行动不便的人不适合；这里没有饮用水，水和食物带足",
+      "Pelican Bay 步道往返约 6.4 公里、偏难，经过大自然保护协会（TNC）的土地，只能跟 Island Packers 员工走、要签免责书，不保证能走到海湾",
+      "单程约 1.5 小时；选上午 8:30 出发的班次可以加购绕去 Painted Cave（世界最大的海蚀洞之一）",
+    ],
+    photoFile: "Santa Cruz Island Prisoner's Harbor (28635086660).jpg",
+  },
+  {
+    id: "chis-visitor-center",
+    park: "chis",
+    nameZh: "海峡群岛游客中心",
+    nameEn: "Robert J. Lagomarsino Visitor Center",
+    kind: "visitor",
+    area: "mainland",
+    lat: 34.2485,
+    lon: -119.26656,
+    durationMin: 45,
+    summary:
+      "Ventura 港里的国家公园游客中心，有五座岛的展览、海洋生物展示和 25 分钟的介绍片，观景塔上的望远镜天气好时能望见岛屿。",
+    tips: [
+      "每天 8:30–17:00 开放，感恩节和 12 月 25 日关闭；周末和节假日 11:00、15:00 有免费的护林员讲解",
+      "公园不收门票；Ventura 港周五到周日和节假日停车收费（全天约 10 美元），Spinnaker Drive 路边和 Dolphin 停车场免费",
+      "Island Packers 码头在同一条路上、步行约 7 分钟；坐船当天要提前签到，看游客中心最好放在上船前一天或下船后",
+    ],
+    photoFile: "VISITOR'S CENTER, CHANNEL ISLANDS NATIONAL PARK, CA.jpg",
+  },
+  {
+    id: "chis-whale-watching",
+    park: "chis",
+    nameZh: "观鲸船",
+    nameEn: "Whale Watching Cruise",
+    kind: "experience",
+    area: "mainland",
+    lat: 34.12,
+    lon: -119.32,
+    start: VENTURA_DOCK,
+    durationMin: 300,
+    openMonths: [12, 1, 2, 3, 4, 6, 7, 8, 9],
+    closedNote:
+      "5 月和 10–11 月在灰鲸季和夏季蓝鲸季之间，Island Packers 通常没有专门的观鲸船（以官网船期为准）；这时可以坐约 3.5 小时的 Anacapa 沿岸巡游或登岛船，海峡里一年四季都常见海豚，偶尔也能遇到鲸。",
+    permit: "观鲸船票要提前向 Island Packers 预订",
+    summary:
+      "Island Packers 从港口出发的不登岛巡游：12 月到次年 4 月看迁徙的灰鲸，6–9 月开得更远去找蓝鲸和座头鲸，海豚一年四季都常见。",
+    tips: [
+      "冬季灰鲸船约 3–3.5 小时，Ventura 和 Oxnard 都有班次；夏季观鲸船约 5–7 小时",
+      "5 月和 10–11 月可以改坐 Anacapa 沿岸巡游（约 3.5 小时，看海狮和海豚）；Santa Barbara 港也有观鲸船",
+      "去登岛的船上也常能看到海豚和鲸，时间紧就不用专门再坐一趟",
+    ],
+    photoFile: "CINMS - BlueWhales (30550423643).jpg",
+  },
+  {
+    id: "chis-santa-rosa-island",
+    park: "chis",
+    nameZh: "圣罗莎岛一日游",
+    nameEn: "Santa Rosa Island",
+    kind: "experience",
+    area: "santa-rosa",
+    lat: 34.00815,
+    lon: -120.0477,
+    start: VENTURA_DOCK,
+    durationMin: 600,
+    openMonths: [4, 5, 6, 7, 8, 9, 10],
+    closedNote:
+      "Island Packers 去 Santa Rosa 岛的船大约 4–10 月运营、每周只有几班，冬春风大浪高基本不开；这段时间可以去 Santa Cruz 岛蝎子湾或 Anacapa 岛，想看 Painted Cave 可以在 Prisoners Harbor 早班船上加购。",
+    permit: "船票要提前向 Island Packers 预订（不是抽签），每周只有几班",
+    summary:
+      "第二大岛，单程坐船 2–3 小时，在岛上约 3–4 小时：可以走到约 3 公里长的 Water Canyon 白沙滩（从码头往返约 4.8 公里），看看码头边的老牧场；回程船会绕到 Painted Cave 海蚀洞。",
+    tips: [
+      "2026 年 5–6 月山火烧掉全岛近 40%，7 月 1 日恢复一日游；Torrey Pines 步道和烧过的区域仍关闭，露营 10 月 13 日后才恢复，出发前查 NPS 公告",
+      "船大约 4–10 月运行、每周只有几班；这座岛风常常很大，带防风外套",
+      "码头上岸要爬一小段台阶；岛上不卖吃喝，水和食物自带",
+    ],
+    photoFile: "Torrey Pine at Santa Rosa Island.jpg",
+  },
+  {
+    id: "chis-san-miguel-island",
+    park: "chis",
+    nameZh: "圣米格尔岛一日游",
+    nameEn: "San Miguel Island",
+    kind: "experience",
+    area: "san-miguel",
+    lat: 34.05083,
+    lon: -120.35292,
+    start: VENTURA_DOCK,
+    durationMin: 720,
+    openMonths: [10],
+    closedNote:
+      "San Miguel 岛最远、海况最差，Island Packers 只在 7–10 月开船且大多只送露营者，一日游一年通常只有一两班（多在 9–10 月），其余时间基本去不了；可以改去 Santa Rosa 岛（回程也会绕 Painted Cave）或 Santa Cruz 岛。",
+    permit: "船票要提前向 Island Packers 预订，一日游班次极少，登岛还要签 NPS 的许可和免责书",
+    summary:
+      "最西、最远的岛，单程坐船 3–4 小时，最后换乘小艇冲上沙滩登岸。可以自己爬到 Cabrillo 纪念碑和 Lester 牧场旧址；西端 Point Bennett 聚集着大量海豹和海狮，要露营、跟护林员往返约 26 公里才能去。",
+    tips: [
+      "一日游一年通常只有一两班（多在 10 月），其余是 7–10 月送露营者的船；来回十几个小时，海上常常风大浪高",
+      "在沙滩涉水登岸，鞋和背包要防水；这里曾是轰炸靶场，可能有未爆弹，只能走在步道上",
+      "只有公园人员在岛上时才开放，出发前确认船期和 NPS 公告",
+    ],
+    photoFile: "San Miguel Island (14721037015).jpg",
+  },
+];

@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { CommonsImage } from "@/components/commons-image";
 import { IconArrowRight } from "@/components/icons";
 
 export interface ParkIndexItem {
@@ -27,24 +27,35 @@ export interface ParkIndexItem {
  */
 export function ParkIndex({ items, inSeasonLabel }: { items: ParkIndexItem[]; inSeasonLabel: string }) {
   const [active, setActive] = useState(items[0]?.code);
+  // 大图只加载悬停过的公园，不然一打开首页就同时下载 16 张
+  const [shown, setShown] = useState(() => new Set([items[0]?.code]));
   const activeItem = items.find((item) => item.code === active) ?? items[0];
+  const activate = (code: string) => {
+    setActive(code);
+    setShown((current) => (current.has(code) ? current : new Set(current).add(code)));
+  };
 
   return (
     <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
       <div className="hidden lg:col-span-5 lg:block">
         <div className="sticky top-24 aspect-[4/5] overflow-hidden bg-paper-deep">
-          {items.map((item) => (
-            <Image
-              key={item.code}
-              src={item.image}
-              alt=""
-              fill
-              sizes="(min-width: 1024px) 38vw, 1px"
-              className={`object-cover transition-[opacity,transform] duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                item.code === active ? "scale-100 opacity-100" : "scale-105 opacity-0"
-              }`}
-            />
-          ))}
+          {/* fill 的图片要放在 absolute / relative 的容器里，sticky 不算 */}
+          <div className="absolute inset-0">
+            {items
+              .filter((item) => item.image && shown.has(item.code))
+              .map((item) => (
+                <CommonsImage
+                  key={item.code}
+                  src={item.image}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 38vw, 1px"
+                  className={`object-cover transition-[opacity,transform] duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                    item.code === active ? "scale-100 opacity-100" : "scale-105 opacity-0"
+                  }`}
+                />
+              ))}
+          </div>
           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 to-transparent px-7 pt-24 pb-7 text-white">
             <p key={activeItem.code} className="font-serif text-2xl" style={{ animation: "fade 1s var(--ease-expo) both" }}>
               {activeItem.tagline}
@@ -61,12 +72,12 @@ export function ParkIndex({ items, inSeasonLabel }: { items: ParkIndexItem[]; in
           <li key={item.code} className="border-b border-line">
             <Link
               href={item.href}
-              onMouseEnter={() => setActive(item.code)}
-              onFocus={() => setActive(item.code)}
+              onMouseEnter={() => activate(item.code)}
+              onFocus={() => activate(item.code)}
               className="group grid grid-cols-[auto_1fr_auto] items-center gap-5 py-7 sm:gap-8 lg:py-9"
             >
               <span className="relative block h-20 w-16 overflow-hidden bg-paper-deep lg:hidden">
-                <Image src={item.image} alt="" fill sizes="64px" className="object-cover" />
+                {item.image && <CommonsImage src={item.image} alt="" fill sizes="64px" className="object-cover" />}
               </span>
               <span className="hidden w-10 font-serif text-lg text-mute tabular-nums transition-colors duration-500 group-hover:text-clay-600 lg:block">
                 {String(i + 1).padStart(2, "0")}

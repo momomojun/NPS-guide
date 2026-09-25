@@ -26,6 +26,16 @@ export interface MapTrail {
   path: [number, number][];
 }
 
+/** 一段开车路线：拿到真实道路就画实线，还没拿到时按游览顺序用虚线连起来 */
+export interface MapLeg {
+  id: string;
+  color: string;
+  /** [经度, 纬度] */
+  path: [number, number][];
+  /** 只是按顺序连起来的直线，不是实际道路 */
+  straight?: boolean;
+}
+
 export interface MapText {
   map: string;
   satellite: string;
@@ -47,7 +57,7 @@ const WORKER_URL = "/maplibre/maplibre-gl-worker.mjs";
 // 步道用砂岩红，选中的步道加深加粗；开车路线用深石板蓝
 const TRAIL_COLOR = "#b85f3c";
 const TRAIL_HIGHLIGHT = "#6b2a16";
-const ROAD_COLOR = "#2f4a5a";
+export const ROAD_COLOR = "#2f4a5a";
 
 const EMPTY: GeoJSON.FeatureCollection = { type: "FeatureCollection", features: [] };
 
@@ -70,7 +80,9 @@ function pointsToGeoJSON(points: MapPoint[]): GeoJSON.FeatureCollection {
   };
 }
 
-function linesToGeoJSON(lines: { id: string; coordinates: [number, number][] }[]): GeoJSON.FeatureCollection {
+function linesToGeoJSON(
+  lines: { id: string; coordinates: [number, number][]; color?: string; straight?: boolean }[],
+): GeoJSON.FeatureCollection {
   return {
     type: "FeatureCollection",
     features: lines
@@ -78,7 +90,7 @@ function linesToGeoJSON(lines: { id: string; coordinates: [number, number][] }[]
       .map((line) => ({
         type: "Feature",
         geometry: { type: "LineString", coordinates: line.coordinates },
-        properties: { id: line.id },
+        properties: { id: line.id, color: line.color ?? ROAD_COLOR, straight: line.straight ?? false },
       })),
   };
 }
@@ -107,8 +119,9 @@ export function ParkMap({
   onSelect,
   trails,
   highlightTrailId = null,
-  route,
-  roadPath,
+  legs,
+  legend,
+  fitKey = "",
   text,
   className = "",
   children,
@@ -120,10 +133,12 @@ export function ParkMap({
   trails?: MapTrail[];
   /** 高亮哪条步道（一般是选中的景点） */
   highlightTrailId?: string | null;
-  /** 按顺序用虚线连起来（行程模式，还没拿到真实道路时） */
-  route?: { lat: number; lon: number }[];
-  /** 真实开车路线 [经度, 纬度]，有它就不画虚线 */
-  roadPath?: [number, number][];
+  /** 开车路线（行程模式），整个行程时每天一段、各用一种颜色 */
+  legs?: MapLeg[];
+  /** 图例：每天的颜色；不填时有实线路线就显示“开车路线” */
+  legend?: { color: string; label: string }[];
+  /** 变了就重新缩放到全部点（比如切换显示哪一天），点的集合变了也会重新缩放 */
+  fitKey?: string;
   text: MapText;
   className?: string;
   /** 叠在地图上的内容，比如选中景点的卡片 */
@@ -193,13 +208,21 @@ export function ParkMap({
           firstLabel,
         );
 
-        instance.addSource("road", { type: "geojson", data: EMPTY });
+        instance.addSource("legs", { type: "geojson", data: EMPTY });
         instance.addLayer({
-          id: "road",
+          id: "legs",
           type: "line",
-          source: "road",
+          source: "legs",
+          filter: ["==", ["get", "straight"], false],
           layout: { "line-join": "round", "line-cap": "round" },
-          paint: { "line-color": ROAD_COLOR, "line-width": 4, "line-opacity": 0.75 },
+          paint: { "line-color": ["get", "color"], "line-width": 4, "line-opacity": 0.8 },
+        });
+        instance.addLayer({
+          id: "legs-straight",
+          type: "line",
+          source: "legs",
+          filter: ["==", ["get", "straight"], true],
+          paint: { "line-color": ["get", "color"], "line-width": 2, "line-dasharray": [2, 2] },
         });
         instance.addSource("trails", { type: "geojson", data: EMPTY });
         instance.addLayer({
@@ -216,13 +239,6 @@ export function ParkMap({
           filter: ["==", ["get", "id"], ""],
           layout: { "line-join": "round", "line-cap": "round" },
           paint: { "line-color": TRAIL_HIGHLIGHT, "line-width": 4.5 },
-        });
-        instance.addSource("route", { type: "geojson", data: EMPTY });
-        instance.addLayer({
-          id: "route",
-          type: "line",
-          source: "route",
-          paint: { "line-color": "#45413a", "line-width": 2, "line-dasharray": [2, 2] },
         });
         instance.addSource("points", { type: "geojson", data: EMPTY });
         instance.addLayer({
@@ -324,21 +340,16 @@ export function ParkMap({
     (map.getSource("trails") as GeoJSONSource).setData(
       linesToGeoJSON((trails ?? []).map((trail) => ({ id: trail.id, coordinates: trail.path }))),
     );
-    (map.getSource("road") as GeoJSONSource).setData(
-      linesToGeoJSON(roadPath ? [{ id: "road", coordinates: roadPath }] : []),
+    (map.getSource("legs") as GeoJSONSource).setData(
+      linesToGeoJSON((legs ?? []).map((leg) => ({ id: leg.id, coordinates: leg.path, color: leg.color, straight: leg.straight }))),
     );
-    (map.getSource("route") as GeoJSONSource).setData(
-      linesToGeoJSON(
-        route && !roadPath ? [{ id: "route", coordinates: route.map((p) => [p.lon, p.lat] as [number, number]) }] : [],
-      ),
-    );
-    const key = points.map((p) => p.id).join("|");
+    const key = `${fitKey}#${points.map((p) => p.id).join("|")}`;
     if (key !== fittedKeyRef.current) {
       // 第一次直接跳过去，之后换点集再用动画
       fitToPoints(map, points, fittedKeyRef.current !== "");
       fittedKeyRef.current = key;
     }
-  }, [ready, points, trails, route, roadPath]);
+  }, [ready, points, trails, legs, fitKey]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -366,7 +377,9 @@ export function ParkMap({
   const toggle = (active: boolean) =>
     `px-3 py-1.5 transition-colors ${active ? "bg-ink text-paper" : "text-ink hover:bg-paper-deep"}`;
   const hasTrails = (trails?.length ?? 0) > 0;
-  const showStraightRoute = !roadPath && route && route.length > 1;
+  const hasRoad = legs?.some((leg) => !leg.straight && leg.path.length > 1) ?? false;
+  const showStraightRoute = legs?.some((leg) => leg.straight && leg.path.length > 1) ?? false;
+  const legendItems = legend ?? (hasRoad ? [{ color: legs?.find((leg) => !leg.straight)?.color ?? ROAD_COLOR, label: text.roadLegend }] : []);
 
   return (
     <div className={`relative overflow-hidden bg-paper-deep ${className}`}>
@@ -394,14 +407,14 @@ export function ParkMap({
             {text.terrain}
           </button>
         </div>
-        {(hasTrails || roadPath || showStraightRoute) && (
-          <div className="flex w-fit flex-col gap-1 bg-paper/90 px-3 py-2 text-[11px] text-ink-soft shadow-sm">
-            {roadPath && (
-              <span className="flex items-center gap-1.5">
-                <span className="inline-block h-[3px] w-5" style={{ backgroundColor: ROAD_COLOR }} />
-                {text.roadLegend}
+        {(hasTrails || legendItems.length > 0 || showStraightRoute) && (
+          <div className="flex w-fit max-w-[14rem] flex-col gap-1 bg-paper/90 px-3 py-2 text-[11px] text-ink-soft shadow-sm">
+            {legendItems.map((item) => (
+              <span key={item.label} className="flex items-center gap-1.5">
+                <span className="inline-block h-[3px] w-5 shrink-0" style={{ backgroundColor: item.color }} />
+                {item.label}
               </span>
-            )}
+            ))}
             {hasTrails && (
               <span className="flex items-center gap-1.5">
                 <span className="inline-block w-5 border-t-2 border-dashed" style={{ borderColor: TRAIL_COLOR }} />

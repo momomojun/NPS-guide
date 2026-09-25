@@ -2,7 +2,17 @@
 
 import type { DragEvent, ReactNode } from "react";
 import { KIND_COLORS } from "@/components/attractions/kinds";
-import { IconAlert, IconBed, IconCar, IconCheck, IconGrip, IconPause, IconSunrise, IconSunset } from "@/components/icons";
+import {
+  IconAlert,
+  IconBed,
+  IconCar,
+  IconCheck,
+  IconChevronRight,
+  IconGrip,
+  IconPause,
+  IconSunrise,
+  IconSunset,
+} from "@/components/icons";
 import type { AttractionWithPhoto } from "@/data/attractions";
 import { fill, formatDuration, formatMonths } from "@/i18n/format";
 import { monthOf } from "@/lib/dates";
@@ -23,14 +33,23 @@ export interface DragHandlers {
 
 type Tone = "warn" | "info";
 
+/** 时间线三列：拖动把手、时间、内容；出发 / 开车 / 回住处的行也用同样的列宽，才能对齐 */
+const gripCol = "w-4 shrink-0";
+const timeCol = "w-[3.75rem] shrink-0 text-right tabular-nums";
+/** 开始时间：大号等宽数字（衬线字体的数字高低不齐，不好认） */
+const clock = "block text-[17px] leading-6 font-medium text-ink";
+
 export function DayCard({
   view,
+  color,
   dayCount,
   itemCount,
   dateLabel,
   parkNames,
   text,
   selectedId,
+  openId,
+  details,
   onSelect,
   onEdit,
   mapsUrl,
@@ -39,6 +58,8 @@ export function DayCard({
   footer,
 }: {
   view: DayView;
+  /** 这天在整个行程地图上的颜色 */
+  color: string;
   dayCount: number;
   /** trip.days[day].length，拖到末尾时用 */
   itemCount: number;
@@ -46,6 +67,11 @@ export function DayCard({
   parkNames: string[];
   text: PlannerText;
   selectedId: string | null;
+  /** 展开详情的景点 */
+  openId: string | null;
+  /** 景点详情：照片、评分、简介、提示 */
+  details: (stop: AttractionWithPhoto) => ReactNode;
+  /** 点景点：展开 / 收起详情，并在地图上选中 */
   onSelect: (id: string) => void;
   onEdit: (change: (trip: Trip) => Trip) => void;
   /** 景点在 Google Maps 上的搜索链接 */
@@ -66,7 +92,13 @@ export function DayCard({
   const notesFor = (stop: AttractionWithPhoto) => {
     const notes: { text: string; tone: Tone }[] = [];
     if (month !== null && stop.openMonths && !stop.openMonths.includes(month)) {
-      notes.push({ text: fill(t.warnings.closed, { months: formatMonths(stop.openMonths, text.units) }), tone: "warn" });
+      notes.push({
+        text:
+          stop.openMonths.length === 0
+            ? t.warnings.closedNow
+            : fill(t.warnings.closed, { months: formatMonths(stop.openMonths, text.units) }),
+        tone: "warn",
+      });
     } else if (month !== null && stop.bestMonths && !stop.bestMonths.includes(month)) {
       notes.push({ text: fill(t.warnings.notBest, { months: formatMonths(stop.bestMonths, text.units) }), tone: "info" });
     }
@@ -95,14 +127,15 @@ export function DayCard({
   ].filter((warning): warning is string => warning !== null);
 
   return (
-    <section className="border-t border-ink">
+    <section id={`plan-day-${day}`} className="scroll-mt-24 border-t border-ink">
       <header className="flex flex-wrap items-start justify-between gap-4 py-5">
         <div className="flex items-baseline gap-4">
           <span className="font-serif text-4xl leading-none text-clay-700 tabular-nums">
             {String(day + 1).padStart(2, "0")}
           </span>
           <div>
-            <h2 className="font-serif text-xl">
+            <h2 className="flex items-center gap-2 font-serif text-xl">
+              <span aria-hidden className="inline-block h-[3px] w-5" style={{ backgroundColor: color }} />
               {fill(t.day, { n: day + 1 })}{" "}
               {dateLabel && <span className="ml-1 font-sans text-sm text-mute">{dateLabel}</span>}
             </h2>
@@ -141,9 +174,16 @@ export function DayCard({
       <div className="space-y-4 pb-8">
         {header}
         {from && timeline.departAt !== undefined && (
-          <p className="flex items-center gap-2 pl-1 text-xs text-mute">
-            <IconBed className="text-sm" /> {fill(t.lodging.depart, { time: formatClock(timeline.departAt), name: from.name })}
-          </p>
+          <div className="flex items-center gap-3 px-1.5">
+            <span className={gripCol} aria-hidden />
+            <span className={timeCol}>
+              <span className={clock}>{formatClock(timeline.departAt)}</span>
+            </span>
+            <span className="flex min-w-0 items-center gap-1.5 text-sm text-ink-soft">
+              <IconBed className="shrink-0 text-base text-mute" />
+              {fill(t.lodging.departFrom, { name: from.name })}
+            </span>
+          </div>
         )}
 
         {rows.length === 0 ? (
@@ -180,31 +220,45 @@ export function DayCard({
                   }`}
                 >
                   {entry.driveMin > 0 && (
-                    <p className="flex items-center gap-2 py-1 pl-8 text-xs text-mute">
-                      <IconCar className="text-sm" /> {fill(t.drive, { d: duration(entry.driveMin) })}
+                    <p className="flex items-center gap-3 px-1.5 py-1 text-xs text-mute">
+                      <span className={gripCol} aria-hidden />
+                      <span className={timeCol} aria-hidden />
+                      <span className="inline-flex items-center gap-1.5">
+                        <IconCar className="text-sm" /> {fill(t.drive, { d: duration(entry.driveMin) })}
+                      </span>
                     </p>
                   )}
                   {entry.waitMin >= 30 && (
-                    <p className="flex items-center gap-2 py-1 pl-8 text-xs text-mute">
-                      <IconPause className="text-sm" /> {fill(t.free, { d: duration(entry.waitMin) })}
+                    <p className="flex items-center gap-3 px-1.5 py-1 text-xs text-mute">
+                      <span className={gripCol} aria-hidden />
+                      <span className={timeCol} aria-hidden />
+                      <span className="inline-flex items-center gap-1.5">
+                        <IconPause className="text-sm" /> {fill(t.free, { d: duration(entry.waitMin) })}
+                      </span>
                     </p>
                   )}
                   <div
-                    className={`flex items-start gap-2 px-1.5 py-2.5 transition-colors ${
+                    className={`flex items-start gap-3 px-1.5 py-2.5 transition-colors ${
                       stop.id === selectedId ? "bg-paper-deep" : "hover:bg-paper-deep/60"
                     }`}
                   >
                     <span
                       aria-hidden
                       title={t.dragHint}
-                      className="cursor-grab pt-1 text-line select-none group-hover:text-mute active:cursor-grabbing"
+                      className={`${gripCol} cursor-grab pt-1 text-line select-none group-hover:text-mute active:cursor-grabbing`}
                     >
                       <IconGrip />
                     </span>
-                    <span className="w-[5.5rem] shrink-0 pt-1 font-serif text-sm text-ink-soft tabular-nums">
-                      {formatClock(entry.start)}–{formatClock(entry.end)}
+                    <span className={timeCol}>
+                      <span className={`${clock} ${finished ? "text-mute" : ""}`}>{formatClock(entry.start)}</span>
+                      <span className="block text-[11px] leading-4 text-mute">{fill(t.until, { time: formatClock(entry.end) })}</span>
                     </span>
-                    <button type="button" onClick={() => onSelect(stop.id)} className="min-w-0 flex-1 text-left">
+                    <button
+                      type="button"
+                      onClick={() => onSelect(stop.id)}
+                      aria-expanded={openId === stop.id}
+                      className="group/stop min-w-0 flex-1 text-left"
+                    >
                       <p className={`font-serif text-base ${finished ? "text-mute" : ""} ${item.status === "done" ? "line-through" : ""}`}>
                         <span
                           className="mr-2 inline-block size-1.5 rounded-full align-middle"
@@ -212,9 +266,20 @@ export function DayCard({
                         />
                         {stop.nameZh} <span className="ml-1 font-sans text-[11px] tracking-[0.12em] text-mute uppercase">{stop.nameEn}</span>
                       </p>
-                      <p className="mt-0.5 text-xs text-mute">
+                      <p className="mt-0.5 flex flex-wrap items-center gap-x-1 text-xs text-mute">
                         {text.kinds[stop.kind]} · {duration(stop.durationMin)}
+                        {stop.hotRank !== undefined && (
+                          <span className="text-clay-700"> · {fill(text.attraction.hotRank, { n: stop.hotRank })}</span>
+                        )}
+                        {stop.google && <span> · ★{stop.google.rating.toFixed(1)}</span>}
+                        {stop.mustSee && <span className="text-clay-700"> · {text.attraction.mustSee}</span>}
                         {finished && ` · ${t.status[item.status as "done" | "skipped"]}`}
+                        <span className="ml-2 inline-flex items-center gap-0.5 text-ink-soft group-hover/stop:text-clay-700">
+                          {openId === stop.id ? t.hideDetails : t.showDetails}
+                          <IconChevronRight
+                            className={`text-[11px] transition-transform ${openId === stop.id ? "-rotate-90" : "rotate-90"}`}
+                          />
+                        </span>
                       </p>
                       {notes.length > 0 && (
                         <span className="mt-2 flex flex-wrap gap-1.5">
@@ -288,6 +353,19 @@ export function DayCard({
                       ]}
                     />
                   </div>
+                  {openId === stop.id && (
+                    <div
+                      className="pt-1 pb-3 pl-0 sm:pl-[6.625rem]"
+                      draggable
+                      onDragStart={(event) => {
+                        // 详情里选文字、点照片时不要拖动整行
+                        event.preventDefault();
+                        event.stopPropagation();
+                      }}
+                    >
+                      {details(stop)}
+                    </div>
+                  )}
                 </li>
               );
             })}
@@ -297,6 +375,29 @@ export function DayCard({
               className={`h-3 border-t-2 ${isTarget(itemCount) ? "border-clay-600" : "border-transparent"}`}
             />
           </ol>
+        )}
+        {view.to && timeline.returnAt !== undefined && rows.length > 0 && (
+          <div>
+            {timeline.returnDriveMin > 0 && (
+              <p className="flex items-center gap-3 px-1.5 py-1 text-xs text-mute">
+                <span className={gripCol} aria-hidden />
+                <span className={timeCol} aria-hidden />
+                <span className="inline-flex items-center gap-1.5">
+                  <IconCar className="text-sm" /> {fill(t.drive, { d: duration(timeline.returnDriveMin) })}
+                </span>
+              </p>
+            )}
+            <div className="flex items-center gap-3 px-1.5 pt-1">
+              <span className={gripCol} aria-hidden />
+              <span className={timeCol}>
+                <span className={`${clock} ${timeline.lateReturn ? "text-clay-700" : ""}`}>{formatClock(timeline.returnAt)}</span>
+              </span>
+              <span className="flex min-w-0 items-center gap-1.5 text-sm text-ink-soft">
+                <IconBed className="shrink-0 text-base text-mute" />
+                {fill(t.lodging.arriveAt, { name: view.to.name })}
+              </span>
+            </div>
+          </div>
         )}
 
         {footer}

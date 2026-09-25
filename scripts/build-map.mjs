@@ -1,4 +1,4 @@
-// 首页的线描地图：美国西南（6 个公园）+ 阿拉斯加小图（德纳里）。
+// 首页的线描地图：美国西部（本土的公园）+ 阿拉斯加小图（德纳里）。
 // 州界来自 Natural Earth（公共领域），按 Albers 等积圆锥投影、化简后输出 SVG 路径，
 // 公园和参考城市的位置也一起投影好。
 // 输出 src/data/map.generated.ts。重新跑：npm run data:map
@@ -12,6 +12,8 @@ const WIDTH = 1000;
 const TOLERANCE = 0.8;
 
 const CITIES = [
+  { id: "sea", nameZh: "西雅图", nameEn: "Seattle", lat: 47.6062, lon: -122.3321, map: "west" },
+  { id: "pdx", nameZh: "波特兰", nameEn: "Portland", lat: 45.5152, lon: -122.6784, map: "west" },
   { id: "sf", nameZh: "旧金山", nameEn: "San Francisco", lat: 37.7749, lon: -122.4194, map: "west" },
   { id: "la", nameZh: "洛杉矶", nameEn: "Los Angeles", lat: 34.0522, lon: -118.2437, map: "west" },
   { id: "lv", nameZh: "拉斯维加斯", nameEn: "Las Vegas", lat: 36.1699, lon: -115.1398, map: "west" },
@@ -23,12 +25,34 @@ const CITIES = [
 
 const VIEWS = {
   west: {
-    projection: { lon0: -116, lat0: 37, lat1: 33, lat2: 41 },
-    states: ["California", "Nevada", "Utah", "Arizona", "Oregon", "Idaho", "Wyoming", "Colorado", "New Mexico"],
-    /** 视野按这几个州的范围取，其余州只露出边缘 */
-    focus: ["California", "Nevada", "Utah", "Arizona"],
-    labels: { California: "CALIFORNIA", Nevada: "NEVADA", Utah: "UTAH", Arizona: "ARIZONA" },
-    margin: 0.04,
+    projection: { lon0: -116.5, lat0: 41, lat1: 35, lat2: 47 },
+    states: [
+      "Washington",
+      "Oregon",
+      "California",
+      "Nevada",
+      "Idaho",
+      "Montana",
+      "Wyoming",
+      "Utah",
+      "Arizona",
+      "Colorado",
+      "New Mexico",
+    ],
+    /** 有公园的州填底色，其余州只画边界 */
+    focus: ["Washington", "Oregon", "California", "Nevada", "Idaho", "Wyoming", "Utah", "Arizona"],
+    /** 视野按经纬度框取：南边到海峡群岛以南，东边到黄石以东 */
+    bounds: { west: -124.9, east: -108.6, south: 33.1, north: 49.1 },
+    labels: {
+      Washington: "WASHINGTON",
+      Oregon: "OREGON",
+      California: "CALIFORNIA",
+      Nevada: "NEVADA",
+      Idaho: "IDAHO",
+      Utah: "UTAH",
+      Arizona: "ARIZONA",
+    },
+    margin: 0.02,
   },
   alaska: {
     projection: { lon0: -152, lat0: 63, lat1: 55, lat2: 65 },
@@ -136,8 +160,20 @@ for (const [viewId, view] of Object.entries(VIEWS)) {
     projected.set(name, rings.map((ring) => ring.map(([lon, lat]) => project(lon, lat))));
   }
 
-  // 按重点州的范围定视野，再缩放到 WIDTH 宽
-  const focusPoints = view.focus.flatMap((name) => projected.get(name).flat());
+  // 视野：有 bounds 就按经纬度框（沿边采样，投影后是曲线），否则按重点州的范围；再缩放到 WIDTH 宽
+  const edge = (from, to) => Array.from({ length: 41 }, (_, i) => from + ((to - from) * i) / 40);
+  const focusPoints = view.bounds
+    ? [
+        ...edge(view.bounds.west, view.bounds.east).flatMap((lon) => [
+          project(lon, view.bounds.south),
+          project(lon, view.bounds.north),
+        ]),
+        ...edge(view.bounds.south, view.bounds.north).flatMap((lat) => [
+          project(view.bounds.west, lat),
+          project(view.bounds.east, lat),
+        ]),
+      ]
+    : view.focus.flatMap((name) => projected.get(name).flat());
   let minX = Math.min(...focusPoints.map(([x]) => x));
   let maxX = Math.max(...focusPoints.map(([x]) => x));
   let minY = Math.min(...focusPoints.map(([, y]) => y));

@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { AttractionsExplorer } from "@/components/attractions/attractions-explorer";
+import { ActivitiesSection } from "@/components/park/activities-section";
+import { CommonsImage } from "@/components/commons-image";
 import { AlertsSection } from "@/components/park/alerts-section";
 import { ChargersSection } from "@/components/park/chargers-section";
 import { FeesSection } from "@/components/park/fees-section";
 import { SectionSkeleton } from "@/components/section";
 import { Reveal } from "@/components/site/reveal";
+import { activities } from "@/data/activities";
 import { getParkAttractions } from "@/data/attractions";
 import { getPark } from "@/data/parks";
 import { hasLocale } from "@/i18n/config";
-import { localizeAttraction, localizePark } from "@/i18n/content";
+import { localizeActivity, localizeAttraction, localizePark } from "@/i18n/content";
 import { localize } from "@/i18n/convert";
 import { getDictionary } from "@/i18n/dictionaries";
 import { fill, formatMonths } from "@/i18n/format";
@@ -41,6 +43,8 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
   const t = dict.park;
   const attractions = getParkAttractions(park.code).map((a) => localizeAttraction(a, locale));
   const heroPhoto = attractions.find((a) => a.id === park.hero)?.photo;
+  const parkActivities = activities.filter((a) => a.park === park.code).map((a) => localizeActivity(a, locale));
+  const hasSeasonInfo = parkActivities.length > 0 || attractions.some((a) => a.openMonths);
 
   const facts: [string, string][] = [
     [t.bestSeason, formatMonths(park.bestMonths, dict.units)],
@@ -53,7 +57,7 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
     <>
       <section className="relative h-[88svh] min-h-[620px] overflow-hidden bg-ink text-white">
         {heroPhoto && (
-          <Image
+          <CommonsImage
             // Commons 缩略图换成 1920 宽做全屏大图
             src={heroPhoto.url.replace("/960px-", "/1920px-")}
             alt=""
@@ -107,7 +111,19 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
             <p className="font-serif text-[clamp(1.3rem,2vw,1.8rem)] leading-[1.85]">{park.intro}</p>
           </Reveal>
           {park.nonresidentSurcharge && (
-            <p className="mt-10 border-l border-clay-600 pl-5 text-sm leading-7 text-ink-soft">{t.nonresidentNote}</p>
+            <div className="mt-10 border-l border-clay-600 pl-5 text-sm leading-7 text-ink-soft">
+              <p className="eyebrow text-clay-700">{t.nonresidentTitle}</p>
+              <p className="mt-2">{t.nonresidentNote}</p>
+              <p className="mt-2">{t.nonresidentWaiver}</p>
+              <a
+                href="https://www.nps.gov/aboutus/nonresident-fees.htm"
+                target="_blank"
+                rel="noreferrer"
+                className="link-line mt-3 inline-block text-xs text-mute"
+              >
+                {t.nonresidentSource}
+              </a>
+            </div>
           )}
         </div>
         <aside className="space-y-10 lg:col-span-3">
@@ -127,6 +143,15 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
           </div>
         </aside>
       </section>
+
+      {hasSeasonInfo && (
+        <section className="border-t border-line">
+          <div className={`${container} py-20 lg:py-28`}>
+            <p className="eyebrow mb-12 text-mute">{t.activities.eyebrow}</p>
+            <ActivitiesSection activities={parkActivities} attractions={attractions} dict={dict} />
+          </div>
+        </section>
+      )}
 
       <section className="border-t border-line">
         <div className={`${container} py-20 lg:py-28`}>

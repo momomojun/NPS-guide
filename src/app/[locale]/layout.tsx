@@ -14,9 +14,10 @@ const cormorant = Cormorant_Garamond({ subsets: ["latin"], variable: "--font-cor
 const serifSc = Noto_Serif_SC({ variable: "--font-serif-sc", preload: false });
 const serifTc = Noto_Serif_TC({ variable: "--font-serif-tc", preload: false });
 
-// 页面绘制前执行：标记 JS 可用（滚动渐显的元素这时才先藏起来）；本次会话看过开场动画就不再播
+// 页面绘制前执行：标记 JS 可用（滚动渐显的元素这时才先藏起来）；本次会话看过开场动画（或者系统减弱动态效果）就不再播，
+// 还没播过而且打开的是首页，就先让首屏文字停在起点，等幕布拉开
 const bootScript =
-  'document.documentElement.classList.add("js");try{if(sessionStorage.getItem("nps-intro"))document.documentElement.classList.add("intro-seen")}catch(e){}';
+  'var h=document.documentElement;h.classList.add("js");try{if(sessionStorage.getItem("nps-intro")||matchMedia("(prefers-reduced-motion: reduce)").matches)h.classList.add("intro-seen");else if(location.pathname.split("/").filter(Boolean).length<=1)h.classList.add("intro-playing")}catch(e){}';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -42,6 +43,8 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
       lang={locale}
       // bootScript 会在水合前给 html 加 class
       suppressHydrationWarning
+      // 页面内锚点平滑滚动，换页时直接跳到顶部（Next 16 默认不再在换页时关掉 smooth，长页面回首页会慢慢滚上去）
+      data-scroll-behavior="smooth"
       className={`${jost.variable} ${cormorant.variable} ${serifSc.variable} ${serifTc.variable}`}
     >
       <head>
