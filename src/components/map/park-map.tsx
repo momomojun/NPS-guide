@@ -122,6 +122,8 @@ export function ParkMap({
   legs,
   legend,
   fitKey = "",
+  extras,
+  extrasLegend,
   text,
   className = "",
   children,
@@ -139,6 +141,10 @@ export function ParkMap({
   legend?: { color: string; label: string }[];
   /** 变了就重新缩放到全部点（比如切换显示哪一天），点的集合变了也会重新缩放 */
   fitKey?: string;
+  /** 额外叠加的一层小点（比如补给点）：不参与缩放、不能点，放大后才显示名字 */
+  extras?: MapPoint[];
+  /** 这层小点的图例 */
+  extrasLegend?: { color: string; label: string }[];
   text: MapText;
   className?: string;
   /** 叠在地图上的内容，比如选中景点的卡片 */
@@ -239,6 +245,33 @@ export function ParkMap({
           filter: ["==", ["get", "id"], ""],
           layout: { "line-join": "round", "line-cap": "round" },
           paint: { "line-color": TRAIL_HIGHLIGHT, "line-width": 4.5 },
+        });
+        instance.addSource("extras", { type: "geojson", data: EMPTY });
+        instance.addLayer({
+          id: "extras",
+          type: "circle",
+          source: "extras",
+          paint: {
+            "circle-radius": 4.5,
+            "circle-color": ["get", "color"],
+            "circle-stroke-width": 1.5,
+            "circle-stroke-color": "#ffffff",
+          },
+        });
+        instance.addLayer({
+          id: "extras-label",
+          type: "symbol",
+          source: "extras",
+          minzoom: 11,
+          layout: {
+            "text-field": ["get", "label"],
+            "text-font": ["Noto Sans Regular"],
+            "text-size": 11,
+            "text-offset": [0, 0.8],
+            "text-anchor": "top",
+            "text-optional": true,
+          },
+          paint: { "text-color": "#44403c", "text-halo-color": "#f4efe7", "text-halo-width": 1.4 },
         });
         instance.addSource("points", { type: "geojson", data: EMPTY });
         instance.addLayer({
@@ -354,6 +387,12 @@ export function ParkMap({
   useEffect(() => {
     const map = mapRef.current;
     if (!ready || !map) return;
+    (map.getSource("extras") as GeoJSONSource).setData(pointsToGeoJSON(extras ?? []));
+  }, [ready, extras]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!ready || !map) return;
     map.setFilter("points-selected", ["==", ["get", "id"], selectedId ?? ""]);
     map.setFilter("trails-highlight", ["==", ["get", "id"], highlightTrailId ?? ""]);
     const point = points.find((p) => p.id === selectedId);
@@ -407,7 +446,7 @@ export function ParkMap({
             {text.terrain}
           </button>
         </div>
-        {(hasTrails || legendItems.length > 0 || showStraightRoute) && (
+        {(hasTrails || legendItems.length > 0 || showStraightRoute || (extras?.length ?? 0) > 0) && (
           <div className="flex w-fit max-w-[14rem] flex-col gap-1 bg-paper/90 px-3 py-2 text-[11px] text-ink-soft shadow-sm">
             {legendItems.map((item) => (
               <span key={item.label} className="flex items-center gap-1.5">
@@ -421,6 +460,13 @@ export function ParkMap({
                 {text.trailLegend}
               </span>
             )}
+            {(extras?.length ?? 0) > 0 &&
+              extrasLegend?.map((item) => (
+                <span key={item.label} className="flex items-center gap-1.5">
+                  <span className="ml-1.5 inline-block size-2 shrink-0 rounded-full" style={{ backgroundColor: item.color }} />
+                  <span className="ml-1.5">{item.label}</span>
+                </span>
+              ))}
             {showStraightRoute && <span>{text.routeNote}</span>}
           </div>
         )}

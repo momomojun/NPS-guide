@@ -1,16 +1,21 @@
 // 用 OSRM（OpenStreetMap 路网）预先算好车程表，排行程时直接查表，不在网页里实时调用。
 // 每个公园一张表（公园定位点 + 各景点的出发点 + 推荐住宿），外加公园之间的一张表；
 // 相邻、常一起玩的公园（parks.ts 的 nearby）再加一张跨公园的表，比如从大提顿的住处直接开到黄石的景点。
+// 最后一张是各机场（airports.ts）到各公园定位点的表，自动生成攻略时估算落地后要开多久。
 // 新增景点或住宿后重新跑：npm run data:travel
 import { writeFileSync } from "node:fs";
+import { airports } from "../src/data/airports.ts";
 import { fixedMinutes } from "../src/data/attractions/route-fixes.ts";
 import { attractions, lodgingOptions, parks, sleep, USER_AGENT } from "./load-data.mjs";
 
 const OUTPUT = new URL("../src/data/attractions/travel.generated.ts", import.meta.url);
 
-async function durationTable(points) {
+/** sources / destinations 是 points 的下标：只算从前者到后者的那一块，不填就是全部两两之间 */
+async function durationTable(points, { sources, destinations } = {}) {
   const coords = points.map((p) => `${p.lon},${p.lat}`).join(";");
-  const res = await fetch(`https://router.project-osrm.org/table/v1/driving/${coords}?annotations=duration`, {
+  const subset =
+    (sources ? `&sources=${sources.join(";")}` : "") + (destinations ? `&destinations=${destinations.join(";")}` : "");
+  const res = await fetch(`https://router.project-osrm.org/table/v1/driving/${coords}?annotations=duration${subset}`, {
     headers: { "User-Agent": USER_AGENT },
   });
   const data = await res.json();
@@ -65,6 +70,18 @@ for (const park of parks) {
   }
 }
 
+// 机场 → 公园定位点：一次查完，只要“从机场出发”这一块
+const airportCodes = Object.keys(airports);
+const airportTravel = {
+  airports: airportCodes,
+  parks: parks.map((p) => p.code),
+  minutes: await durationTable([...airportCodes.map((code) => airports[code]), ...parks.map((p) => p.gateway)], {
+    sources: airportCodes.map((_, i) => i),
+    destinations: parks.map((_, j) => airportCodes.length + j),
+  }),
+};
+console.log(`机场: ${airportCodes.length} × ${parks.length}`);
+
 writeFileSync(
   OUTPUT,
   `// 由 scripts/build-travel.mjs 生成，请勿手改。车程（分钟）来自 OSRM，路网数据 © OpenStreetMap contributors。
@@ -86,6 +103,15 @@ export interface PairTable {
 }
 
 export const pairTravel: Record<string, PairTable> = ${JSON.stringify(pairTravel)};
+
+/** 机场到各公园定位点的开车分钟数（OSRM）：minutes[i][j] 是从 airports[i] 开到 parks[j] */
+export interface AirportTable {
+  airports: string[];
+  parks: string[];
+  minutes: (number | null)[][];
+}
+
+export const airportTravel: AirportTable = ${JSON.stringify(airportTravel)};
 `,
 );
 console.log("写入车程表");

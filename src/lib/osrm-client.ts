@@ -4,15 +4,22 @@ import { fixedMinutes } from "@/data/attractions/route-fixes";
 const TABLE_URL = "https://router.project-osrm.org/table/v1/driving/";
 const ROUTE_URL = "https://router.project-osrm.org/route/v1/driving/";
 
-/** 按顺序经过各点的开车路线，coords 形如 "lon,lat;lon,lat"；返回 [经度, 纬度] 折线 */
-export async function drivingRoute(coords: string): Promise<[number, number][]> {
+export interface DrivingRoute {
+  /** [经度, 纬度] 折线 */
+  path: [number, number][];
+  /** 全程公里数，算油费用 */
+  km: number;
+}
+
+/** 按顺序经过各点的开车路线，coords 形如 "lon,lat;lon,lat" */
+export async function drivingRoute(coords: string): Promise<DrivingRoute> {
   const res = await fetch(`${ROUTE_URL}${coords}?overview=full&geometries=geojson`);
   const data = (await res.json()) as {
     code: string;
-    routes?: { geometry: { coordinates: [number, number][] } }[];
+    routes?: { distance: number; geometry: { coordinates: [number, number][] } }[];
   };
   if (data.code !== "Ok" || !data.routes?.[0]) throw new Error(`OSRM: ${data.code}`);
-  return data.routes[0].geometry.coordinates;
+  return { path: data.routes[0].geometry.coordinates, km: data.routes[0].distance / 1000 };
 }
 const BATCH = 60;
 

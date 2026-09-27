@@ -26,12 +26,15 @@ export function AttractionsExplorer({
   attractions,
   areas,
   parkNameEn,
+  routesHref,
   text,
 }: {
   attractions: AttractionWithPhoto[];
   /** 片区 key → 名称，决定按片区分组时的顺序 */
   areas: Record<string, string>;
   parkNameEn: string;
+  /** 博主路线专区（这个公园） */
+  routesHref: string;
   text: AttractionText;
 }) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -103,7 +106,7 @@ export function AttractionsExplorer({
   return (
     <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
       <div className="lg:col-span-7">
-        <div ref={mapRef} className="scroll-mt-20 lg:sticky lg:top-24">
+        <div ref={mapRef} className="scroll-mt-32 lg:sticky lg:top-32">
           <ParkMap
             points={points}
             trails={trails}
@@ -219,6 +222,7 @@ export function AttractionsExplorer({
                     text={text}
                     selected={attraction.id === selectedId}
                     onShowOnMap={() => selectFromList(attraction.id)}
+                    routesHref={routesHref}
                   />
                 ))}
               </div>

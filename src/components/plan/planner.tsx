@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { KIND_COLORS } from "@/components/attractions/kinds";
 import { IconBed, IconClose, IconGrip } from "@/components/icons";
 import { ParkMap, type MapLeg, type MapPoint, type MapTrail } from "@/components/map/park-map";
+import { SectionNav, type SectionLink } from "@/components/site/section-nav";
 import { AddToTripButton } from "@/components/trip/add-to-trip-button";
 import { buttonPrimary, buttonSecondary } from "@/components/ui";
 import type { ParkActivity } from "@/data/activities";
@@ -11,14 +12,18 @@ import type { Airport } from "@/data/airports";
 import type { AttractionWithPhoto } from "@/data/attractions";
 import { googleMapsUrl } from "@/data/attractions/google";
 import type { Photo } from "@/data/attractions/types";
+import { climate } from "@/data/climate.generated";
 import type { LodgingOption } from "@/data/lodging";
+import type { ServicePoint } from "@/data/services.generated";
 import { fill, formatDuration } from "@/i18n/format";
 import { addDays, monthOf, nominalDate } from "@/lib/dates";
 import { airbnbUrl } from "@/lib/airbnb";
+import { alertsForStop, type AlertsResponse } from "@/lib/alert-match";
+import { flightKey, useFlightStore } from "@/lib/flight-store";
 import { generateTrip, guideParks } from "@/lib/generate-trip";
-import { drivingMinutesFrom, drivingRoute } from "@/lib/osrm-client";
+import { drivingMinutesFrom, drivingRoute, type DrivingRoute } from "@/lib/osrm-client";
 import { buildTimeline, NOMINAL_SUN, rankLodging, type PlanStop } from "@/lib/planner";
-import { minutesOfDay, sunTimes } from "@/lib/sun";
+import { formatClock, minutesOfDay, sunTimes } from "@/lib/sun";
 import { moveItem, setNight } from "@/lib/trip-edit";
 import { planTrip } from "@/lib/trip-plan";
 import {
@@ -32,14 +37,26 @@ import {
   type Trip,
   type TripLodging,
 } from "@/lib/trip-store";
+import { useTripPrefs } from "@/lib/trip-prefs";
+import { useJson, useJsonAll, useToday } from "@/lib/use-json";
+import type { GasPrices } from "@/lib/prices/gas";
+import type { WeatherResponse } from "@/lib/weather-types";
+import { computeBudget, type BudgetNight } from "./budget";
 import { DayCard } from "./day-card";
 import { dayColor } from "./day-colors";
+import { daysBetween, FlightsCar, tripFlight } from "./flights-car";
 import { GuideSummary } from "./guide-summary";
 import { LodgingSelector } from "./lodging-selector";
 import { StopDetails } from "./stop-details";
+import { TripAlerts } from "./trip-alerts";
+import { TripBudget } from "./trip-budget";
 import { TripOverview } from "./trip-overview";
-import { TripWizard, type WizardInput, type WizardPlace } from "./trip-wizard";
+import { SERVICE_COLORS, SERVICE_KINDS, TripSupplies, type SupplyEntry, type SupplyStay } from "./trip-supplies";
+import { TripTools } from "./trip-tools";
+import { TripWizard, useRequestedPark, type WizardInput, type WizardPlace } from "./trip-wizard";
 import type { DayView, DragSpot, PlannerPark, PlannerText, ResolvedLodging, SunInfo } from "./types";
+import { alertCovers, type DayWeather } from "./weather";
+import { weatherNotes } from "./weather-line";
 
 const LODGING_COLOR = "#2f4a5a";
 /** 地图显示整个行程（每天一种颜色） */
@@ -61,6 +78,7 @@ export function Planner({
   lodgingOptions,
   airports,
   activities,
+  servicesUpdated,
   text,
   locale,
 }: {
@@ -70,6 +88,8 @@ export function Planner({
   airports: Record<string, Airport>;
   /** 各公园的特别活动，攻略说明里按月份列出 */
   activities: ParkActivity[];
+  /** 补给点数据的日期 */
+  servicesUpdated: string;
   text: PlannerText;
   locale: string;
 }) {
@@ -91,7 +111,11 @@ export function Planner({
   const [generating, setGenerating] = useState(false);
   const [generateError, setGenerateError] = useState<string | null>(null);
   // 真实开车路线，按途经点缓存；null 表示查失败，退回画虚线
-  const [roadRoutes, setRoadRoutes] = useState<Record<string, [number, number][] | null>>({});
+  const [roadRoutes, setRoadRoutes] = useState<Record<string, DrivingRoute | null>>({});
+  const [showSupplies, setShowSupplies] = useState(false);
+  const prefs = useTripPrefs();
+  const flightStore = useFlightStore();
+  const todayDate = useToday();
 
   const byId = useMemo(() => new Map(attractions.map((a) => [a.id, a])), [attractions]);
   const parkByCode = useMemo(() => new Map(parks.map((p) => [p.code, p])), [parks]);
@@ -299,7 +323,26 @@ export function Planner({
       setGenerating(false);
     }
   };
-  const showWizard = wizardOpen ?? allIds.length === 0;
+  // 从公园页“用这个公园生成攻略”过来，或者行程还是空的，就展开生成攻略
+  const requestedPark = useRequestedPark();
+  const showWizard = wizardOpen ?? (allIds.length === 0 || requestedPark !== null);
+  const hasStops = trip.days.some((day) => day.length > 0);
+  const sectionLinks: SectionLink[] = [
+    { id: "plan-wizard", label: t.nav.wizard },
+    ...(hasStops ? [{ id: "plan-overview", label: t.nav.overview }] : []),
+    ...(trip.guide && allIds.length > 0 ? [{ id: "plan-guide", label: t.nav.guide }] : []),
+    ...trip.days.map((_, day) => ({ id: `plan-day-${day}`, label: fill(t.day, { n: day + 1 }), color: dayColor(day) })),
+    ...(hasStops
+      ? [
+          { id: "plan-supplies", label: t.nav.supplies },
+          { id: "plan-flights", label: t.nav.flights },
+          { id: "plan-budget", label: t.nav.budget },
+        ]
+      : []),
+    { id: "plan-add", label: t.nav.add },
+    // 宽屏时地图一直在右边，只有手机上地图在最下面，才需要跳过去
+    { id: "plan-map", label: t.nav.map, mobileOnly: true },
+  ];
   const guideParkList = trip.guide
     ? guideParks(trip.guide).flatMap((code) => parks.filter((park) => park.code === code))
     : [];
@@ -372,6 +415,7 @@ export function Planner({
       month={month}
       parkNameEn={parkNameEn(stop.park)}
       parkHref={parkHref(stop)}
+      routesHref={`/${locale}/routes?park=${stop.park}`}
       text={text}
       actions={actions}
       onClose={onClose}
@@ -393,8 +437,17 @@ export function Planner({
   });
   const mapPoints: MapPoint[] = [];
   const mapTrails: MapTrail[] = [];
-  // 开车是开到停车场 / 步道口，再沿步道走到景点；每天一段路线
-  const dayRoutes: { day: number; points: { lat: number; lon: number }[] }[] = [];
+  // 每天的开车路线：前一晚住处 → 各景点的停车场 / 步道口（再沿步道走到景点）→ 当晚住处。地图和油费都用
+  const allRoutes = scheduledDays
+    .map((view) => ({
+      day: view.day,
+      points: [
+        ...(view.from ? [view.from] : []),
+        ...view.rows.map(({ stop }) => stop.start ?? stop),
+        ...(view.to ? [view.to] : []),
+      ],
+    }))
+    .filter((route) => route.points.length > 1);
   const pointIds = new Set<string>();
   const addPoint = (point: MapPoint) => {
     if (pointIds.has(point.id)) return;
@@ -402,11 +455,7 @@ export function Planner({
     mapPoints.push(point);
   };
   for (const view of mapViews) {
-    const route: { lat: number; lon: number }[] = [];
-    if (view.from) {
-      addPoint(lodgingPoint(view.from));
-      route.push(view.from);
-    }
+    if (view.from) addPoint(lodgingPoint(view.from));
     view.rows.forEach(({ stop }, k) => {
       if (stop.trailLine) {
         const [lon, lat] = stop.trailLine.path[0];
@@ -422,13 +471,8 @@ export function Planner({
         color: showAll ? dayColor(view.day) : KIND_COLORS[stop.kind],
         badge: String(k + 1),
       });
-      route.push(stop.start ?? stop);
     });
-    if (view.to) {
-      addPoint(lodgingPoint(view.to));
-      route.push(view.to);
-    }
-    if (route.length > 1) dayRoutes.push({ day: view.day, points: route });
+    if (view.to) addPoint(lodgingPoint(view.to));
   }
   if (mapViews.length === 0) {
     for (const id of allIds) {
@@ -439,7 +483,7 @@ export function Planner({
 
   const keyOf = (points: { lat: number; lon: number }[]) =>
     points.map((p) => `${p.lon.toFixed(5)},${p.lat.toFixed(5)}`).join(";");
-  const routeKeys = dayRoutes.map((route) => keyOf(route.points));
+  const routeKeys = allRoutes.map((route) => keyOf(route.points));
   const routeKeyList = routeKeys.join("|");
   // 真实开车路线一段一段地查（OSRM 公共服务，别一下子并发太多）
   const pendingRoutes = useRef(new Set<string>());
@@ -452,8 +496,8 @@ export function Planner({
     (async () => {
       for (const key of missing) {
         try {
-          const path = await drivingRoute(key);
-          setRoadRoutes((current) => ({ ...current, [key]: path }));
+          const route = await drivingRoute(key);
+          setRoadRoutes((current) => ({ ...current, [key]: route }));
         } catch {
           setRoadRoutes((current) => ({ ...current, [key]: null }));
         } finally {
@@ -462,19 +506,219 @@ export function Planner({
       }
     })();
   }, [routeKeyList, roadRoutes]);
-  const mapLegs: MapLeg[] = dayRoutes.map((route, k) => {
-    const road = roadRoutes[routeKeys[k]];
+  const mapDays = new Set(mapViews.map((view) => view.day));
+  const shownRoutes = allRoutes.flatMap((route, k) => (mapDays.has(route.day) ? [{ ...route, key: routeKeys[k] }] : []));
+  const mapLegs: MapLeg[] = shownRoutes.map((route) => {
+    const road = roadRoutes[route.key];
     return {
       id: `day-${route.day}`,
       color: dayColor(route.day),
-      path: road ?? route.points.map((p) => [p.lon, p.lat] as [number, number]),
+      path: road?.path ?? route.points.map((p) => [p.lon, p.lat] as [number, number]),
       straight: !road,
     };
   });
   const mapLegend = showAll
-    ? dayRoutes.map((route) => ({ color: dayColor(route.day), label: fill(t.day, { n: route.day + 1 }) }))
+    ? shownRoutes.map((route) => ({ color: dayColor(route.day), label: fill(t.day, { n: route.day + 1 }) }))
     : undefined;
+  // 全程公里数：有真实路线用路线长度，还没查到的按车程估（平均时速 65 公里）
+  let totalKm = 0;
+  let distanceEstimated = false;
+  allRoutes.forEach((route, k) => {
+    const road = roadRoutes[routeKeys[k]];
+    if (road) totalKm += road.km;
+    else {
+      totalKm += (dayViews[route.day].timeline.driveMin * 65) / 60;
+      distanceEstimated = true;
+    }
+  });
   const parkNameEn = (code: string) => parkByCode.get(code)?.nameEn ?? "";
+  const parkName = (code: string) => parkByCode.get(code)?.nameZh ?? code;
+  const formatDate = (date: string) => dateFormat.format(new Date(`${date}T00:00:00Z`));
+
+  // 行程里的公园，按第一次去的顺序
+  const stopParks = [...new Set(dayViews.flatMap((view) => view.rows.map((row) => row.stop.park)))];
+  const lastStop = dayViews.flatMap((view) => view.rows).at(-1)?.stop;
+
+  // NPS 实时公告：按景点英文名、片区名对到行程里的景点
+  const alertsUrl = stopParks.length ? `/api/alerts?parks=${[...stopParks].sort().join(",")}&locale=${locale}` : null;
+  const alertsData = useJson<AlertsResponse>(alertsUrl);
+  const parkAlerts = alertsData?.alerts ?? [];
+  const alertsOf = (stop: AttractionWithPhoto) => alertsForStop(stop, parkAlerts);
+  const affected = new Map<string, string[]>();
+  for (const view of dayViews) {
+    for (const { stop } of view.rows) {
+      for (const alert of alertsOf(stop)) affected.set(alert.id, [...(affected.get(alert.id) ?? []), stop.nameZh]);
+    }
+  }
+
+  // 天气：定了具体日期、16 天以内的用预报（每天一个地点：第一站，没有就用住处），其他用往年同期
+  const weatherPlace = (view: DayView) => view.rows[0]?.stop ?? view.to ?? view.from;
+  const forecastEnd = todayDate ? addDays(todayDate, 15) : null;
+  const pointKey = (place: { lat: number; lon: number }) => `${place.lat.toFixed(2)},${place.lon.toFixed(2)}`;
+  const forecastKeys =
+    trip.startDate && todayDate && forecastEnd
+      ? [
+          ...new Set(
+            dayViews.flatMap((view) => {
+              const date = dateOf(view.day)!;
+              const place = weatherPlace(view);
+              return date >= todayDate && date <= forecastEnd && place ? [pointKey(place)] : [];
+            }),
+          ),
+        ]
+      : [];
+  const weatherUrl = forecastKeys.length ? `/api/weather?points=${forecastKeys.join("|")}` : null;
+  const weatherData = useJson<WeatherResponse>(weatherUrl);
+  /** 算往年同期用哪个景点的片区：这天的第一站，没有就往前找 */
+  const climateStop = (day: number) => {
+    for (let d = day; d >= 0; d--) {
+      const stop = dayViews[d].rows[0]?.stop;
+      if (stop) return stop;
+    }
+    return dayViews.find((view) => view.rows.length > 0)?.rows[0]?.stop;
+  };
+  const dayWeather: (DayWeather | undefined)[] = dayViews.map((view) => {
+    const date = dateOf(view.day);
+    const place = weatherPlace(view);
+    if (date && place && todayDate && weatherData) {
+      const i = forecastKeys.indexOf(pointKey(place));
+      const entry = i >= 0 ? weatherData.forecasts[i]?.find((forecast) => forecast.date === date) : undefined;
+      if (entry) {
+        const alerts = (weatherData.alerts[i] ?? []).filter((alert) => alertCovers(alert, date, todayDate));
+        return { kind: "forecast", day: entry, alerts };
+      }
+    }
+    const stop = climateStop(view.day);
+    if (!view.date || !stop) return undefined;
+    const areas = climate[stop.park];
+    const area = areas?.[stop.area] ?? (areas ? Object.values(areas)[0] : undefined);
+    const month = monthOf(view.date);
+    return area ? { kind: "climate", month, climate: area.months[month - 1] } : undefined;
+  });
+
+  // 总览里“要注意”：预报按天说，往年同期按公园说一次，再加上提到行程景点的公告
+  const liveNotes: string[] = [];
+  const climateSeen = new Set<string>();
+  dayViews.forEach((view, day) => {
+    const weather = dayWeather[day];
+    if (!weather || view.rows.length === 0) return;
+    for (const note of weatherNotes(weather, text)) {
+      if (weather.kind === "forecast") {
+        liveNotes.push(fill(t.overview.weatherDay, { day: day + 1, note }));
+        continue;
+      }
+      const park = view.rows[0].stop.park;
+      if (climateSeen.has(park + note)) continue;
+      climateSeen.add(park + note);
+      liveNotes.push(fill(t.overview.weatherPark, { park: parkName(park), note }));
+    }
+  });
+  const alertStops = [...new Set([...affected.values()].flat())];
+  if (alertStops.length) liveNotes.push(fill(t.overview.alertStops, { names: alertStops.join("、") }));
+
+  // 补给点：按公园取，住处附近的超市、加油、快充、亚洲超市和餐厅
+  const serviceUrls = stopParks.map((code) => `/api/services/${code}`);
+  const serviceResults = useJsonAll<ServicePoint[]>(serviceUrls);
+  const supplyPoints = serviceUrls.every((url) => url in serviceResults)
+    ? serviceUrls.flatMap((url) => serviceResults[url] ?? [])
+    : undefined;
+  const supplyStays: SupplyStay[] = [];
+  for (let night = 1; night <= trip.dayCount; night++) {
+    const lodging = nightAt(night);
+    if (!lodging || lodging.endpoint) continue;
+    const last = supplyStays.at(-1);
+    if (last && last.id === lodging.id && last.nights.at(-1) === night - 1) last.nights.push(night);
+    else supplyStays.push({ id: lodging.id, nights: [night], name: lodging.name, lat: lodging.lat, lon: lodging.lon });
+  }
+  const supplyEntries: SupplyEntry[] = stopParks.flatMap((code) => {
+    const stop = dayViews.flatMap((view) => view.rows).find((row) => row.stop.park === code)?.stop;
+    if (!stop) return [];
+    const at = stop.start ?? stop;
+    return [{ park: code, parkName: parkName(code), stop: { nameZh: stop.nameZh, lat: at.lat, lon: at.lon } }];
+  });
+  // 地图上显示补给点：只画行程上各点附近的
+  const supplyExtras: MapPoint[] =
+    showSupplies && supplyPoints
+      ? supplyPoints
+          .filter((point) => mapPoints.some((shown) => !shown.small && distanceKm(shown, point) < 20))
+          .slice(0, 600)
+          .map((point, i) => ({
+            id: `supply-${i}`,
+            lat: point.lat,
+            lon: point.lon,
+            label: point.name,
+            color: SERVICE_COLORS[point.kind],
+          }))
+      : [];
+  const supplyLegend = SERVICE_KINDS.map((kind) => ({ color: SERVICE_COLORS[kind], label: t.supplies.kinds[kind] }));
+
+  // 机票和租车：第 1 天一早从机场出发，去程按前一天到；最后一天 17 点前回到机场就坐当晚的航班，否则第二天
+  const firstDate = trip.startDate || (trip.month ? nominalDate(trip.month) : "");
+  const lastReturn = dayViews.at(-1)?.timeline.returnAt;
+  const sameDayReturn = lastReturn !== undefined && lastReturn <= 17 * 60;
+  const outDate = firstDate ? addDays(firstDate, -1) : null;
+  const lastDate = firstDate ? addDays(firstDate, trip.dayCount - 1) : null;
+  const backDate = lastDate ? (sameDayReturn ? lastDate : addDays(lastDate, 1)) : null;
+  const endpointAirport = (lodging: TripLodging | null | undefined, role: "origin" | "destination") =>
+    lodging?.kind === "custom" && lodging.endpoint === role
+      ? airports[lodging.id.slice(`custom-${role}-`.length)]
+      : undefined;
+  const tripArrive = endpointAirport(trip.nights[0], "origin");
+  const tripLeave = endpointAirport(trip.nights[trip.dayCount], "destination");
+  const firstPark = parkByCode.get(stopParks[0] ?? "");
+  const lastPark = parkByCode.get(lastStop?.park ?? "");
+  const arriveAirport = tripArrive ?? (firstPark ? airports[firstPark.airports[0]] : undefined);
+  const leaveAirport = tripLeave ?? tripArrive ?? (lastPark ? airports[lastPark.airports[0]] : undefined);
+  const home = prefs.homeAirport;
+  const mainFlight =
+    home && arriveAirport && leaveAirport && outDate && backDate
+      ? tripFlight(home, arriveAirport.code, leaveAirport.code, outDate, backDate, prefs.travelers)
+      : null;
+  const mainFlightPrice = mainFlight ? flightStore[flightKey(mainFlight)]?.quotes[0]?.price : undefined;
+  const flightRoute =
+    mainFlight && arriveAirport && leaveAirport
+      ? arriveAirport.code === leaveAirport.code
+        ? `${home} ⇄ ${arriveAirport.code}`
+        : `${home} → ${arriveAirport.code} · ${leaveAirport.code} → ${home}`
+      : undefined;
+  const rentalDays = outDate && backDate ? daysBetween(outDate, backDate) : trip.dayCount;
+
+  // 实时油价（价格页同一个接口），读不到就用快照
+  const gasData = useJson<GasPrices>(hasStops ? "/api/prices/gas" : null);
+  // 预算：没定住处的晚上也算一晚（按其他几晚的平均）；最后一晚是回程机场就不算
+  const budgetNights: BudgetNight[] = [];
+  for (let night = 1; night <= trip.dayCount; night++) {
+    const lodging = trip.nights[night];
+    const endpoint = lodging?.kind === "custom" && lodging.endpoint;
+    if (endpoint || (night === trip.dayCount && !lodging)) continue;
+    const date = refDateOf(night - 1);
+    budgetNights.push({
+      lodgingId: lodging?.kind === "option" ? lodging.id : undefined,
+      month: date ? monthOf(date) : todayDate ? monthOf(todayDate) : 7,
+    });
+  }
+  const budget = computeBudget({
+    prefs,
+    parks: stopParks.flatMap((code) => {
+      const park = parkByCode.get(code);
+      return park ? [{ code, nonresidentSurcharge: park.nonresidentSurcharge }] : [];
+    }),
+    nights: budgetNights,
+    dayCount: trip.dayCount,
+    km: totalKm,
+    rentalDays,
+    pickup: prefs.flyAndRent ? arriveAirport?.code : undefined,
+    flights: mainFlightPrice,
+    gas: gasData ? Object.fromEntries(Object.entries(gasData.states).map(([state, fuel]) => [state, fuel.regular])) : undefined,
+  });
+
+  // 离线保存时一起存的数据
+  const offlineUrls = [
+    ...(alertsUrl ? [alertsUrl] : []),
+    ...(weatherUrl ? [weatherUrl] : []),
+    ...serviceUrls,
+    ...stopParks.map((code) => `/api/gallery/${code}`),
+  ];
 
   const chip = (active: boolean) =>
     `pb-1 text-[13px] transition-colors ${
@@ -494,7 +738,9 @@ export function Planner({
         <p className="mt-5 text-sm leading-7 text-ink-soft">{t.intro}</p>
       </header>
 
-      <section className="border-t border-ink pt-6">
+      <SectionNav label={t.nav.label} items={sectionLinks} inset />
+
+      <section id="plan-wizard" className="scroll-mt-32 border-t border-ink pt-6 print:hidden">
         <div className="flex flex-wrap items-baseline justify-between gap-4">
           <div className="max-w-2xl">
             <p className="eyebrow text-mute">{t.wizard.eyebrow}</p>
@@ -519,7 +765,7 @@ export function Planner({
         )}
       </section>
 
-      <div className={`${card} flex flex-wrap items-end gap-x-8 gap-y-5 p-6`}>
+      <div className={`${card} flex flex-wrap items-end gap-x-8 gap-y-5 p-6 print:hidden`}>
         <label className="eyebrow text-mute">
           {t.startDate}
           <input
@@ -582,25 +828,37 @@ export function Planner({
         </button>
         {!trip.startDate && !trip.month && <p className="basis-full text-xs text-clay-700">{t.noDate}</p>}
         {plannedCount > 0 && <p className="basis-full text-xs text-mute">{t.lodging.fillHint}</p>}
+        {hasStops && <TripTools dataUrls={offlineUrls} text={text} />}
       </div>
 
       {allIds.length === 0 && (
         <p className="border-l border-clay-600 pl-5 text-sm leading-7 text-ink-soft">{t.empty}</p>
       )}
 
-      {trip.days.some((day) => day.length > 0) && (
+      {hasStops && (
         <TripOverview
           views={dayViews}
           dateLabels={dayViews.map((view) =>
             trip.startDate ? dateFormat.format(new Date(`${dateOf(view.day)}T00:00:00Z`)) : null,
           )}
-          parkName={(code) => parkByCode.get(code)?.nameZh ?? code}
+          parkName={parkName}
           month={tripMonth}
           startDate={trip.startDate}
           dayCount={trip.dayCount}
           text={text}
           onJump={(day) => document.getElementById(`plan-day-${day}`)?.scrollIntoView({ behavior: "smooth", block: "start" })}
-        />
+          extraNotes={liveNotes}
+          budget={{ total: budget.total, perPerson: budget.perPerson }}
+        >
+          <TripAlerts
+            alerts={parkAlerts}
+            affected={affected}
+            failed={alertsData?.failed ?? []}
+            loading={alertsData === undefined}
+            parkName={parkName}
+            text={text}
+          />
+        </TripOverview>
       )}
 
       {trip.guide && guideParkList.length > 0 && allIds.length > 0 && (
@@ -631,7 +889,7 @@ export function Planner({
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
         <div className="space-y-6 lg:col-span-7">
           {trip.pool.length > 0 && (
-            <section className="border border-dashed border-ink/30 p-6">
+            <section className="border border-dashed border-ink/30 p-6 print:hidden">
               <h2 className="font-serif text-xl">{fill(t.pool, { n: trip.pool.length })}</h2>
               <p className="mt-1 text-xs text-mute">{t.poolHint}</p>
               <ul className="mt-4 flex flex-wrap gap-2">
@@ -654,7 +912,7 @@ export function Planner({
           )}
 
           {plannedCount > 0 && (
-            <p className="flex items-center gap-1.5 text-xs text-mute">
+            <p className="flex items-center gap-1.5 text-xs text-mute print:hidden">
               <IconGrip /> {t.dragHint}
             </p>
           )}
@@ -681,6 +939,8 @@ export function Planner({
                 onEdit={updateTrip}
                 mapsUrl={(stop) => googleMapsUrl(stop, parkNameEn(stop.park))}
                 drag={drag}
+                weather={dayWeather[view.day]}
+                alertsFor={alertsOf}
                 header={
                   view.day === 0 && view.rows.length > 0 ? (
                     <LodgingSelector
@@ -719,7 +979,7 @@ export function Planner({
           })}
 
           {plannedCount > 0 && trip.days.length > 1 && (
-            <section className={`${card} p-6`}>
+            <section className={`${card} p-6 print:hidden`}>
               <h2 className="font-serif text-xl">{t.replan}</h2>
               <p className="mt-1 text-xs leading-6 text-mute">{t.replanHint}</p>
               <div className="mt-4 flex flex-wrap items-center gap-4 text-sm">
@@ -744,7 +1004,54 @@ export function Planner({
             </section>
           )}
 
-          <section className="border-t border-ink pt-5">
+          {hasStops && (
+            <TripSupplies
+              stays={supplyStays}
+              entries={supplyEntries}
+              points={supplyPoints}
+              showOnMap={showSupplies}
+              onToggleMap={setShowSupplies}
+              updated={servicesUpdated}
+              text={text}
+            />
+          )}
+          {hasStops && (
+            <FlightsCar
+              prefs={prefs}
+              arrive={arriveAirport}
+              leave={leaveAirport}
+              fromTrip={Boolean(tripArrive)}
+              firstPark={firstPark}
+              lastPark={lastPark}
+              airports={airports}
+              outDate={outDate}
+              backDate={backDate}
+              sameDayReturn={sameDayReturn}
+              returnTime={lastReturn !== undefined ? formatClock(lastReturn) : undefined}
+              monthOnly={trip.startDate ? null : (trip.month ?? null)}
+              formatDate={formatDate}
+              store={flightStore}
+              text={text}
+              locale={locale}
+            />
+          )}
+          {hasStops && (
+            <TripBudget
+              budget={budget}
+              prefs={prefs}
+              parkName={parkName}
+              stateName={(code) => t.budget.states[code] ?? code}
+              pickup={arriveAirport?.code}
+              rentalDays={rentalDays}
+              flightRoute={flightRoute}
+              distanceEstimated={distanceEstimated}
+              dayCount={trip.dayCount}
+              fuelDate={gasData?.date}
+              text={text}
+            />
+          )}
+
+          <section id="plan-add" className="scroll-mt-32 border-t border-ink pt-5 print:hidden">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <h2 className="font-serif text-xl">{t.add}</h2>
               <select
@@ -793,8 +1100,8 @@ export function Planner({
           </section>
         </div>
 
-        <div className="lg:col-span-5">
-          <div className="space-y-4 lg:sticky lg:top-24">
+        <div className="lg:col-span-5 print:hidden">
+          <div id="plan-map" className="scroll-mt-32 space-y-4 lg:sticky lg:top-32">
             {trip.days.length > 1 && (
               <div className="flex flex-wrap gap-x-5 gap-y-2" role="group" aria-label={t.showOnMap}>
                 <button type="button" className={chip(showAll)} aria-pressed={showAll} onClick={() => {
@@ -827,12 +1134,14 @@ export function Planner({
               legs={mapLegs}
               legend={mapLegend}
               fitKey={showAll ? "all" : String(mapIndex)}
+              extras={supplyExtras}
+              extrasLegend={supplyLegend}
               selectedId={selectedId}
               onSelect={(id) => {
                 if (!id.startsWith("lodging-")) selectOnMap(id);
               }}
               text={text.map}
-              className="h-96 lg:h-[calc(100vh-10rem)]"
+              className="h-96 lg:h-[calc(100vh-12rem)]"
             />
           </div>
         </div>

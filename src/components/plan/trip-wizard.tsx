@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, useSyncExternalStore, type FormEvent } from "react";
 import { IconArrowRight } from "@/components/icons";
 import { buttonLarge } from "@/components/ui";
 import type { Airport } from "@/data/airports";
@@ -31,6 +31,17 @@ export interface WizardInput {
 }
 
 const PACES: Pace[] = ["relaxed", "normal", "packed"];
+
+const noSubscribe = () => () => {};
+const useSearchParam = (name: string): string | null =>
+  useSyncExternalStore(
+    noSubscribe,
+    () => new URLSearchParams(window.location.search).get(name),
+    () => null,
+  );
+
+/** 从公园页的“用这个公园生成攻略”过来时，网址里带着 ?park=yell */
+export const useRequestedPark = () => useSearchParam("park");
 const LODGING_PREFS: LodgingPref[] = ["any", "hotel", "rental"];
 
 const chip = (active: boolean) =>
@@ -160,18 +171,22 @@ export function TripWizard({
 }) {
   const t = text.plan.wizard;
   const nextMonth = (new Date().getMonth() + 1) % 12 + 1;
-  const [parkCode, setParkCode] = useState(parks[0]?.code ?? "");
+  const requestedPark = useRequestedPark();
+  // 从“什么时候去”页面过来时还带着 ?date=2026-10-03
+  const requestedDate = useSearchParam("date");
+  const [parkCode, setParkCode] = useState<string | null>(null);
   const [extraParks, setExtraParks] = useState<string[]>([]);
   const [lodgingPref, setLodgingPref] = useState<LodgingPref>("any");
   const [month, setMonth] = useState(nextMonth);
-  const [startDate, setStartDate] = useState("");
+  const [pickedDate, setStartDate] = useState<string | null>(null);
+  const startDate = pickedDate ?? (requestedDate && /^\d{4}-\d{2}-\d{2}$/.test(requestedDate) ? requestedDate : "");
   const [days, setDays] = useState(3);
   const [pace, setPace] = useState<Pace>("normal");
   const [origin, setOrigin] = useState<WizardPlace | null>(null);
   const [sameReturn, setSameReturn] = useState(true);
   const [destination, setDestination] = useState<WizardPlace | null>(null);
 
-  const park = parks.find((p) => p.code === parkCode) ?? parks[0];
+  const park = parks.find((p) => p.code === (parkCode ?? requestedPark)) ?? parks[0];
   const companions = park.nearby.flatMap((code) => parks.filter((p) => p.code === code));
   const selectedParks = [park, ...companions.filter((p) => extraParks.includes(p.code))];
   // 几个公园的常用机场合在一起，主要公园的排前面

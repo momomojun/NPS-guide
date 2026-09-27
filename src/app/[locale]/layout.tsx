@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Jost, Noto_Serif_SC, Noto_Serif_TC } from "next/font/google";
 import { notFound } from "next/navigation";
+import { BackToTop } from "@/components/site/back-to-top";
+import { OfflineBanner, ServiceWorkerRegister } from "@/components/site/offline";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
+import { parks, regionOrder } from "@/data/parks";
 import { hasLocale, locales } from "@/i18n/config";
+import { localize } from "@/i18n/convert";
 import { getDictionary } from "@/i18n/dictionaries";
 import "../globals.css";
 
@@ -30,6 +34,8 @@ export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Pr
   return {
     title: { default: `${site.name} · ${site.tagline}`, template: `%s · ${site.name}` },
     description: site.description,
+    icons: { icon: "/icon.svg", apple: "/apple-touch-icon.png" },
+    appleWebApp: { capable: true, title: site.name, statusBarStyle: "default" },
   };
 }
 
@@ -37,6 +43,15 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   const { locale } = await params;
   if (!hasLocale(locale)) notFound();
   const dict = getDictionary(locale);
+  const regions = regionOrder
+    .map((region) => ({
+      id: region,
+      label: dict.regions[region],
+      parks: parks
+        .filter((park) => park.region === region)
+        .map((park) => ({ code: park.code, nameZh: localize(park.nameZh, locale), nameEn: park.nameEn, bestMonths: park.bestMonths })),
+    }))
+    .filter((region) => region.parks.length > 0);
 
   return (
     <html
@@ -54,10 +69,25 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
         <SiteHeader
           locale={locale}
           wordmark={dict.site.wordmark}
-          text={{ parks: dict.nav.parks, plan: dict.nav.plan, start: dict.nav.start }}
+          regions={regions}
+          text={{
+            parks: dict.nav.parks,
+            plan: dict.nav.plan,
+            when: dict.nav.when,
+            routes: dict.nav.routes,
+            prices: dict.nav.prices,
+            start: dict.nav.start,
+            allParks: dict.nav.allParks,
+            inSeason: dict.nav.inSeason,
+            menu: dict.nav.menu,
+            close: dict.nav.close,
+          }}
         />
         <main className="flex-1">{children}</main>
         <SiteFooter locale={locale} dict={dict} />
+        <BackToTop label={dict.nav.backToTop} />
+        <OfflineBanner label={dict.common.offline} />
+        <ServiceWorkerRegister />
       </body>
     </html>
   );

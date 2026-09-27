@@ -87,7 +87,7 @@ export function GuideSummary({
     ) : null;
 
   return (
-    <section className="border-t border-ink pt-6">
+    <section id="plan-guide" className="scroll-mt-32 border-t border-ink pt-6">
       <p className="eyebrow text-mute">{g.eyebrow}</p>
       <div className="mt-8 grid gap-12 lg:grid-cols-12">
         <div className="space-y-10 lg:col-span-7">

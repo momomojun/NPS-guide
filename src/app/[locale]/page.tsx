@@ -163,6 +163,12 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
               </Reveal>
               <h2 className="mt-8 font-serif text-3xl">{fill(t.seasonTitle, { month })}</h2>
               <p className="mt-3 text-sm text-mute">{t.seasonHint}</p>
+              <Link
+                href={`/${locale}/when`}
+                className="link-line mt-8 inline-flex items-center gap-2 text-xs tracking-[0.1em] text-ink"
+              >
+                {t.seasonMore} <IconArrowRight />
+              </Link>
             </div>
             <ul className="grid content-start gap-x-12 sm:grid-cols-2 lg:col-span-8">
               {inSeason.map((park, i) => (

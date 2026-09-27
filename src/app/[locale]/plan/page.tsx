@@ -6,6 +6,7 @@ import { airports } from "@/data/airports";
 import { attractions } from "@/data/attractions";
 import { lodgingOptions } from "@/data/lodging";
 import { parks } from "@/data/parks";
+import { servicesUpdated } from "@/data/services.generated";
 import { hasLocale } from "@/i18n/config";
 import { localizeActivity, localizeAttraction, localizeLodging, localizePark } from "@/i18n/content";
 import { localize } from "@/i18n/convert";
@@ -31,6 +32,7 @@ export default async function PlanPage({ params }: PageProps<"/[locale]/plan">) 
         attractions={attractions.map((a) => ({ ...localizeAttraction(a, locale), photo: undefined, gallery: [] }))}
         lodgingOptions={lodgingOptions.map((option) => localizeLodging(option, locale))}
         activities={activities.map((activity) => localizeActivity(activity, locale))}
+        servicesUpdated={servicesUpdated}
         airports={Object.fromEntries(
           Object.entries(airports).map(([code, airport]) => [
             code,

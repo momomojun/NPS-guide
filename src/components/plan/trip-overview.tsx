@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { closedIn } from "@/components/attractions/attraction-card";
 import type { AttractionWithPhoto } from "@/data/attractions";
 import { fill, formatDuration } from "@/i18n/format";
@@ -14,6 +15,7 @@ const LATE_RETURN = 21 * 60 + 30;
 /** 每段行程最多点名几个景点 */
 const HIGHLIGHTS = 4;
 const KM_PER_MILE = 1.609;
+const money = (amount: number) => `$${Math.round(amount).toLocaleString("en-US")}`;
 
 /** 出发地和终点是不是同一个地方（生成攻略时两头的 id 不一样，按名字和位置比） */
 function samePlace(a: { id: string; name: string; lat: number; lon: number }, b: { id: string; name: string; lat: number; lon: number }) {
@@ -45,6 +47,9 @@ export function TripOverview({
   dayCount,
   text,
   onJump,
+  extraNotes = [],
+  budget,
+  children,
 }: {
   views: DayView[];
   /** 每天的日期（定了出发日期才有） */
@@ -55,6 +60,12 @@ export function TripOverview({
   dayCount: number;
   text: PlannerText;
   onJump: (day: number) => void;
+  /** 天气、实时公告要注意的事，接在后面 */
+  extraNotes?: string[];
+  /** 预算合计（美元） */
+  budget?: { total: number; perPerson: number };
+  /** 接在总览下面的内容（公园实时公告） */
+  children?: ReactNode;
 }) {
   const t = text.plan.overview;
   const duration = (minutes: number) => formatDuration(minutes, text.units);
@@ -155,6 +166,7 @@ export function TripOverview({
   if (closedMonth.length) notes.push(fill(t.closed, { names: closedMonth.map((s) => s.nameZh).join("、"), month: month! }));
   const emptyDays = views.filter((view) => view.rows.length === 0).map((view) => view.day + 1);
   if (emptyDays.length) notes.push(fill(t.emptyDays, { days: emptyDays.join("、") }));
+  notes.push(...extraNotes);
 
   const dateRange =
     startDate && dateLabels[0] && dateLabels.at(-1)
@@ -168,10 +180,13 @@ export function TripOverview({
     ...(hikeKm >= 1 ? ([[t.hike, fill(t.kmValue, { km: Math.round(hikeKm) })]] as [string, string][]) : []),
     ...(stayCount ? ([[t.lodging, fill(t.lodgingValue, { n: stayCount })]] as [string, string][]) : []),
     ...(earliest !== undefined ? ([[t.earliest, formatClock(earliest)]] as [string, string][]) : []),
+    ...(budget
+      ? ([[t.budget, money(budget.total), fill(t.budgetSub, { amount: money(budget.perPerson) })]] as [string, string, string][])
+      : []),
   ];
 
   return (
-    <section className="border-t border-ink pt-6">
+    <section id="plan-overview" className="scroll-mt-32 border-t border-ink pt-6">
       <p className="eyebrow text-mute">{t.eyebrow}</p>
       <div className="mt-6 flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2">
         <h2 className="font-serif text-[clamp(1.8rem,3vw,2.6rem)] leading-tight">
@@ -180,7 +195,7 @@ export function TripOverview({
         {dateRange && <p className="text-sm text-ink-soft">{dateRange}</p>}
       </div>
 
-      <dl className="mt-8 grid grid-cols-2 border-t border-line sm:grid-cols-3 lg:grid-cols-5">
+      <dl className="mt-8 grid grid-cols-2 border-t border-line sm:grid-cols-3 lg:grid-cols-6">
         {stats.map(([label, value, sub]) => (
           <div key={label} className="flex flex-col-reverse border-b border-line py-4 pr-4">
             <dt className="mt-1.5 text-xs text-mute">
@@ -285,6 +300,7 @@ export function TripOverview({
           </tbody>
         </table>
       </div>
+      {children}
     </section>
   );
 }

@@ -132,25 +132,66 @@ export function attractionTips(a: AttractionWithPhoto, text: AttractionText): st
   ].filter((tip): tip is string => Boolean(tip));
 }
 
+/** 博主怎么说：YouTube / B 站博主对这个景点的看法（转述），附视频链接和“博主路线”专区的入口 */
+export function CreatorNotes({
+  attraction: a,
+  text,
+  routesHref,
+  compact = false,
+}: {
+  attraction: AttractionWithPhoto;
+  text: AttractionText;
+  routesHref: string;
+  compact?: boolean;
+}) {
+  const t = text.attraction;
+  const notes = a.creatorNotes ?? [];
+  if (notes.length === 0 && !a.creatorRouteCount) return null;
+  return (
+    <div className={compact ? "border-t border-line pt-3" : "border-t border-line pt-4"}>
+      <p className="text-xs tracking-[0.1em] text-mute">{t.creatorTitle}</p>
+      <ul className="mt-2 space-y-2 text-sm leading-6 text-ink-soft">
+        {notes.map((note) => (
+          <li key={note.routeId}>
+            <span className="text-ink">{note.text}</span>
+            <a href={note.url} target="_blank" rel="noreferrer" className="ml-1.5 text-xs text-mute hover:text-clay-700">
+              —— {note.creator} · {note.platform === "youtube" ? "YouTube" : t.bilibili}
+              {note.language !== "zh" && ` · ${t.creatorLanguages[note.language]}`}
+            </a>
+          </li>
+        ))}
+      </ul>
+      {a.creatorRouteCount ? (
+        <a href={routesHref} className="link-line mt-2 inline-block text-xs text-mute">
+          {fill(t.creatorRoutes, { n: a.creatorRouteCount })}
+        </a>
+      ) : null}
+    </div>
+  );
+}
+
 export function AttractionCard({
   attraction: a,
   parkNameEn,
   text,
   selected,
   onShowOnMap,
+  routesHref,
 }: {
   attraction: AttractionWithPhoto;
   parkNameEn: string;
   text: AttractionText;
   selected: boolean;
   onShowOnMap: () => void;
+  /** 博主路线专区（这个公园） */
+  routesHref: string;
 }) {
   const t = text.attraction;
   const destination = a.start ?? a;
   const tips = attractionTips(a, text);
 
   return (
-    <article id={`attraction-${a.id}`} className="group scroll-mt-24 border-b border-line pb-12">
+    <article id={`attraction-${a.id}`} className="group scroll-mt-32 border-b border-line pb-12">
       {a.gallery.length > 0 && <PhotoGallery photos={a.gallery} title={a.nameZh} alt={`${a.nameZh} ${a.nameEn}`} text={t} />}
 
       <div className="space-y-5 pt-6">
@@ -176,6 +217,8 @@ export function AttractionCard({
             {fill(t.trailLength, { km: a.trailLine.km.toFixed(1), type: a.trailLine.loop ? t.loopTrail : t.oneWay })}
           </p>
         )}
+
+        <CreatorNotes attraction={a} text={text} routesHref={routesHref} />
 
         {tips.length > 0 && (
           <details className="group/tips border-t border-line pt-4 text-sm">

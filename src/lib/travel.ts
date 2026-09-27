@@ -1,4 +1,5 @@
 import {
+  airportTravel,
   interParkTravel,
   pairTravel,
   parkTravel,
@@ -68,4 +69,11 @@ export function travelMinutes(from: string, to: string): number {
   const between = lookup(interParkTravel, fromPark, toPark) ?? FALLBACK_MIN;
   const fromGateway = lookup(parkTravel[toPark], "gateway", tableNode(to)) ?? 0;
   return toGateway + between + fromGateway;
+}
+
+/** 从机场开到公园定位点的分钟数（OSRM）；表里没有就是 null */
+export function airportMinutes(airport: string, park: string): number | null {
+  const i = airportTravel.airports.indexOf(airport);
+  const j = airportTravel.parks.indexOf(park);
+  return i < 0 || j < 0 ? null : airportTravel.minutes[i][j];
 }

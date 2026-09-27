@@ -14,6 +14,7 @@ import {
   IconSunset,
 } from "@/components/icons";
 import type { AttractionWithPhoto } from "@/data/attractions";
+import type { ParkAlert } from "@/lib/alert-match";
 import { fill, formatDuration, formatMonths } from "@/i18n/format";
 import { monthOf } from "@/lib/dates";
 import { formatClock } from "@/lib/sun";
@@ -21,6 +22,8 @@ import { moveItem, removeItem, setItemStatus } from "@/lib/trip-edit";
 import type { Trip } from "@/lib/trip-store";
 import { ActionMenu } from "./action-menu";
 import type { DayView, DragSpot, PlannerText } from "./types";
+import type { DayWeather } from "./weather";
+import { WeatherLine, weatherNotes } from "./weather-line";
 
 export interface DragHandlers {
   source: DragSpot | null;
@@ -56,6 +59,8 @@ export function DayCard({
   drag,
   header,
   footer,
+  weather,
+  alertsFor,
 }: {
   view: DayView;
   /** 这天在整个行程地图上的颜色 */
@@ -81,6 +86,10 @@ export function DayCard({
   header?: ReactNode;
   /** 卡片底部的内容：今晚住哪 */
   footer: ReactNode;
+  /** 这天的天气：16 天内是预报，更远是往年同期 */
+  weather?: DayWeather;
+  /** NPS 实时公告里提到这个景点的 */
+  alertsFor: (stop: AttractionWithPhoto) => ParkAlert[];
 }) {
   const t = text.plan;
   const { day, rows, sun, timeline, from } = view;
@@ -124,10 +133,11 @@ export function DayCard({
   const dayWarnings = [
     timeline.overloaded ? t.warnings.overloaded : null,
     timeline.lateReturn ? t.warnings.lateReturn : null,
+    ...(weather ? weatherNotes(weather, text) : []),
   ].filter((warning): warning is string => warning !== null);
 
   return (
-    <section id={`plan-day-${day}`} className="scroll-mt-24 border-t border-ink">
+    <section id={`plan-day-${day}`} className="scroll-mt-32 border-t border-ink">
       <header className="flex flex-wrap items-start justify-between gap-4 py-5">
         <div className="flex items-baseline gap-4">
           <span className="font-serif text-4xl leading-none text-clay-700 tabular-nums">
@@ -143,6 +153,11 @@ export function DayCard({
           </div>
         </div>
         <div className="space-y-1 text-right text-xs text-mute">
+          {weather && (
+            <p className="text-ink-soft">
+              <WeatherLine weather={weather} text={text} />
+            </p>
+          )}
           {sun.kind === "normal" && (
             <p className="inline-flex items-center gap-3">
               <span className="inline-flex items-center gap-1">
@@ -203,6 +218,7 @@ export function DayCard({
               const notes = finished
                 ? []
                 : [...notesFor(stop), ...entry.warnings.map((w) => ({ text: t.warnings[w], tone: "warn" as Tone }))];
+              const alerts = finished ? [] : alertsFor(stop);
               return (
                 <li
                   key={item.id}
@@ -215,7 +231,7 @@ export function DayCard({
                   }}
                   onDragEnd={drag.end}
                   {...dropHere({ day, index })}
-                  className={`group scroll-mt-24 border-t-2 ${isTarget(index) ? "border-clay-600" : "border-transparent"} ${
+                  className={`group scroll-mt-32 border-t-2 ${isTarget(index) ? "border-clay-600" : "border-transparent"} ${
                     isSource(index) ? "opacity-40" : ""
                   }`}
                 >
@@ -353,6 +369,28 @@ export function DayCard({
                       ]}
                     />
                   </div>
+                  {alerts.length > 0 && (
+                    <ul className="space-y-1 pb-2 pl-[6.625rem] pr-10 text-xs leading-5">
+                      {alerts.map((alert) => (
+                        <li key={alert.id}>
+                          <a
+                            href={alert.url || undefined}
+                            target="_blank"
+                            rel="noreferrer"
+                            title={alert.title}
+                            className="inline-flex items-start gap-1.5 text-clay-700 hover:text-clay-800"
+                          >
+                            <IconAlert className="mt-0.5 shrink-0" />
+                            <span>
+                              {fill(t.alerts.stop, { category: t.alerts.categories[alert.category] ?? alert.category })}
+                              <span className="ml-1 text-ink-soft">{alert.titleZh ?? alert.title}</span>
+                              {alert.titleZh && <span className="ml-1.5 text-[11px] text-mute">{alert.title}</span>}
+                            </span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                   {openId === stop.id && (
                     <div
                       className="pt-1 pb-3 pl-0 sm:pl-[6.625rem]"

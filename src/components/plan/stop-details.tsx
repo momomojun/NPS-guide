@@ -6,6 +6,7 @@ import {
   AttractionTags,
   attractionTips,
   ClosedNotice,
+  CreatorNotes,
   linkButton,
   PopularityBadge,
 } from "@/components/attractions/attraction-card";
@@ -27,6 +28,7 @@ export function StopDetails({
   month,
   parkNameEn,
   parkHref,
+  routesHref,
   text,
   actions,
   onClose,
@@ -39,6 +41,8 @@ export function StopDetails({
   parkNameEn: string;
   /** 公园页上这个景点的链接 */
   parkHref: string;
+  /** 博主路线专区（这个公园） */
+  routesHref: string;
   text: PlannerText;
   /** 放在链接前面的按钮，比如加入行程 */
   actions?: ReactNode;
@@ -77,6 +81,7 @@ export function StopDetails({
             {fill(t.trailLength, { km: stop.trailLine.km.toFixed(1), type: stop.trailLine.loop ? t.loopTrail : t.oneWay })}
           </p>
         )}
+        <CreatorNotes attraction={stop} text={text} routesHref={routesHref} compact />
         {tips.length > 0 && (
           <div className="border-t border-line pt-3">
             <p className="text-xs tracking-[0.1em] text-mute">{t.tips}</p>

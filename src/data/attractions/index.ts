@@ -1,3 +1,4 @@
+import { creatorRoutes, type CreatorLanguage } from "../creators";
 import { bryceCanyon } from "./brca";
 import { channelIslands } from "./chis";
 import { craterLake } from "./crla";
@@ -33,6 +34,32 @@ export interface AttractionWithPhoto extends Attraction {
   hotRank?: number;
   /** 按 OpenStreetMap 步道算出的路线 */
   trailLine?: TrailPath;
+  /** 博主对这个景点的看法（creators.ts），和出现在几条博主路线里 */
+  creatorNotes?: CreatorNote[];
+  creatorRouteCount?: number;
+}
+
+export interface CreatorNote {
+  routeId: string;
+  creator: string;
+  platform: "youtube" | "bilibili";
+  language: CreatorLanguage;
+  url: string;
+  text: string;
+}
+
+const creatorNotes = new Map<string, CreatorNote[]>();
+const creatorRouteCounts = new Map<string, number>();
+for (const route of creatorRoutes) {
+  for (const note of route.notes ?? []) {
+    creatorNotes.set(note.stop, [
+      ...(creatorNotes.get(note.stop) ?? []),
+      { routeId: route.id, creator: route.creator, platform: route.platform, language: route.language, url: route.url, text: note.text },
+    ]);
+  }
+  for (const id of new Set(route.route?.flatMap((day) => day.stops) ?? [])) {
+    creatorRouteCounts.set(id, (creatorRouteCounts.get(id) ?? 0) + 1);
+  }
 }
 
 const withData: AttractionWithPhoto[] = [
@@ -75,6 +102,8 @@ for (const park of new Set(withData.map((attraction) => attraction.park))) {
 export const attractions: AttractionWithPhoto[] = withData.map((attraction) => ({
   ...attraction,
   hotRank: hotRanks.get(attraction.id),
+  creatorNotes: creatorNotes.get(attraction.id),
+  creatorRouteCount: creatorRouteCounts.get(attraction.id),
 }));
 
 export function getParkAttractions(parkCode: string): AttractionWithPhoto[] {

@@ -100,6 +100,14 @@ body {
   }
 }
 
+/* 横向滚动的导航条：能滑动，但不显示滚动条 */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /* 竖排中文，做装饰性的标题 */
 @utility vertical {
   writing-mode: vertical-rl;

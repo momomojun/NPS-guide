@@ -7,6 +7,18 @@ const root = path.resolve(__dirname);
 const nextConfig: NextConfig = {
   turbopack: { root },
   outputFileTracingRoot: root,
+  // service worker 不能被浏览器缓存，否则改了以后用户拿不到新版本
+  async headers() {
+    return [
+      {
+        source: "/sw.js",
+        headers: [
+          { key: "Content-Type", value: "application/javascript; charset=utf-8" },
+          { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
+        ],
+      },
+    ];
+  },
   images: {
     // 景点照片来自 Wikimedia Commons；缩略图在 thumb 域名，小图直接用原图
     remotePatterns: [

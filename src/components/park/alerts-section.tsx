@@ -1,9 +1,10 @@
 import { Section } from "@/components/section";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { fill } from "@/i18n/format";
+import type { Locale } from "@/i18n/config";
+import { translateAlerts } from "@/lib/alert-translate";
 import { getAlerts } from "@/lib/nps";
 import { settle } from "@/lib/settle";
-import { stripHtml } from "@/lib/text";
 import { daysSince } from "@/lib/time";
 import { ApiUnavailable } from "./api-unavailable";
 
@@ -20,9 +21,10 @@ const categoryStyles: Record<string, string> = {
 
 const defaultCategoryStyle = "text-mute";
 
-export async function AlertsSection({ parkCode, dict }: { parkCode: string; dict: Dictionary }) {
+export async function AlertsSection({ parkCode, dict, locale }: { parkCode: string; dict: Dictionary; locale: Locale }) {
   const t = dict.park.alerts;
   const result = await settle(getAlerts(parkCode));
+  const translated = result.ok ? await translateAlerts(result.data, locale) : [];
 
   return (
     <Section title={t.title} source={t.source}>
@@ -32,8 +34,9 @@ export async function AlertsSection({ parkCode, dict }: { parkCode: string; dict
         <p className="text-sm text-mute">{t.empty}</p>
       ) : (
         <ul className="divide-y divide-line">
-          {result.data.map((alert) => {
+          {result.data.map((alert, i) => {
             const date = alert.lastIndexedDate.slice(0, 10);
+            const zh = translated[i];
             return (
               <li key={alert.id} className="py-5 first:pt-0">
                 <p className={`eyebrow ${categoryStyles[alert.category] ?? defaultCategoryStyle}`}>
@@ -43,17 +46,21 @@ export async function AlertsSection({ parkCode, dict }: { parkCode: string; dict
                   <h4 className="font-serif text-lg leading-snug">
                     {alert.url ? (
                       <a href={alert.url} target="_blank" rel="noreferrer" className="hover:text-clay-700">
-                        {alert.title}
+                        {zh.titleZh ?? zh.title}
                       </a>
                     ) : (
-                      alert.title
+                      (zh.titleZh ?? zh.title)
                     )}
                   </h4>
+                  {zh.titleZh && <p className="mt-1 text-xs tracking-[0.04em] text-mute">{zh.title}</p>}
                 </div>
-                <p className="mt-2 text-sm leading-7 text-ink-soft">
-                  {stripHtml(alert.description)}
+                {zh.descriptionZh && <p className="mt-2 text-sm leading-7 text-ink-soft">{zh.descriptionZh}</p>}
+                <p className={zh.descriptionZh ? "mt-2 border-l border-line pl-3 text-xs leading-6 text-mute" : "mt-2 text-sm leading-7 text-ink-soft"}>
+                  {zh.descriptionZh && <span className="mr-1.5 text-[11px] tracking-[0.1em] text-ink-soft">{t.original}</span>}
+                  {zh.description}
                 </p>
                 <p className="mt-2 text-xs text-mute">
+                  {zh.translator ? `${fill(t.translatedBy, { provider: zh.translator })} · ` : `${t.noTranslation} · `}
                   {fill(t.updated, { date })}
                   {daysSince(date) > STALE_AFTER_DAYS && (
                     <span className="ml-2 text-clay-700">· {t.stale}</span>
