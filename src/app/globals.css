@@ -151,31 +151,97 @@ body {
 }
 
 /* ── 开场动画 ── */
-@keyframes intro-word {
+/* 公园名：从下面滚上来，停一下，再往上滚走；下一个紧跟着滚上来 */
+@keyframes intro-roll {
   0% {
     opacity: 0;
-    transform: translateY(40%);
+    transform: translateY(75%);
   }
-  18%,
-  82% {
+  30%,
+  62% {
     opacity: 1;
     transform: translateY(0);
   }
   100% {
     opacity: 0;
-    transform: translateY(-40%);
+    transform: translateY(-75%);
   }
 }
 
-@keyframes intro-curtain {
+/* 站名：淡入，字距慢慢收紧 */
+@keyframes intro-track {
+  from {
+    opacity: 0;
+    letter-spacing: 0.72em;
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 0.5em;
+  }
+}
+
+@keyframes intro-open-up {
   to {
     transform: translateY(-100%);
   }
 }
 
-/* 幕布：首屏大图加载好（或者最晚 2.6 秒、用户跳过）时由 Intro 组件加上 intro-lift 往上拉开 */
-.intro-lift {
-  animation: intro-curtain 0.85s var(--ease-expo) forwards;
+@keyframes intro-open-down {
+  to {
+    transform: translateY(100%);
+  }
+}
+
+/* 中线：先向两边亮开，幕布分开时淡掉 */
+@keyframes intro-seam-open {
+  0% {
+    width: 16rem;
+    opacity: 1;
+  }
+  35% {
+    width: 100vw;
+    opacity: 1;
+  }
+  100% {
+    width: 100vw;
+    opacity: 0;
+  }
+}
+
+.intro-wordmark {
+  letter-spacing: 0.5em;
+  /* 字距加在每个字后面，末尾多出来的一截用负边距抵掉，看起来才居中 */
+  margin-right: -0.5em;
+  animation: intro-track 1.4s var(--ease-expo) both;
+}
+/* 公园名上下两头渐隐，像从一道缝里进出 */
+.intro-words {
+  mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+}
+
+/*
+ * 拉开：首屏大图加载好（或者最晚 2.6 秒、用户跳过）时由 Intro 组件加上 intro-lift。
+ * 中线先向两边亮开，上下两半再从中线分开（只动 transform），文字跟着淡掉。
+ */
+.intro-lift .intro-half {
+  will-change: transform;
+}
+.intro-lift .intro-top {
+  animation: intro-open-up 1s var(--ease-expo) 0.15s forwards;
+}
+.intro-lift .intro-bottom {
+  animation: intro-open-down 1s var(--ease-expo) 0.15s forwards;
+}
+.intro-lift .intro-seam {
+  animation: intro-seam-open 0.75s var(--ease-expo) forwards;
+}
+.intro-lift .intro-seam > span {
+  background-color: color-mix(in oklab, var(--color-paper) 85%, transparent);
+  transition: background-color 0.2s ease;
+}
+.intro-lift .intro-text {
+  opacity: 0;
+  transition: opacity 0.45s ease;
 }
 .intro-seen .intro {
   display: none;

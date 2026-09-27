@@ -1,157 +1,193 @@
-# NPS Guide
+<div align="center">
 
-面向中文用户的美国国家公园旅行规划工具。非官方项目，与美国国家公园管理局（National Park Service）无关。
+<img src="public/icon.svg" width="76" alt="NPS Guide 图标">
 
-按**日期**回答：公园里什么开了、要不要预约、去哪充电加油、去哪吃饭补给、大概花多少钱；出发后还能根据实际进度调整后面的行程。
+# NPS Guide · 美国国家公园行程规划
 
-## 开发
+**在对的季节，抵达对的风景。**
 
-```bash
-npm install
-cp .env.example .env.local   # 填入 DATA_GOV_API_KEY；不填则用 DEMO_KEY（每小时 30 次）
-npm run dev                  # http://localhost:3000
-```
+面向中文用户的美国国家公园旅行规划工具：按**日期**告诉你公园里什么开着、要不要预约、住哪、去哪加油充电、大概花多少钱，<br>还能一键生成每天几点到哪的攻略，出发后按实际进度重排。
 
-| 位置 | 内容 |
-|---|---|
-| `src/app/[locale]/` | 页面：首页、公园页 `parks/[code]`、行程页 `plan`。`zh-Hans` 简体、`zh-Hant` 繁体；`src/proxy.ts` 按浏览器语言跳转 |
-| `src/i18n/` | 界面文案。简体撰写，繁体用 OpenCC 自动转换（台湾用语，“米”转“公尺”） |
-| `src/data/parks.ts` | 16 个公园：特色介绍、园内片区、定位点、时区、常用机场、常一起玩的公园（`nearby`）、非居民附加费、住宿建议 |
-| `src/data/activities.ts` | 各公园的特别活动、节庆和季节现象（火瀑布、天文节、游船、漂流、骑马……）：月份、怎么预约、2026 年的特殊情况 |
-| `src/data/airports.ts` | 各公园常用机场的位置，自动生成攻略时当出发 / 回程地 |
-| `src/data/attractions/` | 每个公园一个文件的景点数据；`*.generated.ts` 由脚本生成，不要手改；`google.ts` 是 Google Maps 评分和评论数的手动快照；`route-fixes.ts` 修正 OSRM 明显估错的个别砂石路车程 |
-| `src/data/lodging.ts` | 各公园的推荐住宿：园内酒店、门户小镇和民宿区（`rental`，Airbnb 整套房子集中的地方）；有 `airbnb` 地名的会按行程日期生成 Airbnb 搜索链接；车程已算进车程表 |
-| `src/lib/planner.ts` | 排行程：公园内按路线排序 → 按天切分（让最累的一天尽量轻松）→ 当天按日出日落排顺序；早上从前一晚住处出发、晚上回当晚住处都算进去 |
-| `src/lib/generate-trip.ts` | 自动生成攻略：可以几个顺路的公园一起排（比如盐湖城进出，先大提顿再黄石）。按月份去掉关闭和要抽签的景点（要订票的照排、提醒提前订），按必去、热度、当月最佳和节奏挑景点，路线从出发地排到回程地，再按车程和住宿偏好（不限 / 酒店 / 民宿）选每晚住处；太满的一天去掉最不重要的景点，有空的天再补 |
-| `src/lib/trip-store.ts` | 行程（含每晚住处）存在浏览器 localStorage，自用阶段不需要账号 |
-| `src/lib/geocode.ts`、`src/lib/osrm-client.ts` | 自定义住处：Photon 搜酒店 / 地址，OSRM 在浏览器里算到各景点的车程 |
-| `src/lib/nps.ts`、`src/lib/nlr.ts` | NPS 公告和门票、NLR 充电桩 |
-| `src/components/map/park-map.tsx` | MapLibre 地图：OpenFreeMap 底图 + 地形阴影 + USGS 卫星图 + 3D 地形，都不需要 key |
-| `src/app/globals.css` | 设计基调：纸色底、墨色字、砂岩红强调色；标题 Cormorant Garamond + 思源宋体，正文 Jost；开场动画、滚动渐显 |
-| `src/components/home/` | 首页：开场动画、全屏轮播、公园目录、线描地图（`src/data/map.generated.ts`） |
-| `src/components/site/` | 页头（压在大图上时透明，滚动后变纸色）、页脚、滚动渐显 |
+A Chinese-language trip planner for U.S. national parks — date-aware openings, auto-generated day-by-day itineraries,<br>lodging, EV charging, budgets and creator routes. Works offline on your phone.
 
-新增或修改景点、推荐住宿后，重新生成对应的数据（都是 `src/data/attractions/*.generated.ts`）：
+[功能](#功能) · [截图](#截图) · [覆盖的公园](#覆盖的公园) · [快速开始](#快速开始) · [数据来源](#数据来源) · [路线图](#路线图) · [开发文档](docs/DEVELOPMENT.md) · [English](#english)
 
-```bash
-npm run data:gallery     # 每个景点从 Wikimedia Commons 挑最多 6 张照片（photoFile 排第一），查缩略图、作者、授权
-npm run data:travel      # 用 OSRM 按道路算各景点、住宿之间的车程；相邻公园（nearby）另算跨园直达的车程
-npm run data:trails      # 按 trail 途经点，用 Valhalla 沿 OpenStreetMap 步道生成徒步路线
-npm run data:map         # 首页线描地图：Natural Earth 州界按 Albers 投影成 SVG，公园和城市位置一起算好
-```
+![Next.js 16](https://img.shields.io/badge/Next.js-16-1c1b18?logo=nextdotjs&logoColor=white)
+![React 19](https://img.shields.io/badge/React-19-1c1b18?logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-1c1b18?logo=typescript&logoColor=3178C6)
+![Tailwind CSS 4](https://img.shields.io/badge/Tailwind_CSS-4-1c1b18?logo=tailwindcss&logoColor=06B6D4)
+![MapLibre GL](https://img.shields.io/badge/MapLibre_GL-6-1c1b18)
+![PWA](https://img.shields.io/badge/PWA-offline-1c1b18?logo=pwa&logoColor=white)
+<br>
+![16 parks](https://img.shields.io/badge/parks-16-a04c2e)
+![279 attractions](https://img.shields.io/badge/attractions-279-a04c2e)
+![114 trails](https://img.shields.io/badge/trails-114-a04c2e)
+![49 creator routes](https://img.shields.io/badge/creator_routes-49-a04c2e)
 
-新增景点后，到 Google Maps 查它的评分和评论数，补进 `src/data/attractions/google.ts`（没有的话不参与热度排名）。
+</div>
 
-照片是按名字搜索 + 景点附近带坐标的照片自动挑的，重新生成后最好人工看一遍：不合适的文件名加进 `scripts/build-gallery.mjs` 的 `EXCLUDE`，搜不到好照片的景点在 `TUNING` 里补搜索词。只想看某几个景点的候选照片（不写文件）：`ONLY=yose-taft-point,seki-mist-falls npm run data:gallery`；只重挑新加的公园或改过的景点、其他照片不动：`UPDATE=grte,olym-lake-quinault npm run data:gallery`（公园代码或景点 id）。
+![NPS Guide 首页：优胜美地隧道观景点的全屏大图和“在对的季节，抵达对的风景”](docs/screenshots/home.jpg)
 
-`npm run dev` / `npm run build` 前会自动把 MapLibre 的 worker 文件复制到 `public/maplibre/`（v6 的 worker 是单独的 ES 模块，打包工具处理不了）。
+> 非官方项目，与美国国家公园管理局（National Park Service）无关。开放情况、价格都会变，出发前以 [nps.gov](https://www.nps.gov) 为准。
 
-## 目标用户
+## 为什么做这个
 
-- 会中文的来美游客和在美华人：中国大陆、台湾、东南亚华人
-- 以后扩展到日本、韩国（饮食口味、亚洲超市、自驾习惯相近）
-- 内容用简体撰写，OpenCC 自动转繁体（台湾用语）；代码结构预留 ja / ko
+去美国国家公园自驾，最麻烦的不是“去哪”，而是**什么时候去、哪天能去哪**：山路冬天封、热门步道要抽签、园内酒店一年前就订满、电车在园里找不到快充、进了园子很难补给……中文信息散在各个平台，还常常过时。
 
-## 当前阶段：自用优先
+NPS Guide 把这些按日期串起来：选好公园和日子，它告诉你那几天哪些景点开着、需要什么许可、日出日落几点，排好每天的路线和住处，算出开车时间和预算。
 
-先做到自己出行真的会用，再给别人用。暂不做账号系统，不优先做 SEO。
+## 功能
 
-## 公园
+- **景点地图**：16 座公园 279 个景点，地图和列表联动；114 条徒步路线按 OpenStreetMap 真实步道画出；每个景点最多 6 张照片、Google 评分和园内热度排名；普通地图、卫星图和 3D 地形随时切换。
+- **一键生成攻略**：选公园（可以几座顺路的一起，比如盐湖城进出、先大提顿再黄石）、月份或日期、天数、从哪个机场或城市出发，自动挑景点、排出每天几点到哪、定好每晚住处（园内酒店、门户小镇或民宿区，附 Airbnb 链接）。
+- **按日期提醒**：按当天日出日落安排日出 / 日落观景点；季节性关闭、许可证和预约写明原因和替代方案；16 天天气预报和 NWS 预警；NPS 实时公告附中文翻译，对到具体哪天哪个景点。
+- **出发后也能改**：拖拽排序、换到别的天、标记完成或跳过，按实际进度重排剩下的行程。
+- **补给和预算**：每晚住处附近的超市、加油站、快充和亚洲超市，进园前的最后补给点；门票（含 2026 年非居民附加费、买年卡划不划算）、住宿、吃饭、油费、租车、机票，合计和人均。
+- **什么时候去**：选一个出发日期，16 座公园分成“最适合 / 可以去 / 不太合适”，每座写明原因（开放情况、往年同期的天气、特别活动）。
+- **博主同款路线**：49 条中文、英语、日语、韩语和欧洲博主的 YouTube / B 站路线，按公园和语言筛选；博主对景点的评价显示在景点卡片上，一键照着排行程。
+- **机票、租车、油价**：比较公园附近几个机场的机票，各机场租车参考价，公园所在各州的实时油价和油费计算。
+- **手机和离线**：手机上一样好用；可以装到主屏（PWA），看过的页面、行程和地图在没信号的园区里也能打开；行程可以打印或存成 PDF。
+- **简体 / 繁體**：内容用简体撰写，繁体按台湾用语自动转换。
 
-| 片区 | 公园 | NPS 代码 | 2026 非居民 $100/人附加费 |
+## 截图
+
+截图里是用“自动生成攻略”现排的一个行程：黄石 + 大提顿 5 天，从博兹曼机场进出。
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="docs/screenshots/park.jpg" alt="黄石公园页：景点地图和老忠实间歇泉的照片、热度">
+      <p><b>公园页</b>：景点地图、照片图集、Google 评分和热度排名，按类型和片区筛选</p>
+    </td>
+    <td width="50%" valign="top">
+      <img src="docs/screenshots/plan-day.jpg" alt="行程页第 2 天：每个景点几点到、开车多久、天气和 NPS 公告，右边是全程路线地图">
+      <p><b>每天的行程</b>：几点到哪、停多久、开车多久，天气、日出日落和 NPS 公告；右边是按天着色的全程路线</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="docs/screenshots/plan.jpg" alt="行程总览：黄石和大提顿 5 天，23 个景点、开车时间、住宿和要注意的事">
+      <p><b>自动生成的攻略</b>：每天去哪、住哪、开车多久，还有这几天要注意的（早起看日出、可能下雪封路）</p>
+    </td>
+    <td width="50%" valign="top">
+      <img src="docs/screenshots/plan-budget.jpg" alt="预算：门票、住宿、吃饭、油费、租车的估算和合计">
+      <p><b>预算</b>：门票逐个买还是买年卡、住宿和吃饭（GSA 标准）、按真实里程算的油费、租车和机票</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="docs/screenshots/when.jpg" alt="什么时候去：9 月底到 10 月初最适合去的公园和原因">
+      <p><b>什么时候去</b>：按出发日期给 16 座公园分类，写明为什么</p>
+    </td>
+    <td width="50%" valign="top">
+      <img src="docs/screenshots/routes.jpg" alt="博主同款路线：按公园和语言筛选的博主路线卡片">
+      <p><b>博主同款路线</b>：多语言博主的路线、季节和对景点的评价，可以一键排进行程</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="docs/screenshots/prices.jpg" alt="油价：AAA 各州普通、中级、高级汽油和柴油均价，以及油费计算">
+      <p><b>机票、租车、油价</b>：各州实时油价、油费 / 电费计算，机票比较附近机场</p>
+    </td>
+    <td width="50%" valign="top">
+      <img src="docs/screenshots/mobile.jpg" alt="手机上的首页、行程和景点列表">
+      <p><b>手机上</b>：首页、每天的行程、景点列表；装到主屏后离线也能看</p>
+    </td>
+  </tr>
+</table>
+
+## 覆盖的公园
+
+| 片区 | 公园 | 代码 | 2026 年非居民附加费 |
 |---|---|---|---|
-| 加州 Sierra | Yosemite | `yose` | 是 |
-| 加州 Sierra | Sequoia & Kings Canyon | `seki` | 是 |
-| 南加州海岸 | Channel Islands | `chis` | 否 |
-| 加州北部 · 俄勒冈 | Redwood | `redw` | 否 |
-| 加州北部 · 俄勒冈 | Lassen Volcanic | `lavo` | 否 |
-| 加州北部 · 俄勒冈 | Crater Lake | `crla` | 否 |
-| 西雅图周边 | Mount Rainier | `mora` | 否 |
-| 西雅图周边 | Olympic | `olym` | 否 |
-| 西雅图周边 | North Cascades | `noca` | 否 |
-| 落基山北部 | Yellowstone | `yell` | 是 |
-| 落基山北部 | Grand Teton | `grte` | 是 |
-| 拉斯维加斯出发 | Death Valley | `deva` | 否 |
-| 拉斯维加斯出发 | Zion | `zion` | 是 |
-| 拉斯维加斯出发 | Bryce Canyon | `brca` | 是 |
-| 拉斯维加斯出发 | Grand Canyon | `grca` | 是 |
-| 阿拉斯加 | Denali | `dena` | 否 |
+| 加州 Sierra | 优胜美地 Yosemite | `yose` | $100 / 人 |
+| 加州 Sierra | 红杉与国王峡谷 Sequoia & Kings Canyon | `seki` | $100 / 人 |
+| 南加州海岸 | 海峡群岛 Channel Islands | `chis` | — |
+| 加州北部 · 俄勒冈 | 红木 Redwood | `redw` | — |
+| 加州北部 · 俄勒冈 | 拉森火山 Lassen Volcanic | `lavo` | — |
+| 加州北部 · 俄勒冈 | 火山口湖 Crater Lake | `crla` | — |
+| 西雅图周边 | 雷尼尔山 Mount Rainier | `mora` | — |
+| 西雅图周边 | 奥林匹克 Olympic | `olym` | — |
+| 西雅图周边 | 北瀑布 North Cascades | `noca` | — |
+| 落基山北部 | 黄石 Yellowstone | `yell` | $100 / 人 |
+| 落基山北部 | 大提顿 Grand Teton | `grte` | $100 / 人 |
+| 拉斯维加斯出发 | 死亡谷 Death Valley | `deva` | — |
+| 拉斯维加斯出发 | 锡安 Zion | `zion` | $100 / 人 |
+| 拉斯维加斯出发 | 布莱斯峡谷 Bryce Canyon | `brca` | $100 / 人 |
+| 拉斯维加斯出发 | 大峡谷 Grand Canyon | `grca` | $100 / 人 |
+| 阿拉斯加 | 德纳里 Denali | `dena` | — |
+
+附加费从 2026 年起对 16 岁以上的非美国居民收取；同车有人持有效年卡（美国居民年卡、非居民年卡或这座公园的年卡）整车免收，网站的预算里已经算进去了。
+
+## 快速开始
+
+```bash
+git clone https://github.com/momomojun/NPS-guide.git
+cd NPS-guide
+npm install
+cp .env.example .env.local   # 可选：填 key，不填也能跑
+npm run dev                  # 打开 http://localhost:3000
+```
+
+不配任何 key 也能用；配了会更稳、更全：
+
+| 环境变量 | 做什么 | 怎么拿 |
+|---|---|---|
+| `DATA_GOV_API_KEY` | NPS 公告和门票、充电桩、住宿餐饮标准（不填用 `DEMO_KEY`，每小时 30 次） | [api.data.gov](https://api.data.gov/signup/)，免费 |
+| `SERPAPI_API_KEY` | 更稳定的机票价格 | [serpapi.com](https://serpapi.com)，免费每月 250 次 |
+| `DEEPL_API_KEY` | 质量更好的公告中文翻译 | [DeepL API Free](https://www.deepl.com/pro-api)，免费每月 50 万字符 |
+
+构建版：`npm run build && npm run start`。代码结构、重新生成数据的脚本、截图脚本和整理数据时的注意事项见 [开发文档](docs/DEVELOPMENT.md)。
+
+## 技术栈
+
+- [Next.js 16](https://nextjs.org)（App Router、Turbopack）、React 19、TypeScript、Tailwind CSS 4
+- [MapLibre GL](https://maplibre.org) 地图：[OpenFreeMap](https://openfreemap.org) 底图、AWS 地形瓦片（阴影和 3D）、USGS 卫星图，都不需要 key
+- [OpenCC](https://github.com/nk2028/opencc-js) 简繁转换；PWA 离线（service worker）
+- 没有数据库：景点、车程、步道、补给点、往年天气等由 `scripts/` 里的脚本从开放数据预先生成，行程存在浏览器 localStorage 里
+
+## 数据来源
+
+大多是公开、免费的数据，完整列表和整理方法见 [开发文档](docs/DEVELOPMENT.md#数据源)：
+
+- **公园、公告、门票**：[NPS API](https://www.nps.gov/subjects/developer/api-documentation.htm)；**充电桩**：NLR Alternative Fuel Stations
+- **天气**：[Open-Meteo](https://open-meteo.com)（16 天预报、往年同期）、[NWS](https://www.weather.gov/documentation/services-web-api)（预警）
+- **地图、车程、步道、补给点**：[OpenStreetMap](https://www.openstreetmap.org)（Overpass、OSRM、Valhalla、Photon）
+- **照片**：[Wikimedia Commons](https://commons.wikimedia.org)，按授权逐张署名
+- **住宿和餐饮标准**：GSA Per Diem；**油价**：AAA；**租车**：Kayak 参考价；**机票**：Google Flights / SerpApi
+- **热度和评分**：Google Maps 评分和评论数（手动快照，只在自用阶段使用）
+- **博主路线**：YouTube / B 站公开视频的简介、章节和文稿，转述并附原视频链接
 
 ## 路线图
 
-### v1 基础功能：地图、景点、规划
+已经能用：景点地图和图集、自动生成攻略、按日期的开放和许可提醒、每晚住宿、拖拽调整和按进度重排、天气和 NPS 公告、补给、预算、机票租车油价、什么时候去、博主路线、离线和打印。
 
-- [x] 景点地图：16 个公园共 279 个景点（优胜美地 33 个、黄石 29 个、大提顿 23 个），地图和列表联动；坐标、出发点、徒步数据、开放季节、许可证。酒店不算景点（历史酒店放在住宿里）
-- [x] 景点图集：每个景点最多 6 张 Wikimedia Commons 照片，卡片里切换，点开全屏看（左右键 / 滑动切换）
-- [x] 中英文对照（地图标签、卡片），一键到 Google Maps 核对位置和评分
-- [x] 114 条徒步路线按 OpenStreetMap 真实步道画出，标出步道口；行程地图显示真实开车路线，可以看全程（每天一种颜色）或某一天
-- [x] 热度排名：按 Google Maps 评论数在每个公园内排名（2026-09-23 / 09-24 快照），卡片上显示 Google 评分和评论数，默认按热度排序
-- [x] 公园特色介绍，按园内片区分组
-- [x] 行程规划：加入行程 → 设日期和天数 → 自动排好每天几点到哪、开车多久
-- [x] 按当天日出日落安排日出 / 日落景点，提示季节性关闭、许可证、天黑还在徒步、安排太满
-- [x] 手动调整（拖拽排序、换天、完成 / 跳过），按实际进度重排剩余行程
-- [x] 住宿：每晚住哪（推荐园内酒店和门户小镇，或搜任意酒店 / 地址），车程从住处算起，一键按车程安排住宿
-- [x] 自动生成攻略：只填公园（可以加上顺路的公园）、月份（或具体日期）、天数、从哪出发 / 回到哪（机场或任意地址）、节奏、住宿偏好，自动挑景点、排每天、定每晚住处（附备选和最近的民宿区、Airbnb 链接），列出这个月的特别活动、要提前预约的、不开放的景点（附原因）和没排进去的景点
-- [x] 行程里点任何一个景点展开详情：照片、热度和 Google 评分、停留时间、徒步数据、开放情况、简介和实用提示；添加景点前也能先看详情
-- [x] 特别活动和开放情况：公园页列出特别活动（月份、预约方式、2026 年情况），目前关闭和季节性开放的景点都写明原因、大概什么时候开、有什么替代
-- [x] 非居民附加费：标出同车有人持有效年卡（美国居民年卡、非居民年卡或本公园年卡）整车免收
-- [x] 首页：开场动画、各公园全屏轮播、公园目录（悬停换图）、当季推荐、美国西部线描地图（阿拉斯加小图）；整站换成纸色底 + 衬线标题的杂志风格
-- [x] 实时信息：NPS 公告、门票、周边充电桩（含可靠度标记）
+接下来：
 
-### v2 差异化
+- [ ] 按日期的道路和设施开放：历年开关日期 + NPS 实时公告
+- [ ] 充电桩打卡：能用 / 坏了 / 找不到，给桩打可靠度分
+- [ ] 亚洲超市补漏：OpenStreetMap 里漏得多，用 Google Places 补 + 人工校对
+- [ ] 按实际打卡学习个人配速，自动调整后面的时间
+- [ ] 出发前按行程范围预先下载离线地图
 
-- [ ] 日期开放：选日期 → 哪些路、区域、设施开放（历年开关日期 + NPS 实时 alerts），需要哪些预约 / permit
-- [ ] 补能地图：充电桩和加油站画到地图上、手机信号；桩的可靠度评分 + 打卡（能用 / 坏了 / 找不到）
-- [ ] 亚洲补给：沿途中超、韩超、日超、东南亚超市，合口味的餐厅，"进园前最后补给点"
-- [ ] 预算估算：门票（含非居民规则、年卡是否划算）、油 / 电、餐饮、住宿
-- [ ] 根据实际打卡学习个人配速，自动调整后续时间估算
-- [ ] PWA 离线可用（公园里经常没信号）
+完整的路线图和待办见 [开发文档](docs/DEVELOPMENT.md#路线图)。
 
-### v3 机票 / 租车
+## English
 
-- 自用阶段：脚本低频抓取（如 fast-flights）+ 缓存；临时查询让 Claude 操作浏览器
-- 公开后：换成付费或合作数据源（如 SerpApi、affiliate 接口）
-- 价格数据源单独抽成一层，换源不影响上层
+**NPS Guide** is an unofficial, Chinese-language (Simplified & Traditional) trip planner for 16 U.S. national parks in the West: Yosemite, Sequoia & Kings Canyon, Channel Islands, Redwood, Lassen Volcanic, Crater Lake, Mount Rainier, Olympic, North Cascades, Yellowstone, Grand Teton, Death Valley, Zion, Bryce Canyon, Grand Canyon and Denali.
 
-## 数据源
+- **Attraction maps**: 279 curated sights, 114 hiking trails traced on real OpenStreetMap paths, photo galleries, satellite and 3D terrain views.
+- **Auto-generated itineraries**: pick parks, dates and an arrival airport, and get a day-by-day plan with times, drive durations, sunrise and sunset stops, and nightly lodging.
+- **Date-aware alerts**: seasonal closures, permits and reservations, a 16-day forecast, NWS warnings, and live NPS alerts translated into Chinese.
+- **Budget and logistics**: park fees (including the 2026 nonresident surcharge), lodging and meals, fuel or EV charging, car rental, flights, and supplies near each night's stay.
+- **Creator routes**: 49 routes from Chinese, English, Japanese, Korean and European YouTube and Bilibili creators.
+- **Offline**: a PWA that keeps your trip and viewed maps available without cell signal.
 
-| 用途 | 来源 | Key |
-|---|---|---|
-| 公园信息、alerts、门票、things to do | NPS API（`developer.nps.gov`） | api.data.gov |
-| 充电桩（含 Tesla） | NLR Alternative Fuel Stations API（`developer.nlr.gov`；旧域名 `developer.nrel.gov` 已于 2026-05-29 停用） | api.data.gov |
-| 露营地、permit 设施信息 | Recreation.gov RIDB | 单独申请 |
-| 天气预警 | NWS（`api.weather.gov`） | 不需要 |
-| 空气质量 / 山火烟雾 | AirNow API | 单独申请 |
-| 油价 | EIA API | 单独申请 |
-| 餐饮、住宿成本基准 | GSA Per Diem API | api.data.gov |
-| 景点坐标、加油站、亚洲超市等 POI | OpenStreetMap（Overpass） | 不需要 |
-| 景点照片 | Wikimedia Commons（按授权署名） | 不需要 |
-| 车程 | OSRM 公共服务（景点和推荐住宿预先生成车程表；自定义住处在浏览器里实时查） | 不需要 |
-| 搜索酒店 / 地址 | Photon（基于 OpenStreetMap） | 不需要 |
-| 徒步路线 | Valhalla 公共服务（FOSSGIS），OpenStreetMap 步道 | 不需要 |
-| 热度、评分 | Google Maps 评分和评论数（自用阶段在浏览器里手动快照）；公开后换 Google Places API | 公开后需要 Google Cloud |
-| 地图底图 / 地形 / 卫星 | OpenFreeMap、AWS Terrain Tiles、USGS The National Map | 不需要 |
-| 首页线描地图 | Natural Earth 州界（公共领域） | 不需要 |
-| 字体 | Google Fonts（Cormorant Garamond、Jost、思源宋体），next/font 构建时下载、自托管 | 不需要 |
+Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4 and MapLibre GL, mostly on open data (NPS API, OpenStreetMap, Open-Meteo, Wikimedia Commons). No keys are required to run it locally: `npm install && npm run dev`.
 
-## 注意事项
+## 声明
 
-- NPS API 只有"现在"的状态，季节性开放规律要自己整理历年数据；部分字段（如 trail 时长、Yosemite 路况）是空的
-- NLR 充电桩数据里有"暂时不可用"和很久没确认的站，要做可靠度评分
-- OSM 亚洲超市数据有误报（地名 Chinese Camp、China Peak 滑雪场）和漏报（Fresno、Visalia 一家没有），需要 Google Places 补漏 + 人工校对
-- Google 评分和评论数目前是手动快照，不会自动更新。Google 条款不允许复制保存这些数据，自用可以；公开上线前要换成 Google Places API 实时查询（按字段计费，除 place_id 外不能长期缓存，要署名），或者去掉数字只留跳转链接
-- 同一景点在 Google 上常分成景点、步道口、观景台几个条目，评论分散；快照取评论最多的条目。从观景台出发的步道（比如从日落点下去的纳瓦霍环线）评论容易记在观景台上，名次会偏低。游客中心和园外景点（比如 Jackson 镇广场）不参与排名
-- 景点的临时关闭、特别活动的日期和价格是 2026 年 9 月 24 日查的（关闭说明在 `closedNote`，其他写在提示里），之后要复查：
-  - 目前关闭（`openMonths: []`）：火山口湖 Cleetwood Cove 步道 2026–2028 年重建（湖上游船也停）、锡安守望者步道维修、优胜美地奇尔努阿尔纳瀑布（Dome Fire）
-  - 大峡谷 2026 年 8 月 29 日山洪：幻影牧场、North Kaibab、South Kaibab 的 Tip-Off 以下关闭，峡谷里没有饮用水，南缘园内酒店暂停过夜接待，预计感恩节前后恢复供水
-  - 优胜美地 Glacier Point Road 9 月 23 日起因 Dome Fire 临时封闭、雾径上段 10 月底前按日期开放；雷尼尔山 Sunrise 路因山火关闭；奥林匹克 Hoh River 桥 9 月 24 日到 10 月 13 日分三段全封、Rialto Beach 10 月 15 日前封路；大提顿 Moose-Wilson Road 北段 9 月 8 日到 11 月 15 日封闭、杰克逊湖水位低游船提前停航；德纳里巴士 2026 年只到 Mile 43
-  - 长期：Carbon River / Mowich Lake 因 Fairfax 桥关闭而没收录、黄石 Biscuit Basin 2024 年水热爆炸后关闭、死亡谷 Darwin Falls 的砾石路冲毁（要从 190 号公路走进去）
-- 海峡群岛只能坐船上岛，每个岛按一整天的行程算，出发点是 Ventura 码头；船票要提前在 Island Packers 订
-- 车程都按自驾算。大峡谷 Hermit Road（3–11 月）和 South Kaibab 步道口、锡安峡谷景观道（班车季）不能开私家车，只能坐园内免费班车，实际花的时间会比行程里长，以后要把班车算进去
-- 不爬小红书（没有 API，有法律风险）；博主内容只做摘要 + 链接 / 嵌入
-
-## 待办
-
-- [ ] 申请 api.data.gov 免费 key：https://api.data.gov/signup/ （NPS、NLR、GSA 通用；DEMO_KEY 每小时只有 30 次）
-- [x] 初始化项目骨架：Next.js 16 + TypeScript + Tailwind
-- [ ] 部署到 Vercel；需要存数据时再上 Postgres + PostGIS（如 Supabase）
+- 非官方项目，与美国国家公园管理局（National Park Service）无关，名字里的 NPS 只是说明用途。
+- 景点的开放情况、活动日期和价格是整理时的快照，会过时；出发前请以官网和预订页面为准。
+- 照片来自 Wikimedia Commons，作者和授权在网站上逐张标注（截图里也能看到）；地图数据 © OpenStreetMap contributors。
+- 博主路线是我们的转述，版权归原作者，想看完整内容请点原视频。

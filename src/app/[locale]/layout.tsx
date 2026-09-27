@@ -18,10 +18,10 @@ const cormorant = Cormorant_Garamond({ subsets: ["latin"], variable: "--font-cor
 const serifSc = Noto_Serif_SC({ variable: "--font-serif-sc", preload: false });
 const serifTc = Noto_Serif_TC({ variable: "--font-serif-tc", preload: false });
 
-// 页面绘制前执行：标记 JS 可用（滚动渐显的元素这时才先藏起来）；本次会话看过开场动画（或者系统减弱动态效果）就不再播，
-// 还没播过而且打开的是首页，就先让首屏文字停在起点，等幕布拉开
+// 页面绘制前执行：标记 JS 可用（滚动渐显的元素这时才先藏起来）；一天之内看过开场动画（或者系统减弱动态效果）就不再播，
+// 网址带 ?intro 强制重播；要播而且打开的是首页，就先让首屏文字停在起点，等幕布拉开
 const bootScript =
-  'var h=document.documentElement;h.classList.add("js");try{if(sessionStorage.getItem("nps-intro")||matchMedia("(prefers-reduced-motion: reduce)").matches)h.classList.add("intro-seen");else if(location.pathname.split("/").filter(Boolean).length<=1)h.classList.add("intro-playing")}catch(e){}';
+  'var h=document.documentElement;h.classList.add("js");try{var q=/[?&]intro(=|&|$)/.test(location.search);if(matchMedia("(prefers-reduced-motion: reduce)").matches||(!q&&Date.now()-(+localStorage.getItem("nps-intro")||0)<864e5))h.classList.add("intro-seen");else if(location.pathname.split("/").filter(Boolean).length<=1)h.classList.add("intro-playing")}catch(e){}';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));

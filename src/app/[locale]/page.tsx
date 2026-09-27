@@ -22,8 +22,8 @@ import { fill, formatMonths } from "@/i18n/format";
 export const revalidate = 86400;
 
 const FINAL_PHOTO = "yose-glacier-point";
-/** 开场动画依次闪过的公园（按这个顺序），最后一个停住 */
-const INTRO_PARKS = ["yose", "yell", "grca", "crla", "dena"];
+/** 开场动画依次滚过的公园；最后再加上首屏第一张大图的公园，停在它上面，幕布拉开正好是它 */
+const INTRO_PARKS = ["yell", "grca", "crla", "dena"];
 const container = "mx-auto max-w-[1600px] px-5 sm:px-10";
 
 const photoOf = (id: string) => attractions.find((attraction) => attraction.id === id)?.photo;
@@ -88,10 +88,9 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       <Intro
         wordmark={dict.site.wordmark}
         tagline={t.introTagline}
-        words={INTRO_PARKS.flatMap((code) => localParks.filter((park) => park.code === code)).map((park) => ({
-          zh: park.nameZh,
-          en: park.nameEn,
-        }))}
+        words={[...INTRO_PARKS.filter((code) => code !== slides[0]?.code), ...(slides[0] ? [slides[0].code] : [])]
+          .flatMap((code) => localParks.filter((park) => park.code === code))
+          .map((park) => ({ zh: park.nameZh, en: park.nameEn }))}
         skipLabel={t.skip}
       />
 
