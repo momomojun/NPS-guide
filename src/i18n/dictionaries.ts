@@ -765,6 +765,14 @@ const zhHans = {
       feeTip: "非美国居民每人另收 $100；同车只要有人持有效年卡（美国居民年卡 $80），全车免门票和附加费。",
     },
   },
+  login: {
+    eyebrow: "Private · 自用",
+    title: "输入访问密码",
+    intro: "这个网站设了访问密码，只给自己和同行的人用。输一次，这台设备一年内都不用再输。",
+    password: "密码",
+    submit: "进入",
+    error: "密码不对，再试一次。",
+  },
   prices: {
     eyebrow: "Prices · 机票 · 租车 · 油价",
     title: "机票、租车和油价",

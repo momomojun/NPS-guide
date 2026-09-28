@@ -136,8 +136,21 @@ npm run dev                  # 打开 http://localhost:3000
 | `DATA_GOV_API_KEY` | NPS 公告和门票、充电桩、住宿餐饮标准（不填用 `DEMO_KEY`，每小时 30 次） | [api.data.gov](https://api.data.gov/signup/)，免费 |
 | `SERPAPI_API_KEY` | 更稳定的机票价格 | [serpapi.com](https://serpapi.com)，免费每月 250 次 |
 | `DEEPL_API_KEY` | 质量更好的公告中文翻译 | [DeepL API Free](https://www.deepl.com/pro-api)，免费每月 50 万字符 |
+| `SITE_PASSWORD` | 访问密码：设了之后打开网站要先输密码（部署到公网时用） | 自己定 |
 
 构建版：`npm run build && npm run start`。代码结构、重新生成数据的脚本、截图脚本和整理数据时的注意事项见 [开发文档](docs/DEVELOPMENT.md)。
+
+## 部署到手机上用
+
+推荐 [Vercel](https://vercel.com)（Next.js 官方的托管，个人用免费）：用 GitHub 账号登录 Vercel → **Add New → Project** → 选这个仓库 → 在 **Environment Variables** 里填好下面几项 → **Deploy**。以后每次推送到 GitHub 都会自动重新部署。
+
+- `SITE_PASSWORD`：访问密码。部署后的网址谁都能打开，设了密码就只有你和同行的人能看；输一次，这台设备一年内不用再输
+- `DATA_GOV_API_KEY`：部署后基本必填。`DEMO_KEY` 按 IP 限次数，Vercel 的服务器是很多网站共用的，很快就会用完
+- `SELF_USE_SCRAPE=1`（可选，设了密码再开）：部署后也实时查机票价格、油价
+
+部署好后用手机打开网址：iPhone 在 Safari 里点 **分享 → 添加到主屏幕**，安卓在 Chrome 里点 **安装应用**。之后它就像一个 App，公园里没信号也能打开看过的页面和行程。
+
+以后想做成微信小程序，要注意的事见 [开发文档](docs/DEVELOPMENT.md#以后做成微信小程序)。
 
 ## 技术栈
 

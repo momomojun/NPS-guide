@@ -22,6 +22,7 @@ npm run dev                  # http://localhost:3000
 | 位置 | 内容 |
 |---|---|
 | `src/app/[locale]/` | 页面：首页、公园页 `parks/[code]`、行程页 `plan`、什么时候去 `when`、博主路线 `routes`、机票租车油价 `prices`。`zh-Hans` 简体、`zh-Hant` 繁体；`src/proxy.ts` 按浏览器语言跳转 |
+| `src/proxy.ts`、`src/lib/site-auth.ts`、`src/app/[locale]/login/`、`src/app/api/login/` | 访问密码：设了 `SITE_PASSWORD`，没登录的页面跳到登录页、接口返回 401；登录后存一个一年有效的 HttpOnly cookie（值是密码的哈希，改密码就全部失效）。图标、manifest、service worker 这些静态文件不拦 |
 | `src/i18n/` | 界面文案。简体撰写，繁体用 OpenCC 自动转换（台湾用语，“米”转“公尺”） |
 | `src/data/parks.ts` | 16 个公园：特色介绍、园内片区、定位点、时区、常用机场、常一起玩的公园（`nearby`）、非居民附加费、住宿建议 |
 | `src/data/activities.ts` | 各公园的特别活动、节庆和季节现象（火瀑布、天文节、游船、漂流、骑马……）：月份、怎么预约、2026 年的特殊情况 |
@@ -47,6 +48,45 @@ npm run dev                  # http://localhost:3000
 | `src/app/globals.css` | 设计基调：纸色底、墨色字、砂岩红强调色；标题 Cormorant Garamond + 思源宋体，正文 Jost；开场动画、滚动渐显 |
 | `src/components/home/` | 首页：开场动画、全屏轮播、公园目录、线描地图（`src/data/map.generated.ts`） |
 | `src/components/site/` | 页头（压在大图上时透明，滚动后变纸色）、页脚、滚动渐显 |
+
+## 部署
+
+推荐 Vercel（个人用免费，推送到 GitHub 自动部署）：Vercel 用 GitHub 登录 → Add New → Project → 导入这个仓库 → 填环境变量 → Deploy。构建命令、输出目录都用默认的（`npm run build` 前会自动复制 MapLibre worker）。
+
+| 环境变量 | 部署时 |
+|---|---|
+| `SITE_PASSWORD` | 建议设。部署后的网址是公开的，而自用阶段的 Google Maps 评分快照、自用抓取都不适合公开 |
+| `DATA_GOV_API_KEY` | 基本必填。`DEMO_KEY` 按 IP 限次数，Vercel 的出口 IP 是很多网站共用的 |
+| `SELF_USE_SCRAPE` | 设了密码、只有自己用时才设成 `1`。Google 对云服务器的请求拦得更严，机票价格可能查不到，查不到就只给比价链接 |
+| `DEEPL_API_KEY`、`SERPAPI_API_KEY` | 可选。MyMemory 的免费额度也是按 IP 算的，部署后翻译更容易用完，配 DeepL 更稳 |
+
+- 手机上用：HTTPS 下 service worker 才能注册，所以离线功能要部署后才有；iPhone 用 Safari“添加到主屏幕”，安卓用 Chrome“安装应用”。
+- 在微信里直接点 `*.vercel.app` 的链接可能会被拦，用手机浏览器打开，或者给项目绑一个自己的域名。
+- `vercel.app` 在中国大陆经常打不开；自用阶段人在美国不受影响，以后要给国内用户用，需要国内的服务器和备案（见下一节）。
+- 本机和手机连同一个 Wi-Fi 时也能临时看：`npm run build && npm run start`，手机打开 `http://电脑的局域网 IP:3000`。前提是电脑把这个网络设成“专用网络”并允许 Node.js 通过防火墙；公共 Wi-Fi 下别这么做。这种方式是 HTTP，离线功能不可用。
+
+## 以后做成微信小程序
+
+小程序不是把网站“放上去”，而是微信里另一套运行环境（WXML / WXSS / JS，没有浏览器的 DOM），现在的 Next.js 网站不能直接变成小程序。有两条路：
+
+1. **套壳（web-view 里嵌网页）**：改动最少，但限制很多。个人主体的小程序不能用 web-view，只有企业、组织主体可以；嵌的网页要配成“业务域名”，域名必须完成 ICP 备案，这意味着服务器要放在中国大陆（Vercel 不行）；网页在国内打开，还会碰到下面说的地图和照片问题。
+2. **用 Taro 重写界面（推荐）**：[Taro](https://taro.zone) 可以用 React 写、编译成微信小程序。能直接搬过去的是纯数据和纯逻辑：`src/data/`（公园、景点、住宿、活动）、`src/lib/planner.ts`、`generate-trip.ts`、`seasons.ts`、预算计算等；要重写的是所有界面组件、地图、存储和网络请求。
+
+走第 2 条路的步骤：
+
+1. **注册小程序**（[mp.weixin.qq.com](https://mp.weixin.qq.com)）：选个人或企业主体。个人主体要中国大陆身份证实名的微信号；海外公司可以注册海外主体。
+2. **小程序备案**：2023 年 9 月起，小程序上线前必须先在后台完成备案（个人要人脸核验）。
+3. **选服务类目**：个人主体能选的类目有限，旅游类有些子类目要资质，以后台显示为准。
+4. **开发**：
+   - 地图：MapLibre 用不了，改用小程序自带的 `map` 组件（腾讯地图）。它的美国地图数据比较粗，徒步路线用 `polyline` 自己画。在国内展示地图要用有资质的图源，OpenFreeMap / OpenStreetMap 的瓦片不能直接用。
+   - 数据：主包最多 2MB、全部分包加起来约 20MB。车程表、步道、补给点这些大数据要放到云存储，按需下载。
+   - 存储：行程从 localStorage 改成 `wx.setStorage`；离线靠小程序自己的缓存，不需要 service worker。
+   - 照片：Wikimedia Commons 在中国大陆打不开，要转存到自己的云存储或 CDN，并保留作者和授权署名。
+   - 外链：小程序里不能直接打开 YouTube、B 站这些外部网页，博主视频改成“复制链接”。
+5. **后端**：NPS 公告、天气、价格这些接口，放到[微信云开发](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)的云函数或云托管里（小程序只能请求后台配置过、而且备案过的域名，用云开发可以省掉自己备案域名这一步）。云开发按套餐收费。
+6. **提交审核、发布**：用微信开发者工具上传代码，在后台提交审核，通过后发布。
+
+工作量上，界面基本要重写，接近再做一遍现在网站的前端。建议自用阶段先用网页版（添加到主屏幕、离线可用）；真要给国内用户用时再做小程序，并先把排行程的逻辑整理成一个独立的包，让网站和小程序共用。
 
 ## 数据脚本
 
