@@ -1068,4 +1068,553 @@ export const activities: ParkActivity[] = [
     booking: "入口区的酒店冬季基本都关门，冬季来要住 Healy；极光看太阳活动和云量，出发前查 NOAA 或阿拉斯加大学费尔班克斯分校的极光预报。",
     url: "https://www.nps.gov/dena/planyourvisit/winterfest.htm",
   },
+  {
+    park: "arch",
+    nameZh: "火焰炉护林员带队徒步",
+    nameEn: "Ranger-Guided Fiery Furnace Hike",
+    months: [4, 5, 6, 7, 8, 9],
+    summary:
+      "护林员带队钻进火焰炉的砂岩迷宫，约 2.5 小时、3 公里左右，一路讲岩鳍和拱门怎么形成、里面有哪些动植物；途中要侧身挤过窄缝、跨过岩缝、手脚并用爬岩，是第一次进火焰炉最稳妥的方式。",
+    booking:
+      "只在 Recreation.gov 预订，每场提前 7 天早上 8 点（山地时间）放票，旺季很快抢光；$16/人，5 岁以下不能参加，12 岁以下要有成人陪同，要穿抓地好的鞋、每人带 1 升以上的水。票要在出发前一天或当天到游客中心按指定时间领取。",
+    status: "2026 年 4 月中旬开始、9 月结束，具体场次以 Recreation.gov 为准。",
+    url: "https://www.nps.gov/thingstodo/explore-the-fiery-furnace.htm",
+    attraction: "arch-fiery-furnace",
+  },
+  {
+    park: "arch",
+    nameZh: "火焰炉自助探索许可证",
+    nameEn: "Self-Guided Fiery Furnace Exploration Permit",
+    summary:
+      "有经验的人可以不跟团、自己进火焰炉：里面没有正式步道，只有一条逆时针路线的小标记，岔路和死路很多、GPS 信号差，适合去过一次或很会找路的人。",
+    booking:
+      "在 Recreation.gov 或电话 1-877-444-6777 预订，最早提前 7 天、最晚提前 2 天；$10/人，每组最多 6 人，5 岁以下不能进，不能带宠物。出发前一天或当天全员到游客中心看安全影片后领证（8:00–10:00、14:00–15:30 每半小时一场），只限当天日出到日落。",
+    status: "全年都能申请，旺季很快订满。",
+    url: "https://www.nps.gov/arch/planyourvisit/fiery-furnace-permit.htm",
+    attraction: "arch-fiery-furnace",
+  },
+  {
+    park: "arch",
+    nameZh: "护林员星空讲解",
+    nameEn: "Ranger-Led Night Sky Programs",
+    months: [3, 4, 5, 9, 10],
+    summary:
+      "拱门是国际暗夜公园。春秋季护林员不定期和峡谷地天空之岛、死马点州立公园轮流办星空讲解，讲完用望远镜看星星，在拱门一般从游客中心或全景点开始。",
+    booking:
+      "免费（有公园门票即可），不用预约；日期多在新月前后，看游客中心公告或 NPS 活动日历。带椅子或垫子、保暖衣物和红光手电，下雨也照常举办。",
+    url: "https://www.nps.gov/thingstodo/stargazing-southeast-utah.htm",
+    attraction: "arch-panorama-point",
+  },
+  {
+    park: "arch",
+    nameZh: "科罗拉多河一日漂流（Moab）",
+    nameEn: "Colorado River Day Rafting near Moab",
+    months: [4, 5, 6, 7, 8, 9, 10],
+    summary:
+      "Moab 东北 128 号公路旁的科罗拉多河段（Fisher Towers 一带）有半天到一天的橡皮艇漂流，以平水和小急流为主，两岸是红色峭壁，适合带孩子；这段河在公园外。",
+    booking: "Moab 有多家持证漂流公司，有半天、一天和傍晚的班次，在各家官网或 Moab 游客中心预订，价格以官网为准。",
+    status: "5–6 月融雪季水量大、浪也大，夏末水位低、漂得慢。",
+  },
+  {
+    park: "cany",
+    nameZh: "谢弗小径与白缘路四驱越野",
+    nameEn: "Shafer Trail & White Rim Road 4WD",
+    summary:
+      "从天空之岛台地顺着谢弗小径的之字形土路下到白缘台阶，可以接 Potash 路回 Moab，或者开上约 160 公里长的白缘路（White Rim Road），一路贴着悬崖边俯瞰科罗拉多河和格林河。",
+    booking:
+      "要高底盘四驱车（带低速四驱），普通租车合同一般不允许开土路。只走谢弗小径不用许可证；当天往返白缘路要日间许可证：每天 50 张，一半在 Recreation.gov 前一天早上 8 点（山地时间）放出，另一半在天空之岛游客中心和 Moab 的公园背包客办公室当天领；在白缘路上过夜要提前订露营许可证。不想自己开可以报 Moab 的越野车团，价格以各家官网为准。",
+    status: "雨雪后路况变化很快，出发前查 NPS 路况；在荒野里抛锚的拖车费常超过 $2,000。",
+    url: "https://www.nps.gov/cany/planyourvisit/whiterimroad.htm",
+    attraction: "cany-shafer-canyon-overlook",
+  },
+  {
+    park: "cany",
+    nameZh: "科罗拉多河与格林河划船漂流",
+    nameEn: "River Trips on the Colorado & Green Rivers",
+    months: [4, 5, 6, 7, 8, 9, 10],
+    summary:
+      "两条河在交汇点以上都是平缓的静水，适合划独木舟、皮划艇多日露营；交汇点以下是约 23 公里长的激流峡谷（Cataract Canyon），有三到五级急流，一般跟持证公司走 2–6 天。",
+    booking:
+      "最省事是跟 Moab 的持证漂流公司，从半天到一周不等；自己划要在 Recreation.gov 申请河道许可证，过夜许可提前 4 个月开放（4 月 14 日–10 月 15 日的名额 12 月 14 日开放），当天往返的许可全年可申请；上下水点都在公园外，要安排接驳。",
+    status: "5–6 月融雪季水量最大，激流峡谷最危险；夏末水位低。",
+    url: "https://www.nps.gov/thingstodo/boating-in-canyonlands.htm",
+  },
+  {
+    park: "cany",
+    nameZh: "Moab 观光飞行",
+    nameEn: "Scenic Flights from Moab",
+    summary:
+      "峡谷地大部分地方开车到不了，从 Moab 北边的峡谷地机场坐小飞机，能一次看到两河交汇点、迷宫区、隆起穹丘和针尖区的全貌。",
+    booking:
+      "Redtail Air Adventures 等公司从峡谷地机场（CNY）起飞，航线从约 45 分钟到 2 小时不等，45 分钟的航线每人约 $300 多，以官网为准；早上气流稳、光线好。",
+    url: "https://www.flyredtail.com/",
+  },
+  {
+    park: "cany",
+    nameZh: "马蹄峡谷护林员带队徒步",
+    nameEn: "Ranger-Led Hikes in Horseshoe Canyon",
+    months: [4, 5, 9, 10],
+    summary:
+      "春秋季护林员带队走到大画廊，一路讲 Barrier Canyon 风格的岩画、古代狩猎采集者和峡谷里的植物，全程约 11 公里、4–6 小时。",
+    booking: "免费、不用预约，集合时间和地点看 NPS 活动日历，或问 Hans Flat 护林站；每人带约 4 升水和午饭。",
+    status: "只在春秋季、有人手时举办。",
+    url: "https://www.nps.gov/cany/planyourvisit/horseshoecanyon.htm",
+    attraction: "cany-horseshoe-canyon",
+  },
+  {
+    park: "cany",
+    nameZh: "东南犹他天文节（AstroFest）",
+    nameEn: "Southeast Utah AstroFest",
+    months: [6],
+    summary:
+      "每年 6 月连续几天，峡谷地、拱门、死马点州立公园和附近几处国家保护区轮流办白天和夜间的天文活动：讲座、望远镜观星、星座导览和亲子活动。平时春秋季天空之岛也有护林员星空讲解，从大观景点开始。",
+    booking: "免费（有公园门票即可），一般不用预约；各场的时间地点看 NPS 活动页。",
+    status: "2026 年是 6 月 4–7 日（已结束），2027 年日期一般在冬末春初公布。",
+    url: "https://www.nps.gov/cany/planyourvisit/annual-southeast-utah-astrofest.htm",
+    attraction: "cany-grand-view-point",
+  },
+  {
+    park: "care",
+    nameZh: "果园自摘水果",
+    nameEn: "U-Pick Fruit in the Fruita Orchards",
+    months: [6, 7, 8, 9, 10],
+    summary:
+      "弗鲁塔约 1,900 棵历史果树的果子熟了就开放自摘：杏子约 6 月下旬到 7 月中旬，桃子约 7 月下旬到 9 月初，梨约 8 月上旬到 9 月初，苹果约 8 月中旬到 10 月中旬。",
+    booking:
+      "不用预约，只能在挂着“U-Pick Fruit”牌子的果园里摘熟透、一碰就掉的果子；在园里现吃免费，带走的在果园入口的自助称重点按牌价付钱。带围栏的果园 9:00–17:00 开放；当天哪些果园开放可以问游客中心，或打 435-425-3791（按 1 再按 5）。",
+    status: "成熟时间每年随天气变化，春天的晚霜会让某些果子减产。",
+    url: "https://www.nps.gov/care/learn/historyculture/orchards.htm",
+    attraction: "care-fruita-gifford-house",
+  },
+  {
+    park: "care",
+    nameZh: "吉福德之家水果派",
+    nameEn: "Gifford House Pies",
+    months: [3, 4, 5, 6, 7, 8, 9, 10, 11],
+    summary:
+      "弗鲁塔村中心 1908 年建的吉福德农舍，现在是小博物馆和商店，卖现烤的水果派（苹果、桃子、樱桃、混合莓果等口味）、肉桂卷、冰淇淋和手工小物，买了可以坐在旁边果园的草地和野餐桌上吃。",
+    booking: "不用预约，早上 9 点开门；旺季派常在中午前后卖完，想吃早点去。",
+    status: "每年 3 月 14 日（圆周率日）到感恩节后的周六营业，2026 年到 11 月 28 日；9 月下旬每天 9:00–16:30。",
+    url: "https://www.nps.gov/places/gifford-house.htm",
+    attraction: "care-fruita-gifford-house",
+  },
+  {
+    park: "care",
+    nameZh: "Heritage Starfest 星空节",
+    nameEn: "Heritage Starfest",
+    months: [9],
+    summary:
+      "公园和 Torrey 的 Entrada Institute 每年 9 月合办的星空节，有天文讲座、白天用太阳望远镜看太阳、夜里用望远镜观星；圆顶礁 2015 年被评为国际暗夜公园。",
+    booking: "活动免费、不用预约，时间地点看 NPS 活动页。",
+    status: "2026 年是 9 月 11–12 日（已结束），第一天在公园里、第二天在 Torrey 镇上；2027 年日期以 NPS 公告为准。",
+    url: "https://www.nps.gov/care/planyourvisit/heritage-starfest.htm",
+    attraction: "care-panorama-point",
+  },
+  {
+    park: "ante",
+    nameZh: "上羚羊峡谷光束",
+    nameEn: "Upper Antelope Canyon Light Beams",
+    months: [4, 5, 6, 7, 8, 9],
+    summary:
+      "约 3 月底到 10 月初的晴天，正午前后阳光从上羚羊峡谷头顶的窄缝直射到谷底，形成一道道光柱，导游常往光里撒一把细沙让光束更明显；6–7 月太阳最高，光束最多最亮。",
+    booking:
+      "订上羚羊约 10:30–13:30（亚利桑那时间）出发的场次，这几档最贵、最早售罄，旺季要提前一两个月在导览公司官网订；阴天、多云看不到光束，当天也不能因此取消。",
+    status:
+      "2026 年纳瓦霍部落公园的门票涨到每人每个地点 $15（包含在团费里）；Antelope Canyon Navajo Tours 1 月 1 日起调价，普通场 $100、正午场 $120（含门票）。",
+    url: "https://www.antelopecanyon.com/faq/",
+    attraction: "ante-upper-antelope-canyon",
+  },
+  {
+    park: "ante",
+    nameZh: "羚羊峡谷 X 摄影团",
+    nameEn: "Antelope Canyon X Photography Tour",
+    summary:
+      "下羚羊和上羚羊的普通团都不许用三脚架，想架三脚架慢慢拍，可以报 Taadidiin Tours 在羚羊峡谷 X 的 3 小时摄影团，人少、停留时间长；5 月到 8 月初中午前后也能看到光束。",
+    booking:
+      "在 antelopecanyon-x.com 预订，价格以官网为准（2026 年普通徒步团成人 $62，含部落公园门票）；签到处在 98 号公路 308 英里标旁，提前 30 分钟到。",
+    url: "https://www.antelopecanyon-x.com/faq/",
+    attraction: "ante-antelope-canyon-x",
+  },
+  {
+    park: "hsbd",
+    nameZh: "格伦峡谷平水漂流",
+    nameEn: "Horseshoe Bend Rafting Trip (Glen Canyon Float)",
+    months: [3, 4, 5, 6, 7, 8, 9, 10],
+    summary:
+      "从佩吉坐车到 Lees Ferry，坐橡皮艇在马蹄湾下游的格伦峡谷河段里逆流开上去、再顺流漂回来，全程是平水、没有急流，从谷底仰望红色崖壁，中途上岸看岩画，4 岁以上都能参加。",
+    booking:
+      "在 lakepowell.com 预订（Wilderness River Adventures 经营），2026 年成人（16 岁以上）$129、4–15 岁 $113.82，另收 $15 公园门票；在佩吉 199 Kaibab Rd 的 River Headquarters 签到，半天行程约 10 英里。",
+    status: "2026 年运营期 3 月 1 日–10 月 31 日；不满 8 位全价乘客时当班会取消。",
+    url: "https://www.lakepowell.com/things-to-do/horseshoe-bend-rafting-trip",
+  },
+  {
+    park: "hsbd",
+    nameZh: "鲍威尔湖游船（Wahweap 码头）",
+    nameEn: "Lake Powell Boat Tours from Wahweap",
+    summary:
+      "从 Lake Powell Resort 旁的 Wahweap 码头出发：90 分钟的大坝游船开到格伦峡谷大坝跟前，Navajo Canyon 游船开进一条红岩支流峡谷，傍晚还有 2 小时的 Canyon Princess 晚餐游船。",
+    booking:
+      "在 lakepowell.com 预订，价格以官网为准；码头在格伦峡谷国家休闲区收费区内，另付休闲区门票（每车 $30、7 天有效，国家公园年卡可用）。",
+    status: "2026 年因水位低，去彩虹桥（Rainbow Bridge）和羚羊峡谷水上段的游船官网写“暂不开放，另行通知”。",
+    url: "https://www.lakepowell.com/marinas/boat-tours",
+  },
+  {
+    park: "mova",
+    nameZh: "手套岩影子（Mitten Shadow）",
+    nameEn: "Mitten Shadow",
+    months: [3, 9],
+    summary:
+      "每年春分、秋分前后几天，日落前约 15–25 分钟，西手套岩的影子会慢慢爬上东手套岩，整个过程只有十几分钟；春季在 3 月底前后，秋季在 9 月中旬前后最明显。",
+    booking:
+      "免费，在游客中心观景台或 The View 酒店看；这几天拍照的人很多，要提前占位置，Goulding's 也有专门去看影子的团。",
+    url: "https://gouldings.com/mittens-shadow-tour-monument-valley/",
+    attraction: "mova-the-view",
+  },
+  {
+    park: "mova",
+    nameZh: "纳瓦霍向导吉普团和骑马",
+    nameEn: "Navajo-Guided Jeep & Horseback Tours",
+    summary:
+      "环线以外的石拱、岩画和 Mystery Valley、Hunts Mesa 等地只能跟纳瓦霍向导去：有 1.5–3.5 小时的吉普团、日出日落团和骑马团，向导会讲纳瓦霍人的传统和这些孤峰的名字由来。",
+    booking:
+      "可以在游客中心的售票亭现场报名（6:00–20:00），也可以提前在纳瓦霍部落公园官网列出的授权导览公司订；价格按时长和路线不同，以各家为准，进园门票一般另付。",
+    url: "https://navajonationparks.org/guided-tour-operators/monument-valley-tour-operators/",
+    attraction: "mova-guided-tour",
+  },
+  {
+    park: "wave",
+    nameZh: "The Wave 提前 4 个月的网上抽签",
+    nameEn: "Coyote Buttes North Advanced Lottery",
+    summary: "每天 64 个名额里的 48 人（最多 12 组）走网上抽签，哪里都能报；中签率很低，很多人连抽好几年。",
+    booking:
+      "在 Recreation.gov 的 Coyote Buttes North Advanced Lottery 申请：徒步月份前第 4 个月的整个月都能报（比如 2027 年 2 月的名额在 2026 年 10 月报，11 月 1 日上午 9 点山地时间开奖），每份申请可选 3 个日期、最多 6 人，每人每次只能报一份，申请费 $6 不退；中签后当月 15 日前登录确认并付每人 $7（狗也算），许可证 4–6 周后邮寄。",
+    status: "许可证不能改期、不能转让，没有任何年卡或优惠；中签者可以请授权向导带路，向导不占名额。",
+    url: "https://www.recreation.gov/permits/274309",
+    attraction: "wave-the-wave",
+  },
+  {
+    park: "wave",
+    nameZh: "The Wave 两天前的手机现场抽签",
+    nameEn: "Coyote Buttes North Daily Lottery",
+    summary: "没中网上抽签的话，人到了 Kanab、佩吉一带还能每天用手机抽两天后的名额，每天再发 16 人（最多 4 组）。",
+    booking:
+      "徒步日前两天的 6:00–18:00（犹他时间）用 Recreation.gov 手机 App 申请，人必须在 Kanab 到佩吉之间 89 号公路一带的地理围栏里，电脑申请无效；当晚 19:15 出结果，中签后第二天早上 8 点前付费，并在 8:30 到 Kanab 游客中心或佩吉的 Lake Powell Hub 参加现场安全说明，再隔一天才是徒步日。申请费 $6，中签每人 $7。",
+    status:
+      "抽签按犹他时间：2026 年 3 月 8 日到 10 月 31 日夏令时期间，犹他比亚利桑那快 1 小时；2026 年 11 月 26 日、12 月 25 日和 2027 年 1 月 1 日领证点关闭。",
+    url: "https://www.recreation.gov/permits/4251909",
+    attraction: "wave-the-wave",
+  },
+  {
+    park: "wave",
+    nameZh: "White Pocket 四驱一日团",
+    nameEn: "White Pocket 4x4 Tours",
+    summary:
+      "自己开不了深沙路的话，Kanab 和佩吉有几家持 BLM 许可的越野团去 White Pocket，常和 Buckskin Gulch、Wire Pass 或 Coyote Buttes South 组合成一天，全程约 7–8 小时。",
+    booking:
+      "向 Kanab 或佩吉的持证导览公司预订，例如佩吉 Antelope Canyon Tours 的 Vermilion Adventures 约 $225.50 起（另加税费），含接送；行程、午餐和价格以各家官网为准，雨后深沙路况差时可能改线或取消。",
+    url: "https://www.antelopecanyon.com/",
+    attraction: "wave-white-pocket",
+  },
+  {
+    park: "banf",
+    nameZh: "露易丝湖 / 梦莲湖 Parks Canada 班车",
+    nameEn: "Parks Canada Shuttle to Lake Louise & Moraine Lake",
+    months: [5, 6, 7, 8, 9, 10],
+    summary:
+      "梦莲湖全年不让私家车进，旺季露易丝湖也很难停车。Parks Canada 的预约班车从露易丝湖滑雪场的 Park and Ride 出发，一张票当天可以去两个湖，两湖之间有接驳车（Lake Connector）。",
+    booking:
+      "在 reservation.pc.gc.ca（选 Day Use）预约：2026 年 4 月 15 日早上 8 点（山地时间）放出全季 40% 的座位，其余 60% 在出发前两天早上 8 点放出。往返成人 C$12.75、65 岁以上 C$6、17 岁及以下 C$4，网上订另收 C$3.50；要在预约的 1 小时时段内到 Park and Ride 签到上车。",
+    status:
+      "2026 年露易丝湖线 5 月 15 日到 10 月 12 日、梦莲湖线 6 月 1 日到 10 月 12 日运行，每 30 分钟一班，末班回程 19:30；另有 4:00、5:00 从露易丝湖湖边发车的 Alpine Start 日出早班车。2027 年的开订日期还没公布。",
+    url: "https://parks.canada.ca/pn-np/ab/banff/visit/parkbus/louise",
+    attraction: "banf-moraine-lake",
+  },
+  {
+    park: "banf",
+    nameZh: "落叶松金秋",
+    nameEn: "Golden Larch Season",
+    months: [9],
+    summary:
+      "9 月中下旬，高山落叶松（alpine larch）的针叶变成金黄色，只维持两三周；梦莲湖上方的落叶松谷和哨兵山口最出名，是班夫一年里最热门的徒步时段。",
+    booking:
+      "徒步不用预约，但要订梦莲湖班车去步道口，落叶松季的周末班车很快订满；灰熊活动频繁时强制 4 人以上紧密结伴同行。",
+    status: "每年变色时间差一两周，通常 9 月中旬到 9 月底最盛；这时 Parks Canada 常发布结伴限制，出发前看公园公告。",
+    url: "https://parks.canada.ca/pn-np/ab/banff/activ/randonnee-hiking/meleze-larch",
+    attraction: "banf-larch-valley",
+  },
+  {
+    park: "banf",
+    nameZh: "明尼万卡湖游船",
+    nameEn: "Lake Minnewanka Cruise",
+    months: [5, 6, 7, 8, 9, 10],
+    summary:
+      "从明尼万卡湖码头出发约 1 小时的游船，开进湖深处的魔鬼峡口（Devil's Gap），讲解湖区历史和被淹没的老村落，是不徒步也能深入湖区的办法。",
+    booking:
+      "Pursuit 经营，在 banffjaspercollection.com 网上买票，票价随日期浮动，5 岁以下免费；可以坐 Roam 6 路公交到码头。",
+    status: "2026 年 5 月 8 日到 10 月 12 日运行（看天气）。",
+    url: "https://www.banffjaspercollection.com/attractions/lake-minnewanka-cruise/",
+    attraction: "banf-lake-minnewanka",
+  },
+  {
+    park: "banf",
+    nameZh: "冬季冰湖溜冰和滑雪",
+    nameEn: "Winter Skating & Skiing",
+    months: [12, 1, 2, 3],
+    summary:
+      "冬天露易丝湖、朱砂湖等湖面结冰后可以溜冰，露易丝湖城堡酒店前会清出冰场，背景就是冰封的维多利亚冰川；班夫附近还有 Lake Louise、Sunshine Village、Mt. Norquay 三个滑雪场。",
+    booking: "湖面溜冰免费，镇上和酒店可以租冰鞋；三个滑雪场可以分别买票，也有通用的 SkiBig3 联票。",
+    status: "冰况每年不同，只在清过雪、测过冰厚的区域溜冰；冬季冰原大道和部分山路常临时封闭。",
+    attraction: "banf-lake-louise",
+  },
+  {
+    park: "jasp",
+    nameZh: "玛琳湖游船（精灵岛）",
+    nameEn: "Maligne Lake Cruise to Spirit Island",
+    months: [5, 6, 7, 8, 9, 10],
+    summary: "想亲眼看精灵岛只能坐这趟船：从玛琳湖北头的码头出发，往返约 1.5 小时，中途在精灵岛观景点上岸停留一会儿。",
+    booking: "Pursuit 经营，在 banffjaspercollection.com 提前订座，票价随日期浮动；错过船次不退款，当天改期名额很少。",
+    status: "2026 年 5 月 27 日到 10 月 11 日运行（看天气）；2027 年季节还没公布。",
+    url: "https://www.banffjaspercollection.com/attractions/maligne-lake-cruise/",
+    attraction: "jasp-spirit-island",
+  },
+  {
+    park: "jasp",
+    nameZh: "冰原冰川车 + 冰川天空步道",
+    nameEn: "Columbia Icefield Adventure",
+    months: [5, 6, 7, 8, 9, 10],
+    summary:
+      "从哥伦比亚冰原探索中心坐巨型冰川车开上阿萨巴斯卡冰川，在冰面上走一走，回程去悬在峡谷上方的玻璃地板观景台 Glacier Skywalk。",
+    booking: "Pursuit 经营，在 banffjaspercollection.com 买票，票价随日期浮动，旺季提前订。",
+    status: "2026 年 5 月 1 日到 10 月 12 日运营；Ice Odyssey 小团 2026 年剩下的季节停开。",
+    url: "https://www.banffjaspercollection.com/attractions/columbia-icefield/",
+    attraction: "jasp-columbia-icefield-adventure",
+  },
+  {
+    park: "jasp",
+    nameZh: "贾斯珀暗夜节",
+    nameEn: "Jasper Dark Sky Festival",
+    months: [10],
+    summary:
+      "贾斯珀是世界上最大的暗夜保护区之一，每年 10 月办十天的暗夜节，有天文讲座、望远镜观星、音乐会和天文摄影活动，主会场在贾斯珀镇。",
+    booking: "部分活动免费，大型讲座、音乐会要在 jasperdarksky.travel 买票；10 月夜里常在零度以下，带厚衣服。",
+    status: "2026 年是 10 月 16–25 日。",
+    url: "https://jasperdarksky.travel/",
+    attraction: "jasp-pyramid-lake",
+  },
+  {
+    park: "jasp",
+    nameZh: "马鹿发情季",
+    nameEn: "Elk Rut",
+    months: [9, 10],
+    summary:
+      "9 月到 10 月上旬，公马鹿在贾斯珀镇周边的草地、河滩高声鸣叫、争夺母鹿，开车在镇边和 16 号公路沿线常能看到。",
+    booking: "免费；公鹿这时很凶，至少保持 30 米，最好在车里看，别在路中间停车。",
+    attraction: "jasp-jasper-town",
+  },
+  {
+    park: "yoho",
+    nameZh: "欧哈拉湖一日游巴士抽签",
+    nameEn: "Lake O'Hara Day-use Bus Random Draw",
+    months: [6, 7, 8, 9, 10],
+    summary:
+      "去欧哈拉湖的 11 公里碎石路不对私家车开放，Parks Canada 的一日游巴士是进湖区最省力的办法，座位靠每年春天的抽签分配。",
+    booking:
+      "在 reservation.pc.gc.ca 申请抽签：2026 年是 3 月 2 日早上 8 点到 23 日 23:59（山地时间），每份申请费 C$10；抽签结束后剩下或退订的座位随时可以订，最晚到出发前一天 15:30。车票往返每人 C$25.50。",
+    status: "2026 年巴士 6 月 19 日到 10 月 4 日运行，每天 8:30、10:30 两班上山；2027 年的抽签日期还没公布。",
+    url: "https://parks.canada.ca/pn-np/bc/yoho/activ/randonnee-hike/ohara/visit",
+    attraction: "yoho-lake-ohara",
+  },
+  {
+    park: "yoho",
+    nameZh: "伯吉斯页岩化石导览",
+    nameEn: "Burgess Shale Fossil Hikes",
+    months: [7, 8, 9],
+    summary:
+      "跟 Parks Canada 的讲解员爬到 5 亿多年前的寒武纪化石层，边走边看化石：Walcott 采石场往返约 24 公里、Mount Stephen 三叶虫化石床往返约 8 公里，都是很费力的全天徒步。",
+    booking:
+      "在 Parks Canada 预订系统（reservation.pc.gc.ca）订，2026 年 1 月 20 日早上 8 点（山地时间）开订，热门日期很快订满；成人价 Walcott 采石场 C$131、Mount Stephen C$101.75。",
+    status: "开团日期以预订系统为准；2027 年开订日期还没公布。",
+    url: "https://parks.canada.ca/pn-np/bc/yoho/activ/burgess",
+    attraction: "yoho-burgess-shale",
+  },
+  {
+    park: "yoho",
+    nameZh: "翡翠湖划独木舟",
+    nameEn: "Emerald Lake Canoe Rentals",
+    months: [5, 6, 7, 8, 9, 10],
+    summary: "在翡翠湖上划独木舟，湖水颜色比在岸上看更绿，早上风小、人少的时候最好。",
+    booking:
+      "湖边租船点先到先得、不能预约，按小时收费；2027 年 3 月 31 日前幽鹤的湖泊河流禁止自带船只和钓鱼，只有这里的租船可以下水。",
+    status: "通常 5 月中到 10 月上旬营业，看天气。",
+    url: "https://parks.canada.ca/pn-np/bc/yoho/securite-safety/activ-aqua-regs",
+    attraction: "yoho-emerald-lake",
+  },
+  {
+    park: "jotr",
+    nameZh: "凯斯牧场护林员导览",
+    nameEn: "Keys Ranch Guided Tour",
+    months: [1, 2, 3, 4, 10, 11, 12],
+    summary:
+      "Bill 和 Frances Keys 一家在偏僻石谷里经营了约 60 年的沙漠牧场，只能跟护林员进去：约 90 分钟、步行约 0.8 公里，看木屋、学校、商店、修车铺和满院子的老汽车、采矿机器，听他们怎么在沙漠里找水、种菜、养活一家人。",
+    booking:
+      "只在 Recreation.gov 售票（Joshua Tree National Park Tours and Programs 里的 Keys Ranch Tour），最早提前 60 天、前一天午夜截止，没有现场票；12 岁以上 $10，6–11 岁 $5，6 岁以下免费，年长者卡、残障卡持有人 $5；每单最多 10 人。在 Keys Ranch 上锁的大门集合，从 Barker Dam Road 岔进约 1.6 公里土路。",
+    status: "高温季（5–8 月）通常不开团；2026–27 年冬春的场次以 Recreation.gov 放出的为准。",
+    url: "https://www.nps.gov/thingstodo/attend-a-keys-ranch-tour.htm",
+    attraction: "jotr-keys-ranch",
+  },
+  {
+    park: "jotr",
+    nameZh: "春季野花与约书亚树开花",
+    nameEn: "Spring Wildflowers & Joshua Tree Blooms",
+    months: [2, 3, 4],
+    summary:
+      "秋冬雨水多的年份，2 月下旬起南部低处的 Cottonwood、平托盆地一带先开出沙漠金盏花、马鞭草等野花，3–4 月往北、往高处开到约书亚树林；约书亚树本身也常在 2–4 月开出奶白色的花簇。",
+    booking: "不用预约；出发前在游客中心问当周哪里开得好，别踩进花丛、不要摘花。",
+    status: "花期和花量完全看当年雨水，干旱年份几乎没有；约书亚树也不是每年都开花。",
+    url: "https://www.nps.gov/jotr/learn/nature/plants.htm",
+    attraction: "jotr-cottonwood-visitor-center",
+  },
+  {
+    park: "jotr",
+    nameZh: "观星与暗夜星空节",
+    nameEn: "Stargazing & Night Sky Festival",
+    summary:
+      "公园是国际暗夜公园，晴朗无月的夜里在 Quail Springs、Hidden Valley、Cap Rock、Ryan Mountain 几个指定观星停车场就能看到银河；公园每年还办暗夜星空节（Night Sky Festival），露营地剧场常有护林员夜间讲座。",
+    booking:
+      "自己观星不用预约；露营地的晚间讲座免费，Twentynine Palms 镇上 Sky's the Limit 天文台的护林员夜间活动要在 Recreation.gov 预约（和凯斯牧场导览在同一个页面）。",
+    status: "星空节和夜间活动的日期每年公布，看公园官网的日历。",
+    url: "https://www.nps.gov/jotr/planyourvisit/stargazing.htm",
+    attraction: "jotr-night-sky",
+  },
+  {
+    park: "jotr",
+    nameZh: "攀岩与抱石",
+    nameEn: "Rock Climbing & Bouldering",
+    months: [1, 2, 3, 4, 10, 11, 12],
+    summary:
+      "约书亚树是世界知名的攀岩地，隐谷、Intersection Rock、Echo T 和巴克水坝一带有几千条线路和抱石点，粗糙的花岗岩摩擦力很好；没经验的可以报公园授权向导的入门课。",
+    booking: "自带装备不用许可证；新手找公园官网列出的授权商业向导，价格和时间各家不同。",
+    status: "夏天岩面太烫，攀岩季基本是 10 月到次年 4 月；部分岩壁会因猛禽筑巢等原因临时关闭，出发前看攀岩页面。",
+    url: "https://www.nps.gov/jotr/planyourvisit/climbing.htm",
+    attraction: "jotr-hidden-valley",
+  },
+  {
+    park: "romo",
+    nameZh: "秋季麋鹿发情期",
+    nameEn: "Elk Rut",
+    months: [9, 10],
+    summary:
+      "9–10 月麋鹿（elk）从高山下到 Moraine Park、Horseshoe Park、Upper Beaver Meadows 和西侧 Kawuneeche 河谷的草甸，公鹿在清晨和傍晚发出尖锐的“吼叫”（bugling）、争夺母鹿群，是落基山最热门的季节。",
+    booking:
+      "不用预约，在路边停车处看，和麋鹿保持至少 23 米（75 英尺）。傍晚 18 点后开车进 Bear Lake 路（Moraine Park）不需要时段预约；白天进园的时段预约见公园页。",
+    status:
+      "9 月 1 日到 10 月 31 日，Horseshoe Park、Moraine Park、Upper Beaver Meadows、Harbison Meadow 和 Holzwarth 草甸每天 17 点到次日上午禁止步行进入，只能在道路和步道上看；周末傍晚路边停车处很早就满。",
+    url: "https://www.nps.gov/thingstodo/romo_watchelk.htm",
+    attraction: "romo-moraine-park",
+  },
+  {
+    park: "romo",
+    nameZh: "秋季山杨变黄",
+    nameEn: "Fall Aspen Colors",
+    months: [9, 10],
+    summary:
+      "9 月中下旬到 10 月初，成片的山杨变成金黄色，Bear Lake 路沿线（Glacier Gorge、Bierstadt Lake 一带）和西侧 Kawuneeche 河谷最集中，和麋鹿发情期同一时间，周末非常拥挤。",
+    booking:
+      "不用预约；但 2026 年 10 月 18 日前 5:00–18:00 开车进 Bear Lake 路要预约含 Bear Lake 路的时段，停车场一早就满，可以停 Park & Ride 坐免费班车。",
+    status: "高处约 9 月中旬开始变色，低处晚一两周，每年随天气提前或推后。",
+    url: "https://www.nps.gov/places/view-fall-colors-on-bear-lake-road.htm",
+    attraction: "romo-alberta-falls",
+  },
+  {
+    park: "romo",
+    nameZh: "大角羊下山舔盐",
+    nameEn: "Bighorn Sheep at Sheep Lakes",
+    months: [5, 6, 7, 8],
+    summary:
+      "初夏大角羊成群从 Mummy Range 山上下到 Horseshoe Park 的 Sheep Lakes，舔食湖边泥土里的矿物盐，常要横穿 34 号公路，护林员和志愿者会临时拦车让它们过去。",
+    booking:
+      "不用预约；上午在 Sheep Lakes 停车场等，别靠近、别挡住羊群的路线。9:00–14:00 进园要时段预约（到 10 月 12 日）。",
+    status: "5 月到 8 月中旬最常见，每天来不来、几点来都不一定。",
+    url: "https://www.nps.gov/places/romo_sheeplakes.htm",
+    attraction: "romo-sheep-lakes",
+  },
+  {
+    park: "romo",
+    nameZh: "高山苔原野花",
+    nameEn: "Alpine Tundra Wildflowers",
+    months: [6, 7],
+    summary:
+      "林线以上的苔原生长季只有 6–12 周，6 月下旬到 7 月，Trail Ridge Road 两边的苔原上开满贴地的高山勿忘我、高山金莲花和虎耳草，Rock Cut 的苔原步道和 Forest Canyon Overlook 旁最方便看。",
+    booking: "不用预约；只走铺装步道，别踩进苔原、不要摘花。9:00–14:00 进园要时段预约。",
+    status: "Trail Ridge Road 通车时间和花期都看当年积雪，雪大的年份花期推迟到 7 月中下旬。",
+    url: "https://www.nps.gov/thingstodo/enjoy-a-scenic-drive-on-trail-ridge-road.htm",
+    attraction: "romo-tundra-communities",
+  },
+  {
+    park: "glac",
+    nameZh: "红色老爷车观光团",
+    nameEn: "Red Bus Tours",
+    months: [6, 7, 8, 9],
+    summary:
+      "1930 年代的红色敞篷老巴士（Red Jammer）载着游客走向阳大道，司机兼导游一路讲解，车顶帆布卷起来能仰头看峭壁；不想自己开山路，或者车太长上不了向阳大道时最省心。",
+    booking:
+      "在 glaciernationalparklodges.com 预订，旺季常提前卖完。2026 年成人价：西侧 Lake McDonald Lodge 出发的 Western Alpine（3–4 小时）$80、全天的 Crown of the Continent（8–9.5 小时）$130；东侧 Rising Sun 出发的 Eastern Alpine（2.5–3.5 小时）$66 起，East Glacier 出发的 Big Sky Circle（8 小时）$136。",
+    status:
+      "2026 年 Western Alpine 6 月 20 日到 10 月 2 日（Lake McDonald Lodge 出发的班次到 9 月 27 日）、Crown of the Continent 6 月 21 日到 9 月 28 日，东侧各团 6 月上中旬到 9 月下旬；翻越洛根山口的线路要等向阳大道全线通车。",
+    url: "https://www.glaciernationalparklodges.com/red-bus-tours/",
+    attraction: "glac-red-bus-tour",
+  },
+  {
+    park: "glac",
+    nameZh: "Many Glacier 游船",
+    nameEn: "Many Glacier Boat Tour",
+    months: [6, 7, 8, 9],
+    summary:
+      "坐两段历史木船横渡急流湖和约瑟芬湖，往返约 1.5 小时；可以在上游码头下船走到格林内尔湖，或者接格林内尔冰川步道，省掉一段平路。",
+    booking:
+      "在 glacierparkboats.com 预订，旺季提前几个月订满；2026 年成人 $41.70、4–12 岁 $20.85，每天 8:30–17:00 约 7 班；7 月 1 日起有给徒步的人只坐回程的单程票。",
+    status: "2026 年 6 月 10 日到 9 月 19 日运营（部分班次 7 月 1 日起），船公司不再带队徒步。",
+    url: "https://www.glacierparkboats.com/tours-rentals/many-glacier",
+    attraction: "glac-many-glacier-boat",
+  },
+  {
+    park: "glac",
+    nameZh: "圣玛丽湖、麦克唐纳湖、双药湖游船",
+    nameEn: "St. Mary, Lake McDonald & Two Medicine Boat Tours",
+    months: [5, 6, 7, 8, 9],
+    summary:
+      "同一家船公司在另外三个湖也开历史木船：圣玛丽湖从 Rising Sun 出发，停靠巴林瀑布，可以跟导游走到圣玛丽瀑布；麦克唐纳湖从 Lake McDonald Lodge 出发，1 小时，傍晚那班看日落；双药湖 45 分钟，到对岸走约 1.4 公里看 Twin Falls。",
+    booking:
+      "在 glacierparkboats.com 预订。2026 年成人价：圣玛丽湖 $41.70（游湖 1.5 小时，加徒步约 3.5 小时）、麦克唐纳湖 $27.80、双药湖 $20.85；双药湖只坐回程的单程票只在现场售票处卖。",
+    status:
+      "2026 年圣玛丽湖 6 月 5 日到 9 月 12 日、麦克唐纳湖 5 月 20 日到 9 月 26 日、双药湖 6 月 1 日到 9 月 7 日；双药湖一带 9 月起因道路施工封闭。",
+    url: "https://www.glacierparkboats.com/",
+  },
+  {
+    park: "glac",
+    nameZh: "Granite Park / Sperry 高山木屋",
+    nameEn: "Granite Park & Sperry Chalets",
+    months: [7, 8, 9],
+    summary:
+      "铁路公司在 1910 年代建的两座石头高山木屋，只能徒步上去：Granite Park 在高线步道上，Sperry 从 Lake McDonald Lodge 爬约 10 公里、爬升约 1,000 米。住一晚可以在山上看日落和日出，第二天再走下山。",
+    booking: "各自官网预订（graniteparkchalet.com、sperrychalet.com），名额很少、一放出就订满。",
+    status:
+      "2026 年 Granite Park 6 月 29 日到 9 月 12 日、Sperry 7 月 10 日到 9 月 12 日营业；2027 年起改为试行抽签，细则和日期还没公布（2026 年 9 月 1 日公告）。",
+    url: "https://www.graniteparkchalet.com/",
+    attraction: "glac-highline-trail",
+  },
+  {
+    park: "glac",
+    nameZh: "春季骑车走向阳大道",
+    nameEn: "Going-to-the-Sun Road Spring Biking",
+    months: [4, 5, 6],
+    summary:
+      "每年春天扫雪期间，向阳大道高处还没对汽车开放，可以骑车或步行进入封闭路段，在没有车的山路上看雪墙和瀑布，是当地人最喜欢的季节活动之一。",
+    booking:
+      "不用预约；从西侧的车辆关卡（Lake McDonald Lodge 或 Avalanche）往里骑，West Glacier、Apgar 一带能租自行车。扫雪作业区不能进，开放到哪里每天在 NPS 的路况页（Hiker/Biker Status）更新，午后山上有雪崩风险。",
+    status:
+      "2026 年 6 月 22 日全线通车后结束；通车后到劳动节，西侧 Apgar 到 Sprague Creek 一段 11:00–16:00 禁止自行车。",
+    url: "https://www.nps.gov/glac/planyourvisit/bicycling.htm",
+    attraction: "glac-going-to-the-sun-road",
+  },
 ];

@@ -432,6 +432,7 @@ for (const park of parks) {
     access: "public",
     status: "E",
     limit: "200",
+    country: "all",
   });
   const nlr = await cached(`services-nlr-${park.code}`, params.toString(), () => dataGov(`${NLR}?${params}`));
   const chargers = nlr.fuel_stations.map((station) => ({

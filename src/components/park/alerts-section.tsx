@@ -21,8 +21,31 @@ const categoryStyles: Record<string, string> = {
 
 const defaultCategoryStyle = "text-mute";
 
-export async function AlertsSection({ parkCode, dict, locale }: { parkCode: string; dict: Dictionary; locale: Locale }) {
+export async function AlertsSection({
+  parkCode,
+  officialUrl,
+  dict,
+  locale,
+}: {
+  /** 查 NPS 公告用的代码；null 表示不归 NPS 管（加拿大公园、部落公园等） */
+  parkCode: string | null;
+  officialUrl?: string;
+  dict: Dictionary;
+  locale: Locale;
+}) {
   const t = dict.park.alerts;
+  if (!parkCode) {
+    return (
+      <Section title={t.title}>
+        <p className="text-sm leading-7 text-ink-soft">{t.notNps}</p>
+        {officialUrl && (
+          <a href={officialUrl} target="_blank" rel="noreferrer" className="link-line mt-3 inline-block text-xs text-ink">
+            {t.officialSite}
+          </a>
+        )}
+      </Section>
+    );
+  }
   const result = await settle(getAlerts(parkCode));
   const translated = result.ok ? await translateAlerts(result.data, locale) : [];
 

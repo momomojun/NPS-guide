@@ -6,7 +6,10 @@ import type { TripItem } from "@/lib/trip-store";
 export type PlannerText = Pick<
   Dictionary,
   "plan" | "kinds" | "units" | "map" | "trip" | "attraction" | "difficulty" | "timeOfDay"
->;
+> & {
+  /** 班车线 id → 当前语言的名字 */
+  shuttleNames: Record<string, string>;
+};
 
 export interface PlannerPark {
   code: string;
@@ -21,6 +24,9 @@ export interface PlannerPark {
   nearby: string[];
   lodgingTip: string;
   nonresidentSurcharge: boolean;
+  /** 园外名胜（不是国家公园） */
+  site: boolean;
+  country: "US" | "CA";
 }
 
 /** 解析后的住处：推荐住宿补上名字和说明，自定义住处带着查好的车程 */

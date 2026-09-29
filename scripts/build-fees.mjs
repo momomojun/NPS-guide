@@ -1,6 +1,6 @@
 // 门票：NPS API 的 feespasses（所有公园一次查完），整理成自驾车（整车）、步行 / 骑行每人、摩托车三种价格，
 // 再加一句中文说明：免门票、按人收、真正的花费是船票或州立公园停车费、冬季价、分时段预约等。
-// 说明（NOTES）是对照 2026-09-26 查到的原文手写的；重新跑时会打印每个公园的原文，有变化就改 NOTES。
+// 说明（NOTES）是对照 2026-09-26 查到的原文手写的（落基山、冰川是 09-28）；重新跑时会打印每个公园的原文，有变化就改 NOTES。
 // 非居民每人 $100 的附加费不在这里，见 parks.ts 的 nonresidentSurcharge。
 // 输出 src/data/fees.generated.ts。重新跑：npm run data:fees
 //
@@ -9,7 +9,10 @@
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { parks, sleep, USER_AGENT } from "./load-data.mjs";
+import { parks as allParks, sleep, USER_AGENT } from "./load-data.mjs";
+
+// 园外名胜（羚羊谷、马蹄湾……）和加拿大的公园不归 NPS，门票手写在 src/data/fees-manual.ts
+const parks = allParks.filter((park) => park.kind !== "site" && park.country !== "CA");
 
 const OUTPUT = new URL("../src/data/fees.generated.ts", import.meta.url);
 const CACHE = new URL("../node_modules/.cache/nps-guide/", import.meta.url);
@@ -27,6 +30,8 @@ const NOTES = {
   redw: "国家公园和三座州立公园都不收门票；Fern Canyon / Gold Bluffs Beach 等部分日用区另收每车 $8–12（Fern Canyon 只收现金或支票），America the Beautiful 年卡可以抵",
   lavo: "冬季（12 月 1 日到次年 4 月 15 日）每车 $10，摩托车、步行 / 骑行也都是 $10",
   crla: "上面是夏季价（5 月中到 10 月底）；11 月到次年 5 月中每车 $20、摩托车 $15",
+  romo: "上面是 7 天票；只玩一天可以买 1 天票：每车 $30、步行 / 骑行每人 $15、摩托车 $25",
+  glac: "上面是夏季价；11 月到次年 4 月每车 $25、步行 / 骑行每人 $15、摩托车 $20",
 };
 
 /** 原始返回存 12 小时：这期间重跑直接用，不重复请求 */
@@ -79,7 +84,7 @@ function feeKind(type) {
   return null;
 }
 
-// parkCode 可以一次传好几个（逗号分隔）：16 个公园 1 次请求查完；万一少了哪个再单独查
+// parkCode 可以一次传好几个（逗号分隔）：所有公园 1 次请求查完；万一少了哪个再单独查
 const infoByPark = new Map();
 const batchUrl = `${API}?parkCode=${parks.map((park) => park.code).join(",")}`;
 const batch = await cached("fees-all", batchUrl, () => dataGov(batchUrl));

@@ -3,6 +3,7 @@
 import "maplibre-gl/dist/maplibre-gl.css";
 import type { GeoJSONSource, Map as MapLibreMap } from "maplibre-gl";
 import { useEffect, useEffectEvent, useRef, useState, type ReactNode } from "react";
+import { EOX_ATTRIBUTION, EOX_IMAGERY_TILES, IMAGERY_TILES, STYLE_URL, TERRAIN_TILES, type Imagery } from "./sources";
 
 export interface MapPoint {
   id: string;
@@ -46,11 +47,6 @@ export interface MapText {
   roadLegend: string;
 }
 
-// 都是免费、不需要 key 的服务
-const STYLE_URL = "https://tiles.openfreemap.org/styles/liberty";
-const TERRAIN_TILES = "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png";
-const IMAGERY_TILES =
-  "https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}";
 // worker 文件由 scripts/copy-maplibre-worker.mjs 复制到 public/
 const WORKER_URL = "/maplibre/maplibre-gl-worker.mjs";
 
@@ -124,6 +120,7 @@ export function ParkMap({
   fitKey = "",
   extras,
   extrasLegend,
+  imagery = "usgs",
   text,
   className = "",
   children,
@@ -145,6 +142,8 @@ export function ParkMap({
   extras?: MapPoint[];
   /** 这层小点的图例 */
   extrasLegend?: { color: string; label: string }[];
+  /** 卫星图：美国用 USGS，加拿大的公园用 EOX（USGS 不覆盖加拿大） */
+  imagery?: Imagery;
   text: MapText;
   className?: string;
   /** 叠在地图上的内容，比如选中景点的卡片 */
@@ -211,6 +210,17 @@ export function ParkMap({
         });
         instance.addLayer(
           { id: "imagery", type: "raster", source: "imagery", layout: { visibility: "none" } },
+          firstLabel,
+        );
+        instance.addSource("imagery-eox", {
+          type: "raster",
+          tiles: [EOX_IMAGERY_TILES],
+          tileSize: 256,
+          maxzoom: 14,
+          attribution: EOX_ATTRIBUTION,
+        });
+        instance.addLayer(
+          { id: "imagery-eox", type: "raster", source: "imagery-eox", layout: { visibility: "none" } },
           firstLabel,
         );
 
@@ -402,8 +412,9 @@ export function ParkMap({
   useEffect(() => {
     const map = mapRef.current;
     if (!ready || !map) return;
-    map.setLayoutProperty("imagery", "visibility", satellite ? "visible" : "none");
-  }, [ready, satellite]);
+    map.setLayoutProperty("imagery", "visibility", satellite && imagery === "usgs" ? "visible" : "none");
+    map.setLayoutProperty("imagery-eox", "visibility", satellite && imagery === "eox" ? "visible" : "none");
+  }, [ready, satellite, imagery]);
 
   useEffect(() => {
     const map = mapRef.current;

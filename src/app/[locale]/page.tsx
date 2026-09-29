@@ -11,7 +11,7 @@ import { Reveal } from "@/components/site/reveal";
 import { buttonLarge } from "@/components/ui";
 import { attractions } from "@/data/attractions";
 import { alaskaMap, westMap } from "@/data/map.generated";
-import { parks } from "@/data/parks";
+import { isSite, parks } from "@/data/parks";
 import { hasLocale } from "@/i18n/config";
 import { localizePark } from "@/i18n/content";
 import { localize } from "@/i18n/convert";
@@ -36,7 +36,8 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const dict = getDictionary(locale);
   const t = dict.home;
 
-  const localParks = parks.map((park) => localizePark(park, locale));
+  const localParks = parks.filter((park) => !isSite(park)).map((park) => localizePark(park, locale));
+  const localSites = parks.filter(isSite).map((park) => localizePark(park, locale));
   const month = new Date().getMonth() + 1;
   const inSeason = localParks.filter((park) => park.bestMonths.includes(month));
   const credit = (photo: { author: string; license: string }) => fill(t.photoCredit, photo);
@@ -75,7 +76,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
   const stats = [
     { value: localParks.length, label: t.stats.parks },
-    { value: attractions.length, label: t.stats.attractions },
+    { value: attractions.filter((a) => localParks.some((park) => park.code === a.park)).length, label: t.stats.attractions },
     { value: attractions.filter((a) => a.trailLine).length, label: t.stats.trails },
   ];
   const cityNames = Object.fromEntries(
@@ -148,6 +149,55 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
         </div>
         <ParkIndex items={indexItems} inSeasonLabel={t.inSeason} />
       </section>
+
+      {/* 园外名胜：不归国家公园管的地方，和国家公园分开放 */}
+      {localSites.length > 0 && (
+        <section id="places" className="scroll-mt-16 border-t border-line bg-paper-deep">
+          <div className={`${container} py-24 lg:py-32`}>
+            <div className="mb-12 grid gap-6 lg:grid-cols-12">
+              <p className="eyebrow text-mute lg:col-span-3">{t.sitesEyebrow}</p>
+              <div className="lg:col-span-9">
+                <Reveal>
+                  <h2 className="font-serif text-[clamp(1.9rem,3.5vw,3rem)] leading-tight">{t.sitesTitle}</h2>
+                </Reveal>
+                <p className="mt-5 max-w-2xl text-sm leading-7 text-ink-soft">{t.sitesHint}</p>
+              </div>
+            </div>
+            <ul className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+              {localSites.map((site, i) => {
+                const photo = photoOf(site.hero);
+                return (
+                  <Reveal key={site.code} as="li" delay={(i % 4) * 100}>
+                    <Link href={`/${locale}/parks/${site.code}`} className="group block">
+                      <div className="relative aspect-[4/3] overflow-hidden bg-ink/10">
+                        {photo && (
+                          <CommonsImage
+                            src={photo.url}
+                            alt=""
+                            fill
+                            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          />
+                        )}
+                      </div>
+                      <p className="mt-5 flex flex-wrap items-baseline gap-x-3">
+                        <span className="font-serif text-2xl transition-colors duration-500 group-hover:text-clay-700">{site.nameZh}</span>
+                        <span className="eyebrow text-mute">{site.nameEn}</span>
+                      </p>
+                      <p className="mt-2 text-sm text-ink-soft">{site.tagline}</p>
+                      {site.agency && <p className="mt-3 text-xs leading-5 text-mute">{site.agency}</p>}
+                      <p className="eyebrow mt-4 inline-flex items-center gap-2 text-ink">
+                        {t.sitesMore}
+                        <IconArrowRight className="transition-transform duration-500 group-hover:translate-x-1" />
+                      </p>
+                    </Link>
+                  </Reveal>
+                );
+              })}
+            </ul>
+          </div>
+        </section>
+      )}
 
       {/* 当季 */}
       {inSeason.length > 0 && (

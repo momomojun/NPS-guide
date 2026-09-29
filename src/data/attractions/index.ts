@@ -14,6 +14,19 @@ import { northCascades } from "./noca";
 import { olympic } from "./olym";
 import { redwood } from "./redw";
 import { sequoiaKingsCanyon } from "./seki";
+import { arches } from "./arch";
+import { canyonlands } from "./cany";
+import { capitolReef } from "./care";
+import { antelopeCanyon } from "./ante";
+import { horseshoeBend } from "./hsbd";
+import { monumentValley } from "./mova";
+import { theWave } from "./wave";
+import { banff } from "./banf";
+import { jasper } from "./jasp";
+import { yoho } from "./yoho";
+import { joshuaTree } from "./jotr";
+import { rockyMountain } from "./romo";
+import { glacier } from "./glac";
 import { trails, type TrailPath } from "./trails.generated";
 import type { Attraction, GooglePlace, Photo } from "./types";
 import { yellowstone } from "./yell";
@@ -79,6 +92,19 @@ const withData: AttractionWithPhoto[] = [
   ...bryceCanyon,
   ...grandCanyon,
   ...denali,
+  ...arches,
+  ...canyonlands,
+  ...capitolReef,
+  ...antelopeCanyon,
+  ...horseshoeBend,
+  ...monumentValley,
+  ...theWave,
+  ...banff,
+  ...jasper,
+  ...yoho,
+  ...joshuaTree,
+  ...rockyMountain,
+  ...glacier,
 ].map((attraction) => ({
   ...attraction,
   photo: gallery[attraction.id]?.[0],

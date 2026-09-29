@@ -61,8 +61,14 @@ interface NwsAlerts {
   }[];
 }
 
-/** 这个地点现在生效的天气预警（高温、雷暴、冬季风暴、山火烟雾……） */
+/** 大致判断在不在加拿大（北纬 49 度以北、阿拉斯加以东）：NWS 只管美国，加拿大的地点问了会报错 */
+export function inCanada(point: { lat: number; lon: number }): boolean {
+  return point.lat >= 48.99 && point.lat < 60 && point.lon > -123.5;
+}
+
+/** 这个地点现在生效的天气预警（高温、雷暴、冬季风暴、山火烟雾……）；加拿大的地点没有 */
 export async function getWeatherAlerts(point: { lat: number; lon: number }): Promise<WeatherAlert[]> {
+  if (inCanada(point)) return [];
   const url = `${NWS_ALERTS}?point=${point.lat.toFixed(4)},${point.lon.toFixed(4)}`;
   const data = await fetchJson<NwsAlerts>(url, {
     headers: { "User-Agent": USER_AGENT, Accept: "application/geo+json" },

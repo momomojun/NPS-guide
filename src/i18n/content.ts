@@ -30,6 +30,7 @@ export function localizePark(park: Park, locale: Locale): Park {
     ...park,
     nameZh: t(park.nameZh),
     tagline: t(park.tagline),
+    agency: park.agency && t(park.agency),
     intro: t(park.intro),
     seasonNote: t(park.seasonNote),
     lodgingTip: t(park.lodgingTip),

@@ -56,6 +56,8 @@ export interface GenerateContext {
   lodging: GuideLodging[];
   /** 第 day 天的日出日落 */
   sunFor: (day: number) => SunWindow;
+  /** 第 day 天的日期（班车季要坐班车）；只定了月份时是那个月 15 号左右 */
+  dateFor?: (day: number) => string | null;
 }
 
 /** 没排进去的景点和原因，攻略说明里列出来 */
@@ -165,6 +167,7 @@ export function generateTrip(input: GenerateInput, context: GenerateContext): { 
   const resolve = (lodging: TripLodging | null | undefined): LodgingPoint | undefined =>
     !lodging ? undefined : lodging.kind === "custom" ? lodging : lodgingById.get(lodging.id);
   const sunFor = (day: number) => context.sunFor(day);
+  const dateFor = (day: number) => context.dateFor?.(day) ?? null;
 
   const nights: (TripLodging | null)[] = Array.from({ length: input.days + 1 }, () => null);
   nights[0] = input.origin;
@@ -181,7 +184,7 @@ export function generateTrip(input: GenerateInput, context: GenerateContext): { 
 
   const plan = (current: Trip): Trip => ({
     ...current,
-    days: planTrip(current, stopById, sunFor, (night) => resolve(current.nights[night])),
+    days: planTrip(current, stopById, sunFor, (night) => resolve(current.nights[night]), 0, dateFor),
     pool: [],
   });
 
@@ -218,6 +221,7 @@ export function generateTrip(input: GenerateInput, context: GenerateContext): { 
         from: resolve(current.nights[d]),
         to: resolve(current.nights[d + 1]),
         previous,
+        date: dateFor(d),
       });
       previous = stops.at(-1) ?? previous;
       return { stops, timeline };

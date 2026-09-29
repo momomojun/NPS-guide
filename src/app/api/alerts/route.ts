@@ -1,17 +1,18 @@
-import { parks } from "@/data/parks";
+import { npsCodeOf, parks } from "@/data/parks";
 import { hasLocale } from "@/i18n/config";
 import type { AlertsResponse, ParkAlert } from "@/lib/alert-match";
 import { translateAlerts } from "@/lib/alert-translate";
 import { getAlerts } from "@/lib/nps";
 
-const known = new Set(parks.map((park) => park.code));
+/** 公园代码 → 查 NPS 公告用的代码；加拿大公园、大多数园外名胜没有 */
+const npsCodes = new Map(parks.map((park) => [park.code, npsCodeOf(park)]));
 
 /** 行程里几个公园的 NPS 实时公告，带中文翻译：GET ?parks=yell,grte&locale=zh-Hans（公告每个公园缓存 30 分钟，翻译按原文缓存） */
 export async function GET(request: Request) {
   const params = new URL(request.url).searchParams;
   const locale = params.get("locale") ?? "zh-Hans";
-  const codes = [...new Set((params.get("parks") ?? "").split(",").filter((code) => known.has(code)))].slice(0, 8);
-  const results = await Promise.allSettled(codes.map((code) => getAlerts(code)));
+  const codes = [...new Set((params.get("parks") ?? "").split(",").filter((code) => npsCodes.get(code)))].slice(0, 8);
+  const results = await Promise.allSettled(codes.map((code) => getAlerts(npsCodes.get(code)!)));
   const alerts: ParkAlert[] = [];
   for (const [i, result] of results.entries()) {
     if (result.status !== "fulfilled") continue;

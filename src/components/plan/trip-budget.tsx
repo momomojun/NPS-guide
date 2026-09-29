@@ -46,14 +46,21 @@ export function TripBudget({
       label: t.items.fees,
       amount: fees.total,
       lines: [
-        fees.usePass ? (fees.passKind === "resident" ? t.passResident : t.passNonresident) : fill(t.feesPay, { amount: money(fees.pay) }),
-        fees.usePass
-          ? `${fill(t.feesPay, { amount: money(fees.pay) })}，${fill(t.passBetter, { save: money(fees.pay - fees.pass) })}`
-          : `${fill(t.feesPass, { amount: money(fees.pass) })}，${t.payBetter}`,
+        // 美国国家公园的门票和年卡比较（行程里只有加拿大公园、园外名胜时不用比）
+        ...(fees.pay > 0
+          ? [
+              fees.usePass ? (fees.passKind === "resident" ? t.passResident : t.passNonresident) : fill(t.feesPay, { amount: money(fees.pay) }),
+              fees.usePass
+                ? `${fill(t.feesPay, { amount: money(fees.pay) })}，${fill(t.passBetter, { save: money(fees.pay - fees.pass) })}`
+                : `${fill(t.feesPass, { amount: money(fees.pass) })}，${t.payBetter}`,
+            ]
+          : []),
         ...(fees.surchargeParks > 0 && !fees.usePass
           ? [fill(t.surcharge, { n: Math.min(prefs.nonresidents, prefs.travelers), parks: fees.surchargeParks })]
           : []),
         ...(fees.freeParks.length > 0 ? [fill(t.free, { parks: fees.freeParks.map(parkName).join("、") })] : []),
+        ...(fees.canada > 0 ? [fill(fees.canadaPass ? t.canadaPass : t.canadaDaily, { amount: money(fees.canada) })] : []),
+        ...(fees.sites > 0 ? [fill(t.sites, { amount: money(fees.sites) })] : []),
       ],
     },
     {

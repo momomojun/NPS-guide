@@ -14,6 +14,9 @@ export type SunLookup = (day: number, park: string) => SunWindow;
 /** 第 night 晚住的地方（0 = 第 1 天出发前） */
 export type NightLookup = (night: number) => LodgingPoint | undefined;
 
+/** 第 day 天的日期（只定了月份时是那个月 15 号左右）；不知道就是 null */
+export type DateLookup = (day: number) => string | null;
+
 /**
  * 重新安排第 fromDay 天及之后的行程：之前没完成的、之后所有未完成的和待安排的景点一起重新分配。
  * 已完成、已跳过的保持原位；已设的住处会参与计算（早上从住处出发、晚上回住处）。
@@ -25,11 +28,12 @@ export function planTrip(
   sunFor: SunLookup,
   nightAt: NightLookup,
   fromDay = 0,
+  dateAt: DateLookup = () => null,
 ): TripItem[][] {
   const from = Math.min(Math.max(fromDay, 0), trip.days.length - 1);
   const before = trip.days.slice(0, from);
   const after = trip.days.slice(from);
-  const lodgingFor = (day: number) => ({ from: nightAt(day), to: nightAt(day + 1) });
+  const lodgingFor = (day: number) => ({ from: nightAt(day), to: nightAt(day + 1), date: dateAt(day) });
 
   const unfinished = trip.days
     .flat()

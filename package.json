@@ -20,9 +20,11 @@
     "docs:screenshots": "node scripts/screenshots.mjs"
   },
   "dependencies": {
+    "fflate": "^0.8.3",
     "maplibre-gl": "^6.11.1",
     "next": "16.3.6",
     "opencc-js": "^1.4.2",
+    "qrcode-generator": "^2.0.4",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "server-only": "^0.0.1"

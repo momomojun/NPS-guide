@@ -8,7 +8,7 @@ export interface MapPark {
   nameEn: string;
 }
 
-type Side = "left" | "right" | "below";
+type Side = "left" | "right" | "below" | "above";
 
 /** 公园名放在圆点哪一侧，避开旁边的公园和城市 */
 const LABEL_SIDE: Record<string, Side> = {
@@ -28,18 +28,25 @@ const LABEL_SIDE: Record<string, Side> = {
   brca: "right",
   grca: "right",
   dena: "left",
-};
-
-/** 州名默认放在州的中心，挡住公园的挪开 */
-const STATE_LABEL_AT: Record<string, [number, number]> = {
-  CALIFORNIA: [255, 745],
-  WASHINGTON: [410, 140],
+  // 拱门和峡谷地的圆点几乎挨着：一个标在上面，一个标在右边
+  arch: "above",
+  cany: "right",
+  care: "left",
+  // 右边紧挨着卡尔加里
+  banf: "below",
+  jasp: "right",
+  yoho: "left",
+  jotr: "right",
+  // 右边就是地图边缘
+  romo: "left",
+  glac: "right",
 };
 
 const SIDE_CLASS: Record<Side, string> = {
   right: "left-6 top-1/2 -translate-y-1/2",
   left: "right-6 top-1/2 -translate-y-1/2 text-right",
   below: "top-6 left-1/2 -translate-x-1/2 text-center",
+  above: "bottom-6 left-1/2 -translate-x-1/2 text-center",
 };
 
 /**
@@ -70,12 +77,11 @@ function Shapes({
         />
       ))}
       {labels.map((label) => {
-        const [x, y] = STATE_LABEL_AT[label.text] ?? [label.x, label.y];
         return (
           <text
             key={label.text}
-            x={x}
-            y={y}
+            x={label.x}
+            y={label.y}
             textAnchor="middle"
             fill="#a89e8f"
             className="max-sm:hidden"

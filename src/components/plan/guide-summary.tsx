@@ -19,7 +19,6 @@ export function GuideSummary({
   nights,
   tripIds,
   nameOf,
-  permitOf,
   closedNoteOf,
   activities,
   attractionExists,
@@ -43,7 +42,6 @@ export function GuideSummary({
   /** 现在行程里的景点：已经手动加进来的不再算“没排进去” */
   tripIds: string[];
   nameOf: (id: string) => string;
-  permitOf: (id: string) => string | undefined;
   closedNoteOf: (id: string) => string | undefined;
   /** 这些公园的特别活动（全部月份），这里按行程月份筛 */
   activities: ParkActivity[];
@@ -61,7 +59,6 @@ export function GuideSummary({
   const skippedOf = (key: keyof GuideSkipped) => guide.skipped[key].filter((id) => !inTrip.has(id));
   const skippedGroups = reasons.filter(({ key }) => skippedOf(key).length > 0);
   const closed = skippedOf("closed");
-  const bookAhead = tripIds.filter((id) => permitOf(id));
   const monthActivities = activities.filter((activity) => !activity.months || (month !== null && activity.months.includes(month)));
   const multiPark = parks.length > 1;
   const surcharge = parks.some((park) => park.nonresidentSurcharge);
@@ -190,19 +187,6 @@ export function GuideSummary({
         </div>
 
         <div className="space-y-8 lg:col-span-5">
-          {bookAhead.length > 0 && (
-            <div>
-              <h3 className="font-serif text-xl">{g.bookAhead}</h3>
-              <ul className="mt-4 space-y-3">
-                {bookAhead.map((id) => (
-                  <li key={id} className="text-sm leading-6">
-                    {nameOf(id)}
-                    <span className="block text-xs text-mute">{permitOf(id)}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
           {closed.length > 0 && (
             <div>
               <h3 className="font-serif text-xl">{fill(g.closed, { month: month ?? "" })}</h3>

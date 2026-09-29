@@ -1,8 +1,37 @@
-export type RegionId = "seattle" | "norcal" | "sierra" | "socal" | "rockies" | "vegas" | "alaska";
+export type RegionId =
+  | "seattle"
+  | "norcal"
+  | "sierra"
+  | "socal"
+  | "rockies"
+  | "colorado"
+  | "vegas"
+  | "utah"
+  | "alaska"
+  | "canada";
 
 export interface Park {
-  /** NPS parkCode，调用 NPS API 时用 */
+  /**
+   * 四个字母的代码：美国国家公园就是 NPS parkCode（调用 NPS API 时用）；
+   * 加拿大公园和园外名胜是我们自己起的（banf、ante……），景点 id 都以它开头
+   */
   code: string;
+  /**
+   * park = 国家公园；site = 园外名胜（纳瓦霍部落公园、BLM 保护区、国家休闲区里的景点等），
+   * 和国家公园分开展示（首页、菜单里单独一组，页面在 /places），不算进“多少座国家公园”。不填就是 park
+   */
+  kind?: "park" | "site";
+  /** 所在国家，不填是美国。加拿大的公园没有 NPS 公告和门票接口，门票用加元，美国年卡不能用 */
+  country?: "US" | "CA";
+  /** 管理方（园外名胜和加拿大公园显示），比如“纳瓦霍部落公园”“美国土地管理局（BLM）”“加拿大国家公园管理局” */
+  agency?: string;
+  /**
+   * 查 NPS 公告用的代码。美国国家公园不用填（就是 code）；园外名胜在 NPS 管的地方里时填
+   * （马蹄湾在 Glen Canyon 国家休闲区：glca）；加拿大公园、其他园外名胜设成 null，不查 NPS
+   */
+  npsCode?: string | null;
+  /** 官方网站：不归 NPS 管的公园、名胜没有 NPS 公告，页面上让人去这里看最新消息 */
+  officialUrl?: string;
   /** 简体中文名，繁体由 OpenCC 转换 */
   nameZh: string;
   nameEn: string;
@@ -35,7 +64,24 @@ export interface Park {
   lodgingTip: string;
 }
 
-export const regionOrder: RegionId[] = ["seattle", "norcal", "sierra", "socal", "rockies", "vegas", "alaska"];
+export const regionOrder: RegionId[] = [
+  "seattle",
+  "norcal",
+  "sierra",
+  "socal",
+  "rockies",
+  "colorado",
+  "vegas",
+  "utah",
+  "alaska",
+  "canada",
+];
+
+/** 是不是园外名胜（不是国家公园） */
+export const isSite = (park: Pick<Park, "kind">) => park.kind === "site";
+
+/** 查 NPS 公告、门票用的代码；不在 NPS 管理范围里的返回 null */
+export const npsCodeOf = (park: Pick<Park, "code" | "npsCode">) => (park.npsCode === undefined ? park.code : park.npsCode);
 
 export const parks: Park[] = [
   {
@@ -117,6 +163,34 @@ export const parks: Park[] = [
     nonresidentSurcharge: false,
     lodgingTip:
       "岛上没有酒店，只有简易露营地（装备要自己带上船、搬到营地，recreation.gov 最早提前 6 个月预订）。坐船当天要提前到码头签到，住 Ventura 港边最方便，Ventura 老城区餐厅多、开车约 10 分钟；部分班次从 Oxnard 的 Channel Islands Harbor 出发，订住处前看清船票。Santa Barbara 城市更有味道但房价高、到码头约 45 分钟，预算有限可以住 Camarillo 的连锁酒店。",
+  },
+  {
+    code: "jotr",
+    nameZh: "约书亚树",
+    nameEn: "Joshua Tree",
+    region: "socal",
+    tagline: "约书亚树与巨石堆",
+    stateEn: "California",
+    hero: "jotr-ryan-mountain",
+    intro:
+      "两个沙漠在这里交汇：西北部海拔较高的莫哈韦沙漠长满了枝杈古怪的约书亚树，散落着一堆堆圆滚滚的花岗岩巨石；东南部低处是更热更干的科罗拉多沙漠，有泰迪熊仙人掌园和扇棕榈绿洲。园内没有酒店、餐厅和加油站，多数人住北边 62 号公路沿线的小镇，开车一天就能串起隐谷、骷髅岩和 Keys View；这里也是国际暗夜公园和世界知名的攀岩地，从洛杉矶开车约 2.5 小时。",
+    bestMonths: [2, 3, 4, 10, 11],
+    seasonNote:
+      "10–4 月最舒服，雨水多的年份 2–4 月有野花和约书亚树开花；6–9 月白天常超过 38°C，只适合清晨走短步道，49 Palms 步道 6–9 月关闭；冬天夜里常到 0°C 以下，偶尔下雪。",
+    areas: {
+      west: "西部 · 隐谷 / Keys View",
+      central: "中部 · 巨石阵 / 骷髅岩",
+      north: "北侧 · Twentynine Palms",
+      pinto: "平托盆地 · 仙人掌园",
+      south: "南部 · Cottonwood",
+    },
+    gateway: { nameZh: "约书亚树游客中心（Joshua Tree 镇）", lat: 34.13391, lon: -116.31559 },
+    timeZone: "America/Los_Angeles",
+    airports: ["PSP", "ONT", "LAX", "SNA", "LAS"],
+    nearby: ["deva"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内没有酒店，只有 Jumbo Rocks、Indian Cove、Black Rock、Cottonwood 等露营地（主要营地全年要在 recreation.gov 预约，最早提前 6 个月），大多没有自来水。多数人住北边 62 号公路沿线的小镇：Joshua Tree 镇离西入口最近，酒店少、整套民宿多；Yucca Valley 有连锁酒店和大超市；Twentynine Palms 靠北入口、价格最低。10 月到次年 5 月、尤其周末和春假要提前一两个月订；想住度假酒店可以住约 1 小时车程的 Palm Springs 或 Palm Desert。",
   },
   {
     code: "redw",
@@ -301,7 +375,7 @@ export const parks: Park[] = [
     gateway: { nameZh: "峡谷村（Canyon Village）", lat: 44.73471, lon: -110.49189 },
     timeZone: "America/Denver",
     airports: ["BZN", "SLC", "JAC", "WYS", "IDA", "BIL", "COD"],
-    nearby: ["grte"],
+    nearby: ["grte", "glac"],
     nonresidentSurcharge: true,
     lodgingTip:
       "园内酒店分散在老忠实、峡谷村、湖区、猛犸温泉和 Grant Village，除猛犸温泉酒店和 Snow Lodge 外大多只在 5 月到 10 月初营业，通常提前一年左右开放预订、旺季很快订满；按路线分两三处住，能少走很多回头路。园外最方便的是西门外的 West Yellowstone（离间歇泉盆地近）和北门外的 Gardiner（全年通车）；清晨去拉马尔谷看狼可以住东北门外的 Cooke City / Silver Gate，和大提顿连着玩就住 Grant Village 或南边的 Jackson。",
@@ -334,6 +408,62 @@ export const parks: Park[] = [
       "园内住宿都只在约 5 月中到 10 月初营业：杰克逊湖边的 Jackson Lake Lodge、Signal Mountain Lodge 和 Colter Bay 木屋（相对便宜），珍妮湖边的 Jenny Lake Lodge 最贵但含早晚餐，都提前约一年开放预订、旺季很快订满。园外最方便的是南边的 Jackson 镇（到珍妮湖约 40 分钟），但房价很高；想省钱或一家人租整套房子，可以翻过 Teton Pass 住爱达荷州的 Victor / Driggs，或往南住 Alpine。和黄石连着玩，可以在北边的 Colter Bay、Headwaters（Flagg Ranch）或 Buffalo Valley 住一晚，第二天一早从南门进黄石。",
   },
   {
+    code: "glac",
+    nameZh: "冰川",
+    nameEn: "Glacier",
+    region: "rockies",
+    tagline: "冰川湖与向阳大道",
+    stateEn: "Montana",
+    hero: "glac-wild-goose-island",
+    intro:
+      "1910 年设立，号称“大陆之冠”（Crown of the Continent）：冰川在落基山北段刨出锯齿状的山峰、U 形谷和一串串碧绿的湖，园内还剩二十多条小冰川，正在快速消退。招牌是约 80 公里长的向阳大道（Going-to-the-Sun Road），贴着崖壁翻过大陆分水岭上的洛根山口；东侧的 Many Glacier 步道最精彩，灰熊、雪山羊和大角羊都很常见。2026 年进园不用预约，但 7 月 1 日到 9 月 7 日洛根山口私家车限停 3 小时，走高线步道这类长线要提前订班车票。",
+    bestMonths: [7, 8, 9],
+    seasonNote:
+      "7 月到 9 月上旬向阳大道全线通车、高处步道的雪基本化完，是最好的季节；9 月中下旬人少，但园内酒店和游船陆续停业；10 月下旬到次年 6 月洛根山口封路，只能在西侧麦克唐纳湖一带和 2 号公路沿线活动。",
+    areas: {
+      "lake-mcdonald": "西侧 · 麦克唐纳湖",
+      "logan-pass": "向阳大道 · 洛根山口",
+      "st-mary": "东侧 · 圣玛丽湖",
+      "many-glacier": "Many Glacier 山谷",
+      "two-medicine": "双药湖 · 2 号公路",
+      "north-fork": "北岔 · 鲍曼湖",
+    },
+    gateway: { nameZh: "Apgar 游客中心（西门）", lat: 48.5231, lon: -113.98841 },
+    timeZone: "America/Denver",
+    airports: ["FCA", "MSO", "GTF", "BZN", "SEA"],
+    nearby: ["banf", "yell"],
+    nonresidentSurcharge: true,
+    lodgingTip:
+      "园内酒店都只在夏季营业（2026 年大多 5 月中到 6 月上旬开门、9 月中下旬关门），每月 1 日开放下一年同月的预订，热门日期很快订满：西侧是湖边的 Lake McDonald Lodge 和 Apgar 村，东侧是 Many Glacier Hotel、Swiftcurrent Motor Inn 和 Rising Sun。园外西边的 West Glacier 离西门最近，Columbia Falls、Whitefish、Kalispell 选择多、价格低，到西门 25–50 分钟；东边只有 St. Mary、Babb 和 East Glacier Park 几个小地方，住处少、要早订。东西两侧之间开车要 1.5–2.5 小时，最好两边各住几晚。",
+  },
+  {
+    code: "romo",
+    nameZh: "落基山",
+    nameEn: "Rocky Mountain",
+    region: "colorado",
+    tagline: "高山苔原与大陆分水岭",
+    stateEn: "Colorado",
+    hero: "romo-emerald-lake",
+    intro:
+      "落基山脉的主脊从公园中间穿过，约三分之一的面积在林线以上。Trail Ridge Road 是美国海拔最高的连续铺装公路（最高约 3,713 米），夏秋翻过大陆分水岭，连起东边的 Estes Park 和西边的 Grand Lake；东侧 Bear Lake 路一带有一串高山湖泊，草甸上常见麋鹿，西侧河谷能看到驼鹿。2026 年 5 月 22 日到 10 月中旬白天进园要提前在 Recreation.gov 预约时段，去 Bear Lake 路还要选含 Bear Lake 路的那一种。",
+    bestMonths: [6, 7, 8, 9],
+    seasonNote:
+      "6 月下旬到 9 月 Trail Ridge Road 全线通车、苔原开花，7–8 月午后常有雷暴；9 月中下旬山杨变黄、麋鹿发情，最热门；Trail Ridge 约 10 月中下旬到次年 5 月底封路，冬天只能在东西两侧的低处活动。",
+    areas: {
+      east: "东侧 · Beaver Meadows / Horseshoe Park",
+      "bear-lake": "Bear Lake 路（熊湖走廊）",
+      "trail-ridge": "Trail Ridge Road 高山段",
+      west: "西侧 · Grand Lake / Kawuneeche 河谷",
+    },
+    gateway: { nameZh: "Beaver Meadows 游客中心", lat: 40.3662, lon: -105.5609 },
+    timeZone: "America/Denver",
+    airports: ["DEN"],
+    nearby: ["arch", "cany"],
+    nonresidentSurcharge: true,
+    lodgingTip:
+      "园内没有酒店，只有 Moraine Park、Glacier Basin、Aspenglen、Timber Creek 等露营地（在 recreation.gov 订，营地预约自带入住当天下午起的进园时段，常常一开放就订满）。大多数人住东门外的 Estes Park：酒店、木屋和餐厅最多，到 Beaver Meadows 入口约 10 分钟，6–9 月和麋鹿季的周末要提前几个月订；想横穿 Trail Ridge Road 就在西边的 Grand Lake 住一晚，再便宜些住 Granby。丹佛机场进出的第一晚、最后一晚可以住 Boulder 或丹佛。",
+  },
+  {
     code: "deva",
     nameZh: "死亡谷",
     nameEn: "Death Valley",
@@ -355,6 +485,7 @@ export const parks: Park[] = [
     gateway: { nameZh: "Furnace Creek 游客中心", lat: 36.457, lon: -116.8663 },
     timeZone: "America/Los_Angeles",
     airports: ["LAS"],
+    nearby: ["jotr"],
     nonresidentSurcharge: false,
     lodgingTip:
       "园内住宿集中在 Furnace Creek（The Inn、The Ranch）和 Stovepipe Wells，西边还有 Panamint Springs；预算有限可以住园外的 Beatty 或 Pahrump（内华达），但每天要多开一两个小时。夏天园内酒店不贵但非常热。",
@@ -380,7 +511,7 @@ export const parks: Park[] = [
     gateway: { nameZh: "锡安峡谷游客中心", lat: 37.2002, lon: -112.9869 },
     timeZone: "America/Denver",
     airports: ["LAS", "SGU", "SLC"],
-    nearby: ["brca", "grca"],
+    nearby: ["brca", "grca", "care", "hsbd", "ante", "wave"],
     nonresidentSurcharge: true,
     lodgingTip:
       "园内只有 Zion Lodge 一家酒店，很难订；大多数人住南门外的 Springdale，走路或坐镇上的免费班车就能到游客中心。更便宜的在 Hurricane、St. George；要顺路去布莱斯或大峡谷北缘的话，东边的 Kanab 也方便。",
@@ -405,7 +536,7 @@ export const parks: Park[] = [
     gateway: { nameZh: "布莱斯峡谷游客中心", lat: 37.6403, lon: -112.1696 },
     timeZone: "America/Denver",
     airports: ["LAS", "SLC", "SGU"],
-    nearby: ["zion", "grca"],
+    nearby: ["zion", "grca", "care", "hsbd", "ante"],
     nonresidentSurcharge: true,
     lodgingTip:
       "园内只有 The Lodge at Bryce Canyon；门口的 Bryce Canyon City（Ruby's Inn 一带）选择最多，离日出点约 10 分钟车程。东边的 Tropic、北边的 Panguitch 价格更低。",
@@ -430,10 +561,200 @@ export const parks: Park[] = [
     gateway: { nameZh: "大峡谷村（南缘）", lat: 36.0544, lon: -112.1401 },
     timeZone: "America/Phoenix",
     airports: ["LAS", "PHX", "FLG"],
-    nearby: ["zion", "brca"],
+    nearby: ["zion", "brca", "hsbd", "ante", "mova"],
     nonresidentSurcharge: true,
     lodgingTip:
       "南缘村里有 El Tovar、Bright Angel、Maswik 等几家园内酒店，加上 Yavapai Lodge，要提早订；园外最近的是南门外的 Tusayan（约 10 分钟），再远是 Williams 和 Flagstaff（约 1–1.5 小时）。去东边沙漠观景塔方向，可以住 Cameron。2026 年 8 月底山洪后南缘缺水，园内酒店暂停过夜接待，NPS 预计感恩节前后恢复供水，之后分阶段重开。",
+  },
+  {
+    code: "ante",
+    kind: "site",
+    agency: "纳瓦霍部落公园（Navajo Nation Parks & Recreation）",
+    npsCode: null,
+    nameZh: "羚羊峡谷",
+    nameEn: "Antelope Canyon",
+    region: "vegas",
+    tagline: "光束洒落的狭缝峡谷",
+    stateEn: "Arizona",
+    hero: "ante-upper-antelope-canyon",
+    intro:
+      "纳瓦霍保留地上的砂岩狭缝峡谷，千万年的山洪和风沙把岩壁冲刷成流动的波纹，晴天正午阳光从窄缝射下，在谷底形成光束。所有区域都只能跟纳瓦霍授权的导览团进：上羚羊峡谷谷底平坦、光束最有名，下羚羊峡谷要上下几段钢梯、更窄更弯；订不到还可以去人少的羚羊峡谷 X 和水洞峡谷。各家导览都按亚利桑那时间（不实行夏令时）发团。",
+    bestMonths: [4, 5, 6, 7, 8, 9],
+    seasonNote:
+      "全年都能跟团进（感恩节、圣诞节、元旦等纳瓦霍节日关闭）；上羚羊的光束约 3 月底到 10 月初出现、6–7 月最明显，7–9 月雨季有山洪风险时会临时取消导览。",
+    areas: { upper: "上羚羊峡谷", lower: "下羚羊峡谷", "more-slots": "其他狭缝峡谷" },
+    gateway: { nameZh: "羚羊峡谷部落公园入口（98 号公路）", lat: 36.89716, lon: -111.40849 },
+    timeZone: "America/Phoenix",
+    airports: ["LAS", "PHX", "PGA", "FLG", "SLC"],
+    nearby: ["hsbd", "wave", "mova", "grca", "zion", "brca"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "羚羊峡谷里没有住宿，几乎所有人都住西边约 5 公里的佩吉（Page）：连锁酒店、汽车旅馆和餐厅都在 Lake Powell Blvd 一带，有几家上羚羊导览公司直接从镇上发团，3–10 月旺季和节假日要提前一两个月订。想住整套房子可以看佩吉西北的 Greenehaven，或犹他州一侧的 Big Water（犹他实行夏令时，夏天比佩吉快 1 小时，赶导览时间要按亚利桑那时间算）。",
+    officialUrl: "https://navajonationparks.org/guided-tour-operators/antelope-canyon-tour-operators/",
+  },
+  {
+    code: "hsbd",
+    kind: "site",
+    agency: "格伦峡谷国家休闲区（NPS）· 停车场由佩吉市管理",
+    npsCode: "glca",
+    nameZh: "马蹄湾",
+    nameEn: "Horseshoe Bend",
+    region: "vegas",
+    tagline: "科罗拉多河马蹄形河湾",
+    stateEn: "Arizona",
+    hero: "hsbd-horseshoe-bend",
+    intro:
+      "科罗拉多河在佩吉以南绕着一座砂岩孤峰转了约 270 度，从约 300 米高的崖边往下看，河水像一只绿色的马蹄。观景台属于格伦峡谷国家休闲区，停车场归佩吉市管、按车收费，从停车场走约 1.2 公里硬化路面就到。附近的格伦峡谷大坝、Carl Hayden 游客中心和鲍威尔湖 Wahweap 观景点，加起来半天就能看完。",
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    seasonNote: "全年开放；春秋最舒服，夏天崖顶几乎没有遮阴、正午很热，日落时人最多。",
+    areas: { "horseshoe-bend": "马蹄湾", dam: "格伦峡谷大坝", "lake-powell": "鲍威尔湖 Wahweap" },
+    gateway: { nameZh: "Carl Hayden 游客中心（格伦峡谷大坝）", lat: 36.93575, lon: -111.48559 },
+    timeZone: "America/Phoenix",
+    airports: ["LAS", "PHX", "PGA", "FLG", "SLC"],
+    nearby: ["ante", "wave", "mova", "grca", "zion", "brca"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "马蹄湾在佩吉镇以南约 10 分钟车程，住佩吉最方便，酒店、餐厅和超市都多，和羚羊峡谷连着玩也住这里；想住在湖边可以订格伦峡谷国家休闲区里 Wahweap 湾的 Lake Powell Resort。接着往大峡谷北缘或 White Pocket 方向走的话，可以住约 45 分钟外 Marble Canyon 一带的几家老旅馆；旺季佩吉周末常满，最好提前一两个月订。",
+    officialUrl: "https://www.nps.gov/glca/planyourvisit/horseshoe-bend.htm",
+  },
+  {
+    code: "mova",
+    kind: "site",
+    agency: "纳瓦霍部落公园（Navajo Nation Parks & Recreation）",
+    npsCode: null,
+    nameZh: "纪念碑谷",
+    nameEn: "Monument Valley",
+    region: "vegas",
+    tagline: "西部片里的红色孤峰",
+    stateEn: "Arizona · Utah",
+    hero: "mova-the-view",
+    intro:
+      "横跨亚利桑那和犹他两州的纳瓦霍部落公园，平坦的荒漠上立着一两百米到三百米高的红色孤峰和方山，左右手（Mittens）和 Merrick Butte 是无数西部片和广告里的画面。游客中心的观景台就能看到最经典的全景，约 27 公里的土路环线可以自己开车下到谷底；环线以外的区域只能跟纳瓦霍向导去。纳瓦霍保留地实行夏令时，夏天比亚利桑那其他地方（包括佩吉）快 1 小时。",
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    seasonNote:
+      "春秋最舒服；夏天白天热、7–9 月午后常有雷暴，冬天偶尔下雪，红岩配白雪很漂亮；3 月底和 9 月中旬前后几天，日落时西手套岩的影子会投到东手套岩上。",
+    areas: {
+      "visitor-center": "游客中心 · The View",
+      "valley-drive": "谷地自驾环线",
+      backcountry: "向导团限定区域",
+      "us-163": "163 号公路（园外）",
+    },
+    gateway: { nameZh: "纪念碑谷游客中心", lat: 36.98241, lon: -110.1118 },
+    timeZone: "America/Denver",
+    airports: ["PHX", "LAS", "FLG", "SLC", "PGA"],
+    nearby: ["ante", "hsbd", "grca", "arch", "cany"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内唯一的酒店是游客中心旁的 The View Hotel，每间房都正对左右手岩，看日出不用出门，房间少、旺季要提前几个月订；西边约 15 分钟的 Goulding's Lodge 有酒店、小木屋、营地、餐厅和加油站。订不到可以住南边亚利桑那的 Kayenta（约 35 分钟）或北边犹他的 Mexican Hat（约 35 分钟）、Bluff（约 1 小时）；也可以住纳瓦霍家庭经营的传统泥屋（hogan）和小木屋。",
+    officialUrl: "https://navajonationparks.org/navajo-tribal-parks/monument-valley/",
+  },
+  {
+    code: "wave",
+    kind: "site",
+    agency: "美国土地管理局（BLM）· 朱红悬崖国家保护区",
+    npsCode: null,
+    nameZh: "波浪谷",
+    nameEn: "The Wave",
+    region: "vegas",
+    tagline: "抽签才能去的砂岩波浪",
+    stateEn: "Arizona · Utah",
+    hero: "wave-the-wave",
+    intro:
+      "亚利桑那和犹他交界、美国土地管理局（BLM）管理的朱红悬崖国家保护区里，一片被风化成层层波纹的砂岩，条纹像凝固的海浪。每天只放 64 个名额，只能靠提前 4 个月的网上抽签或出发前两天的手机现场抽签拿到许可证，往返约 10 公里、没有路标。没抽中也有得玩：同一个步道口出发的 Wire Pass 狭缝峡谷、89 号公路边的蘑菇石不用抽签，开四驱或跟团还能去白口袋（White Pocket）。",
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    seasonNote:
+      "春秋最合适；5–9 月白天酷热、几乎没有遮阴，出过中暑死亡事故，7–9 月雨季山洪多、土路可能被冲断，冬天砂岩可能结冰。",
+    areas: {
+      "coyote-buttes": "狼丘北区（The Wave）",
+      "house-rock": "House Rock Valley Road",
+      "us-89": "89 号公路沿线",
+      "paria-plateau": "帕里亚高原（White Pocket）",
+    },
+    gateway: { nameZh: "Paria 游客站（89 号公路）", lat: 37.1046, lon: -111.90025 },
+    timeZone: "America/Denver",
+    airports: ["LAS", "SGU", "PGA", "PHX", "SLC"],
+    nearby: ["ante", "hsbd", "zion", "brca", "grca"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "附近没有酒店，最常见的是住西边的 Kanab（到 Wire Pass 步道口约 1 小时 10 分，最后约 13 公里是土路），BLM 游客中心和每日抽签的安全说明也在镇上；东边的佩吉（约 1 小时）和两者之间的 Big Water 也行。去 White Pocket 或南边的 Coyote Buttes South，可以住 89A 号公路边 Marble Canyon 一带的老旅馆。雨后 House Rock Valley Road 可能过不去，行程里留一天机动。",
+    officialUrl: "https://www.recreation.gov/permits/274309",
+  },
+  {
+    code: "arch",
+    nameZh: "拱门",
+    nameEn: "Arches",
+    region: "utah",
+    tagline: "两千多座天然石拱",
+    stateEn: "Utah",
+    hero: "arch-delicate-arch",
+    intro:
+      "园内登记在册的天然砂岩拱门超过 2,000 座，密度世界第一，还有平衡石、公园大道这样的石柱和岩墙。一条约 28 公里长的主路从入口通到北端的魔鬼花园，大部分景点下车走几分钟到一两个小时就能看到；招牌精致拱门要徒步往返约 4.8 公里，日落时最好看。2026 年进园不用预约时段，但 3–10 月白天入口常排队一小时以上。",
+    bestMonths: [3, 4, 5, 9, 10],
+    seasonNote: "3–5 月和 9–10 月最舒服；6–8 月白天常超过 38°C，徒步要赶清晨或傍晚；冬天人少，偶尔下雪，步道可能结冰。",
+    areas: {
+      entrance: "入口 · 公园大道",
+      windows: "平衡石 · 窗户区",
+      delicate: "精致拱门 · 全景点",
+      north: "火焰炉 · 魔鬼花园（北段）",
+    },
+    gateway: { nameZh: "拱门游客中心", lat: 38.61654, lon: -109.61989 },
+    timeZone: "America/Denver",
+    airports: ["CNY", "GJT", "SLC", "DEN", "LAS"],
+    nearby: ["cany", "care", "mova", "romo"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内没有酒店，只有北端的 Devils Garden 露营地（3–10 月的营位在 recreation.gov 提前 6 个月开放、很快订满，11–2 月先到先得）。绝大多数人住南边约 10 分钟车程的 Moab 镇，酒店、民宿和餐厅都多，但 3–10 月旺季房价高、周末常满，最好提前几个月订；想住整套房子可以看镇南的 Spanish Valley，订不到时往北住 Green River（约 1 小时）。和峡谷地连着玩，在 Moab 住两三晚最省事。",
+  },
+  {
+    code: "cany",
+    nameZh: "峡谷地",
+    nameEn: "Canyonlands",
+    region: "utah",
+    tagline: "河流切出的峡谷迷宫",
+    stateEn: "Utah",
+    hero: "cany-mesa-arch",
+    intro:
+      "科罗拉多河和格林河在这里交汇，把高原切成一层层台地和深谷，是犹他州最大的国家公园。两条河把公园分成几个互不相通的园区：离 Moab 最近的天空之岛（Island in the Sky）是一块高出四周 300 多米的台地，梅萨拱门日出、大观景点和格林河观景点都在这里；南边的针尖区（The Needles）以红白条纹的石柱群和徒步为主，从 Moab 开车约 1.5 小时；西边的迷宫区只有四驱车能进，马蹄峡谷的大画廊岩画也在西侧。园区之间没有公路相连，一天一般只玩一个区。",
+    bestMonths: [4, 5, 9, 10],
+    seasonNote:
+      "4–5 月和 9–10 月最舒服；夏天台地上常超过 35°C、峡谷里更热；冬天人少，偶尔下雪，针尖区游客中心约 12 月到次年 2 月中旬关闭。",
+    areas: { sky: "天空之岛 · 死马点", needles: "针尖区 · 211 号公路", horseshoe: "马蹄峡谷（西侧）" },
+    gateway: { nameZh: "天空之岛游客中心", lat: 38.45991, lon: -109.82099 },
+    timeZone: "America/Denver",
+    airports: ["CNY", "GJT", "SLC", "DEN"],
+    nearby: ["arch", "care", "mova", "romo"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内没有酒店：天空之岛的 Willow Flat 露营地只有 12 个先到先得的营位，针尖区露营地的 B 区可以在 recreation.gov 提前 6 个月订。玩天空之岛一般住 Moab（开车约 40–50 分钟），想住得更近可以订死马点州立公园里的蒙古包（提前 4 个月开放，很抢手）；去针尖区可以住园区门口的 Needles Outpost 帐篷营地（约 3–11 月营业）或东南边的 Monticello（约 1 小时）。去马蹄峡谷住 Green River 最近。",
+  },
+  {
+    code: "care",
+    nameZh: "圆顶礁",
+    nameEn: "Capitol Reef",
+    region: "utah",
+    tagline: "地壳褶皱与拓荒果园",
+    stateEn: "Utah",
+    hero: "care-goosenecks-sunset-point",
+    intro:
+      "公园沿着一道约 160 公里长的地壳褶皱——水袋褶皱（Waterpocket Fold）展开：白色的纳瓦霍砂岩圆顶像国会大厦的穹顶，连绵的崖壁像挡住去路的暗礁，“Capitol Reef”由此得名。游览中心是 24 号公路边的弗鲁塔（Fruita）：摩门拓荒者留下的果园夏秋可以自己摘果子，吉福德之家卖现烤的水果派，附近有岩画、希克曼天然桥和景观道；北边的大教堂谷、南边的 Burr Trail 都要开很长的土路，人很少。",
+    bestMonths: [4, 5, 6, 9, 10],
+    seasonNote:
+      "4–6 月和 9–10 月最舒服，6–10 月果园陆续有水果可摘；7–9 月午后常有雷暴和山洪，窄峡谷和土路会临时封闭；冬天偶尔下雪，主要道路照常通车。",
+    areas: {
+      fruita: "弗鲁塔 · 24 号公路",
+      "scenic-drive": "景观道 · 峡谷步道",
+      west: "24 号公路西段观景点",
+      cathedral: "大教堂谷（北区）",
+      south: "Burr Trail（南区）",
+      east: "园外东侧（妖精谷）",
+    },
+    gateway: { nameZh: "圆顶礁游客中心", lat: 38.29147, lon: -111.26204 },
+    timeZone: "America/Denver",
+    airports: ["SLC", "CNY", "LAS", "GJT"],
+    nearby: ["arch", "cany", "brca", "zion"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内没有酒店，只有 Fruita 露营地（71 个营位，在 recreation.gov 提前 6 个月订，3 月中到 10 月几乎天天订满）。最方便的是西边约 15 分钟车程的 Torrey 小镇，汽车旅馆、餐厅和加油站都在 24 号公路边，旺季要提前订；想住整套木屋可以看旁边的 Teasdale。从东边来、或者要去妖精谷和马蹄峡谷，可以住 Hanksville（约 50 分钟）；沿 12 号公路从布莱斯过来，也可以在 Boulder 小镇住一晚。",
   },
   {
     code: "dena",
@@ -458,6 +779,105 @@ export const parks: Park[] = [
     nonresidentSurcharge: false,
     lodgingTip:
       "园内几乎没有普通酒店，住宿集中在入口外的 Nenana Canyon（酒店、餐厅、漂流公司都在这一带）和北边约 15 分钟的 Healy；夏季旺季房价高、要早订。南边的 Cantwell、Talkeetna 适合顺路过夜。",
+  },
+  {
+    code: "banf",
+    kind: "park",
+    country: "CA",
+    agency: "加拿大国家公园管理局（Parks Canada）",
+    npsCode: null,
+    nameZh: "班夫",
+    nameEn: "Banff",
+    region: "canada",
+    tagline: "冰川湖与落基山雪峰",
+    stateEn: "Alberta",
+    hero: "banf-moraine-lake",
+    intro:
+      "1885 年设立的加拿大第一座国家公园，也是落基山最热门的一座：露易丝湖、梦莲湖、佩托湖这些冰川湖被冰川磨出的岩粉染成青绿色，班夫小镇就在公园里，缆车、温泉和餐厅都在镇上。北边的冰原大道经弓湖、佩托湖一路通到贾斯珀，往西翻过大陆分水岭就是幽鹤。梦莲湖全年不让私家车进，旺季露易丝湖也很难停车，要提前预约 Parks Canada 班车。",
+    bestMonths: [6, 7, 8, 9],
+    seasonNote:
+      "7–9 月湖水颜色最好、高处步道基本化雪，9 月中下旬看金色落叶松；梦莲湖只在 6 月到 10 月中旬通班车，冬天以滑雪和冰湖为主。",
+    areas: {
+      town: "班夫镇周边",
+      minnewanka: "明尼万卡湖环线",
+      "bow-valley": "弓河谷景观道 / 约翰斯顿峡谷",
+      "lake-louise": "露易丝湖",
+      moraine: "梦莲湖",
+      icefields: "冰原大道南段（弓湖 / 佩托湖）",
+    },
+    gateway: { nameZh: "班夫游客中心", lat: 51.17798, lon: -115.57024 },
+    timeZone: "America/Edmonton",
+    airports: ["YYC", "YEG", "YVR"],
+    nearby: ["yoho", "jasp", "glac"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内住宿集中在班夫镇和露易丝湖：露易丝湖城堡酒店、梦莲湖旅馆（夏季营业，住客可以开车上梦莲湖）最贵也最难订，班夫镇酒店多但夏季房价很高，通常要提前几个月订。东门外约 20 分钟的坎莫尔（Canmore）价格低一些、度假公寓多，是很多人的大本营；想早起去两个湖可以住露易丝湖村，走冰原大道可以在 Saskatchewan River Crossing 住一晚。",
+    officialUrl: "https://parks.canada.ca/pn-np/ab/banff",
+  },
+  {
+    code: "jasp",
+    kind: "park",
+    country: "CA",
+    agency: "加拿大国家公园管理局（Parks Canada）",
+    npsCode: null,
+    nameZh: "贾斯珀",
+    nameEn: "Jasper",
+    region: "canada",
+    tagline: "冰原、碧湖与暗夜星空",
+    stateEn: "Alberta",
+    hero: "jasp-spirit-island",
+    intro:
+      "加拿大落基山面积最大的国家公园，冰原大道的北半段在这里：哥伦比亚冰原、阿萨巴斯卡冰川和桑瓦普塔、阿萨巴斯卡两座瀑布都在去贾斯珀镇的路上，镇东边的玛琳湖可以坐船去看精灵岛。这里是世界上最大的暗夜保护区之一，人比班夫少，路边常见马鹿、大角羊和熊。2024 年 7 月的山火烧毁了镇上约三分之一的建筑和周边大片森林，2026 年大部分步道已经重开，但玛琳峡谷和伊迪丝·卡维尔山路仍然关闭。",
+    bestMonths: [6, 7, 8, 9],
+    seasonNote:
+      "6–9 月冰川车、玛琳湖游船和各条山路都开，9 月人少、马鹿发情；冬季冰原大道常因风雪和雪崩风险临时封路，11 月到次年 3 月必须装冬季轮胎或带防滑链。",
+    areas: {
+      town: "贾斯珀镇周边",
+      maligne: "玛琳峡谷 / 玛琳湖",
+      parkway: "冰原大道北段（瀑布）",
+      icefield: "哥伦比亚冰原",
+      hwy16: "16 号公路（米耶特温泉 / 罗布森山）",
+    },
+    gateway: { nameZh: "贾斯珀国家公园信息中心", lat: 52.87734, lon: -118.08083 },
+    timeZone: "America/Edmonton",
+    airports: ["YEG", "YYC", "YVR"],
+    nearby: ["banf", "yoho"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内住宿集中在贾斯珀镇和周边的度假村（费尔蒙贾斯珀公园小屋酒店、金字塔湖度假村等）。2024 年山火烧毁了几家酒店和不少私人民宿，房源比以前少，夏季要提前几个月订；订不到可以住东边约 1 小时车程的 Hinton，或西边 BC 省的 Valemount。走冰原大道可以在哥伦比亚冰原的冰川景观酒店或桑瓦普塔瀑布的木屋住一晚。",
+    officialUrl: "https://parks.canada.ca/pn-np/ab/jasper",
+  },
+  {
+    code: "yoho",
+    kind: "park",
+    country: "CA",
+    agency: "加拿大国家公园管理局（Parks Canada）",
+    npsCode: null,
+    nameZh: "幽鹤",
+    nameEn: "Yoho",
+    region: "canada",
+    tagline: "翡翠湖、瀑布与化石",
+    stateEn: "British Columbia",
+    hero: "yoho-emerald-lake",
+    intro:
+      "在大陆分水岭西侧的 BC 省，名字来自克里语里表示惊叹的词。公园不大，离露易丝湖只有二十多分钟，常和班夫连着玩：翡翠湖、天然桥、塔卡考瀑布和螺旋隧道都在路边，欧哈拉湖的高山湖群只能坐抽签巴士或徒步 11 公里上去。伯吉斯页岩里有 5 亿多年前的寒武纪化石，只能跟 Parks Canada 的导览徒步进去。",
+    bestMonths: [7, 8, 9],
+    seasonNote:
+      "塔卡考瀑布所在的幽鹤谷路约 6 月中到 10 月中开放，欧哈拉湖巴士 6 月下旬到 10 月初；7–9 月最好，冬季只有翡翠湖一带和 1 号公路沿线能去。",
+    areas: {
+      field: "Field 镇 / 1 号公路沿线",
+      emerald: "翡翠湖 / 天然桥",
+      "yoho-valley": "幽鹤谷（塔卡考瀑布）",
+      ohara: "欧哈拉湖",
+    },
+    gateway: { nameZh: "幽鹤国家公园游客中心（Field）", lat: 51.39798, lon: -116.49185 },
+    timeZone: "America/Edmonton",
+    airports: ["YYC", "YEG", "YVR"],
+    nearby: ["banf", "jasp"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内住宿不多：翡翠湖旅馆在湖边、价格高，幽鹤谷路口的大教堂山木屋酒店只在夏季营业，Field 小村有一家小旅馆和十几家民宅客房；欧哈拉湖旅馆和山屋要很早预订或抽签。更多人住西边约 45 分钟的 Golden（酒店多、价格低），或住东边的露易丝湖、班夫镇，当天往返幽鹤。",
+    officialUrl: "https://parks.canada.ca/pn-np/bc/yoho",
   },
 ];
 

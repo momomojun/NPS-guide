@@ -461,7 +461,7 @@ export function PriceCenter({
                     </td>
                     {GRADES.map((grade) => (
                       <td key={grade} className={`py-2.5 pr-4 text-right tabular-nums ${grade === "regular" ? "font-medium" : "text-ink-soft"}`}>
-                        {cents(fuel[grade])}
+                        {fuel[grade] !== undefined ? cents(fuel[grade]) : "—"}
                       </td>
                     ))}
                     <td className="py-2.5 text-xs text-ink-soft">{statesParks(state).join("、") || "—"}</td>

@@ -8,7 +8,7 @@
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { lodgingOptions, sleep, USER_AGENT } from "./load-data.mjs";
+import { lodgingOptions, parks, sleep, USER_AGENT } from "./load-data.mjs";
 
 const OUTPUT = new URL("../src/data/perdiem.generated.ts", import.meta.url);
 const CACHE = new URL("../node_modules/.cache/nps-guide/", import.meta.url);
@@ -78,7 +78,9 @@ const countyKey = (name) =>
 // ---- 1. 每个住处在哪个县（FCC） ----
 
 const counties = existsSync(COUNTY_CACHE) ? JSON.parse(readFileSync(COUNTY_CACHE, "utf8")) : {};
-const stays = lodgingOptions.filter((stay) => stay.park !== "dena");
+// 阿拉斯加不归 GSA 管，加拿大的公园也不在范围里
+const outside = new Set(parks.filter((park) => park.country === "CA" || park.stateEn === "Alaska").map((park) => park.code));
+const stays = lodgingOptions.filter((stay) => !outside.has(stay.park));
 for (const stay of stays) {
   const key = `${stay.lat},${stay.lon}`;
   if (counties[key]) continue;

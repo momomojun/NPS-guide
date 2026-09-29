@@ -6,6 +6,7 @@ import { AttractionsExplorer } from "@/components/attractions/attractions-explor
 import { ActivitiesSection } from "@/components/park/activities-section";
 import { CommonsImage } from "@/components/commons-image";
 import { AlertsSection } from "@/components/park/alerts-section";
+import { BookingsSection } from "@/components/park/bookings-section";
 import { ChargersSection } from "@/components/park/chargers-section";
 import { FeesSection } from "@/components/park/fees-section";
 import { SectionSkeleton } from "@/components/section";
@@ -13,9 +14,12 @@ import { IconArrowRight } from "@/components/icons";
 import { SectionNav } from "@/components/site/section-nav";
 import { Reveal } from "@/components/site/reveal";
 import { activities } from "@/data/activities";
+import { bookingRules } from "@/data/bookings";
 import { getParkAttractions } from "@/data/attractions";
 import { creatorRoutes } from "@/data/creators";
-import { getPark } from "@/data/parks";
+import { lodgingOptions } from "@/data/lodging";
+import { getPark, isSite, npsCodeOf } from "@/data/parks";
+import { shuttleSystems } from "@/data/shuttles";
 import { hasLocale } from "@/i18n/config";
 import { localizeActivity, localizeAttraction, localizePark } from "@/i18n/content";
 import { localize } from "@/i18n/convert";
@@ -48,11 +52,40 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
   const heroPhoto = attractions.find((a) => a.id === park.hero)?.photo;
   const parkActivities = activities.filter((a) => a.park === park.code).map((a) => localizeActivity(a, locale));
   const hasSeasonInfo = parkActivities.length > 0 || attractions.some((a) => a.openMonths);
+  // “适用于”只写没收录的地名会让人以为只管那几处，所以有这一行时把对上的景点和住宿也列上
+  const targetName = (id: string) =>
+    attractions.find((a) => a.id === id)?.nameZh ?? localize(lodgingOptions.find((l) => l.id === id)?.nameZh ?? id, locale);
+  const parkBookings = bookingRules
+    .filter((rule) => rule.park === park.code)
+    .map((rule) => ({
+      ...rule,
+      titleZh: localize(rule.titleZh, locale),
+      noteZh: localize(rule.noteZh, locale),
+      ...(rule.places?.length ? { places: [...rule.targets.map(targetName), ...rule.places] } : {}),
+    }));
+  const parkShuttles = shuttleSystems
+    .filter((system) => system.park === park.code)
+    .map((system) => ({
+      ...system,
+      nameZh: localize(system.nameZh, locale),
+      offSeasonZh: system.offSeasonZh && localize(system.offSeasonZh, locale),
+      noteZh: system.noteZh && localize(system.noteZh, locale),
+      hub: {
+        ...system.hub,
+        nameZh: localize(system.hub.nameZh, locale),
+        parkingZh: system.hub.parkingZh && localize(system.hub.parkingZh, locale),
+      },
+    }));
+  const hasBookings = parkBookings.length > 0 || parkShuttles.length > 0;
 
+  const site = isSite(park);
+  const canada = park.country === "CA";
   const facts: [string, string][] = [
     [t.bestSeason, formatMonths(park.bestMonths, dict.units)],
     [t.airports, park.airports.join(" · ")],
-    [t.surcharge, park.nonresidentSurcharge ? t.surchargeValue : t.noSurcharge],
+    site || canada
+      ? [t.agency, park.agency ?? ""]
+      : [t.surcharge, park.nonresidentSurcharge ? t.surchargeValue : t.noSurcharge],
     [t.highlights, fill(t.highlightsValue, { n: attractions.length })],
   ];
 
@@ -89,8 +122,8 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40" />
         <div className={`${container} relative z-10 flex h-full flex-col justify-end pb-10 lg:pb-14`}>
           <nav className="eyebrow flex items-center gap-3 text-white/70">
-            <Link href={`/${locale}#parks`} className="hover:text-white">
-              {dict.common.allParks}
+            <Link href={`/${locale}${site ? "#places" : "#parks"}`} className="hover:text-white">
+              {site ? dict.common.sites : dict.common.allParks}
             </Link>
             <span className="text-white/40">/</span>
             <span>{dict.regions[park.region]}</span>
@@ -99,7 +132,8 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
             {park.nameZh}
           </h1>
           <p className="eyebrow mt-6 text-white/80">
-            {park.nameEn} National Park · {park.stateEn}
+            {site ? park.nameEn : `${park.nameEn} National Park`} · {park.stateEn}
+            {canada && " · Canada"}
           </p>
           <p className="mt-6 max-w-xl font-serif text-xl text-white/85 sm:text-2xl">{park.tagline}</p>
           <dl className="mt-12 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-white/25 pt-6 md:grid-cols-4">
@@ -128,6 +162,7 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
         items={[
           { id: "overview", label: t.nav.overview },
           ...(hasSeasonInfo ? [{ id: "activities", label: t.nav.activities }] : []),
+          ...(hasBookings ? [{ id: "bookings", label: t.nav.bookings }] : []),
           { id: "attractions", label: t.nav.attractions },
           ...(parkCreators.length > 0 ? [{ id: "creators", label: t.nav.creators }] : []),
           { id: "live", label: t.nav.live },
@@ -148,6 +183,12 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
           <Reveal>
             <p className="font-serif text-[clamp(1.3rem,2vw,1.8rem)] leading-[1.85]">{park.intro}</p>
           </Reveal>
+          {canada && (
+            <div className="mt-10 border-l border-clay-600 pl-5 text-sm leading-7 text-ink-soft">
+              <p className="eyebrow text-clay-700">{t.canadaTitle}</p>
+              <p className="mt-2">{t.canadaNote}</p>
+            </div>
+          )}
           {park.nonresidentSurcharge && (
             <div className="mt-10 border-l border-clay-600 pl-5 text-sm leading-7 text-ink-soft">
               <p className="eyebrow text-clay-700">{t.nonresidentTitle}</p>
@@ -191,6 +232,20 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
         </section>
       )}
 
+      {hasBookings && (
+        <section id="bookings" className="scroll-mt-28 border-t border-line">
+          <div className={`${container} py-20 lg:py-28`}>
+            <p className="eyebrow mb-12 text-mute">{t.bookings.eyebrow}</p>
+            <BookingsSection
+              rules={parkBookings}
+              shuttles={parkShuttles}
+              planHref={`/${locale}/plan?park=${park.code}`}
+              dict={dict}
+            />
+          </div>
+        </section>
+      )}
+
       <section id="attractions" className="scroll-mt-28 border-t border-line">
         <div className={`${container} py-20 lg:py-28`}>
           <div className="mb-12">
@@ -203,6 +258,7 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
             attractions={attractions}
             areas={park.areas}
             parkNameEn={park.nameEn}
+            imagery={canada ? "eox" : "usgs"}
             routesHref={`/${locale}/routes?park=${park.code}`}
             text={{
               attraction: dict.attraction,
@@ -261,12 +317,12 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
           <div className="mt-14 grid items-start gap-16 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <Suspense fallback={<SectionSkeleton title={t.alerts.title} />}>
-                <AlertsSection parkCode={park.code} dict={dict} locale={locale} />
+                <AlertsSection parkCode={npsCodeOf(park)} officialUrl={park.officialUrl} dict={dict} locale={locale} />
               </Suspense>
             </div>
             <div className="lg:col-span-5">
               <Suspense fallback={<SectionSkeleton title={t.fees.title} />}>
-                <FeesSection parkCode={park.code} dict={dict} />
+                <FeesSection parkCode={park.code} npsCode={npsCodeOf(park)} dict={dict} />
               </Suspense>
             </div>
           </div>

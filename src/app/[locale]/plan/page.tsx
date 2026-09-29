@@ -4,9 +4,11 @@ import { Planner } from "@/components/plan/planner";
 import { activities } from "@/data/activities";
 import { airports } from "@/data/airports";
 import { attractions } from "@/data/attractions";
+import { bookingRules } from "@/data/bookings";
 import { lodgingOptions } from "@/data/lodging";
-import { parks } from "@/data/parks";
+import { isSite, parks } from "@/data/parks";
 import { servicesUpdated } from "@/data/services.generated";
+import { shuttleSystems } from "@/data/shuttles";
 import { hasLocale } from "@/i18n/config";
 import { localizeActivity, localizeAttraction, localizeLodging, localizePark } from "@/i18n/content";
 import { localize } from "@/i18n/convert";
@@ -32,6 +34,11 @@ export default async function PlanPage({ params }: PageProps<"/[locale]/plan">) 
         attractions={attractions.map((a) => ({ ...localizeAttraction(a, locale), photo: undefined, gallery: [] }))}
         lodgingOptions={lodgingOptions.map((option) => localizeLodging(option, locale))}
         activities={activities.map((activity) => localizeActivity(activity, locale))}
+        bookingRules={bookingRules.map((rule) => ({
+          ...rule,
+          titleZh: localize(rule.titleZh, locale),
+          noteZh: localize(rule.noteZh, locale),
+        }))}
         servicesUpdated={servicesUpdated}
         airports={Object.fromEntries(
           Object.entries(airports).map(([code, airport]) => [
@@ -52,6 +59,8 @@ export default async function PlanPage({ params }: PageProps<"/[locale]/plan">) 
             nearby: (park.nearby ?? []).filter((code) => parks.some((other) => other.code === code)),
             lodgingTip: park.lodgingTip,
             nonresidentSurcharge: park.nonresidentSurcharge,
+            site: isSite(park),
+            country: park.country ?? "US",
           };
         })}
         text={{
@@ -63,6 +72,7 @@ export default async function PlanPage({ params }: PageProps<"/[locale]/plan">) 
           attraction: dict.attraction,
           difficulty: dict.difficulty,
           timeOfDay: dict.timeOfDay,
+          shuttleNames: Object.fromEntries(shuttleSystems.map((system) => [system.id, localize(system.nameZh, locale)])),
         }}
       />
     </div>

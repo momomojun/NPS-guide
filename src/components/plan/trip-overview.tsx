@@ -158,6 +158,19 @@ export function TripOverview({
     }
     if (view.timeline.overloaded) notes.push(fill(t.overloaded, { day: view.day + 1 }));
   }
+  // 班车：哪几天要坐哪条线
+  const shuttleDays = new Map<string, number[]>();
+  for (const view of activeDays) {
+    const lines = new Set(
+      [...view.timeline.entries.map((entry) => entry.shuttle?.line), view.timeline.returnShuttle?.line].filter(
+        (line): line is string => Boolean(line),
+      ),
+    );
+    for (const line of lines) shuttleDays.set(line, [...(shuttleDays.get(line) ?? []), view.day + 1]);
+  }
+  for (const [line, days] of shuttleDays) {
+    notes.push(fill(t.shuttle, { line: text.shuttleNames[line] ?? line, days: days.join("、") }));
+  }
   const booking = stops.filter((stop) => stop.permit);
   if (booking.length) notes.push(fill(t.booking, { n: booking.length, names: booking.map((s) => s.nameZh).join("、") }));
   const closedNow = stops.filter((stop) => closedIn(stop, null) === "all");

@@ -1,3 +1,4 @@
+import { CAD_TO_USD, manualFees } from "@/data/fees-manual";
 import { parkFees } from "@/data/fees.generated";
 import { perDiem, perDiemYear } from "@/data/perdiem.generated";
 import { carRates, DEFAULT_CAR_RATE } from "@/lib/prices/car-rates";
@@ -26,8 +27,8 @@ export interface BudgetNight {
 
 export interface BudgetInput {
   prefs: TripPrefs;
-  /** 行程里有景点的公园 */
-  parks: { code: string; nonresidentSurcharge: boolean }[];
+  /** 行程里有景点的公园，days = 行程里有几天去这个公园（加拿大公园按天收门票） */
+  parks: { code: string; nonresidentSurcharge: boolean; days?: number }[];
   /** 要住的每一晚（不含出发地和终点） */
   nights: BudgetNight[];
   dayCount: number;
@@ -53,6 +54,11 @@ export interface Budget {
     surchargeParks: number;
     /** 不收门票的公园 */
     freeParks: string[];
+    /** 加拿大公园的门票（美元）：按天的家庭 / 团体票，或者更便宜时买 Discovery Pass */
+    canada: number;
+    canadaPass: boolean;
+    /** 园外名胜的门票、停车费、必须的跟团费（美元），美国年卡不能抵 */
+    sites: number;
   };
   lodging: { total: number; nights: number; guessed: number; year: number };
   meals: { total: number; rate: number };
@@ -78,7 +84,28 @@ export function computeBudget(input: BudgetInput): Budget {
   let pay = 0;
   let surchargeParks = 0;
   const freeParks: string[] = [];
+  let canadaDaily = 0;
+  let canadaPassPrice = 0;
+  let sites = 0;
   for (const park of input.parks) {
+    // 加拿大公园、园外名胜：手动整理的门票，美国年卡管不着
+    const manual = manualFees[park.code];
+    if (manual) {
+      const rate = manual.currency === "CAD" ? CAD_TO_USD : 1;
+      // 按车和按人两种收法都有的（加拿大：一车家庭票或每人一张），取便宜的
+      const byVehicle = manual.vehicle ?? Infinity;
+      const byPerson = manual.perPerson !== undefined ? manual.perPerson * travelers : Infinity;
+      const once = Math.min(byVehicle, byPerson) === Infinity ? 0 : Math.min(byVehicle, byPerson);
+      const cost = (manual.perDay ? once * Math.max(park.days ?? 1, 1) : once) * rate;
+      if (manual.currency === "CAD") {
+        canadaDaily += cost;
+        if (manual.pass) canadaPassPrice = manual.pass * rate;
+      } else {
+        sites += cost;
+      }
+      if (cost === 0) freeParks.push(park.code);
+      continue;
+    }
     const fee = parkFees[park.code];
     const entry = fee ? (fee.vehicle > 0 ? fee.vehicle : (fee.perPerson ?? 0) * travelers) : 0;
     if (entry === 0) freeParks.push(park.code);
@@ -90,7 +117,11 @@ export function computeBudget(input: BudgetInput): Budget {
   }
   const passKind = nonresidents < travelers ? "resident" : "nonresident";
   const pass = passKind === "resident" ? RESIDENT_PASS : NONRESIDENT_PASS;
-  const usePass = pass < pay;
+  // 行程里没有要收门票的美国国家公园时，年卡没意义
+  const usePass = pay > 0 && pass < pay;
+  // 加拿大：每天的票加起来比 Discovery Pass 贵，就买通票（一年内所有加拿大国家公园）
+  const canadaPass = canadaPassPrice > 0 && canadaPassPrice < canadaDaily;
+  const canada = canadaPass ? canadaPassPrice : canadaDaily;
 
   // 住宿：GSA 这个月的住宿标准 × 房间数；没有参考价的晚上按其他几晚的平均
   const rates = input.nights.map((night) => (night.lodgingId ? perDiem[night.lodgingId]?.lodging[night.month - 1] : undefined));
@@ -126,11 +157,11 @@ export function computeBudget(input: BudgetInput): Budget {
       : undefined;
   const flights = prefs.flyAndRent ? input.flights : undefined;
 
-  const feesTotal = usePass ? pass : pay;
+  const feesTotal = (usePass ? pass : pay) + canada + sites;
   const mealsTotal = mealRate * travelers * input.dayCount;
   const total = feesTotal + lodgingTotal + mealsTotal + fuelTotal + (car?.total ?? 0) + (flights ?? 0);
   return {
-    fees: { total: feesTotal, pay, pass, passKind, usePass, surchargeParks, freeParks },
+    fees: { total: feesTotal, pay, pass, passKind, usePass, surchargeParks, freeParks, canada, canadaPass, sites },
     lodging: { total: lodgingTotal, nights: input.nights.length, guessed: rates.length - known.length, year: perDiemYear },
     meals: { total: mealsTotal, rate: mealRate },
     fuel: { total: fuelTotal, km: input.km, price: fuelPrice, states },

@@ -229,11 +229,24 @@ export function TripWizard({
             }}
             className={`${field} tracking-normal normal-case text-ink`}
           >
-            {parks.map((p) => (
-              <option key={p.code} value={p.code}>
-                {p.nameZh} {p.nameEn}
-              </option>
-            ))}
+            {parks
+              .filter((p) => !p.site)
+              .map((p) => (
+                <option key={p.code} value={p.code}>
+                  {p.nameZh} {p.nameEn}
+                </option>
+              ))}
+            {parks.some((p) => p.site) && (
+              <optgroup label={t.sitesGroup}>
+                {parks
+                  .filter((p) => p.site)
+                  .map((p) => (
+                    <option key={p.code} value={p.code}>
+                      {p.nameZh} {p.nameEn}
+                    </option>
+                  ))}
+              </optgroup>
+            )}
           </select>
         </label>
         <label className="eyebrow text-mute">

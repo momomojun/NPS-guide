@@ -78,6 +78,53 @@ function fitNights(nights: (TripLodging | null)[] | undefined, dayCount: number)
   return fitted;
 }
 
+const isNumber = (value: unknown): value is number => typeof value === "number" && Number.isFinite(value);
+const isString = (value: unknown): value is string => typeof value === "string";
+
+/** 检查一晚的住处：分享链接、导入的文件都是外来数据，字段不对的当作没定 */
+function normalizeLodging(value: unknown): TripLodging | null {
+  if (!value || typeof value !== "object") return null;
+  const night = value as Record<string, unknown>;
+  if (night.kind === "option" && isString(night.id)) return { kind: "option", id: night.id };
+  if (night.kind === "custom" && isString(night.id) && isString(night.name) && isNumber(night.lat) && isNumber(night.lon)) {
+    const minutes = Object.fromEntries(
+      Object.entries(night.minutes && typeof night.minutes === "object" ? night.minutes : {}).filter(([, m]) => isNumber(m)),
+    ) as Record<string, number>;
+    const endpoint = night.endpoint === "origin" || night.endpoint === "destination" ? night.endpoint : undefined;
+    return { kind: "custom", id: night.id, name: night.name, lat: night.lat, lon: night.lon, minutes, ...(endpoint ? { endpoint } : {}) };
+  }
+  return null;
+}
+
+/** 把外来的行程数据（分享链接、导入的文件）整理成合法的行程；不像行程就返回 null */
+export function normalizeTrip(value: unknown): Trip | null {
+  if (!value || typeof value !== "object") return null;
+  const raw = value as Record<string, unknown>;
+  if (!Array.isArray(raw.days) || !Array.isArray(raw.pool)) return null;
+  const days = raw.days.slice(0, MAX_DAYS).map((day) =>
+    (Array.isArray(day) ? day : []).flatMap((item): TripItem[] => {
+      const entry = item as Record<string, unknown> | null;
+      if (!entry || !isString(entry.id)) return [];
+      const status: ItemStatus = entry.status === "done" || entry.status === "skipped" ? entry.status : "planned";
+      return [{ id: entry.id, status }];
+    }),
+  );
+  if (days.length === 0) days.push([]);
+  const nights = Array.isArray(raw.nights) ? raw.nights.map(normalizeLodging) : [];
+  const startDate = isString(raw.startDate) && /^\d{4}-\d{2}-\d{2}$/.test(raw.startDate) ? raw.startDate : "";
+  const month = isNumber(raw.month) && raw.month >= 1 && raw.month <= 12 ? raw.month : undefined;
+  return {
+    version: 2,
+    startDate,
+    ...(month && !startDate ? { month } : {}),
+    dayCount: days.length,
+    days,
+    pool: raw.pool.filter(isString),
+    nights: fitNights(nights, days.length),
+    ...(raw.guide && typeof raw.guide === "object" ? { guide: raw.guide as Trip["guide"] } : {}),
+  };
+}
+
 function parse(raw: string | null): Trip {
   if (!raw) return EMPTY_TRIP;
   try {
@@ -154,6 +201,11 @@ export function removeFromTrip(id: string) {
 
 export function resetTrip() {
   write(EMPTY_TRIP);
+}
+
+/** 换成另一个行程（导入分享的行程） */
+export function replaceTrip(trip: Trip) {
+  write(trip);
 }
 
 /** 改天数：多出来的天补空，被砍掉的天里的景点放回待安排 */

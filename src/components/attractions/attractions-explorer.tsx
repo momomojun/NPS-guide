@@ -3,6 +3,7 @@
 import { useMemo, useRef, useState } from "react";
 import { CommonsImage } from "@/components/commons-image";
 import { IconClose, IconTrail } from "@/components/icons";
+import type { Imagery } from "@/components/map/sources";
 import { ParkMap, type MapPoint, type MapTrail } from "@/components/map/park-map";
 import { AddManyButton } from "@/components/trip/add-many-button";
 import { AddToTripButton } from "@/components/trip/add-to-trip-button";
@@ -15,10 +16,16 @@ import { KIND_COLORS } from "./kinds";
 type Filter = "all" | "mustSee" | AttractionKind;
 type Sort = "rank" | "area";
 
-/** 按热度名次；不排名的游客中心按评论数接在后面，没有 Google 数据的放最后 */
+/**
+ * 按热度名次；不排名的游客中心按评论数接在后面，没有 Google 数据的放最后。
+ * 还没有 Google 快照的公园（新加的）：必去的排前面，游客中心排最后
+ */
 function byPopularity(a: AttractionWithPhoto, b: AttractionWithPhoto) {
   return (
-    (a.hotRank ?? Infinity) - (b.hotRank ?? Infinity) || (b.google?.reviews ?? 0) - (a.google?.reviews ?? 0)
+    (a.hotRank ?? Infinity) - (b.hotRank ?? Infinity) ||
+    (b.google?.reviews ?? 0) - (a.google?.reviews ?? 0) ||
+    Number(Boolean(b.mustSee)) - Number(Boolean(a.mustSee)) ||
+    Number(a.kind === "visitor") - Number(b.kind === "visitor")
   );
 }
 
@@ -27,6 +34,7 @@ export function AttractionsExplorer({
   areas,
   parkNameEn,
   routesHref,
+  imagery,
   text,
 }: {
   attractions: AttractionWithPhoto[];
@@ -35,6 +43,8 @@ export function AttractionsExplorer({
   parkNameEn: string;
   /** 博主路线专区（这个公园） */
   routesHref: string;
+  /** 卫星图用哪一种（加拿大的公园用 EOX） */
+  imagery?: Imagery;
   text: AttractionText;
 }) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -108,6 +118,7 @@ export function AttractionsExplorer({
       <div className="lg:col-span-7">
         <div ref={mapRef} className="scroll-mt-32 lg:sticky lg:top-32">
           <ParkMap
+            imagery={imagery}
             points={points}
             trails={trails}
             highlightTrailId={selectedId}
@@ -205,7 +216,9 @@ export function AttractionsExplorer({
             ))}
           </div>
           {sort === "rank" && (
-            <p className="text-[11px] leading-5 text-mute">{fill(t.popularityNote, { date: googleSnapshotDate })}</p>
+            <p className="text-[11px] leading-5 text-mute">
+              {attractions.some((a) => a.google) ? fill(t.popularityNote, { date: googleSnapshotDate }) : t.popularityPending}
+            </p>
           )}
         </div>
 

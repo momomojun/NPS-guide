@@ -1,5 +1,5 @@
-// 首页的线描地图：美国西部（本土的公园）+ 阿拉斯加小图（德纳里）。
-// 州界来自 Natural Earth（公共领域），按 Albers 等积圆锥投影、化简后输出 SVG 路径，
+// 首页的线描地图：美国西部和加拿大落基山（本土的公园）+ 阿拉斯加小图。
+// 州界、省界来自 Natural Earth（公共领域），按 Albers 等积圆锥投影、化简后输出 SVG 路径，
 // 公园和参考城市的位置也一起投影好。
 // 输出 src/data/map.generated.ts。重新跑：npm run data:map
 import { writeFile } from "node:fs/promises";
@@ -19,13 +19,16 @@ const CITIES = [
   { id: "lv", nameZh: "拉斯维加斯", nameEn: "Las Vegas", lat: 36.1699, lon: -115.1398, map: "west" },
   { id: "slc", nameZh: "盐湖城", nameEn: "Salt Lake City", lat: 40.7608, lon: -111.891, map: "west" },
   { id: "phx", nameZh: "凤凰城", nameEn: "Phoenix", lat: 33.4484, lon: -112.074, map: "west" },
+  { id: "den", nameZh: "丹佛", nameEn: "Denver", lat: 39.7392, lon: -104.9903, map: "west" },
+  { id: "yyc", nameZh: "卡尔加里", nameEn: "Calgary", lat: 51.0447, lon: -114.0719, map: "west" },
+  { id: "yvr", nameZh: "温哥华", nameEn: "Vancouver", lat: 49.2827, lon: -123.1207, map: "west" },
   // 阿拉斯加小图只标安克雷奇：费尔班克斯离德纳里太近，标签会挤在一起
   { id: "anc", nameZh: "安克雷奇", nameEn: "Anchorage", lat: 61.2181, lon: -149.9003, map: "alaska" },
 ];
 
 const VIEWS = {
   west: {
-    projection: { lon0: -116.5, lat0: 41, lat1: 35, lat2: 47 },
+    projection: { lon0: -114.5, lat0: 43, lat1: 36, lat2: 50 },
     states: [
       "Washington",
       "Oregon",
@@ -38,19 +41,47 @@ const VIEWS = {
       "Arizona",
       "Colorado",
       "New Mexico",
+      "British Columbia",
+      "Alberta",
+      "Saskatchewan",
     ],
-    /** 有公园的州填底色，其余州只画边界 */
-    focus: ["Washington", "Oregon", "California", "Nevada", "Idaho", "Wyoming", "Utah", "Arizona"],
-    /** 视野按经纬度框取：南边到海峡群岛以南，东边到黄石以东 */
-    bounds: { west: -124.9, east: -108.6, south: 33.1, north: 49.1 },
+    /** 有公园的州（省）填底色，其余只画边界 */
+    focus: [
+      "Washington",
+      "Oregon",
+      "California",
+      "Nevada",
+      "Idaho",
+      "Montana",
+      "Wyoming",
+      "Utah",
+      "Arizona",
+      "Colorado",
+      "British Columbia",
+      "Alberta",
+    ],
+    /** 视野按经纬度框取：南边到海峡群岛以南，东边到落基山国家公园以东，北边到贾斯珀以北 */
+    bounds: { west: -124.9, east: -104.3, south: 33.1, north: 53.6 },
     labels: {
       Washington: "WASHINGTON",
       Oregon: "OREGON",
       California: "CALIFORNIA",
       Nevada: "NEVADA",
       Idaho: "IDAHO",
+      Montana: "MONTANA",
       Utah: "UTAH",
       Arizona: "ARIZONA",
+      Colorado: "COLORADO",
+      "British Columbia": "BRITISH COLUMBIA",
+      Alberta: "ALBERTA",
+    },
+    /** 州名默认放在州的中心；会挡住公园、或者中心在视野外的，放到这里（经度、纬度） */
+    labelAt: {
+      Washington: [-118.5, 47.5],
+      California: [-121.3, 39.2],
+      Colorado: [-105.5, 38.1],
+      "British Columbia": [-122.4, 52.4],
+      Alberta: [-112.6, 52.1],
     },
     margin: 0.02,
   },
@@ -145,7 +176,7 @@ if (!response.ok) throw new Error(`下载失败：HTTP ${response.status}`);
 const geojson = await response.json();
 const usStates = new Map(
   geojson.features
-    .filter((feature) => feature.properties.admin === "United States of America")
+    .filter((feature) => ["United States of America", "Canada"].includes(feature.properties.admin))
     .map((feature) => [feature.properties.name, feature.geometry]),
 );
 
@@ -198,7 +229,8 @@ for (const [viewId, view] of Object.entries(VIEWS)) {
     states.push({ name, focus: view.focus.includes(name), d });
     if (view.labels[name]) {
       const largest = viewRings.reduce((a, b) => (b.length > a.length ? b : a));
-      const [x, y] = centroid(largest);
+      const at = view.labelAt?.[name];
+      const [x, y] = at ? toView(project(at[0], at[1])) : centroid(largest);
       labels.push({ text: view.labels[name], x: round(x), y: round(y) });
     }
   }

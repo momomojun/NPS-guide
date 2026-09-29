@@ -240,7 +240,13 @@ export function DayCard({
                       <span className={gripCol} aria-hidden />
                       <span className={timeCol} aria-hidden />
                       <span className="inline-flex items-center gap-1.5">
-                        <IconCar className="text-sm" /> {fill(t.drive, { d: duration(entry.driveMin) })}
+                        <IconCar className="text-sm" />{" "}
+                        {entry.shuttle
+                          ? fill(t.shuttleModes[entry.shuttle.mode], {
+                              d: duration(entry.driveMin),
+                              line: text.shuttleNames[entry.shuttle.line] ?? entry.shuttle.line,
+                            })
+                          : fill(t.drive, { d: duration(entry.driveMin) })}
                       </span>
                     </p>
                   )}
@@ -421,7 +427,13 @@ export function DayCard({
                 <span className={gripCol} aria-hidden />
                 <span className={timeCol} aria-hidden />
                 <span className="inline-flex items-center gap-1.5">
-                  <IconCar className="text-sm" /> {fill(t.drive, { d: duration(timeline.returnDriveMin) })}
+                  <IconCar className="text-sm" />{" "}
+                  {timeline.returnShuttle
+                    ? fill(t.shuttleModes[timeline.returnShuttle.mode], {
+                        d: duration(timeline.returnDriveMin),
+                        line: text.shuttleNames[timeline.returnShuttle.line] ?? timeline.returnShuttle.line,
+                      })
+                    : fill(t.drive, { d: duration(timeline.returnDriveMin) })}
                 </span>
               </p>
             )}

@@ -41,6 +41,8 @@ export async function getChargersNear(
     access: "public",
     status: "E,T",
     limit: "200",
+    // 默认只查美国；加拿大的公园（班夫等）也要
+    country: "all",
   });
   const res = await fetchJson<NearestResponse>(`${BASE}/nearest.json?${params}`, {
     headers: dataGovHeaders(),

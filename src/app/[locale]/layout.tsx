@@ -5,7 +5,7 @@ import { BackToTop } from "@/components/site/back-to-top";
 import { OfflineBanner, ServiceWorkerRegister } from "@/components/site/offline";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
-import { parks, regionOrder } from "@/data/parks";
+import { isSite, parks, regionOrder } from "@/data/parks";
 import { hasLocale, locales } from "@/i18n/config";
 import { localize } from "@/i18n/convert";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -45,12 +45,19 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   const dict = getDictionary(locale);
   const regions = regionOrder
     .map((region) => ({
-      id: region,
+      id: region as string,
       label: dict.regions[region],
       parks: parks
-        .filter((park) => park.region === region)
+        .filter((park) => park.region === region && !isSite(park))
         .map((park) => ({ code: park.code, nameZh: localize(park.nameZh, locale), nameEn: park.nameEn, bestMonths: park.bestMonths })),
     }))
+    .concat({
+      id: "sites",
+      label: dict.nav.sites,
+      parks: parks
+        .filter(isSite)
+        .map((park) => ({ code: park.code, nameZh: localize(park.nameZh, locale), nameEn: park.nameEn, bestMonths: park.bestMonths })),
+    })
     .filter((region) => region.parks.length > 0);
 
   return (
