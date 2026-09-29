@@ -24613,5 +24613,909 @@ export const gallery: Record<string, Photo[]> = {
       "author": "Glacier NPS",
       "license": "Public domain"
     }
+  ],
+  "kefj-exit-glacier-nature-center": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/By_ovedc_-_Exit_Glacier_-_3.jpg/960px-By_ovedc_-_Exit_Glacier_-_3.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/By_ovedc_-_Exit_Glacier_-_3.jpg/1920px-By_ovedc_-_Exit_Glacier_-_3.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:By_ovedc_-_Exit_Glacier_-_3.jpg",
+      "author": "Ovedc",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/One_last_look_at_Exit_Glacier._100_years_ago_we_would_have_been_under_hundreds_of_feet_of_ice_-_panoramio.jpg/960px-One_last_look_at_Exit_Glacier._100_years_ago_we_would_have_been_under_hundreds_of_feet_of_ice_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/One_last_look_at_Exit_Glacier._100_years_ago_we_would_have_been_under_hundreds_of_feet_of_ice_-_panoramio.jpg/1920px-One_last_look_at_Exit_Glacier._100_years_ago_we_would_have_been_under_hundreds_of_feet_of_ice_-_panoramio.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:One_last_look_at_Exit_Glacier._100_years_ago_we_would_have_been_under_hundreds_of_feet_of_ice_-_panoramio.jpg",
+      "author": "olekinderhook",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Exit_Glacier%2C_Kenai_Fjords_National_Park%2C_United_States_Aug_26%2C_2017_061029_PM.jpg/960px-Exit_Glacier%2C_Kenai_Fjords_National_Park%2C_United_States_Aug_26%2C_2017_061029_PM.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Exit_Glacier%2C_Kenai_Fjords_National_Park%2C_United_States_Aug_26%2C_2017_061029_PM.jpg/1920px-Exit_Glacier%2C_Kenai_Fjords_National_Park%2C_United_States_Aug_26%2C_2017_061029_PM.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Exit_Glacier,_Kenai_Fjords_National_Park,_United_States_Aug_26,_2017_061029_PM.jpg",
+      "author": "Wizz4prep",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/By_ovedc_-_Exit_Glacier_-_6.jpg/960px-By_ovedc_-_Exit_Glacier_-_6.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/By_ovedc_-_Exit_Glacier_-_6.jpg/1920px-By_ovedc_-_Exit_Glacier_-_6.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:By_ovedc_-_Exit_Glacier_-_6.jpg",
+      "author": "Ovedc",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/P1010010_%286895628978%29.jpg/960px-P1010010_%286895628978%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/P1010010_%286895628978%29.jpg/1920px-P1010010_%286895628978%29.jpg",
+      "width": 960,
+      "height": 495,
+      "page": "https://commons.wikimedia.org/wiki/File:P1010010_(6895628978).jpg",
+      "author": "Bo Mertz",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Looking_down_at_the_cravasses_on_the_ice_-_panoramio.jpg/960px-Looking_down_at_the_cravasses_on_the_ice_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Looking_down_at_the_cravasses_on_the_ice_-_panoramio.jpg/1920px-Looking_down_at_the_cravasses_on_the_ice_-_panoramio.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Looking_down_at_the_cravasses_on_the_ice_-_panoramio.jpg",
+      "author": "olekinderhook",
+      "license": "CC BY 3.0"
+    }
+  ],
+  "kefj-exit-glacier": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Exit_Glacier%2C_Harding_Icefield%2C_Kenai_Fjords_National_Park%2C_Alaska.jpg/960px-Exit_Glacier%2C_Harding_Icefield%2C_Kenai_Fjords_National_Park%2C_Alaska.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Exit_Glacier%2C_Harding_Icefield%2C_Kenai_Fjords_National_Park%2C_Alaska.jpg/1920px-Exit_Glacier%2C_Harding_Icefield%2C_Kenai_Fjords_National_Park%2C_Alaska.jpg",
+      "width": 960,
+      "height": 685,
+      "page": "https://commons.wikimedia.org/wiki/File:Exit_Glacier,_Harding_Icefield,_Kenai_Fjords_National_Park,_Alaska.jpg",
+      "author": "OKJaguar",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Exit_Glacier_Jul09.JPG/960px-Exit_Glacier_Jul09.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Exit_Glacier_Jul09.JPG/1920px-Exit_Glacier_Jul09.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Exit_Glacier_Jul09.JPG",
+      "author": "Reywas92",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Exit_Glacier_Trail_%2854055071220%29.jpg/960px-Exit_Glacier_Trail_%2854055071220%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Exit_Glacier_Trail_%2854055071220%29.jpg/1920px-Exit_Glacier_Trail_%2854055071220%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Exit_Glacier_Trail_(54055071220).jpg",
+      "author": "AlaskaNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Exit_glacier.jpg/960px-Exit_glacier.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Exit_glacier.jpg/1280px-Exit_glacier.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Exit_glacier.jpg",
+      "author": "1brownsfan",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/By_ovedc_-_Exit_Glacier_-_4.jpg/960px-By_ovedc_-_Exit_Glacier_-_4.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/By_ovedc_-_Exit_Glacier_-_4.jpg/1920px-By_ovedc_-_Exit_Glacier_-_4.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:By_ovedc_-_Exit_Glacier_-_4.jpg",
+      "author": "Ovedc",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/By_ovedc_-_Exit_Glacier_-_5.jpg/960px-By_ovedc_-_Exit_Glacier_-_5.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/By_ovedc_-_Exit_Glacier_-_5.jpg/1920px-By_ovedc_-_Exit_Glacier_-_5.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:By_ovedc_-_Exit_Glacier_-_5.jpg",
+      "author": "Ovedc",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "kefj-harding-icefield": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Hikers_on_the_Harding_Icefield_Trail_%2885b70a7e-1dd8-b71c-0709-4eea27e72d3f%29.jpg/960px-Hikers_on_the_Harding_Icefield_Trail_%2885b70a7e-1dd8-b71c-0709-4eea27e72d3f%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Hikers_on_the_Harding_Icefield_Trail_%2885b70a7e-1dd8-b71c-0709-4eea27e72d3f%29.jpg/1920px-Hikers_on_the_Harding_Icefield_Trail_%2885b70a7e-1dd8-b71c-0709-4eea27e72d3f%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Hikers_on_the_Harding_Icefield_Trail_(85b70a7e-1dd8-b71c-0709-4eea27e72d3f).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/File-as_seen_from_the_end_of_the_Harding_Icefield_Trail._-KEFJ_PCalamari_2011_100-_%2864252ed8-1dd8-b71c-0715-1b34a7623167%29.JPG/960px-File-as_seen_from_the_end_of_the_Harding_Icefield_Trail._-KEFJ_PCalamari_2011_100-_%2864252ed8-1dd8-b71c-0715-1b34a7623167%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/File-as_seen_from_the_end_of_the_Harding_Icefield_Trail._-KEFJ_PCalamari_2011_100-_%2864252ed8-1dd8-b71c-0715-1b34a7623167%29.JPG/1920px-File-as_seen_from_the_end_of_the_Harding_Icefield_Trail._-KEFJ_PCalamari_2011_100-_%2864252ed8-1dd8-b71c-0715-1b34a7623167%29.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:File-as_seen_from_the_end_of_the_Harding_Icefield_Trail._-KEFJ_PCalamari_2011_100-_(64252ed8-1dd8-b71c-0715-1b34a7623167).JPG",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Harding_Icefield_Trail_Exit_Glacier.jpg/960px-Harding_Icefield_Trail_Exit_Glacier.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Harding_Icefield_Trail_Exit_Glacier.jpg/1920px-Harding_Icefield_Trail_Exit_Glacier.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Harding_Icefield_Trail_Exit_Glacier.jpg",
+      "author": "Justin Morgan from Richmond, Virginia, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Looking_out_into_Harding_Icefield_%289571134014%29.jpg/960px-Looking_out_into_Harding_Icefield_%289571134014%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Looking_out_into_Harding_Icefield_%289571134014%29.jpg/1920px-Looking_out_into_Harding_Icefield_%289571134014%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Looking_out_into_Harding_Icefield_(9571134014).jpg",
+      "author": "U.S. Department of the Interior",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Harding_Icefield_1.jpg/960px-Harding_Icefield_1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Harding_Icefield_1.jpg/1920px-Harding_Icefield_1.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Harding_Icefield_1.jpg",
+      "author": "Sujohn Das from Seattle, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Harding_Icefield_2.jpg/960px-Harding_Icefield_2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Harding_Icefield_2.jpg/1920px-Harding_Icefield_2.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Harding_Icefield_2.jpg",
+      "author": "Sujohn Das from Seattle, USA",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "kefj-fjords-cruise": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/By_ovedc_-_Aialik_Glacier_-_05.jpg/960px-By_ovedc_-_Aialik_Glacier_-_05.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/By_ovedc_-_Aialik_Glacier_-_05.jpg/1920px-By_ovedc_-_Aialik_Glacier_-_05.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:By_ovedc_-_Aialik_Glacier_-_05.jpg",
+      "author": "Ovedc",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Glacier_adjacent_to_Holgate_Glacier%2C_Kenai_Fjords_National_Park%2C_Alaska.jpg/960px-Glacier_adjacent_to_Holgate_Glacier%2C_Kenai_Fjords_National_Park%2C_Alaska.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Glacier_adjacent_to_Holgate_Glacier%2C_Kenai_Fjords_National_Park%2C_Alaska.jpg/1920px-Glacier_adjacent_to_Holgate_Glacier%2C_Kenai_Fjords_National_Park%2C_Alaska.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Glacier_adjacent_to_Holgate_Glacier,_Kenai_Fjords_National_Park,_Alaska.jpg",
+      "author": "OKJaguar",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Kenai_Fjords_-_Aialik_Glacier.jpg/960px-Kenai_Fjords_-_Aialik_Glacier.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Kenai_Fjords_-_Aialik_Glacier.jpg/1280px-Kenai_Fjords_-_Aialik_Glacier.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Kenai_Fjords_-_Aialik_Glacier.jpg",
+      "author": "Balazs Barnucz",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Holgate_Glacier%2C_Kenai_Fjords_National_Park_%286808652169%29.jpg/960px-Holgate_Glacier%2C_Kenai_Fjords_National_Park_%286808652169%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Holgate_Glacier%2C_Kenai_Fjords_National_Park_%286808652169%29.jpg/1920px-Holgate_Glacier%2C_Kenai_Fjords_National_Park_%286808652169%29.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Holgate_Glacier,_Kenai_Fjords_National_Park_(6808652169).jpg",
+      "author": "National Park Service, Alaska Region",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Aialik_Glacier_1.jpg/960px-Aialik_Glacier_1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Aialik_Glacier_1.jpg/1920px-Aialik_Glacier_1.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Aialik_Glacier_1.jpg",
+      "author": "SubbuThePeaceful",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Aialik_Glacier_2.jpg/960px-Aialik_Glacier_2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Aialik_Glacier_2.jpg/1920px-Aialik_Glacier_2.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Aialik_Glacier_2.jpg",
+      "author": "SubbuThePeaceful",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "kefj-northwestern-fjord": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Northwestern_Glacier_at_Kenai_Fjords_National_Park.jpg/960px-Northwestern_Glacier_at_Kenai_Fjords_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Northwestern_Glacier_at_Kenai_Fjords_National_Park.jpg/1920px-Northwestern_Glacier_at_Kenai_Fjords_National_Park.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Northwestern_Glacier_at_Kenai_Fjords_National_Park.jpg",
+      "author": "Nic McPhee from Morris, MN, USA",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "kefj-resurrection-bay-cruise": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Resurrection_Bay%2C_Seward%2C_Alaska.jpg/960px-Resurrection_Bay%2C_Seward%2C_Alaska.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Resurrection_Bay%2C_Seward%2C_Alaska.jpg/1920px-Resurrection_Bay%2C_Seward%2C_Alaska.jpg",
+      "width": 960,
+      "height": 562,
+      "page": "https://commons.wikimedia.org/wiki/File:Resurrection_Bay,_Seward,_Alaska.jpg",
+      "author": "Frank Kovalchek",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Puffins_clowning_around_-_panoramio.jpg/960px-Puffins_clowning_around_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Puffins_clowning_around_-_panoramio.jpg/1920px-Puffins_clowning_around_-_panoramio.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Puffins_clowning_around_-_panoramio.jpg",
+      "author": "olekinderhook",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Master_of_the_rocks_-_panoramio.jpg/960px-Master_of_the_rocks_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Master_of_the_rocks_-_panoramio.jpg/1920px-Master_of_the_rocks_-_panoramio.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Master_of_the_rocks_-_panoramio.jpg",
+      "author": "olekinderhook",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Orca_Voyager_20180609_173403.jpg/960px-Orca_Voyager_20180609_173403.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Orca_Voyager_20180609_173403.jpg/1920px-Orca_Voyager_20180609_173403.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Orca_Voyager_20180609_173403.jpg",
+      "author": "Brian Sterling from Palo Alto, CA, USA",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "kefj-sea-kayak": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Lone_kayaker_on_resurrection_bay.jpg/960px-Lone_kayaker_on_resurrection_bay.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Lone_kayaker_on_resurrection_bay.jpg/1920px-Lone_kayaker_on_resurrection_bay.jpg",
+      "width": 960,
+      "height": 630,
+      "page": "https://commons.wikimedia.org/wiki/File:Lone_kayaker_on_resurrection_bay.jpg",
+      "author": "Laubenstein Ronald, U.S. Fish and Wildlife Service",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Our_Kayak_on_North_Beach%2C_Caines_Head_-_panoramio.jpg/960px-Our_Kayak_on_North_Beach%2C_Caines_Head_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Our_Kayak_on_North_Beach%2C_Caines_Head_-_panoramio.jpg/1920px-Our_Kayak_on_North_Beach%2C_Caines_Head_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Our_Kayak_on_North_Beach,_Caines_Head_-_panoramio.jpg",
+      "author": "mdixon85",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Group_in_kayaks_on_resurrection_bay.jpg/960px-Group_in_kayaks_on_resurrection_bay.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Group_in_kayaks_on_resurrection_bay.jpg/1280px-Group_in_kayaks_on_resurrection_bay.jpg",
+      "width": 960,
+      "height": 1440,
+      "page": "https://commons.wikimedia.org/wiki/File:Group_in_kayaks_on_resurrection_bay.jpg",
+      "author": "Laubenstein Ronald, U.S. Fish and Wildlife Service",
+      "license": "Public domain"
+    }
+  ],
+  "kefj-visitor-center": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Marine_Debris_Display-_Kenai_Fjords_National_Park_%286d6d62d4-4a75-4700-9deb-6c06cd6681fc%29.jpg/960px-Marine_Debris_Display-_Kenai_Fjords_National_Park_%286d6d62d4-4a75-4700-9deb-6c06cd6681fc%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Marine_Debris_Display-_Kenai_Fjords_National_Park_%286d6d62d4-4a75-4700-9deb-6c06cd6681fc%29.jpg/1280px-Marine_Debris_Display-_Kenai_Fjords_National_Park_%286d6d62d4-4a75-4700-9deb-6c06cd6681fc%29.jpg",
+      "width": 960,
+      "height": 657,
+      "page": "https://commons.wikimedia.org/wiki/File:Marine_Debris_Display-_Kenai_Fjords_National_Park_(6d6d62d4-4a75-4700-9deb-6c06cd6681fc).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Seward_Small_Boat_Harbour_on_a_cloudy_day_-_Flickr_-_marknenadov.jpg/960px-Seward_Small_Boat_Harbour_on_a_cloudy_day_-_Flickr_-_marknenadov.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Seward_Small_Boat_Harbour_on_a_cloudy_day_-_Flickr_-_marknenadov.jpg/1920px-Seward_Small_Boat_Harbour_on_a_cloudy_day_-_Flickr_-_marknenadov.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Seward_Small_Boat_Harbour_on_a_cloudy_day_-_Flickr_-_marknenadov.jpg",
+      "author": "Mark Nenadov",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "kefj-sealife-center": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Alaska_SeaLife_Center_ENBLA06.jpg/960px-Alaska_SeaLife_Center_ENBLA06.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Alaska_SeaLife_Center_ENBLA06.jpg/1920px-Alaska_SeaLife_Center_ENBLA06.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Alaska_SeaLife_Center_ENBLA06.jpg",
+      "author": "Enrico Blasutto",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Alaska_SeaLife_Center_ENBLA01.jpg/960px-Alaska_SeaLife_Center_ENBLA01.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Alaska_SeaLife_Center_ENBLA01.jpg/1920px-Alaska_SeaLife_Center_ENBLA01.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Alaska_SeaLife_Center_ENBLA01.jpg",
+      "author": "Enrico Blasutto",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "kefj-beluga-point": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/View_from_Beluga_Point.jpg/960px-View_from_Beluga_Point.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/View_from_Beluga_Point.jpg/1920px-View_from_Beluga_Point.jpg",
+      "width": 960,
+      "height": 534,
+      "page": "https://commons.wikimedia.org/wiki/File:View_from_Beluga_Point.jpg",
+      "author": "Frank K. from Anchorage, Alaska, USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Beluga_point%2C_AK.JPG/960px-Beluga_point%2C_AK.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Beluga_point%2C_AK.JPG/1920px-Beluga_point%2C_AK.JPG",
+      "width": 960,
+      "height": 608,
+      "page": "https://commons.wikimedia.org/wiki/File:Beluga_point,_AK.JPG",
+      "author": "Amosbeecroft",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/View_of_Turnagain_Arm_in_April_2017.jpg/960px-View_of_Turnagain_Arm_in_April_2017.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/View_of_Turnagain_Arm_in_April_2017.jpg/1920px-View_of_Turnagain_Arm_in_April_2017.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:View_of_Turnagain_Arm_in_April_2017.jpg",
+      "author": "Jami430",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Anchorage_lake_%2827068547827%29.jpg/960px-Anchorage_lake_%2827068547827%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Anchorage_lake_%2827068547827%29.jpg/1920px-Anchorage_lake_%2827068547827%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Anchorage_lake_(27068547827).jpg",
+      "author": "Jon Konrath from Oakland, USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Turnagain_Arm_from_Anchorage.jpg/960px-Turnagain_Arm_from_Anchorage.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Turnagain_Arm_from_Anchorage.jpg/1920px-Turnagain_Arm_from_Anchorage.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Turnagain_Arm_from_Anchorage.jpg",
+      "author": "diverus from U.S. A.",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Anchorage_lake_%2840131233720%29.jpg/960px-Anchorage_lake_%2840131233720%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Anchorage_lake_%2840131233720%29.jpg/1280px-Anchorage_lake_%2840131233720%29.jpg",
+      "width": 960,
+      "height": 840,
+      "page": "https://commons.wikimedia.org/wiki/File:Anchorage_lake_(40131233720).jpg",
+      "author": "Jon Konrath from Oakland, USA",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "wrst-visitor-center": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Copper_Center_ENBLA01.jpg/960px-Copper_Center_ENBLA01.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Copper_Center_ENBLA01.jpg/1920px-Copper_Center_ENBLA01.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Copper_Center_ENBLA01.jpg",
+      "author": "Enrico Blasutto",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Copper_Center_ENBLA02.jpg/960px-Copper_Center_ENBLA02.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Copper_Center_ENBLA02.jpg/1920px-Copper_Center_ENBLA02.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Copper_Center_ENBLA02.jpg",
+      "author": "Enrico Blasutto",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Autopista_Edgerton%2C_Copper_Center%2C_Alaska%2C_Estados_Unidos%2C_2017-08-22%2C_DD_120.jpg/960px-Autopista_Edgerton%2C_Copper_Center%2C_Alaska%2C_Estados_Unidos%2C_2017-08-22%2C_DD_120.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Autopista_Edgerton%2C_Copper_Center%2C_Alaska%2C_Estados_Unidos%2C_2017-08-22%2C_DD_120.jpg/1920px-Autopista_Edgerton%2C_Copper_Center%2C_Alaska%2C_Estados_Unidos%2C_2017-08-22%2C_DD_120.jpg",
+      "width": 960,
+      "height": 503,
+      "page": "https://commons.wikimedia.org/wiki/File:Autopista_Edgerton,_Copper_Center,_Alaska,_Estados_Unidos,_2017-08-22,_DD_120.jpg",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Autopista_Edgerton%2C_Copper_Center%2C_Alaska%2C_Estados_Unidos%2C_2017-08-22%2C_DD_119.jpg/960px-Autopista_Edgerton%2C_Copper_Center%2C_Alaska%2C_Estados_Unidos%2C_2017-08-22%2C_DD_119.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Autopista_Edgerton%2C_Copper_Center%2C_Alaska%2C_Estados_Unidos%2C_2017-08-22%2C_DD_119.jpg/1920px-Autopista_Edgerton%2C_Copper_Center%2C_Alaska%2C_Estados_Unidos%2C_2017-08-22%2C_DD_119.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Autopista_Edgerton,_Copper_Center,_Alaska,_Estados_Unidos,_2017-08-22,_DD_119.jpg",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Copper_Center_Trading_Post.jpg/960px-Copper_Center_Trading_Post.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Copper_Center_Trading_Post.jpg/1920px-Copper_Center_Trading_Post.jpg",
+      "width": 960,
+      "height": 1436,
+      "page": "https://commons.wikimedia.org/wiki/File:Copper_Center_Trading_Post.jpg",
+      "author": "Haydn Blackey",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "wrst-liberty-falls": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/LIBERTY_FALLS_STATE_RECREATIONAL_AREA.jpg/960px-LIBERTY_FALLS_STATE_RECREATIONAL_AREA.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/LIBERTY_FALLS_STATE_RECREATIONAL_AREA.jpg/1920px-LIBERTY_FALLS_STATE_RECREATIONAL_AREA.jpg",
+      "width": 960,
+      "height": 1424,
+      "page": "https://commons.wikimedia.org/wiki/File:LIBERTY_FALLS_STATE_RECREATIONAL_AREA.jpg",
+      "author": "JERRYE & ROY KLOTZ MD",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "wrst-chitina": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Chitina_River_-_panoramio.jpg/960px-Chitina_River_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Chitina_River_-_panoramio.jpg/1920px-Chitina_River_-_panoramio.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Chitina_River_-_panoramio.jpg",
+      "author": "olekinderhook",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Mount_Wrangell_as_seen_from_Chitina_Airport.jpg/960px-Mount_Wrangell_as_seen_from_Chitina_Airport.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Mount_Wrangell_as_seen_from_Chitina_Airport.jpg/1920px-Mount_Wrangell_as_seen_from_Chitina_Airport.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Mount_Wrangell_as_seen_from_Chitina_Airport.jpg",
+      "author": "Pi3.124",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Chitina_Emporium.jpg/960px-Chitina_Emporium.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Chitina_Emporium.jpg/1920px-Chitina_Emporium.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Chitina_Emporium.jpg",
+      "author": "Frank Kovalchek",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Chitina_River_%282%29_%2821474628712%29.jpg/960px-Chitina_River_%282%29_%2821474628712%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Chitina_River_%282%29_%2821474628712%29.jpg/1920px-Chitina_River_%282%29_%2821474628712%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Chitina_River_(2)_(21474628712).jpg",
+      "author": "National Park Service, Alaska Region",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/CHITINA_EMPORIUM_-_panoramio.jpg/960px-CHITINA_EMPORIUM_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/CHITINA_EMPORIUM_-_panoramio.jpg/1920px-CHITINA_EMPORIUM_-_panoramio.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:CHITINA_EMPORIUM_-_panoramio.jpg",
+      "author": "Manuel Velazquez",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Chitina_River_%2839319215054%29.jpg/960px-Chitina_River_%2839319215054%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Chitina_River_%2839319215054%29.jpg/1920px-Chitina_River_%2839319215054%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Chitina_River_(39319215054).jpg",
+      "author": "National Park Service, Alaska Region",
+      "license": "Public domain"
+    }
+  ],
+  "wrst-mccarthy-road": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/The_Kuskulana_Bridge.jpg/960px-The_Kuskulana_Bridge.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/The_Kuskulana_Bridge.jpg/1920px-The_Kuskulana_Bridge.jpg",
+      "width": 960,
+      "height": 657,
+      "page": "https://commons.wikimedia.org/wiki/File:The_Kuskulana_Bridge.jpg",
+      "author": "Henry",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/McCarthy_Road.jpg/960px-McCarthy_Road.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/McCarthy_Road.jpg/1920px-McCarthy_Road.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:McCarthy_Road.jpg",
+      "author": "Sewtex",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Wrangell_St_Elias_National_Park%2C_McCarthy_Road%2C_near_Chitina%2C_Alaska%2C_USA_%2828_June_2009%29.jpg/960px-Wrangell_St_Elias_National_Park%2C_McCarthy_Road%2C_near_Chitina%2C_Alaska%2C_USA_%2828_June_2009%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Wrangell_St_Elias_National_Park%2C_McCarthy_Road%2C_near_Chitina%2C_Alaska%2C_USA_%2828_June_2009%29.jpg/1280px-Wrangell_St_Elias_National_Park%2C_McCarthy_Road%2C_near_Chitina%2C_Alaska%2C_USA_%2828_June_2009%29.jpg",
+      "width": 960,
+      "height": 480,
+      "page": "https://commons.wikimedia.org/wiki/File:Wrangell_St_Elias_National_Park,_McCarthy_Road,_near_Chitina,_Alaska,_USA_(28_June_2009).jpg",
+      "author": "William L. Farr",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Wrangell_St_Elias_National_Park%2C_McCarthy_Road%2C_Chitina%2C_Alaska%2C_USA_%2828_June_2009%29.jpg/960px-Wrangell_St_Elias_National_Park%2C_McCarthy_Road%2C_Chitina%2C_Alaska%2C_USA_%2828_June_2009%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Wrangell_St_Elias_National_Park%2C_McCarthy_Road%2C_Chitina%2C_Alaska%2C_USA_%2828_June_2009%29.jpg/1280px-Wrangell_St_Elias_National_Park%2C_McCarthy_Road%2C_Chitina%2C_Alaska%2C_USA_%2828_June_2009%29.jpg",
+      "width": 960,
+      "height": 480,
+      "page": "https://commons.wikimedia.org/wiki/File:Wrangell_St_Elias_National_Park,_McCarthy_Road,_Chitina,_Alaska,_USA_(28_June_2009).jpg",
+      "author": "William L. Farr",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/McCarthy_Road_-_Wrangell-St_Elias_%2814442341480%29.jpg/960px-McCarthy_Road_-_Wrangell-St_Elias_%2814442341480%29.jpg",
+      "large": "https://upload.wikimedia.org/wikipedia/commons/7/7b/McCarthy_Road_-_Wrangell-St_Elias_%2814442341480%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:McCarthy_Road_-_Wrangell-St_Elias_(14442341480).jpg",
+      "author": "AlaskaNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/McCarthy_Road_-_Wrangell-St_Elias_%2814442395329%29.jpg/960px-McCarthy_Road_-_Wrangell-St_Elias_%2814442395329%29.jpg",
+      "large": "https://upload.wikimedia.org/wikipedia/commons/b/b6/McCarthy_Road_-_Wrangell-St_Elias_%2814442395329%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:McCarthy_Road_-_Wrangell-St_Elias_(14442395329).jpg",
+      "author": "AlaskaNPS",
+      "license": "Public domain"
+    }
+  ],
+  "wrst-mccarthy": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Main_St%2C_McCarthy.jpg/960px-Main_St%2C_McCarthy.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Main_St%2C_McCarthy.jpg/1920px-Main_St%2C_McCarthy.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Main_St,_McCarthy.jpg",
+      "author": "matt verso from Dublin, Ireland",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/McCarthy_Alaska.jpg/960px-McCarthy_Alaska.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/McCarthy_Alaska.jpg/1920px-McCarthy_Alaska.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:McCarthy_Alaska.jpg",
+      "author": "James Brooks",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Main_Street_of_McCarthy_%28Alaska%29.JPG/960px-Main_Street_of_McCarthy_%28Alaska%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Main_Street_of_McCarthy_%28Alaska%29.JPG/1920px-Main_Street_of_McCarthy_%28Alaska%29.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Main_Street_of_McCarthy_(Alaska).JPG",
+      "author": "Brenthecht",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/McCarthy_General_Store.jpg/960px-McCarthy_General_Store.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/McCarthy_General_Store.jpg/1920px-McCarthy_General_Store.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:McCarthy_General_Store.jpg",
+      "author": "Jim Gove",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Camping_at_the_McCarthy_Airport_%2839998080422%29.jpg/960px-Camping_at_the_McCarthy_Airport_%2839998080422%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Camping_at_the_McCarthy_Airport_%2839998080422%29.jpg/1920px-Camping_at_the_McCarthy_Airport_%2839998080422%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Camping_at_the_McCarthy_Airport_(39998080422).jpg",
+      "author": "National Park Service, Alaska Region",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Camping_at_the_McCarthy_Airport_%2839998079562%29.jpg/960px-Camping_at_the_McCarthy_Airport_%2839998079562%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Camping_at_the_McCarthy_Airport_%2839998079562%29.jpg/1920px-Camping_at_the_McCarthy_Airport_%2839998079562%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Camping_at_the_McCarthy_Airport_(39998079562).jpg",
+      "author": "National Park Service, Alaska Region",
+      "license": "Public domain"
+    }
+  ],
+  "wrst-kennecott": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Kennecott_Mine_Buildings.jpg/960px-Kennecott_Mine_Buildings.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Kennecott_Mine_Buildings.jpg/1920px-Kennecott_Mine_Buildings.jpg",
+      "width": 960,
+      "height": 768,
+      "page": "https://commons.wikimedia.org/wiki/File:Kennecott_Mine_Buildings.jpg",
+      "author": "W. Smith",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Kennecott_Mines_3.jpg/960px-Kennecott_Mines_3.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Kennecott_Mines_3.jpg/1920px-Kennecott_Mines_3.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Kennecott_Mines_3.jpg",
+      "author": "Kimberly Hack",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Kennecott_Mines_1.jpg/960px-Kennecott_Mines_1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Kennecott_Mines_1.jpg/1920px-Kennecott_Mines_1.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Kennecott_Mines_1.jpg",
+      "author": "Kimberly Hack",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Kennecott_Mill_and_Railroad_Depot_%283b78d457-1dd8-b71c-0703-42bb39d54fa3%29.JPG/960px-Kennecott_Mill_and_Railroad_Depot_%283b78d457-1dd8-b71c-0703-42bb39d54fa3%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Kennecott_Mill_and_Railroad_Depot_%283b78d457-1dd8-b71c-0703-42bb39d54fa3%29.JPG/1920px-Kennecott_Mill_and_Railroad_Depot_%283b78d457-1dd8-b71c-0703-42bb39d54fa3%29.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Kennecott_Mill_and_Railroad_Depot_(3b78d457-1dd8-b71c-0703-42bb39d54fa3).JPG",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Kennecott_Mine_buildings.jpg/960px-Kennecott_Mine_buildings.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Kennecott_Mine_buildings.jpg/1920px-Kennecott_Mine_buildings.jpg",
+      "width": 960,
+      "height": 768,
+      "page": "https://commons.wikimedia.org/wiki/File:Kennecott_Mine_buildings.jpg",
+      "author": "W. Smith",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Kennecott_Copper_Mill.jpg/960px-Kennecott_Copper_Mill.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Kennecott_Copper_Mill.jpg/1920px-Kennecott_Copper_Mill.jpg",
+      "width": 960,
+      "height": 641,
+      "page": "https://commons.wikimedia.org/wiki/File:Kennecott_Copper_Mill.jpg",
+      "author": "Michael F. Wacht",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "wrst-mill-tour": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/View_of_Concentration_Mill_at_Kennecott_Copper_Mine.jpg/960px-View_of_Concentration_Mill_at_Kennecott_Copper_Mine.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/View_of_Concentration_Mill_at_Kennecott_Copper_Mine.jpg/1920px-View_of_Concentration_Mill_at_Kennecott_Copper_Mine.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:View_of_Concentration_Mill_at_Kennecott_Copper_Mine.jpg",
+      "author": "Daweaver56",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Kennecott_Mill_Town.jpg/960px-Kennecott_Mill_Town.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Kennecott_Mill_Town.jpg/1920px-Kennecott_Mill_Town.jpg",
+      "width": 960,
+      "height": 569,
+      "page": "https://commons.wikimedia.org/wiki/File:Kennecott_Mill_Town.jpg",
+      "author": "Wrangell-St. Elias National Park & Preserve",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Kennecott_Mill_Town_%26_Bonanza_Ridge.jpg/960px-Kennecott_Mill_Town_%26_Bonanza_Ridge.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Kennecott_Mill_Town_%26_Bonanza_Ridge.jpg/1920px-Kennecott_Mill_Town_%26_Bonanza_Ridge.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Kennecott_Mill_Town_%26_Bonanza_Ridge.jpg",
+      "author": "Wrangell-St. Elias National Park",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Kennecott_Mill_Town_-_22446654985.jpg/960px-Kennecott_Mill_Town_-_22446654985.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Kennecott_Mill_Town_-_22446654985.jpg/1920px-Kennecott_Mill_Town_-_22446654985.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Kennecott_Mill_Town_-_22446654985.jpg",
+      "author": "Wrangell-St. Elias National Park",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Kennecott_Mill.jpg/960px-Kennecott_Mill.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Kennecott_Mill.jpg/1920px-Kennecott_Mill.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Kennecott_Mill.jpg",
+      "author": "matt verso from Dublin, Ireland",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Kennecott_Mill_site_and_Bonanza_Peak.jpg/960px-Kennecott_Mill_site_and_Bonanza_Peak.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Kennecott_Mill_site_and_Bonanza_Peak.jpg/1920px-Kennecott_Mill_site_and_Bonanza_Peak.jpg",
+      "width": 960,
+      "height": 501,
+      "page": "https://commons.wikimedia.org/wiki/File:Kennecott_Mill_site_and_Bonanza_Peak.jpg",
+      "author": "Wrangell-St. Elias National Park & Preserve",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "wrst-root-glacier": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Backpackers_Stepping_onto_the_Root_Glacier_%2820977719713%29.jpg/960px-Backpackers_Stepping_onto_the_Root_Glacier_%2820977719713%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Backpackers_Stepping_onto_the_Root_Glacier_%2820977719713%29.jpg/1920px-Backpackers_Stepping_onto_the_Root_Glacier_%2820977719713%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Backpackers_Stepping_onto_the_Root_Glacier_(20977719713).jpg",
+      "author": "National Park Service, Alaska Region",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Backpackers_on_the_Root_Glacier_Trail_%282%29_%2821571230826%29.jpg/960px-Backpackers_on_the_Root_Glacier_Trail_%282%29_%2821571230826%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Backpackers_on_the_Root_Glacier_Trail_%282%29_%2821571230826%29.jpg/1920px-Backpackers_on_the_Root_Glacier_Trail_%282%29_%2821571230826%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Backpackers_on_the_Root_Glacier_Trail_(2)_(21571230826).jpg",
+      "author": "AlaskaNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Ice_Climbing_on_the_Root_Glacier_%283%29_%2821599058195%29.jpg/960px-Ice_Climbing_on_the_Root_Glacier_%283%29_%2821599058195%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Ice_Climbing_on_the_Root_Glacier_%283%29_%2821599058195%29.jpg/1920px-Ice_Climbing_on_the_Root_Glacier_%283%29_%2821599058195%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Ice_Climbing_on_the_Root_Glacier_(3)_(21599058195).jpg",
+      "author": "National Park Service, Alaska Region",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Kennicott_and_Root_Glacier_Ice_Fall%2C_Wrangell-St.Elias_National_Park_%2810106088903%29.jpg/960px-Kennicott_and_Root_Glacier_Ice_Fall%2C_Wrangell-St.Elias_National_Park_%2810106088903%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Kennicott_and_Root_Glacier_Ice_Fall%2C_Wrangell-St.Elias_National_Park_%2810106088903%29.jpg/1920px-Kennicott_and_Root_Glacier_Ice_Fall%2C_Wrangell-St.Elias_National_Park_%2810106088903%29.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Kennicott_and_Root_Glacier_Ice_Fall,_Wrangell-St.Elias_National_Park_(10106088903).jpg",
+      "author": "Christoph Strässler from Oberdorf BL, Schweiz",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Glacier_Landforms_Lateral_Moraine%2C_Root_Glacier_%2832239101190%29.jpg/960px-Glacier_Landforms_Lateral_Moraine%2C_Root_Glacier_%2832239101190%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Glacier_Landforms_Lateral_Moraine%2C_Root_Glacier_%2832239101190%29.jpg/1920px-Glacier_Landforms_Lateral_Moraine%2C_Root_Glacier_%2832239101190%29.jpg",
+      "width": 960,
+      "height": 435,
+      "page": "https://commons.wikimedia.org/wiki/File:Glacier_Landforms_Lateral_Moraine,_Root_Glacier_(32239101190).jpg",
+      "author": "NPS Natural Resources",
+      "license": "Public domain"
+    }
+  ],
+  "wrst-glacier-hike": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Mount_Blackburn_and_Hikers_on_Root_Glacier_%2821607868461%29.jpg/960px-Mount_Blackburn_and_Hikers_on_Root_Glacier_%2821607868461%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Mount_Blackburn_and_Hikers_on_Root_Glacier_%2821607868461%29.jpg/1920px-Mount_Blackburn_and_Hikers_on_Root_Glacier_%2821607868461%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Mount_Blackburn_and_Hikers_on_Root_Glacier_(21607868461).jpg",
+      "author": "National Park Service, Alaska Region",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Hikers_Having_a_Snack_Overlooking_the_Root_Glacier_%2821571284716%29.jpg/960px-Hikers_Having_a_Snack_Overlooking_the_Root_Glacier_%2821571284716%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Hikers_Having_a_Snack_Overlooking_the_Root_Glacier_%2821571284716%29.jpg/1920px-Hikers_Having_a_Snack_Overlooking_the_Root_Glacier_%2821571284716%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Hikers_Having_a_Snack_Overlooking_the_Root_Glacier_(21571284716).jpg",
+      "author": "National Park Service, Alaska Region",
+      "license": "Public domain"
+    }
+  ],
+  "wrst-bonanza-mine": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Bonanza_mine%2C_Kennicott%2C_Alaska.jpg/960px-Bonanza_mine%2C_Kennicott%2C_Alaska.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Bonanza_mine%2C_Kennicott%2C_Alaska.jpg/1920px-Bonanza_mine%2C_Kennicott%2C_Alaska.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Bonanza_mine,_Kennicott,_Alaska.jpg",
+      "author": "Icewedge",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Near_bonanza_mine_-_panoramio.jpg/960px-Near_bonanza_mine_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Near_bonanza_mine_-_panoramio.jpg/1920px-Near_bonanza_mine_-_panoramio.jpg",
+      "width": 960,
+      "height": 751,
+      "page": "https://commons.wikimedia.org/wiki/File:Near_bonanza_mine_-_panoramio.jpg",
+      "author": "Eric Spenle",
+      "license": "CC BY 3.0"
+    }
+  ],
+  "wrst-flightseeing": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Kennicott_and_Root_Glacier%2C_Wrangell-St.Elias_National_Park_%2810106069636%29.jpg/960px-Kennicott_and_Root_Glacier%2C_Wrangell-St.Elias_National_Park_%2810106069636%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Kennicott_and_Root_Glacier%2C_Wrangell-St.Elias_National_Park_%2810106069636%29.jpg/1920px-Kennicott_and_Root_Glacier%2C_Wrangell-St.Elias_National_Park_%2810106069636%29.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Kennicott_and_Root_Glacier,_Wrangell-St.Elias_National_Park_(10106069636).jpg",
+      "author": "Christoph Strässler from Oberdorf BL, Schweiz",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Little_Bremner_Glacier%2C_Little_Bremner_River%2C_and_Tebay_Falls_%282%29_%2821622868681%29.jpg/960px-Little_Bremner_Glacier%2C_Little_Bremner_River%2C_and_Tebay_Falls_%282%29_%2821622868681%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Little_Bremner_Glacier%2C_Little_Bremner_River%2C_and_Tebay_Falls_%282%29_%2821622868681%29.jpg/1920px-Little_Bremner_Glacier%2C_Little_Bremner_River%2C_and_Tebay_Falls_%282%29_%2821622868681%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Little_Bremner_Glacier,_Little_Bremner_River,_and_Tebay_Falls_(2)_(21622868681).jpg",
+      "author": "AlaskaNPS",
+      "license": "Public domain"
+    }
+  ],
+  "wrst-slana": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Nabesna_Road_-_Wrangell-St_Elias_%2814442357570%29.jpg/960px-Nabesna_Road_-_Wrangell-St_Elias_%2814442357570%29.jpg",
+      "large": "https://upload.wikimedia.org/wikipedia/commons/8/83/Nabesna_Road_-_Wrangell-St_Elias_%2814442357570%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Nabesna_Road_-_Wrangell-St_Elias_(14442357570).jpg",
+      "author": "AlaskaNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Nabesna_Road_-_Wrangell-St_Elias_%2814625779701%29.jpg/960px-Nabesna_Road_-_Wrangell-St_Elias_%2814625779701%29.jpg",
+      "large": "https://upload.wikimedia.org/wikipedia/commons/5/58/Nabesna_Road_-_Wrangell-St_Elias_%2814625779701%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Nabesna_Road_-_Wrangell-St_Elias_(14625779701).jpg",
+      "author": "AlaskaNPS",
+      "license": "Public domain"
+    }
+  ],
+  "wrst-nabesna-road": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Nabesna_Road_-_Wrangell-St_Elias_%2814606025656%29.jpg/960px-Nabesna_Road_-_Wrangell-St_Elias_%2814606025656%29.jpg",
+      "large": "https://upload.wikimedia.org/wikipedia/commons/0/02/Nabesna_Road_-_Wrangell-St_Elias_%2814606025656%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Nabesna_Road_-_Wrangell-St_Elias_(14606025656).jpg",
+      "author": "AlaskaNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Nabesna_Road_-_Wrangell-St_Elias_%2814442614107%29.jpg/960px-Nabesna_Road_-_Wrangell-St_Elias_%2814442614107%29.jpg",
+      "large": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Nabesna_Road_-_Wrangell-St_Elias_%2814442614107%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Nabesna_Road_-_Wrangell-St_Elias_(14442614107).jpg",
+      "author": "AlaskaNPS",
+      "license": "Public domain"
+    }
+  ],
+  "wrst-skookum-volcano": [],
+  "wrst-worthington-glacier": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/View_of_the_Worthington_Glacier_from_the_Richardson_Highway_outside_of_Valdez%2C_Alaska.jpg/960px-View_of_the_Worthington_Glacier_from_the_Richardson_Highway_outside_of_Valdez%2C_Alaska.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/View_of_the_Worthington_Glacier_from_the_Richardson_Highway_outside_of_Valdez%2C_Alaska.jpg/1920px-View_of_the_Worthington_Glacier_from_the_Richardson_Highway_outside_of_Valdez%2C_Alaska.jpg",
+      "width": 960,
+      "height": 635,
+      "page": "https://commons.wikimedia.org/wiki/File:View_of_the_Worthington_Glacier_from_the_Richardson_Highway_outside_of_Valdez,_Alaska.jpg",
+      "author": "OKJaguar",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Worthington_Glacier%2C_desde_la_carretera_a_Valdez_-_panoramio.jpg/960px-Worthington_Glacier%2C_desde_la_carretera_a_Valdez_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Worthington_Glacier%2C_desde_la_carretera_a_Valdez_-_panoramio.jpg/1920px-Worthington_Glacier%2C_desde_la_carretera_a_Valdez_-_panoramio.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Worthington_Glacier,_desde_la_carretera_a_Valdez_-_panoramio.jpg",
+      "author": "Manuel Velazquez",
+      "license": "CC BY 3.0"
+    }
   ]
 };

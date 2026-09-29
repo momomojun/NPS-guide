@@ -1,4 +1,4 @@
-// 由 scripts/build-fees.mjs 生成，请勿手改。门票来自 NPS API（feespasses），2026-09-28 查。
+// 由 scripts/build-fees.mjs 生成，请勿手改。门票来自 NPS API（feespasses），2026-09-29 查。
 export interface ParkFees {
   /** 自驾车（含车上所有人），美元；免费的公园为 0 */
   vehicle: number;
@@ -9,7 +9,7 @@ export interface ParkFees {
   note?: string;
 }
 
-export const feesUpdated = "2026-09-28";
+export const feesUpdated = "2026-09-29";
 
 export const parkFees: Record<string, ParkFees> = {
   yose: {"vehicle":35,"perPerson":20,"motorcycle":30},
@@ -34,4 +34,6 @@ export const parkFees: Record<string, ParkFees> = {
   cany: {"vehicle":30,"perPerson":15,"motorcycle":25},
   care: {"vehicle":20,"perPerson":10,"motorcycle":15},
   dena: {"vehicle":0,"perPerson":15},
+  kefj: {"vehicle":0,"note":"公园不收门票；峡湾和潮水冰川只能坐船看，游船票才是主要花费"},
+  wrst: {"vehicle":0,"note":"公园不收门票；去 Kennecott 的私营接驳车、选矿厂导览和观光飞行另付"},
 };

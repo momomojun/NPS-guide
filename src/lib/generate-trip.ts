@@ -232,7 +232,10 @@ export function generateTrip(input: GenerateInput, context: GenerateContext): { 
 
   // 还有太满或回住处太晚的天：去掉那天分数最低的景点（尽量不动必去），重新排
   for (let round = 0; round < 12; round++) {
-    const busyDay = timelines(trip).findIndex(({ stops, timeline }) => stops.length > 1 && tooLong(timeline));
+    // 只剩一个景点的天一般不动，除非它不是必去、又是为了它才超时（比如最后一天绕去 Nabesna Road 再回机场）
+    const removable = (stops: PlanStop[]) =>
+      stops.length > 1 || (stops.length === 1 && !context.stops.find((stop) => stop.id === stops[0].id)?.mustSee);
+    const busyDay = timelines(trip).findIndex(({ stops, timeline }) => removable(stops) && tooLong(timeline));
     if (busyDay < 0) break;
     const candidates = trip.days[busyDay]
       .map((item) => context.stops.find((stop) => stop.id === item.id)!)

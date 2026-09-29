@@ -776,9 +776,65 @@ export const parks: Park[] = [
     gateway: { nameZh: "德纳里游客中心", lat: 63.7373, lon: -148.8963 },
     timeZone: "America/Anchorage",
     airports: ["ANC", "FAI"],
+    nearby: ["kefj", "wrst"],
     nonresidentSurcharge: false,
     lodgingTip:
       "园内几乎没有普通酒店，住宿集中在入口外的 Nenana Canyon（酒店、餐厅、漂流公司都在这一带）和北边约 15 分钟的 Healy；夏季旺季房价高、要早订。南边的 Cantwell、Talkeetna 适合顺路过夜。",
+  },
+  {
+    code: "kefj",
+    nameZh: "基奈峡湾",
+    nameEn: "Kenai Fjords",
+    region: "alaska",
+    tagline: "潮水冰川与峡湾游船",
+    stateEn: "Alaska",
+    hero: "kefj-exit-glacier",
+    intro:
+      "哈丁冰原覆盖了公园一半以上的面积，近 40 条冰川从冰原流下，有的一直流进海里，在峡湾尽头崩落。公园大部分只能坐船或小飞机进去，开车能到的只有 Seward 附近的 Exit Glacier；夏天从 Seward 出发的游船能开到潮水冰川前，一路常碰到座头鲸、虎鲸、海獭和海鹦。",
+    bestMonths: [6, 7, 8],
+    seasonNote:
+      "6–8 月游船班次最多、Exit Glacier 的路和步道都通；5 月和 9 月人少但天气多变；10 月底到次年 5 月中 Exit Glacier 路不通汽车，去冰川的游船也停航。",
+    areas: {
+      "exit-glacier": "Exit Glacier",
+      seward: "Seward 小镇",
+      fjords: "峡湾 · 复活湾（坐船）",
+      highway: "Seward 公路（安克雷奇来的路上）",
+    },
+    gateway: { nameZh: "基奈峡湾国家公园游客中心（Seward）", lat: 60.11628, lon: -149.43973 },
+    timeZone: "America/Anchorage",
+    airports: ["ANC"],
+    nearby: ["dena", "wrst"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内没有开车能到的住宿，大家都住 Seward：港口一带酒店、民宿最多，走路就到游船码头，到 Exit Glacier 约 20 分钟；夏季房价高，7 月 4 日前后和周末很早订满。想便宜安静可以住北边约 35 分钟的 Moose Pass 或 1 小时的 Cooper Landing；从安克雷奇当天来回单程要开约 2.5 小时，也可以坐阿拉斯加铁路的火车。",
+  },
+  {
+    code: "wrst",
+    nameZh: "兰格尔–圣伊莱亚斯",
+    nameEn: "Wrangell–St. Elias",
+    region: "alaska",
+    tagline: "美国最大的国家公园",
+    stateEn: "Alaska",
+    hero: "wrst-kennecott",
+    intro:
+      "美国面积最大的国家公园，约 5.3 万平方公里，比瑞士还大，美国 16 座最高峰里有 9 座在这里。只有两条砂石路通进来：南边的 McCarthy Road 通往 1938 年关闭的 Kennecott 铜矿镇和 Root 冰川，北边的 Nabesna Road 穿过火山和苔原；更深的地方只能坐小飞机。",
+    bestMonths: [6, 7, 8],
+    seasonNote:
+      "6–8 月 McCarthy 一带的接驳车、导览和住宿都开，路况最好；9 月上旬秋色好、人少，但店铺和导览陆续关门；冬季大部分设施关闭，McCarthy Road 只做基本养护。",
+    areas: {
+      "copper-center": "Copper Center · 游客中心",
+      "mccarthy-road": "Chitina · McCarthy Road",
+      kennecott: "McCarthy · Kennecott",
+      nabesna: "Nabesna Road（北侧）",
+      richardson: "Richardson 公路 · Worthington 冰川",
+    },
+    gateway: { nameZh: "兰格尔–圣伊莱亚斯游客中心（Copper Center）", lat: 62.02005, lon: -145.36344 },
+    timeZone: "America/Anchorage",
+    airports: ["ANC", "FAI"],
+    nearby: ["kefj", "dena"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内住宿集中在 McCarthy 和 Kennecott，只在夏季营业、房间少，要早订；路尽头步行桥的西岸有营地和小木屋。去 McCarthy 前一晚可以住 Copper Center 或 Glennallen（全年有旅馆、加油站和超市），第二天一早出发，到路尽头约 4–4.5 小时；多数租车公司不允许开砂石路，订车前先问清楚。",
   },
   {
     code: "banf",

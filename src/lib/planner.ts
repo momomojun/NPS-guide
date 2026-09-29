@@ -51,11 +51,11 @@ export interface DayContext {
 
 /**
  * 要坐的班车：线路 id 和怎么坐——ride 同一条线上的两站之间只坐车，
- * in 开车到换乘点再坐进去，out 坐回换乘点再开车走
+ * in 开车到换乘点再坐进去，out 坐回换乘点再开车走，walk 同一站的两个景点之间走过去
  */
 export interface ShuttleUse {
   line: string;
-  mode: "ride" | "in" | "out";
+  mode: "ride" | "in" | "out" | "walk";
 }
 
 /** 一段路：多少分钟，要不要坐班车 */
@@ -150,6 +150,12 @@ function stayLeg(lodging: LodgingPoint, stop: PlanStop, direction: "out" | "back
         const node = direction === "out" ? b : a;
         return node ? lodgingLeg(lodging, hubStop(node, atStop.system.hub), direction) - TRANSITION_MIN : 0;
       });
+      if (ride && (!best || ride.minutes < best.minutes)) best = ride;
+    }
+    // 住处在不通车的线上（Kennecott 的酒店），景点在线外：先坐车回换乘点，再开车过去
+    for (const atLodging of best ? [] : onLines.filter((ride) => ride.system.carFree)) {
+      const [from, to] = direction === "out" ? [atLodging, null] : [null, atLodging];
+      const ride = shuttleLeg(from, to, date, (a, b) => travelMinutes(a ?? stop.id, b ?? stop.id));
       if (ride && (!best || ride.minutes < best.minutes)) best = ride;
     }
     if (best) return { minutes: best.minutes + TRANSITION_MIN, shuttle: { line: best.system.id, mode: best.mode } };

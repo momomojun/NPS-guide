@@ -484,6 +484,42 @@ const EXCLUDE = {
   ],
   "glac-running-eagle-falls": ["Last July i took a couple of Red"],
   "glac-bowman-lake": ["Boulder Pass and Hole in the Wall"],
+  "kefj-exit-glacier-nature-center": ["Exit Glacier Demo Scan"],
+  "kefj-exit-glacier": ["Barack Obama tours"],
+  "kefj-fjords-cruise": ["Barack Obama tours"],
+  "kefj-visitor-center": [
+    "Admiral Papp Tours",
+    "Chinook's Waterfront",
+    "Boatlift in street",
+    "2018-09-16 Fireboat",
+    "Fairweather at Seward",
+    "Swetman House",
+    "Swim (",
+  ],
+  "kefj-sealife-center": [
+    "Mount Mary across Resurrection Bay",
+    "Hoben Park Seward",
+    "St Peters church Seward",
+    "Green forest by a blue lake",
+    "Seward Brewing Company",
+  ],
+  "wrst-visitor-center": [
+    "Copper Center - Wrangell-St Elias (",
+    "Copper Center Garage",
+    "Mt. Blackburn, Donoho Peak",
+    "Copper River Princess Lodge",
+  ],
+  // Mount Chitina、Chitina Glacier 在公园深处，不是 Chitina 小镇
+  "wrst-chitina": ["Mount Chitina", "Chitina River, Mt Bona", "Chitina Glacier"],
+  "wrst-mccarthy": [
+    "McCarthy Creek Headwaters",
+    "McCarthy Road - Wrangell-St Elias",
+    "Anxiously awaiting the parade",
+    "Tators in Disguise",
+    "Kids on bikes",
+  ],
+  "wrst-glacier-hike": ["The guardians of the Columbia"],
+  "wrst-bonanza-mine": ["AK-June-15"],
 };
 
 /**
@@ -709,6 +745,34 @@ const TUNING = {
   "glac-two-medicine-lake": { search: ["Two Medicine Lake", "Sinopah Mountain"] },
   "glac-goat-lick": { search: ["Goat Lick Glacier", "mountain goat Glacier National Park"] },
   "glac-bowman-lake": { search: ["Bowman Lake Glacier", "Bowman Lake Montana"] },
+  "kefj-exit-glacier-nature-center": { search: ["Exit Glacier Nature Center", "Exit Glacier pavilion"] },
+  // Seward 镇上的附近照片五花八门（游轮、民居、啤酒馆），只按名字搜
+  "kefj-visitor-center": { geo: false, search: ["Kenai Fjords National Park Visitor Center", "Seward Small Boat Harbor"] },
+  "kefj-sealife-center": { geo: false, search: ["Alaska SeaLife Center"] },
+  "kefj-sea-kayak": { search: ["kayaking Resurrection Bay", "kayak Aialik Bay"] },
+  "kefj-fjords-cruise": { search: ["Aialik Glacier", "Holgate Glacier", "Kenai Fjords tour boat"] },
+  "kefj-harding-icefield": { search: ["Harding Icefield Trail", "Harding Icefield"] },
+  "wrst-visitor-center": {
+    geo: false,
+    search: ["Wrangell-St. Elias National Park Visitor Center", "Copper Center Alaska"],
+  },
+  "wrst-mccarthy": { geo: false, search: ["McCarthy Alaska", "Main Street McCarthy"] },
+  "wrst-slana": { search: ["Slana Ranger Station", "Nabesna Road Wrangell"] },
+  "wrst-skookum-volcano": { name: false, search: ["Skookum Volcano Trail", "Skookum Creek volcano"] },
+  "wrst-nabesna-road": { search: ["Nabesna Road", "Twin Lakes Nabesna"] },
+  "wrst-mccarthy-road": { search: ["Kuskulana River Bridge", "Gilahina Trestle", "McCarthy Road Alaska"] },
+  "wrst-chitina": { search: ["Chitina Alaska", "Copper River fishwheel"] },
+  "wrst-flightseeing": {
+    geo: false,
+    search: ["Kennicott Glacier aerial", "Wrangell Mountains aerial", "Wrangell Mountain Air"],
+  },
+  // 集合点在矿镇里，附近的照片都是老矿楼
+  "wrst-glacier-hike": { geo: false, search: ["Root Glacier hikers", "Ice Climbing on the Root Glacier"] },
+  "wrst-bonanza-mine": { geo: false, search: ["Bonanza Mine Kennecott", "Bonanza Ridge Kennecott"] },
+  // 步道口在矿镇里，附近的照片多是老矿楼
+  "wrst-root-glacier": { geo: false, search: ["Root Glacier", "Root Glacier Trail"] },
+  "wrst-kennecott": { search: ["Kennecott Mines", "Kennecott Alaska"] },
+  "wrst-mill-tour": { search: ["Kennecott Concentration Mill", "Kennecott mill"] },
 };
 
 /** 搜索时代表公园的词。红杉和国王峡谷的照片一般只写其中一个；拉森的照片很少写全称 */
@@ -781,6 +845,8 @@ const PARK_IN_NAME = {
   jotr: /joshua tree national/i,
   romo: /rocky mountain national/i,
   glac: /glacier national/i,
+  kefj: /kenai fjords/i,
+  wrst: /wrangell/i,
 };
 const BAD_CATEGORY =
   /\b(paintings?|drawings?|maps?|satellite|aerial|ISS Expedition|astronaut|HAER|HABS|book scans|illustrations?|engravings?|lithographs?|postcards?|historical images|black and white photographs|signs|information boards|plaques|diagrams?|logos?)\b/i;

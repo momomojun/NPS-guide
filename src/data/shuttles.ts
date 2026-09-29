@@ -51,6 +51,11 @@ export interface ShuttleSystem {
    * 露易丝湖边的停车场一早就满，接驳车也只接持班车票的人）
    */
   transferOnly?: boolean;
+  /**
+   * 住在线上的也不能开车进出（Kennecott：车都停在河对岸的步行桥边），去线外的景点也要先坐车回换乘点；
+   * 不填表示线上的住处可以开车进出（锡安峡谷里的 Zion Lodge）
+   */
+  carFree?: boolean;
   /** 不开班车的季节怎么办（显示在提示里） */
   offSeasonZh?: string;
   /** 票价、预约、注意事项 */
@@ -370,6 +375,44 @@ export const shuttleSystems: ShuttleSystem[] = [
       "免费。往东的车从游客中心直达 South Kaibab 步道口（官方说 9 分钟），再到 Yaki Point、Pipe Creek Vista 后回游客中心；往西的车去 Mather Point 和 Yavapai 地质博物馆（这两处也能自驾）。秋季 6–9 点每 20 分钟、之后每 15 分钟一班，末班在日落后约 1 小时；夏季首班提前到 5 点。除步道口外的分钟数是估算。",
     scheduleYear: 2026,
     source: "https://www.nps.gov/grca/planyourvisit/kaibab-orange-route.htm",
+    checked: "2026-09-28",
+  },
+  {
+    id: "wrst-kennecott",
+    park: "wrst",
+    nameZh: "Kennecott 私营接驳车（McCarthy Road 尽头步行桥出发）",
+    seasons: [{ from: "05-25", to: "09-15", headwayMin: 45 }],
+    hub: {
+      nameZh: "McCarthy Road 尽头的 Kennicott River 步行桥",
+      node: "wrst-mccarthy",
+      lat: 61.43386,
+      lon: -142.94361,
+      parkingZh:
+        "所有车辆都要停在河西岸路尽头（停车场多为私人收费），走过步行桥，在东岸坐接驳车；到 McCarthy 小镇约 0.5 英里，到 Kennecott 约 5 英里。",
+    },
+    stops: [
+      {
+        id: "kennecott",
+        nameZh: "Kennecott 矿镇",
+        nameEn: "Kennecott Mines National Historic Landmark",
+        minutesFromHub: 20,
+        attractions: [
+          "wrst-kennecott",
+          "wrst-mill-tour",
+          "wrst-root-glacier",
+          "wrst-glacier-hike",
+          "wrst-bonanza-mine",
+        ],
+        lodging: ["wrst-stay-kennicott-glacier-lodge"],
+      },
+    ],
+    boardingMin: 10,
+    carFree: true,
+    offSeasonZh:
+      "接驳车只在夏季运行；冬天只能从 McCarthy Road 尽头徒步或滑雪 5 英里到 Kennecott（这条路冬天不定期养护）。",
+    noteZh:
+      "不是 NPS 运营：桥东岸有私营接驳车（例如 Copper Town Shuttle），各家时刻和票价随季节变，大约每 30 分钟到 1 小时一班，夏季时刻贴在桥边的避雨亭里。私家车不能开到 Kennecott，也可以步行或骑车（McCarthy 到 Kennecott 约 4.5 英里）；分钟数是按距离估算的。运营季节是按 Kennecott 导览季估算的（大约 5 月底到 9 月中）。",
+    source: "https://www.nps.gov/places/000/kennicott-river-bridge.htm",
     checked: "2026-09-28",
   },
   {

@@ -95,10 +95,11 @@ export function shuttleLeg(
   to: ShuttleRide | null,
   date: string,
   drive: (fromNode: string | null, toNode: string | null) => number,
-): { minutes: number; system: ShuttleSystem; mode: "ride" | "in" | "out" } | null {
+): { minutes: number; system: ShuttleSystem; mode: "ride" | "in" | "out" | "walk" } | null {
   if (!from && !to) return null;
-  // 同一条线上：直接坐车过去
+  // 同一条线上：直接坐车过去；同一站的几个景点（Kennecott 矿镇里、锡安同一站下车的几条步道）走过去就行
   if (from && to && from.system === to.system) {
+    if (from.stop.id === to.stop.id) return { minutes: 0, system: from.system, mode: "walk" };
     return {
       minutes: Math.abs(from.stop.minutesFromHub - to.stop.minutesFromHub) + waitOf(from.system, date),
       system: from.system,

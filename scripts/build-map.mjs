@@ -90,6 +90,8 @@ const VIEWS = {
     states: ["Alaska"],
     focus: ["Alaska"],
     labels: { Alaska: "ALASKA" },
+    /** 三座公园都在中南部，只画这一块，否则德纳里、基奈峡湾、兰格尔的圆点会挤在安克雷奇周围；东边多留点地方放兰格尔的名字 */
+    bounds: { west: -155, east: -135, south: 58.8, north: 65.2 },
     margin: 0.05,
     /** 去掉阿留申群岛和东南狭长地带的小岛，只画本土 */
     keep: (ring) => {

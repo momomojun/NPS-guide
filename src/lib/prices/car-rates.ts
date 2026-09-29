@@ -2,8 +2,7 @@
 // car 是最便宜 5 辆轿车（经济型到全尺寸）的中位数，suv 是页面上最便宜的 SUV。
 // 淡旺季差很多（夏天常贵一倍），异地还车另算，只当参考；实际价格点比价链接看。
 // 西黄石（WYS）是季节性机场，10 月基本没车，没有参考价。
-// 新加公园的机场（摩押、大章克申、丹佛、佩吉、卡尔加里、埃德蒙顿、温哥华、棕榈泉）是 2026-09-28 查的同一段日期；
-// 安大略（ONT）、橙县（SNA）和冰川附近的 FCA、MSO、GTF 还没查，按默认价估。
+// 新加公园的机场是 2026-09-28 / 09-29 查的同一段日期。
 export const carRatesDate = "2026-09-26";
 export const carRatesSource = "Kayak";
 
@@ -57,6 +56,11 @@ export const carRates: Record<string, CarRate> = {
   YEG: { car: 26, suv: 29 },
   YVR: { car: 29, suv: 33 },
   PSP: { car: 43, suv: 40 },
+  ONT: { car: 43, suv: 47 },
+  SNA: { car: 39, suv: 38 },
+  FCA: { car: 41, suv: 53 },
+  MSO: { car: 27, suv: 39 },
+  GTF: { car: 50, suv: 52 },
 };
 
 /** 没有这个机场的参考价时按这个估（上面各机场轿车价的中位数左右） */

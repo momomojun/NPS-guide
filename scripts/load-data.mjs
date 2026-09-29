@@ -28,6 +28,8 @@ import { yoho } from "../src/data/attractions/yoho.ts";
 import { joshuaTree } from "../src/data/attractions/jotr.ts";
 import { rockyMountain } from "../src/data/attractions/romo.ts";
 import { glacier } from "../src/data/attractions/glac.ts";
+import { kenaiFjords } from "../src/data/attractions/kefj.ts";
+import { wrangellStElias } from "../src/data/attractions/wrst.ts";
 import { lodgingOptions } from "../src/data/lodging.ts";
 import { parks } from "../src/data/parks.ts";
 
@@ -63,6 +65,8 @@ export const attractions = [
   ...joshuaTree,
   ...rockyMountain,
   ...glacier,
+  ...kenaiFjords,
+  ...wrangellStElias,
 ];
 
 export const USER_AGENT = "nps-guide/0.1 (personal trip planner; https://github.com/momomojun/NPS-guide)";

@@ -27,6 +27,8 @@ import { yoho } from "./yoho";
 import { joshuaTree } from "./jotr";
 import { rockyMountain } from "./romo";
 import { glacier } from "./glac";
+import { kenaiFjords } from "./kefj";
+import { wrangellStElias } from "./wrst";
 import { trails, type TrailPath } from "./trails.generated";
 import type { Attraction, GooglePlace, Photo } from "./types";
 import { yellowstone } from "./yell";
@@ -105,6 +107,8 @@ const withData: AttractionWithPhoto[] = [
   ...joshuaTree,
   ...rockyMountain,
   ...glacier,
+  ...kenaiFjords,
+  ...wrangellStElias,
 ].map((attraction) => ({
   ...attraction,
   photo: gallery[attraction.id]?.[0],

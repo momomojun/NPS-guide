@@ -19,10 +19,10 @@ A Chinese-language trip planner for U.S. national parks and the Canadian Rockies
 ![MapLibre GL](https://img.shields.io/badge/MapLibre_GL-6-1c1b18)
 ![PWA](https://img.shields.io/badge/PWA-offline-1c1b18?logo=pwa&logoColor=white)
 <br>
-![25 national parks](https://img.shields.io/badge/national_parks-25-a04c2e)
+![27 national parks](https://img.shields.io/badge/national_parks-27-a04c2e)
 ![4 scenic sites](https://img.shields.io/badge/scenic_sites-4-a04c2e)
-![462 attractions](https://img.shields.io/badge/attractions-462-a04c2e)
-![191 trails](https://img.shields.io/badge/trails-191-a04c2e)
+![487 attractions](https://img.shields.io/badge/attractions-487-a04c2e)
+![196 trails](https://img.shields.io/badge/trails-196-a04c2e)
 ![49 creator routes](https://img.shields.io/badge/creator_routes-49-a04c2e)
 
 </div>
@@ -39,11 +39,11 @@ NPS Guide 把这些按日期串起来：选好公园和日子，它告诉你那�
 
 ## 功能
 
-- **景点地图**：22 座美国国家公园、加拿大落基山 3 座国家公园和 4 处园外名胜，共 462 个景点，地图和列表联动；191 条徒步路线按 OpenStreetMap 真实步道画出；每个景点最多 6 张照片、Google 评分和园内热度排名；普通地图、卫星图和 3D 地形随时切换。
+- **景点地图**：24 座美国国家公园、加拿大落基山 3 座国家公园和 4 处园外名胜，共 487 个景点，地图和列表联动；196 条徒步路线按 OpenStreetMap 真实步道画出；每个景点最多 6 张照片、Google 评分和园内热度排名；普通地图、卫星图和 3D 地形随时切换。
 - **一键生成攻略**：选公园（可以几座顺路的一起，比如盐湖城进出、先大提顿再黄石）、月份或日期、天数、从哪个机场或城市出发，自动挑景点、排出每天几点到哪、定好每晚住处（园内酒店、门户小镇或民宿区，附 Airbnb 链接）。
 - **按日期提醒**：按当天日出日落安排日出 / 日落观景点；季节性关闭、许可证和预约写明原因和替代方案；16 天天气预报和 NWS 预警；NPS 实时公告附中文翻译，对到具体哪天哪个景点。
 - **要提前订的**：按行程日期算出园内住宿、营地、许可证抽签（天使降临、半穹顶、The Wave……）、入园预约和船票各自哪天开订、还剩几天，错过了还有什么机会；可以一键加到手机日历，开放前提醒。
-- **班车算进时间**：锡安峡谷、大峡谷 Hermit Road、马里波萨巨杉林、班夫梦莲湖这些私家车开不进去的路，时间按“开到换乘点 + 等车 + 坐车”算，赶不上末班车会提醒。
+- **班车算进时间**：锡安峡谷、大峡谷 Hermit Road、马里波萨巨杉林、班夫梦莲湖、阿拉斯加的 Kennecott 这些私家车开不进去的路，时间按“开到换乘点 + 等车 + 坐车”算，赶不上末班车会提醒。
 - **出发后也能改**：拖拽排序、换到别的天、标记完成或跳过，按实际进度重排剩下的行程；出发后打开是“今天”：下一站、按现在的时间几点能到、离日落还有多久、一键导航。
 - **补给和预算**：每晚住处附近的超市、加油站、快充和亚洲超市，进园前的最后补给点；门票（含 2026 年非居民附加费、买年卡划不划算）、住宿、吃饭、油费、租车、机票，合计和人均。
 - **什么时候去**：选一个出发日期，所有公园分成“最适合 / 可以去 / 不太合适”，每座写明原因（开放情况、往年同期的天气、特别活动）。
@@ -101,7 +101,7 @@ NPS Guide 把这些按日期串起来：选好公园和日子，它告诉你那�
 
 ## 覆盖的公园
 
-**美国国家公园**（22 座）
+**美国国家公园**（24 座）
 
 | 片区 | 公园 | 代码 | 2026 年非居民附加费 |
 |---|---|---|---|
@@ -127,6 +127,8 @@ NPS Guide 把这些按日期串起来：选好公园和日子，它告诉你那�
 | 犹他东部 · 摩押 | 峡谷地 Canyonlands | `cany` | — |
 | 犹他东部 · 摩押 | 圆顶礁 Capitol Reef | `care` | — |
 | 阿拉斯加 | 德纳里 Denali | `dena` | — |
+| 阿拉斯加 | 基奈峡湾 Kenai Fjords | `kefj` | — |
+| 阿拉斯加 | 兰格尔–圣伊莱亚斯 Wrangell–St. Elias | `wrst` | — |
 
 附加费从 2026 年起对 16 岁以上的非美国居民收取；同车有人持有效年卡（美国居民年卡、非居民年卡或这座公园的年卡）整车免收，网站的预算里已经算进去了。
 
@@ -208,12 +210,12 @@ npm run dev                  # 打开 http://localhost:3000
 
 ## English
 
-**NPS Guide** is an unofficial, Chinese-language (Simplified & Traditional) trip planner for 22 U.S. national parks in the West: Yosemite, Sequoia & Kings Canyon, Channel Islands, Joshua Tree, Redwood, Lassen Volcanic, Crater Lake, Mount Rainier, Olympic, North Cascades, Yellowstone, Grand Teton, Glacier, Rocky Mountain, Death Valley, Zion, Bryce Canyon, Grand Canyon, Arches, Canyonlands, Capitol Reef and Denali. It also covers Banff, Jasper and Yoho in the Canadian Rockies, and four famous non-park sites listed separately: Antelope Canyon, Horseshoe Bend, Monument Valley and The Wave.
+**NPS Guide** is an unofficial, Chinese-language (Simplified & Traditional) trip planner for 24 U.S. national parks in the West: Yosemite, Sequoia & Kings Canyon, Channel Islands, Joshua Tree, Redwood, Lassen Volcanic, Crater Lake, Mount Rainier, Olympic, North Cascades, Yellowstone, Grand Teton, Glacier, Rocky Mountain, Death Valley, Zion, Bryce Canyon, Grand Canyon, Arches, Canyonlands, Capitol Reef, Denali, Kenai Fjords and Wrangell–St. Elias. It also covers Banff, Jasper and Yoho in the Canadian Rockies, and four famous non-park sites listed separately: Antelope Canyon, Horseshoe Bend, Monument Valley and The Wave.
 
-- **Attraction maps**: 462 curated sights, 191 hiking trails traced on real OpenStreetMap paths, photo galleries, satellite and 3D terrain views.
+- **Attraction maps**: 487 curated sights, 196 hiking trails traced on real OpenStreetMap paths, photo galleries, satellite and 3D terrain views.
 - **Auto-generated itineraries**: pick parks, dates and an arrival airport, and get a day-by-day plan with times, drive durations, sunrise and sunset stops, and nightly lodging.
 - **Date-aware alerts**: seasonal closures, permits and reservations, a 16-day forecast, NWS warnings, and live NPS alerts translated into Chinese.
-- **Booking timeline**: when each lodge, campground, permit lottery, timed entry or boat ticket on your trip opens for booking, with calendar (.ics) reminders; mandatory shuttles (Zion, Grand Canyon, Mariposa Grove, Moraine Lake) are built into the timings.
+- **Booking timeline**: when each lodge, campground, permit lottery, timed entry or boat ticket on your trip opens for booking, with calendar (.ics) reminders; mandatory shuttles (Zion, Grand Canyon, Mariposa Grove, Moraine Lake, Kennecott) are built into the timings.
 - **On the road**: a “today” view with the next stop and live arrival times, trip sharing to your phone by link or QR code, and offline map downloads.
 - **Budget and logistics**: park fees (including the 2026 nonresident surcharge), lodging and meals, fuel or EV charging, car rental, flights, and supplies near each night's stay.
 - **Creator routes**: 49 routes from Chinese, English, Japanese, Korean and European YouTube and Bilibili creators.

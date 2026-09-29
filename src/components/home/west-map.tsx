@@ -40,6 +40,9 @@ const LABEL_SIDE: Record<string, Side> = {
   // 右边就是地图边缘
   romo: "left",
   glac: "right",
+  // 左边就是小图边框
+  kefj: "below",
+  wrst: "right",
 };
 
 const SIDE_CLASS: Record<Side, string> = {
@@ -112,11 +115,18 @@ function Shapes({
   );
 }
 
-function Marker({ park, view }: { park: MapPark; view: MapView }) {
+/** compact：阿拉斯加小图很窄，字小一号、大屏才显示英文名，长名字在连字符后换行（兰格尔–圣伊莱亚斯） */
+function Marker({ park, view, compact = false }: { park: MapPark; view: MapView; compact?: boolean }) {
   const point = view.parks[park.code];
   if (!point) return null;
   const [x, y] = point;
   const side = LABEL_SIDE[park.code] ?? "right";
+  const lines = (text: string) =>
+    (compact ? text.split(/(?<=–)/) : [text]).map((line) => (
+      <span key={line} className="block">
+        {line}
+      </span>
+    ));
   return (
     <Link
       href={park.href}
@@ -125,10 +135,14 @@ function Marker({ park, view }: { park: MapPark; view: MapView }) {
     >
       <span className="block size-3 rounded-full bg-ink ring-[5px] ring-ink/10 transition-all duration-500 group-hover:scale-125 group-hover:bg-clay-600 group-hover:ring-clay-600/20" />
       <span className={`absolute whitespace-nowrap ${SIDE_CLASS[side]}`}>
-        <span className="block font-serif text-sm leading-tight transition-colors duration-500 group-hover:text-clay-700 sm:text-lg">
-          {park.nameZh}
+        <span
+          className={`block font-serif leading-tight transition-colors duration-500 group-hover:text-clay-700 ${
+            compact ? "text-xs sm:text-sm xl:text-lg" : "text-sm sm:text-lg"
+          }`}
+        >
+          {lines(park.nameZh)}
         </span>
-        <span className="eyebrow hidden text-[10px] text-mute sm:block">{park.nameEn}</span>
+        <span className={`eyebrow hidden text-[10px] text-mute ${compact ? "xl:block" : "sm:block"}`}>{lines(park.nameEn)}</span>
       </span>
     </Link>
   );
@@ -160,7 +174,7 @@ export function WestMap({
         <div className="relative mt-2" style={{ aspectRatio: `${alaskaMap.width} / ${alaskaMap.height}` }}>
           <Shapes view={alaskaMap} cityNames={cityNames} textScale={3} />
           {alaskaParks.map((park) => (
-            <Marker key={park.code} park={park} view={alaskaMap} />
+            <Marker key={park.code} park={park} view={alaskaMap} compact />
           ))}
         </div>
       </div>
