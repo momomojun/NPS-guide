@@ -7,6 +7,7 @@ import type { ParkAlert } from "@/lib/alert-match";
 import { paceAdjusts, type PersonalPace } from "@/lib/personal-pace";
 import type { DayTimeline, TimelineEntry } from "@/lib/planner";
 import { formatClock } from "@/lib/sun";
+import { departuresOn } from "@/lib/tours";
 import { checkIn, checkOut, setItemStatus } from "@/lib/trip-edit";
 import type { Trip } from "@/lib/trip-store";
 import type { DayRow, DayView, PlannerText, ResolvedLodging } from "./types";
@@ -38,12 +39,13 @@ function NavLinks({ place, text }: { place: Place; text: PlannerText }) {
 /** 配速倍数：1.25、1.3 */
 const times = (factor: number) => String(Number(factor.toFixed(2)));
 
-/** 学到的配速一句话：“徒步大约是估算的 1.3 倍，其他景点大约是估算的 0.85 倍” */
+/** 学到的配速一句话：“徒步大约是估算的 1.3 倍，其他景点大约是估算的 0.85 倍，开车大约是估算的 1.2 倍” */
 export function paceParts(pace: PersonalPace, text: PlannerText): string {
   const t = text.plan.today;
   return [
     ...(pace.hike !== 1 ? [fill(t.paceHike, { x: times(pace.hike) })] : []),
     ...(pace.other !== 1 ? [fill(t.paceOther, { x: times(pace.other) })] : []),
+    ...(pace.drive !== 1 ? [fill(t.paceDrive, { x: times(pace.drive) })] : []),
   ].join("，");
 }
 
@@ -114,6 +116,9 @@ export function TodayPanel({
         ? fill(t.etaShuttle, { time: formatClock(arrivalOf(nextLive)), drive: duration(nextLive.driveMin), line: line(nextLive.shuttle.line) })
         : fill(t.eta, { time: formatClock(arrivalOf(nextLive)), drive: duration(nextLive.driveMin) });
     }
+    // 有固定班次的游船、导览团：说赶哪一班
+    const entry = now < plannedDepart ? nextPlanned : nextLive;
+    if (departuresOn(next.item.id, view.date)?.times.includes(entry.start)) timing += fill(t.tourCatch, { time: formatClock(entry.start) });
   }
   const delayLabel = delay > SLACK_MIN ? fill(t.late, { d: duration(delay) }) : delay < -SLACK_MIN ? fill(t.early, { d: duration(-delay) }) : null;
 
@@ -123,6 +128,8 @@ export function TodayPanel({
       ...(entry.warnings.includes("dark") ? [fill(t.warnDark, { name })] : []),
       ...(entry.warnings.includes("missSunset") ? [fill(t.warnSunset, { name })] : []),
       ...(entry.warnings.includes("lastShuttle") ? [fill(t.warnShuttle, { name })] : []),
+      ...(entry.warnings.includes("missDeparture") ? [fill(t.warnDeparture, { name })] : []),
+      ...(entry.warnings.includes("noService") ? [fill(t.warnNoService, { name })] : []),
     ];
   });
   if (live.lateReturn && live.returnAt !== undefined) warnings.push(fill(t.warnLate, { time: formatClock(live.returnAt) }));

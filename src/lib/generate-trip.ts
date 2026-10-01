@@ -11,6 +11,7 @@ import {
 } from "./planner";
 import { addDays } from "./dates";
 import { acrossClosedRoad, bestRoadDay, openChance, ROAD_LIKELY, roadDecides, roadFor, roadStatus } from "./roads";
+import { runsOn } from "./tours";
 import { planTrip } from "./trip-plan";
 import type { Trip, TripItem, TripLodging } from "./trip-store";
 
@@ -110,6 +111,11 @@ const REMOTE_DETOUR_FACTOR = 1.5;
 const REMOTE_DETOUR_MIN = 60;
 /** 为了让山路上的景点排到把握大的那天、两天整天对调时，整趟最多多开这么久的车 */
 const SWAP_DRIVE_MAX = 90;
+/**
+ * 单个山路景点挪到别的天：通车的把握至少多这么多（往年 20 年里多 4 年）才挪，
+ * 多开的车不超过它本身的停留（至少 FILL_DETOUR_MIN）；45% 挪到 55% 不值得多开一个多小时
+ */
+const MOVE_GAIN_MIN = 0.2;
 /** 超过这么久的徒步不自动排（可以手动加） */
 const MAX_HIKE_MIN: Record<Pace, number> = { relaxed: 240, normal: 420, packed: 600 };
 /** 园内景点之间平均每天开车的分钟数，估算时间预算用 */
@@ -142,6 +148,8 @@ export function generateTrip(input: GenerateInput, context: GenerateContext): { 
   // 路通了就能去的景点不再按开放月份算（月份只是粗算），路通了还要等步道化雪的两个都要看
   const tripDates = input.startDate ? Array.from({ length: input.days }, (_, day) => addDays(input.startDate, day)) : [];
   const closed = (stop: GuideStop) => {
+    // 有固定班次的游船、导览团：出发这几天都不开（比如冰川的红色老爷车团 6 月 20 日才开）
+    if (tripDates.length > 0 && !tripDates.some((date) => runsOn(stop.id, date))) return true;
     const byMonth = stop.openMonths !== undefined && !stop.openMonths.includes(input.month);
     const road = roadFor(stop.id);
     const best = road && tripDates.length > 0 ? bestRoadDay(road, tripDates) : null;
@@ -267,10 +275,13 @@ export function generateTrip(input: GenerateInput, context: GenerateContext): { 
     const without = day.stops.filter((stop) => stop.id !== id);
     return buildTimeline(day.stops, day.context).driveMin - buildTimeline(without, day.context).driveMin;
   };
+  /** 有固定班次的游船、导览团，按这天的安排赶不上最后一班 */
+  const missed = (timeline: ReturnType<typeof buildTimeline>) =>
+    timeline.entries.filter((entry) => entry.warnings.includes("missDeparture")).length;
   const tooLong = (timeline: ReturnType<typeof buildTimeline>) =>
-    timeline.overloaded || timeline.lateReturn || timeline.activeMin > DAY_LIMIT[input.pace];
+    timeline.overloaded || timeline.lateReturn || timeline.activeMin > DAY_LIMIT[input.pace] || missed(timeline) > 0;
 
-  // 还有太满或回住处太晚的天：去掉那天分数最低的景点（尽量不动必去），重新排
+  // 还有太满、回住处太晚或者赶不上游船班次的天：去掉那天分数最低的景点（尽量不动必去），重新排
   for (let round = 0; round < 12; round++) {
     // 只剩一个景点的天一般不动，除非它不是必去、又是为了它才超时（比如最后一天绕去 Nabesna Road 再回机场）
     const removable = (stops: PlanStop[]) =>
@@ -315,13 +326,14 @@ export function generateTrip(input: GenerateInput, context: GenerateContext): { 
   }
 
   // 按节奏还有空的天：把没排进去的景点按分数试着加回来，排完没有哪天变得更满、也没有为它绕远路才留下。
-  // 回住处太晚按晚了多少分钟算（已经晚了的天再加景点也算更满）
+  // 回住处太晚按晚了多少分钟算（已经晚了的天再加景点也算更满）；赶不上游船班次和太满一样算
   const excess = (current: Trip) =>
     timelines(current).reduce(
       (sum, { timeline }) =>
         sum +
         Math.max(0, timeline.activeMin - DAY_LIMIT[input.pace]) +
         (timeline.overloaded ? 1000 : 0) +
+        missed(timeline) * 1000 +
         (timeline.lateReturn ? 1000 + (timeline.returnAt ?? LATE_RETURN) - LATE_RETURN : 0),
       0,
     );
@@ -339,9 +351,11 @@ export function generateTrip(input: GenerateInput, context: GenerateContext): { 
   }
 
   // 季节性山路上的景点排到了往年通车不到一半的日子、这几天里又有把握大的一天（比如 6 月下旬去冰川，向阳大道排在第 2 天）：
-  // 试着把这两天整天对调（每天里面的顺序、每晚住哪重新排），没有变得更满、多开的车不多才换
+  // 试着把这两天整天对调（每天里面的顺序、每晚住哪重新排），没有变得更满、多开的车不多才换。
+  // 有固定班次的游船、导览团排到了不开的那天，也一样当成去不了，挪到开的日子
   if (tripDates.length > 0) {
     const chanceOn = (id: string, day: number) => {
+      if (!runsOn(id, tripDates[day])) return 0;
       const road = roadFor(id);
       const status = road ? roadStatus(road, tripDates[day]) : null;
       return status ? openChance(status) : 1;
@@ -370,6 +384,56 @@ export function generateTrip(input: GenerateInput, context: GenerateContext): { 
         best = { trip: trial, drive };
       }
       if (best) trip = best.trip;
+    }
+
+    // 整天对调完还剩的：单个景点挪到把握大的那天（比如冰川的隐湖观景点，跟着向阳大道去洛根山口的那天），
+    // 那天放不下就把那天的一个景点挪去别的一天；同样不能变得更满，把握要多不少、多开的车不能比它本身的停留还多
+    const startExcess = excess(trip);
+    for (let round = 0; round < 6; round++) {
+      const before = { bad: badCount(trip), drive: totalDrive(trip) };
+      if (before.bad === 0) break;
+      let best: { trip: Trip; drive: number } | null = null;
+      for (let d = 0; d < trip.days.length; d++) {
+        for (const item of trip.days[d]) {
+          const now = chanceOn(item.id, d);
+          if (now >= ROAD_LIKELY) continue;
+          const extraMax = Math.max(FILL_DETOUR_MIN, guideById.get(item.id)?.durationMin ?? 0);
+          const without = trip.days.map((day, index) => (index === d ? day.filter((other) => other.id !== item.id) : day));
+          for (let target = 0; target < trip.days.length; target++) {
+            const then = chanceOn(item.id, target);
+            if (target === d || then < ROAD_LIKELY || then - now < MOVE_GAIN_MIN) continue;
+            const options = [without.map((day, index) => (index === target ? [...day, item] : day))];
+            // 那天放不下：把那天的一个景点挪去别的一天（比如冰川第 5 天的雪松步道挪到同在西边的第 1 天）
+            for (const swap of trip.days[target]) {
+              for (let to = 0; to < trip.days.length; to++) {
+                if (to === target || chanceOn(swap.id, to) < ROAD_LIKELY) continue;
+                options.push(
+                  without.map((day, index) =>
+                    index === target ? [...day.filter((other) => other.id !== swap.id), item] : index === to ? [...day, swap] : day,
+                  ),
+                );
+              }
+            }
+            for (const days of options) {
+              const trial = arrangeAll(chooseLodging(arrangeAll({ ...trip, days })));
+              const drive = totalDrive(trial);
+              if (badCount(trial) >= before.bad || excess(trial) > startExcess + FILL_SLACK_MIN) continue;
+              if (drive - before.drive > extraMax || (best && drive >= best.drive)) continue;
+              best = { trip: trial, drive };
+            }
+          }
+        }
+      }
+      if (!best) break;
+      trip = best.trip;
+    }
+
+    // 还排在不开那天的游船、导览团（开的那几天排不下）：去掉，攻略说明里列为没时间
+    const stranded = trip.days.flatMap((day, d) => day.filter((item) => !runsOn(item.id, tripDates[d])).map((item) => item.id));
+    if (stranded.length > 0) {
+      skipped.noTime.push(...stranded);
+      const days = trip.days.map((day) => day.filter((item) => !stranded.includes(item.id)));
+      trip = arrangeAll(chooseLodging(arrangeAll({ ...trip, days })));
     }
   }
 

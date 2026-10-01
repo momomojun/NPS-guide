@@ -112,3 +112,12 @@ test("路封着的时候跨两侧要绕到园外：5 月从熊湖去西边的 Ho
   // 冬天住 Lee Vining 去优胜美地山谷：Tioga Road 封着，要绕 Carson Pass
   assert.ok((aroundMinutes("yose-stay-lee-vining", "yose-tunnel-view", "2027-01-15") ?? 0) > 293);
 });
+
+test("冰川 6 月上旬向阳大道没通：西边的雪崩湖去东边的 Rising Sun 走 2 号公路；路边的 Goat Lick 两边都不算绕", () => {
+  const around = aroundMinutes("glac-avalanche-lake", "glac-stay-rising-sun", "2027-06-05");
+  // 翻洛根山口约 69 分钟；绕 2 号公路：雪崩湖到 West Glacier、West Glacier 到 East Glacier、再到 Rising Sun，两个多小时
+  assert.ok(around !== null && around >= 140, `绕路 ${around} 分钟`);
+  assert.equal(aroundMinutes("glac-avalanche-lake", "glac-stay-rising-sun", "2027-07-20"), null);
+  assert.equal(aroundMinutes("glac-goat-lick", "glac-stay-rising-sun", "2027-06-05"), null);
+  assert.equal(aroundMinutes("glac-stay-west-glacier", "glac-goat-lick", "2027-06-05"), null);
+});

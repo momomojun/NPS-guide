@@ -19,6 +19,7 @@ import { fill, formatDuration, formatMonths } from "@/i18n/format";
 import { monthOf } from "@/lib/dates";
 import { lodgingLeg } from "@/lib/planner";
 import { formatClock } from "@/lib/sun";
+import { departuresOn, tourScheduleOf, tourSeason } from "@/lib/tours";
 import { moveItem, removeItem, setItemStatus } from "@/lib/trip-edit";
 import type { Trip } from "@/lib/trip-store";
 import { ActionMenu } from "./action-menu";
@@ -150,6 +151,7 @@ export function DayCard({
     return back <= REST_MAX_DRIVE && 2 * back + REST_MIN_STAY <= entry.waitMin ? back : null;
   };
 
+  const monthDay = (md: string) => fill(t.roads.monthDay, { m: Number(md.slice(0, 2)), d: Number(md.slice(3, 5)) });
   const notesFor = (stop: AttractionWithPhoto) => {
     const notes: { text: string; tone: Tone }[] = [];
     const road = roadNotes.get(stop.id);
@@ -170,6 +172,21 @@ export function DayCard({
       notes.push({ text: fill(t.roads.stop, { road: road.name, note: road.note }), tone: roadWarn(road) ? "warn" : "info" });
     }
     if (stop.permit) notes.push({ text: t.warnings.permit, tone: "warn" });
+    // 有固定班次的游船、导览团：列出这天的班次（这天不开就说几号到几号才开），不是每天都开的提醒一下
+    const schedule = tourScheduleOf(stop.id);
+    const departures = departuresOn(stop.id, view.date);
+    if (schedule && departures) {
+      const year = schedule.scheduleYear;
+      if (departures.times.length > 0) {
+        const times = departures.times.map((time) => formatClock(time)).join("、");
+        notes.push({ text: fill(t.warnings.tourTimes, { times, checkIn: departures.checkIn, year }), tone: "info" });
+      } else {
+        const season = tourSeason(schedule);
+        const range = fill(t.warnings.tourSeason, { year, from: monthDay(season.from), to: monthDay(season.to) });
+        notes.push({ text: range, tone: "info" });
+      }
+      if (schedule.daysZh) notes.push({ text: fill(t.warnings.tourDays, { days: schedule.daysZh }), tone: "warn" });
+    }
     return notes;
   };
 

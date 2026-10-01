@@ -22,9 +22,10 @@ export interface SeasonalRoad {
   afterRoad?: string[];
   /**
    * 路封着的时候，side 这一侧的住处、景点和公园里另一侧之间要绕到园外：两侧各取一个出入口（住处 id），
-   * minutes 是两个出入口之间绕一圈要开多久（OSRM 按绕路经过的山口算，校正过车速）
+   * minutes 是两个出入口之间绕一圈要开多久（OSRM 按绕路经过的山口算，校正过车速）；
+   * neutral 是绕路的路上就经过、两边都不用翻山的（比如冰川 2 号公路边的 Goat Lick），按原来的车程算
    */
-  around?: { side: string[]; sideGate: string; otherGate: string; minutes: number };
+  around?: { side: string[]; sideGate: string; otherGate: string; minutes: number; neutral?: string[] };
   /** 这条路是什么、冬天怎么办、今年的特殊情况 */
   noteZh: string;
   years: RoadYear[];
@@ -73,7 +74,33 @@ const roads: Omit<SeasonalRoad, "years" | "checked">[] = [
     nameZh: "向阳大道高山段（洛根山口）",
     nameEn: "Going-to-the-Sun Road over Logan Pass",
     attractions: ["glac-going-to-the-sun-road", "glac-logan-pass", "glac-hidden-lake-overlook"],
-    afterRoad: ["glac-highline-trail"],
+    // 红色老爷车团的 Western Alpine 线开到洛根山口再回来：路通了、又在开团的日子才能去
+    afterRoad: ["glac-highline-trail", "glac-red-bus-tour"],
+    // 没通的时候东西两侧之间走公园南边的 2 号公路：东侧经 East Glacier、西侧经 West Glacier
+    around: {
+      side: [
+        "glac-jackson-glacier-overlook",
+        "glac-st-mary-virginia-falls",
+        "glac-sun-point-baring-falls",
+        "glac-wild-goose-island",
+        "glac-st-mary-visitor-center",
+        "glac-swiftcurrent-lake",
+        "glac-many-glacier-boat",
+        "glac-grinnell-glacier",
+        "glac-iceberg-lake",
+        "glac-running-eagle-falls",
+        "glac-two-medicine-lake",
+        "glac-stay-many-glacier-hotel",
+        "glac-stay-swiftcurrent",
+        "glac-stay-rising-sun",
+        "glac-stay-st-mary",
+        "glac-stay-east-glacier",
+      ],
+      sideGate: "glac-stay-east-glacier",
+      otherGate: "glac-stay-west-glacier",
+      minutes: 59,
+      neutral: ["glac-goat-lick"],
+    },
     noteZh:
       "向阳大道翻越洛根山口的高山路段，4 月开始扫雪，全线通车一般在 6 月中到 7 月上旬；关闭日期定在 10 月第三个周一（天气不好会更早）。没通的时候西侧只能开到 Avalanche 一带、东侧一般到 Rising Sun。",
     source: "https://www.nps.gov/glac/learn/news/logan-pass-opening-and-closing-dates.htm",

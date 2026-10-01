@@ -134,7 +134,7 @@ export const glacier: Attraction[] = [
     area: "lake-mcdonald",
     lat: 48.61738,
     lon: -113.87922,
-    durationMin: 240,
+    durationMin: 180,
     openMonths: [6, 7, 8, 9],
     bestMonths: [7, 8, 9],
     closedNote:

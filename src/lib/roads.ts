@@ -156,7 +156,7 @@ export function aroundMinutes(from: string, to: string, date: string): number | 
     const prefix = `${road.park}-`;
     if (!from.startsWith(prefix) || !to.startsWith(prefix)) continue;
     const fromSide = around.side.includes(from);
-    if (fromSide === around.side.includes(to)) continue;
+    if (fromSide === around.side.includes(to) || around.neutral?.includes(from) || around.neutral?.includes(to)) continue;
     // 路上的景点本身就去不了
     const onRoad = (id: string) => road.attractions.includes(id) || (road.afterRoad ?? []).includes(id);
     if (onRoad(from) || onRoad(to) || !closedOn(road, date)) continue;

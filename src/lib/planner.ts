@@ -1,6 +1,7 @@
 import type { AttractionKind, TimeOfDay } from "../data/attractions/types";
 import { lastBusMinutes, shuttleLeg, shuttleOptions, type ShuttleRide } from "./shuttle";
 import { aroundMinutes } from "./roads";
+import { departuresOn, type Departures } from "./tours";
 import { gatewayNode, travelMinutes } from "./travel";
 
 export interface PlanStop {
@@ -48,6 +49,8 @@ export interface DayContext {
   previous?: PlanStop;
   /** 这一天的日期（"2026-10-05"）：班车季的景点要按坐班车算；不知道日期时照常按开车算 */
   date?: string | null;
+  /** 开车按估算的几倍算（按“今天”里的打卡学到的，见 personal-pace.ts）；坐班车的路段不变，不填是 1 */
+  drive?: number;
 }
 
 /**
@@ -107,6 +110,17 @@ export function lodgingLeg(lodging: LodgingPoint, stop: PlanStop, direction: "ou
   }
   // 没查到路网车程时按直线估算：绕路系数 1.35、平均时速 55 公里
   return Math.round(((distanceKm(lodging, stop.start ?? stop) * 1.35) / 55) * 60) + TRANSITION_MIN;
+}
+
+/** 按学到的开车倍数调整一段路；坐班车的不变 */
+function scaleLeg(leg: Leg, drive = 1): Leg {
+  return drive === 1 || leg.shuttle ? leg : { ...leg, minutes: Math.round(leg.minutes * drive) };
+}
+
+/** 两个景点之间估算要开多久、要不要坐班车（学开车倍数时和实际打卡比） */
+export function estimatedLeg(from: PlanStop, to: PlanStop, date?: string | null): { minutes: number; shuttle: boolean } {
+  const leg = stopLeg(from, to, date);
+  return { minutes: leg.minutes, shuttle: leg.shuttle !== undefined };
 }
 
 /** 没有班车线时当成“不坐班车”这一种 */
@@ -316,7 +330,7 @@ function eveningMinutes(context: Omit<DayContext, "sun">, last: PlanStop | undef
   return eveningLeg(context, last).minutes;
 }
 
-export type LodgingLookup = (day: number) => { from?: LodgingPoint; to?: LodgingPoint; date?: string | null };
+export type LodgingLookup = (day: number) => { from?: LodgingPoint; to?: LodgingPoint; date?: string | null; drive?: number };
 
 /**
  * 把排好顺序的景点切成 dayCount 天，让最忙的一天尽量轻松（线性划分，动态规划）；最忙那天一样时，
@@ -333,21 +347,20 @@ export function splitIntoDays(sequence: PlanStop[], dayCount: number, lodgingFor
     duration.push(duration[k] + sequence[k].durationMin);
     legs.push(legs[k] + (k > 0 ? stopLeg(sequence[k - 1], sequence[k], date).minutes : 0));
   }
-  // 第 day 天走第 i..j-1 个景点的工作量
+  // 第 day 天走第 i..j-1 个景点的工作量（车程按学到的开车倍数算）
   const load = (i: number, j: number, day: number) => {
     const lodging = { ...lodgingFor?.(day), previous: sequence[i - 1] };
+    const drive = lodging.drive ?? 1;
     if (j <= i) {
       // 没安排景点的一天：要换地方（比如最后一天开回机场）也得开车，按从前一个景点开到当晚住处估；连住同一家是休息日
       const { from, to } = lodging;
       if (!to || !sequence[i - 1] || from?.id === to.id) return 0;
-      return eveningMinutes(lodging, sequence[i - 1]);
+      return eveningMinutes(lodging, sequence[i - 1]) * drive;
     }
     return (
       duration[j] -
       duration[i] +
-      (legs[j] - legs[i + 1]) +
-      morningMinutes(lodging, sequence[i]) +
-      eveningMinutes(lodging, sequence[j - 1])
+      (legs[j] - legs[i + 1] + morningMinutes(lodging, sequence[i]) + eveningMinutes(lodging, sequence[j - 1])) * drive
     );
   };
 
@@ -398,7 +411,7 @@ function slotsFor(stops: PlanStop[], allowSunrise: boolean, allowEvening = true)
   return slots;
 }
 
-export type StopWarning = "missSunset" | "dark" | "farTransfer" | "lastShuttle";
+export type StopWarning = "missSunset" | "dark" | "farTransfer" | "lastShuttle" | "missDeparture" | "noService";
 
 export interface TimelineEntry {
   id: string;
@@ -444,6 +457,8 @@ function simulate(
   arriving = false,
   /** 开回机场或城市的最后一天：路远就不等日落、不等天黑 */
   leaving = false,
+  /** 有固定班次的景点这天的班次，和 stops 一一对应；没有固定班次的是 null */
+  departures: (Departures | null)[] = [],
 ): DayTimeline {
   const morning = drives[0] ?? 0;
   const sunriseStart = sun.sunrise - 20;
@@ -476,6 +491,13 @@ function simulate(
       if (arrive > sun.sunset) warnings.push("missSunset");
     } else if (slots[index] === "night") {
       start = Math.max(arrive, sun.sunset + 60);
+    } else if (departures[index]) {
+      // 有固定班次的游船、导览团：提前报到、等下一班；这天不开、最后一班也赶不上都提醒
+      const { times, checkIn } = departures[index]!;
+      const next = times.find((time) => time - checkIn >= arrive);
+      if (times.length === 0) warnings.push("noService");
+      else if (next === undefined) warnings.push("missDeparture");
+      start = next ?? arrive;
     } else {
       // 游客中心、游船、导览团没开门之前到了，等开门
       const hours = openHours(stop);
@@ -536,8 +558,10 @@ function withShuttles(
 
 /** 按当天顺序推算几点出发、几点到每个景点、几点回到住处 */
 export function buildTimeline(stops: PlanStop[], context: DayContext): DayTimeline {
-  const legs = stops.map((stop, index) => (index === 0 ? morningLeg(context, stop) : stopLeg(stops[index - 1], stop, context.date)));
-  const back = eveningLeg(context, stops.at(-1));
+  const legs = stops.map((stop, index) =>
+    scaleLeg(index === 0 ? morningLeg(context, stop) : stopLeg(stops[index - 1], stop, context.date), context.drive),
+  );
+  const back = scaleLeg(eveningLeg(context, stops.at(-1)), context.drive);
   const timeline = simulate(
     stops,
     legs.map((leg) => leg.minutes),
@@ -547,6 +571,7 @@ export function buildTimeline(stops: PlanStop[], context: DayContext): DayTimeli
     undefined,
     context.from?.endpoint === "origin",
     context.to?.endpoint === "destination",
+    stops.map((stop) => departuresOn(stop.id, context.date)),
   );
   return withShuttles(timeline, stops, legs, back, context.date, context.sun);
 }
@@ -602,6 +627,8 @@ export function buildLiveTimeline(
     date?: string | null;
     /** 已经到了第一站（当天第几分钟到的）：从那时算起，停够了再走，停得更久就从现在走 */
     arrivedAt?: number;
+    /** 开车按估算的几倍算 */
+    drive?: number;
   },
 ): DayTimeline {
   const arrivedAt = stops.length > 0 ? context.arrivedAt : undefined;
@@ -613,11 +640,14 @@ export function buildLiveTimeline(
         );
   const legs = live.map((stop, index): Leg => {
     if (index === 0 && arrivedAt !== undefined) return { minutes: 0 };
-    if (index > 0) return stopLeg(live[index - 1], stop, context.date);
-    if (context.from) return stopLeg(context.from, stop, context.date);
-    return context.lodging ? stayLeg(context.lodging, stop, "out", context.date) : { minutes: 0 };
+    if (index > 0) return scaleLeg(stopLeg(live[index - 1], stop, context.date), context.drive);
+    if (context.from) return scaleLeg(stopLeg(context.from, stop, context.date), context.drive);
+    return context.lodging ? scaleLeg(stayLeg(context.lodging, stop, "out", context.date), context.drive) : { minutes: 0 };
   });
-  const back = context.to && live.length > 0 ? stayLeg(context.to, live[live.length - 1], "back", context.date) : { minutes: 0 };
+  const back =
+    context.to && live.length > 0
+      ? scaleLeg(stayLeg(context.to, live[live.length - 1], "back", context.date), context.drive)
+      : { minutes: 0 };
   const timeline = simulate(
     live,
     legs.map((leg) => leg.minutes),
@@ -627,6 +657,8 @@ export function buildLiveTimeline(
     arrivedAt ?? context.now,
     false,
     context.to?.endpoint === "destination",
+    // 已经到了的那一站不用再等班次
+    live.map((stop, index) => (index === 0 && arrivedAt !== undefined ? null : departuresOn(stop.id, context.date))),
   );
   return withShuttles(timeline, live, legs, back, context.date, context.sun);
 }
@@ -640,15 +672,17 @@ const OPEN_HOURS = { visitor: [9 * 60, 17 * 60], experience: [8 * 60 + 30, 18 * 
 const openHours = (stop: PlanStop) =>
   stop.kind === "visitor" ? OPEN_HOURS.visitor : stop.kind === "experience" && !stop.bestTime?.length ? OPEN_HOURS.experience : null;
 
-function orderCost(timeline: DayTimeline, stops: PlanStop[]): number {
+function orderCost(timeline: DayTimeline, stops: PlanStop[], departures: (Departures | null)[]): number {
   let cost = timeline.driveMin + (timeline.lateReturn ? 60 : 0);
   timeline.entries.forEach((entry, k) => {
     const prefers = stops[k].bestTime ?? [];
-    const hours = openHours(stops[k]);
+    // 有固定班次的按班次算，不再按一般的开放时间
+    const hours = departures[k] ? null : openHours(stops[k]);
     if (hours && (entry.start < hours[0] || entry.end > hours[1])) cost += 60;
-    // 等开门空出来的时间也算一点（等日落、等天黑是特意的，不算）
+    // 等开门、等班次空出来的时间也算一点（等日落、等天黑是特意的，不算）
     if (entry.slot === "any") cost += entry.waitMin / 4;
     if (entry.warnings.includes("dark")) cost += 240;
+    if (entry.warnings.includes("missDeparture")) cost += 240;
     if (entry.warnings.includes("missSunset")) cost += 60;
     if (entry.slot !== "any") cost -= 40;
     if (prefers.includes("morning") && entry.start > 12 * 60) cost += 15;
@@ -667,9 +701,11 @@ export function arrangeDay(stops: PlanStop[], context: DayContext): PlanStop[] {
   const morning = stops.map((stop) => morningMinutes(context, stop));
   const evening = stops.map((stop) => eveningMinutes(context, stop));
   const date = context.date;
+  const departures = stops.map((stop) => departuresOn(stop.id, date));
   const order = stops.map((_, i) => i);
   const evaluate = () => {
     const ordered = order.map((i) => stops[i]);
+    const times = order.map((i) => departures[i]);
     const drives = order.map((i, k) => (k === 0 ? morning[i] : legs[order[k - 1]][i]));
     const timeline = simulate(
       ordered,
@@ -680,6 +716,7 @@ export function arrangeDay(stops: PlanStop[], context: DayContext): PlanStop[] {
       undefined,
       context.from?.endpoint === "origin",
       context.to?.endpoint === "destination",
+      times,
     );
     // 赶不上末班车的顺序尽量不要
     const stranded = date
@@ -687,7 +724,7 @@ export function arrangeDay(stops: PlanStop[], context: DayContext): PlanStop[] {
           missesLastBus(ordered[k], date, context.sun.sunset, entry.start - entry.waitMin, entry.end),
         ).length
       : 0;
-    return orderCost(timeline, ordered) + stranded * 180;
+    return orderCost(timeline, ordered, times) + stranded * 180;
   };
 
   let bestOrder = [...order];

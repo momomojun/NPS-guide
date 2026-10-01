@@ -14,6 +14,11 @@ test("山路、园区里的路（平均车速慢）不改", () => {
   assert.equal(correctedMinutes(30 * 60, 8 * MILE), 30);
 });
 
+test("OSRM 已经按限速算得快的（平均 54 英里/时以上）不再缩短：冰川南边的 2 号公路约 1 小时", () => {
+  assert.equal(correctedMinutes(63 * 60, 63 * MILE), 63);
+  assert.equal(correctedMinutes(63 * 60, 56 * MILE), 60);
+});
+
 test("中间的车速逐渐过渡，不会突然跳", () => {
   const minutes = [39, 40, 41, 42, 43, 44, 45, 46].map((mph) => correctedMinutes(3600, mph * MILE));
   for (let k = 1; k < minutes.length; k++) assert.ok(minutes[k] <= minutes[k - 1] && minutes[k - 1] - minutes[k] <= 5);

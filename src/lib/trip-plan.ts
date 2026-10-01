@@ -20,7 +20,7 @@ export type DateLookup = (day: number) => string | null;
 /**
  * 重新安排第 fromDay 天及之后的行程：之前没完成的、之后所有未完成的和待安排的景点一起重新分配。
  * 已完成、已跳过的保持原位；已设的住处会参与计算（早上从住处出发、晚上回住处）。
- * fromDay = 0 就是整个行程重排。
+ * fromDay = 0 就是整个行程重排。drive 是按打卡学到的开车倍数（见 personal-pace.ts）。
  */
 export function planTrip(
   trip: Trip,
@@ -29,11 +29,12 @@ export function planTrip(
   nightAt: NightLookup,
   fromDay = 0,
   dateAt: DateLookup = () => null,
+  drive = 1,
 ): TripItem[][] {
   const from = Math.min(Math.max(fromDay, 0), trip.days.length - 1);
   const before = trip.days.slice(0, from);
   const after = trip.days.slice(from);
-  const lodgingFor = (day: number) => ({ from: nightAt(day), to: nightAt(day + 1), date: dateAt(day) });
+  const lodgingFor = (day: number) => ({ from: nightAt(day), to: nightAt(day + 1), date: dateAt(day), drive });
 
   const unfinished = trip.days
     .flat()

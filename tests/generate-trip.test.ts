@@ -11,6 +11,7 @@ import { openChance, roadFor, roadStatus } from "../src/lib/roads";
 import { generateTrip, type Pace } from "../src/lib/generate-trip";
 import { buildTimeline, NOMINAL_SUN, type LodgingPoint, type PlanStop } from "../src/lib/planner";
 import { minutesOfDay, sunTimes } from "../src/lib/sun";
+import { departuresOn } from "../src/lib/tours";
 import type { Trip, TripLodging } from "../src/lib/trip-store";
 
 // 和行程页一样的输入调用自动生成攻略。弗雷斯诺到优胜美地、盐湖城到摩押两个公园各景点的车程是 OSRM 查好
@@ -118,14 +119,14 @@ test("5 月 Trail Ridge Road 还没通：东边、西边（Grand Lake 一侧）�
   });
 });
 
-test("6 月下旬去冰川：向阳大道整天挪到往年通车过半的那天；游船、游客中心不排在开门之前", () => {
+test("6 月下旬去冰川：向阳大道整天挪到往年通车过半的那天，隐湖观景点也跟过去；游客中心不排在开门之前，游船按班次", () => {
   const { trip, timelines } = generate({ parks: ["glac"], start: "2027-06-18", days: 5, airport: "FCA" });
   const chance = (id: string, day: number) => {
     const status = roadStatus(roadFor(id)!, addDays("2027-06-18", day));
     return status ? openChance(status) : 1;
   };
   trip.days.forEach((day, d) => {
-    for (const id of ["glac-going-to-the-sun-road", "glac-logan-pass"]) {
+    for (const id of ["glac-going-to-the-sun-road", "glac-logan-pass", "glac-hidden-lake-overlook"]) {
       if (day.some((item) => item.id === id)) assert.ok(chance(id, d) >= 0.5, `${id} 排在第 ${d + 1} 天`);
     }
   });
@@ -136,6 +137,9 @@ test("6 月下旬去冰川：向阳大道整天挪到往年通车过半的那天
       const start = timelines[d].entries[k].start;
       if (stop.kind === "visitor") assert.ok(start >= 9 * 60, `${item.id} ${start}`);
       if (stop.kind === "experience" && !stop.bestTime?.length) assert.ok(start >= 8 * 60 + 30, `${item.id} ${start}`);
+      // 有固定班次的（Many Glacier 游船、红色老爷车团）排在开的日子，按某一班开始
+      const departures = departuresOn(item.id, addDays("2027-06-18", d));
+      if (departures) assert.ok(departures.times.includes(start), `${item.id} 第 ${d + 1} 天 ${start}`);
     }),
   );
 });

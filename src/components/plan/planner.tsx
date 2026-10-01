@@ -24,11 +24,20 @@ import { bookingsForTrip } from "@/lib/booking";
 import { flightKey, useFlightStore } from "@/lib/flight-store";
 import { generateTrip, guideParks } from "@/lib/generate-trip";
 import { drivingMinutesFrom, drivingRoute, type DrivingRoute } from "@/lib/osrm-client";
-import { learnPace, NEUTRAL_PACE, paceAdjusts, pacedMinutes } from "@/lib/personal-pace";
-import { buildLiveTimeline, buildTimeline, buildTransferTimeline, NOMINAL_SUN, rankLodging, type PlanStop } from "@/lib/planner";
+import { learnDrive, learnPace, NEUTRAL_PACE, paceAdjusts, pacedMinutes } from "@/lib/personal-pace";
+import {
+  buildLiveTimeline,
+  buildTimeline,
+  buildTransferTimeline,
+  estimatedLeg,
+  NOMINAL_SUN,
+  rankLodging,
+  type PlanStop,
+} from "@/lib/planner";
 import { formatClock, minutesOfDay, sunTimes } from "@/lib/sun";
 import { moveItem, setNight } from "@/lib/trip-edit";
 import { bestRoadDay, roadFor } from "@/lib/roads";
+import { runsOn, tourScheduleOf, tourSeason } from "@/lib/tours";
 import { planTrip } from "@/lib/trip-plan";
 import {
   MAX_DAYS,
@@ -171,8 +180,15 @@ export function Planner({
   const refDateOf = (day: number) =>
     trip.startDate ? addDays(trip.startDate, day) : trip.month ? addDays(nominalDate(trip.month), day) : null;
   const tripMonth = trip.startDate ? monthOf(trip.startDate) : (trip.month ?? null);
-  // 个人配速：按“今天”模式里的打卡学实际停留时间，还没去的景点按这个算（可以关掉）
-  const learnedPace = useMemo(() => learnPace(trip.days.flat(), (id) => byId.get(id)), [trip.days, byId]);
+  // 个人配速：按“今天”模式里的打卡学实际停留和开车的时间，还没去的景点、还没开的路按这个算（可以关掉）
+  const learnedPace = useMemo(() => {
+    const stays = learnPace(trip.days.flat(), (id) => byId.get(id));
+    const drive = learnDrive(trip.days, (from, to, day) => {
+      const [a, b] = [byId.get(from), byId.get(to)];
+      return a && b ? estimatedLeg(a, b, trip.startDate ? addDays(trip.startDate, day) : null) : null;
+    });
+    return { ...stays, drive: drive.drive, samples: { ...stays.samples, drive: drive.samples } };
+  }, [trip.days, trip.startDate, byId]);
   const pace = prefs.usePace ? learnedPace : NEUTRAL_PACE;
   const paced = <T extends PlanStop>(stop: T): T => {
     const minutes = pacedMinutes(stop, pace);
@@ -188,6 +204,15 @@ export function Planner({
     const byMonth = stop?.openMonths !== undefined && tripMonth !== null && !stop.openMonths.includes(tripMonth);
     if (!note?.note || stop?.openMonths?.length === 0 || (byMonth && !note.decides)) return undefined;
     return fill(text.plan.roads.stop, { road: note.name, note: note.note });
+  };
+  // 有固定班次、出发这几天都不开的游船和导览团：说哪几天才开
+  const tourClosedNote = (id: string) => {
+    const schedule = tourScheduleOf(id);
+    if (!schedule || !trip.startDate) return undefined;
+    if (Array.from({ length: trip.dayCount }, (_, day) => dateOf(day)).some((date) => runsOn(id, date))) return undefined;
+    const season = tourSeason(schedule);
+    const monthDay = (md: string) => fill(t.roads.monthDay, { m: Number(md.slice(0, 2)), d: Number(md.slice(3, 5)) });
+    return fill(t.warnings.tourSeason, { year: schedule.scheduleYear, from: monthDay(season.from), to: monthDay(season.to) });
   };
 
   const resolve = (lodging: TripLodging | null | undefined): ResolvedLodging | undefined => {
@@ -241,7 +266,14 @@ export function Planner({
     const from = nightAt(day);
     const to = nightAt(day + 1);
     const sun = sunInfo(day, rows[0]?.stop.park ?? previous?.park);
-    const context = { sun: sun.kind === "normal" ? sun.window : NOMINAL_SUN, from, to, previous, date: refDateOf(day) };
+    const context = {
+      sun: sun.kind === "normal" ? sun.window : NOMINAL_SUN,
+      from,
+      to,
+      previous,
+      date: refDateOf(day),
+      drive: pace.drive,
+    };
     // 没安排景点、但要换住处（比如最后一天开回机场）：按直接过去算，前后两天所在公园的景点用来估算车程
     const nextPark = trip.days
       .slice(day + 1)
@@ -335,7 +367,7 @@ export function Planner({
     const stops = paceAdjusts(pace) ? new Map([...byId].map(([id, stop]) => [id, paced(stop)])) : byId;
     updateTrip((current: Trip) => ({
       ...current,
-      days: planTrip(current, stops, sunWindow, nightAt, fromDay, refDateOf),
+      days: planTrip(current, stops, sunWindow, nightAt, fromDay, refDateOf, pace.drive),
       pool: [],
     }));
   };
@@ -909,6 +941,7 @@ export function Planner({
             to: todayView.to,
             date: todayView.date,
             arrivedAt,
+            drive: pace.drive,
           },
         );
         const nextView = dayViews[todayIndex + 1];
@@ -1124,7 +1157,7 @@ export function Planner({
           nameOf={(id) => byId.get(id)?.nameZh ?? id}
           tripIds={allIds}
           dated={Boolean(trip.startDate)}
-          closedNoteOf={(id) => roadClosedNote(id) ?? byId.get(id)?.closedNote}
+          closedNoteOf={(id) => roadClosedNote(id) ?? tourClosedNote(id) ?? byId.get(id)?.closedNote}
           activities={activities.filter((activity) => guideParkList.some((p) => p.code === activity.park))}
           attractionExists={(id) => byId.has(id)}
           text={text}

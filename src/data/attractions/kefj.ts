@@ -106,7 +106,7 @@ export const kenaiFjords: Attraction[] = [
     lat: 59.85456,
     lon: -149.87036,
     start: SEWARD_HARBOR,
-    durationMin: 420,
+    durationMin: 360,
     openMonths: CRUISE_MONTHS,
     closedNote: CRUISE_CLOSED,
     bestMonths: [6, 7, 8],
@@ -131,7 +131,7 @@ export const kenaiFjords: Attraction[] = [
     lat: 59.76841,
     lon: -149.98827,
     start: SEWARD_HARBOR,
-    durationMin: 540,
+    durationMin: 510,
     openMonths: [6, 7, 8],
     closedNote:
       "去西北峡湾的全天游船季节比较短，一般只在夏季中间几个月开（各家日期不同，以订票页面为准）；其余时间可以坐去 Aialik 湾的 6 小时游船。",
