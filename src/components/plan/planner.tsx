@@ -297,7 +297,7 @@ export function Planner({
     const candidates = lodgingOptions
       .filter((option) => parksNearby.has(option.park))
       .map((option) => resolve({ kind: "option", id: option.id })!);
-    return rankLodging(candidates, lastStop, nextStop);
+    return rankLodging(candidates, lastStop, nextStop, { back: refDateOf(night - 1), out: refDateOf(night) });
   };
   /** 第 night 晚住 lodging 的话，在 Airbnb 上按整段连住的日期搜 */
   const airbnbFor = (night: number) => (lodging: ResolvedLodging) => {

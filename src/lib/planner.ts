@@ -1,5 +1,6 @@
 import type { AttractionKind, TimeOfDay } from "../data/attractions/types";
 import { lastBusMinutes, shuttleLeg, shuttleOptions, type ShuttleRide } from "./shuttle";
+import { aroundMinutes } from "./roads";
 import { gatewayNode, travelMinutes } from "./travel";
 
 export interface PlanStop {
@@ -126,7 +127,9 @@ function stopLeg(from: PlanStop, to: PlanStop, date: string | null | undefined):
     }
     if (best) return { minutes: best.minutes + TRANSITION_MIN, shuttle: { line: best.system.id, mode: best.mode } };
   }
-  return { minutes: legMinutes(from.id, to.id) };
+  // 这天季节性道路封着、两个景点在路的两侧：按绕到园外算
+  const around = date ? aroundMinutes(from.id, to.id, date) : null;
+  return { minutes: around !== null ? around + TRANSITION_MIN : legMinutes(from.id, to.id) };
 }
 
 /** 住处和景点之间（out = 从住处出发，back = 回住处） */
@@ -162,7 +165,18 @@ function stayLeg(lodging: LodgingPoint, stop: PlanStop, direction: "out" | "back
     }
     if (best) return { minutes: best.minutes + TRANSITION_MIN, shuttle: { line: best.system.id, mode: best.mode } };
   }
-  return { minutes: lodgingLeg(lodging, stop, direction) };
+  return { minutes: datedLodgingLeg(lodging, stop, direction, date) };
+}
+
+/** 住处和景点之间的车程；这天季节性道路封着、两个在路的两侧时按绕到园外算（自定义住处查的是真实路网，不改） */
+function datedLodgingLeg(lodging: LodgingPoint, stop: PlanStop, direction: "out" | "back", date: string | null | undefined): number {
+  const around =
+    date && !lodging.id.startsWith("custom-")
+      ? direction === "out"
+        ? aroundMinutes(lodging.id, stop.id, date)
+        : aroundMinutes(stop.id, lodging.id, date)
+      : null;
+  return around !== null ? around + TRANSITION_MIN : lodgingLeg(lodging, stop, direction);
 }
 
 /** 路线两头：从出发点到每个景点的车程；知道终点时，再加上从每个景点回终点的车程 */
@@ -226,28 +240,57 @@ export interface SequenceEnds {
   end?: LodgingPoint;
 }
 
+/** 起点、终点都知道时，公园不超过这么多个就把各种先后顺序都排一遍 */
+const MAX_PARK_ORDERS = 4;
+
+function permutations<T>(items: T[]): T[][] {
+  if (items.length <= 1) return [items];
+  return items.flatMap((item, i) => permutations([...items.slice(0, i), ...items.slice(i + 1)]).map((rest) => [item, ...rest]));
+}
+
+/** 整条路线的车程：起点到第一站、景点之间（含跨公园）、最后一站到终点 */
+function sequenceCost(sequence: PlanStop[], start?: LodgingPoint, end?: LodgingPoint): number {
+  if (sequence.length === 0) return 0;
+  let cost = start ? lodgingLeg(start, sequence[0], "out") : 0;
+  for (let k = 1; k < sequence.length; k++) cost += travelMinutes(sequence[k - 1].id, sequence[k].id);
+  return cost + (end ? lodgingLeg(end, sequence[sequence.length - 1], "back") : 0);
+}
+
 /** 把景点排成一条游览顺序：公园之间按距离串起来，公园内按路线就近 */
 export function sequenceStops(stops: PlanStop[], ends: SequenceEnds = {}): PlanStop[] {
   if (stops.length === 0) return [];
   const { start, end } = ends;
   const parkStops = (park: string) => stops.filter((stop) => stop.park === park);
   let parks = [...new Set(stops.map((stop) => stop.park))];
+  // 公园内的路线只和它是不是第一个、最后一个公园有关：每种情况排一次，试各种公园顺序时直接拿来用
+  const routes = new Map<string, PlanStop[]>();
+  const route = (park: string, first: boolean, last: boolean) => {
+    const key = `${park}|${first}|${last}`;
+    let found = routes.get(key);
+    if (!found) {
+      found = orderWithinPark(parkStops(park), {
+        from: first && start ? (stop) => lodgingLeg(start, stop, "out") : (stop) => travelMinutes(gatewayNode(park), stop.id),
+        to: last && end ? (stop) => lodgingLeg(end, stop, "back") : undefined,
+      });
+      routes.set(key, found);
+    }
+    return found;
+  };
+  const build = (order: string[]) => order.flatMap((park, index) => route(park, index === 0, index === order.length - 1));
+  // 从哪来、回哪去都知道，公园又不多：各种先后顺序都排一遍，取总车程最短的
+  // （比如盐湖城往返摩押：先峡谷地、再拱门，最后一天去拱门正好顺路回盐湖城）
+  if (start && end && parks.length > 1 && parks.length <= MAX_PARK_ORDERS) {
+    return permutations(parks)
+      .map(build)
+      .reduce((best, candidate) => (sequenceCost(candidate, start, end) < sequenceCost(best, start, end) ? candidate : best));
+  }
   // 有起点时，先去离起点最近的公园
   if (start && parks.length > 1) {
     const reach = (park: string) => Math.min(...parkStops(park).map((stop) => lodgingLeg(start, stop, "out")));
     const first = parks.reduce((best, park) => (reach(park) < reach(best) ? park : best));
     parks = [first, ...parks.filter((park) => park !== first)];
   }
-  const order = orderParks(parks);
-  return order.flatMap((park, index) =>
-    orderWithinPark(parkStops(park), {
-      from:
-        index === 0 && start
-          ? (stop) => lodgingLeg(start, stop, "out")
-          : (stop) => travelMinutes(gatewayNode(park), stop.id),
-      to: index === order.length - 1 && end ? (stop) => lodgingLeg(end, stop, "back") : undefined,
-    }),
-  );
+  return build(orderParks(parks));
 }
 
 /** 当天第一个景点的来程：只有从别的公园过来才算（同一公园默认住在附近） */
@@ -276,7 +319,8 @@ function eveningMinutes(context: Omit<DayContext, "sun">, last: PlanStop | undef
 export type LodgingLookup = (day: number) => { from?: LodgingPoint; to?: LodgingPoint; date?: string | null };
 
 /**
- * 把排好顺序的景点切成 dayCount 天，让最忙的一天尽量轻松（线性划分，动态规划）。
+ * 把排好顺序的景点切成 dayCount 天，让最忙的一天尽量轻松（线性划分，动态规划）；最忙那天一样时，
+ * 选各天更平均的分法（工作量平方和小的），不然别的天怎么分都算一样好，常常把最后一天空着。
  * 一天的工作量 = 景点停留时间 + 当天的车程（含从住处出发、回住处，或跨公园的来程）。
  */
 export function splitIntoDays(sequence: PlanStop[], dayCount: number, lodgingFor?: LodgingLookup): PlanStop[][] {
@@ -291,8 +335,13 @@ export function splitIntoDays(sequence: PlanStop[], dayCount: number, lodgingFor
   }
   // 第 day 天走第 i..j-1 个景点的工作量
   const load = (i: number, j: number, day: number) => {
-    if (j <= i) return 0;
     const lodging = { ...lodgingFor?.(day), previous: sequence[i - 1] };
+    if (j <= i) {
+      // 没安排景点的一天：要换地方（比如最后一天开回机场）也得开车，按从前一个景点开到当晚住处估；连住同一家是休息日
+      const { from, to } = lodging;
+      if (!to || !sequence[i - 1] || from?.id === to.id) return 0;
+      return eveningMinutes(lodging, sequence[i - 1]);
+    }
     return (
       duration[j] -
       duration[i] +
@@ -302,17 +351,22 @@ export function splitIntoDays(sequence: PlanStop[], dayCount: number, lodgingFor
     );
   };
 
-  // best[d][j]：前 j 个景点分成 d 天时，最忙那天的最小工作量；cut 记录最后一天从哪开始
+  // best[d][j]：前 j 个景点分成 d 天时，最忙那天的最小工作量；spread 是这种分法各天工作量的平方和；cut 记录最后一天从哪开始
   const best = Array.from({ length: dayCount + 1 }, () => new Array<number>(n + 1).fill(Infinity));
+  const spread = Array.from({ length: dayCount + 1 }, () => new Array<number>(n + 1).fill(Infinity));
   const cut = Array.from({ length: dayCount + 1 }, () => new Array<number>(n + 1).fill(0));
   best[0][0] = 0;
+  spread[0][0] = 0;
   for (let d = 1; d <= dayCount; d++) {
     for (let j = 0; j <= n; j++) {
       for (let i = 0; i <= j; i++) {
-        const value = Math.max(best[d - 1][i], load(i, j, d - 1));
-        // 取等号时选更靠后的切点，让空闲日留在行程末尾
-        if (value <= best[d][j]) {
+        const dayLoad = load(i, j, d - 1);
+        const value = Math.max(best[d - 1][i], dayLoad);
+        const even = spread[d - 1][i] + dayLoad ** 2;
+        // 最忙那天差不到 1 分钟算一样，比平均；再一样就选更靠后的切点，让空闲日留在行程末尾
+        if (value < best[d][j] - 1 || (value <= best[d][j] + 1 && even <= spread[d][j])) {
           best[d][j] = value;
+          spread[d][j] = even;
           cut[d][j] = i;
         }
       }
@@ -422,6 +476,10 @@ function simulate(
       if (arrive > sun.sunset) warnings.push("missSunset");
     } else if (slots[index] === "night") {
       start = Math.max(arrive, sun.sunset + 60);
+    } else {
+      // 游客中心、游船、导览团没开门之前到了，等开门
+      const hours = openHours(stop);
+      if (hours) start = Math.max(arrive, hours[0]);
     }
     const end = start + stop.durationMin;
     if (stop.kind === "hike" && end > sun.sunset + 20) warnings.push("dark");
@@ -574,10 +632,22 @@ export function buildLiveTimeline(
 }
 
 /** 一种当天顺序的代价：车程为主，天黑还在徒步、赶不上日落、回住处太晚要扣分，卡上日出日落加分 */
+/**
+ * 开放时间（排当天顺序时尽量在这中间去）：游客中心一般 9 点到 17 点；游船、导览团、缆车、温泉这类
+ * 没写最佳时段的体验一般 8:30 到 18:30（夏天，各家不同）。看日出日落、星空的体验有最佳时段，不受这个限制
+ */
+const OPEN_HOURS = { visitor: [9 * 60, 17 * 60], experience: [8 * 60 + 30, 18 * 60 + 30] } as const;
+const openHours = (stop: PlanStop) =>
+  stop.kind === "visitor" ? OPEN_HOURS.visitor : stop.kind === "experience" && !stop.bestTime?.length ? OPEN_HOURS.experience : null;
+
 function orderCost(timeline: DayTimeline, stops: PlanStop[]): number {
   let cost = timeline.driveMin + (timeline.lateReturn ? 60 : 0);
   timeline.entries.forEach((entry, k) => {
     const prefers = stops[k].bestTime ?? [];
+    const hours = openHours(stops[k]);
+    if (hours && (entry.start < hours[0] || entry.end > hours[1])) cost += 60;
+    // 等开门空出来的时间也算一点（等日落、等天黑是特意的，不算）
+    if (entry.slot === "any") cost += entry.waitMin / 4;
     if (entry.warnings.includes("dark")) cost += 240;
     if (entry.warnings.includes("missSunset")) cost += 60;
     if (entry.slot !== "any") cost -= 40;
@@ -652,17 +722,18 @@ export interface LodgingRank<T extends LodgingPoint> {
   outMin?: number;
 }
 
-/** 按“今晚回去 + 明早出发”的总车程给候选住处排序 */
+/** 按“今晚回去 + 明早出发”的总车程给候选住处排序；知道日期时，季节性道路封着要绕路的也算进去 */
 export function rankLodging<T extends LodgingPoint>(
   candidates: T[],
   lastStop: PlanStop | undefined,
   nextStop: PlanStop | undefined,
+  dates: { back?: string | null; out?: string | null } = {},
 ): LodgingRank<T>[] {
   return candidates
     .map((lodging) => ({
       lodging,
-      backMin: lastStop ? lodgingLeg(lodging, lastStop, "back") : undefined,
-      outMin: nextStop ? lodgingLeg(lodging, nextStop, "out") : undefined,
+      backMin: lastStop ? datedLodgingLeg(lodging, lastStop, "back", dates.back) : undefined,
+      outMin: nextStop ? datedLodgingLeg(lodging, nextStop, "out", dates.out) : undefined,
     }))
     .sort((a, b) => (a.backMin ?? 0) + (a.outMin ?? 0) - ((b.backMin ?? 0) + (b.outMin ?? 0)));
 }

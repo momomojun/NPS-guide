@@ -1,12 +1,17 @@
 // 季节性道路历年的开通、关闭日期：优胜美地的 Tioga Road、冰川点路（NPS 历年表 CSV），冰川的向阳大道洛根山口段
 // （NPS 历年表网页），华盛顿州的 Chinook、Cayuse 山口和 20 号公路（WSDOT 历年表网页）；
 // 历年表里还没有的最近几年、不是积雪造成的年份（疫情封园、修路、风暴毁路）在下面的 FIXES 里手工补。
+// 没有现成历年表的路（落基山 Trail Ridge Road、火山口湖环湖路、拉森公园公路、雷尼尔山 Sunrise / Stevens Canyon 路）
+// 是从 NPS 新闻稿、路况页和当地新闻逐年整理的，存在 scripts/data/roads-manual.json（每条附来源），这里直接合并。
 // 输出 src/data/roads.generated.ts；路名、说明、要走这条路的景点写在 src/data/roads.ts。
 // 每年秋天路都关了以后重新跑，今年的日期先补进 FIXES：npm run data:roads
-import { writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { USER_AGENT } from "./load-data.mjs";
 
 const OUTPUT = new URL("../src/data/roads.generated.ts", import.meta.url);
+const MANUAL = new URL("./data/roads-manual.json", import.meta.url);
+/** 逐年整理的路，年份少一些也收（统计时写明是近几年） */
+const MANUAL_MIN_YEARS = 8;
 /** 只留这一年以后的（行程按最近 20 个正常年份算，公园页画最近 15 年） */
 const FIRST_YEAR = 2000;
 const SOURCES = {
@@ -51,6 +56,11 @@ const FIXES = [
   ["mora-cayuse-pass", 2026, "05-22", null],
   // 北瀑布：2026 年春天西段抢修，4 月 30 日只开了东段，6 月 14 日全线通车
   ["noca-north-cascades-highway", 2026, "06-14", null],
+  // 下面几条在 scripts/data/roads-manual.json 里：2025 年秋天正赶上联邦政府停摆（10 月 1 日到 11 月 12 日），
+  // 拉森、Trail Ridge Road 的关闭日期说不清是下雪还是停摆，秋天不算；Old Fall River Road 2026 年 NPS 已公布 10 月 6 日关闭
+  ["lavo-park-highway", 2025, "06-27", null],
+  ["romo-trail-ridge-road", 2025, "05-30", null],
+  ["romo-old-fall-river-road", 2026, "07-04", "10-06"],
 ];
 
 const MONTHS = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, sept: 9, oct: 10, nov: 11, dec: 12 };
@@ -133,6 +143,10 @@ const history = {};
   history["noca-north-cascades-highway"] = parse(sr20);
 }
 
+// ---- 逐年整理的路
+const manual = existsSync(MANUAL) ? JSON.parse(readFileSync(MANUAL, "utf8")) : {};
+for (const [id, road] of Object.entries(manual)) history[id] = road.years.map((row) => [...row]);
+
 for (const [id, year, open, close] of FIXES) {
   const list = history[id];
   if (!list) throw new Error(`没有这条路：${id}`);
@@ -147,7 +161,8 @@ for (const [id, year, open, close] of FIXES) {
 const lines = [];
 for (const [id, list] of Object.entries(history)) {
   const years = list.filter(([year]) => year >= FIRST_YEAR).sort((a, b) => b[0] - a[0]);
-  if (years.length < 20) throw new Error(`${id} 只读到 ${years.length} 年，页面格式可能变了`);
+  const minimum = manual[id] ? MANUAL_MIN_YEARS : 20;
+  if (years.length < minimum) throw new Error(`${id} 只读到 ${years.length} 年，页面格式可能变了`);
   console.log(`${id.padEnd(30)} ${years.length} 年  ${years[0].join(" ")} … ${years.at(-1).join(" ")}`);
   // 一行放几年，和手写的风格一样不超过约 120 列
   const cells = years.map((row) => JSON.stringify(row).replaceAll(",", ", "));

@@ -1,4 +1,5 @@
 import {
+  arrangeDay,
   buildTimeline,
   LATE_RETURN,
   lodgingLeg,
@@ -9,7 +10,7 @@ import {
   type SunWindow,
 } from "./planner";
 import { addDays } from "./dates";
-import { bestRoadDay, ROAD_LIKELY, roadDecides, roadFor } from "./roads";
+import { acrossClosedRoad, bestRoadDay, openChance, ROAD_LIKELY, roadDecides, roadFor, roadStatus } from "./roads";
 import { planTrip } from "./trip-plan";
 import type { Trip, TripItem, TripLodging } from "./trip-store";
 
@@ -42,6 +43,8 @@ export interface GuideStop extends PlanStop {
   lottery?: boolean;
   outsidePark?: boolean;
   hike?: { difficulty: "easy" | "moderate" | "hard" };
+  /** 园内片区 */
+  area?: string;
 }
 
 export interface GuideLodging extends LodgingPoint {
@@ -69,6 +72,10 @@ export interface GuideSkipped {
   closed: string[];
   tooHard: string[];
   noTime: string[];
+  /** 离其他景点太远、要专门绕路（旧版行程没有） */
+  tooFar?: string[];
+  /** 季节性山路这几天封着、在路的另一侧要绕到园外（旧版行程没有） */
+  across?: string[];
 }
 
 export interface GuideInfo {
@@ -96,6 +103,13 @@ const FILL_TRIES = 8;
 const FILL_SLACK_MIN = 15;
 /** 补一个景点，它那天多开的车不能超过它本身的停留时间，至少也给这么多分钟（不为了 20 分钟的观景点多绕三小时） */
 const FILL_DETOUR_MIN = 30;
+/** 一个片区当天只排了这么几个不是必去的景点时，看是不是为了它们专门绕路 */
+const REMOTE_GROUP_MAX = 2;
+/** 为它们当天多开的车超过它们停留时间的这么多倍（至少这么多分钟），就去掉 */
+const REMOTE_DETOUR_FACTOR = 1.5;
+const REMOTE_DETOUR_MIN = 60;
+/** 为了让山路上的景点排到把握大的那天、两天整天对调时，整趟最多多开这么久的车 */
+const SWAP_DRIVE_MAX = 90;
 /** 超过这么久的徒步不自动排（可以手动加） */
 const MAX_HIKE_MIN: Record<Pace, number> = { relaxed: 240, normal: 420, packed: 600 };
 /** 园内景点之间平均每天开车的分钟数，估算时间预算用 */
@@ -122,7 +136,7 @@ function score(stop: GuideStop, month: number, parkSize: number): number {
 }
 
 export function generateTrip(input: GenerateInput, context: GenerateContext): { trip: Trip; guide: GuideInfo } {
-  const skipped: GuideSkipped = { permit: [], closed: [], tooHard: [], noTime: [] };
+  const skipped: Required<GuideSkipped> = { permit: [], closed: [], tooHard: [], noTime: [], tooFar: [], across: [] };
   const available: GuideStop[] = [];
   // 季节性道路：定了日期就看这几天里最有把握的一天，往年通车的年份不到一半就当去不了；
   // 路通了就能去的景点不再按开放月份算（月份只是粗算），路通了还要等步道化雪的两个都要看
@@ -212,7 +226,9 @@ export function generateTrip(input: GenerateInput, context: GenerateContext): { 
       const bonus = (lodging: GuideLodging) =>
         input.lodgingPref === "rental" ? (lodging.rental ? RENTAL_BONUS : 0) : lodging.inPark ? IN_PARK_BONUS : 0;
       const cost = (rank: LodgingRank<GuideLodging>) => (rank.backMin ?? 0) + (rank.outMin ?? 0) - bonus(rank.lodging);
-      const ranking = rankLodging(lodgingChoices, lastStop, nextStop).sort((a, b) => cost(a) - cost(b));
+      const ranking = rankLodging(lodgingChoices, lastStop, nextStop, { back: dateFor(night - 1), out: dateFor(night) }).sort(
+        (a, b) => cost(a) - cost(b),
+      );
       if (ranking.length === 0) continue;
       const previous = next[night - 1];
       const stay = previous?.kind === "option" ? ranking.find((rank) => rank.lodging.id === previous.id) : undefined;
@@ -270,6 +286,34 @@ export function generateTrip(input: GenerateInput, context: GenerateContext): { 
     trip = plan(chooseLodging(plan({ ...trip, days: trip.days.map(without) })));
   }
 
+  // 偏远片区当天只排了一两个不是必去的景点、为它们要多开很久的车（比如摩押几天里顺带去峡谷地的 Needles 片区）：
+  // 去掉，后面补景点时补更顺路的。一整天都在那个片区的不动（专门去的）；那个片区别的天还有景点的也不动（只是分到了这天）
+  const guideById = new Map(context.stops.map((stop) => [stop.id, stop]));
+  const areaKey = (stop: PlanStop) => `${stop.park}|${guideById.get(stop.id)?.area ?? stop.id}`;
+  for (let round = 0; round < 4; round++) {
+    const inTrip = new Map<string, number>();
+    for (const item of trip.days.flat()) {
+      const stop = stopById.get(item.id);
+      if (stop) inTrip.set(areaKey(stop), (inTrip.get(areaKey(stop)) ?? 0) + 1);
+    }
+    const remote = dayContexts(trip).flatMap(({ stops, context: day }) => {
+      const groups = new Map<string, GuideStop[]>();
+      for (const stop of stops) groups.set(areaKey(stop), [...(groups.get(areaKey(stop)) ?? []), guideById.get(stop.id)!]);
+      return [...groups.entries()].flatMap(([key, group]) => {
+        if (group.length > REMOTE_GROUP_MAX || group.length === stops.length || inTrip.get(key) !== group.length) return [];
+        if (group.some((stop) => stop.mustSee)) return [];
+        const without = stops.filter((stop) => !group.some((member) => member.id === stop.id));
+        const detour = buildTimeline(stops, day).driveMin - buildTimeline(without, day).driveMin;
+        const visit = group.reduce((sum, stop) => sum + stop.durationMin, 0);
+        return detour > Math.max(REMOTE_DETOUR_MIN, visit * REMOTE_DETOUR_FACTOR) ? [group] : [];
+      });
+    });
+    if (remote.length === 0) break;
+    const far = new Set(remote.flat().map((stop) => stop.id));
+    skipped.tooFar.push(...far);
+    trip = plan(chooseLodging(plan({ ...trip, days: trip.days.map((day) => day.filter((item) => !far.has(item.id))) })));
+  }
+
   // 按节奏还有空的天：把没排进去的景点按分数试着加回来，排完没有哪天变得更满、也没有为它绕远路才留下。
   // 回住处太晚按晚了多少分钟算（已经晚了的天再加景点也算更满）
   const excess = (current: Trip) =>
@@ -290,7 +334,51 @@ export function generateTrip(input: GenerateInput, context: GenerateContext): { 
     if (trialExcess <= baseExcess + FILL_SLACK_MIN && detourOf(trial, stop.id) <= Math.max(FILL_DETOUR_MIN, stop.durationMin)) {
       trip = trial;
       skipped.noTime = skipped.noTime.filter((id) => id !== stop.id);
+      skipped.tooFar = skipped.tooFar.filter((id) => id !== stop.id);
     }
+  }
+
+  // 季节性山路上的景点排到了往年通车不到一半的日子、这几天里又有把握大的一天（比如 6 月下旬去冰川，向阳大道排在第 2 天）：
+  // 试着把这两天整天对调（每天里面的顺序、每晚住哪重新排），没有变得更满、多开的车不多才换
+  if (tripDates.length > 0) {
+    const chanceOn = (id: string, day: number) => {
+      const road = roadFor(id);
+      const status = road ? roadStatus(road, tripDates[day]) : null;
+      return status ? openChance(status) : 1;
+    };
+    const badCount = (current: Trip) =>
+      current.days.reduce((sum, day, d) => sum + day.filter((item) => chanceOn(item.id, d) < ROAD_LIKELY).length, 0);
+    const totalDrive = (current: Trip) => timelines(current).reduce((sum, { timeline }) => sum + timeline.driveMin, 0);
+    const arrangeAll = (current: Trip): Trip => ({
+      ...current,
+      days: dayContexts(current).map(({ stops, context: day }) =>
+        arrangeDay(stops, day).map((stop): TripItem => ({ id: stop.id, status: "planned" })),
+      ),
+    });
+    for (let bad = 0; bad < trip.days.length; bad++) {
+      if (!trip.days[bad].some((item) => chanceOn(item.id, bad) < ROAD_LIKELY)) continue;
+      const before = { bad: badCount(trip), excess: excess(trip), drive: totalDrive(trip) };
+      let best: { trip: Trip; drive: number } | null = null;
+      for (let other = 0; other < trip.days.length; other++) {
+        if (other === bad) continue;
+        const days = [...trip.days];
+        [days[bad], days[other]] = [days[other], days[bad]];
+        const trial = arrangeAll(chooseLodging(arrangeAll({ ...trip, days })));
+        const drive = totalDrive(trial);
+        if (badCount(trial) >= before.bad || excess(trial) > before.excess + FILL_SLACK_MIN) continue;
+        if (drive - before.drive > SWAP_DRIVE_MAX || (best && drive >= best.drive)) continue;
+        best = { trip: trial, drive };
+      }
+      if (best) trip = best.trip;
+    }
+  }
+
+  // 没排进去的里面，这几天山路一直封着、在路另一侧的（比如 5 月 Trail Ridge Road 没通时西边的 Grand Lake 一带）单独说
+  if (tripDates.length > 0) {
+    const across = [...skipped.noTime, ...skipped.tooFar].filter((id) => acrossClosedRoad(id, tripDates));
+    skipped.across = across;
+    skipped.noTime = skipped.noTime.filter((id) => !across.includes(id));
+    skipped.tooFar = skipped.tooFar.filter((id) => !across.includes(id));
   }
 
   const guide: GuideInfo = { parks: input.parks, pace: input.pace, lodgingPref: input.lodgingPref, skipped };

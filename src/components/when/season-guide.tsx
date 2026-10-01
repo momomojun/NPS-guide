@@ -7,7 +7,7 @@ import { seasonalRoads } from "@/data/roads";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { fill, formatMonths } from "@/i18n/format";
 import { addDays } from "@/lib/dates";
-import { bestRoadDay, ROAD_LIKELY, roadStatus, type RoadStatus } from "@/lib/roads";
+import { bestRoadDay, recordYears, ROAD_LIKELY, roadStatus, type RoadStatus } from "@/lib/roads";
 import type { MonthClimateSummary, ParkMonth, ParkSeason } from "@/lib/seasons";
 import { useToday } from "@/lib/use-json";
 
@@ -153,7 +153,11 @@ function reasonsOf(item: ParkWindow, text: SeasonText): Reason[] {
     const values = { road: item.park.roadNames[road] ?? road, date: day(date.slice(5, 10)), year: date.slice(0, 4) };
     const reason =
       status.kind === "odds"
-        ? fill(status.phase === "opening" ? t.roadOpening : t.roadClosing, { ...values, n: status.known, k: status.open })
+        ? fill(status.phase === "opening" ? t.roadOpening : t.roadClosing, {
+            ...values,
+            years: recordYears(status.known, t),
+            k: status.open,
+          })
         : status.kind === "notYet"
           ? fill(t.roadNotYet, { ...values, opened: day(status.opened) })
           : status.kind === "closed"

@@ -45,7 +45,8 @@ export function learnPace(
   const ratios = { hike: [] as number[], other: [] as number[] };
   for (const item of items) {
     const stop = stopOf(item.id);
-    if (item.status !== "done" || !item.arrivedAt || !item.leftAt || !stop || stop.durationMin < MIN_PLANNED_MIN) continue;
+    if (item.status !== "done" || item.arrivedAt === undefined || item.leftAt === undefined) continue;
+    if (!stop || stop.durationMin < MIN_PLANNED_MIN) continue;
     const actual = (item.leftAt - item.arrivedAt) / 60_000;
     if (actual < MIN_ACTUAL_MIN) continue;
     ratios[stop.kind === "hike" ? "hike" : "other"].push(actual / stop.durationMin);

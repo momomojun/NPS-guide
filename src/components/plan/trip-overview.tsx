@@ -5,7 +5,7 @@ import { closedIn } from "@/components/attractions/attraction-card";
 import type { AttractionWithPhoto } from "@/data/attractions";
 import { fill, formatDuration } from "@/i18n/format";
 import { formatClock } from "@/lib/sun";
-import { ROAD_LIKELY, roadStatus } from "@/lib/roads";
+import { recordYears, ROAD_LIKELY, roadStatus } from "@/lib/roads";
 import { dayColor } from "./day-colors";
 import { roadNoteFor, roadWarn } from "./road-note";
 import type { DayView, PlannerText } from "./types";
@@ -211,7 +211,7 @@ export function TripOverview({
           later: later
             ? fill(later.phase === "opening" ? text.plan.roads.later : text.plan.roads.earlier, {
                 day: later.day + 1,
-                n: later.n,
+                years: recordYears(later.n, text.plan.roads),
                 k: later.k,
               })
             : "",
@@ -274,8 +274,7 @@ export function TripOverview({
                   days: dayCount,
                   parks: parkJoined,
                   n: stops.length,
-                  back: samePlace(origin, destination) ? t.backSame : t.backOther,
-                  destination: destination.name,
+                  back: fill(samePlace(origin, destination) ? t.backSame : t.backOther, { destination: destination.name }),
                 })
               : fill(t.openingNoOrigin, { days: dayCount, parks: parkJoined, n: stops.length })}
           </p>

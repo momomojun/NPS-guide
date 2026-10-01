@@ -1,8 +1,31 @@
-// 把 "更新于 {date}" 这类模板里的占位符替换成实际值
+const HAN = /[\u3400-\u9fff\uf900-\ufaff]/;
+const LATIN = /[A-Za-z0-9]/;
+
+/**
+ * 把 "更新于 {date}" 这类模板里的占位符替换成实际值。
+ * 汉字紧挨着的值以英文字母、数字开头或结尾时补一个空格，和手写的“近 20 年”一样
+ * （“要走{road}” + “Stevens Canyon Road” → “要走 Stevens Canyon Road”）；以后加日语界面要另外处理
+ */
 export function fill(template: string, values: Record<string, string | number>): string {
-  return template.replace(/\{(\w+)\}/g, (match, key: string) =>
-    key in values ? String(values[key]) : match,
-  );
+  return template.replace(/\{(\w+)\}/g, (match, key: string, offset: number) => {
+    if (!(key in values)) return match;
+    let value = String(values[key]);
+    if (value === "") return value;
+    if (HAN.test(template[offset - 1] ?? "") && LATIN.test(value[0])) value = ` ${value}`;
+    if (HAN.test(template[offset + match.length] ?? "") && LATIN.test(value.at(-1)!)) value = `${value} `;
+    return value;
+  });
+}
+
+/** 机器翻译出来的中文：汉字和英文字母、数字之间补空格，去掉全角括号里多出来的空格（“白河（ White River ）”） */
+export function tidyChinese(text: string): string {
+  return text
+    .replace(/（\s+/g, "（")
+    .replace(/\s+）/g, "）")
+    .replace(/\s*([，。；：、！？])\s*/g, "$1")
+    .replace(/([\u3400-\u9fff\uf900-\ufaff])([A-Za-z0-9])/g, "$1 $2")
+    .replace(/([A-Za-z0-9])([\u3400-\u9fff\uf900-\ufaff])/g, "$1 $2")
+    .replace(/ {2,}/g, " ");
 }
 
 export interface UnitText {

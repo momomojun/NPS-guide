@@ -1,4 +1,5 @@
 import "server-only";
+import { tidyChinese } from "../i18n/format";
 import { selfUseScrape } from "./self-use";
 
 // 英文翻成简体中文（NPS 公告用）：配了 DEEPL_API_KEY 用 DeepL（免费账号每月 50 万字符）；
@@ -97,13 +98,13 @@ async function translateUncached(text: string): Promise<Translation | null> {
   const key = process.env.DEEPL_API_KEY;
   if (key) {
     const result = await deepl(text, key).catch(() => null);
-    if (result) return { text: result, provider: "DeepL" };
+    if (result) return { text: tidyChinese(result), provider: "DeepL" };
   }
   const memory = await myMemory(text).catch(() => null);
-  if (memory) return { text: memory, provider: "MyMemory" };
+  if (memory) return { text: tidyChinese(memory), provider: "MyMemory" };
   if (selfUseScrape()) {
     const result = await google(text).catch(() => null);
-    if (result) return { text: result, provider: "Google" };
+    if (result) return { text: tidyChinese(result), provider: "Google" };
   }
   return null;
 }

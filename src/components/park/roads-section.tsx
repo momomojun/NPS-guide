@@ -3,7 +3,7 @@ import type { MonthDay } from "@/data/bookings";
 import type { SeasonalRoad } from "@/data/roads";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { fill } from "@/i18n/format";
-import { medianOf, recentYears, ROAD_YEARS } from "@/lib/roads";
+import { medianOf, recentYears, recordYears, ROAD_MIN_KNOWN } from "@/lib/roads";
 
 /** 图上画最近几年 */
 const CHART_YEARS = 15;
@@ -22,7 +22,7 @@ const pad = (n: number) => String(n).padStart(2, "0");
 /** 关闭日在开通日之前是关到了第二年年初，图上画到年底 */
 const closeOf = (open: MonthDay | null, close: MonthDay | null) => (close && open && close < open ? "12-31" : close);
 
-/** 公园页：季节性道路历年的通车时段（最近 15 年一行一年），一般哪天通车、关闭，今年哪天通的车 */
+/** 公园页：季节性道路历年的通车时段（最近 15 年一行一年，没查到的年份空着），一般哪天通车、关闭，今年哪天通的车 */
 export function RoadsSection({
   roads,
   attractions,
@@ -53,10 +53,19 @@ export function RoadsSection({
             .map(([, open, close]) => closeOf(open, close))
             .filter((close): close is MonthDay => close !== null);
           const medianOpen = medianOf(opens);
-          const medianClose = medianOf(closes);
+          // 关闭日有记录的年份太少（雷尼尔山的两条路）就不说一般哪天关、不画线，只用来让没记关闭日的年份渐隐
+          const closeGuess = medianOf(closes);
+          const medianClose = closes.length >= ROAD_MIN_KNOWN ? closeGuess : undefined;
           const sorted = [...opens].sort();
           const [latestYear, latestOpen] = road.years[0] ?? [];
-          const skipped = road.years.slice(0, CHART_YEARS).filter(([, , , skip]) => skip);
+          const oldestYear = road.years.at(-1)?.[0];
+          const chartYears =
+            latestYear === undefined || oldestYear === undefined
+              ? []
+              : Array.from({ length: Math.min(CHART_YEARS, latestYear - oldestYear + 1) }, (_, i) => latestYear - i);
+          const rowOf = (year: number) => road.years.find(([candidate]) => candidate === year);
+          const skipped = road.years.filter(([year, , , skip]) => skip && chartYears.includes(year));
+          const missing = chartYears.some((year) => !rowOf(year));
           const links = (ids: string[]) =>
             ids
               .filter((id) => nameOf(id))
@@ -77,14 +86,15 @@ export function RoadsSection({
                 </p>
                 {medianOpen && sorted.length > 0 && (
                   <p className="mt-3 text-sm leading-7 text-ink">
-                    {fill(t.stats, {
-                      n: Math.min(recent.length, ROAD_YEARS),
+                    {fill(medianClose ? t.stats : t.statsOpen, {
+                      years: recordYears(opens.length, t),
                       open: day(medianOpen),
                       earliest: day(sorted[0]),
                       latest: day(sorted.at(-1)!),
                       close: medianClose ? day(medianClose) : "",
                     })}
-                    {latestYear && latestOpen && !road.years[0][3] && (
+                    {/* 只说整理数据那一年的（火山口湖的历年表只到 2023 年，不能当成“今年”） */}
+                    {latestYear === Number(road.checked.slice(0, 4)) && latestOpen && !road.years[0][3] && (
                       <span className="text-clay-700"> {fill(t.thisYear, { year: latestYear, date: day(latestOpen) })}</span>
                     )}
                   </p>
@@ -103,7 +113,7 @@ export function RoadsSection({
                   </p>
                 )}
                 <a href={road.source} target="_blank" rel="noreferrer" className="link-line mt-4 inline-block text-xs tracking-[0.1em]">
-                  {t.source}
+                  {road.statusPage ? t.sourceStatus : t.source}
                 </a>
               </div>
 
@@ -132,11 +142,21 @@ export function RoadsSection({
                       </span>
                     ))}
                   </div>
-                  {road.years.slice(0, CHART_YEARS).map(([year, open, close, skip]) => {
+                  {chartYears.map((year) => {
+                    const row = rowOf(year);
+                    if (!row) {
+                      const label = fill(t.missingYear, { year });
+                      return (
+                        <div key={year} role="img" aria-label={label} title={label} className="flex h-5 items-center gap-3">
+                          <span className="w-9 shrink-0 text-right text-[11px] text-mute/60 tabular-nums">{year}</span>
+                        </div>
+                      );
+                    }
+                    const [, open, close, skip] = row;
                     const end = closeOf(open, close);
-                    const latest = year === latestYear;
+                    const latest = year === Number(road.checked.slice(0, 4));
                     // 还没关（今年）：实线画到整理数据的那天，之后渐隐到一般关闭的日子
-                    const fadeTo = x(medianClose ?? "11-15");
+                    const fadeTo = x(closeGuess ?? "11-15");
                     const checked = road.checked.startsWith(`${year}-`) ? x(road.checked.slice(5, 10)) : null;
                     const solid =
                       open && checked !== null && fadeTo > x(open) ? ((checked - x(open)) / (fadeTo - x(open))) * 100 : 60;
@@ -172,6 +192,9 @@ export function RoadsSection({
                       list: skipped.map(([year, , , skip]) => fill(t.skippedYear, { year, reason: `（${skip}）` })).join("、"),
                     })}
                   </p>
+                )}
+                {missing && (
+                  <p className={`${skipped.length > 0 ? "mt-1" : "mt-3"} ml-12 text-[11px] leading-5 text-mute`}>{t.missing}</p>
                 )}
               </div>
             </article>

@@ -1,7 +1,7 @@
 import type { MonthDay } from "@/data/bookings";
 import type { SeasonalRoad } from "@/data/roads";
 import { fill } from "@/i18n/format";
-import { openChance, ROAD_LIKELY, roadDecides, roadFor, roadStatus } from "@/lib/roads";
+import { openChance, recordYears, ROAD_LIKELY, roadDecides, roadFor, roadStatus } from "@/lib/roads";
 import type { PlannerText } from "./types";
 
 export interface RoadNote {
@@ -32,7 +32,8 @@ export function roadNoteFor(stopId: string, date: string, text: PlannerText, byD
   if (status.kind === "notYet") note = fill(t.notYet, { year, opened: day(status.opened), when });
   else if (status.kind === "closed") note = fill(t.closed, { year, closed: day(status.closed) });
   else if (status.kind === "odds" && status.open < status.known) {
-    const values = { n: status.known, k: status.open, earliest: day(status.earliest), latest: day(status.latest), when };
+    const years = recordYears(status.known, t);
+    const values = { years, k: status.open, earliest: day(status.earliest), latest: day(status.latest), when };
     const none = status.open === 0;
     note = fill(status.phase === "opening" ? (none ? t.openingNone : t.opening) : none ? t.closingNone : t.closing, values);
   }

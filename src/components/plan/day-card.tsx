@@ -38,6 +38,25 @@ export interface DragHandlers {
 
 type Tone = "warn" | "info";
 
+/** Google 地图一条路线最多这么多个途经点 */
+const MAX_WAYPOINTS = 9;
+const latLon = (place: { lat: number; lon: number }) => `${place.lat.toFixed(5)},${place.lon.toFixed(5)}`;
+
+/** 这天的整条路线：从前一晚住处出发，依次经过还没去的景点（有步道口、停车场用那里），到当晚住处 */
+function dayRouteUrl(
+  from: { lat: number; lon: number } | undefined,
+  stops: { lat: number; lon: number }[],
+  to: { lat: number; lon: number } | undefined,
+): string | null {
+  const origin = from ?? stops[0];
+  const destination = to ?? stops.at(-1);
+  const waypoints = stops.slice(from ? 0 : 1, to ? undefined : -1);
+  if (stops.length === 0 || !origin || !destination || waypoints.length > MAX_WAYPOINTS) return null;
+  const params = new URLSearchParams({ api: "1", origin: latLon(origin), destination: latLon(destination), travelmode: "driving" });
+  if (waypoints.length > 0) params.set("waypoints", waypoints.map(latLon).join("|"));
+  return `https://www.google.com/maps/dir/?${params}`;
+}
+
 /** 等日落、等天黑空出来这么久，住处又在这么近的地方，就提一句可以先回去休息（来回之外至少歇这么久） */
 const REST_WAIT_MIN = 90;
 const REST_MAX_DRIVE = 40;
@@ -115,6 +134,12 @@ export function DayCard({
     const road = roadNotes.get(stop.id);
     if (road?.note && item.status === "planned" && !roadNoteAt.has(road.road.id)) roadNoteAt.set(road.road.id, stop.id);
   }
+
+  const routeUrl = dayRouteUrl(
+    from,
+    rows.filter((row) => row.item.status === "planned").map((row) => row.stop.start ?? row.stop),
+    view.to,
+  );
 
   // 空出来很久、当晚住处不远：可以先回住处休息，单程多久
   const restBack = (k: number) => {
@@ -205,6 +230,13 @@ export function DayCard({
           {sun.kind === "polar-night" && <p>{t.polarNight}</p>}
           {rows.length > 0 && (
             <p>{fill(t.summary, { active: duration(timeline.activeMin), drive: duration(timeline.driveMin) })}</p>
+          )}
+          {routeUrl && (
+            <p className="print:hidden">
+              <a href={routeUrl} target="_blank" rel="noreferrer" className="link-line text-ink-soft">
+                {t.dayRoute}
+              </a>
+            </p>
           )}
         </div>
       </header>

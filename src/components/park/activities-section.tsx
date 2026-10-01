@@ -61,6 +61,7 @@ export function ActivitiesSection({
       {(closedNow.length > 0 || seasonal.length > 0) && (
         <div className={activities.length > 0 ? "lg:col-span-5" : "lg:col-span-8"}>
           <h3 className="font-serif text-2xl">{t.openingTitle}</h3>
+          <p className="mt-2 text-xs leading-6 text-mute">{t.openingChecked}</p>
           {closedNow.length > 0 && (
             <div className="mt-6 border-l-2 border-clay-600 bg-clay-50 px-5 py-4">
               <p className="text-xs tracking-[0.1em] text-clay-700">{t.closedNow}</p>

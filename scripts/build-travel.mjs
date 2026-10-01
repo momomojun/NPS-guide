@@ -2,10 +2,11 @@
 // 每个公园一张表（公园定位点 + 各景点的出发点 + 推荐住宿），外加公园之间的一张表；
 // 相邻、常一起玩的公园（parks.ts 的 nearby）再加一张跨公园的表，比如从大提顿的住处直接开到黄石的景点。
 // 最后一张是各机场（airports.ts）到各公园定位点的表，自动生成攻略时估算落地后要开多久。
-// 新增景点或住宿后重新跑：npm run data:travel
+// 车程按平均车速校正过（OSRM 开高速偏慢 25–40%，见 src/lib/drive-speed.ts）。新增景点或住宿后重新跑：npm run data:travel
 import { writeFileSync } from "node:fs";
 import { airports } from "../src/data/airports.ts";
 import { fixedMinutes } from "../src/data/attractions/route-fixes.ts";
+import { correctedMinutes } from "../src/lib/drive-speed.ts";
 import { attractions, lodgingOptions, parks, sleep, USER_AGENT } from "./load-data.mjs";
 
 const OUTPUT = new URL("../src/data/attractions/travel.generated.ts", import.meta.url);
@@ -15,13 +16,15 @@ async function durationTable(points, { sources, destinations } = {}) {
   const coords = points.map((p) => `${p.lon},${p.lat}`).join(";");
   const subset =
     (sources ? `&sources=${sources.join(";")}` : "") + (destinations ? `&destinations=${destinations.join(";")}` : "");
-  const res = await fetch(`https://router.project-osrm.org/table/v1/driving/${coords}?annotations=duration${subset}`, {
+  const res = await fetch(`https://router.project-osrm.org/table/v1/driving/${coords}?annotations=duration,distance${subset}`, {
     headers: { "User-Agent": USER_AGENT },
   });
   const data = await res.json();
   if (data.code !== "Ok") throw new Error(`OSRM: ${data.code} ${data.message ?? ""}`);
-  // 秒 → 分钟；路网不通时 OSRM 返回 null
-  return data.durations.map((row) => row.map((s) => (s == null ? null : Math.round(s / 60))));
+  // 秒 → 分钟，主要走高速的按平均车速校正（OSRM 开高速偏慢，见 src/lib/drive-speed.ts）；路网不通时 OSRM 返回 null
+  return data.durations.map((row, i) =>
+    row.map((s, j) => (s == null ? null : correctedMinutes(s, data.distances?.[i]?.[j] ?? 0))),
+  );
 }
 
 const parkTravel = {};

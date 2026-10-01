@@ -57,9 +57,11 @@ export function GuideSummary({
     { key: "permit", label: g.permit },
     { key: "tooHard", label: g.tooHard },
     { key: "noTime", label: g.noTime },
+    { key: "tooFar", label: g.tooFar },
+    { key: "across", label: g.across },
   ];
   const inTrip = new Set(tripIds);
-  const skippedOf = (key: keyof GuideSkipped) => guide.skipped[key].filter((id) => !inTrip.has(id));
+  const skippedOf = (key: keyof GuideSkipped) => (guide.skipped[key] ?? []).filter((id) => !inTrip.has(id));
   const skippedGroups = reasons.filter(({ key }) => skippedOf(key).length > 0);
   const closed = skippedOf("closed");
   const monthActivities = activities.filter((activity) => !activity.months || (month !== null && activity.months.includes(month)));
