@@ -1,5 +1,6 @@
 import {
   buildTimeline,
+  LATE_RETURN,
   lodgingLeg,
   rankLodging,
   type LodgingPoint,
@@ -93,6 +94,8 @@ const DAY_LIMIT: Record<Pace, number> = { relaxed: 510, normal: 600, packed: 660
 const FILL_TRIES = 8;
 /** 补景点后重新分天，车程取整会差几分钟；超出不到这么多也算没变满 */
 const FILL_SLACK_MIN = 15;
+/** 补一个景点，它那天多开的车不能超过它本身的停留时间，至少也给这么多分钟（不为了 20 分钟的观景点多绕三小时） */
+const FILL_DETOUR_MIN = 30;
 /** 超过这么久的徒步不自动排（可以手动加） */
 const MAX_HIKE_MIN: Record<Pace, number> = { relaxed: 240, normal: 420, packed: 600 };
 /** 园内景点之间平均每天开车的分钟数，估算时间预算用 */
@@ -224,20 +227,29 @@ export function generateTrip(input: GenerateInput, context: GenerateContext): { 
   trip = plan(chooseLodging(trip));
 
   // 按现在的住处算每天的时间线
-  const timelines = (current: Trip) => {
+  const dayContexts = (current: Trip) => {
     let previous: PlanStop | undefined;
     return current.days.map((day, d) => {
       const stops = day.map((item) => stopById.get(item.id)).filter((stop): stop is PlanStop => stop !== undefined);
-      const timeline = buildTimeline(stops, {
+      const context = {
         sun: sunFor(d),
         from: resolve(current.nights[d]),
         to: resolve(current.nights[d + 1]),
         previous,
         date: dateFor(d),
-      });
+      };
       previous = stops.at(-1) ?? previous;
-      return { stops, timeline };
+      return { stops, context };
     });
+  };
+  const timelines = (current: Trip) =>
+    dayContexts(current).map(({ stops, context }) => ({ stops, timeline: buildTimeline(stops, context) }));
+  /** 这个景点让它那天多开了多少车：那天的车程减去去掉它、其他顺序不变的车程（一天只有它的不算绕路） */
+  const detourOf = (current: Trip, id: string) => {
+    const day = dayContexts(current).find(({ stops }) => stops.length > 1 && stops.some((stop) => stop.id === id));
+    if (!day) return 0;
+    const without = day.stops.filter((stop) => stop.id !== id);
+    return buildTimeline(day.stops, day.context).driveMin - buildTimeline(without, day.context).driveMin;
   };
   const tooLong = (timeline: ReturnType<typeof buildTimeline>) =>
     timeline.overloaded || timeline.lateReturn || timeline.activeMin > DAY_LIMIT[input.pace];
@@ -258,13 +270,15 @@ export function generateTrip(input: GenerateInput, context: GenerateContext): { 
     trip = plan(chooseLodging(plan({ ...trip, days: trip.days.map(without) })));
   }
 
-  // 按节奏还有空的天：把没排进去的景点按分数试着加回来，排完没有哪天变得更满才留下
+  // 按节奏还有空的天：把没排进去的景点按分数试着加回来，排完没有哪天变得更满、也没有为它绕远路才留下。
+  // 回住处太晚按晚了多少分钟算（已经晚了的天再加景点也算更满）
   const excess = (current: Trip) =>
     timelines(current).reduce(
       (sum, { timeline }) =>
         sum +
         Math.max(0, timeline.activeMin - DAY_LIMIT[input.pace]) +
-        (timeline.overloaded || timeline.lateReturn ? 1000 : 0),
+        (timeline.overloaded ? 1000 : 0) +
+        (timeline.lateReturn ? 1000 + (timeline.returnAt ?? LATE_RETURN) - LATE_RETURN : 0),
       0,
     );
   // 和补景点之前比：整个补景点过程加起来最多多超 FILL_SLACK_MIN 分钟
@@ -273,7 +287,7 @@ export function generateTrip(input: GenerateInput, context: GenerateContext): { 
   for (const stop of ranked.filter((candidate) => !planned.has(candidate.id)).slice(0, FILL_TRIES)) {
     const trial = plan(chooseLodging(plan({ ...trip, pool: [stop.id] })));
     const trialExcess = excess(trial);
-    if (trialExcess <= baseExcess + FILL_SLACK_MIN) {
+    if (trialExcess <= baseExcess + FILL_SLACK_MIN && detourOf(trial, stop.id) <= Math.max(FILL_DETOUR_MIN, stop.durationMin)) {
       trip = trial;
       skipped.noTime = skipped.noTime.filter((id) => id !== stop.id);
     }

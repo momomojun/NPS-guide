@@ -17,6 +17,7 @@ import type { AttractionWithPhoto } from "@/data/attractions";
 import type { ParkAlert } from "@/lib/alert-match";
 import { fill, formatDuration, formatMonths } from "@/i18n/format";
 import { monthOf } from "@/lib/dates";
+import { lodgingLeg } from "@/lib/planner";
 import { formatClock } from "@/lib/sun";
 import { moveItem, removeItem, setItemStatus } from "@/lib/trip-edit";
 import type { Trip } from "@/lib/trip-store";
@@ -36,6 +37,11 @@ export interface DragHandlers {
 }
 
 type Tone = "warn" | "info";
+
+/** 等日落、等天黑空出来这么久，住处又在这么近的地方，就提一句可以先回去休息（来回之外至少歇这么久） */
+const REST_WAIT_MIN = 90;
+const REST_MAX_DRIVE = 40;
+const REST_MIN_STAY = 45;
 
 /** 时间线三列：拖动把手、时间、内容；出发 / 开车 / 回住处的行也用同样的列宽，才能对齐 */
 const gripCol = "w-4 shrink-0";
@@ -109,6 +115,15 @@ export function DayCard({
     const road = roadNotes.get(stop.id);
     if (road?.note && item.status === "planned" && !roadNoteAt.has(road.road.id)) roadNoteAt.set(road.road.id, stop.id);
   }
+
+  // 空出来很久、当晚住处不远：可以先回住处休息，单程多久
+  const restBack = (k: number) => {
+    const entry = timeline.entries[k];
+    const previous = rows[k - 1]?.stop;
+    if (!entry || entry.waitMin < REST_WAIT_MIN || !previous || !view.to || view.to.endpoint) return null;
+    const back = lodgingLeg(view.to, previous, "back");
+    return back <= REST_MAX_DRIVE && 2 * back + REST_MIN_STAY <= entry.waitMin ? back : null;
+  };
 
   const notesFor = (stop: AttractionWithPhoto) => {
     const notes: { text: string; tone: Tone }[] = [];
@@ -285,7 +300,10 @@ export function DayCard({
                       <span className={gripCol} aria-hidden />
                       <span className={timeCol} aria-hidden />
                       <span className="inline-flex items-center gap-1.5">
-                        <IconPause className="text-sm" /> {fill(t.free, { d: duration(entry.waitMin) })}
+                        <IconPause className="text-sm" />{" "}
+                        {restBack(k) !== null && view.to
+                          ? fill(t.freeRest, { d: duration(entry.waitMin), name: view.to.name, back: duration(restBack(k)!) })
+                          : fill(t.free, { d: duration(entry.waitMin) })}
                       </span>
                     </p>
                   )}

@@ -75,6 +75,8 @@ const LODGING_COLOR = "#2f4a5a";
 const ALL_DAYS = -1;
 /** 自定义住处只查这个范围内公园的景点车程 */
 const MEASURE_RADIUS_KM = 400;
+/** NPS 公告说的是现在的情况：只对到今天起这么多天内的日子，更远的行程只在实时公告里列出来 */
+const ALERT_DAYS = 30;
 
 function distanceKm(a: { lat: number; lon: number }, b: { lat: number; lon: number }) {
   const rad = Math.PI / 180;
@@ -686,12 +688,20 @@ export function Planner({
   const alertsData = useJson<AlertsResponse>(alertsUrl);
   const parkAlerts = alertsData?.alerts ?? [];
   const alertsOf = (stop: AttractionWithPhoto) => alertsForStop(stop, parkAlerts);
+  const alertsSoon = (date: string | null) =>
+    date !== null && todayDate !== null && date >= todayDate && date <= addDays(todayDate, ALERT_DAYS);
+  // 公告提到的行程景点（哪天的都算，实时公告里列出来）；其中 30 天内的才对到那天的景点下面
   const affected = new Map<string, string[]>();
+  const affectedSoon = new Set<string>();
   for (const view of dayViews) {
     for (const { stop } of view.rows) {
-      for (const alert of alertsOf(stop)) affected.set(alert.id, [...(affected.get(alert.id) ?? []), stop.nameZh]);
+      for (const alert of alertsOf(stop)) {
+        affected.set(alert.id, [...(affected.get(alert.id) ?? []), stop.nameZh]);
+        if (alertsSoon(view.date)) affectedSoon.add(stop.nameZh);
+      }
     }
   }
+  const alertsLater = affected.size > 0 && affectedSoon.size === 0;
 
   // 天气：定了具体日期、16 天以内的用预报（每天一个地点：第一站，没有就用住处），其他用往年同期
   const weatherPlace = (view: DayView) => view.rows[0]?.stop ?? view.to ?? view.from;
@@ -757,7 +767,8 @@ export function Planner({
     }
   });
   const alertStops = [...new Set([...affected.values()].flat())];
-  if (alertStops.length) liveNotes.push(fill(t.overview.alertStops, { names: alertStops.join("、") }));
+  if (affectedSoon.size) liveNotes.push(fill(t.overview.alertStops, { names: [...affectedSoon].join("、") }));
+  else if (alertStops.length) liveNotes.push(fill(t.overview.alertStopsLater, { names: alertStops.join("、") }));
 
   // 补给点：按公园取，住处附近的超市、加油、快充、亚洲超市和餐厅
   const serviceUrls = stopParks.map((code) => `/api/services/${code}`);
@@ -1077,6 +1088,7 @@ export function Planner({
           <TripAlerts
             alerts={parkAlerts}
             affected={affected}
+            later={alertsLater}
             failed={alertsData?.failed ?? []}
             loading={alertsData === undefined}
             parkName={parkName}
@@ -1174,7 +1186,7 @@ export function Planner({
                 mapsUrl={(stop) => googleMapsUrl(stop, parkNameEn(stop.park))}
                 drag={drag}
                 weather={dayWeather[view.day]}
-                alertsFor={alertsOf}
+                alertsFor={(stop) => (alertsSoon(view.date) ? alertsOf(stop) : [])}
                 header={
                   view.day === 0 && view.rows.length > 0 ? (
                     <LodgingSelector

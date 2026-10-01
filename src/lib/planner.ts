@@ -73,9 +73,11 @@ const DAY_START = 8 * 60 + 30;
 /** 活动 + 开车超过这个时长，算安排太满 */
 const DAY_LIMIT_MIN = 11 * 60;
 /** 晚于这个时间才回到住处，提示太晚 */
-const LATE_RETURN = 22 * 60;
+export const LATE_RETURN = 22 * 60;
 /** 早上开车超过这个时长，就不安排赶日出了 */
 const SUNRISE_MAX_DRIVE = 60;
+/** 最后一天开回机场、城市：回程超过这个时长就不等日落、不等天黑 */
+const LEAVING_EVENING_MAX_DRIVE = 60;
 /** 单段车程超过这个时长，建议飞过去或者拆成两段旅行 */
 export const FAR_TRANSFER_MIN = 10 * 60;
 /** 超过这个数量就不逐一比较当天的顺序了（8! = 40320 种） */
@@ -330,14 +332,14 @@ export function splitIntoDays(sequence: PlanStop[], dayCount: number, lodgingFor
 type Slot = "sunrise" | "sunset" | "night" | "any";
 
 /** 只有当天第一个景点能卡日出（早上要开很久时不卡），最后一个能卡日落或夜晚 */
-function slotsFor(stops: PlanStop[], allowSunrise: boolean): Slot[] {
+function slotsFor(stops: PlanStop[], allowSunrise: boolean, allowEvening = true): Slot[] {
   const slots: Slot[] = stops.map(() => "any");
   if (stops.length === 0) return slots;
   const prefers = (i: number, time: TimeOfDay) => stops[i].bestTime?.includes(time) ?? false;
   const last = stops.length - 1;
   const onlyStopPrefersSunrise = stops.length === 1 && stops[0].bestTime?.[0] === "sunrise" && allowSunrise;
-  if (prefers(last, "night")) slots[last] = "night";
-  else if (prefers(last, "sunset") && !onlyStopPrefersSunrise) slots[last] = "sunset";
+  if (allowEvening && prefers(last, "night")) slots[last] = "night";
+  else if (allowEvening && prefers(last, "sunset") && !onlyStopPrefersSunrise) slots[last] = "sunset";
   if (allowSunrise && slots[0] === "any" && prefers(0, "sunrise")) slots[0] = "sunrise";
   return slots;
 }
@@ -386,13 +388,15 @@ function simulate(
   startAt?: number,
   /** 从机场或城市出发的第一天：刚落地，不赶日出 */
   arriving = false,
+  /** 开回机场或城市的最后一天：路远就不等日落、不等天黑 */
+  leaving = false,
 ): DayTimeline {
   const morning = drives[0] ?? 0;
   const sunriseStart = sun.sunrise - 20;
   const allowSunrise =
     !arriving &&
     (startAt !== undefined ? startAt + morning <= sunriseStart : fromLodging ? morning <= SUNRISE_MAX_DRIVE : morning === 0);
-  const slots = slotsFor(stops, allowSunrise);
+  const slots = slotsFor(stops, allowSunrise, !leaving || returnDrive <= LEAVING_EVENING_MAX_DRIVE);
   const departAt =
     startAt !== undefined
       ? Math.max(startAt, slots[0] === "sunrise" ? sunriseStart - morning : startAt)
@@ -484,6 +488,7 @@ export function buildTimeline(stops: PlanStop[], context: DayContext): DayTimeli
     context.from !== undefined,
     undefined,
     context.from?.endpoint === "origin",
+    context.to?.endpoint === "destination",
   );
   return withShuttles(timeline, stops, legs, back, context.date, context.sun);
 }
@@ -555,7 +560,16 @@ export function buildLiveTimeline(
     return context.lodging ? stayLeg(context.lodging, stop, "out", context.date) : { minutes: 0 };
   });
   const back = context.to && live.length > 0 ? stayLeg(context.to, live[live.length - 1], "back", context.date) : { minutes: 0 };
-  const timeline = simulate(live, legs.map((leg) => leg.minutes), back.minutes, context.sun, true, arrivedAt ?? context.now);
+  const timeline = simulate(
+    live,
+    legs.map((leg) => leg.minutes),
+    back.minutes,
+    context.sun,
+    true,
+    arrivedAt ?? context.now,
+    false,
+    context.to?.endpoint === "destination",
+  );
   return withShuttles(timeline, live, legs, back, context.date, context.sun);
 }
 
@@ -595,6 +609,7 @@ export function arrangeDay(stops: PlanStop[], context: DayContext): PlanStop[] {
       context.from !== undefined,
       undefined,
       context.from?.endpoint === "origin",
+      context.to?.endpoint === "destination",
     );
     // 赶不上末班车的顺序尽量不要
     const stranded = date

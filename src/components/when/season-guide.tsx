@@ -3,9 +3,11 @@
 import Link from "next/link";
 import { useState } from "react";
 import { IconArrowRight } from "@/components/icons";
+import { seasonalRoads } from "@/data/roads";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { fill, formatMonths } from "@/i18n/format";
 import { addDays } from "@/lib/dates";
+import { bestRoadDay, ROAD_LIKELY, roadStatus, type RoadStatus } from "@/lib/roads";
 import type { MonthClimateSummary, ParkMonth, ParkSeason } from "@/lib/seasons";
 import { useToday } from "@/lib/use-json";
 
@@ -39,6 +41,17 @@ function monthScore(month: ParkMonth): number {
 
 const verdictOf = (score: number): Verdict => (score >= 5.2 ? "great" : score >= 3 ? "ok" : "poor");
 
+/** 季节性道路往年这几天的情况（把握很大的不列） */
+interface RoadReason {
+  road: string;
+  date: string;
+  status: RoadStatus;
+  chance: number;
+}
+
+/** 往年这几天十有八九都通车的路，不用特别说 */
+const ROAD_SURE = 0.9;
+
 interface ParkWindow {
   park: ParkSeason;
   score: number;
@@ -49,12 +62,42 @@ interface ParkWindow {
   closedMustSee: string[];
   climate?: MonthClimateSummary;
   events: string[];
+  roads: RoadReason[];
 }
 
-function combine(park: ParkSeason, weights: Map<number, number>): ParkWindow {
+/**
+ * 这几天（dates，只选了月份时没有）合起来的情况。选了具体日期时，季节性道路通了就能去的景点按往年这几天里
+ * 把握最大的一天算（和自动生成攻略一样），不按开放月份：能去的比例、去不了的必去景点和分数都跟着改
+ */
+function combine(park: ParkSeason, weights: Map<number, number>, dates: string[] | null): ParkWindow {
   const total = [...weights.values()].reduce((a, b) => a + b, 0);
-  const entries = [...weights.entries()].map(([month, weight]) => ({ info: park.months[month - 1], share: weight / total }));
-  const score = entries.reduce((sum, { info, share }) => sum + monthScore(info) * share, 0);
+  const entries = [...weights.entries()].map(([month, weight]) => ({
+    month,
+    info: park.months[month - 1],
+    share: weight / total,
+  }));
+  let roadShift = 0;
+  const openByRoad = new Set<string>();
+  const closedByRoad = new Set<string>();
+  const roads: RoadReason[] = [];
+  for (const id of dates ? [...new Set(park.roadStops.map((stop) => stop.road))] : []) {
+    const road = seasonalRoads.find((candidate) => candidate.id === id);
+    const best = road && dates ? bestRoadDay(road, dates) : null;
+    const status = road && best ? roadStatus(road, best.date) : null;
+    if (!best || !status) continue;
+    const open = best.chance >= ROAD_LIKELY;
+    for (const stop of park.roadStops.filter((candidate) => candidate.road === id)) {
+      const byMonth = entries.reduce(
+        (sum, { month, share }) => sum + (!stop.openMonths || stop.openMonths.includes(month) ? share : 0),
+        0,
+      );
+      roadShift += (stop.weight * ((open ? 1 : 0) - byMonth)) / Math.max(park.totalWeight, 1);
+      if (stop.mustSee) (open ? openByRoad : closedByRoad).add(stop.mustSee);
+    }
+    if (best.chance < ROAD_SURE) roads.push({ road: id, date: best.date, status, chance: best.chance });
+  }
+  // 分数里能去的景点比例是 ×3
+  const score = entries.reduce((sum, { info, share }) => sum + monthScore(info) * share, 0) + 3 * roadShift;
   const climates = entries.filter(({ info }) => info.climate);
   const weighted = (pick: (c: MonthClimateSummary) => number) =>
     climates.reduce((sum, { info, share }) => sum + pick(info.climate!) * share, 0) /
@@ -64,8 +107,13 @@ function combine(park: ParkSeason, weights: Map<number, number>): ParkWindow {
     score,
     verdict: verdictOf(score),
     best: entries.every(({ info }) => info.best),
-    open: entries.reduce((sum, { info, share }) => sum + info.open * share, 0),
-    closedMustSee: [...new Set(entries.flatMap(({ info }) => info.closedMustSee))],
+    open: entries.reduce((sum, { info, share }) => sum + info.open * share, 0) + roadShift,
+    closedMustSee: [
+      ...new Set([
+        ...entries.flatMap(({ info }) => info.closedMustSee).filter((name) => !openByRoad.has(name)),
+        ...closedByRoad,
+      ]),
+    ],
     climate: climates.length
       ? {
           high: weighted((c) => c.high),
@@ -79,6 +127,7 @@ function combine(park: ParkSeason, weights: Map<number, number>): ParkWindow {
     events: [...new Set(entries.flatMap(({ info }) => info.events))].filter(
       (event) => entries.reduce((sum, { info, share }) => sum + (info.events.includes(event) ? share : 0), 0) > 0.5,
     ),
+    roads,
   };
 }
 
@@ -99,6 +148,19 @@ function reasonsOf(item: ParkWindow, text: SeasonText): Reason[] {
   if (item.closedMustSee.length === 0) reasons.push({ text: item.open >= 0.9 ? t.allOpen : t.mustSeeOpen, good: true });
   else if (item.open >= 0.6) reasons.push({ text: fill(t.someClosed, { names: names(item.closedMustSee) }), good: false });
   else reasons.push({ text: fill(t.mostClosed, { names: names(item.closedMustSee) }), good: false });
+  const day = (md: string) => fill(text.dayLabel, { m: Number(md.slice(0, 2)), d: Number(md.slice(3, 5)) });
+  for (const { road, date, status, chance } of item.roads) {
+    const values = { road: item.park.roadNames[road] ?? road, date: day(date.slice(5, 10)), year: date.slice(0, 4) };
+    const reason =
+      status.kind === "odds"
+        ? fill(status.phase === "opening" ? t.roadOpening : t.roadClosing, { ...values, n: status.known, k: status.open })
+        : status.kind === "notYet"
+          ? fill(t.roadNotYet, { ...values, opened: day(status.opened) })
+          : status.kind === "closed"
+            ? fill(t.roadClosed, { ...values, closed: day(status.closed) })
+            : null;
+    if (reason) reasons.push({ text: reason, good: chance >= ROAD_LIKELY });
+  }
   const climate = item.climate;
   if (climate) {
     if (climate.hottest >= 33) reasons.push({ text: fill(t.hot, { high: degrees(climate.hottest) }), good: false });
@@ -134,7 +196,9 @@ export function SeasonGuide({ parks, locale, text }: { parks: ParkSeason[]; loca
     label = fill(text.rangeLabel, { from: md(start), to: md(end) });
   }
 
-  const results = weights.size ? parks.map((park) => combine(park, weights)).sort((a, b) => b.score - a.score) : [];
+  // 选了具体日期：这几天的日期（季节性道路按天算）
+  const dates = wholeMonth === null && start ? Array.from({ length: WINDOW_DAYS }, (_, i) => addDays(start, i)) : null;
+  const results = weights.size ? parks.map((park) => combine(park, weights, dates)).sort((a, b) => b.score - a.score) : [];
   const groups: { verdict: Verdict; items: ParkWindow[] }[] = (["great", "ok", "poor"] as Verdict[]).map((verdict) => ({
     verdict,
     items: results.filter((item) => item.verdict === verdict),

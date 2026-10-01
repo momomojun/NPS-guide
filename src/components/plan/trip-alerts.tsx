@@ -8,6 +8,7 @@ const SERIOUS = new Set(["Park Closure", "Danger"]);
 export function TripAlerts({
   alerts,
   affected,
+  later = false,
   failed,
   loading,
   parkName,
@@ -16,6 +17,8 @@ export function TripAlerts({
   alerts: ParkAlert[];
   /** 公告 id → 受影响的行程景点名 */
   affected: Map<string, string[]>;
+  /** 出发还早（30 天以后）：公告只在这里列，不对到每天的景点下面 */
+  later?: boolean;
   failed: string[];
   loading: boolean;
   parkName: (code: string) => string;
@@ -71,6 +74,7 @@ export function TripAlerts({
         </span>
         <span className="text-[11px] text-mute">{t.source}</span>
       </p>
+      {later && <p className="mt-2 text-xs leading-5 text-ink-soft">{t.later}</p>}
       {loading ? (
         <p className="mt-3 text-sm text-mute">{t.loading}</p>
       ) : alerts.length === 0 && failed.length === 0 ? (

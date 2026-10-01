@@ -35,7 +35,7 @@ npm run dev                  # http://localhost:3000
 | `src/data/roads.ts`、`src/lib/roads.ts` | 季节性山路（Tioga Road、冰川点路、向阳大道洛根山口段、20 号公路山口段、雷尼尔山两个山口）：路名、说明、要走这条路的景点；历年开通、关闭日期在 `roads.generated.ts`。按最近 20 个正常年份（疫情、修路的年份不算）算出某一天往年通车的比例：8 月 15 日前按开通算，之后按关闭算，当年已经知道的按当年说。行程里每天第一个要走这条路的景点下面说一次，不到一半的年份通车用警告色、总览里提醒并建议挪到把握大的那天；定了日期的自动生成攻略按出发这几天里把握最大的一天挑，不到一半就不排。`attractions` 是路通了就能去的（定了日期不再按开放月份算），`afterRoad` 是路通了还要等步道化雪的（两个都看）。公园页画出最近 15 年每年的通车时段 |
 | `src/data/shuttles.ts`、`src/lib/shuttle.ts` | 班车季只能坐班车的路（锡安峡谷景观道、大峡谷 Hermit Road 和 Kaibab Rim、马里波萨巨杉林、红杉 Moro Rock 周末、班夫梦莲湖、Kennecott……）：季节、首末班车（有的跟着日落走）、每站坐多久、换乘点在哪；同一站的几个景点之间按走路算；`carFree` 的线（Kennecott）连住处也不通车，住在线上的去线外也要先坐回换乘点。数据由研究整理，时刻表年份写在 `scheduleYear` |
 | `src/data/bookings.ts`、`src/lib/booking.ts` | 要提前订的：园内住宿、营地、许可证抽签、入园预约、船票和团，各自的开放规则（滚动开放、每月整段放、按季抽签、按月抽签、提前几天、固定日期）；按行程日期算出哪天开订、还剩几天，生成 .ics 日历提醒。针对没收录的地方（营地等）的规则只在公园页列出 |
-| `src/lib/generate-trip.ts` | 自动生成攻略：可以几个顺路的公园一起排（比如盐湖城进出，先大提顿再黄石）。按月份去掉关闭和要抽签的景点（要订票的照排、提醒提前订），按必去、热度、当月最佳和节奏挑景点，路线从出发地排到回程地，再按车程和住宿偏好（不限 / 酒店 / 民宿）选每晚住处；太满的一天去掉最不重要的景点，有空的天再补 |
+| `src/lib/generate-trip.ts` | 自动生成攻略：可以几个顺路的公园一起排（比如盐湖城进出，先大提顿再黄石）。按月份去掉关闭和要抽签的景点（要订票的照排、提醒提前订），按必去、热度、当月最佳和节奏挑景点，路线从出发地排到回程地，再按车程和住宿偏好（不限 / 酒店 / 民宿）选每晚住处；太满的一天去掉最不重要的景点，有空的天再补（补的景点让那天多开的车不能超过它本身的停留，至少 30 分钟；回住处太晚按晚了多少分钟算）。开回机场、城市的最后一天，回程超过 1 小时就不等日落 |
 | `src/lib/trip-store.ts` | 行程（含每晚住处）存在浏览器 localStorage，自用阶段不需要账号 |
 | `src/lib/trip-share.ts`、`src/components/plan/trip-share.tsx` | 电脑和手机之间传行程：整个行程压缩（fflate）后放在链接的 `#trip=` 里，附二维码，打开链接先问要不要换掉现在的行程；也能导出、导入 JSON 文件 |
 | `src/components/plan/today-panel.tsx`、`src/lib/use-now.ts` | “今天”模式：出发后打开行程页，最上面是今天的下一站、按现在的时间推算的到达时间、日落倒计时、导航链接；到了点“到了”（记下到达时间，按停够了再走推算后面），走的时候点“走了”（这一站完成） |
@@ -44,14 +44,14 @@ npm run dev                  # http://localhost:3000
 | `src/lib/geocode.ts`、`src/lib/osrm-client.ts` | 自定义住处：Photon 搜酒店 / 地址，OSRM 在浏览器里算到各景点的车程 |
 | `src/lib/nps.ts`、`src/lib/nlr.ts` | NPS 公告和门票、NLR 充电桩 |
 | `src/app/api/` | 接口：`alerts`（行程里几个公园的 NPS 公告，带中文翻译）、`weather`（Open-Meteo 16 天预报 + NWS 预警）、`prices/flights`（机票价格）、`prices/gas`（各州油价）、`services/[park]` 和 `gallery/[park]`（构建时生成的静态 JSON） |
-| `src/lib/alert-match.ts`、`src/lib/weather.ts` | 公告按景点英文名 / 片区对到行程景点（关闭类只看标题）；天气预报和预警 |
+| `src/lib/alert-match.ts`、`src/lib/weather.ts` | 公告按景点英文名 / 片区对到行程景点（关闭类只看标题）；公告说的是现在的情况，只对到今天起 30 天内的日子，更远的行程只在实时公告里列出来；天气预报和预警 |
 | `src/lib/prices/` | 价格数据源一层：`serpapi.ts`（配了 key 用）、`google-flights.ts`（自用低频抓取，缓存 6 小时）、`google-tfs.ts`（Google Flights 链接参数）、`links.ts`（Kayak / Expedia 比价链接）、`car-rates.ts`（Kayak 租车参考价快照）、`fuel.ts`（AAA 各州油价快照，加拿大两省用 finder.com 的省均价换算）、`gas.ts`（AAA 实时油价，12 小时读一次，读不到用快照） |
 | `src/lib/translate.ts`、`src/lib/alert-translate.ts` | NPS 公告翻成中文：DeepL（配了 key）→ MyMemory（免费）→ Google 网页翻译（仅自用）；页面上中文和原文一起显示，注明是机器翻译 |
 | `src/lib/self-use.ts` | 自用阶段的抓取开关（Google Flights 机票、AAA 油价、Google 网页翻译）：开发模式默认开，部署后设 `SELF_USE_SCRAPE=1` 才开 |
 | `src/components/prices/` | 价格页：机票（可以一次比较某个公园附近的几个机场）、各机场租车参考价、公园所在各州的油价和油费 / 电费计算 |
 | `src/components/plan/` | 行程页：每天的卡片（天气、公告、班车）、总览、要提前订的（`trip-bookings.tsx`）、攻略说明、补给、机票和租车、预算（`budget.ts` 计算）、打印和离线保存 |
 | `src/data/creators.ts` | 博主同款路线：YouTube / B 站视频（中文、英语、日语、韩语、西语、法语、意语、德语博主）按文稿、简介或章节整理的路线、季节、对景点的评价和提醒，景点卡片上显示“博主怎么说” |
-| `src/lib/seasons.ts` | 什么时候去：按月份整理每个公园能去的景点比例、去不了的必去景点、往年同期天气和特别活动，页面按出发日期打分 |
+| `src/lib/seasons.ts` | 什么时候去：按月份整理每个公园能去的景点比例、去不了的必去景点、往年同期天气和特别活动，页面按出发日期打分；选了具体日期时，季节性山路通了就能去的景点按往年这几天里把握最大的一天算（和自动生成攻略一样），原因里写上往年通车的年数 |
 | `public/sw.js`、`src/app/manifest.ts` | 离线：构建版注册 service worker，缓存看过的页面、脚本、接口数据和地图瓦片；可以装到手机主屏 |
 | `src/components/map/park-map.tsx`、`sources.ts` | MapLibre 地图：OpenFreeMap 底图 + 地形阴影 + 卫星图（美国用 USGS，加拿大用 EOX Sentinel-2）+ 3D 地形，都不需要 key |
 | `src/app/globals.css` | 设计基调：纸色底、墨色字、砂岩红强调色；标题 Cormorant Garamond + 思源宋体，正文 Jost；开场动画、滚动渐显 |

@@ -3,6 +3,8 @@ import { activities } from "@/data/activities";
 import { attractions } from "@/data/attractions";
 import { climate } from "@/data/climate.generated";
 import type { Park } from "@/data/parks";
+import { seasonalRoads } from "@/data/roads";
+import { roadDecides, roadFor } from "@/lib/roads";
 
 // “什么时候去哪个公园”：按月整理每个公园能去的景点比例、去不了的必去景点、往年同期天气和特别活动，
 // 页面上按出发日期（前后十天，跨月按天数加权）打分排序
@@ -28,6 +30,16 @@ export interface ParkMonth {
   events: string[];
 }
 
+/** 季节性道路通了就能去的景点：选了具体日期时按这条路往年这几天通不通算，不按开放月份 */
+export interface RoadStop {
+  road: string;
+  /** 和 open 的算法一样：必去景点算两份 */
+  weight: number;
+  /** 必去景点的名字 */
+  mustSee?: string;
+  openMonths?: number[];
+}
+
 export interface ParkSeason {
   code: string;
   nameZh: string;
@@ -37,6 +49,11 @@ export interface ParkSeason {
   bestMonths: number[];
   /** 下标 0 是 1 月 */
   months: ParkMonth[];
+  /** 参与算 open 的景点总份数 */
+  totalWeight: number;
+  roadStops: RoadStop[];
+  /** 这个公园的季节性道路 id → 名字 */
+  roadNames: Record<string, string>;
 }
 
 const round1 = (value: number) => Math.round(value * 10) / 10;
@@ -83,6 +100,11 @@ export function parkSeason(park: Park): ParkSeason {
         .map((activity) => activity.nameZh),
     };
   });
+  const roadStops = stops.flatMap((stop): RoadStop[] => {
+    const road = roadFor(stop.id);
+    if (!road || !roadDecides(road, stop.id)) return [];
+    return [{ road: road.id, weight: stop.mustSee ? 2 : 1, mustSee: stop.mustSee ? stop.nameZh : undefined, openMonths: stop.openMonths }];
+  });
   return {
     code: park.code,
     nameZh: park.nameZh,
@@ -91,5 +113,10 @@ export function parkSeason(park: Park): ParkSeason {
     seasonNote: park.seasonNote,
     bestMonths: park.bestMonths,
     months,
+    totalWeight: stops.reduce((sum, stop) => sum + (stop.mustSee ? 2 : 1), 0),
+    roadStops,
+    roadNames: Object.fromEntries(
+      seasonalRoads.filter((road) => roadStops.some((stop) => stop.road === road.id)).map((road) => [road.id, road.nameZh]),
+    ),
   };
 }

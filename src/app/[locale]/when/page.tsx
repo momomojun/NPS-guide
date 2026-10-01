@@ -33,6 +33,8 @@ export default async function WhenPage({ params }: PageProps<"/[locale]/when">) 
         closedMustSee: month.closedMustSee.map(text),
         events: month.events.map(text),
       })),
+      roadStops: season.roadStops.map((stop) => (stop.mustSee ? { ...stop, mustSee: text(stop.mustSee) } : stop)),
+      roadNames: Object.fromEntries(Object.entries(season.roadNames).map(([id, name]) => [id, text(name)])),
     };
   });
 
