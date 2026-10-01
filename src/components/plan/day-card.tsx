@@ -21,6 +21,7 @@ import { formatClock } from "@/lib/sun";
 import { moveItem, removeItem, setItemStatus } from "@/lib/trip-edit";
 import type { Trip } from "@/lib/trip-store";
 import { ActionMenu } from "./action-menu";
+import { roadNoteFor, roadWarn } from "./road-note";
 import type { DayView, DragSpot, PlannerText } from "./types";
 import type { DayWeather } from "./weather";
 import { WeatherLine, weatherNotes } from "./weather-line";
@@ -48,6 +49,7 @@ export function DayCard({
   dayCount,
   itemCount,
   dateLabel,
+  exactDate,
   parkNames,
   text,
   selectedId,
@@ -69,6 +71,8 @@ export function DayCard({
   /** trip.days[day].length，拖到末尾时用 */
   itemCount: number;
   dateLabel: string | null;
+  /** 定了出发日期时这天的日期（只定了月份时没有）：季节性道路按这天算往年通不通 */
+  exactDate: string | null;
   parkNames: string[];
   text: PlannerText;
   selectedId: string | null;
@@ -98,9 +102,20 @@ export function DayCard({
   const isTarget = (index: number) => drag.target?.day === day && drag.target.index === index;
   const isSource = (index: number) => drag.source?.day === day && drag.source.index === index;
 
+  // 季节性道路：这天第一个还没去的、要走这条路的景点下面说一次往年这天通不通
+  const roadNotes = new Map(exactDate ? rows.map(({ stop }) => [stop.id, roadNoteFor(stop.id, exactDate, text)]) : []);
+  const roadNoteAt = new Map<string, string>();
+  for (const { item, stop } of rows) {
+    const road = roadNotes.get(stop.id);
+    if (road?.note && item.status === "planned" && !roadNoteAt.has(road.road.id)) roadNoteAt.set(road.road.id, stop.id);
+  }
+
   const notesFor = (stop: AttractionWithPhoto) => {
     const notes: { text: string; tone: Tone }[] = [];
-    if (month !== null && stop.openMonths && !stop.openMonths.includes(month)) {
+    const road = roadNotes.get(stop.id);
+    // 路通了就能去的景点，开放月份只是粗算，定了日期就只按这条路说
+    const byMonth = !road?.decides || stop.openMonths?.length === 0;
+    if (byMonth && month !== null && stop.openMonths && !stop.openMonths.includes(month)) {
       notes.push({
         text:
           stop.openMonths.length === 0
@@ -110,6 +125,9 @@ export function DayCard({
       });
     } else if (month !== null && stop.bestMonths && !stop.bestMonths.includes(month)) {
       notes.push({ text: fill(t.warnings.notBest, { months: formatMonths(stop.bestMonths, text.units) }), tone: "info" });
+    }
+    if (road?.note && roadNoteAt.get(road.road.id) === stop.id) {
+      notes.push({ text: fill(t.roads.stop, { road: road.name, note: road.note }), tone: roadWarn(road) ? "warn" : "info" });
     }
     if (stop.permit) notes.push({ text: t.warnings.permit, tone: "warn" });
     return notes;
@@ -208,7 +226,19 @@ export function DayCard({
               isTarget(0) ? "border-clay-600 bg-clay-50" : "border-line"
             }`}
           >
-            {t.empty_day}
+            {/* 换住处的一天（比如最后一天开回机场）：写清楚从哪到哪、要多久 */}
+            {timeline.returnAt !== undefined && view.from && view.to
+              ? fill(t.transferDay, {
+                  from: view.from.name,
+                  to: view.to.name,
+                  leg: timeline.returnShuttle
+                    ? fill(t.shuttleModes[timeline.returnShuttle.mode], {
+                        d: duration(timeline.returnDriveMin),
+                        line: text.shuttleNames[timeline.returnShuttle.line] ?? timeline.returnShuttle.line,
+                      })
+                    : fill(t.drive, { d: duration(timeline.returnDriveMin) }),
+                })
+              : t.empty_day}
           </div>
         ) : (
           <ol>
@@ -289,7 +319,11 @@ export function DayCard({
                         {stop.nameZh} <span className="ml-1 font-sans text-[11px] tracking-[0.12em] text-mute uppercase">{stop.nameEn}</span>
                       </p>
                       <p className="mt-0.5 flex flex-wrap items-center gap-x-1 text-xs text-mute">
-                        {text.kinds[stop.kind]} · {duration(stop.durationMin)}
+                        {text.kinds[stop.kind]} · {duration(entry.end - entry.start)}
+                        {/* 按学到的配速调整过的停留时间，附上原来的估算 */}
+                        {entry.end - entry.start !== stop.durationMin && !finished && (
+                          <span>（{fill(t.pacedFrom, { d: duration(stop.durationMin) })}）</span>
+                        )}
                         {stop.hotRank !== undefined && (
                           <span className="text-clay-700"> · {fill(text.attraction.hotRank, { n: stop.hotRank })}</span>
                         )}

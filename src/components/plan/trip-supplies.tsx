@@ -66,6 +66,7 @@ export interface SupplyEntry {
 }
 
 export function TripSupplies({
+  origin,
   stays,
   entries,
   points,
@@ -74,6 +75,8 @@ export function TripSupplies({
   updated,
   text,
 }: {
+  /** 从机场或城市出发：落地后先去最近的亚洲超市采购 */
+  origin?: { name: string; lat: number; lon: number };
   stays: SupplyStay[];
   entries: SupplyEntry[];
   /** 还在加载时是 undefined */
@@ -137,8 +140,15 @@ export function TripSupplies({
         <p className="mt-5 text-sm text-mute">{t.loading}</p>
       ) : (
         <>
-          {entries.length > 0 && (
+          {(origin || entries.length > 0) && (
             <div className="mt-5 grid gap-x-8 gap-y-5 sm:grid-cols-2">
+              {origin && (
+                <div className="border-l border-clay-600 pl-4">
+                  <p className="text-sm font-medium">{fill(t.origin, { name: origin.name })}</p>
+                  <p className="mt-0.5 text-[11px] text-mute">{t.originHint}</p>
+                  <dl className="mt-2 text-xs">{line("asianGrocery", origin)}</dl>
+                </div>
+              )}
               {entries.map((entry) => (
                 <div key={entry.park} className="border-l border-clay-600 pl-4">
                   <p className="text-sm font-medium">{fill(t.lastStop, { park: entry.parkName })}</p>

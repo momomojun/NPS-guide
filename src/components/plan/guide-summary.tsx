@@ -19,6 +19,7 @@ export function GuideSummary({
   nights,
   tripIds,
   nameOf,
+  dated,
   closedNoteOf,
   activities,
   attractionExists,
@@ -42,6 +43,8 @@ export function GuideSummary({
   /** 现在行程里的景点：已经手动加进来的不再算“没排进去” */
   tripIds: string[];
   nameOf: (id: string) => string;
+  /** 定了出发日期（不开放的景点按这几天说，不按月份） */
+  dated: boolean;
   closedNoteOf: (id: string) => string | undefined;
   /** 这些公园的特别活动（全部月份），这里按行程月份筛 */
   activities: ParkActivity[];
@@ -189,7 +192,7 @@ export function GuideSummary({
         <div className="space-y-8 lg:col-span-5">
           {closed.length > 0 && (
             <div>
-              <h3 className="font-serif text-xl">{fill(g.closed, { month: month ?? "" })}</h3>
+              <h3 className="font-serif text-xl">{dated ? g.closedDated : fill(g.closed, { month: month ?? "" })}</h3>
               <ul className="mt-4 space-y-3">
                 {closed.map((id) => (
                   <li key={id} className="text-sm leading-6">

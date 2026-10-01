@@ -69,6 +69,28 @@ export const attractions = [
   ...wrangellStElias,
 ];
 
+/** 补给点的查询范围在外包框四边各放宽这么多度，门户小镇都在里面 */
+const SERVICE_MARGIN_DEG = 0.3;
+
+/** 一个公园的景点（有出发点用出发点）和推荐住宿：补给点按这些点的范围查 */
+export const serviceArea = (park) => [
+  ...attractions.filter((a) => a.park === park.code).map((a) => a.start ?? a),
+  ...lodgingOptions.filter((l) => l.park === park.code),
+];
+
+/** 补给点的查询范围：[南, 西, 北, 东] */
+export function serviceBox(park) {
+  const points = serviceArea(park);
+  const lats = points.map((p) => p.lat);
+  const lons = points.map((p) => p.lon);
+  return [
+    Math.min(...lats) - SERVICE_MARGIN_DEG,
+    Math.min(...lons) - SERVICE_MARGIN_DEG,
+    Math.max(...lats) + SERVICE_MARGIN_DEG,
+    Math.max(...lons) + SERVICE_MARGIN_DEG,
+  ].map((deg) => Math.round(deg * 1000) / 1000);
+}
+
 export const USER_AGENT = "nps-guide/0.1 (personal trip planner; https://github.com/momomojun/NPS-guide)";
 
 export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));

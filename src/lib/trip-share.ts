@@ -38,6 +38,7 @@ function normalizePrefs(value: unknown): TripPrefs | undefined {
     rooms: Math.max(count(raw.rooms, DEFAULT_PREFS.rooms), 1),
     vehicle: raw.vehicle === "ev" ? "ev" : "gas",
     flyAndRent: typeof raw.flyAndRent === "boolean" ? raw.flyAndRent : DEFAULT_PREFS.flyAndRent,
+    usePace: typeof raw.usePace === "boolean" ? raw.usePace : DEFAULT_PREFS.usePace,
   };
 }
 

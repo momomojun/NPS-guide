@@ -1,0 +1,2168 @@
+{
+ "release": "2026-09-23.1",
+ "updated": "2026-09-30",
+ "parks": {
+  "yose": [
+   {
+    "name": "Annapurna Indian Grocery Market",
+    "lat": 37.34454,
+    "lon": -120.46903,
+    "category": "grocery_store",
+    "confidence": 0.88,
+    "id": "6e21cea1-d7cc-4279-942d-e41e6b325f94"
+   },
+   {
+    "name": "Merced Indian Grocers",
+    "lat": 37.32492,
+    "lon": -120.50343,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "0fe70395-0367-4166-9fed-794a51fe950e"
+   },
+   {
+    "name": "Spices Of India",
+    "lat": 37.30223,
+    "lon": -120.50142,
+    "category": "indian_grocery_store",
+    "confidence": 0.75,
+    "id": "701d1149-228a-4670-b539-25c0e5dbc995"
+   }
+  ],
+  "seki": [
+   {
+    "name": "99 Food Market",
+    "lat": 36.19342,
+    "lon": -119.34332,
+    "category": "indian_grocery_store",
+    "confidence": 0.92,
+    "id": "87aceefe-40e9-409a-9cda-d20548c9474f"
+   },
+   {
+    "name": "A&M Asian Market",
+    "lat": 36.33856,
+    "lon": -119.27829,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "8676d00a-efc7-424d-83d9-df3f36a42825"
+   },
+   {
+    "name": "Bangkok Thai grocery store",
+    "lat": 36.33913,
+    "lon": -119.2923,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "2c5ab7bb-d110-4c8c-8a45-f359a4b7c3b5"
+   },
+   {
+    "name": "Royal Spice Indian grocery",
+    "lat": 36.19743,
+    "lon": -119.32746,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "196a5d9b-0f2b-477e-82dc-03c1da185f7c"
+   },
+   {
+    "name": "Sanger Punjabi Market",
+    "lat": 36.70601,
+    "lon": -119.55621,
+    "category": "indian_grocery_store",
+    "confidence": 0.75,
+    "id": "068b1908-6f08-4f13-b9c2-7ccfe5eabe4f"
+   }
+  ],
+  "chis": [
+   {
+    "name": "Asian American Market",
+    "lat": 34.27972,
+    "lon": -119.28528,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "093604d1-cbb8-4728-ae00-cfea6c4a8317"
+   },
+   {
+    "name": "New Asia Marketplace",
+    "lat": 34.16465,
+    "lon": -119.17791,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "4fa3e071-a5c6-47e2-9ad7-ac7af03ed766"
+   },
+   {
+    "name": "Seafood City Supermarket",
+    "lat": 34.22353,
+    "lon": -119.15524,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "caab89bb-24f4-4ef0-b4dc-1ee54ac26c62"
+   },
+   {
+    "name": "Tita Riza's Filipino Market",
+    "lat": 34.22146,
+    "lon": -119.04317,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "9bba1c40-addb-4610-99cd-5de22b68c7e6"
+   }
+  ],
+  "jotr": [
+   {
+    "name": "AJ Filipino Market",
+    "lat": 33.81522,
+    "lon": -116.49532,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "c5609b5e-426e-445e-bf36-eddcbf95f32b"
+   },
+   {
+    "name": "Fil Am Oriental Market",
+    "lat": 33.80116,
+    "lon": -116.45766,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "69a132a0-440e-402e-88eb-0dfb63420793"
+   },
+   {
+    "name": "Graceland Fil-Asian Market",
+    "lat": 33.71535,
+    "lon": -116.2238,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "3c4c5e95-b3cf-4cf9-9c96-376c962474a2"
+   }
+  ],
+  "redw": [
+   {
+    "name": "Asia's Best",
+    "lat": 40.58271,
+    "lon": -124.145,
+    "category": "grocery_store",
+    "confidence": 0.82,
+    "id": "e9436295-977f-474c-a6bf-67076cd49f4c"
+   },
+   {
+    "name": "Asia's Best",
+    "lat": 40.78971,
+    "lon": -124.13191,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "6043b3ef-b0ea-4840-a111-526ebe094727"
+   },
+   {
+    "name": "Crescent City Oriental Food",
+    "lat": 41.78067,
+    "lon": -124.19859,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "7148b782-3aa2-467a-a3c5-706a683257d0"
+   },
+   {
+    "name": "Lao Oriental Market",
+    "lat": 40.78145,
+    "lon": -124.16474,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "ebff9e3f-bfa3-43bb-98ec-b9feef632916"
+   }
+  ],
+  "lavo": [
+   {
+    "name": "Asia Marketplace",
+    "lat": 40.5645,
+    "lon": -122.35458,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "bdf8d114-5d16-4919-b3d3-1e8b4e74ac2a"
+   },
+   {
+    "name": "Lao Market",
+    "lat": 40.57182,
+    "lon": -122.38853,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "72ae8da9-42b9-41ff-8549-e109106bd96f"
+   }
+  ],
+  "crla": [
+   {
+    "name": "Asia Market",
+    "lat": 42.31765,
+    "lon": -122.8624,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "61d8a156-3b75-459c-b83b-614ed8e4fb6f"
+   }
+  ],
+  "mora": [
+   {
+    "name": "99 Ranch Market",
+    "lat": 47.43877,
+    "lon": -122.22083,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "17728759-423f-42ad-9147-7474eedb562b"
+   },
+   {
+    "name": "Apna Bazar",
+    "lat": 47.36924,
+    "lon": -122.20547,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "710a4948-8586-47e5-8f37-81742ca2a174"
+   },
+   {
+    "name": "Apna Frooticana",
+    "lat": 47.37369,
+    "lon": -122.20105,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "66ae76b6-3c0b-4e2f-bb55-a158e41d9a36"
+   },
+   {
+    "name": "Asian Pacific Market",
+    "lat": 47.3712,
+    "lon": -122.20168,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "7bcc92f7-2a4c-4d5b-9a10-a62d4db714de"
+   },
+   {
+    "name": "Asian Planet Food Market Llc",
+    "lat": 47.38479,
+    "lon": -122.20151,
+    "category": "grocery_store",
+    "confidence": 0.95,
+    "id": "fe825681-4a38-4f8c-930d-ed6c69b47082"
+   },
+   {
+    "name": "H Mart",
+    "lat": 47.29427,
+    "lon": -122.25312,
+    "category": "grocery_store",
+    "confidence": 0.63,
+    "id": "c4a3a46a-b111-4d9b-97e2-16809c9b1bbe"
+   },
+   {
+    "name": "H Mart",
+    "lat": 47.32188,
+    "lon": -122.3153,
+    "category": "grocery_store",
+    "confidence": 0.98,
+    "id": "5d1eac79-5c50-4132-8f47-814d8a326cb4"
+   },
+   {
+    "name": "Hong Kong Market",
+    "lat": 47.38129,
+    "lon": -122.23027,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "615dc8f5-a0c4-4872-b3ac-a3f99f4a3fca"
+   },
+   {
+    "name": "India Food Mart",
+    "lat": 47.32649,
+    "lon": -122.00999,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "e0cf0c37-8338-4487-bd21-65c0ff010ab9"
+   },
+   {
+    "name": "K Thai-asian Market",
+    "lat": 47.40738,
+    "lon": -122.29779,
+    "category": "asian_grocery_store",
+    "confidence": 0.95,
+    "id": "a7e02a15-8f83-4693-b596-6fb894a40f81"
+   },
+   {
+    "name": "Lam's Seafood Asian Market",
+    "lat": 47.44844,
+    "lon": -122.25993,
+    "category": "asian_grocery_store",
+    "confidence": 0.95,
+    "id": "c39eb846-20f2-4293-8f41-9b5e1e7b83da"
+   },
+   {
+    "name": "Little India Grocery",
+    "lat": 47.38603,
+    "lon": -122.16478,
+    "category": "indian_grocery_store",
+    "confidence": 0.75,
+    "id": "1f0f9237-321d-41e5-8bc3-f990c2aa3eb0"
+   },
+   {
+    "name": "Mayflower Of China",
+    "lat": 47.45059,
+    "lon": -122.26309,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "8dcb6892-3d5e-4551-9090-bb3f04c0c847"
+   },
+   {
+    "name": "Punjab Trading Inc",
+    "lat": 47.34955,
+    "lon": -122.23163,
+    "category": "indian_grocery_store",
+    "confidence": 0.97,
+    "id": "fc0e4465-0620-42b1-ad0c-45c600bba3b1"
+   },
+   {
+    "name": "Seoul Trading",
+    "lat": 47.29417,
+    "lon": -122.25323,
+    "category": "grocery_store",
+    "confidence": 0.93,
+    "id": "ba7a1f9d-5d88-42d4-be38-1850c2192223"
+   },
+   {
+    "name": "Uwajimaya Renton",
+    "lat": 47.46999,
+    "lon": -122.21228,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "c0983e4f-e678-481b-8b7c-1a6c52761145"
+   },
+   {
+    "name": "Viet-Wah Asian Food Market",
+    "lat": 47.50143,
+    "lon": -122.17819,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "a0cc67f8-800e-49bc-a3dc-14e5964fa82e"
+   },
+   {
+    "name": "Yummy Banchan",
+    "lat": 47.30243,
+    "lon": -122.3123,
+    "category": "korean_grocery_store",
+    "confidence": 0.96,
+    "id": "ad557327-e6c5-4a44-a482-96021d923236"
+   }
+  ],
+  "olym": [
+   {
+    "name": "Filipino Mart",
+    "lat": 48.43219,
+    "lon": -123.36477,
+    "category": "grocery_store",
+    "confidence": 0.69,
+    "id": "b4698db5-47a1-4c50-9826-91dc776a7843"
+   },
+   {
+    "name": "Fraserview Meats & Indian Grocery",
+    "lat": 48.46089,
+    "lon": -123.4003,
+    "category": "grocery_store",
+    "confidence": 0.95,
+    "id": "a6d60695-ee15-4d77-adf0-a55562a3fa48"
+   },
+   {
+    "name": "H Mart Victoria",
+    "lat": 48.44734,
+    "lon": -123.36891,
+    "category": "grocery_store",
+    "confidence": 0.77,
+    "id": "a9d0d403-3b3f-45d6-b50a-873bfa67f438"
+   },
+   {
+    "name": "Indian Grocery Victoria",
+    "lat": 48.45224,
+    "lon": -123.37525,
+    "category": "indian_grocery_store",
+    "confidence": 0.98,
+    "id": "f3ea332a-300b-49a2-b006-b9a965a1abf9"
+   }
+  ],
+  "glac": [
+   {
+    "name": "Mabuhay Oriental Market Kalispell, MT",
+    "lat": 48.20096,
+    "lon": -114.33223,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "0da6001f-3896-420f-9cda-425d92f7c69f"
+   }
+  ],
+  "romo": [
+   {
+    "name": "Afghan & Indian Market فرشگاه افغاني و هندي",
+    "lat": 39.66176,
+    "lon": -104.85347,
+    "category": "grocery_store",
+    "confidence": 0.95,
+    "id": "eb338849-e464-4643-beff-50f7f13d6ff7"
+   },
+   {
+    "name": "Apna Bazar - Grocery Store and Halal Meat",
+    "lat": 39.8499,
+    "lon": -105.02341,
+    "category": "grocery_store",
+    "confidence": 0.66,
+    "id": "1da9fd82-cdbe-4f33-bfb6-e05fca8e4d5f"
+   },
+   {
+    "name": "Asia Mart",
+    "lat": 39.73968,
+    "lon": -104.87904,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "95973953-3d20-4e88-9630-f1193f80c464"
+   },
+   {
+    "name": "Asian American Supermarket",
+    "lat": 39.74037,
+    "lon": -104.85751,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "eb8d160a-fa79-4e8f-853c-ba564b2dc7e2"
+   },
+   {
+    "name": "Asian Market",
+    "lat": 40.02797,
+    "lon": -105.25891,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "d4b0ea31-492a-45bd-9c03-5057ffe33daa"
+   },
+   {
+    "name": "Ben Thanh Asian Market",
+    "lat": 39.69827,
+    "lon": -105.02543,
+    "category": "grocery_store",
+    "confidence": 1.0,
+    "id": "ad7b1c0b-11ab-4c84-9f11-8964428a4b8b"
+   },
+   {
+    "name": "DS Market Inc - Indonesian & Pacific Island’s Groceries",
+    "lat": 39.67218,
+    "lon": -104.79305,
+    "category": "grocery_store",
+    "confidence": 0.93,
+    "id": "20c1170c-9c6d-4f85-acc9-a2bae95ab33d"
+   },
+   {
+    "name": "Golden Star Asian Store",
+    "lat": 40.39438,
+    "lon": -104.71902,
+    "category": "grocery_store",
+    "confidence": 0.97,
+    "id": "634f2b04-d24c-4de6-91b3-776f4b4c1635"
+   },
+   {
+    "name": "H Mart",
+    "lat": 39.66599,
+    "lon": -104.86333,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "48402a2d-68d1-4abd-9c91-a3a02263b794"
+   },
+   {
+    "name": "India's Harvest",
+    "lat": 39.66078,
+    "lon": -104.84807,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "ec4aae68-cc1e-4cd0-a3c9-1de6c46a438e"
+   },
+   {
+    "name": "Karen Asian Market",
+    "lat": 40.38782,
+    "lon": -104.71506,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "fdbd4511-1484-42db-b702-948035b8e99e"
+   },
+   {
+    "name": "Konark Grocers",
+    "lat": 39.51891,
+    "lon": -104.7695,
+    "category": "indian_grocery_store",
+    "confidence": 0.99,
+    "id": "01700664-10ae-4256-95b0-216f54482b4d"
+   },
+   {
+    "name": "Krung Thai Grocery",
+    "lat": 39.74731,
+    "lon": -104.85134,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "61be8423-dca9-4f58-97c8-252ad40f0240"
+   },
+   {
+    "name": "Lao Market",
+    "lat": 39.82912,
+    "lon": -105.02403,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "84777303-ddac-422c-bc21-c70c3635f7bb"
+   },
+   {
+    "name": "Little Asia Grocery",
+    "lat": 40.55217,
+    "lon": -105.09645,
+    "category": "grocery_store",
+    "confidence": 0.7,
+    "id": "f93f29ca-be99-4786-9ed8-727e0ac32195"
+   },
+   {
+    "name": "Little Saigon Market and Fast Food",
+    "lat": 39.70985,
+    "lon": -105.02544,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "97b3a958-e4a8-4d77-8dde-224d232b96d8"
+   },
+   {
+    "name": "Lotus Asian Market",
+    "lat": 39.70136,
+    "lon": -104.79005,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "e1b7db6a-28bf-4408-a7a3-39660780e2ef"
+   },
+   {
+    "name": "My India's Sonam's Company LLC",
+    "lat": 39.92939,
+    "lon": -105.09145,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "cd91628b-29ae-4e99-be64-e3a4af348dd2"
+   },
+   {
+    "name": "New Saigon Supermarket",
+    "lat": 39.69759,
+    "lon": -105.02463,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "f385da5d-9239-4d4c-97ff-a50a55e11efd"
+   },
+   {
+    "name": "Oriental Super Market",
+    "lat": 39.92709,
+    "lon": -105.03281,
+    "category": "grocery_store",
+    "confidence": 0.95,
+    "id": "75ba48b1-e092-4056-949f-306a8e8d781c"
+   },
+   {
+    "name": "Rams Bazaar: International Food Market",
+    "lat": 40.57428,
+    "lon": -105.09714,
+    "category": "asian_grocery_store",
+    "confidence": 0.92,
+    "id": "1b123f69-af3d-464d-90db-c8e6c86c3cb4"
+   },
+   {
+    "name": "Rockies Indian Groceries",
+    "lat": 39.55138,
+    "lon": -104.88367,
+    "category": "indian_grocery_store",
+    "confidence": 0.99,
+    "id": "b7c8764a-8cd3-4d0e-80b3-33c95c3b24bd"
+   },
+   {
+    "name": "Shiwa Indian Grocery",
+    "lat": 40.00205,
+    "lon": -105.1039,
+    "category": "convenience_store",
+    "confidence": 0.99,
+    "id": "51b61465-c413-4767-afca-859412b07621"
+   },
+   {
+    "name": "Swagath Indian Grocery Store",
+    "lat": 40.56617,
+    "lon": -105.07843,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "f2f6f239-95d6-47d2-ac32-5c079d92a846"
+   },
+   {
+    "name": "Tay Do Asian Grocery",
+    "lat": 39.83135,
+    "lon": -105.02936,
+    "category": "grocery_store",
+    "confidence": 0.9,
+    "id": "b581d1d8-1c66-47bf-9da3-cf7da9173c6b"
+   },
+   {
+    "name": "Tejal India Grocery",
+    "lat": 39.88422,
+    "lon": -104.98277,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "33b36476-4726-4e42-b768-c209965b749e"
+   },
+   {
+    "name": "Tower Road Asian Market",
+    "lat": 39.78056,
+    "lon": -104.77156,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "354bd185-5295-4bed-b4c4-dd3c5eebbaba"
+   },
+   {
+    "name": "Turmeric Indian Grocery",
+    "lat": 40.55357,
+    "lon": -105.09235,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "de02f4af-4337-484c-890c-bb6d6e7b63a8"
+   }
+  ],
+  "deva": [
+   {
+    "name": "2 If By Sea Asian Market",
+    "lat": 35.99971,
+    "lon": -115.24481,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "3faace53-757d-4b17-93b0-7a33d18ccb9d"
+   },
+   {
+    "name": "99 Ranch Market",
+    "lat": 36.12132,
+    "lon": -115.13454,
+    "category": "asian_grocery_store",
+    "confidence": 0.99,
+    "id": "67ebe597-1bf6-4341-8dee-7818b5da19fa"
+   },
+   {
+    "name": "99 Ranch Market",
+    "lat": 36.12556,
+    "lon": -115.19539,
+    "category": "grocery_store",
+    "confidence": 0.97,
+    "id": "502b8724-d53d-4072-b161-5884652d3561"
+   },
+   {
+    "name": "99 Ranch Market",
+    "lat": 36.19334,
+    "lon": -115.19525,
+    "category": "grocery_store",
+    "confidence": 0.98,
+    "id": "582eeb76-d09d-4139-9c8a-cce9fce64872"
+   },
+   {
+    "name": "99 Ranch Market · Las Vegas (Rampart Blvd)",
+    "lat": 36.16211,
+    "lon": -115.28877,
+    "category": "grocery_store",
+    "confidence": 0.8,
+    "id": "83cbb71c-ee6b-4e13-a259-259c60bd9703"
+   },
+   {
+    "name": "Asian Market",
+    "lat": 36.05168,
+    "lon": -115.24405,
+    "category": "asian_grocery_store",
+    "confidence": 0.97,
+    "id": "a5ea9e50-e403-41f9-a2fd-203aff3ac9c0"
+   },
+   {
+    "name": "Asian Sari-sari Market",
+    "lat": 36.07073,
+    "lon": -115.25103,
+    "category": "asian_grocery_store",
+    "confidence": 0.92,
+    "id": "a5f760d4-7d7d-4732-b4f9-24b1f8a01051"
+   },
+   {
+    "name": "Asian Seafood Market",
+    "lat": 36.02918,
+    "lon": -115.11669,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "27ddd979-d150-446a-97a1-7a9d96f89f3b"
+   },
+   {
+    "name": "China Supermarket",
+    "lat": 36.12503,
+    "lon": -115.19106,
+    "category": "grocery_store",
+    "confidence": 0.97,
+    "id": "3b4935c6-aa60-4642-9141-34b615f3d98d"
+   },
+   {
+    "name": "India British Market",
+    "lat": 36.0428,
+    "lon": -115.1508,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "3da18e68-917e-4900-bf86-369ea377543c"
+   },
+   {
+    "name": "India market",
+    "lat": 36.10043,
+    "lon": -115.13383,
+    "category": "grocery_store",
+    "confidence": 0.89,
+    "id": "21b3775f-37f1-4b59-8c16-62c0b1a0f77c"
+   },
+   {
+    "name": "Japan Creek Market",
+    "lat": 36.01956,
+    "lon": -115.11698,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "95a0f926-c04b-40ad-ba43-25f47a22f1b4"
+   },
+   {
+    "name": "Joshan Filipino Oriental Market",
+    "lat": 36.0834,
+    "lon": -115.03391,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "faa8669a-7e37-465c-b68b-946922998557"
+   },
+   {
+    "name": "Laos Asia Market",
+    "lat": 36.13052,
+    "lon": -115.10901,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "f1b57408-0100-4abb-8bda-5d17b3547f3c"
+   },
+   {
+    "name": "Lola's Asian Pantry",
+    "lat": 36.05166,
+    "lon": -115.24401,
+    "category": "grocery_store",
+    "confidence": 0.97,
+    "id": "1bcf9e0c-e087-4c2d-b8d0-c3952111d80e"
+   },
+   {
+    "name": "Maligaya Asian Market",
+    "lat": 36.23904,
+    "lon": -115.18613,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "ed136605-d378-47c4-8d34-eb95201273d8"
+   },
+   {
+    "name": "Manila Market",
+    "lat": 36.15852,
+    "lon": -115.13411,
+    "category": "convenience_store",
+    "confidence": 0.92,
+    "id": "540a5cd8-5a39-493b-9532-55f07e57263b"
+   },
+   {
+    "name": "Nakata Market of Japan",
+    "lat": 36.02806,
+    "lon": -115.04858,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "731ccf07-6890-43e5-86cf-9b8b424ce70c"
+   },
+   {
+    "name": "Nakata Market of Japan",
+    "lat": 36.14576,
+    "lon": -115.24143,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "532df446-3374-423d-9c57-833bcd1419a5"
+   },
+   {
+    "name": "Palengke Oriental Market",
+    "lat": 36.16587,
+    "lon": -115.06357,
+    "category": "grocery_store",
+    "confidence": 0.95,
+    "id": "584e2201-28f6-4c6c-a133-dda080e1c978"
+   },
+   {
+    "name": "Seafood City",
+    "lat": 36.00004,
+    "lon": -115.10794,
+    "category": "grocery_store",
+    "confidence": 0.97,
+    "id": "d300ad3f-7eb8-4ce0-be54-e49f9fda7dd9"
+   },
+   {
+    "name": "Seafood City Supermarket",
+    "lat": 36.06455,
+    "lon": -115.25035,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "c59af03c-5038-43c4-9027-3d0b043966d7"
+   },
+   {
+    "name": "Seafood City Supermarket",
+    "lat": 36.11821,
+    "lon": -115.13593,
+    "category": "grocery_store",
+    "confidence": 0.97,
+    "id": "bf6b04dd-bbfc-49d7-a1d1-5bb460514cfc"
+   },
+   {
+    "name": "Seafood City Supermarket",
+    "lat": 36.27693,
+    "lon": -115.20972,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "4e0b82f1-9fcf-4ed1-acf5-6128dfb5bca9"
+   },
+   {
+    "name": "Viet My Asian Market",
+    "lat": 36.02961,
+    "lon": -115.13548,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "ae0cb62f-410a-4e9e-b7ca-1aac7427b898"
+   }
+  ],
+  "zion": [
+   {
+    "name": "Arabic And Indian Foods Llc",
+    "lat": 37.66695,
+    "lon": -113.06257,
+    "category": "grocery_store",
+    "confidence": 0.95,
+    "id": "1bde6b51-935e-4850-b39e-ac40c1f48d17"
+   },
+   {
+    "name": "Asian Market Saint George",
+    "lat": 37.08374,
+    "lon": -113.55574,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "45004d4e-c805-4fdf-a3f9-3d33869b6544"
+   }
+  ],
+  "arch": [
+   {
+    "name": "Asian Market Grand Junction",
+    "lat": 39.08342,
+    "lon": -108.59123,
+    "category": "grocery_store",
+    "confidence": 0.74,
+    "id": "64faa588-f0ae-4ab2-bfb3-5e6fa89bf7a5"
+   },
+   {
+    "name": "Carols Oriental Foods And Gifts",
+    "lat": 39.07771,
+    "lon": -108.53133,
+    "category": "grocery_store",
+    "confidence": 0.95,
+    "id": "39421856-3b3e-46fb-8084-66fdf1cde5f0"
+   }
+  ],
+  "dena": [
+   {
+    "name": "New Asian Market/Deli",
+    "lat": 61.22394,
+    "lon": -149.80513,
+    "category": "grocery_store",
+    "confidence": 0.67,
+    "id": "827bde48-40c3-45f4-9b7b-7fa58cf2205f"
+   },
+   {
+    "name": "Oriental Shopping Center",
+    "lat": 61.19775,
+    "lon": -149.87503,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "16b44b36-d347-4ff5-9ff2-3b55265fee08"
+   },
+   {
+    "name": "Phattra Asian Market",
+    "lat": 61.22427,
+    "lon": -149.81572,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "7cfc15c4-868f-43ba-8d21-346f584d122c"
+   }
+  ],
+  "kefj": [
+   {
+    "name": "New Asian Market/Deli",
+    "lat": 61.22394,
+    "lon": -149.80513,
+    "category": "grocery_store",
+    "confidence": 0.67,
+    "id": "827bde48-40c3-45f4-9b7b-7fa58cf2205f"
+   },
+   {
+    "name": "Oriental Shopping Center",
+    "lat": 61.19775,
+    "lon": -149.87503,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "16b44b36-d347-4ff5-9ff2-3b55265fee08"
+   },
+   {
+    "name": "Phattra Asian Market",
+    "lat": 61.22427,
+    "lon": -149.81572,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "7cfc15c4-868f-43ba-8d21-346f584d122c"
+   }
+  ],
+  "banf": [
+   {
+    "name": "Banff Asian Market",
+    "lat": 51.17839,
+    "lon": -115.57259,
+    "category": "grocery_store",
+    "confidence": 1.0,
+    "id": "f245a92e-dc0c-44f5-a01e-4347753d54d8"
+   },
+   {
+    "name": "Quikieh Asian Grocery",
+    "lat": 51.09226,
+    "lon": -115.35279,
+    "category": "grocery_store",
+    "confidence": 0.98,
+    "id": "8d4984c3-dfe6-4e6a-8ec0-3fbe8e8da591"
+   },
+   {
+    "name": "The Candy Lane and Asian Food Market",
+    "lat": 51.17476,
+    "lon": -115.57128,
+    "category": "grocery_store",
+    "confidence": 0.74,
+    "id": "51a86ebc-1ba6-4937-adec-034d57dee865"
+   }
+  ]
+ },
+ "airports": {
+  "FAT": [
+   {
+    "name": "Golden Phoenix Asian Market",
+    "lat": 36.79226,
+    "lon": -119.70069,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "fa8d837e-12e6-49be-a606-823f4baf2d65",
+    "km": 2.4
+   },
+   {
+    "name": "Asia Supermarket",
+    "lat": 36.74275,
+    "lon": -119.73599,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "373c4bb8-8b0d-4de2-8f1f-59396800991a",
+    "km": 4.0
+   },
+   {
+    "name": "Saigon Grocery & Deli",
+    "lat": 36.75866,
+    "lon": -119.77292,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "95b8983f-074b-4007-a1cb-44ecba8aa538",
+    "km": 5.3
+   },
+   {
+    "name": "Vientiane Market",
+    "lat": 36.75706,
+    "lon": -119.7723,
+    "category": "asian_grocery_store",
+    "confidence": 0.95,
+    "id": "2ae8a652-0f6a-4a3b-8a86-22bb0e8c0540",
+    "km": 5.3
+   },
+   {
+    "name": "Asian Grocery Store",
+    "lat": 36.73617,
+    "lon": -119.68044,
+    "category": "indian_grocery_store",
+    "confidence": 0.75,
+    "id": "3568f5e9-7468-448f-9b35-68984b54a4b2",
+    "km": 5.6
+   }
+  ],
+  "SFO": [
+   {
+    "name": "India Food Market",
+    "lat": 37.64932,
+    "lon": -122.4304,
+    "category": "grocery_store",
+    "confidence": 0.95,
+    "id": "18bf4615-098e-4a24-b741-dece1c6cdd82",
+    "km": 5.5
+   },
+   {
+    "name": "Seafood City Supermarket",
+    "lat": 37.64359,
+    "lon": -122.46351,
+    "category": "grocery_store",
+    "confidence": 0.98,
+    "id": "50c94db5-193d-4cb3-8bac-ec01de40e6a6",
+    "km": 7.8
+   },
+   {
+    "name": "Manila Oriental Market",
+    "lat": 37.65158,
+    "lon": -122.46899,
+    "category": "grocery_store",
+    "confidence": 0.95,
+    "id": "9616fb47-8366-4a60-9aa0-d73b59a46a8a",
+    "km": 8.6
+   },
+   {
+    "name": "Nijiya Market",
+    "lat": 37.54842,
+    "lon": -122.31117,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "43a8cd44-9669-4c09-9e79-7a0143d42981",
+    "km": 10.1
+   },
+   {
+    "name": "Kukje Supermarket - Korean Grocery",
+    "lat": 37.69453,
+    "lon": -122.47146,
+    "category": "grocery_store",
+    "confidence": 0.97,
+    "id": "df4963f3-64a0-4651-8ed1-b55ab9ee05cb",
+    "km": 11.5
+   }
+  ],
+  "OAK": [
+   {
+    "name": "New Comback International 新東記",
+    "lat": 37.70036,
+    "lon": -122.16895,
+    "category": "grocery_store",
+    "confidence": 0.95,
+    "id": "c4f0f164-1f10-4048-945c-f074866af94f",
+    "km": 4.7
+   },
+   {
+    "name": "International Lao Market",
+    "lat": 37.78804,
+    "lon": -122.24383,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "962c9117-9cea-4b87-afcd-f3c04c1a7d92",
+    "km": 8.7
+   },
+   {
+    "name": "Mithapheap Oriental Food Market",
+    "lat": 37.78968,
+    "lon": -122.24551,
+    "category": "grocery_store",
+    "confidence": 0.95,
+    "id": "78ad8bf5-cb66-480e-bef1-7ad323cfd37b",
+    "km": 8.9
+   },
+   {
+    "name": "Asian And American Fruits Market",
+    "lat": 37.79916,
+    "lon": -122.27174,
+    "category": "grocery_store",
+    "confidence": 0.65,
+    "id": "921f5a97-2543-4ad0-b05e-f7c70c3e5cf0",
+    "km": 10.7
+   },
+   {
+    "name": "KP Asian Market",
+    "lat": 37.81356,
+    "lon": -122.26784,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "3ef9c052-937c-4e4d-8826-e9b2d4b90dee",
+    "km": 12.0
+   }
+  ],
+  "SJC": [
+   {
+    "name": "Patel Brothers",
+    "lat": 37.35292,
+    "lon": -121.96054,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "8cee546f-68a3-42f2-93d4-c61a772a532c",
+    "km": 3.1
+   },
+   {
+    "name": "New India Bazar",
+    "lat": 37.35279,
+    "lon": -121.96304,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "c365d9e4-2edd-44db-a774-41fe93072cb0",
+    "km": 3.3
+   },
+   {
+    "name": "Store2k - Indian Grocery Store",
+    "lat": 37.35283,
+    "lon": -121.96329,
+    "category": "indian_grocery_store",
+    "confidence": 0.75,
+    "id": "295f4ca1-2c9c-4bb1-a21b-31a996451a52",
+    "km": 3.3
+   },
+   {
+    "name": "Japanese Grocery",
+    "lat": 37.34908,
+    "lon": -121.89349,
+    "category": "grocery_store",
+    "confidence": 0.77,
+    "id": "9f20d139-38a7-44ef-ac50-9d27b6c7d4ed",
+    "km": 3.5
+   },
+   {
+    "name": "Nijiya Market San Jose Store",
+    "lat": 37.34922,
+    "lon": -121.89364,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "4d7a0296-00b3-4d17-a4d8-41769fdc6437",
+    "km": 3.5
+   }
+  ],
+  "LAX": [
+   {
+    "name": "Desi Super Store",
+    "lat": 33.9151,
+    "lon": -118.35302,
+    "category": "international_grocery_store",
+    "confidence": 0.99,
+    "id": "8f893fdb-285d-47a0-bafa-8ce66ba5e806",
+    "km": 5.9
+   },
+   {
+    "name": "Saigon Market",
+    "lat": 33.88831,
+    "lon": -118.35302,
+    "category": "grocery_store",
+    "confidence": 0.95,
+    "id": "2ef20d00-5eb0-4aac-b162-eca2e6a10f2c",
+    "km": 7.8
+   },
+   {
+    "name": "Marukai Market West LA",
+    "lat": 34.02923,
+    "lon": -118.45102,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "026f4520-050c-4b42-a21c-d1ae4600b66f",
+    "km": 10.5
+   },
+   {
+    "name": "Super Desi Market Corporation",
+    "lat": 33.86503,
+    "lon": -118.34278,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "3fb422c4-2899-4c30-bc68-5b0c4829b4d9",
+    "km": 10.5
+   },
+   {
+    "name": "Marukai Pacific Market",
+    "lat": 33.88826,
+    "lon": -118.30479,
+    "category": "grocery_store",
+    "confidence": 0.95,
+    "id": "6ff07335-ea86-43f7-b3a1-e2feac190fd6",
+    "km": 11.3
+   }
+  ],
+  "BUR": [
+   {
+    "name": "Seafood City Supermarket",
+    "lat": 34.22037,
+    "lon": -118.43312,
+    "category": "grocery_store",
+    "confidence": 0.97,
+    "id": "249ef310-94b0-4cc9-94e2-724018623131",
+    "km": 7.0
+   },
+   {
+    "name": "99 Ranch Market",
+    "lat": 34.18806,
+    "lon": -118.46545,
+    "category": "grocery_store",
+    "confidence": 0.95,
+    "id": "1ad6ba1d-8819-46d4-9a53-57bf81f62d5e",
+    "km": 9.9
+   },
+   {
+    "name": "La Crescenta Hankook Market",
+    "lat": 34.22967,
+    "lon": -118.24815,
+    "category": "grocery_store",
+    "confidence": 0.95,
+    "id": "5c312d6d-fc68-40a7-bcf1-f06ec601080c",
+    "km": 10.6
+   },
+   {
+    "name": "Seafood City Supermarket",
+    "lat": 34.23486,
+    "lon": -118.48382,
+    "category": "grocery_store",
+    "confidence": 0.97,
+    "id": "5095c4a7-25c5-423c-aeb1-a0eb3c2c4821",
+    "km": 11.9
+   },
+   {
+    "name": "Seoul Market",
+    "lat": 34.21893,
+    "lon": -118.2309,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "8635eee3-a91c-46eb-94a6-cbb6562d252d",
+    "km": 12.0
+   }
+  ],
+  "PSP": [
+   {
+    "name": "AJ Filipino Market",
+    "lat": 33.81522,
+    "lon": -116.49532,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "c5609b5e-426e-445e-bf36-eddcbf95f32b",
+    "km": 1.9
+   },
+   {
+    "name": "Fil Am Oriental Market",
+    "lat": 33.80116,
+    "lon": -116.45766,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "69a132a0-440e-402e-88eb-0dfb63420793",
+    "km": 5.5
+   },
+   {
+    "name": "Graceland Fil-Asian Market",
+    "lat": 33.71535,
+    "lon": -116.2238,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "3c4c5e95-b3cf-4cf9-9c96-376c962474a2",
+    "km": 29.1
+   }
+  ],
+  "ONT": [
+   {
+    "name": "Seafood City Supermarket",
+    "lat": 34.10693,
+    "lon": -117.59035,
+    "category": "grocery_store",
+    "confidence": 0.95,
+    "id": "78410982-afdb-4347-9e72-852efb561ed0",
+    "km": 5.8
+   },
+   {
+    "name": "Seafood City Supermarket",
+    "lat": 34.1076,
+    "lon": -117.56236,
+    "category": "grocery_store",
+    "confidence": 0.97,
+    "id": "d5e64d23-3c46-4068-948c-891b6e1a1a07",
+    "km": 6.8
+   },
+   {
+    "name": "99 Ranch Market",
+    "lat": 34.12036,
+    "lon": -117.59186,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "391732ed-3ba3-4e2a-aff7-279bd8b0dfe9",
+    "km": 7.2
+   },
+   {
+    "name": "Asian Grocery & Spices",
+    "lat": 34.12148,
+    "lon": -117.60281,
+    "category": "asian_grocery_store",
+    "confidence": 0.99,
+    "id": "dda7059b-8131-412e-8ac1-26e0354986bd",
+    "km": 7.3
+   },
+   {
+    "name": "India Bazaar - Upland",
+    "lat": 34.10774,
+    "lon": -117.66361,
+    "category": "grocery_store",
+    "confidence": 0.97,
+    "id": "bde901b8-d407-4f3b-b3d9-3ddae9c533af",
+    "km": 8.1
+   }
+  ],
+  "SNA": [
+   {
+    "name": "H Mart Irvine",
+    "lat": 33.68926,
+    "lon": -117.83441,
+    "category": "grocery_store",
+    "confidence": 0.98,
+    "id": "6fa2476b-4f00-4a06-b745-91d20111aff7",
+    "km": 3.5
+   },
+   {
+    "name": "Tokyo Central Costa Mesa",
+    "lat": 33.67958,
+    "lon": -117.92031,
+    "category": "japanese_grocery_store",
+    "confidence": 0.99,
+    "id": "5147af07-1188-4232-8412-01be8a08dc75",
+    "km": 4.8
+   },
+   {
+    "name": "H Mart Irvine Westpark",
+    "lat": 33.68328,
+    "lon": -117.81319,
+    "category": "asian_grocery_store",
+    "confidence": 0.98,
+    "id": "c83e6d00-8bfd-4c31-afdb-7fe33b084c36",
+    "km": 5.2
+   },
+   {
+    "name": "99 Ranch Market · Irvine (Culver Dr.)",
+    "lat": 33.69635,
+    "lon": -117.79845,
+    "category": "grocery_store",
+    "confidence": 0.8,
+    "id": "c68ad7c9-1711-42e3-8e24-fcf866b43cd4",
+    "km": 6.8
+   },
+   {
+    "name": "Mitsuwa Marketplace",
+    "lat": 33.70675,
+    "lon": -117.78341,
+    "category": "grocery_store",
+    "confidence": 0.95,
+    "id": "285823b4-df67-482b-bb55-dc66c0cd305d",
+    "km": 8.6
+   }
+  ],
+  "LAS": [
+   {
+    "name": "India market",
+    "lat": 36.10043,
+    "lon": -115.13383,
+    "category": "grocery_store",
+    "confidence": 0.89,
+    "id": "21b3775f-37f1-4b59-8c16-62c0b1a0f77c",
+    "km": 2.6
+   },
+   {
+    "name": "Seafood City Supermarket",
+    "lat": 36.11821,
+    "lon": -115.13593,
+    "category": "grocery_store",
+    "confidence": 0.97,
+    "id": "bf6b04dd-bbfc-49d7-a1d1-5bb460514cfc",
+    "km": 4.1
+   },
+   {
+    "name": "99 Ranch Market",
+    "lat": 36.12132,
+    "lon": -115.13454,
+    "category": "asian_grocery_store",
+    "confidence": 0.99,
+    "id": "67ebe597-1bf6-4341-8dee-7818b5da19fa",
+    "km": 4.5
+   },
+   {
+    "name": "India British Market",
+    "lat": 36.0428,
+    "lon": -115.1508,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "3da18e68-917e-4900-bf86-369ea377543c",
+    "km": 4.6
+   },
+   {
+    "name": "China Supermarket",
+    "lat": 36.12503,
+    "lon": -115.19106,
+    "category": "grocery_store",
+    "confidence": 0.97,
+    "id": "3b4935c6-aa60-4642-9141-34b615f3d98d",
+    "km": 5.7
+   }
+  ],
+  "ACV": [
+   {
+    "name": "Asia's Best",
+    "lat": 40.78971,
+    "lon": -124.13191,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "6043b3ef-b0ea-4840-a111-526ebe094727",
+    "km": 20.9
+   },
+   {
+    "name": "Lao Oriental Market",
+    "lat": 40.78145,
+    "lon": -124.16474,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "ebff9e3f-bfa3-43bb-98ec-b9feef632916",
+    "km": 22.2
+   }
+  ],
+  "CEC": [
+   {
+    "name": "Crescent City Oriental Food",
+    "lat": 41.78067,
+    "lon": -124.19859,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "7148b782-3aa2-467a-a3c5-706a683257d0",
+    "km": 3.2
+   }
+  ],
+  "MFR": [
+   {
+    "name": "Asia Market",
+    "lat": 42.31765,
+    "lon": -122.8624,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "61d8a156-3b75-459c-b83b-614ed8e4fb6f",
+    "km": 6.2
+   }
+  ],
+  "RDD": [
+   {
+    "name": "Asia Marketplace",
+    "lat": 40.5645,
+    "lon": -122.35458,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "bdf8d114-5d16-4919-b3d3-1e8b4e74ac2a",
+    "km": 7.9
+   },
+   {
+    "name": "Lao Market",
+    "lat": 40.57182,
+    "lon": -122.38853,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "72ae8da9-42b9-41ff-8549-e109106bd96f",
+    "km": 10.6
+   }
+  ],
+  "SMF": [
+   {
+    "name": "Natraj Indian Foods",
+    "lat": 38.64872,
+    "lon": -121.5107,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "30c59d17-2f03-42ea-ba45-5a7317ce11bb",
+    "km": 8.7
+   },
+   {
+    "name": "Indian Supermarket",
+    "lat": 38.65186,
+    "lon": -121.50328,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "27be7b69-4dc8-456b-9108-3ed51f150e50",
+    "km": 9.0
+   },
+   {
+    "name": "Indian Grocery Outlet",
+    "lat": 38.64022,
+    "lon": -121.50964,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "9276b58b-4b72-43fb-ad47-1c0340aa54a9",
+    "km": 9.3
+   },
+   {
+    "name": "Apna Bazaar",
+    "lat": 38.67649,
+    "lon": -121.73643,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "62968e90-fd16-43ce-9da8-39c7b24dc367",
+    "km": 12.6
+   },
+   {
+    "name": "India Spices Inc.",
+    "lat": 38.66892,
+    "lon": -121.76357,
+    "category": "indian_grocery_store",
+    "confidence": 0.65,
+    "id": "981c1200-0965-49ed-b7a0-4fc319904422",
+    "km": 15.0
+   }
+  ],
+  "RNO": [
+   {
+    "name": "Asian Mart",
+    "lat": 39.49234,
+    "lon": -119.79507,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "9e3495f9-1436-4dbc-aa3b-8df527abaab7",
+    "km": 2.4
+   },
+   {
+    "name": "168 Asian Market",
+    "lat": 39.49526,
+    "lon": -119.79775,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "70cc340a-26aa-4572-b371-f5470d884dd3",
+    "km": 2.5
+   },
+   {
+    "name": "Reno Sparks Asian Market",
+    "lat": 39.53772,
+    "lon": -119.76482,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "f7fc3d20-fa1f-4cdb-8c01-089f06f0f7b9",
+    "km": 4.4
+   },
+   {
+    "name": "A1 Indian Market",
+    "lat": 39.54626,
+    "lon": -119.77724,
+    "category": "grocery_store",
+    "confidence": 0.77,
+    "id": "4ab8d460-d7e7-4ae7-9f15-9e93c4d40b94",
+    "km": 5.4
+   },
+   {
+    "name": "Manila Hong Kong Corporation",
+    "lat": 39.54624,
+    "lon": -119.77834,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "fa93f195-1eac-4f33-acb5-6067a974c17d",
+    "km": 5.4
+   }
+  ],
+  "EUG": [
+   {
+    "name": "King's Asian Market",
+    "lat": 44.04757,
+    "lon": -123.12519,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "48f9416d-ca41-42cf-8bd4-cf05e6ddc073",
+    "km": 11.1
+   },
+   {
+    "name": "Eugene Asian Market",
+    "lat": 44.04799,
+    "lon": -123.08492,
+    "category": "international_grocery_store",
+    "confidence": 0.92,
+    "id": "dc0fe91e-1271-4790-b38e-1b8850e58a72",
+    "km": 13.4
+   },
+   {
+    "name": "Sunrise Asian Food Market",
+    "lat": 44.026,
+    "lon": -123.09286,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "6ac3898a-85e7-4823-8531-a6d2778c5ccf",
+    "km": 14.6
+   },
+   {
+    "name": "Vishnu India Imports",
+    "lat": 44.02633,
+    "lon": -123.08961,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "3ad06836-94d9-4060-9731-40db9c0c31fb",
+    "km": 14.8
+   },
+   {
+    "name": "Uptown Asian Grocery",
+    "lat": 44.05822,
+    "lon": -123.00104,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "596e9b2b-9d15-47e9-94a7-c97482554f33",
+    "km": 18.6
+   }
+  ],
+  "PDX": [
+   {
+    "name": "Saigon Market",
+    "lat": 45.53114,
+    "lon": -122.57928,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "10cfc933-765c-43be-9cb1-2b165093ed59",
+    "km": 6.4
+   },
+   {
+    "name": "Islanders Market and Indian Grocery",
+    "lat": 45.64239,
+    "lon": -122.55895,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "70e10c23-2576-4acb-83b5-6eea040fc9e8",
+    "km": 6.8
+   },
+   {
+    "name": "Vieng Lao Oriental Food Center",
+    "lat": 45.56262,
+    "lon": -122.67777,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "3bbe9442-9523-4c5c-813d-cab26a776834",
+    "km": 6.8
+   },
+   {
+    "name": "H Mart Belmont",
+    "lat": 45.51657,
+    "lon": -122.63084,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "5474283e-e691-4065-9741-ba2f49953ee8",
+    "km": 8.3
+   },
+   {
+    "name": "China Foods Wholesale",
+    "lat": 45.51237,
+    "lon": -122.57803,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "8f0db8cd-ee82-4233-ba22-c27b485578cd",
+    "km": 8.5
+   }
+  ],
+  "SEA": [
+   {
+    "name": "Hong Kong Market Burien",
+    "lat": 47.46996,
+    "lon": -122.33586,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "fbe50b05-b9cd-4714-8687-03836e302f26",
+    "km": 3.2
+   },
+   {
+    "name": "Mayflower Of China",
+    "lat": 47.45059,
+    "lon": -122.26309,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "8dcb6892-3d5e-4551-9090-bb3f04c0c847",
+    "km": 3.4
+   },
+   {
+    "name": "Lam's Seafood Asian Market",
+    "lat": 47.44844,
+    "lon": -122.25993,
+    "category": "asian_grocery_store",
+    "confidence": 0.95,
+    "id": "c39eb846-20f2-4293-8f41-9b5e1e7b83da",
+    "km": 3.6
+   },
+   {
+    "name": "K Thai-asian Market",
+    "lat": 47.40738,
+    "lon": -122.29779,
+    "category": "asian_grocery_store",
+    "confidence": 0.95,
+    "id": "a7e02a15-8f83-4693-b596-6fb894a40f81",
+    "km": 4.5
+   },
+   {
+    "name": "99 Ranch Market",
+    "lat": 47.43877,
+    "lon": -122.22083,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "17728759-423f-42ad-9147-7474eedb562b",
+    "km": 6.7
+   }
+  ],
+  "PAE": [
+   {
+    "name": "Oriental And African mini mart",
+    "lat": 47.8748,
+    "lon": -122.27467,
+    "category": "grocery_store",
+    "confidence": 0.98,
+    "id": "1409b48c-5a0c-4794-9a1a-554a27f885ae",
+    "km": 3.8
+   },
+   {
+    "name": "Evergreen Asian Market",
+    "lat": 47.92716,
+    "lon": -122.22209,
+    "category": "asian_grocery_store",
+    "confidence": 0.99,
+    "id": "9747d7da-382a-4600-97cb-d99bbc04bec2",
+    "km": 4.8
+   },
+   {
+    "name": "H Mart",
+    "lat": 47.83281,
+    "lon": -122.27707,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "64010928-fd52-41db-9c03-7fbdee95b5d9",
+    "km": 8.4
+   },
+   {
+    "name": "Mekong Everett",
+    "lat": 47.98038,
+    "lon": -122.21342,
+    "category": "grocery_store",
+    "confidence": 0.77,
+    "id": "0be5693f-f9f1-4c9f-b796-64450648cea1",
+    "km": 9.4
+   },
+   {
+    "name": "Bangkok Crisps Thai Market",
+    "lat": 47.83577,
+    "lon": -122.21101,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "98b1ff2e-c875-4d9d-8de3-9ecfd37c8b77",
+    "km": 9.6
+   }
+  ],
+  "BLI": [
+   {
+    "name": "Spice India & Sweets",
+    "lat": 48.79004,
+    "lon": -122.49617,
+    "category": "grocery_store",
+    "confidence": 0.95,
+    "id": "e4d81b46-fb8c-4db3-a245-ed4ce0023afa",
+    "km": 3.2
+   },
+   {
+    "name": "India Mart - Bellingham",
+    "lat": 48.78366,
+    "lon": -122.48457,
+    "category": "grocery_store",
+    "confidence": 0.95,
+    "id": "9a891862-8b72-4887-b85b-00b7460c8cd1",
+    "km": 4.1
+   },
+   {
+    "name": "Asia Oriental Market",
+    "lat": 48.76226,
+    "lon": -122.48594,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "dc6d7535-49ee-4540-9810-825c3b45c88b",
+    "km": 5.3
+   },
+   {
+    "name": "Vinh Tan Oriental Grocery",
+    "lat": 49.04983,
+    "lon": -122.33513,
+    "category": "grocery_store",
+    "confidence": 0.89,
+    "id": "ebc95025-a739-4fb1-9c4f-cba1b78d5b0a",
+    "km": 32.1
+   },
+   {
+    "name": "Pan Asia Market and Deli",
+    "lat": 49.05153,
+    "lon": -122.33003,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "34bdcab2-9ba4-411f-b1bf-eabee988e6a3",
+    "km": 32.4
+   }
+  ],
+  "SLC": [
+   {
+    "name": "Japan Sage Market",
+    "lat": 40.73658,
+    "lon": -111.89085,
+    "category": "grocery_store",
+    "confidence": 0.98,
+    "id": "d86318c1-00db-44b6-8456-e4e9728ad260",
+    "km": 9.5
+   },
+   {
+    "name": "Sonjhae Asian Market",
+    "lat": 40.73788,
+    "lon": -111.88766,
+    "category": "asian_grocery_store",
+    "confidence": 0.99,
+    "id": "51ad8a8e-93af-4863-ac84-e502e9973709",
+    "km": 9.6
+   },
+   {
+    "name": "Qaderi Sweetz & Spicez",
+    "lat": 40.73168,
+    "lon": -111.88766,
+    "category": "indian_grocery_store",
+    "confidence": 0.99,
+    "id": "7d572fb6-fcb0-4381-bc56-3b7c3763da7e",
+    "km": 10.1
+   },
+   {
+    "name": "Myanmar Asian Market",
+    "lat": 40.7221,
+    "lon": -111.88733,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "eab458c5-6a4c-44b7-bc63-a8c96a716232",
+    "km": 10.8
+   },
+   {
+    "name": "Qaderi Sweetz'n'spicez Chaat & Grocery Store",
+    "lat": 40.69554,
+    "lon": -111.93893,
+    "category": "indian_grocery_store",
+    "confidence": 0.92,
+    "id": "b9847f42-258b-4b67-8886-0fa4ea56a424",
+    "km": 11.0
+   }
+  ],
+  "IDA": [
+   {
+    "name": "Hong Kong Supermarket",
+    "lat": 43.43942,
+    "lon": -112.12486,
+    "category": "grocery_store",
+    "confidence": 0.77,
+    "id": "46a56249-87b6-4395-bdf6-3103d2e1b420",
+    "km": 9.4
+   }
+  ],
+  "BIL": [
+   {
+    "name": "Amaya Oriental Market",
+    "lat": 45.82734,
+    "lon": -108.47288,
+    "category": "asian_grocery_store",
+    "confidence": 0.92,
+    "id": "56b9981c-efe4-4cc9-b79e-47278ad7a660",
+    "km": 5.8
+   }
+  ],
+  "FCA": [
+   {
+    "name": "Mabuhay Oriental Market Kalispell, MT",
+    "lat": 48.20096,
+    "lon": -114.33223,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "0da6001f-3896-420f-9cda-425d92f7c69f",
+    "km": 13.3
+   }
+  ],
+  "DEN": [
+   {
+    "name": "Tower Road Asian Market",
+    "lat": 39.78056,
+    "lon": -104.77156,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "354bd185-5295-4bed-b4c4-dd3c5eebbaba",
+    "km": 12.3
+   },
+   {
+    "name": "Krung Thai Grocery",
+    "lat": 39.74731,
+    "lon": -104.85134,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "61be8423-dca9-4f58-97c8-252ad40f0240",
+    "km": 19.8
+   },
+   {
+    "name": "Lotus Asian Market",
+    "lat": 39.70136,
+    "lon": -104.79005,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "e1b7db6a-28bf-4408-a7a3-39660780e2ef",
+    "km": 20.4
+   },
+   {
+    "name": "Asian American Supermarket",
+    "lat": 39.74037,
+    "lon": -104.85751,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "eb8d160a-fa79-4e8f-853c-ba564b2dc7e2",
+    "km": 20.7
+   },
+   {
+    "name": "Asia Mart",
+    "lat": 39.73968,
+    "lon": -104.87904,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "95973953-3d20-4e88-9630-f1193f80c464",
+    "km": 22.2
+   }
+  ],
+  "SGU": [
+   {
+    "name": "Asian Market Saint George",
+    "lat": 37.08374,
+    "lon": -113.55574,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "45004d4e-c805-4fdf-a3f9-3d33869b6544",
+    "km": 6.6
+   }
+  ],
+  "PHX": [
+   {
+    "name": "Bharat Bazaar",
+    "lat": 33.42133,
+    "lon": -111.92483,
+    "category": "indian_grocery_store",
+    "confidence": 0.95,
+    "id": "a0596da1-e0da-4403-be86-35204a8d230d",
+    "km": 8.1
+   },
+   {
+    "name": "Desi Plaza",
+    "lat": 33.41618,
+    "lon": -111.92255,
+    "category": "grocery_store",
+    "confidence": 0.65,
+    "id": "caf5cd1d-fec3-4c01-b885-dd68aa6baf59",
+    "km": 8.4
+   },
+   {
+    "name": "Asian Grocery Store",
+    "lat": 33.49899,
+    "lon": -112.11655,
+    "category": "asian_grocery_store",
+    "confidence": 0.75,
+    "id": "14fd4564-89b1-48cd-8679-7d2b32c3577c",
+    "km": 12.2
+   },
+   {
+    "name": "Az International Marketplace",
+    "lat": 33.40867,
+    "lon": -111.87269,
+    "category": "asian_grocery_store",
+    "confidence": 0.99,
+    "id": "d7c0a5cf-23a7-4b4c-aca3-71de858b0499",
+    "km": 13.1
+   },
+   {
+    "name": "Korea Mart",
+    "lat": 33.39016,
+    "lon": -111.86445,
+    "category": "grocery_store",
+    "confidence": 0.78,
+    "id": "ca3524e8-a295-4b57-be88-a1ac99f029b3",
+    "km": 14.4
+   }
+  ],
+  "GJT": [
+   {
+    "name": "Carols Oriental Foods And Gifts",
+    "lat": 39.07771,
+    "lon": -108.53133,
+    "category": "grocery_store",
+    "confidence": 0.95,
+    "id": "39421856-3b3e-46fb-8084-66fdf1cde5f0",
+    "km": 5.0
+   },
+   {
+    "name": "Asian Market Grand Junction",
+    "lat": 39.08342,
+    "lon": -108.59123,
+    "category": "grocery_store",
+    "confidence": 0.74,
+    "id": "64faa588-f0ae-4ab2-bfb3-5e6fa89bf7a5",
+    "km": 7.1
+   }
+  ],
+  "ANC": [
+   {
+    "name": "Oriental Shopping Center",
+    "lat": 61.19775,
+    "lon": -149.87503,
+    "category": "grocery_store",
+    "confidence": 0.92,
+    "id": "16b44b36-d347-4ff5-9ff2-3b55265fee08",
+    "km": 7.0
+   },
+   {
+    "name": "Phattra Asian Market",
+    "lat": 61.22427,
+    "lon": -149.81572,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "7cfc15c4-868f-43ba-8d21-346f584d122c",
+    "km": 11.2
+   },
+   {
+    "name": "New Asian Market/Deli",
+    "lat": 61.22394,
+    "lon": -149.80513,
+    "category": "grocery_store",
+    "confidence": 0.67,
+    "id": "827bde48-40c3-45f4-9b7b-7fa58cf2205f",
+    "km": 11.6
+   }
+  ],
+  "FAI": [
+   {
+    "name": "Asian Food Market",
+    "lat": 64.85274,
+    "lon": -147.76079,
+    "category": "grocery_store",
+    "confidence": 0.96,
+    "id": "84995e68-4e5d-414f-bea0-050699904779",
+    "km": 6.2
+   },
+   {
+    "name": "MiMi Asian Mart",
+    "lat": 64.84794,
+    "lon": -147.70206,
+    "category": "grocery_store",
+    "confidence": 0.98,
+    "id": "40f856cf-b93a-49f1-97c8-cf2cc4a9d4f7",
+    "km": 8.2
+   }
+  ],
+  "YYC": [
+   {
+    "name": "Asian Halal Meat and Food",
+    "lat": 51.10713,
+    "lon": -113.96983,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "debc6f2b-65a4-4816-b174-07aa4ff2c092",
+    "km": 3.5
+   },
+   {
+    "name": "Om India Food Centre",
+    "lat": 51.1524,
+    "lon": -114.0319,
+    "category": "grocery_store",
+    "confidence": 0.95,
+    "id": "00706096-64cd-46e3-8f97-397721b3288d",
+    "km": 3.6
+   },
+   {
+    "name": "A and P Asian Supermarket",
+    "lat": 51.1269,
+    "lon": -114.075,
+    "category": "grocery_store",
+    "confidence": 0.74,
+    "id": "59bdf6e1-9325-41f4-97dd-cbc466ff031b",
+    "km": 4.3
+   },
+   {
+    "name": "Medgracel Filipino and Asian Store",
+    "lat": 51.09882,
+    "lon": -113.95633,
+    "category": "grocery_store",
+    "confidence": 0.88,
+    "id": "be05dde8-69a7-4130-b798-05fe04301e54",
+    "km": 4.8
+   },
+   {
+    "name": "Seafood City Calgary",
+    "lat": 51.06973,
+    "lon": -113.98728,
+    "category": "grocery_store",
+    "confidence": 1.0,
+    "id": "0af8a738-fc07-426b-9865-cd7462dad8ae",
+    "km": 6.1
+   }
+  ],
+  "YEG": [
+   {
+    "name": "Hello India supermarket",
+    "lat": 53.40257,
+    "lon": -113.3933,
+    "category": "grocery_store",
+    "confidence": 0.68,
+    "id": "66731212-6d60-492f-95b0-f0f0404d8a48",
+    "km": 16.4
+   },
+   {
+    "name": "The Hills Indian Grocery Store",
+    "lat": 53.42979,
+    "lon": -113.39491,
+    "category": "grocery_store",
+    "confidence": 0.83,
+    "id": "96c3b53b-bab3-40c2-beb6-bf372832bdfb",
+    "km": 18.4
+   },
+   {
+    "name": "New Desi Bazar",
+    "lat": 53.46504,
+    "lon": -113.47156,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "282e10c8-e27b-46e6-86f6-d3c4f217886f",
+    "km": 18.9
+   },
+   {
+    "name": "Asian Grocery Centre",
+    "lat": 53.4441,
+    "lon": -113.40192,
+    "category": "grocery_store",
+    "confidence": 0.99,
+    "id": "c1314a89-8548-4728-b62e-5aa8b86a4005",
+    "km": 19.3
+   },
+   {
+    "name": "All India Supermarket",
+    "lat": 53.45419,
+    "lon": -113.40802,
+    "category": "grocery_store",
+    "confidence": 0.98,
+    "id": "6a02d92d-0038-4ed1-9bbe-bc2758becd17",
+    "km": 19.9
+   }
+  ],
+  "YVR": [
+   {
+    "name": "大統華超市",
+    "lat": 49.17368,
+    "lon": -123.14764,
+    "category": "grocery_store",
+    "confidence": 0.77,
+    "id": "f35eb60c-145d-4407-91ee-0c26e7e05c8d",
+    "km": 3.3
+   },
+   {
+    "name": "金都",
+    "lat": 49.18212,
+    "lon": -123.13622,
+    "category": "convenience_store",
+    "confidence": 0.65,
+    "id": "ffb0e30a-e1eb-4f24-b15a-22bfda18a525",
+    "km": 3.6
+   },
+   {
+    "name": "H Mart",
+    "lat": 49.18345,
+    "lon": -123.13365,
+    "category": "grocery_store",
+    "confidence": 0.97,
+    "id": "d35ba8a9-c9d0-476e-8c5d-ecda727b3e2f",
+    "km": 3.7
+   },
+   {
+    "name": "Izumiya Japanese Marketplace",
+    "lat": 49.17787,
+    "lon": -123.13808,
+    "category": "grocery_store",
+    "confidence": 1.0,
+    "id": "99990893-68b9-4102-854a-18f8c4dc82f1",
+    "km": 3.7
+   },
+   {
+    "name": "New Hong Kong Supermarket",
+    "lat": 49.18558,
+    "lon": -123.13026,
+    "category": "grocery_store",
+    "confidence": 0.98,
+    "id": "8722f37d-f641-410a-ac6f-35ce18dbd864",
+    "km": 3.9
+   }
+  ]
+ }
+}

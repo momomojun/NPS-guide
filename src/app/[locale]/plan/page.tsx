@@ -7,6 +7,7 @@ import { attractions } from "@/data/attractions";
 import { bookingRules } from "@/data/bookings";
 import { lodgingOptions } from "@/data/lodging";
 import { isSite, parks } from "@/data/parks";
+import { seasonalRoads } from "@/data/roads";
 import { servicesUpdated } from "@/data/services.generated";
 import { shuttleSystems } from "@/data/shuttles";
 import { hasLocale } from "@/i18n/config";
@@ -73,6 +74,7 @@ export default async function PlanPage({ params }: PageProps<"/[locale]/plan">) 
           difficulty: dict.difficulty,
           timeOfDay: dict.timeOfDay,
           shuttleNames: Object.fromEntries(shuttleSystems.map((system) => [system.id, localize(system.nameZh, locale)])),
+          roadNames: Object.fromEntries(seasonalRoads.map((road) => [road.id, localize(road.nameZh, locale)])),
         }}
       />
     </div>

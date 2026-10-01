@@ -28,15 +28,18 @@ npm run dev                  # http://localhost:3000
 | `src/data/fees-manual.ts` | NPS 门票接口里没有的门票：加拿大的国家公园（按天收、加元，汇率 `CAD_TO_USD`）和园外名胜（部落公园、BLM、城市停车场）；预算里按一车和按人取便宜的 |
 | `src/data/activities.ts` | 各公园的特别活动、节庆和季节现象（火瀑布、天文节、游船、漂流、骑马……）：月份、怎么预约、2026 年的特殊情况 |
 | `src/data/airports.ts` | 各公园常用机场的位置，自动生成攻略时当出发 / 回程地 |
+| `scripts/build-asian-groceries.py`、`scripts/asian-names.mjs`、`scripts/data/asian-groceries.json` | 亚洲超市补漏：Python + duckdb 读 Overture Maps 的地点数据，按 `asian-names.mjs` 的店名规则（OSM 那边也用它）挑出各公园补给范围里和常用机场附近的亚洲超市，人工排除的写在 EXCLUDE；结果存成 JSON 提交进仓库，`data:services` 合并时不需要 Python |
 | `src/data/attractions/` | 每个公园一个文件的景点数据；`*.generated.ts` 由脚本生成，不要手改；`google.ts` 是 Google Maps 评分和评论数的手动快照；`route-fixes.ts` 修正 OSRM 明显估错的个别砂石路车程 |
 | `src/data/lodging.ts` | 各公园的推荐住宿：园内酒店、门户小镇和民宿区（`rental`，Airbnb 整套房子集中的地方）；有 `airbnb` 地名的会按行程日期生成 Airbnb 搜索链接；车程已算进车程表 |
 | `src/lib/planner.ts` | 排行程：公园内按路线排序 → 按天切分（让最累的一天尽量轻松）→ 当天按日出日落排顺序；早上从前一晚住处出发、晚上回当晚住处都算进去；班车季私家车开不进去的景点按“开到换乘点 + 等车 + 坐车”算，赶不上末班车会提醒 |
+| `src/data/roads.ts`、`src/lib/roads.ts` | 季节性山路（Tioga Road、冰川点路、向阳大道洛根山口段、20 号公路山口段、雷尼尔山两个山口）：路名、说明、要走这条路的景点；历年开通、关闭日期在 `roads.generated.ts`。按最近 20 个正常年份（疫情、修路的年份不算）算出某一天往年通车的比例：8 月 15 日前按开通算，之后按关闭算，当年已经知道的按当年说。行程里每天第一个要走这条路的景点下面说一次，不到一半的年份通车用警告色、总览里提醒并建议挪到把握大的那天；定了日期的自动生成攻略按出发这几天里把握最大的一天挑，不到一半就不排。`attractions` 是路通了就能去的（定了日期不再按开放月份算），`afterRoad` 是路通了还要等步道化雪的（两个都看）。公园页画出最近 15 年每年的通车时段 |
 | `src/data/shuttles.ts`、`src/lib/shuttle.ts` | 班车季只能坐班车的路（锡安峡谷景观道、大峡谷 Hermit Road 和 Kaibab Rim、马里波萨巨杉林、红杉 Moro Rock 周末、班夫梦莲湖、Kennecott……）：季节、首末班车（有的跟着日落走）、每站坐多久、换乘点在哪；同一站的几个景点之间按走路算；`carFree` 的线（Kennecott）连住处也不通车，住在线上的去线外也要先坐回换乘点。数据由研究整理，时刻表年份写在 `scheduleYear` |
 | `src/data/bookings.ts`、`src/lib/booking.ts` | 要提前订的：园内住宿、营地、许可证抽签、入园预约、船票和团，各自的开放规则（滚动开放、每月整段放、按季抽签、按月抽签、提前几天、固定日期）；按行程日期算出哪天开订、还剩几天，生成 .ics 日历提醒。针对没收录的地方（营地等）的规则只在公园页列出 |
 | `src/lib/generate-trip.ts` | 自动生成攻略：可以几个顺路的公园一起排（比如盐湖城进出，先大提顿再黄石）。按月份去掉关闭和要抽签的景点（要订票的照排、提醒提前订），按必去、热度、当月最佳和节奏挑景点，路线从出发地排到回程地，再按车程和住宿偏好（不限 / 酒店 / 民宿）选每晚住处；太满的一天去掉最不重要的景点，有空的天再补 |
 | `src/lib/trip-store.ts` | 行程（含每晚住处）存在浏览器 localStorage，自用阶段不需要账号 |
 | `src/lib/trip-share.ts`、`src/components/plan/trip-share.tsx` | 电脑和手机之间传行程：整个行程压缩（fflate）后放在链接的 `#trip=` 里，附二维码，打开链接先问要不要换掉现在的行程；也能导出、导入 JSON 文件 |
-| `src/components/plan/today-panel.tsx`、`src/lib/use-now.ts` | “今天”模式：出发后打开行程页，最上面是今天的下一站、按现在的时间推算的到达时间、日落倒计时、导航链接，到了点一下就按实际进度重排 |
+| `src/components/plan/today-panel.tsx`、`src/lib/use-now.ts` | “今天”模式：出发后打开行程页，最上面是今天的下一站、按现在的时间推算的到达时间、日落倒计时、导航链接；到了点“到了”（记下到达时间，按停够了再走推算后面），走的时候点“走了”（这一站完成） |
+| `src/lib/personal-pace.ts` | 个人配速：两次打卡之间就是实际停留，和估算比出倍数；徒步至少 2 站、其他景点至少 3 站才算，各取中位数（忘了点“走了”这种偶尔的离谱数字影响不大），限制在 0.6–1.8 倍，和 1 差不到 0.1 不调整。还没去的景点按这个倍数算停留（行程卡片上附原估算），重排、“今天”的推算都用它；“今天”面板里可以改回原来的估算（存在出行设置的 `usePace`） |
 | `src/lib/offline-maps.ts`、`src/components/plan/offline-maps.tsx` | 出发前下载离线地图：按每天去的范围算出要下载的地图瓦片和景点照片，交给 service worker 存进单独的缓存（不会被自动清理） |
 | `src/lib/geocode.ts`、`src/lib/osrm-client.ts` | 自定义住处：Photon 搜酒店 / 地址，OSRM 在浏览器里算到各景点的车程 |
 | `src/lib/nps.ts`、`src/lib/nlr.ts` | NPS 公告和门票、NLR 充电桩 |
@@ -103,10 +106,12 @@ npm run data:gallery     # 每个景点从 Wikimedia Commons 挑最多 6 张照�
 npm run data:travel      # 用 OSRM 按道路算各景点、住宿之间的车程；相邻公园（nearby）另算跨园直达的车程
 npm run data:trails      # 按 trail 途经点，用 Valhalla 沿 OpenStreetMap 步道生成徒步路线
 npm run data:map         # 首页线描地图：Natural Earth 州界、加拿大省界按 Albers 投影成 SVG，公园和城市位置一起算好
-npm run data:services    # 补给点：OSM 的加油站、超市、亚洲超市和餐厅 + NLR 快充（ONLY=grte,zion 只查几个公园，SKIP_OSM=1 只补快充）
+npm run data:asian       # 亚洲超市补漏：Overture Maps 的地点数据（要 Python 和 duckdb：pip install duckdb），写到 scripts/data/asian-groceries.json
+npm run data:services    # 补给点：OSM 的加油站、超市、亚洲超市和餐厅 + NLR 快充，再合并上面 Overture 的亚洲超市（ONLY=grte,zion 只查几个公园，SKIP_OSM=1 只补快充，再加 SKIP_NLR=1 就只重新合并亚洲超市、不联网）
 npm run data:climate     # 往年同期天气：Open-Meteo 历史数据 2016–2025 年按月平均，每个片区取离平均位置最近的景点
 npm run data:fees        # 门票：NPS API feespasses（只查 NPS 管的公园，加拿大和园外名胜手写在 fees-manual.ts）
 npm run data:perdiem     # 住宿和餐饮参考：GSA Per Diem（按住宿所在的县），阿拉斯加和加拿大不在范围内
+npm run data:roads       # 季节性山路的历年开通、关闭日期：NPS（优胜美地、冰川）和 WSDOT 的历年表，今年的日期先补进脚本里的 FIXES
 ```
 
 `data:travel` 也会算各机场到公园定位点的车程（机票和租车里比较附近机场用）。
@@ -167,10 +172,12 @@ README 里的截图用 `npm run docs:screenshots` 重新生成（`scripts/screen
 
 ### v2 差异化
 
-- [ ] 日期开放：选日期 → 哪些路、区域、设施开放（历年开关日期 + NPS 实时 alerts），需要哪些预约 / permit
+- [x] 季节性山路：6 条冬天封闭的山路按近 20 年的开通、关闭日期算“往年这一天通没通车”，行程里对到具体哪天、自动生成攻略按日期挑，公园页画出历年通车时段
+- [ ] 日期开放（其余）：营地、游客中心、更多支路的历年开关日期（NPS 实时 alerts 已经对到行程里）
 - [ ] 补能地图：手机信号；桩的可靠度评分 + 打卡（能用 / 坏了 / 找不到）（充电桩和加油站已经能画到行程地图上）
-- [ ] 亚洲补给补漏：OSM 的亚洲超市很不全，要 Google Places 补漏 + 人工校对（基础版已在行程页的补给里）
-- [ ] 根据实际打卡学习个人配速，自动调整后续时间估算
+- [x] 亚洲补给补漏：OSM 的亚洲超市很不全，用 Overture Maps 的地点数据补（人工看过一遍，去掉标错的），各公园常用机场附近也各收最近的 5 家，行程页补给里有“落地后”
+- [x] 根据实际打卡学习个人配速，自动调整后续时间估算：“今天”里到了、走了各点一下，徒步和其他景点分开学倍数
+- [ ] 车程也按实际打卡校准（OSRM 在园区里偏乐观，路边停车、堵车都没算）
 
 ### v3 机票 / 租车
 
@@ -188,6 +195,7 @@ README 里的截图用 `npm run docs:screenshots` 重新生成（`scripts/screen
 | 露营地、permit 设施信息 | Recreation.gov RIDB | 单独申请 |
 | 天气预报、往年同期 | Open-Meteo（预报 16 天；历史 ERA5，CC BY 4.0） | 不需要 |
 | 天气预警 | NWS（`api.weather.gov`） | 不需要 |
+| 季节性山路历年开通、关闭日期 | NPS 历年表（优胜美地 Tioga Road、冰川点路；冰川 Logan Pass）、WSDOT 山口历年表（Chinook、Cayuse、North Cascades Highway）；最近几年按官方新闻稿和当地新闻补 | 不需要 |
 | 空气质量 / 山火烟雾 | AirNow API | 单独申请 |
 | 油价 | AAA 各州均价（自用阶段 12 小时读一次 AAA 页面，读不到用 2026-09-26 快照）；加拿大两省用 finder.com 2026-09-22 的省均价快照；以后可换 EIA API | 不需要 |
 | 公告翻译 | DeepL API Free（每月 50 万字符）；没配就用 MyMemory（免费，匿名每天约 5,000 字符），自用阶段再退到 Google 网页翻译 | DeepL 可选 |
@@ -196,6 +204,7 @@ README 里的截图用 `npm run docs:screenshots` 重新生成（`scripts/screen
 | 博主路线 | YouTube / B 站公开视频的文稿、简介、章节（转述 + 链接；外语视频翻译后转述） | 不需要 |
 | 餐饮、住宿成本基准 | GSA Per Diem API | api.data.gov |
 | 景点坐标、加油站、亚洲超市等 POI | OpenStreetMap（Overpass） | 不需要 |
+| 亚洲超市补漏 | Overture Maps places（AWS 上的公开 GeoParquet，duckdb 按范围读；CDLA Permissive 2.0，页面上注明来源） | 不需要 |
 | 景点照片 | Wikimedia Commons（按授权署名） | 不需要 |
 | 车程 | OSRM 公共服务（景点和推荐住宿预先生成车程表；自定义住处在浏览器里实时查） | 不需要 |
 | 搜索酒店 / 地址 | Photon（基于 OpenStreetMap） | 不需要 |
@@ -209,7 +218,7 @@ README 里的截图用 `npm run docs:screenshots` 重新生成（`scripts/screen
 
 - NPS API 只有"现在"的状态，季节性开放规律要自己整理历年数据；部分字段（如 trail 时长、Yosemite 路况）是空的
 - NLR 充电桩数据里有"暂时不可用"和很久没确认的站，要做可靠度评分
-- OSM 亚洲超市数据有误报（地名 Chinese Camp、China Peak 滑雪场）和漏报（Fresno、Visalia 一家没有），需要 Google Places 补漏 + 人工校对
+- OSM 亚洲超市数据有误报（地名 Chinese Camp、China Peak 滑雪场）和漏报（优胜美地、红杉一带一家没有），用 Overture Maps 补：Overture 里大部分亚洲超市只标了 grocery_store，所以和 OSM 一样按店名认（规则在 `scripts/asian-names.mjs`，两边共用）；Overture 标成亚洲超市的里面也混着餐厅、咖啡馆、加油站小店、坐标放错的日本 7-Eleven，按名字排除或者写进 `build-asian-groceries.py` 的 EXCLUDE。Overture 的品牌字段常常不准（拉斯维加斯的店标着 Winnipeg 分店的品牌），只给“地名 (街名)”这种只写分店名的店加品牌
 - Google 评分和评论数目前是手动快照，不会自动更新。Google 条款不允许复制保存这些数据，自用可以；公开上线前要换成 Google Places API 实时查询（按字段计费，除 place_id 外不能长期缓存，要署名），或者去掉数字只留跳转链接
 - 同一景点在 Google 上常分成景点、步道口、观景台几个条目，评论分散；快照取评论最多的条目。从观景台出发的步道（比如从日落点下去的纳瓦霍环线）评论容易记在观景台上，名次会偏低。游客中心和园外景点（比如 Jackson 镇广场）不参与排名
 - 景点的临时关闭、特别活动的日期和价格是 2026 年 9 月 24 日查的（关闭说明在 `closedNote`，其他写在提示里），之后要复查：
@@ -224,6 +233,7 @@ README 里的截图用 `npm run docs:screenshots` 重新生成（`scripts/screen
 - 阿拉斯加的基奈峡湾、兰格尔–圣伊莱亚斯是 2026-09-29 加的：Exit Glacier 路通常 10 月底到次年 5 月中不通汽车；峡湾游船大约 5–9 月，西北峡湾全天航线的月份是估计的；Kennecott 的私营接驳车没有公开时刻表，季节（5 月 25 日到 9 月 15 日）、间隔（45 分钟）和车程（20 分钟）都是按 NPS 的说明和选矿厂导览季估的；McCarthy Road 是 60 英里砂石路，多数租车公司的合同不允许开
 - 海峡群岛只能坐船上岛，每个岛按一整天的行程算，出发点是 Ventura 码头；船票要提前在 Island Packers 订
 - 车程按自驾算，班车季只能坐班车的路按班车算（`src/data/shuttles.ts`）。班车每站坐多久多是按官方全程时间和站间距离估算的；时刻表只有 2026 年的，之后的年份按同样的日期估算。德纳里公园路巴士本身就是一个景点（时长含坐车），没有再按班车算
+- 季节性山路（`scripts/build-roads.mjs`）：冰川的历年表 2023 年以后没更新，2023–2025 年的关闭日期是按当地新闻补的（2024 年 10 月 17 日因结冰提前关，之后有没有短暂重开没查到）；冰川 2013 年政府停摆提前关、没记关闭日期，只算开通。每年秋天路都关了以后，把今年的开通、关闭日期补进 FIXES 再跑 `npm run data:roads`。优胜美地冰川点路 2026 年 9 月 23 日起因 Dome Fire 临时封闭，没算作季节关闭，写在说明里
 - 预约规则（`src/data/bookings.ts`）是 2026-09-28 按官方页面整理的，没查到官方写明的就没收（比如 Yavapai Lodge 提前多久开订）；2027 年的季度抽签日期、Moraine Lake 班车开订日这类还没公布的，按 2026 年的写并在说明里注明
 - 不爬小红书（没有 API，有法律风险）；博主内容只做摘要 + 链接 / 嵌入
 - 博主路线（`src/data/creators.ts`）是 2026-09-26 整理的：中文 YouTube 视频多数读了“内容转文字”的文稿；外语视频整理时 YouTube 的文稿接口返回 400（不绕过），只按简介和章节整理，章节名起得很文艺的（比如 Kay & ZooKatsu）地点是我们按顺序对应的；国籍没核实的博主只标语言；Reddit 在内置浏览器里打不开、X 搜索要登录、4travel 拒绝访问，暂时都没收。B 站视频大多只有标题、标签和很短的简介（AI 字幕要登录，不登录），信息少的会标明；内容是转述，不照抄原话。播放量是快照

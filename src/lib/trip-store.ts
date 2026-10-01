@@ -6,6 +6,9 @@ export type ItemStatus = "planned" | "done" | "skipped";
 export interface TripItem {
   id: string;
   status: ItemStatus;
+  /** “今天”模式里点“到了”“走了”的时间（毫秒时间戳），用来学这个人实际在景点停多久 */
+  arrivedAt?: number;
+  leftAt?: number;
 }
 
 /** 推荐住宿只存 id（名字随语言切换）；自定义住处存名字、坐标和查好的车程 */
@@ -106,7 +109,14 @@ export function normalizeTrip(value: unknown): Trip | null {
       const entry = item as Record<string, unknown> | null;
       if (!entry || !isString(entry.id)) return [];
       const status: ItemStatus = entry.status === "done" || entry.status === "skipped" ? entry.status : "planned";
-      return [{ id: entry.id, status }];
+      return [
+        {
+          id: entry.id,
+          status,
+          ...(isNumber(entry.arrivedAt) ? { arrivedAt: entry.arrivedAt } : {}),
+          ...(isNumber(entry.leftAt) ? { leftAt: entry.leftAt } : {}),
+        },
+      ];
     }),
   );
   if (days.length === 0) days.push([]);

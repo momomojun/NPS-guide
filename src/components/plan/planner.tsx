@@ -24,9 +24,11 @@ import { bookingsForTrip } from "@/lib/booking";
 import { flightKey, useFlightStore } from "@/lib/flight-store";
 import { generateTrip, guideParks } from "@/lib/generate-trip";
 import { drivingMinutesFrom, drivingRoute, type DrivingRoute } from "@/lib/osrm-client";
-import { buildLiveTimeline, buildTimeline, NOMINAL_SUN, rankLodging, type PlanStop } from "@/lib/planner";
+import { learnPace, NEUTRAL_PACE, paceAdjusts, pacedMinutes } from "@/lib/personal-pace";
+import { buildLiveTimeline, buildTimeline, buildTransferTimeline, NOMINAL_SUN, rankLodging, type PlanStop } from "@/lib/planner";
 import { formatClock, minutesOfDay, sunTimes } from "@/lib/sun";
 import { moveItem, setNight } from "@/lib/trip-edit";
+import { bestRoadDay, roadFor } from "@/lib/roads";
 import { planTrip } from "@/lib/trip-plan";
 import {
   MAX_DAYS,
@@ -60,7 +62,8 @@ import { TripOverview } from "./trip-overview";
 import { SERVICE_COLORS, SERVICE_KINDS, TripSupplies, type SupplyEntry, type SupplyStay } from "./trip-supplies";
 import { clearShareCode, TripImportBanner, TripShare, useShareCode } from "./trip-share";
 import { OfflineMaps } from "./offline-maps";
-import { TodayPanel } from "./today-panel";
+import { roadNoteFor } from "./road-note";
+import { paceParts, TodayPanel } from "./today-panel";
 import { TripTools } from "./trip-tools";
 import { TripWizard, useRequestedPark, type WizardInput, type WizardPlace } from "./trip-wizard";
 import type { DayView, DragSpot, PlannerPark, PlannerText, ResolvedLodging, SunInfo } from "./types";
@@ -166,6 +169,24 @@ export function Planner({
   const refDateOf = (day: number) =>
     trip.startDate ? addDays(trip.startDate, day) : trip.month ? addDays(nominalDate(trip.month), day) : null;
   const tripMonth = trip.startDate ? monthOf(trip.startDate) : (trip.month ?? null);
+  // 个人配速：按“今天”模式里的打卡学实际停留时间，还没去的景点按这个算（可以关掉）
+  const learnedPace = useMemo(() => learnPace(trip.days.flat(), (id) => byId.get(id)), [trip.days, byId]);
+  const pace = prefs.usePace ? learnedPace : NEUTRAL_PACE;
+  const paced = <T extends PlanStop>(stop: T): T => {
+    const minutes = pacedMinutes(stop, pace);
+    return minutes === stop.durationMin ? stop : { ...stop, durationMin: minutes };
+  };
+  // 攻略说明里因为季节性道路没排进去的景点：说出发这几天里最有把握的一天往年通不通（自动生成攻略也按这一天挑）
+  const roadClosedNote = (id: string) => {
+    const stop = byId.get(id);
+    const road = roadFor(id);
+    const dates = Array.from({ length: trip.dayCount }, (_, day) => dateOf(day)!);
+    const best = stop && road && trip.startDate ? bestRoadDay(road, dates) : null;
+    const note = best ? roadNoteFor(id, best.date, text, true) : null;
+    const byMonth = stop?.openMonths !== undefined && tripMonth !== null && !stop.openMonths.includes(tripMonth);
+    if (!note?.note || stop?.openMonths?.length === 0 || (byMonth && !note.decides)) return undefined;
+    return fill(text.plan.roads.stop, { road: note.name, note: note.note });
+  };
 
   const resolve = (lodging: TripLodging | null | undefined): ResolvedLodging | undefined => {
     if (!lodging) return undefined;
@@ -218,10 +239,24 @@ export function Planner({
     const from = nightAt(day);
     const to = nightAt(day + 1);
     const sun = sunInfo(day, rows[0]?.stop.park ?? previous?.park);
-    const timeline = buildTimeline(
-      rows.map((row) => row.stop),
-      { sun: sun.kind === "normal" ? sun.window : NOMINAL_SUN, from, to, previous, date: refDateOf(day) },
-    );
+    const context = { sun: sun.kind === "normal" ? sun.window : NOMINAL_SUN, from, to, previous, date: refDateOf(day) };
+    // 没安排景点、但要换住处（比如最后一天开回机场）：按直接过去算，前后两天所在公园的景点用来估算车程
+    const nextPark = trip.days
+      .slice(day + 1)
+      .flat()
+      .map((item) => byId.get(item.id)?.park)
+      .find(Boolean);
+    const nearParks = new Set([previous?.park, nextPark].filter(Boolean));
+    const timeline =
+      (rows.length === 0 &&
+        buildTransferTimeline(
+          context,
+          attractions.filter((a) => nearParks.has(a.park)),
+        )) ||
+      buildTimeline(
+        rows.map((row) => (row.item.status === "planned" ? paced(row.stop) : row.stop)),
+        context,
+      );
     dayViews.push({ day, date: refDateOf(day), rows, sun, timeline, from, to });
     previous = rows.at(-1)?.stop ?? previous;
   }
@@ -293,12 +328,15 @@ export function Planner({
   const pickerPark = pickedPark ?? allIds[0]?.split("-")[0] ?? parks[0]?.code ?? "";
   const plannedCount = trip.days.flat().filter((item) => item.status === "planned").length;
 
-  const runPlan = (fromDay: number) =>
+  const runPlan = (fromDay: number) => {
+    // 还没去的景点按学到的配速算停留时间
+    const stops = paceAdjusts(pace) ? new Map([...byId].map(([id, stop]) => [id, paced(stop)])) : byId;
     updateTrip((current: Trip) => ({
       ...current,
-      days: planTrip(current, byId, sunWindow, nightAt, fromDay, refDateOf),
+      days: planTrip(current, stops, sunWindow, nightAt, fromDay, refDateOf),
       pool: [],
     }));
+  };
   const autoPlan = () => {
     if (plannedCount > 0 && !window.confirm(t.autoPlanConfirm)) return;
     runPlan(0);
@@ -387,8 +425,8 @@ export function Planner({
     const code = trip.days[day]?.[0]?.id.split("-")[0] ?? allIds[0]?.split("-")[0];
     return code ? parkByCode.get(code) : undefined;
   };
-  const dateIn = (timeZone: string | undefined) =>
-    now === null ? null : new Intl.DateTimeFormat("en-CA", { timeZone, year: "numeric", month: "2-digit", day: "2-digit" }).format(now);
+  const dateIn = (timeZone: string | undefined, at = now) =>
+    at === null ? null : new Intl.DateTimeFormat("en-CA", { timeZone, year: "numeric", month: "2-digit", day: "2-digit" }).format(at);
   const dayIndexOn = (date: string | null) => {
     if (!date || !trip.startDate) return -1;
     const index = Math.round((Date.parse(`${date}T00:00:00Z`) - Date.parse(`${trip.startDate}T00:00:00Z`)) / 86400000);
@@ -498,7 +536,8 @@ export function Planner({
   );
 
   // 地图：整个行程（每天一种颜色）或者某一天：前一晚住处 → 景点 → 当晚住处
-  const scheduledDays = dayViews.filter((view) => view.rows.length > 0);
+  // 换住处的一天（没安排景点，比如最后一天开回机场）也画路线、算油费
+  const scheduledDays = dayViews.filter((view) => view.rows.length > 0 || view.timeline.returnAt !== undefined);
   const showAll = mapDay === ALL_DAYS && trip.days.length > 1;
   const mapIndex = Math.min(Math.max(mapDay, 0), trip.days.length - 1);
   const mapViews = showAll ? scheduledDays : dayViews[mapIndex]?.rows.length ? [dayViews[mapIndex]] : [];
@@ -701,6 +740,7 @@ export function Planner({
 
   // 总览里“要注意”：预报按天说，往年同期按公园说一次，再加上提到行程景点的公告
   const liveNotes: string[] = [];
+  if (prefs.usePace && paceAdjusts(learnedPace)) liveNotes.push(fill(t.overview.pace, { parts: paceParts(learnedPace, text) }));
   const climateSeen = new Set<string>();
   dayViews.forEach((view, day) => {
     const weather = dayWeather[day];
@@ -725,6 +765,8 @@ export function Planner({
   const supplyPoints = serviceUrls.every((url) => url in serviceResults)
     ? serviceUrls.flatMap((url) => serviceResults[url] ?? [])
     : undefined;
+  const originStay = nightAt(0);
+  const supplyOrigin = originStay?.endpoint === "origin" ? originStay : undefined;
   const supplyStays: SupplyStay[] = [];
   for (let night = 1; night <= trip.dayCount; night++) {
     const lodging = nightAt(night);
@@ -840,8 +882,14 @@ export function Planner({
       {todayView && nowMinutes !== null && (() => {
         const remaining = todayView.rows.filter((row) => row.item.status === "planned");
         const lastDone = [...todayView.rows].reverse().find((row) => row.item.status === "done")?.stop;
+        // 今天点了“到了”、还没走的一站
+        const here = remaining[0]?.item.arrivedAt;
+        const arrivedAt =
+          here !== undefined && todayZone && dateIn(todayZone, here) === dateIn(todayZone)
+            ? minutesOfDay(new Date(here), todayZone)
+            : undefined;
         const live = buildLiveTimeline(
-          remaining.map((row) => row.stop),
+          remaining.map((row) => paced(row.stop)),
           {
             now: nowMinutes,
             sun: todayView.sun.kind === "normal" ? todayView.sun.window : NOMINAL_SUN,
@@ -849,6 +897,7 @@ export function Planner({
             lodging: lastDone ? undefined : todayView.from,
             to: todayView.to,
             date: todayView.date,
+            arrivedAt,
           },
         );
         const nextView = dayViews[todayIndex + 1];
@@ -859,6 +908,10 @@ export function Planner({
             dateLabel={todayView.date ? formatDate(todayView.date) : null}
             now={nowMinutes}
             live={live}
+            arrivedAt={arrivedAt}
+            pace={learnedPace}
+            usePace={prefs.usePace}
+            onUsePace={(usePace) => updatePrefs({ usePace })}
             weather={dayWeather[todayIndex]}
             tomorrow={firstTomorrow ? { name: firstTomorrow.stop.nameZh, departAt: nextView.timeline.departAt } : undefined}
             alertsFor={alertsOf}
@@ -1058,7 +1111,8 @@ export function Planner({
           }))}
           nameOf={(id) => byId.get(id)?.nameZh ?? id}
           tripIds={allIds}
-          closedNoteOf={(id) => byId.get(id)?.closedNote}
+          dated={Boolean(trip.startDate)}
+          closedNoteOf={(id) => roadClosedNote(id) ?? byId.get(id)?.closedNote}
           activities={activities.filter((activity) => guideParkList.some((p) => p.code === activity.park))}
           attractionExists={(id) => byId.has(id)}
           text={text}
@@ -1109,6 +1163,7 @@ export function Planner({
                 dayCount={trip.days.length}
                 itemCount={trip.days[view.day].length}
                 dateLabel={trip.startDate ? dateFormat.format(new Date(`${dateOf(view.day)}T00:00:00Z`)) : null}
+                exactDate={dateOf(view.day)}
                 parkNames={parkNames}
                 text={text}
                 selectedId={selectedId}
@@ -1185,6 +1240,7 @@ export function Planner({
 
           {hasStops && (
             <TripSupplies
+              origin={supplyOrigin}
               stays={supplyStays}
               entries={supplyEntries}
               points={supplyPoints}

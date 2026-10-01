@@ -9,6 +9,7 @@ import { AlertsSection } from "@/components/park/alerts-section";
 import { BookingsSection } from "@/components/park/bookings-section";
 import { ChargersSection } from "@/components/park/chargers-section";
 import { FeesSection } from "@/components/park/fees-section";
+import { RoadsSection } from "@/components/park/roads-section";
 import { SectionSkeleton } from "@/components/section";
 import { IconArrowRight } from "@/components/icons";
 import { SectionNav } from "@/components/site/section-nav";
@@ -19,6 +20,7 @@ import { getParkAttractions } from "@/data/attractions";
 import { creatorRoutes } from "@/data/creators";
 import { lodgingOptions } from "@/data/lodging";
 import { getPark, isSite, npsCodeOf } from "@/data/parks";
+import type { RoadYear } from "@/data/roads";
 import { shuttleSystems } from "@/data/shuttles";
 import { hasLocale } from "@/i18n/config";
 import { localizeActivity, localizeAttraction, localizePark } from "@/i18n/content";
@@ -26,6 +28,7 @@ import { localize } from "@/i18n/convert";
 import { getDictionary } from "@/i18n/dictionaries";
 import { fill, formatMonths } from "@/i18n/format";
 import { isUsingDemoKey } from "@/lib/datagov";
+import { roadsOf } from "@/lib/roads";
 
 // 不写 generateStaticParams：页面每次请求时渲染，接口数据由 fetch 缓存兜住，
 // 这样 build 不会一次性调几十次接口，接口失败也不会把错误页缓存下来。
@@ -51,7 +54,15 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
   const attractions = getParkAttractions(park.code).map((a) => localizeAttraction(a, locale));
   const heroPhoto = attractions.find((a) => a.id === park.hero)?.photo;
   const parkActivities = activities.filter((a) => a.park === park.code).map((a) => localizeActivity(a, locale));
-  const hasSeasonInfo = parkActivities.length > 0 || attractions.some((a) => a.openMonths);
+  const parkRoads = roadsOf(park.code).map((road) => ({
+    ...road,
+    nameZh: localize(road.nameZh, locale),
+    noteZh: localize(road.noteZh, locale),
+    years: road.years.map(([year, open, close, skip]): RoadYear =>
+      skip ? [year, open, close, localize(skip, locale)] : [year, open, close],
+    ),
+  }));
+  const hasSeasonInfo = parkActivities.length > 0 || attractions.some((a) => a.openMonths) || parkRoads.length > 0;
   // “适用于”只写没收录的地名会让人以为只管那几处，所以有这一行时把对上的景点和住宿也列上
   const targetName = (id: string) =>
     attractions.find((a) => a.id === id)?.nameZh ?? localize(lodgingOptions.find((l) => l.id === id)?.nameZh ?? id, locale);
@@ -228,6 +239,7 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
           <div className={`${container} py-20 lg:py-28`}>
             <p className="eyebrow mb-12 text-mute">{t.activities.eyebrow}</p>
             <ActivitiesSection activities={parkActivities} attractions={attractions} dict={dict} />
+            {parkRoads.length > 0 && <RoadsSection roads={parkRoads} attractions={attractions} dict={dict} />}
           </div>
         </section>
       )}

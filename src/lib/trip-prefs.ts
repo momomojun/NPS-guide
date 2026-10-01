@@ -13,6 +13,8 @@ export interface TripPrefs {
   vehicle: "gas" | "ev";
   /** 坐飞机来就要租车；自己开车来的不算租车和机票 */
   flyAndRent: boolean;
+  /** 按“今天”模式的打卡学到的配速调整后面的停留时间 */
+  usePace: boolean;
 }
 
 const STORAGE_KEY = "nps-guide:prefs";
@@ -24,6 +26,7 @@ export const DEFAULT_PREFS: TripPrefs = {
   rooms: 1,
   vehicle: "gas",
   flyAndRent: true,
+  usePace: true,
 };
 
 let cachedRaw: string | null = null;

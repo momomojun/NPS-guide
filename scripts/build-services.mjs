@@ -1,4 +1,6 @@
 // 补给点：加油站、超市、亚洲超市、亚洲餐厅（OpenStreetMap，Overpass 查询），加上直流快充（NLR 充电站 API）。
+// 亚洲超市 OSM 漏得多，另外合并 Overture Maps 的（scripts/data/asian-groceries.json，npm run data:asian 生成，
+// 含各公园常用机场附近的几家），和 OSM 已有的重复就不要。
 // 每个公园查一块范围：景点（有出发点用出发点）和推荐住宿的外包框，四边各放宽 0.3°，门户小镇都在里面。
 // 输出 src/data/services.generated.ts（行程地图按公园通过 API 路由取，不打包进网页）。重新跑：npm run data:services
 //
@@ -7,17 +9,18 @@
 // 还和网站本身共用），每个公园查 1 次，次数用完就等一会儿再查。原始返回在 node_modules/.cache 里存 12 小时，
 // 这期间重跑不再请求。
 //
-// 只重查某几个公园：ONLY=grte,zion npm run data:services；只补快充、OSM 部分沿用上次的：SKIP_OSM=1
+// 只重查某几个公园：ONLY=grte,zion npm run data:services；只补快充、OSM 部分沿用上次的：SKIP_OSM=1；
+// 快充也沿用上次的：SKIP_NLR=1（两个都设就只是重新合并 Overture 的亚洲超市，不联网）
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { attractions, lodgingOptions, parks, sleep, USER_AGENT } from "./load-data.mjs";
+import { ASIAN_SHOP_NAME, CJK, PLACE_NAME, plain } from "./asian-names.mjs";
+import { parks, serviceArea, serviceBox, sleep, USER_AGENT } from "./load-data.mjs";
 
 const OUTPUT = new URL("../src/data/services.generated.ts", import.meta.url);
 const CACHE = new URL("../node_modules/.cache/nps-guide/", import.meta.url);
 const ENV_FILE = new URL("../.env.local", import.meta.url);
 const UPDATED = new Date().toLocaleDateString("sv"); // 形如 2026-09-26
-const MARGIN_DEG = 0.3;
 const NLR = "https://developer.nlr.gov/api/alt-fuel-stations/v1/nearest.json";
 const MAX_RADIUS_MI = 150;
 const OVERPASS = [
@@ -31,68 +34,12 @@ if (existsSync(ENV_FILE)) process.loadEnvFile(fileURLToPath(ENV_FILE));
 const API_KEY = process.env.DATA_GOV_API_KEY || "DEMO_KEY";
 const ONLY = new Set((process.env.ONLY ?? "").split(",").filter(Boolean));
 const SKIP_OSM = process.env.SKIP_OSM === "1";
+const SKIP_NLR = process.env.SKIP_NLR === "1";
+const OVERTURE_FILE = new URL("data/asian-groceries.json", import.meta.url);
+const overture = existsSync(OVERTURE_FILE) ? JSON.parse(readFileSync(OVERTURE_FILE, "utf8")) : { parks: {}, airports: {} };
 const selected = (park) => ONLY.size === 0 || ONLY.has(park.code);
 
 // ---- 分类规则 ----
-
-/** 中日韩文字：店名里有就基本是亚洲店 */
-const CJK = /[぀-ヿ㐀-鿿가-힯]/;
-/** 去掉重音再比，Phở → pho */
-const plain = (text) => text.normalize("NFD").replace(/[̀-ͯ]/g, "");
-/** 美国西部很多地名带 China / Chinese / Indian，不是亚洲店 */
-const PLACE_NAME =
-  /chinese camp|china (peak|ranch|flat|lake|camp|creek|gulch|springs?|grade|hat|bar|mountain|basin)|indian (springs|valley|village|creek|wells|head|hill|lake|river|trading|country)/i;
-
-/** 亚洲超市：OSM 里一般不标卖什么，只能按店名认 */
-const ASIAN_SHOP_NAME = new RegExp(
-  `\\b(${[
-    "asian?",
-    "oriental",
-    "chinese",
-    "china",
-    "korean?",
-    "japan(ese)?",
-    "vietnam(ese)?",
-    "thai",
-    "filipino",
-    "pinoy",
-    "philippines?",
-    "taiwan(ese)?",
-    "hmong",
-    "laos?",
-    "khmer",
-    "cambodian",
-    "indonesian?",
-    "malaysian?",
-    "india",
-    "indian (grocery|grocers|store|bazaa?r|market|spices?|foods?|supermarket)",
-    "desi",
-    "apna",
-    "patel",
-    "h ?mart",
-    "99 ranch",
-    "ranch 99",
-    "mitsuwa",
-    "uwajimaya",
-    "lotte",
-    "nijiya",
-    "tokyo central",
-    "marukai",
-    "seafood city",
-    "seoul",
-    "tokyo",
-    "saigon",
-    "manila",
-    "hong kong",
-    "bangkok",
-    "mekong",
-    "lee lee",
-    "great wall",
-    "hankook",
-    "arirang",
-  ].join("|")})\\b`,
-  "i",
-);
 
 /** 亚洲餐厅：按 OSM 的 cuisine 标签（分号分隔，可能是 pan_asian、korean_bbq 这种组合），不收夏威夷 poke */
 const ASIAN_CUISINES = new Set([
@@ -343,7 +290,24 @@ const byKind = (a, b) => KINDS.indexOf(a.kind) - KINDS.indexOf(b.kind) || a.name
 
 // ---- 输出 ----
 
-const previous = existsSync(OUTPUT) ? (await import(OUTPUT.href)).services : {};
+/** 合并 Overture 的亚洲超市：公园范围里的和常用机场附近的，离 OSM 已有的亚洲超市 200 米内、或者同名 1 公里内的不要 */
+function withOverture(park, points) {
+  const candidates = [...(overture.parks[park.code] ?? []), ...park.airports.flatMap((code) => overture.airports[code] ?? [])];
+  const added = [];
+  for (const candidate of candidates) {
+    const same = (other) =>
+      other.kind === "asianGrocery" &&
+      (miles(other, candidate) < 0.12 || (nameKey(other.name) === nameKey(candidate.name) && miles(other, candidate) < 0.6));
+    if (points.some(same) || added.some(same)) continue;
+    added.push({ kind: "asianGrocery", name: candidate.name, lat: candidate.lat, lon: candidate.lon, source: "overture" });
+  }
+  return [...points, ...added].sort(byKind);
+}
+
+const previousFile = existsSync(OUTPUT) ? await import(OUTPUT.href) : null;
+const previous = previousFile?.services ?? {};
+// OSM 沿用上次的，日期也写上次查 OSM 的那天
+const updated = SKIP_OSM && previousFile ? previousFile.servicesUpdated : UPDATED;
 const osmPoints = {};
 const chargerPoints = {};
 
@@ -352,7 +316,10 @@ function write() {
   const lines = parks
     .map((park) => {
       const old = previous[park.code] ?? [];
-      const osm = osmPoints[park.code] ?? old.filter((p) => p.kind !== "dcFast");
+      const osm = withOverture(
+        park,
+        (osmPoints[park.code] ?? old.filter((p) => p.kind !== "dcFast")).filter((p) => p.source !== "overture"),
+      );
       const chargers = chargerPoints[park.code] ?? old.filter((p) => p.kind === "dcFast");
       return [park.code, [...osm, ...chargers]];
     })
@@ -360,7 +327,8 @@ function write() {
     .map(([code, points]) => `  ${code}: [\n${points.map((p) => `    p(${JSON.stringify(p)}),`).join("\n")}\n  ],`);
   writeFileSync(
     OUTPUT,
-    `// 由 scripts/build-services.mjs 生成，请勿手改。地点来自 OpenStreetMap（© OpenStreetMap contributors），快充来自 NLR。
+    `// 由 scripts/build-services.mjs 生成，请勿手改。地点来自 OpenStreetMap（© OpenStreetMap contributors），快充来自 NLR，
+// 亚洲超市另外合并了 Overture Maps 的（CDLA Permissive 2.0）。
 export type ServiceKind = "fuel" | "grocery" | "asianGrocery" | "asianFood" | "dcFast";
 
 export interface ServicePoint {
@@ -374,9 +342,11 @@ export interface ServicePoint {
   tesla?: boolean;
   /** 快充：直流快充桩数 */
   ports?: number;
+  /** 亚洲超市：来自 Overture Maps（不写是 OSM） */
+  source?: "overture";
 }
 
-export const servicesUpdated = "${UPDATED}";
+export const servicesUpdated = "${updated}";
 
 // 每个点包一层 p(...)：数组元素的类型都是 ServicePoint，上千个点时 TypeScript 不会因为联合类型太复杂而报错
 const p = (point: ServicePoint) => point;
@@ -389,24 +359,10 @@ ${lines.join("\n")}
   );
 }
 
-const areaOf = (park) => [
-  ...attractions.filter((a) => a.park === park.code).map((a) => a.start ?? a),
-  ...lodgingOptions.filter((l) => l.park === park.code),
-];
-
 // 1. OSM：加油站、超市、亚洲超市、亚洲餐厅
 for (const [index, park] of parks.entries()) {
   if (SKIP_OSM || !selected(park)) continue;
-  const points = areaOf(park);
-  const lats = points.map((p) => p.lat);
-  const lons = points.map((p) => p.lon);
-  const box = [
-    Math.min(...lats) - MARGIN_DEG,
-    Math.min(...lons) - MARGIN_DEG,
-    Math.max(...lats) + MARGIN_DEG,
-    Math.max(...lons) + MARGIN_DEG,
-  ].map((deg) => Math.round(deg * 1000) / 1000);
-  const query = overpassQuery(box);
+  const query = overpassQuery(serviceBox(park));
   const osm = await cached(`services-osm-${park.code}`, query, async () => {
     if (index > 0) await sleep(5000); // 公共服务，查询之间至少隔 5 秒
     return overpass(query);
@@ -421,8 +377,8 @@ for (const [index, park] of parks.entries()) {
 
 // 2. 直流快充：从公园定位点按直线距离查，半径 = 最远的景点 / 住宿 + 25 英里，最多 150 英里
 for (const park of parks) {
-  if (!selected(park)) continue;
-  const radius = Math.min(MAX_RADIUS_MI, Math.ceil(Math.max(...areaOf(park).map((p) => miles(park.gateway, p))) + 25));
+  if (SKIP_NLR || !selected(park)) continue;
+  const radius = Math.min(MAX_RADIUS_MI, Math.ceil(Math.max(...serviceArea(park).map((p) => miles(park.gateway, p))) + 25));
   const params = new URLSearchParams({
     latitude: String(park.gateway.lat),
     longitude: String(park.gateway.lon),
@@ -452,4 +408,7 @@ for (const park of parks) {
   );
 }
 
-console.log(`写入补给点：${parks.map((p) => (osmPoints[p.code]?.length ?? 0) + (chargerPoints[p.code]?.length ?? 0)).reduce((a, b) => a + b, 0)} 个`);
+write();
+const written = (await import(`${OUTPUT.href}?t=${Date.now()}`)).services;
+const count = (kind) => Object.values(written).flat().filter((p) => kind(p)).length;
+console.log(`写入补给点：${count(() => true)} 个（其中 Overture 的亚洲超市 ${count((p) => p.source === "overture")} 个）`);

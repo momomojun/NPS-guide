@@ -9,6 +9,8 @@ export type PlannerText = Pick<
 > & {
   /** 班车线 id → 当前语言的名字 */
   shuttleNames: Record<string, string>;
+  /** 季节性道路 id → 当前语言的名字 */
+  roadNames: Record<string, string>;
 };
 
 export interface PlannerPark {

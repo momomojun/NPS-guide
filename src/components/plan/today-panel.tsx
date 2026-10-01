@@ -4,9 +4,10 @@ import { buttonPrimary, buttonSecondary } from "@/components/ui";
 import { fill, formatDuration } from "@/i18n/format";
 import type { AttractionWithPhoto } from "@/data/attractions";
 import type { ParkAlert } from "@/lib/alert-match";
+import { paceAdjusts, type PersonalPace } from "@/lib/personal-pace";
 import type { DayTimeline, TimelineEntry } from "@/lib/planner";
 import { formatClock } from "@/lib/sun";
-import { setItemStatus } from "@/lib/trip-edit";
+import { checkIn, checkOut, setItemStatus } from "@/lib/trip-edit";
 import type { Trip } from "@/lib/trip-store";
 import type { DayRow, DayView, PlannerText, ResolvedLodging } from "./types";
 import type { DayWeather } from "./weather";
@@ -34,15 +35,32 @@ function NavLinks({ place, text }: { place: Place; text: PlannerText }) {
   );
 }
 
+/** 配速倍数：1.25、1.3 */
+const times = (factor: number) => String(Number(factor.toFixed(2)));
+
+/** 学到的配速一句话：“徒步大约是估算的 1.3 倍，其他景点大约是估算的 0.85 倍” */
+export function paceParts(pace: PersonalPace, text: PlannerText): string {
+  const t = text.plan.today;
+  return [
+    ...(pace.hike !== 1 ? [fill(t.paceHike, { x: times(pace.hike) })] : []),
+    ...(pace.other !== 1 ? [fill(t.paceOther, { x: times(pace.other) })] : []),
+  ].join("，");
+}
+
 /**
  * 出发后的“今天”：下一站是哪、现在出发几点能到、比计划早还是晚、离日落还有多久，一键导航；
- * 到了点“完成”，后面的时间按现在重新推算。去不了的可以挪到后面几天重排。
+ * 到了点“到了”，走的时候点“走了”，后面的时间按现在重新推算，两次打卡的时间也用来学这个人的配速。
+ * 去不了的可以挪到后面几天重排。
  */
 export function TodayPanel({
   view,
   dateLabel,
   now,
   live,
+  arrivedAt,
+  pace,
+  usePace,
+  onUsePace,
   weather,
   tomorrow,
   alertsFor,
@@ -56,6 +74,12 @@ export function TodayPanel({
   now: number;
   /** 按现在的时间和位置推算的剩下行程 */
   live: DayTimeline;
+  /** 今天已经到了下一站（当天第几分钟到的），还没走 */
+  arrivedAt?: number;
+  /** 按打卡学到的配速，和现在用不用它 */
+  pace: PersonalPace;
+  usePace: boolean;
+  onUsePace: (use: boolean) => void;
   weather?: DayWeather;
   /** 明天的第一站和出发时间 */
   tomorrow?: { name: string; departAt?: number };
@@ -105,6 +129,10 @@ export function TodayPanel({
 
   const sun = view.sun.kind === "normal" ? view.sun.window : null;
   const nextAlerts = next ? alertsFor(next.stop) : [];
+  // 到了还没走：计划停多久（已经按配速算了）、大概几点走；停得比计划久了就说多停了多少
+  const plannedStay = nextPlanned ? nextPlanned.end - nextPlanned.start : 0;
+  const stayed = arrivedAt !== undefined ? now - arrivedAt : 0;
+
 
   return (
     <section id="plan-today" className="scroll-mt-32 border-t-2 border-clay-600 bg-paper-deep p-6 sm:p-8 print:hidden">
@@ -132,16 +160,24 @@ export function TodayPanel({
 
       {next && nextLive ? (
         <div className="mt-6 border-t border-ink/15 pt-5">
-          <p className="eyebrow text-mute">{t.next}</p>
+          <p className="eyebrow text-mute">{arrivedAt !== undefined ? t.here : t.next}</p>
           <p className="mt-2 font-serif text-xl">
             {next.stop.nameZh}
             <span className="eyebrow ml-2 text-mute">{next.stop.nameEn}</span>
           </p>
-          {timing && (
+          {arrivedAt !== undefined ? (
             <p className="mt-2 text-sm text-ink-soft">
-              {timing}
-              {delayLabel && <span className={delay > 0 ? "ml-2 text-clay-700" : "ml-2 text-pine-700"}>{delayLabel}</span>}
+              {stayed > plannedStay + SLACK_MIN
+                ? fill(t.overstay, { time: formatClock(arrivedAt), stayed: duration(stayed), over: duration(stayed - plannedStay) })
+                : fill(t.hereSince, { time: formatClock(arrivedAt), stay: duration(plannedStay), leave: formatClock(nextLive.end) })}
             </p>
+          ) : (
+            timing && (
+              <p className="mt-2 text-sm text-ink-soft">
+                {timing}
+                {delayLabel && <span className={delay > 0 ? "ml-2 text-clay-700" : "ml-2 text-pine-700"}>{delayLabel}</span>}
+              </p>
+            )
           )}
           {nextAlerts.slice(0, 2).map((alert) => (
             <p key={alert.id} className="mt-1 text-xs text-clay-700">
@@ -149,21 +185,42 @@ export function TodayPanel({
             </p>
           ))}
           <div className="mt-4 flex flex-wrap items-center gap-3">
-            <button
-              type="button"
-              className={buttonPrimary}
-              onClick={() => onEdit((trip) => setItemStatus(trip, view.day, next.index, "done"))}
-            >
-              {t.arrived}
-            </button>
-            <button
-              type="button"
-              className={buttonSecondary}
-              onClick={() => onEdit((trip) => setItemStatus(trip, view.day, next.index, "skipped"))}
-            >
-              {t.skip}
-            </button>
-            <NavLinks place={next.stop.start ?? next.stop} text={text} />
+            {arrivedAt !== undefined ? (
+              <>
+                <button
+                  type="button"
+                  className={buttonPrimary}
+                  onClick={() => onEdit((trip) => checkOut(trip, view.day, next.index, Date.now()))}
+                >
+                  {remaining.length > 1 ? t.leave : t.leaveLast}
+                </button>
+                <button
+                  type="button"
+                  className="link-line text-xs text-mute"
+                  onClick={() => onEdit((trip) => checkIn(trip, view.day, next.index, null))}
+                >
+                  {t.undoArrive}
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  type="button"
+                  className={buttonPrimary}
+                  onClick={() => onEdit((trip) => checkIn(trip, view.day, next.index, Date.now()))}
+                >
+                  {t.arrived}
+                </button>
+                <button
+                  type="button"
+                  className={buttonSecondary}
+                  onClick={() => onEdit((trip) => setItemStatus(trip, view.day, next.index, "skipped"))}
+                >
+                  {t.skip}
+                </button>
+                <NavLinks place={next.stop.start ?? next.stop} text={text} />
+              </>
+            )}
           </div>
         </div>
       ) : (
@@ -204,6 +261,15 @@ export function TodayPanel({
               : fill(t.backNoTime, { name: lodging.name })}
           </span>
           <NavLinks place={lodging} text={text} />
+        </p>
+      )}
+
+      {paceAdjusts(pace) && (
+        <p className="mt-5 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-xs leading-6 text-ink-soft">
+          <span>{fill(usePace ? t.pace : t.paceOff, { parts: paceParts(pace, text) })}</span>
+          <button type="button" className="link-line text-xs" onClick={() => onUsePace(!usePace)}>
+            {usePace ? t.paceUseOriginal : t.paceUseMine}
+          </button>
         </p>
       )}
 

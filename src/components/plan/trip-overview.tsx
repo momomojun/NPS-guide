@@ -5,7 +5,9 @@ import { closedIn } from "@/components/attractions/attraction-card";
 import type { AttractionWithPhoto } from "@/data/attractions";
 import { fill, formatDuration } from "@/i18n/format";
 import { formatClock } from "@/lib/sun";
+import { ROAD_LIKELY, roadStatus } from "@/lib/roads";
 import { dayColor } from "./day-colors";
+import { roadNoteFor, roadWarn } from "./road-note";
 import type { DayView, PlannerText } from "./types";
 
 /** 早于这个时间出发，算“一早就要出发” */
@@ -78,8 +80,10 @@ export function TripOverview({
   const parkList = parkCodes.map(parkName).join(" · ");
   const parkJoined = parkCodes.map(parkName).join(t.and);
   const mustSee = stops.filter((stop) => stop.mustSee).length;
-  const totalDrive = views.reduce((sum, view) => sum + (view.rows.length > 0 ? view.timeline.driveMin : 0), 0);
-  const activeDays = views.filter((view) => view.rows.length > 0);
+  // 没安排景点、但要换住处的一天（比如最后一天开回机场）也是开车的一天
+  const moving = (view: DayView) => view.rows.length === 0 && view.timeline.returnAt !== undefined;
+  const totalDrive = views.reduce((sum, view) => sum + (view.rows.length > 0 || moving(view) ? view.timeline.driveMin : 0), 0);
+  const activeDays = views.filter((view) => view.rows.length > 0 || moving(view));
   const averageDrive = activeDays.length ? Math.round(totalDrive / activeDays.length) : 0;
   const hikeKm = stops.reduce((sum, stop) => sum + (stop.hike?.distanceMi ?? 0), 0) * KM_PER_MILE;
   // 中间几晚住过的地方（不算出发地和终点）
@@ -103,7 +107,12 @@ export function TripOverview({
     from === to ? fill(t.oneDay, { n: from + 1 }) : fill(t.dayRange, { a: from + 1, b: to + 1 });
   const segmentText = segments.map((segment) => {
     const days = views.slice(segment.from, segment.to + 1);
-    if (!segment.park) return fill(t.restDays, { range: range(segment.from, segment.to) });
+    if (!segment.park) {
+      const last = days.at(-1);
+      return days.every(moving) && last?.to
+        ? fill(t.transferDays, { range: range(segment.from, segment.to), to: last.to.name })
+        : fill(t.restDays, { range: range(segment.from, segment.to) });
+    }
     const segmentStops = days.flatMap((view) => view.rows.map((row) => row.stop));
     const picked = new Set(
       [...segmentStops]
@@ -175,9 +184,45 @@ export function TripOverview({
   if (booking.length) notes.push(fill(t.booking, { n: booking.length, names: booking.map((s) => s.nameZh).join("、") }));
   const closedNow = stops.filter((stop) => closedIn(stop, null) === "all");
   if (closedNow.length) notes.push(fill(t.closedNow, { names: closedNow.map((s) => s.nameZh).join("、") }));
-  const closedMonth = month !== null ? stops.filter((stop) => closedIn(stop, month) === "month") : [];
+  // 季节性道路：定了日期就按每天的日期看往年通不通，不到一半的年份通车才提醒；路通了就能去的景点不再按月份说
+  const byRoad = new Set<string>();
+  for (const view of startDate ? views : []) {
+    const said = new Set<string>();
+    for (const { item, stop } of view.rows) {
+      const road = view.date ? roadNoteFor(stop.id, view.date, text) : null;
+      if (!road) continue;
+      if (road.decides) byRoad.add(stop.id);
+      if (item.status !== "planned" || !road.note || !roadWarn(road) || said.has(road.road.id)) continue;
+      said.add(road.road.id);
+      // 这几天里哪天往年通车的年份至少一半、把握最大，提一句挪过去
+      const later = views
+        .map((other) => ({ day: other.day, status: other.date ? roadStatus(road.road, other.date) : null }))
+        .flatMap(({ day, status }) =>
+          status?.kind === "odds" && status.open / status.known >= ROAD_LIKELY
+            ? [{ day, n: status.known, k: status.open, phase: status.phase }]
+            : [],
+        )
+        .sort((a, b) => b.k / b.n - a.k / a.n)[0];
+      notes.push(
+        fill(text.plan.roads.overview, {
+          day: view.day + 1,
+          road: road.name,
+          note: road.note,
+          later: later
+            ? fill(later.phase === "opening" ? text.plan.roads.later : text.plan.roads.earlier, {
+                day: later.day + 1,
+                n: later.n,
+                k: later.k,
+              })
+            : "",
+        }),
+      );
+    }
+  }
+  const closedMonth =
+    month !== null ? stops.filter((stop) => closedIn(stop, month) === "month" && !byRoad.has(stop.id)) : [];
   if (closedMonth.length) notes.push(fill(t.closed, { names: closedMonth.map((s) => s.nameZh).join("、"), month: month! }));
-  const emptyDays = views.filter((view) => view.rows.length === 0).map((view) => view.day + 1);
+  const emptyDays = views.filter((view) => view.rows.length === 0 && !moving(view)).map((view) => view.day + 1);
   if (emptyDays.length) notes.push(fill(t.emptyDays, { days: emptyDays.join("、") }));
   notes.push(...extraNotes);
 

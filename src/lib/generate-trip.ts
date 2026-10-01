@@ -7,6 +7,8 @@ import {
   type PlanStop,
   type SunWindow,
 } from "./planner";
+import { addDays } from "./dates";
+import { bestRoadDay, ROAD_LIKELY, roadDecides, roadFor } from "./roads";
 import { planTrip } from "./trip-plan";
 import type { Trip, TripItem, TripLodging } from "./trip-store";
 
@@ -119,8 +121,18 @@ function score(stop: GuideStop, month: number, parkSize: number): number {
 export function generateTrip(input: GenerateInput, context: GenerateContext): { trip: Trip; guide: GuideInfo } {
   const skipped: GuideSkipped = { permit: [], closed: [], tooHard: [], noTime: [] };
   const available: GuideStop[] = [];
+  // 季节性道路：定了日期就看这几天里最有把握的一天，往年通车的年份不到一半就当去不了；
+  // 路通了就能去的景点不再按开放月份算（月份只是粗算），路通了还要等步道化雪的两个都要看
+  const tripDates = input.startDate ? Array.from({ length: input.days }, (_, day) => addDays(input.startDate, day)) : [];
+  const closed = (stop: GuideStop) => {
+    const byMonth = stop.openMonths !== undefined && !stop.openMonths.includes(input.month);
+    const road = roadFor(stop.id);
+    const best = road && tripDates.length > 0 ? bestRoadDay(road, tripDates) : null;
+    if (!road || !best) return byMonth;
+    return (byMonth && (!roadDecides(road, stop.id) || stop.openMonths?.length === 0)) || best.chance < ROAD_LIKELY;
+  };
   for (const stop of context.stops) {
-    if (stop.openMonths && !stop.openMonths.includes(input.month)) skipped.closed.push(stop.id);
+    if (closed(stop)) skipped.closed.push(stop.id);
     else if (stop.permit && stop.lottery) skipped.permit.push(stop.id);
     else if (
       stop.kind === "hike" &&

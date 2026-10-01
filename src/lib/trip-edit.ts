@@ -22,7 +22,27 @@ export function moveItem(trip: Trip, fromDay: number, fromIndex: number, toDay: 
 
 export function setItemStatus(trip: Trip, day: number, index: number, status: ItemStatus): Trip {
   return editDays(trip, (days) => {
-    days[day][index] = { ...days[day][index], status };
+    const item = { ...days[day][index], status };
+    // 撤销完成、改成跳过时，离开的时间不算了
+    if (status !== "done") delete item.leftAt;
+    days[day][index] = item;
+  });
+}
+
+/** “今天”模式打卡：到了（记下时间，还没走）；at 为 null 是撤销 */
+export function checkIn(trip: Trip, day: number, index: number, at: number | null): Trip {
+  return editDays(trip, (days) => {
+    const item = { ...days[day][index] };
+    if (at === null) delete item.arrivedAt;
+    else item.arrivedAt = at;
+    days[day][index] = item;
+  });
+}
+
+/** “今天”模式打卡：走了，这一站完成 */
+export function checkOut(trip: Trip, day: number, index: number, at: number): Trip {
+  return editDays(trip, (days) => {
+    days[day][index] = { ...days[day][index], status: "done", leftAt: at };
   });
 }
 

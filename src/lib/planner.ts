@@ -489,21 +489,74 @@ export function buildTimeline(stops: PlanStop[], context: DayContext): DayTimeli
 }
 
 /**
+ * 没安排景点、但要换住处的一天（比如最后一天开回机场）：从前一晚住处直接去当晚住处。
+ * 两处都是推荐住处时查车程表；牵涉机场、自定义住处，或者住处在不通车的班车线上时，
+ * 按“住处 → 附近某个景点 → 另一处”里最快的一种估算（near 是附近公园的景点）。
+ */
+export function buildTransferTimeline(context: DayContext, near: PlanStop[]): DayTimeline | null {
+  const { from, to, date } = context;
+  if (!from || !to || from.id === to.id) return null;
+  const carFree = (lodging: LodgingPoint) =>
+    shuttleOptions(lodging.id, date, true).some((ride) => ride.system.carFree);
+  let leg: Leg | null =
+    !from.id.startsWith("custom-") && !to.id.startsWith("custom-") && !carFree(from) && !carFree(to)
+      ? { minutes: travelMinutes(from.id, to.id) + TRANSITION_MIN }
+      : null;
+  for (const stop of near) {
+    const out = stayLeg(from, stop, "out", date);
+    const back = stayLeg(to, stop, "back", date);
+    // 只是路过这个景点：两段各算了一次过渡时间，扣掉一次
+    const minutes = out.minutes + back.minutes - TRANSITION_MIN;
+    if (!leg || minutes < leg.minutes) leg = { minutes, shuttle: out.shuttle ?? back.shuttle };
+  }
+  if (!leg) return null;
+  const returnAt = DEPART_FROM_LODGING + leg.minutes;
+  return {
+    entries: [],
+    departAt: DEPART_FROM_LODGING,
+    returnDriveMin: leg.minutes,
+    ...(leg.shuttle ? { returnShuttle: leg.shuttle } : {}),
+    returnAt,
+    driveMin: leg.minutes,
+    activeMin: leg.minutes,
+    overloaded: leg.minutes > DAY_LIMIT_MIN,
+    lateReturn: returnAt > LATE_RETURN,
+  };
+}
+
+/**
  * “今天”模式：现在（now，当天第几分钟）从刚去过的景点（没有就是前一晚住处）出发，
  * 按原来的顺序推算剩下几个景点实际几点能到、几点回到住处。
  */
 export function buildLiveTimeline(
   stops: PlanStop[],
-  context: { now: number; sun: SunWindow; from?: PlanStop; lodging?: LodgingPoint; to?: LodgingPoint; date?: string | null },
+  context: {
+    now: number;
+    sun: SunWindow;
+    from?: PlanStop;
+    lodging?: LodgingPoint;
+    to?: LodgingPoint;
+    date?: string | null;
+    /** 已经到了第一站（当天第几分钟到的）：从那时算起，停够了再走，停得更久就从现在走 */
+    arrivedAt?: number;
+  },
 ): DayTimeline {
-  const legs = stops.map((stop, index): Leg => {
-    if (index > 0) return stopLeg(stops[index - 1], stop, context.date);
+  const arrivedAt = stops.length > 0 ? context.arrivedAt : undefined;
+  const live =
+    arrivedAt === undefined
+      ? stops
+      : stops.map((stop, index) =>
+          index === 0 ? { ...stop, durationMin: Math.max(stop.durationMin, context.now - arrivedAt) } : stop,
+        );
+  const legs = live.map((stop, index): Leg => {
+    if (index === 0 && arrivedAt !== undefined) return { minutes: 0 };
+    if (index > 0) return stopLeg(live[index - 1], stop, context.date);
     if (context.from) return stopLeg(context.from, stop, context.date);
     return context.lodging ? stayLeg(context.lodging, stop, "out", context.date) : { minutes: 0 };
   });
-  const back = context.to && stops.length > 0 ? stayLeg(context.to, stops[stops.length - 1], "back", context.date) : { minutes: 0 };
-  const timeline = simulate(stops, legs.map((leg) => leg.minutes), back.minutes, context.sun, true, context.now);
-  return withShuttles(timeline, stops, legs, back, context.date, context.sun);
+  const back = context.to && live.length > 0 ? stayLeg(context.to, live[live.length - 1], "back", context.date) : { minutes: 0 };
+  const timeline = simulate(live, legs.map((leg) => leg.minutes), back.minutes, context.sun, true, arrivedAt ?? context.now);
+  return withShuttles(timeline, live, legs, back, context.date, context.sun);
 }
 
 /** 一种当天顺序的代价：车程为主，天黑还在徒步、赶不上日落、回住处太晚要扣分，卡上日出日落加分 */

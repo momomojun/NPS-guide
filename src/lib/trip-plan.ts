@@ -47,6 +47,8 @@ export function planTrip(
   const split = splitIntoDays(sequence, after.length, (d) => lodgingFor(from + d));
 
   const keep = (day: TripItem[]) => day.filter((item) => item.status !== "planned");
+  // 重排后保留打卡时间（“今天”到了还没走的那一站）
+  const existing = new Map(trip.days.flat().map((item) => [item.id, item]));
   // 从前一天最后去的地方接着排（没设住处时，跨公园要算来程）
   const lastBefore = before.flat().at(-1);
   let previous = lastBefore ? stops.get(lastBefore.id) : undefined;
@@ -57,7 +59,7 @@ export function planTrip(
         ? arrangeDay(dayStops, { sun: sunFor(from + d, dayStops[0].park), ...lodgingFor(from + d), previous })
         : [];
     previous = arranged.at(-1) ?? previous;
-    return [...keep(day), ...arranged.map((stop): TripItem => ({ id: stop.id, status: "planned" }))];
+    return [...keep(day), ...arranged.map((stop): TripItem => ({ ...existing.get(stop.id), id: stop.id, status: "planned" }))];
   });
   return [...before.map(keep), ...planned];
 }
