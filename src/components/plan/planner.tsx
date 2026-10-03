@@ -37,7 +37,7 @@ import {
 import { formatClock, minutesOfDay, sunTimes } from "@/lib/sun";
 import { moveItem, setNight } from "@/lib/trip-edit";
 import { bestRoadDay, roadFor } from "@/lib/roads";
-import { runsOn, tourScheduleOf, tourSeason } from "@/lib/tours";
+import { datedSchedule, runsOn, tourScheduleOf, tourSeason } from "@/lib/tours";
 import { planTrip } from "@/lib/trip-plan";
 import {
   MAX_DAYS,
@@ -208,8 +208,9 @@ export function Planner({
   // 有固定班次、出发这几天都不开的游船和导览团：说哪几天才开
   const tourClosedNote = (id: string) => {
     const schedule = tourScheduleOf(id);
-    if (!schedule || !trip.startDate) return undefined;
-    if (Array.from({ length: trip.dayCount }, (_, day) => dateOf(day)).some((date) => runsOn(id, date))) return undefined;
+    // 按日期举行的（满月徒步），用景点自己的说明
+    if (!schedule || !trip.startDate || datedSchedule(schedule)) return undefined;
+    if (Array.from({ length: trip.dayCount }, (_, day) => dateOf(day)).some((date) => runsOn(id, date, true))) return undefined;
     const season = tourSeason(schedule);
     const monthDay = (md: string) => fill(t.roads.monthDay, { m: Number(md.slice(0, 2)), d: Number(md.slice(3, 5)) });
     return fill(t.warnings.tourSeason, { year: schedule.scheduleYear, from: monthDay(season.from), to: monthDay(season.to) });

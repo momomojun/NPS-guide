@@ -130,6 +130,7 @@ export function TodayPanel({
       ...(entry.warnings.includes("lastShuttle") ? [fill(t.warnShuttle, { name })] : []),
       ...(entry.warnings.includes("missDeparture") ? [fill(t.warnDeparture, { name })] : []),
       ...(entry.warnings.includes("noService") ? [fill(t.warnNoService, { name })] : []),
+      ...(entry.warnings.includes("afterHours") ? [fill(t.warnAfterHours, { name })] : []),
     ];
   });
   if (live.lateReturn && live.returnAt !== undefined) warnings.push(fill(t.warnLate, { time: formatClock(live.returnAt) }));

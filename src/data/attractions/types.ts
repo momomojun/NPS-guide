@@ -26,6 +26,18 @@ export interface TrailPlan {
   loop?: boolean;
 }
 
+/**
+ * 每天能进去的时间（当地时间 "HH:MM"）：open 之前到了等开门；lastEntry 以后到就进不去了（卡尔斯巴德洞窟 14:30 以后不能再进洞），
+ * close 是几点前要出来（石化林傍晚关大门）
+ */
+export interface EntryHours {
+  open: string;
+  lastEntry?: string;
+  close?: string;
+  /** 只在这几个月是这个时间；不填是全年 */
+  months?: number[];
+}
+
 export interface Attraction {
   id: string;
   /** NPS parkCode */
@@ -55,6 +67,8 @@ export interface Attraction {
   permit?: string;
   /** 许可证要抽签，抽不中就去不了（自动生成攻略时不排）；不填表示提前订就行 */
   lottery?: boolean;
+  /** 进去的时间有限制的（洞穴入场时间、公园大门开关）；游客中心、游船这类没写的按一般的开放时间算 */
+  hours?: EntryHours[];
   mustSee?: boolean;
   /** 不在国家公园范围内，但常和公园一起玩 */
   outsidePark?: boolean;

@@ -25517,5 +25517,4298 @@ export const gallery: Record<string, Photo[]> = {
       "author": "Manuel Velazquez",
       "license": "CC BY 3.0"
     }
+  ],
+  "whsa-visitor-center": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/White_Sands_National_Monument_Visitors_Center.jpg/960px-White_Sands_National_Monument_Visitors_Center.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/White_Sands_National_Monument_Visitors_Center.jpg/1920px-White_Sands_National_Monument_Visitors_Center.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_National_Monument_Visitors_Center.jpg",
+      "author": "Jubileejourney",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/White_Sands_National_Monument_Visitor_Center.jpg/960px-White_Sands_National_Monument_Visitor_Center.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/White_Sands_National_Monument_Visitor_Center.jpg/1920px-White_Sands_National_Monument_Visitor_Center.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_National_Monument_Visitor_Center.jpg",
+      "author": "Jengod",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/White_Sands_National_Monument_Visitor_Center%2C_alternate_view.JPG/960px-White_Sands_National_Monument_Visitor_Center%2C_alternate_view.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/White_Sands_National_Monument_Visitor_Center%2C_alternate_view.JPG/1920px-White_Sands_National_Monument_Visitor_Center%2C_alternate_view.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_National_Monument_Visitor_Center,_alternate_view.JPG",
+      "author": "Jengod",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/White_Sands.JPG/960px-White_Sands.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/White_Sands.JPG/1920px-White_Sands.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands.JPG",
+      "author": "23.victoria",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Sunset_in_White_Sands_National_Monument_%28Unsplash%29.jpg/960px-Sunset_in_White_Sands_National_Monument_%28Unsplash%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Sunset_in_White_Sands_National_Monument_%28Unsplash%29.jpg/1920px-Sunset_in_White_Sands_National_Monument_%28Unsplash%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunset_in_White_Sands_National_Monument_(Unsplash).jpg",
+      "author": "Doug Gates mcgrue",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/White_Sands_NM.jpg/960px-White_Sands_NM.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/White_Sands_NM.jpg/1920px-White_Sands_NM.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_NM.jpg",
+      "author": "Tanyalan",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "whsa-dune-life-trail": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Dune_Drive_and_Dune_Life_Nature_Trail_April_2026.jpg/960px-Dune_Drive_and_Dune_Life_Nature_Trail_April_2026.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Dune_Drive_and_Dune_Life_Nature_Trail_April_2026.jpg/1920px-Dune_Drive_and_Dune_Life_Nature_Trail_April_2026.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Dune_Drive_and_Dune_Life_Nature_Trail_April_2026.jpg",
+      "author": "Pablorgalindo",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/USA_-_New_Mexico_-_White_Sands_National_Park_-_Playa_-_50513797648.jpg/960px-USA_-_New_Mexico_-_White_Sands_National_Park_-_Playa_-_50513797648.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/USA_-_New_Mexico_-_White_Sands_National_Park_-_Playa_-_50513797648.jpg/1920px-USA_-_New_Mexico_-_White_Sands_National_Park_-_Playa_-_50513797648.jpg",
+      "width": 960,
+      "height": 480,
+      "page": "https://commons.wikimedia.org/wiki/File:USA_-_New_Mexico_-_White_Sands_National_Park_-_Playa_-_50513797648.jpg",
+      "author": "Alexander Hatley",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/USA_-_New_Mexico_-_White_Sands_National_Park_-_Playa_-_50514675442.jpg/960px-USA_-_New_Mexico_-_White_Sands_National_Park_-_Playa_-_50514675442.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/USA_-_New_Mexico_-_White_Sands_National_Park_-_Playa_-_50514675442.jpg/1920px-USA_-_New_Mexico_-_White_Sands_National_Park_-_Playa_-_50514675442.jpg",
+      "width": 960,
+      "height": 480,
+      "page": "https://commons.wikimedia.org/wiki/File:USA_-_New_Mexico_-_White_Sands_National_Park_-_Playa_-_50514675442.jpg",
+      "author": "Alexander Hatley",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/White_Sands_National_Park_-_55459130311.jpg/960px-White_Sands_National_Park_-_55459130311.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/White_Sands_National_Park_-_55459130311.jpg/1920px-White_Sands_National_Park_-_55459130311.jpg",
+      "width": 960,
+      "height": 641,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_National_Park_-_55459130311.jpg",
+      "author": "xiquinhosilva",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/White_Sands_National_Park_-_55459150071.jpg/960px-White_Sands_National_Park_-_55459150071.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/White_Sands_National_Park_-_55459150071.jpg/1920px-White_Sands_National_Park_-_55459150071.jpg",
+      "width": 960,
+      "height": 641,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_National_Park_-_55459150071.jpg",
+      "author": "xiquinhosilva",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Echinocereus_triglochidiatus_triglochidiatus_5.jpg/960px-Echinocereus_triglochidiatus_triglochidiatus_5.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Echinocereus_triglochidiatus_triglochidiatus_5.jpg/1920px-Echinocereus_triglochidiatus_triglochidiatus_5.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Echinocereus_triglochidiatus_triglochidiatus_5.jpg",
+      "author": "Kenneth Henseler",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "whsa-playa-trail": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/USA_-_New_Mexico_-_White_Sands_National_Park_-_Playa.jpg/960px-USA_-_New_Mexico_-_White_Sands_National_Park_-_Playa.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/USA_-_New_Mexico_-_White_Sands_National_Park_-_Playa.jpg/1920px-USA_-_New_Mexico_-_White_Sands_National_Park_-_Playa.jpg",
+      "width": 960,
+      "height": 480,
+      "page": "https://commons.wikimedia.org/wiki/File:USA_-_New_Mexico_-_White_Sands_National_Park_-_Playa.jpg",
+      "author": "Alexander Hatley",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/White_Sands_National_Monument_New_Mexico_2009.JPG/960px-White_Sands_National_Monument_New_Mexico_2009.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/White_Sands_National_Monument_New_Mexico_2009.JPG/1920px-White_Sands_National_Monument_New_Mexico_2009.JPG",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_National_Monument_New_Mexico_2009.JPG",
+      "author": "Stratosphere",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/USA_-_New_Mexico_-_White_Sands_National_Park.jpg/960px-USA_-_New_Mexico_-_White_Sands_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/USA_-_New_Mexico_-_White_Sands_National_Park.jpg/1920px-USA_-_New_Mexico_-_White_Sands_National_Park.jpg",
+      "width": 960,
+      "height": 480,
+      "page": "https://commons.wikimedia.org/wiki/File:USA_-_New_Mexico_-_White_Sands_National_Park.jpg",
+      "author": "Alexander Hatley",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Pickle_weed_belongs_to_the_succulent_genus_and_thrives_in_salty_soils._%284d10af37-1dd8-b71b-0b80-9f563bfb4071%29.jpg/960px-Pickle_weed_belongs_to_the_succulent_genus_and_thrives_in_salty_soils._%284d10af37-1dd8-b71b-0b80-9f563bfb4071%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Pickle_weed_belongs_to_the_succulent_genus_and_thrives_in_salty_soils._%284d10af37-1dd8-b71b-0b80-9f563bfb4071%29.jpg/1920px-Pickle_weed_belongs_to_the_succulent_genus_and_thrives_in_salty_soils._%284d10af37-1dd8-b71b-0b80-9f563bfb4071%29.jpg",
+      "width": 960,
+      "height": 1440,
+      "page": "https://commons.wikimedia.org/wiki/File:Pickle_weed_belongs_to_the_succulent_genus_and_thrives_in_salty_soils._(4d10af37-1dd8-b71b-0b80-9f563bfb4071).jpg",
+      "author": "NPS",
+      "license": "Public domain"
+    }
+  ],
+  "whsa-interdune-boardwalk": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/White_Sands_National_Monument_-_Flickr_-_GregTheBusker.jpg/960px-White_Sands_National_Monument_-_Flickr_-_GregTheBusker.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/White_Sands_National_Monument_-_Flickr_-_GregTheBusker.jpg/1920px-White_Sands_National_Monument_-_Flickr_-_GregTheBusker.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_National_Monument_-_Flickr_-_GregTheBusker.jpg",
+      "author": "Greg Schechter from San Francisco, USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/USA_-_New_Mexico_-_White_Sands_National_Park_-_50515408527.jpg/960px-USA_-_New_Mexico_-_White_Sands_National_Park_-_50515408527.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/USA_-_New_Mexico_-_White_Sands_National_Park_-_50515408527.jpg/1920px-USA_-_New_Mexico_-_White_Sands_National_Park_-_50515408527.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:USA_-_New_Mexico_-_White_Sands_National_Park_-_50515408527.jpg",
+      "author": "Alexander Hatley",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/USA_-_New_Mexico_-_White_Sands_National_Park_-_50515409152.jpg/960px-USA_-_New_Mexico_-_White_Sands_National_Park_-_50515409152.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/USA_-_New_Mexico_-_White_Sands_National_Park_-_50515409152.jpg/1920px-USA_-_New_Mexico_-_White_Sands_National_Park_-_50515409152.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:USA_-_New_Mexico_-_White_Sands_National_Park_-_50515409152.jpg",
+      "author": "Alexander Hatley",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/White_Sands_National_Park_-_55459255453.jpg/960px-White_Sands_National_Park_-_55459255453.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/White_Sands_National_Park_-_55459255453.jpg/1920px-White_Sands_National_Park_-_55459255453.jpg",
+      "width": 960,
+      "height": 641,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_National_Park_-_55459255453.jpg",
+      "author": "xiquinhosilva",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/White_Sands_National_Park%2C_New_Mexico%2C_USA3.jpg/960px-White_Sands_National_Park%2C_New_Mexico%2C_USA3.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/White_Sands_National_Park%2C_New_Mexico%2C_USA3.jpg/1920px-White_Sands_National_Park%2C_New_Mexico%2C_USA3.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_National_Park,_New_Mexico,_USA3.jpg",
+      "author": "dconvertini",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/White_Sands_National_Park%2C_New_Mexico%2C_USA2.jpg/960px-White_Sands_National_Park%2C_New_Mexico%2C_USA2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/White_Sands_National_Park%2C_New_Mexico%2C_USA2.jpg/1920px-White_Sands_National_Park%2C_New_Mexico%2C_USA2.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_National_Park,_New_Mexico,_USA2.jpg",
+      "author": "dconvertini",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "whsa-dunes-drive": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/White_Sands_National_Monument_%28new_crop%29.jpg/960px-White_Sands_National_Monument_%28new_crop%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/White_Sands_National_Monument_%28new_crop%29.jpg/1920px-White_Sands_National_Monument_%28new_crop%29.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_National_Monument_(new_crop).jpg",
+      "author": "Jeff Kubina",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/White_Sands_National_Monument_WHSA2344.jpg/960px-White_Sands_National_Monument_WHSA2344.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/White_Sands_National_Monument_WHSA2344.jpg/1920px-White_Sands_National_Monument_WHSA2344.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_National_Monument_WHSA2344.jpg",
+      "author": "National Park Service Digital Image Archives",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/White_Sands_National_Monument_WHSA3777.jpg/960px-White_Sands_National_Monument_WHSA3777.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/White_Sands_National_Monument_WHSA3777.jpg/1920px-White_Sands_National_Monument_WHSA3777.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_National_Monument_WHSA3777.jpg",
+      "author": "National Park Service Digital Image Archives",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/NM_White_Sands_1.jpg/960px-NM_White_Sands_1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/NM_White_Sands_1.jpg/1920px-NM_White_Sands_1.jpg",
+      "width": 960,
+      "height": 698,
+      "page": "https://commons.wikimedia.org/wiki/File:NM_White_Sands_1.jpg",
+      "author": "Beth Holt (Didymop)",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/White_Sands_and_two_people.jpg/960px-White_Sands_and_two_people.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/White_Sands_and_two_people.jpg/1920px-White_Sands_and_two_people.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_and_two_people.jpg",
+      "author": "National Park Service",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/White_sand_NP_HY.jpg/960px-White_sand_NP_HY.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/White_sand_NP_HY.jpg/1920px-White_sand_NP_HY.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:White_sand_NP_HY.jpg",
+      "author": "Hiroooooo",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "whsa-sledding": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/White_sands_sledding.jpg",
+      "large": "https://upload.wikimedia.org/wikipedia/commons/1/1e/White_sands_sledding.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:White_sands_sledding.jpg",
+      "author": "Daniel Schwen",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/White_Sands_picnic_area_at_dusk.jpg/960px-White_Sands_picnic_area_at_dusk.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/White_Sands_picnic_area_at_dusk.jpg/1920px-White_Sands_picnic_area_at_dusk.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_picnic_area_at_dusk.jpg",
+      "author": "James Postema",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/From_Fort_Bliss%2C_Texas%2C_to_the_White_Sands_of_New_Mexico_130313-A-QY605-283.jpg/960px-From_Fort_Bliss%2C_Texas%2C_to_the_White_Sands_of_New_Mexico_130313-A-QY605-283.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/From_Fort_Bliss%2C_Texas%2C_to_the_White_Sands_of_New_Mexico_130313-A-QY605-283.jpg/1920px-From_Fort_Bliss%2C_Texas%2C_to_the_White_Sands_of_New_Mexico_130313-A-QY605-283.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:From_Fort_Bliss,_Texas,_to_the_White_Sands_of_New_Mexico_130313-A-QY605-283.jpg",
+      "author": "Staff Sgt. Jes Smith",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/White_Sands_National_Park_-_55459519840.jpg/960px-White_Sands_National_Park_-_55459519840.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/White_Sands_National_Park_-_55459519840.jpg/1920px-White_Sands_National_Park_-_55459519840.jpg",
+      "width": 960,
+      "height": 641,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_National_Park_-_55459519840.jpg",
+      "author": "xiquinhosilva",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/White_Sands_National_Park_-_029349235.jpg/960px-White_Sands_National_Park_-_029349235.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/White_Sands_National_Park_-_029349235.jpg/1920px-White_Sands_National_Park_-_029349235.jpg",
+      "width": 960,
+      "height": 641,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_National_Park_-_029349235.jpg",
+      "author": "xiquinhosilva",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/WHITE_SANDS_NATIONAL_MONUMENT%2C_NM%2C_USA_-_panoramio.jpg/960px-WHITE_SANDS_NATIONAL_MONUMENT%2C_NM%2C_USA_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/WHITE_SANDS_NATIONAL_MONUMENT%2C_NM%2C_USA_-_panoramio.jpg/1280px-WHITE_SANDS_NATIONAL_MONUMENT%2C_NM%2C_USA_-_panoramio.jpg",
+      "width": 960,
+      "height": 708,
+      "page": "https://commons.wikimedia.org/wiki/File:WHITE_SANDS_NATIONAL_MONUMENT,_NM,_USA_-_panoramio.jpg",
+      "author": "MARELBU",
+      "license": "CC BY 3.0"
+    }
+  ],
+  "whsa-backcountry-loop": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/White_Sands_Dune_with_Wind_Ripples.jpg/960px-White_Sands_Dune_with_Wind_Ripples.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/White_Sands_Dune_with_Wind_Ripples.jpg/1920px-White_Sands_Dune_with_Wind_Ripples.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_Dune_with_Wind_Ripples.jpg",
+      "author": "Michael C. Rygel",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/White_Sands_National_Park%2C_New_Mexico%2C_USA_5-2024_2.jpg/960px-White_Sands_National_Park%2C_New_Mexico%2C_USA_5-2024_2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/White_Sands_National_Park%2C_New_Mexico%2C_USA_5-2024_2.jpg/1920px-White_Sands_National_Park%2C_New_Mexico%2C_USA_5-2024_2.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_National_Park,_New_Mexico,_USA_5-2024_2.jpg",
+      "author": "dconvertini",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/White_Sands_National_Park%2C_New_Mexico%2C_USA_5-2024_1.jpg/960px-White_Sands_National_Park%2C_New_Mexico%2C_USA_5-2024_1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/White_Sands_National_Park%2C_New_Mexico%2C_USA_5-2024_1.jpg/1920px-White_Sands_National_Park%2C_New_Mexico%2C_USA_5-2024_1.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_National_Park,_New_Mexico,_USA_5-2024_1.jpg",
+      "author": "dconvertini",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/White_Sands_National_Monument_-_Flickr_-_GregTheBusker_%281%29.jpg/960px-White_Sands_National_Monument_-_Flickr_-_GregTheBusker_%281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/White_Sands_National_Monument_-_Flickr_-_GregTheBusker_%281%29.jpg/1920px-White_Sands_National_Monument_-_Flickr_-_GregTheBusker_%281%29.jpg",
+      "width": 960,
+      "height": 480,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_National_Monument_-_Flickr_-_GregTheBusker_(1).jpg",
+      "author": "Greg Schechter from San Francisco, USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/USA_-_New_Mexico_-_White_Sands_National_Park_-_50514639053.jpg/960px-USA_-_New_Mexico_-_White_Sands_National_Park_-_50514639053.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/USA_-_New_Mexico_-_White_Sands_National_Park_-_50514639053.jpg/1920px-USA_-_New_Mexico_-_White_Sands_National_Park_-_50514639053.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:USA_-_New_Mexico_-_White_Sands_National_Park_-_50514639053.jpg",
+      "author": "Alexander Hatley",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/USA_-_New_Mexico_-_White_Sands_National_Park_-_50515352996.jpg/960px-USA_-_New_Mexico_-_White_Sands_National_Park_-_50515352996.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/USA_-_New_Mexico_-_White_Sands_National_Park_-_50515352996.jpg/1920px-USA_-_New_Mexico_-_White_Sands_National_Park_-_50515352996.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:USA_-_New_Mexico_-_White_Sands_National_Park_-_50515352996.jpg",
+      "author": "Alexander Hatley",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "whsa-alkali-flat": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Alkali_Flats_Trail_White_Sands_National_Monument.jpg/960px-Alkali_Flats_Trail_White_Sands_National_Monument.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Alkali_Flats_Trail_White_Sands_National_Monument.jpg/1920px-Alkali_Flats_Trail_White_Sands_National_Monument.jpg",
+      "width": 960,
+      "height": 265,
+      "page": "https://commons.wikimedia.org/wiki/File:Alkali_Flats_Trail_White_Sands_National_Monument.jpg",
+      "author": "Footwarrior",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Relentless_Dune_-_Flickr_-_Tomo%C5%A1ius.jpg/960px-Relentless_Dune_-_Flickr_-_Tomo%C5%A1ius.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Relentless_Dune_-_Flickr_-_Tomo%C5%A1ius.jpg/1920px-Relentless_Dune_-_Flickr_-_Tomo%C5%A1ius.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Relentless_Dune_-_Flickr_-_Tomo%C5%A1ius.jpg",
+      "author": "Tomošius",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/White_sand_NP_HY2.jpg/960px-White_sand_NP_HY2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/White_sand_NP_HY2.jpg/1920px-White_sand_NP_HY2.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:White_sand_NP_HY2.jpg",
+      "author": "Hiroooooo",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/USA_-_New_Mexico_-_White_Sands_National_Park_-_50517875061.jpg/960px-USA_-_New_Mexico_-_White_Sands_National_Park_-_50517875061.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/USA_-_New_Mexico_-_White_Sands_National_Park_-_50517875061.jpg/1920px-USA_-_New_Mexico_-_White_Sands_National_Park_-_50517875061.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:USA_-_New_Mexico_-_White_Sands_National_Park_-_50517875061.jpg",
+      "author": "Alexander Hatley",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/USA_-_New_Mexico_-_White_Sands_National_Park_-_50518990802.jpg/960px-USA_-_New_Mexico_-_White_Sands_National_Park_-_50518990802.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/USA_-_New_Mexico_-_White_Sands_National_Park_-_50518990802.jpg/1920px-USA_-_New_Mexico_-_White_Sands_National_Park_-_50518990802.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:USA_-_New_Mexico_-_White_Sands_National_Park_-_50518990802.jpg",
+      "author": "Alexander Hatley",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/White_Sands_National_Park%2C_2021.jpg/960px-White_Sands_National_Park%2C_2021.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/White_Sands_National_Park%2C_2021.jpg/1920px-White_Sands_National_Park%2C_2021.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_National_Park,_2021.jpg",
+      "author": "KellyCampbell",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "whsa-sunset-stroll": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Fiery_Sunset_%28fc23769a-155d-451f-6730-d0c4f7a8fd04%29.JPG/960px-Fiery_Sunset_%28fc23769a-155d-451f-6730-d0c4f7a8fd04%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Fiery_Sunset_%28fc23769a-155d-451f-6730-d0c4f7a8fd04%29.JPG/1920px-Fiery_Sunset_%28fc23769a-155d-451f-6730-d0c4f7a8fd04%29.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Fiery_Sunset_(fc23769a-155d-451f-6730-d0c4f7a8fd04).JPG",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/White_sands_sunset.JPG/960px-White_sands_sunset.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/White_sands_sunset.JPG/1920px-White_sands_sunset.JPG",
+      "width": 960,
+      "height": 564,
+      "page": "https://commons.wikimedia.org/wiki/File:White_sands_sunset.JPG",
+      "author": "Franzinho",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/White_Sands_Sunset.jpg/960px-White_Sands_Sunset.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/White_Sands_Sunset.jpg/1280px-White_Sands_Sunset.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_Sunset.jpg",
+      "author": "Kris Kampshoff",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Sunset_at_White_Sands_%286849125271%29.jpg/960px-Sunset_at_White_Sands_%286849125271%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Sunset_at_White_Sands_%286849125271%29.jpg/1280px-Sunset_at_White_Sands_%286849125271%29.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunset_at_White_Sands_(6849125271).jpg",
+      "author": "John Fowler from Placitas, NM, USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/White_Sands_National_Park%2C_New_Mexico%2C_USA_5-2024_7.jpg/960px-White_Sands_National_Park%2C_New_Mexico%2C_USA_5-2024_7.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/White_Sands_National_Park%2C_New_Mexico%2C_USA_5-2024_7.jpg/1920px-White_Sands_National_Park%2C_New_Mexico%2C_USA_5-2024_7.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_National_Park,_New_Mexico,_USA_5-2024_7.jpg",
+      "author": "dconvertini",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/White_Sands_National_Park%2C_New_Mexico%2C_USA_5-2024_8.jpg/960px-White_Sands_National_Park%2C_New_Mexico%2C_USA_5-2024_8.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/White_Sands_National_Park%2C_New_Mexico%2C_USA_5-2024_8.jpg/1920px-White_Sands_National_Park%2C_New_Mexico%2C_USA_5-2024_8.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_National_Park,_New_Mexico,_USA_5-2024_8.jpg",
+      "author": "dconvertini",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "whsa-moonlight-hike": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Moon_at_White_Sands.jpg/960px-Moon_at_White_Sands.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Moon_at_White_Sands.jpg/1920px-Moon_at_White_Sands.jpg",
+      "width": 960,
+      "height": 803,
+      "page": "https://commons.wikimedia.org/wiki/File:Moon_at_White_Sands.jpg",
+      "author": "John Fowler",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/White_Sands_Moonrise_%2848001473828%29.jpg/960px-White_Sands_Moonrise_%2848001473828%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/White_Sands_Moonrise_%2848001473828%29.jpg/1920px-White_Sands_Moonrise_%2848001473828%29.jpg",
+      "width": 960,
+      "height": 635,
+      "page": "https://commons.wikimedia.org/wiki/File:White_Sands_Moonrise_(48001473828).jpg",
+      "author": "John Fowler from Placitas, NM, USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/White_sands_moon_%26_clouds.jpg/960px-White_sands_moon_%26_clouds.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/White_sands_moon_%26_clouds.jpg/1280px-White_sands_moon_%26_clouds.jpg",
+      "width": 960,
+      "height": 645,
+      "page": "https://commons.wikimedia.org/wiki/File:White_sands_moon_%26_clouds.jpg",
+      "author": "snowpeak",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "whsa-lake-lucero": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Lake_Lucero_NPS_photo.jpg",
+      "large": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Lake_Lucero_NPS_photo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "width": 960,
+      "height": 480,
+      "page": "https://commons.wikimedia.org/wiki/File:Lake_Lucero_NPS_photo.jpg",
+      "author": "National Park Service",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Lakelucero2010Aug.jpg/960px-Lakelucero2010Aug.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Lakelucero2010Aug.jpg/1920px-Lakelucero2010Aug.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Lakelucero2010Aug.jpg",
+      "author": "Zorin09",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "cave-visitor-center": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Carlsbad_Caverns_National_Park%2C_New_Mexico%2C_USA_5-2024_1.jpg/960px-Carlsbad_Caverns_National_Park%2C_New_Mexico%2C_USA_5-2024_1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Carlsbad_Caverns_National_Park%2C_New_Mexico%2C_USA_5-2024_1.jpg/1920px-Carlsbad_Caverns_National_Park%2C_New_Mexico%2C_USA_5-2024_1.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Carlsbad_Caverns_National_Park,_New_Mexico,_USA_5-2024_1.jpg",
+      "author": "dconvertini",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/View_from_Visitors_Center%2C_Carlsbad_Caverns_National_Park%2C_Near_Carlsbad%2C_New_Mexico.jpg/960px-View_from_Visitors_Center%2C_Carlsbad_Caverns_National_Park%2C_Near_Carlsbad%2C_New_Mexico.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/View_from_Visitors_Center%2C_Carlsbad_Caverns_National_Park%2C_Near_Carlsbad%2C_New_Mexico.jpg/1920px-View_from_Visitors_Center%2C_Carlsbad_Caverns_National_Park%2C_Near_Carlsbad%2C_New_Mexico.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:View_from_Visitors_Center,_Carlsbad_Caverns_National_Park,_Near_Carlsbad,_New_Mexico.jpg",
+      "author": "Ken Lund",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Tepee_Structure%2C_Carlsbad_Caverns_National_Park.jpg/960px-Tepee_Structure%2C_Carlsbad_Caverns_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Tepee_Structure%2C_Carlsbad_Caverns_National_Park.jpg/1920px-Tepee_Structure%2C_Carlsbad_Caverns_National_Park.jpg",
+      "width": 960,
+      "height": 486,
+      "page": "https://commons.wikimedia.org/wiki/File:Tepee_Structure,_Carlsbad_Caverns_National_Park.jpg",
+      "author": "Rygel, M.C.",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Carlsbad_Caverns_Walkway_July_2022.jpg/960px-Carlsbad_Caverns_Walkway_July_2022.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Carlsbad_Caverns_Walkway_July_2022.jpg/1920px-Carlsbad_Caverns_Walkway_July_2022.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Carlsbad_Caverns_Walkway_July_2022.jpg",
+      "author": "Escobedodora9876",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Carlsbad_Caverns_Entrance%2C_July_2022.jpg/960px-Carlsbad_Caverns_Entrance%2C_July_2022.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Carlsbad_Caverns_Entrance%2C_July_2022.jpg/1920px-Carlsbad_Caverns_Entrance%2C_July_2022.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Carlsbad_Caverns_Entrance,_July_2022.jpg",
+      "author": "Escobedodora9876",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Carlsbad_Caverns_National_Park%2C_Near_Carlsbad%2C_New_Mexico_-_66194254.jpg/960px-Carlsbad_Caverns_National_Park%2C_Near_Carlsbad%2C_New_Mexico_-_66194254.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Carlsbad_Caverns_National_Park%2C_Near_Carlsbad%2C_New_Mexico_-_66194254.jpg/1920px-Carlsbad_Caverns_National_Park%2C_Near_Carlsbad%2C_New_Mexico_-_66194254.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Carlsbad_Caverns_National_Park,_Near_Carlsbad,_New_Mexico_-_66194254.jpg",
+      "author": "Ken Lund",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "cave-natural-entrance": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Natural_Entrance_Trail.jpg/960px-Natural_Entrance_Trail.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Natural_Entrance_Trail.jpg/1920px-Natural_Entrance_Trail.jpg",
+      "width": 960,
+      "height": 721,
+      "page": "https://commons.wikimedia.org/wiki/File:Natural_Entrance_Trail.jpg",
+      "author": "John Manard",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Pictograph%2C_Natural_Entrance%2C_Carlsbad_Cavern_%2851203288509%29.jpg/960px-Pictograph%2C_Natural_Entrance%2C_Carlsbad_Cavern_%2851203288509%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Pictograph%2C_Natural_Entrance%2C_Carlsbad_Cavern_%2851203288509%29.jpg/1920px-Pictograph%2C_Natural_Entrance%2C_Carlsbad_Cavern_%2851203288509%29.jpg",
+      "width": 960,
+      "height": 578,
+      "page": "https://commons.wikimedia.org/wiki/File:Pictograph,_Natural_Entrance,_Carlsbad_Cavern_(51203288509).jpg",
+      "author": "CarlsbadCavernsNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Illustration_of_Path%2C_Natural_Entrance%2C_Carlsbad_Cavern_%2851202506496%29.jpg/960px-Illustration_of_Path%2C_Natural_Entrance%2C_Carlsbad_Cavern_%2851202506496%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Illustration_of_Path%2C_Natural_Entrance%2C_Carlsbad_Cavern_%2851202506496%29.jpg/1920px-Illustration_of_Path%2C_Natural_Entrance%2C_Carlsbad_Cavern_%2851202506496%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Illustration_of_Path,_Natural_Entrance,_Carlsbad_Cavern_(51202506496).jpg",
+      "author": "CarlsbadCavernsNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Natural_Entrance%2C_Carlsbad_Caverns_%285527823535%29.jpg/960px-Natural_Entrance%2C_Carlsbad_Caverns_%285527823535%29.jpg",
+      "large": "https://upload.wikimedia.org/wikipedia/commons/5/54/Natural_Entrance%2C_Carlsbad_Caverns_%285527823535%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "width": 960,
+      "height": 526,
+      "page": "https://commons.wikimedia.org/wiki/File:Natural_Entrance,_Carlsbad_Caverns_(5527823535).jpg",
+      "author": "InSapphoWeTrust from Los Angeles, California, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Carlsbad_Caverns_Natural_Entrance.jpg/960px-Carlsbad_Caverns_Natural_Entrance.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Carlsbad_Caverns_Natural_Entrance.jpg/1920px-Carlsbad_Caverns_Natural_Entrance.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Carlsbad_Caverns_Natural_Entrance.jpg",
+      "author": "U.S. Geological Survey",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Natural_Entrance%2C_Carlsbad_Caverns_National_Park%2C_Near_Carlsbad%2C_New_Mexico_-_66187144.jpg/960px-Natural_Entrance%2C_Carlsbad_Caverns_National_Park%2C_Near_Carlsbad%2C_New_Mexico_-_66187144.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Natural_Entrance%2C_Carlsbad_Caverns_National_Park%2C_Near_Carlsbad%2C_New_Mexico_-_66187144.jpg/1920px-Natural_Entrance%2C_Carlsbad_Caverns_National_Park%2C_Near_Carlsbad%2C_New_Mexico_-_66187144.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Natural_Entrance,_Carlsbad_Caverns_National_Park,_Near_Carlsbad,_New_Mexico_-_66187144.jpg",
+      "author": "Ken Lund",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "cave-big-room": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Big_Room%2C_Carlsbad_Cavern_%2851203204939%29.jpg/960px-Big_Room%2C_Carlsbad_Cavern_%2851203204939%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Big_Room%2C_Carlsbad_Cavern_%2851203204939%29.jpg/1920px-Big_Room%2C_Carlsbad_Cavern_%2851203204939%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Big_Room,_Carlsbad_Cavern_(51203204939).jpg",
+      "author": "CarlsbadCavernsNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Big_Room%2C_Carlsbad_Cavern_%2851202483276%29.jpg/960px-Big_Room%2C_Carlsbad_Cavern_%2851202483276%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Big_Room%2C_Carlsbad_Cavern_%2851202483276%29.jpg/1920px-Big_Room%2C_Carlsbad_Cavern_%2851202483276%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Big_Room,_Carlsbad_Cavern_(51202483276).jpg",
+      "author": "CarlsbadCavernsNPS",
+      "license": "Public domain"
+    }
+  ],
+  "cave-kings-palace": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/King%27s_Palace%2C_Carlsbad_Cavern_%2851202313262%29.jpg/960px-King%27s_Palace%2C_Carlsbad_Cavern_%2851202313262%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/King%27s_Palace%2C_Carlsbad_Cavern_%2851202313262%29.jpg/1920px-King%27s_Palace%2C_Carlsbad_Cavern_%2851202313262%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:King%27s_Palace,_Carlsbad_Cavern_(51202313262).jpg",
+      "author": "CarlsbadCavernsNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/King%27s_Palace_Tour_%2851203039761%29.jpg/960px-King%27s_Palace_Tour_%2851203039761%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/King%27s_Palace_Tour_%2851203039761%29.jpg/1920px-King%27s_Palace_Tour_%2851203039761%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:King%27s_Palace_Tour_(51203039761).jpg",
+      "author": "CarlsbadCavernsNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Willis_Lee_and_Runyan%28%3F%29_in_King%27s_Palace._%2877dab854-0ea4-450b-904f-ad73353c70d9%29.jpg/960px-Willis_Lee_and_Runyan%28%3F%29_in_King%27s_Palace._%2877dab854-0ea4-450b-904f-ad73353c70d9%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Willis_Lee_and_Runyan%28%3F%29_in_King%27s_Palace._%2877dab854-0ea4-450b-904f-ad73353c70d9%29.jpg/1920px-Willis_Lee_and_Runyan%28%3F%29_in_King%27s_Palace._%2877dab854-0ea4-450b-904f-ad73353c70d9%29.jpg",
+      "width": 960,
+      "height": 762,
+      "page": "https://commons.wikimedia.org/wiki/File:Willis_Lee_and_Runyan(%3F)_in_King%27s_Palace._(77dab854-0ea4-450b-904f-ad73353c70d9).jpg",
+      "author": "Unknown authorUnknown author",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Jim_White_and_Willis_Lee_in_King%27s_Palace._%28dd42e5dc-2756-41f7-9f29-7220882b590b%29.jpg/960px-Jim_White_and_Willis_Lee_in_King%27s_Palace._%28dd42e5dc-2756-41f7-9f29-7220882b590b%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Jim_White_and_Willis_Lee_in_King%27s_Palace._%28dd42e5dc-2756-41f7-9f29-7220882b590b%29.jpg/1920px-Jim_White_and_Willis_Lee_in_King%27s_Palace._%28dd42e5dc-2756-41f7-9f29-7220882b590b%29.jpg",
+      "width": 960,
+      "height": 751,
+      "page": "https://commons.wikimedia.org/wiki/File:Jim_White_and_Willis_Lee_in_King%27s_Palace._(dd42e5dc-2756-41f7-9f29-7220882b590b).jpg",
+      "author": "Unknown authorUnknown author",
+      "license": "Public domain"
+    }
+  ],
+  "cave-lower-cave": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Cave_Pearls_-_Rookery%2C_Lower_Cave%2C_Carlsbad_Cavern_%2851202462532%29.jpg/960px-Cave_Pearls_-_Rookery%2C_Lower_Cave%2C_Carlsbad_Cavern_%2851202462532%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Cave_Pearls_-_Rookery%2C_Lower_Cave%2C_Carlsbad_Cavern_%2851202462532%29.jpg/1920px-Cave_Pearls_-_Rookery%2C_Lower_Cave%2C_Carlsbad_Cavern_%2851202462532%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Cave_Pearls_-_Rookery,_Lower_Cave,_Carlsbad_Cavern_(51202462532).jpg",
+      "author": "CarlsbadCavernsNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Visitors_-_Lower_Cave_Tour%2C_Carlsbad_Cavern_%2851203917759%29.jpg/960px-Visitors_-_Lower_Cave_Tour%2C_Carlsbad_Cavern_%2851203917759%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Visitors_-_Lower_Cave_Tour%2C_Carlsbad_Cavern_%2851203917759%29.jpg/1280px-Visitors_-_Lower_Cave_Tour%2C_Carlsbad_Cavern_%2851203917759%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Visitors_-_Lower_Cave_Tour,_Carlsbad_Cavern_(51203917759).jpg",
+      "author": "CarlsbadCavernsNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Rope_ladder_from_1920%27s_to_the_lower_caves_-_53070974853.jpg/960px-Rope_ladder_from_1920%27s_to_the_lower_caves_-_53070974853.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Rope_ladder_from_1920%27s_to_the_lower_caves_-_53070974853.jpg/1920px-Rope_ladder_from_1920%27s_to_the_lower_caves_-_53070974853.jpg",
+      "width": 960,
+      "height": 721,
+      "page": "https://commons.wikimedia.org/wiki/File:Rope_ladder_from_1920%27s_to_the_lower_caves_-_53070974853.jpg",
+      "author": "John Manard",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Jim_White_in_Lower_Cave_below_Jumping-Off_Place._%289def6704-15dd-4232-a623-6246fbd0207c%29.jpg/960px-Jim_White_in_Lower_Cave_below_Jumping-Off_Place._%289def6704-15dd-4232-a623-6246fbd0207c%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Jim_White_in_Lower_Cave_below_Jumping-Off_Place._%289def6704-15dd-4232-a623-6246fbd0207c%29.jpg/1920px-Jim_White_in_Lower_Cave_below_Jumping-Off_Place._%289def6704-15dd-4232-a623-6246fbd0207c%29.jpg",
+      "width": 960,
+      "height": 754,
+      "page": "https://commons.wikimedia.org/wiki/File:Jim_White_in_Lower_Cave_below_Jumping-Off_Place._(9def6704-15dd-4232-a623-6246fbd0207c).jpg",
+      "author": "Unknown authorUnknown author",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/National_Geographic_ladder_to_Lower_Cave._%28ce965889-ed95-43c4-838e-c345b78f7353%29.jpg/960px-National_Geographic_ladder_to_Lower_Cave._%28ce965889-ed95-43c4-838e-c345b78f7353%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/National_Geographic_ladder_to_Lower_Cave._%28ce965889-ed95-43c4-838e-c345b78f7353%29.jpg/1920px-National_Geographic_ladder_to_Lower_Cave._%28ce965889-ed95-43c4-838e-c345b78f7353%29.jpg",
+      "width": 960,
+      "height": 763,
+      "page": "https://commons.wikimedia.org/wiki/File:National_Geographic_ladder_to_Lower_Cave._(ce965889-ed95-43c4-838e-c345b78f7353).jpg",
+      "author": "Unknown authorUnknown author",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Cave_Pearls.JPG/960px-Cave_Pearls.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Cave_Pearls.JPG/1280px-Cave_Pearls.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Cave_Pearls.JPG",
+      "author": "Original uploader was WTucker at en.wikipedia",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "cave-bat-flight": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Bat_Flight_from_inside_Natural_Entrance_%2851337179183%29.jpg/960px-Bat_Flight_from_inside_Natural_Entrance_%2851337179183%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Bat_Flight_from_inside_Natural_Entrance_%2851337179183%29.jpg/1920px-Bat_Flight_from_inside_Natural_Entrance_%2851337179183%29.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Bat_Flight_from_inside_Natural_Entrance_(51337179183).jpg",
+      "author": "CarlsbadCavernsNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Bat_Flight_from_inside_Natural_Entrance_%2851337694754%29.jpg/960px-Bat_Flight_from_inside_Natural_Entrance_%2851337694754%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Bat_Flight_from_inside_Natural_Entrance_%2851337694754%29.jpg/1920px-Bat_Flight_from_inside_Natural_Entrance_%2851337694754%29.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Bat_Flight_from_inside_Natural_Entrance_(51337694754).jpg",
+      "author": "CarlsbadCavernsNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Opening_to_Carlsbad_Cavern-1.JPG/960px-Opening_to_Carlsbad_Cavern-1.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Opening_to_Carlsbad_Cavern-1.JPG/1920px-Opening_to_Carlsbad_Cavern-1.JPG",
+      "width": 960,
+      "height": 655,
+      "page": "https://commons.wikimedia.org/wiki/File:Opening_to_Carlsbad_Cavern-1.JPG",
+      "author": "Daniel Mayer",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Historic_Carlsbad_Caverns_in_New_Mexico.jpg/960px-Historic_Carlsbad_Caverns_in_New_Mexico.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Historic_Carlsbad_Caverns_in_New_Mexico.jpg/1920px-Historic_Carlsbad_Caverns_in_New_Mexico.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Historic_Carlsbad_Caverns_in_New_Mexico.jpg",
+      "author": "ForgottenColorado",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Historic_Carlsbad_Caverns_in_New_Mexico_%282%29.jpg/960px-Historic_Carlsbad_Caverns_in_New_Mexico_%282%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Historic_Carlsbad_Caverns_in_New_Mexico_%282%29.jpg/1920px-Historic_Carlsbad_Caverns_in_New_Mexico_%282%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Historic_Carlsbad_Caverns_in_New_Mexico_(2).jpg",
+      "author": "ForgottenColorado",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Carlsbad_Caverns_National_Park%2C_New_Mexico%2C_USA_5-2024_7.jpg/960px-Carlsbad_Caverns_National_Park%2C_New_Mexico%2C_USA_5-2024_7.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Carlsbad_Caverns_National_Park%2C_New_Mexico%2C_USA_5-2024_7.jpg/1920px-Carlsbad_Caverns_National_Park%2C_New_Mexico%2C_USA_5-2024_7.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Carlsbad_Caverns_National_Park,_New_Mexico,_USA_5-2024_7.jpg",
+      "author": "dconvertini",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "cave-desert-nature-trail": [],
+  "cave-walnut-canyon-overlook": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Walnut_Canyon_Overlook_%2851202787716%29.jpg/960px-Walnut_Canyon_Overlook_%2851202787716%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Walnut_Canyon_Overlook_%2851202787716%29.jpg/1920px-Walnut_Canyon_Overlook_%2851202787716%29.jpg",
+      "width": 960,
+      "height": 549,
+      "page": "https://commons.wikimedia.org/wiki/File:Walnut_Canyon_Overlook_(51202787716).jpg",
+      "author": "CarlsbadCavernsNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Yates_Fm_Walnut_Canyon.jpg/960px-Yates_Fm_Walnut_Canyon.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Yates_Fm_Walnut_Canyon.jpg/1920px-Yates_Fm_Walnut_Canyon.jpg",
+      "width": 960,
+      "height": 441,
+      "page": "https://commons.wikimedia.org/wiki/File:Yates_Fm_Walnut_Canyon.jpg",
+      "author": "Carpenter, Kenneth",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Juglans_microcarpa_habitus.jpg/960px-Juglans_microcarpa_habitus.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Juglans_microcarpa_habitus.jpg/1920px-Juglans_microcarpa_habitus.jpg",
+      "width": 960,
+      "height": 679,
+      "page": "https://commons.wikimedia.org/wiki/File:Juglans_microcarpa_habitus.jpg",
+      "author": "JerryFriedman",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "cave-walnut-canyon-drive": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Walnut_Canyon_P1011709mod.jpg/960px-Walnut_Canyon_P1011709mod.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Walnut_Canyon_P1011709mod.jpg/1920px-Walnut_Canyon_P1011709mod.jpg",
+      "width": 960,
+      "height": 544,
+      "page": "https://commons.wikimedia.org/wiki/File:Walnut_Canyon_P1011709mod.jpg",
+      "author": "JYB Devot",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Echinocereus_dasyacanthus_dasyacanthus_4.jpg/960px-Echinocereus_dasyacanthus_dasyacanthus_4.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Echinocereus_dasyacanthus_dasyacanthus_4.jpg/1280px-Echinocereus_dasyacanthus_dasyacanthus_4.jpg",
+      "width": 960,
+      "height": 910,
+      "page": "https://commons.wikimedia.org/wiki/File:Echinocereus_dasyacanthus_dasyacanthus_4.jpg",
+      "author": "Martin Purdy",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Echinocereus_dasyacanthus_dasyacanthus_3.jpg/960px-Echinocereus_dasyacanthus_dasyacanthus_3.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Echinocereus_dasyacanthus_dasyacanthus_3.jpg/1280px-Echinocereus_dasyacanthus_dasyacanthus_3.jpg",
+      "width": 960,
+      "height": 999,
+      "page": "https://commons.wikimedia.org/wiki/File:Echinocereus_dasyacanthus_dasyacanthus_3.jpg",
+      "author": "Martin Purdy",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "cave-rattlesnake-springs": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Rattlesnake_Springs_Picnic_Area_%2851234084261%29.jpg/960px-Rattlesnake_Springs_Picnic_Area_%2851234084261%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Rattlesnake_Springs_Picnic_Area_%2851234084261%29.jpg/1280px-Rattlesnake_Springs_Picnic_Area_%2851234084261%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Rattlesnake_Springs_Picnic_Area_(51234084261).jpg",
+      "author": "CarlsbadCavernsNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/American_Rubyspot_-_Hetaerina_americana%2C_Rattlesnake_Springs%2C_New_Mexico.jpg/960px-American_Rubyspot_-_Hetaerina_americana%2C_Rattlesnake_Springs%2C_New_Mexico.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/American_Rubyspot_-_Hetaerina_americana%2C_Rattlesnake_Springs%2C_New_Mexico.jpg/1920px-American_Rubyspot_-_Hetaerina_americana%2C_Rattlesnake_Springs%2C_New_Mexico.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:American_Rubyspot_-_Hetaerina_americana,_Rattlesnake_Springs,_New_Mexico.jpg",
+      "author": "Judy Gallagher",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/American_Rubyspot_-_Hetaerina_americana%2C_Rattlesnake_Springs%2C_New_Mexico_-_7300296110.jpg/960px-American_Rubyspot_-_Hetaerina_americana%2C_Rattlesnake_Springs%2C_New_Mexico_-_7300296110.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/American_Rubyspot_-_Hetaerina_americana%2C_Rattlesnake_Springs%2C_New_Mexico_-_7300296110.jpg/1920px-American_Rubyspot_-_Hetaerina_americana%2C_Rattlesnake_Springs%2C_New_Mexico_-_7300296110.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:American_Rubyspot_-_Hetaerina_americana,_Rattlesnake_Springs,_New_Mexico_-_7300296110.jpg",
+      "author": "Judy Gallagher",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Rattlesnake_springs_700mod.jpg/960px-Rattlesnake_springs_700mod.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Rattlesnake_springs_700mod.jpg/1920px-Rattlesnake_springs_700mod.jpg",
+      "width": 960,
+      "height": 683,
+      "page": "https://commons.wikimedia.org/wiki/File:Rattlesnake_springs_700mod.jpg",
+      "author": "JYB Devot",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Sparrow_at_Rattlesnake_Springs_%2851201850397%29.jpg/960px-Sparrow_at_Rattlesnake_Springs_%2851201850397%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Sparrow_at_Rattlesnake_Springs_%2851201850397%29.jpg/1920px-Sparrow_at_Rattlesnake_Springs_%2851201850397%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Sparrow_at_Rattlesnake_Springs_(51201850397).jpg",
+      "author": "CarlsbadCavernsNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Orchard_at_Rattlesnake_Springs_%281986%29_%285cd0d6d7-2417-4ef0-8a0f-e9d196a734f2%29.jpg/960px-Orchard_at_Rattlesnake_Springs_%281986%29_%285cd0d6d7-2417-4ef0-8a0f-e9d196a734f2%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Orchard_at_Rattlesnake_Springs_%281986%29_%285cd0d6d7-2417-4ef0-8a0f-e9d196a734f2%29.jpg/1280px-Orchard_at_Rattlesnake_Springs_%281986%29_%285cd0d6d7-2417-4ef0-8a0f-e9d196a734f2%29.jpg",
+      "width": 960,
+      "height": 611,
+      "page": "https://commons.wikimedia.org/wiki/File:Orchard_at_Rattlesnake_Springs_(1986)_(5cd0d6d7-2417-4ef0-8a0f-e9d196a734f2).jpg",
+      "author": "NPS",
+      "license": "Public domain"
+    }
+  ],
+  "cave-slaughter-canyon-cave": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Slaughter_Canyon_%2851202750151%29.jpg/960px-Slaughter_Canyon_%2851202750151%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Slaughter_Canyon_%2851202750151%29.jpg/1920px-Slaughter_Canyon_%2851202750151%29.jpg",
+      "width": 960,
+      "height": 467,
+      "page": "https://commons.wikimedia.org/wiki/File:Slaughter_Canyon_(51202750151).jpg",
+      "author": "CarlsbadCavernsNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Leaning_Tower_of_Pisa%2C_Slaughter_Canyon_Cave_%2851203376378%29.jpg/960px-Leaning_Tower_of_Pisa%2C_Slaughter_Canyon_Cave_%2851203376378%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Leaning_Tower_of_Pisa%2C_Slaughter_Canyon_Cave_%2851203376378%29.jpg/1920px-Leaning_Tower_of_Pisa%2C_Slaughter_Canyon_Cave_%2851203376378%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Leaning_Tower_of_Pisa,_Slaughter_Canyon_Cave_(51203376378).jpg",
+      "author": "CarlsbadCavernsNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Slaughter_Canyon_Cave_%28795882816%29.jpg/960px-Slaughter_Canyon_Cave_%28795882816%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Slaughter_Canyon_Cave_%28795882816%29.jpg/1920px-Slaughter_Canyon_Cave_%28795882816%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Slaughter_Canyon_Cave_(795882816).jpg",
+      "author": "Greg Mote",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Slaughter_Canyon_Cave_%28795151683%29.jpg/960px-Slaughter_Canyon_Cave_%28795151683%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Slaughter_Canyon_Cave_%28795151683%29.jpg/1920px-Slaughter_Canyon_Cave_%28795151683%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Slaughter_Canyon_Cave_(795151683).jpg",
+      "author": "Greg Mote",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Slaughter_Canyon_2104-2106mod.jpg/960px-Slaughter_Canyon_2104-2106mod.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Slaughter_Canyon_2104-2106mod.jpg/1920px-Slaughter_Canyon_2104-2106mod.jpg",
+      "width": 960,
+      "height": 445,
+      "page": "https://commons.wikimedia.org/wiki/File:Slaughter_Canyon_2104-2106mod.jpg",
+      "author": "JYB Devot",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Slaughter_Canyon_%283164175348%29.jpg/960px-Slaughter_Canyon_%283164175348%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Slaughter_Canyon_%283164175348%29.jpg/1920px-Slaughter_Canyon_%283164175348%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Slaughter_Canyon_(3164175348).jpg",
+      "author": "Paul Morris from USA",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "meve-visitor-center": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Mesa_Verde_National_Park_Visitor_and_Research_Center_-_panoramio.jpg/960px-Mesa_Verde_National_Park_Visitor_and_Research_Center_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Mesa_Verde_National_Park_Visitor_and_Research_Center_-_panoramio.jpg/1920px-Mesa_Verde_National_Park_Visitor_and_Research_Center_-_panoramio.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde_National_Park_Visitor_and_Research_Center_-_panoramio.jpg",
+      "author": "Will Thomas",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Mesa_Verde_National_Park_Visitor_and_Research_Center_-_panoramio_%281%29.jpg/960px-Mesa_Verde_National_Park_Visitor_and_Research_Center_-_panoramio_%281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Mesa_Verde_National_Park_Visitor_and_Research_Center_-_panoramio_%281%29.jpg/1920px-Mesa_Verde_National_Park_Visitor_and_Research_Center_-_panoramio_%281%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde_National_Park_Visitor_and_Research_Center_-_panoramio_(1).jpg",
+      "author": "Will Thomas",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Point_Lookout_from_US_Highway_160%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg/960px-Point_Lookout_from_US_Highway_160%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Point_Lookout_from_US_Highway_160%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg/1920px-Point_Lookout_from_US_Highway_160%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Point_Lookout_from_US_Highway_160,_Mesa_Verde_National_Park,_Mancos,_CO.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Point_Lookout_from_US_Highway_160%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938389018.jpg/960px-Point_Lookout_from_US_Highway_160%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938389018.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Point_Lookout_from_US_Highway_160%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938389018.jpg/1920px-Point_Lookout_from_US_Highway_160%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938389018.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Point_Lookout_from_US_Highway_160,_Mesa_Verde_National_Park,_Mancos,_CO_-_53938389018.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Mesa_Verde_National_Park_-_panoramio_%282%29.jpg/960px-Mesa_Verde_National_Park_-_panoramio_%282%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Mesa_Verde_National_Park_-_panoramio_%282%29.jpg/1920px-Mesa_Verde_National_Park_-_panoramio_%282%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde_National_Park_-_panoramio_(2).jpg",
+      "author": "MARELBU",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Mesa_Verde_National_Park_-_Mesa_Verde_Visitors_Center_-_panoramio.jpg/960px-Mesa_Verde_National_Park_-_Mesa_Verde_Visitors_Center_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Mesa_Verde_National_Park_-_Mesa_Verde_Visitors_Center_-_panoramio.jpg/1920px-Mesa_Verde_National_Park_-_Mesa_Verde_Visitors_Center_-_panoramio.jpg",
+      "width": 960,
+      "height": 1440,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde_National_Park_-_Mesa_Verde_Visitors_Center_-_panoramio.jpg",
+      "author": "MARELBU",
+      "license": "CC BY 3.0"
+    }
+  ],
+  "meve-point-lookout": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Mesa_Verde_National_Park%2C_Point_Lookout.jpg/960px-Mesa_Verde_National_Park%2C_Point_Lookout.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Mesa_Verde_National_Park%2C_Point_Lookout.jpg/1920px-Mesa_Verde_National_Park%2C_Point_Lookout.jpg",
+      "width": 960,
+      "height": 660,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde_National_Park,_Point_Lookout.jpg",
+      "author": "Doug Anderson",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Point_Lookout_from_US_Highway_160%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938139496.jpg/960px-Point_Lookout_from_US_Highway_160%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938139496.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Point_Lookout_from_US_Highway_160%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938139496.jpg/1920px-Point_Lookout_from_US_Highway_160%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938139496.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Point_Lookout_from_US_Highway_160,_Mesa_Verde_National_Park,_Mancos,_CO_-_53938139496.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Point_Lookout_from_US_Highway_160%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938389053.jpg/960px-Point_Lookout_from_US_Highway_160%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938389053.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Point_Lookout_from_US_Highway_160%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938389053.jpg/1920px-Point_Lookout_from_US_Highway_160%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938389053.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Point_Lookout_from_US_Highway_160,_Mesa_Verde_National_Park,_Mancos,_CO_-_53938389053.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Mesa_Verde_National_Park_Point_Lookout_2006_09_11.jpg/960px-Mesa_Verde_National_Park_Point_Lookout_2006_09_11.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Mesa_Verde_National_Park_Point_Lookout_2006_09_11.jpg/1920px-Mesa_Verde_National_Park_Point_Lookout_2006_09_11.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde_National_Park_Point_Lookout_2006_09_11.jpg",
+      "author": "Andreas F. Borchert",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Point_Lookout_%28Montezuma_County%2C_Colorado%29_east_aspect.JPG/960px-Point_Lookout_%28Montezuma_County%2C_Colorado%29_east_aspect.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Point_Lookout_%28Montezuma_County%2C_Colorado%29_east_aspect.JPG/1920px-Point_Lookout_%28Montezuma_County%2C_Colorado%29_east_aspect.JPG",
+      "width": 960,
+      "height": 583,
+      "page": "https://commons.wikimedia.org/wiki/File:Point_Lookout_(Montezuma_County,_Colorado)_east_aspect.JPG",
+      "author": "Jeffrey Beall",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Mesa_Verde_National_Park_Point_Lookout.jpg/960px-Mesa_Verde_National_Park_Point_Lookout.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Mesa_Verde_National_Park_Point_Lookout.jpg/1920px-Mesa_Verde_National_Park_Point_Lookout.jpg",
+      "width": 960,
+      "height": 411,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde_National_Park_Point_Lookout.jpg",
+      "author": "MARELBU",
+      "license": "CC BY 3.0"
+    }
+  ],
+  "meve-night-sky": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Rainbow%2C_Mesa_Verde_NP%2C_CO_%2814549569207%29.jpg/960px-Rainbow%2C_Mesa_Verde_NP%2C_CO_%2814549569207%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Rainbow%2C_Mesa_Verde_NP%2C_CO_%2814549569207%29.jpg/1920px-Rainbow%2C_Mesa_Verde_NP%2C_CO_%2814549569207%29.jpg",
+      "width": 960,
+      "height": 602,
+      "page": "https://commons.wikimedia.org/wiki/File:Rainbow,_Mesa_Verde_NP,_CO_(14549569207).jpg",
+      "author": "inkknife_2000 (7.5 million views +)",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Mesa_Verde_Rainbow_9-08_%288529195836%29.jpg/960px-Mesa_Verde_Rainbow_9-08_%288529195836%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Mesa_Verde_Rainbow_9-08_%288529195836%29.jpg/1280px-Mesa_Verde_Rainbow_9-08_%288529195836%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde_Rainbow_9-08_(8529195836).jpg",
+      "author": "inkknife_2000 (7.5 million views +)",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "meve-park-point": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Park_Point_Lookout_mesa_verde.jpg/960px-Park_Point_Lookout_mesa_verde.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Park_Point_Lookout_mesa_verde.jpg/1920px-Park_Point_Lookout_mesa_verde.jpg",
+      "width": 960,
+      "height": 641,
+      "page": "https://commons.wikimedia.org/wiki/File:Park_Point_Lookout_mesa_verde.jpg",
+      "author": "Dsdugan",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Fire-killed_snag%2C_northern_rim_of_Mesa_Verde%2C_Mesa_Verde_National_Park%2C_Montezuma_Co.%2C_CO%2C_USA_-_panoramio.jpg/960px-Fire-killed_snag%2C_northern_rim_of_Mesa_Verde%2C_Mesa_Verde_National_Park%2C_Montezuma_Co.%2C_CO%2C_USA_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Fire-killed_snag%2C_northern_rim_of_Mesa_Verde%2C_Mesa_Verde_National_Park%2C_Montezuma_Co.%2C_CO%2C_USA_-_panoramio.jpg/1280px-Fire-killed_snag%2C_northern_rim_of_Mesa_Verde%2C_Mesa_Verde_National_Park%2C_Montezuma_Co.%2C_CO%2C_USA_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Fire-killed_snag,_northern_rim_of_Mesa_Verde,_Mesa_Verde_National_Park,_Montezuma_Co.,_CO,_USA_-_panoramio.jpg",
+      "author": "QKC",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Butte_Near_Mesa_Verde_National_Park_Entrance_%284848592682%29.jpg/960px-Butte_Near_Mesa_Verde_National_Park_Entrance_%284848592682%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Butte_Near_Mesa_Verde_National_Park_Entrance_%284848592682%29.jpg/1920px-Butte_Near_Mesa_Verde_National_Park_Entrance_%284848592682%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Butte_Near_Mesa_Verde_National_Park_Entrance_(4848592682).jpg",
+      "author": "Ken Lund from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Mesa_Verde_National_Park_01.jpg/960px-Mesa_Verde_National_Park_01.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Mesa_Verde_National_Park_01.jpg/1920px-Mesa_Verde_National_Park_01.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde_National_Park_01.jpg",
+      "author": "Niagara66",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Mesa_Verde_National_Park_-_panoramio_%281%29.jpg/960px-Mesa_Verde_National_Park_-_panoramio_%281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Mesa_Verde_National_Park_-_panoramio_%281%29.jpg/1920px-Mesa_Verde_National_Park_-_panoramio_%281%29.jpg",
+      "width": 960,
+      "height": 646,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde_National_Park_-_panoramio_(1).jpg",
+      "author": "MARELBU",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Mesa_Verde_-_51198226752.jpg/960px-Mesa_Verde_-_51198226752.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Mesa_Verde_-_51198226752.jpg/1920px-Mesa_Verde_-_51198226752.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde_-_51198226752.jpg",
+      "author": "dwhartwig",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "meve-far-view-sites": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Far_View_House%2C_Mesa_Verde_National_Park_-_panoramio.jpg/960px-Far_View_House%2C_Mesa_Verde_National_Park_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Far_View_House%2C_Mesa_Verde_National_Park_-_panoramio.jpg/1920px-Far_View_House%2C_Mesa_Verde_National_Park_-_panoramio.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Far_View_House,_Mesa_Verde_National_Park_-_panoramio.jpg",
+      "author": "Will Thomas",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Far_View_House%2C_Far_View_Sites_Complex%2C_Mesa_Verde_National_Park_%284848690412%29.jpg/960px-Far_View_House%2C_Far_View_Sites_Complex%2C_Mesa_Verde_National_Park_%284848690412%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Far_View_House%2C_Far_View_Sites_Complex%2C_Mesa_Verde_National_Park_%284848690412%29.jpg/1920px-Far_View_House%2C_Far_View_Sites_Complex%2C_Mesa_Verde_National_Park_%284848690412%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Far_View_House,_Far_View_Sites_Complex,_Mesa_Verde_National_Park_(4848690412).jpg",
+      "author": "Ken Lund from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Far_View_House%2C_Far_View_Sites_Complex%2C_Mesa_Verde_National_Park_%284848071579%29.jpg/960px-Far_View_House%2C_Far_View_Sites_Complex%2C_Mesa_Verde_National_Park_%284848071579%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Far_View_House%2C_Far_View_Sites_Complex%2C_Mesa_Verde_National_Park_%284848071579%29.jpg/1920px-Far_View_House%2C_Far_View_Sites_Complex%2C_Mesa_Verde_National_Park_%284848071579%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Far_View_House,_Far_View_Sites_Complex,_Mesa_Verde_National_Park_(4848071579).jpg",
+      "author": "Ken Lund from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Kiva_at_Megalithic_House_-_Far_View_Sites_Complex_-_Mesa_Verde_National_Park_-_27_Aug._2008_-_Photo_by_Don_Graham.jpg/960px-Kiva_at_Megalithic_House_-_Far_View_Sites_Complex_-_Mesa_Verde_National_Park_-_27_Aug._2008_-_Photo_by_Don_Graham.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Kiva_at_Megalithic_House_-_Far_View_Sites_Complex_-_Mesa_Verde_National_Park_-_27_Aug._2008_-_Photo_by_Don_Graham.jpg/1280px-Kiva_at_Megalithic_House_-_Far_View_Sites_Complex_-_Mesa_Verde_National_Park_-_27_Aug._2008_-_Photo_by_Don_Graham.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Kiva_at_Megalithic_House_-_Far_View_Sites_Complex_-_Mesa_Verde_National_Park_-_27_Aug._2008_-_Photo_by_Don_Graham.jpg",
+      "author": "Don Graham from Redlands, CA, USA - God bless it!",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Coyote_Village_-_Far_View_Sites_Complex_-_Mesa_Verde_National_Park_-_27_Aug._2008_-_Photo_by_Don_Graham.jpg/960px-Coyote_Village_-_Far_View_Sites_Complex_-_Mesa_Verde_National_Park_-_27_Aug._2008_-_Photo_by_Don_Graham.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Coyote_Village_-_Far_View_Sites_Complex_-_Mesa_Verde_National_Park_-_27_Aug._2008_-_Photo_by_Don_Graham.jpg/1280px-Coyote_Village_-_Far_View_Sites_Complex_-_Mesa_Verde_National_Park_-_27_Aug._2008_-_Photo_by_Don_Graham.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Coyote_Village_-_Far_View_Sites_Complex_-_Mesa_Verde_National_Park_-_27_Aug._2008_-_Photo_by_Don_Graham.jpg",
+      "author": "Don Graham from Redlands, CA, USA - God bless it!",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Far_View_Tower%2C_Mesa_Verde_National_Park_-_panoramio.jpg/960px-Far_View_Tower%2C_Mesa_Verde_National_Park_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Far_View_Tower%2C_Mesa_Verde_National_Park_-_panoramio.jpg/1920px-Far_View_Tower%2C_Mesa_Verde_National_Park_-_panoramio.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Far_View_Tower,_Mesa_Verde_National_Park_-_panoramio.jpg",
+      "author": "Will Thomas",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "meve-museum": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Chapin_Mesa_Archeological_Museum%2C_Spruce_Tree_Point%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53937236942.jpg/960px-Chapin_Mesa_Archeological_Museum%2C_Spruce_Tree_Point%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53937236942.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Chapin_Mesa_Archeological_Museum%2C_Spruce_Tree_Point%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53937236942.jpg/1920px-Chapin_Mesa_Archeological_Museum%2C_Spruce_Tree_Point%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53937236942.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Chapin_Mesa_Archeological_Museum,_Spruce_Tree_Point,_Mesa_Verde_National_Park,_Mancos,_CO_-_53937236942.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Chapin_Mesa_Archeological_Museum%2C_Spruce_Tree_Point%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg/960px-Chapin_Mesa_Archeological_Museum%2C_Spruce_Tree_Point%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Chapin_Mesa_Archeological_Museum%2C_Spruce_Tree_Point%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg/1920px-Chapin_Mesa_Archeological_Museum%2C_Spruce_Tree_Point%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Chapin_Mesa_Archeological_Museum,_Spruce_Tree_Point,_Mesa_Verde_National_Park,_Mancos,_CO.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Chapin_Mesa_Museum.jpg/960px-Chapin_Mesa_Museum.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Chapin_Mesa_Museum.jpg/1920px-Chapin_Mesa_Museum.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Chapin_Mesa_Museum.jpg",
+      "author": "MPSharwood",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Trailhead_to_Spruce_Tree_House_and_Chapin_Mesa_Museum_%284847974299%29.jpg/960px-Trailhead_to_Spruce_Tree_House_and_Chapin_Mesa_Museum_%284847974299%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Trailhead_to_Spruce_Tree_House_and_Chapin_Mesa_Museum_%284847974299%29.jpg/1920px-Trailhead_to_Spruce_Tree_House_and_Chapin_Mesa_Museum_%284847974299%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Trailhead_to_Spruce_Tree_House_and_Chapin_Mesa_Museum_(4847974299).jpg",
+      "author": "Ken Lund from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Spruce_Tree_House_%2815120918866%29.jpg/960px-Spruce_Tree_House_%2815120918866%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Spruce_Tree_House_%2815120918866%29.jpg/1920px-Spruce_Tree_House_%2815120918866%29.jpg",
+      "width": 960,
+      "height": 667,
+      "page": "https://commons.wikimedia.org/wiki/File:Spruce_Tree_House_(15120918866).jpg",
+      "author": "KimonBerlin",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "meve-spruce-tree-house": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/16_21_2245_mesa_verde.jpg/960px-16_21_2245_mesa_verde.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/16_21_2245_mesa_verde.jpg/1920px-16_21_2245_mesa_verde.jpg",
+      "width": 960,
+      "height": 641,
+      "page": "https://commons.wikimedia.org/wiki/File:16_21_2245_mesa_verde.jpg",
+      "author": "Dsdugan",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Mesa_Verde-Spruce_Tree_House-02-Ueberblick-1982-gje.jpg/960px-Mesa_Verde-Spruce_Tree_House-02-Ueberblick-1982-gje.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Mesa_Verde-Spruce_Tree_House-02-Ueberblick-1982-gje.jpg/1920px-Mesa_Verde-Spruce_Tree_House-02-Ueberblick-1982-gje.jpg",
+      "width": 960,
+      "height": 635,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde-Spruce_Tree_House-02-Ueberblick-1982-gje.jpg",
+      "author": "Gerd Eichmann",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Mesa_Verde-Spruce_Tree_House-06-innen-1982-gje.jpg/960px-Mesa_Verde-Spruce_Tree_House-06-innen-1982-gje.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Mesa_Verde-Spruce_Tree_House-06-innen-1982-gje.jpg/1920px-Mesa_Verde-Spruce_Tree_House-06-innen-1982-gje.jpg",
+      "width": 960,
+      "height": 635,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde-Spruce_Tree_House-06-innen-1982-gje.jpg",
+      "author": "Gerd Eichmann",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Spruce_Tree_House_from_Spruce_Tree_Point%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg/960px-Spruce_Tree_House_from_Spruce_Tree_Point%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Spruce_Tree_House_from_Spruce_Tree_Point%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg/1920px-Spruce_Tree_House_from_Spruce_Tree_Point%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Spruce_Tree_House_from_Spruce_Tree_Point,_Mesa_Verde_National_Park,_Mancos,_CO.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Spruce_Tree_House_from_Spruce_Tree_Point%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938475049.jpg/960px-Spruce_Tree_House_from_Spruce_Tree_Point%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938475049.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Spruce_Tree_House_from_Spruce_Tree_Point%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938475049.jpg/1920px-Spruce_Tree_House_from_Spruce_Tree_Point%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938475049.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Spruce_Tree_House_from_Spruce_Tree_Point,_Mesa_Verde_National_Park,_Mancos,_CO_-_53938475049.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/First_Glimpse_of_Spruce_Tree_House_from_the_Bottown_of_Spruce_Tree_Canyon_%284848603760%29.jpg/960px-First_Glimpse_of_Spruce_Tree_House_from_the_Bottown_of_Spruce_Tree_Canyon_%284848603760%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/First_Glimpse_of_Spruce_Tree_House_from_the_Bottown_of_Spruce_Tree_Canyon_%284848603760%29.jpg/1920px-First_Glimpse_of_Spruce_Tree_House_from_the_Bottown_of_Spruce_Tree_Canyon_%284848603760%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:First_Glimpse_of_Spruce_Tree_House_from_the_Bottown_of_Spruce_Tree_Canyon_(4848603760).jpg",
+      "author": "Ken Lund from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "meve-petroglyph-point": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Petroglyph_Point%2C_MVNP.jpg/960px-Petroglyph_Point%2C_MVNP.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Petroglyph_Point%2C_MVNP.jpg/1920px-Petroglyph_Point%2C_MVNP.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Petroglyph_Point,_MVNP.jpg",
+      "author": "Adam Baker from Houston / Moscow / Toulouse (travel a lot)",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Petroglyph_Point_at_Mesa_Verde_National_Park_by_RO.JPG/960px-Petroglyph_Point_at_Mesa_Verde_National_Park_by_RO.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Petroglyph_Point_at_Mesa_Verde_National_Park_by_RO.JPG/1920px-Petroglyph_Point_at_Mesa_Verde_National_Park_by_RO.JPG",
+      "width": 960,
+      "height": 510,
+      "page": "https://commons.wikimedia.org/wiki/File:Petroglyph_Point_at_Mesa_Verde_National_Park_by_RO.JPG",
+      "author": "Rationalobserver",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Anasazi_Indian_petroglyph_%28~600_to_1300_A.D.%29_%28Mesa_Verde_National_Park%2C_Colorado%2C_USA%29_5_%2822818593335%29.jpg/960px-Anasazi_Indian_petroglyph_%28~600_to_1300_A.D.%29_%28Mesa_Verde_National_Park%2C_Colorado%2C_USA%29_5_%2822818593335%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Anasazi_Indian_petroglyph_%28~600_to_1300_A.D.%29_%28Mesa_Verde_National_Park%2C_Colorado%2C_USA%29_5_%2822818593335%29.jpg/1920px-Anasazi_Indian_petroglyph_%28~600_to_1300_A.D.%29_%28Mesa_Verde_National_Park%2C_Colorado%2C_USA%29_5_%2822818593335%29.jpg",
+      "width": 960,
+      "height": 696,
+      "page": "https://commons.wikimedia.org/wiki/File:Anasazi_Indian_petroglyph_(~600_to_1300_A.D.)_(Mesa_Verde_National_Park,_Colorado,_USA)_5_(22818593335).jpg",
+      "author": "James St. John",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Anasazi_Indian_petroglyph_%28~600_to_1300_A.D.%29_%28Mesa_Verde_National_Park%2C_Colorado%2C_USA%29_3_%2822792598746%29.jpg/960px-Anasazi_Indian_petroglyph_%28~600_to_1300_A.D.%29_%28Mesa_Verde_National_Park%2C_Colorado%2C_USA%29_3_%2822792598746%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Anasazi_Indian_petroglyph_%28~600_to_1300_A.D.%29_%28Mesa_Verde_National_Park%2C_Colorado%2C_USA%29_3_%2822792598746%29.jpg/1920px-Anasazi_Indian_petroglyph_%28~600_to_1300_A.D.%29_%28Mesa_Verde_National_Park%2C_Colorado%2C_USA%29_3_%2822792598746%29.jpg",
+      "width": 960,
+      "height": 744,
+      "page": "https://commons.wikimedia.org/wiki/File:Anasazi_Indian_petroglyph_(~600_to_1300_A.D.)_(Mesa_Verde_National_Park,_Colorado,_USA)_3_(22792598746).jpg",
+      "author": "James St. John",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Panel_of_petroglyphs_seen_along_the_Petroglyph_Point_Trail._The_2.4_mile_round-trip%2C_moderately_strenuous_trail_begins_from_the_%28a004a89f-155d-451f-67c3-6510d1f0374a%29.jpg/960px-thumbnail.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Panel_of_petroglyphs_seen_along_the_Petroglyph_Point_Trail._The_2.4_mile_round-trip%2C_moderately_strenuous_trail_begins_from_the_%28a004a89f-155d-451f-67c3-6510d1f0374a%29.jpg/1920px-thumbnail.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Panel_of_petroglyphs_seen_along_the_Petroglyph_Point_Trail._The_2.4_mile_round-trip,_moderately_strenuous_trail_begins_from_the_(a004a89f-155d-451f-67c3-6510d1f0374a).jpg",
+      "author": "NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Sceloporus_undulatus_en_Mesa_Verde_National_Park%2C_Colorado%2C_USA_%287098269523%29.jpg/960px-Sceloporus_undulatus_en_Mesa_Verde_National_Park%2C_Colorado%2C_USA_%287098269523%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Sceloporus_undulatus_en_Mesa_Verde_National_Park%2C_Colorado%2C_USA_%287098269523%29.jpg/1920px-Sceloporus_undulatus_en_Mesa_Verde_National_Park%2C_Colorado%2C_USA_%287098269523%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Sceloporus_undulatus_en_Mesa_Verde_National_Park,_Colorado,_USA_(7098269523).jpg",
+      "author": "Javier Ábalos from Valencia, España",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "meve-pithouses": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Mesa_Verde_National_Park_Pithouse_2006_09_12.jpg/960px-Mesa_Verde_National_Park_Pithouse_2006_09_12.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Mesa_Verde_National_Park_Pithouse_2006_09_12.jpg/1920px-Mesa_Verde_National_Park_Pithouse_2006_09_12.jpg",
+      "width": 960,
+      "height": 622,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde_National_Park_Pithouse_2006_09_12.jpg",
+      "author": "Andreas F. Borchert",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Mesa_Top_Sites%2C_A.D._900_-_1100%2C_Mesa_Top_Loop_Road%2C_Mesa_Verde_National_Park_%284848021511%29.jpg/960px-Mesa_Top_Sites%2C_A.D._900_-_1100%2C_Mesa_Top_Loop_Road%2C_Mesa_Verde_National_Park_%284848021511%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Mesa_Top_Sites%2C_A.D._900_-_1100%2C_Mesa_Top_Loop_Road%2C_Mesa_Verde_National_Park_%284848021511%29.jpg/1920px-Mesa_Top_Sites%2C_A.D._900_-_1100%2C_Mesa_Top_Loop_Road%2C_Mesa_Verde_National_Park_%284848021511%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Top_Sites,_A.D._900_-_1100,_Mesa_Top_Loop_Road,_Mesa_Verde_National_Park_(4848021511).jpg",
+      "author": "Ken Lund from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Kiva_-_Mesa_Top_Sites%2C_A.D._900_-_1100%2C_Mesa_Top_Loop_Road%2C_Mesa_Verde_National_Park_%284848022403%29.jpg/960px-Kiva_-_Mesa_Top_Sites%2C_A.D._900_-_1100%2C_Mesa_Top_Loop_Road%2C_Mesa_Verde_National_Park_%284848022403%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Kiva_-_Mesa_Top_Sites%2C_A.D._900_-_1100%2C_Mesa_Top_Loop_Road%2C_Mesa_Verde_National_Park_%284848022403%29.jpg/1920px-Kiva_-_Mesa_Top_Sites%2C_A.D._900_-_1100%2C_Mesa_Top_Loop_Road%2C_Mesa_Verde_National_Park_%284848022403%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Kiva_-_Mesa_Top_Sites,_A.D._900_-_1100,_Mesa_Top_Loop_Road,_Mesa_Verde_National_Park_(4848022403).jpg",
+      "author": "Ken Lund from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Mesa_View_from_Mesa_Top_Ruins_Road%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg/960px-Mesa_View_from_Mesa_Top_Ruins_Road%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Mesa_View_from_Mesa_Top_Ruins_Road%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg/1920px-Mesa_View_from_Mesa_Top_Ruins_Road%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_View_from_Mesa_Top_Ruins_Road,_Mesa_Verde_National_Park,_Mancos,_CO.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Mesa_View_from_Mesa_Top_Ruins_Road%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938472339.jpg/960px-Mesa_View_from_Mesa_Top_Ruins_Road%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938472339.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Mesa_View_from_Mesa_Top_Ruins_Road%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938472339.jpg/1920px-Mesa_View_from_Mesa_Top_Ruins_Road%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938472339.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_View_from_Mesa_Top_Ruins_Road,_Mesa_Verde_National_Park,_Mancos,_CO_-_53938472339.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Mesa_Verde_National_Park_Pithouse_2_2006_09_12.jpg/960px-Mesa_Verde_National_Park_Pithouse_2_2006_09_12.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Mesa_Verde_National_Park_Pithouse_2_2006_09_12.jpg/1920px-Mesa_Verde_National_Park_Pithouse_2_2006_09_12.jpg",
+      "width": 960,
+      "height": 626,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde_National_Park_Pithouse_2_2006_09_12.jpg",
+      "author": "Andreas F. Borchert",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "meve-square-tower-house": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Square_Tower_House-Mesa_Verde.jpg/960px-Square_Tower_House-Mesa_Verde.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Square_Tower_House-Mesa_Verde.jpg/1920px-Square_Tower_House-Mesa_Verde.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Square_Tower_House-Mesa_Verde.jpg",
+      "author": "No machine-readable author provided. BenFrantzDale~commonswiki assumed (based on copyright claims).",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/View_of_Square_Tower_House_%28ff61b098-155d-451f-679b-c769a97c1679%29.jpg/960px-View_of_Square_Tower_House_%28ff61b098-155d-451f-679b-c769a97c1679%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/View_of_Square_Tower_House_%28ff61b098-155d-451f-679b-c769a97c1679%29.jpg/1920px-View_of_Square_Tower_House_%28ff61b098-155d-451f-679b-c769a97c1679%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:View_of_Square_Tower_House_(ff61b098-155d-451f-679b-c769a97c1679).jpg",
+      "author": "NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/2025-05-28_Mesa_Verde_Square_Tower_House_-_003.jpg/960px-2025-05-28_Mesa_Verde_Square_Tower_House_-_003.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/2025-05-28_Mesa_Verde_Square_Tower_House_-_003.jpg/1920px-2025-05-28_Mesa_Verde_Square_Tower_House_-_003.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:2025-05-28_Mesa_Verde_Square_Tower_House_-_003.jpg",
+      "author": "mark byzewski",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/2025-05-28_Mesa_Verde_Square_Tower_House_-_015.jpg/960px-2025-05-28_Mesa_Verde_Square_Tower_House_-_015.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/2025-05-28_Mesa_Verde_Square_Tower_House_-_015.jpg/1920px-2025-05-28_Mesa_Verde_Square_Tower_House_-_015.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:2025-05-28_Mesa_Verde_Square_Tower_House_-_015.jpg",
+      "author": "mark byzewski",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Mesa_Verde_Square_Tower_House.jpg/960px-Mesa_Verde_Square_Tower_House.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Mesa_Verde_Square_Tower_House.jpg/1920px-Mesa_Verde_Square_Tower_House.jpg",
+      "width": 960,
+      "height": 634,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde_Square_Tower_House.jpg",
+      "author": "HJPD",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Mesa_Verde-Square_Tower_House-02-1982-gje.jpg/960px-Mesa_Verde-Square_Tower_House-02-1982-gje.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Mesa_Verde-Square_Tower_House-02-1982-gje.jpg/1920px-Mesa_Verde-Square_Tower_House-02-1982-gje.jpg",
+      "width": 960,
+      "height": 623,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde-Square_Tower_House-02-1982-gje.jpg",
+      "author": "Gerd Eichmann",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "meve-sun-point-view": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Mesa_Verde%2C_Sun_Point_View_8-08_%288528081769%29.jpg/960px-Mesa_Verde%2C_Sun_Point_View_8-08_%288528081769%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Mesa_Verde%2C_Sun_Point_View_8-08_%288528081769%29.jpg/1280px-Mesa_Verde%2C_Sun_Point_View_8-08_%288528081769%29.jpg",
+      "width": 960,
+      "height": 709,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde,_Sun_Point_View_8-08_(8528081769).jpg",
+      "author": "inkknife_2000 (7.5 million views +)",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Cliff_Palace%2C_Sun_Point_View%2C_MesaVerde_NP_9-10_%2826904481071%29.jpg/960px-Cliff_Palace%2C_Sun_Point_View%2C_MesaVerde_NP_9-10_%2826904481071%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Cliff_Palace%2C_Sun_Point_View%2C_MesaVerde_NP_9-10_%2826904481071%29.jpg/1920px-Cliff_Palace%2C_Sun_Point_View%2C_MesaVerde_NP_9-10_%2826904481071%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Cliff_Palace,_Sun_Point_View,_MesaVerde_NP_9-10_(26904481071).jpg",
+      "author": "Don Graham from Redlands, CA, USA - God bless it!",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Mesa_Verde_N.P.%2C_Sun_Point_View%2C_Soda_Canyon_8-2008_%285913280524%29.jpg/960px-Mesa_Verde_N.P.%2C_Sun_Point_View%2C_Soda_Canyon_8-2008_%285913280524%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Mesa_Verde_N.P.%2C_Sun_Point_View%2C_Soda_Canyon_8-2008_%285913280524%29.jpg/1280px-Mesa_Verde_N.P.%2C_Sun_Point_View%2C_Soda_Canyon_8-2008_%285913280524%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde_N.P.,_Sun_Point_View,_Soda_Canyon_8-2008_(5913280524).jpg",
+      "author": "inkknife_2000 (7.5 million views +)",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/View_from_Sun_Temple%2C_Mesa_Top_Loop_Road%2C_Mesa_Verde_National_Park_%284848660744%29.jpg/960px-View_from_Sun_Temple%2C_Mesa_Top_Loop_Road%2C_Mesa_Verde_National_Park_%284848660744%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/View_from_Sun_Temple%2C_Mesa_Top_Loop_Road%2C_Mesa_Verde_National_Park_%284848660744%29.jpg/1920px-View_from_Sun_Temple%2C_Mesa_Top_Loop_Road%2C_Mesa_Verde_National_Park_%284848660744%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:View_from_Sun_Temple,_Mesa_Top_Loop_Road,_Mesa_Verde_National_Park_(4848660744).jpg",
+      "author": "Ken Lund from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Sun_Temple_View%2C_Mesa_Verde_-_panoramio.jpg/960px-Sun_Temple_View%2C_Mesa_Verde_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Sun_Temple_View%2C_Mesa_Verde_-_panoramio.jpg/1920px-Sun_Temple_View%2C_Mesa_Verde_-_panoramio.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Sun_Temple_View,_Mesa_Verde_-_panoramio.jpg",
+      "author": "Will Thomas",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Cliff_Canyon_and_Sun_Point%2C_Mesa_Verde_National_Park_%284848756856%29.jpg/960px-Cliff_Canyon_and_Sun_Point%2C_Mesa_Verde_National_Park_%284848756856%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Cliff_Canyon_and_Sun_Point%2C_Mesa_Verde_National_Park_%284848756856%29.jpg/1920px-Cliff_Canyon_and_Sun_Point%2C_Mesa_Verde_National_Park_%284848756856%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Cliff_Canyon_and_Sun_Point,_Mesa_Verde_National_Park_(4848756856).jpg",
+      "author": "Ken Lund from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "meve-sun-temple": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Sun_Temple_by_RO.JPG/960px-Sun_Temple_by_RO.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Sun_Temple_by_RO.JPG/1920px-Sun_Temple_by_RO.JPG",
+      "width": 960,
+      "height": 820,
+      "page": "https://commons.wikimedia.org/wiki/File:Sun_Temple_by_RO.JPG",
+      "author": "Rationalobserver",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/View_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg/960px-View_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/View_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg/1920px-View_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:View_from_Cliff_Palace_Overlook,_Mesa_Verde_National_Park,_Mancos,_CO.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/View_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53937240597.jpg/960px-View_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53937240597.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/View_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53937240597.jpg/1920px-View_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53937240597.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:View_from_Cliff_Palace_Overlook,_Mesa_Verde_National_Park,_Mancos,_CO_-_53937240597.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Cliff_Canyon_as_seen_from_Sun_Temple%2C_Mesa_Top_Loop_Road%2C_Chapin_Mesa%2C_Mesa_Verde_National_Park_%284848040983%29.jpg/960px-Cliff_Canyon_as_seen_from_Sun_Temple%2C_Mesa_Top_Loop_Road%2C_Chapin_Mesa%2C_Mesa_Verde_National_Park_%284848040983%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Cliff_Canyon_as_seen_from_Sun_Temple%2C_Mesa_Top_Loop_Road%2C_Chapin_Mesa%2C_Mesa_Verde_National_Park_%284848040983%29.jpg/1920px-Cliff_Canyon_as_seen_from_Sun_Temple%2C_Mesa_Top_Loop_Road%2C_Chapin_Mesa%2C_Mesa_Verde_National_Park_%284848040983%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Cliff_Canyon_as_seen_from_Sun_Temple,_Mesa_Top_Loop_Road,_Chapin_Mesa,_Mesa_Verde_National_Park_(4848040983).jpg",
+      "author": "Ken Lund from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Rainbow_near_Cliff_Palace_on_Chapin_Mesa%2C_Mesa_Verde_National_Park_%284848667746%29.jpg/960px-Rainbow_near_Cliff_Palace_on_Chapin_Mesa%2C_Mesa_Verde_National_Park_%284848667746%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Rainbow_near_Cliff_Palace_on_Chapin_Mesa%2C_Mesa_Verde_National_Park_%284848667746%29.jpg/1920px-Rainbow_near_Cliff_Palace_on_Chapin_Mesa%2C_Mesa_Verde_National_Park_%284848667746%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Rainbow_near_Cliff_Palace_on_Chapin_Mesa,_Mesa_Verde_National_Park_(4848667746).jpg",
+      "author": "Ken Lund from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Sun_Temple%2C_Mesa_Verde_National_Park.jpg/960px-Sun_Temple%2C_Mesa_Verde_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Sun_Temple%2C_Mesa_Verde_National_Park.jpg/1920px-Sun_Temple%2C_Mesa_Verde_National_Park.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Sun_Temple,_Mesa_Verde_National_Park.jpg",
+      "author": "Lacee Curtis",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "meve-cliff-palace": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Cliff_Palace-Colorado-Mesa_Verde_NP.jpg/960px-Cliff_Palace-Colorado-Mesa_Verde_NP.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Cliff_Palace-Colorado-Mesa_Verde_NP.jpg/1920px-Cliff_Palace-Colorado-Mesa_Verde_NP.jpg",
+      "width": 960,
+      "height": 547,
+      "page": "https://commons.wikimedia.org/wiki/File:Cliff_Palace-Colorado-Mesa_Verde_NP.jpg",
+      "author": "Tobi 87",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Cliff_Palace_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg/960px-Cliff_Palace_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Cliff_Palace_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg/1920px-Cliff_Palace_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Cliff_Palace_from_Cliff_Palace_Overlook,_Mesa_Verde_National_Park,_Mancos,_CO.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Cliff_Palace_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938599535.jpg/960px-Cliff_Palace_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938599535.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Cliff_Palace_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938599535.jpg/1920px-Cliff_Palace_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938599535.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Cliff_Palace_from_Cliff_Palace_Overlook,_Mesa_Verde_National_Park,_Mancos,_CO_-_53938599535.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/MesaVerdeNationalParkCliffPalace.jpg/960px-MesaVerdeNationalParkCliffPalace.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/MesaVerdeNationalParkCliffPalace.jpg/1920px-MesaVerdeNationalParkCliffPalace.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:MesaVerdeNationalParkCliffPalace.jpg",
+      "author": "Massimo Catarinella",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Mesa_Verde_National_Park_Cliff_Palace_2006_09_12.jpg/960px-Mesa_Verde_National_Park_Cliff_Palace_2006_09_12.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Mesa_Verde_National_Park_Cliff_Palace_2006_09_12.jpg/1920px-Mesa_Verde_National_Park_Cliff_Palace_2006_09_12.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde_National_Park_Cliff_Palace_2006_09_12.jpg",
+      "author": "Andreas F. Borchert",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Mesa_Verde_National_Park_Cliff_Palace_Right_Part_2006_09_12.jpg/960px-Mesa_Verde_National_Park_Cliff_Palace_Right_Part_2006_09_12.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Mesa_Verde_National_Park_Cliff_Palace_Right_Part_2006_09_12.jpg/1920px-Mesa_Verde_National_Park_Cliff_Palace_Right_Part_2006_09_12.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde_National_Park_Cliff_Palace_Right_Part_2006_09_12.jpg",
+      "author": "Andreas F. Borchert",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "meve-cliff-palace-overlook": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Cliff_Palace_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938144866.jpg/960px-Cliff_Palace_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938144866.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Cliff_Palace_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938144866.jpg/1920px-Cliff_Palace_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938144866.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Cliff_Palace_from_Cliff_Palace_Overlook,_Mesa_Verde_National_Park,_Mancos,_CO_-_53938144866.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Cliff_Palace_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938599195.jpg/960px-Cliff_Palace_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938599195.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Cliff_Palace_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938599195.jpg/1920px-Cliff_Palace_from_Cliff_Palace_Overlook%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_53938599195.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Cliff_Palace_from_Cliff_Palace_Overlook,_Mesa_Verde_National_Park,_Mancos,_CO_-_53938599195.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Cliff_Palace_Overlook%2C_Chapin_Mesa%2C_Mesa_Verde_National_Park_%284848047309%29.jpg/960px-Cliff_Palace_Overlook%2C_Chapin_Mesa%2C_Mesa_Verde_National_Park_%284848047309%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Cliff_Palace_Overlook%2C_Chapin_Mesa%2C_Mesa_Verde_National_Park_%284848047309%29.jpg/1920px-Cliff_Palace_Overlook%2C_Chapin_Mesa%2C_Mesa_Verde_National_Park_%284848047309%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Cliff_Palace_Overlook,_Chapin_Mesa,_Mesa_Verde_National_Park_(4848047309).jpg",
+      "author": "Ken Lund from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Cliff_Palace_Overlook%2C_Chapin_Mesa%2C_Mesa_Verde_National_Park_%284848048127%29.jpg/960px-Cliff_Palace_Overlook%2C_Chapin_Mesa%2C_Mesa_Verde_National_Park_%284848048127%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Cliff_Palace_Overlook%2C_Chapin_Mesa%2C_Mesa_Verde_National_Park_%284848048127%29.jpg/1920px-Cliff_Palace_Overlook%2C_Chapin_Mesa%2C_Mesa_Verde_National_Park_%284848048127%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Cliff_Palace_Overlook,_Chapin_Mesa,_Mesa_Verde_National_Park_(4848048127).jpg",
+      "author": "Ken Lund from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Cliff_Palace_%2C_Mesa_Verde_Nartional_Park%2C_CO%2C_USA_-_panoramio.jpg/960px-Cliff_Palace_%2C_Mesa_Verde_Nartional_Park%2C_CO%2C_USA_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Cliff_Palace_%2C_Mesa_Verde_Nartional_Park%2C_CO%2C_USA_-_panoramio.jpg/1920px-Cliff_Palace_%2C_Mesa_Verde_Nartional_Park%2C_CO%2C_USA_-_panoramio.jpg",
+      "width": 960,
+      "height": 668,
+      "page": "https://commons.wikimedia.org/wiki/File:Cliff_Palace_,_Mesa_Verde_Nartional_Park,_CO,_USA_-_panoramio.jpg",
+      "author": "MARELBU",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Cliff_Palace_%2C_Mesa_Verde_Nartional_Park%2C_CO%2C_USA_-_panoramio_%281%29.jpg/960px-Cliff_Palace_%2C_Mesa_Verde_Nartional_Park%2C_CO%2C_USA_-_panoramio_%281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Cliff_Palace_%2C_Mesa_Verde_Nartional_Park%2C_CO%2C_USA_-_panoramio_%281%29.jpg/1920px-Cliff_Palace_%2C_Mesa_Verde_Nartional_Park%2C_CO%2C_USA_-_panoramio_%281%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Cliff_Palace_,_Mesa_Verde_Nartional_Park,_CO,_USA_-_panoramio_(1).jpg",
+      "author": "MARELBU",
+      "license": "CC BY 3.0"
+    }
+  ],
+  "meve-balcony-house": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Balcony_House_Tour_at_Mesa_Verde_National_Park_%284851540885%29.jpg/960px-Balcony_House_Tour_at_Mesa_Verde_National_Park_%284851540885%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Balcony_House_Tour_at_Mesa_Verde_National_Park_%284851540885%29.jpg/1920px-Balcony_House_Tour_at_Mesa_Verde_National_Park_%284851540885%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Balcony_House_Tour_at_Mesa_Verde_National_Park_(4851540885).jpg",
+      "author": "Ken Lund from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Balcony_House_Tour_at_Mesa_Verde_National_Park_%284852170024%29.jpg/960px-Balcony_House_Tour_at_Mesa_Verde_National_Park_%284852170024%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Balcony_House_Tour_at_Mesa_Verde_National_Park_%284852170024%29.jpg/1920px-Balcony_House_Tour_at_Mesa_Verde_National_Park_%284852170024%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Balcony_House_Tour_at_Mesa_Verde_National_Park_(4852170024).jpg",
+      "author": "Ken Lund from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Balcony_House_-_Mesa_Verde_National_Park.jpg/960px-Balcony_House_-_Mesa_Verde_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Balcony_House_-_Mesa_Verde_National_Park.jpg/1920px-Balcony_House_-_Mesa_Verde_National_Park.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Balcony_House_-_Mesa_Verde_National_Park.jpg",
+      "author": "Mg1744",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Balcony_House%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_28220992198.jpg/960px-Balcony_House%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_28220992198.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Balcony_House%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_28220992198.jpg/1920px-Balcony_House%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_28220992198.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Balcony_House,_Mesa_Verde_National_Park,_Mancos,_CO_-_28220992198.jpg",
+      "author": "w_lemay",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Balcony_House%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_28220993038.jpg/960px-Balcony_House%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_28220993038.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Balcony_House%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_28220993038.jpg/1920px-Balcony_House%2C_Mesa_Verde_National_Park%2C_Mancos%2C_CO_-_28220993038.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Balcony_House,_Mesa_Verde_National_Park,_Mancos,_CO_-_28220993038.jpg",
+      "author": "w_lemay",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Balcony_House%2C_Mesa_Verde%2C_Colorado_-_panoramio.jpg/960px-Balcony_House%2C_Mesa_Verde%2C_Colorado_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Balcony_House%2C_Mesa_Verde%2C_Colorado_-_panoramio.jpg/1920px-Balcony_House%2C_Mesa_Verde%2C_Colorado_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Balcony_House,_Mesa_Verde,_Colorado_-_panoramio.jpg",
+      "author": "Brendan Harmon",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "meve-soda-canyon-overlook": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Balcony_House%2C_the_most_adventurous_cliff_dwelling_tour._View_from_the_Soda_Canyon_Overlook_Trail._%2899eeda29-1dd8-b71b-0bfb-9a3522f86abd%29.jpg/960px-Balcony_House%2C_the_most_adventurous_cliff_dwelling_tour._View_from_the_Soda_Canyon_Overlook_Trail._%2899eeda29-1dd8-b71b-0bfb-9a3522f86abd%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Balcony_House%2C_the_most_adventurous_cliff_dwelling_tour._View_from_the_Soda_Canyon_Overlook_Trail._%2899eeda29-1dd8-b71b-0bfb-9a3522f86abd%29.jpg/1920px-Balcony_House%2C_the_most_adventurous_cliff_dwelling_tour._View_from_the_Soda_Canyon_Overlook_Trail._%2899eeda29-1dd8-b71b-0bfb-9a3522f86abd%29.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Balcony_House,_the_most_adventurous_cliff_dwelling_tour._View_from_the_Soda_Canyon_Overlook_Trail._(99eeda29-1dd8-b71b-0bfb-9a3522f86abd).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Viewing_Soda_Canyon.jpg/960px-Viewing_Soda_Canyon.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Viewing_Soda_Canyon.jpg/1920px-Viewing_Soda_Canyon.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Viewing_Soda_Canyon.jpg",
+      "author": "daveynin from United States",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Soda_Canyon_at_Balcony_House%2C_Mesa_Verde_National_Park_%284848762564%29.jpg/960px-Soda_Canyon_at_Balcony_House%2C_Mesa_Verde_National_Park_%284848762564%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Soda_Canyon_at_Balcony_House%2C_Mesa_Verde_National_Park_%284848762564%29.jpg/1920px-Soda_Canyon_at_Balcony_House%2C_Mesa_Verde_National_Park_%284848762564%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Soda_Canyon_at_Balcony_House,_Mesa_Verde_National_Park_(4848762564).jpg",
+      "author": "Ken Lund from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/View_of_Soda_Canyon_from_Balcony_House%2C_Mesa_Verde_National_Park_%284852025434%29.jpg/960px-View_of_Soda_Canyon_from_Balcony_House%2C_Mesa_Verde_National_Park_%284852025434%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/View_of_Soda_Canyon_from_Balcony_House%2C_Mesa_Verde_National_Park_%284852025434%29.jpg/1920px-View_of_Soda_Canyon_from_Balcony_House%2C_Mesa_Verde_National_Park_%284852025434%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:View_of_Soda_Canyon_from_Balcony_House,_Mesa_Verde_National_Park_(4852025434).jpg",
+      "author": "Ken Lund from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/The_Backyard_of_the_Ancients.jpg/960px-The_Backyard_of_the_Ancients.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/The_Backyard_of_the_Ancients.jpg/1920px-The_Backyard_of_the_Ancients.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:The_Backyard_of_the_Ancients.jpg",
+      "author": "AngelPetrelli",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Mesa_Verde_National_Park_05.jpg/960px-Mesa_Verde_National_Park_05.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Mesa_Verde_National_Park_05.jpg/1920px-Mesa_Verde_National_Park_05.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde_National_Park_05.jpg",
+      "author": "Niagara66",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "meve-long-house": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Long_House_8-11_%2814971014448%29.jpg/960px-Long_House_8-11_%2814971014448%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Long_House_8-11_%2814971014448%29.jpg/1920px-Long_House_8-11_%2814971014448%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Long_House_8-11_(14971014448).jpg",
+      "author": "KimonBerlin",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Long_House_Cliff_Dwelling%2C_Mesa_Verde_8-08_%2815263997498%29.jpg/960px-Long_House_Cliff_Dwelling%2C_Mesa_Verde_8-08_%2815263997498%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Long_House_Cliff_Dwelling%2C_Mesa_Verde_8-08_%2815263997498%29.jpg/1920px-Long_House_Cliff_Dwelling%2C_Mesa_Verde_8-08_%2815263997498%29.jpg",
+      "width": 960,
+      "height": 670,
+      "page": "https://commons.wikimedia.org/wiki/File:Long_House_Cliff_Dwelling,_Mesa_Verde_8-08_(15263997498).jpg",
+      "author": "inkknife_2000 (7.5 million views +)",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Long_House_-_panoramio.jpg/960px-Long_House_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Long_House_-_panoramio.jpg/1920px-Long_House_-_panoramio.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Long_House_-_panoramio.jpg",
+      "author": "runt35",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Mesa_Verde-Long_House-02-1982-gje.jpg/960px-Mesa_Verde-Long_House-02-1982-gje.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Mesa_Verde-Long_House-02-1982-gje.jpg/1920px-Mesa_Verde-Long_House-02-1982-gje.jpg",
+      "width": 960,
+      "height": 635,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde-Long_House-02-1982-gje.jpg",
+      "author": "Gerd Eichmann",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Mesa_Verde-Long_House-06-1982-gje.jpg/960px-Mesa_Verde-Long_House-06-1982-gje.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Mesa_Verde-Long_House-06-1982-gje.jpg/1920px-Mesa_Verde-Long_House-06-1982-gje.jpg",
+      "width": 960,
+      "height": 615,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde-Long_House-06-1982-gje.jpg",
+      "author": "Gerd Eichmann",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Hike_to_Step_House%2C_Wetherill_Mesa%2C_Mesa_Verde_National_Park_%284851644531%29.jpg/960px-Hike_to_Step_House%2C_Wetherill_Mesa%2C_Mesa_Verde_National_Park_%284851644531%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Hike_to_Step_House%2C_Wetherill_Mesa%2C_Mesa_Verde_National_Park_%284851644531%29.jpg/1920px-Hike_to_Step_House%2C_Wetherill_Mesa%2C_Mesa_Verde_National_Park_%284851644531%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Hike_to_Step_House,_Wetherill_Mesa,_Mesa_Verde_National_Park_(4851644531).jpg",
+      "author": "Ken Lund from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "meve-step-house": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Step_House%2C_Wetherill_Mesa%2C_Mesa_Verde_National_Park_%284852277394%29.jpg/960px-Step_House%2C_Wetherill_Mesa%2C_Mesa_Verde_National_Park_%284852277394%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Step_House%2C_Wetherill_Mesa%2C_Mesa_Verde_National_Park_%284852277394%29.jpg/1920px-Step_House%2C_Wetherill_Mesa%2C_Mesa_Verde_National_Park_%284852277394%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Step_House,_Wetherill_Mesa,_Mesa_Verde_National_Park_(4852277394).jpg",
+      "author": "Ken Lund from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Hike_to_Step_House%2C_Wetherill_Mesa%2C_Mesa_Verde_National_Park_%284852272430%29.jpg/960px-Hike_to_Step_House%2C_Wetherill_Mesa%2C_Mesa_Verde_National_Park_%284852272430%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Hike_to_Step_House%2C_Wetherill_Mesa%2C_Mesa_Verde_National_Park_%284852272430%29.jpg/1920px-Hike_to_Step_House%2C_Wetherill_Mesa%2C_Mesa_Verde_National_Park_%284852272430%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Hike_to_Step_House,_Wetherill_Mesa,_Mesa_Verde_National_Park_(4852272430).jpg",
+      "author": "Ken Lund from Las Vegas, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Mesa_Verde-Step_House-06-Huette-1982-gje.jpg/960px-Mesa_Verde-Step_House-06-Huette-1982-gje.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Mesa_Verde-Step_House-06-Huette-1982-gje.jpg/1920px-Mesa_Verde-Step_House-06-Huette-1982-gje.jpg",
+      "width": 960,
+      "height": 635,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde-Step_House-06-Huette-1982-gje.jpg",
+      "author": "Gerd Eichmann",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Mesa_Verde-Step_House-04-Kiva-alte_Huette-1982-gje.jpg/960px-Mesa_Verde-Step_House-04-Kiva-alte_Huette-1982-gje.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Mesa_Verde-Step_House-04-Kiva-alte_Huette-1982-gje.jpg/1920px-Mesa_Verde-Step_House-04-Kiva-alte_Huette-1982-gje.jpg",
+      "width": 960,
+      "height": 635,
+      "page": "https://commons.wikimedia.org/wiki/File:Mesa_Verde-Step_House-04-Kiva-alte_Huette-1982-gje.jpg",
+      "author": "Gerd Eichmann",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Step_House.jpg/960px-Step_House.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Step_House.jpg/1920px-Step_House.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Step_House.jpg",
+      "author": "John Manard",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Visiting_Step_House_on_Wetherill_Mesa._%289a83ec8f-1dd8-b71b-0ba9-1c9780e87747%29.jpg/960px-Visiting_Step_House_on_Wetherill_Mesa._%289a83ec8f-1dd8-b71b-0ba9-1c9780e87747%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Visiting_Step_House_on_Wetherill_Mesa._%289a83ec8f-1dd8-b71b-0ba9-1c9780e87747%29.jpg/1920px-Visiting_Step_House_on_Wetherill_Mesa._%289a83ec8f-1dd8-b71b-0ba9-1c9780e87747%29.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Visiting_Step_House_on_Wetherill_Mesa._(9a83ec8f-1dd8-b71b-0ba9-1c9780e87747).jpg",
+      "author": "NPS",
+      "license": "Public domain"
+    }
+  ],
+  "pefo-painted-desert-vc": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Petrified_Forest_Visitor_Center.jpg/960px-Petrified_Forest_Visitor_Center.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Petrified_Forest_Visitor_Center.jpg/1920px-Petrified_Forest_Visitor_Center.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Petrified_Forest_Visitor_Center.jpg",
+      "author": "Glenn Scofield Williams from Portland, Oregon, USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Painted_Desert_Visitor_Center_%2824177201172%29.jpg/960px-Painted_Desert_Visitor_Center_%2824177201172%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Painted_Desert_Visitor_Center_%2824177201172%29.jpg/1920px-Painted_Desert_Visitor_Center_%2824177201172%29.jpg",
+      "width": 960,
+      "height": 438,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Desert_Visitor_Center_(24177201172).jpg",
+      "author": "Andrew Kearns from Mill Valley, United States",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Painted_Desert_Entrance_%28North%29.jpg/960px-Painted_Desert_Entrance_%28North%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Painted_Desert_Entrance_%28North%29.jpg/1920px-Painted_Desert_Entrance_%28North%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Desert_Entrance_(North).jpg",
+      "author": "daveynin",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Landscape_Painted_Desert.jpg/960px-Landscape_Painted_Desert.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Landscape_Painted_Desert.jpg/1920px-Landscape_Painted_Desert.jpg",
+      "width": 960,
+      "height": 547,
+      "page": "https://commons.wikimedia.org/wiki/File:Landscape_Painted_Desert.jpg",
+      "author": "katsrcool",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Painted_Desert_National_Park.jpg/960px-Painted_Desert_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Painted_Desert_National_Park.jpg/1920px-Painted_Desert_National_Park.jpg",
+      "width": 960,
+      "height": 505,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Desert_National_Park.jpg",
+      "author": "Christian Collins",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Painted_Desert_Formations.jpg/960px-Painted_Desert_Formations.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Painted_Desert_Formations.jpg/1920px-Painted_Desert_Formations.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Desert_Formations.jpg",
+      "author": "Eric Kilby",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "pefo-tiponi-point": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Petrified_Forest_National_Park_03_-_Tiponi_Point.jpg/960px-Petrified_Forest_National_Park_03_-_Tiponi_Point.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Petrified_Forest_National_Park_03_-_Tiponi_Point.jpg/1920px-Petrified_Forest_National_Park_03_-_Tiponi_Point.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Petrified_Forest_National_Park_03_-_Tiponi_Point.jpg",
+      "author": "Joe Mabel",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Tiponi_Point_at_sunset.jpg/960px-Tiponi_Point_at_sunset.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Tiponi_Point_at_sunset.jpg/1920px-Tiponi_Point_at_sunset.jpg",
+      "width": 960,
+      "height": 490,
+      "page": "https://commons.wikimedia.org/wiki/File:Tiponi_Point_at_sunset.jpg",
+      "author": "Finetooth",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Tiponi_Point-Petrified_Forest_National_Park_-_panoramio.jpg/960px-Tiponi_Point-Petrified_Forest_National_Park_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Tiponi_Point-Petrified_Forest_National_Park_-_panoramio.jpg/1920px-Tiponi_Point-Petrified_Forest_National_Park_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Tiponi_Point-Petrified_Forest_National_Park_-_panoramio.jpg",
+      "author": "hakkun",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Tiponi_Point-Petrified_Forest_National_Park_-_panoramio_-_hakkun.jpg/960px-Tiponi_Point-Petrified_Forest_National_Park_-_panoramio_-_hakkun.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Tiponi_Point-Petrified_Forest_National_Park_-_panoramio_-_hakkun.jpg/1920px-Tiponi_Point-Petrified_Forest_National_Park_-_panoramio_-_hakkun.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Tiponi_Point-Petrified_Forest_National_Park_-_panoramio_-_hakkun.jpg",
+      "author": "hakkun",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Petrified_Forest_National_Park_01_-_Tiponi_Point.jpg/960px-Petrified_Forest_National_Park_01_-_Tiponi_Point.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Petrified_Forest_National_Park_01_-_Tiponi_Point.jpg/1920px-Petrified_Forest_National_Park_01_-_Tiponi_Point.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Petrified_Forest_National_Park_01_-_Tiponi_Point.jpg",
+      "author": "Joe Mabel",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Petrified_Forest_%2830748534844%29.jpg/960px-Petrified_Forest_%2830748534844%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Petrified_Forest_%2830748534844%29.jpg/1920px-Petrified_Forest_%2830748534844%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Petrified_Forest_(30748534844).jpg",
+      "author": "Glenn Scofield Williams from Portland, Oregon, USA",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "pefo-tawa-point": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Painted_Desert_badlands_Tawa_Point.jpg/960px-Painted_Desert_badlands_Tawa_Point.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Painted_Desert_badlands_Tawa_Point.jpg/1920px-Painted_Desert_badlands_Tawa_Point.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Desert_badlands_Tawa_Point.jpg",
+      "author": "Finetooth",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Painted_Desert_Ham_-_panoramio.jpg/960px-Painted_Desert_Ham_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Painted_Desert_Ham_-_panoramio.jpg/1920px-Painted_Desert_Ham_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Desert_Ham_-_panoramio.jpg",
+      "author": "Wallace Parry",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Painted_Desert_Rim_6_%2816295056956%29.jpg/960px-Painted_Desert_Rim_6_%2816295056956%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Painted_Desert_Rim_6_%2816295056956%29.jpg/1920px-Painted_Desert_Rim_6_%2816295056956%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Desert_Rim_6_(16295056956).jpg",
+      "author": "Akos Kokai",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Painted_Desert_Rim_2_%2815701102273%29.jpg/960px-Painted_Desert_Rim_2_%2815701102273%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Painted_Desert_Rim_2_%2815701102273%29.jpg/1920px-Painted_Desert_Rim_2_%2815701102273%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Desert_Rim_2_(15701102273).jpg",
+      "author": "Akos Kokai",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Visitor_Enjoying_the_Painted_Desert_Rim_Trail.jpg_%2853f8d29f-7652-4462-ab27-8bba7e5471b2%29.jpg/960px-Visitor_Enjoying_the_Painted_Desert_Rim_Trail.jpg_%2853f8d29f-7652-4462-ab27-8bba7e5471b2%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Visitor_Enjoying_the_Painted_Desert_Rim_Trail.jpg_%2853f8d29f-7652-4462-ab27-8bba7e5471b2%29.jpg/1920px-Visitor_Enjoying_the_Painted_Desert_Rim_Trail.jpg_%2853f8d29f-7652-4462-ab27-8bba7e5471b2%29.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Visitor_Enjoying_the_Painted_Desert_Rim_Trail.jpg_(53f8d29f-7652-4462-ab27-8bba7e5471b2).jpg",
+      "author": "NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/The_Painted_Desert_in_July.JPG/960px-The_Painted_Desert_in_July.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/The_Painted_Desert_in_July.JPG/1920px-The_Painted_Desert_in_July.JPG",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:The_Painted_Desert_in_July.JPG",
+      "author": "Lsaldivar",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "pefo-painted-desert-inn": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Painted_Desert_Inn_NHL_02.jpg/960px-Painted_Desert_Inn_NHL_02.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Painted_Desert_Inn_NHL_02.jpg/1920px-Painted_Desert_Inn_NHL_02.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Desert_Inn_NHL_02.jpg",
+      "author": "Joe Mabel",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/View_near_Painted_Desert_Inn_NHL_01.jpg/960px-View_near_Painted_Desert_Inn_NHL_01.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/View_near_Painted_Desert_Inn_NHL_01.jpg/1920px-View_near_Painted_Desert_Inn_NHL_01.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:View_near_Painted_Desert_Inn_NHL_01.jpg",
+      "author": "Joe Mabel",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Painted_Desert_Inn.JPG/960px-Painted_Desert_Inn.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Painted_Desert_Inn.JPG/1920px-Painted_Desert_Inn.JPG",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Desert_Inn.JPG",
+      "author": "Cscccl",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Painted_Desert_Inn_2013-09-21_10-56-10.jpg/960px-Painted_Desert_Inn_2013-09-21_10-56-10.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Painted_Desert_Inn_2013-09-21_10-56-10.jpg/1920px-Painted_Desert_Inn_2013-09-21_10-56-10.jpg",
+      "width": 960,
+      "height": 575,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Desert_Inn_2013-09-21_10-56-10.jpg",
+      "author": "inlight",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Painted_Desert_Inn_2013.JPG/960px-Painted_Desert_Inn_2013.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Painted_Desert_Inn_2013.JPG/1920px-Painted_Desert_Inn_2013.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Desert_Inn_2013.JPG",
+      "author": "TheCatalyst31",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Painted_Desert_Inn_skylights.JPG/960px-Painted_Desert_Inn_skylights.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Painted_Desert_Inn_skylights.JPG/1920px-Painted_Desert_Inn_skylights.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Desert_Inn_skylights.JPG",
+      "author": "TheCatalyst31",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "pefo-pintado-point": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Pintado_Point_%2813975032257%29.jpg/960px-Pintado_Point_%2813975032257%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Pintado_Point_%2813975032257%29.jpg/1920px-Pintado_Point_%2813975032257%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Pintado_Point_(13975032257).jpg",
+      "author": "rob Stoeltje from loenen, netherlands",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Pintado_Point-Petrified_Forest_National_Park_-_panoramio.jpg/960px-Pintado_Point-Petrified_Forest_National_Park_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Pintado_Point-Petrified_Forest_National_Park_-_panoramio.jpg/1920px-Pintado_Point-Petrified_Forest_National_Park_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Pintado_Point-Petrified_Forest_National_Park_-_panoramio.jpg",
+      "author": "hakkun",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Apache_County%2C_AZ%2C_USA_-_panoramio_%289%29.jpg/960px-Apache_County%2C_AZ%2C_USA_-_panoramio_%289%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Apache_County%2C_AZ%2C_USA_-_panoramio_%289%29.jpg/1920px-Apache_County%2C_AZ%2C_USA_-_panoramio_%289%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Apache_County,_AZ,_USA_-_panoramio_(9).jpg",
+      "author": "halfuur",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Apache_County%2C_AZ%2C_USA_-_panoramio_%2813%29.jpg/960px-Apache_County%2C_AZ%2C_USA_-_panoramio_%2813%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Apache_County%2C_AZ%2C_USA_-_panoramio_%2813%29.jpg/1920px-Apache_County%2C_AZ%2C_USA_-_panoramio_%2813%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Apache_County,_AZ,_USA_-_panoramio_(13).jpg",
+      "author": "halfuur",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Petrified_forest_%2813974228797%29.jpg/960px-Petrified_forest_%2813974228797%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Petrified_forest_%2813974228797%29.jpg/1920px-Petrified_forest_%2813974228797%29.jpg",
+      "width": 960,
+      "height": 572,
+      "page": "https://commons.wikimedia.org/wiki/File:Petrified_forest_(13974228797).jpg",
+      "author": "rob Stoeltje from loenen, netherlands",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/The_Big_Picture.jpg/960px-The_Big_Picture.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/The_Big_Picture.jpg/1920px-The_Big_Picture.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:The_Big_Picture.jpg",
+      "author": "daveynin",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "pefo-onyx-bridge": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/View_near_Painted_Desert_Inn_NHL_04.jpg/960px-View_near_Painted_Desert_Inn_NHL_04.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/View_near_Painted_Desert_Inn_NHL_04.jpg/1920px-View_near_Painted_Desert_Inn_NHL_04.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:View_near_Painted_Desert_Inn_NHL_04.jpg",
+      "author": "Joe Mabel",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/View_near_Painted_Desert_Inn_NHL_02.jpg/960px-View_near_Painted_Desert_Inn_NHL_02.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/View_near_Painted_Desert_Inn_NHL_02.jpg/1920px-View_near_Painted_Desert_Inn_NHL_02.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:View_near_Painted_Desert_Inn_NHL_02.jpg",
+      "author": "Joe Mabel",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/YCC_hiking_at_Onyx_Bridge._%2898c8885d-a8e9-4c02-b8d7-d80f5ad928ce%29.JPG/960px-YCC_hiking_at_Onyx_Bridge._%2898c8885d-a8e9-4c02-b8d7-d80f5ad928ce%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/YCC_hiking_at_Onyx_Bridge._%2898c8885d-a8e9-4c02-b8d7-d80f5ad928ce%29.JPG/1920px-YCC_hiking_at_Onyx_Bridge._%2898c8885d-a8e9-4c02-b8d7-d80f5ad928ce%29.JPG",
+      "width": 960,
+      "height": 646,
+      "page": "https://commons.wikimedia.org/wiki/File:YCC_hiking_at_Onyx_Bridge._(98c8885d-a8e9-4c02-b8d7-d80f5ad928ce).JPG",
+      "author": "NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/In_the_back_of_Painted_Desert_Inn.jpg/960px-In_the_back_of_Painted_Desert_Inn.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/In_the_back_of_Painted_Desert_Inn.jpg/1920px-In_the_back_of_Painted_Desert_Inn.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:In_the_back_of_Painted_Desert_Inn.jpg",
+      "author": "daveynin",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/View_of_the_Painted_Desert_from_the_Painted_Desert_Inn.jpg/960px-View_of_the_Painted_Desert_from_the_Painted_Desert_Inn.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/View_of_the_Painted_Desert_from_the_Painted_Desert_Inn.jpg/1920px-View_of_the_Painted_Desert_from_the_Painted_Desert_Inn.jpg",
+      "width": 960,
+      "height": 706,
+      "page": "https://commons.wikimedia.org/wiki/File:View_of_the_Painted_Desert_from_the_Painted_Desert_Inn.jpg",
+      "author": "Cullen328",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Bidahochi_Formation_on_rim_of_Black_Forest_basin.jpg/960px-Bidahochi_Formation_on_rim_of_Black_Forest_basin.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Bidahochi_Formation_on_rim_of_Black_Forest_basin.jpg/1920px-Bidahochi_Formation_on_rim_of_Black_Forest_basin.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Bidahochi_Formation_on_rim_of_Black_Forest_basin.jpg",
+      "author": "Kent G. Budge",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "pefo-route-66": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Route_66_car_petrified_forest.jpg/960px-Route_66_car_petrified_forest.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Route_66_car_petrified_forest.jpg/1920px-Route_66_car_petrified_forest.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Route_66_car_petrified_forest.jpg",
+      "author": "Finetooth",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Route_66_Monument_1932_Studebaker.jpg/960px-Route_66_Monument_1932_Studebaker.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Route_66_Monument_1932_Studebaker.jpg/1920px-Route_66_Monument_1932_Studebaker.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Route_66_Monument_1932_Studebaker.jpg",
+      "author": "Laurelle Stoughton",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Route_66-Petrified_Forest_National_Park-Arizona1147.JPG/960px-Route_66-Petrified_Forest_National_Park-Arizona1147.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Route_66-Petrified_Forest_National_Park-Arizona1147.JPG/1920px-Route_66-Petrified_Forest_National_Park-Arizona1147.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Route_66-Petrified_Forest_National_Park-Arizona1147.JPG",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Arriving_of_Historic_Route_66.jpg/960px-Arriving_of_Historic_Route_66.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Arriving_of_Historic_Route_66.jpg/1920px-Arriving_of_Historic_Route_66.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Arriving_of_Historic_Route_66.jpg",
+      "author": "daveynin",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Route_66_bench.jpg/960px-Route_66_bench.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Route_66_bench.jpg/1920px-Route_66_bench.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Route_66_bench.jpg",
+      "author": "daveynin",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Petrified_Forest_National_Park%2C_Arizona%2C_Route_66%2C_USA.jpg/960px-Petrified_Forest_National_Park%2C_Arizona%2C_Route_66%2C_USA.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Petrified_Forest_National_Park%2C_Arizona%2C_Route_66%2C_USA.jpg/1920px-Petrified_Forest_National_Park%2C_Arizona%2C_Route_66%2C_USA.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Petrified_Forest_National_Park,_Arizona,_Route_66,_USA.jpg",
+      "author": "dconvertini",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "pefo-puerco-pueblo": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Puerco_Pueblo_ruins.jpg/960px-Puerco_Pueblo_ruins.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Puerco_Pueblo_ruins.jpg/1920px-Puerco_Pueblo_ruins.jpg",
+      "width": 960,
+      "height": 629,
+      "page": "https://commons.wikimedia.org/wiki/File:Puerco_Pueblo_ruins.jpg",
+      "author": "Finetooth",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Puerco_Pueblo_Petroglyphs_PFNP.jpg/960px-Puerco_Pueblo_Petroglyphs_PFNP.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Puerco_Pueblo_Petroglyphs_PFNP.jpg/1920px-Puerco_Pueblo_Petroglyphs_PFNP.jpg",
+      "width": 960,
+      "height": 459,
+      "page": "https://commons.wikimedia.org/wiki/File:Puerco_Pueblo_Petroglyphs_PFNP.jpg",
+      "author": "John Fowler from Placitas, NM, USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Puerco_Pueblo_ruin%2C_Petrified_Forest_National_Park.jpg/960px-Puerco_Pueblo_ruin%2C_Petrified_Forest_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Puerco_Pueblo_ruin%2C_Petrified_Forest_National_Park.jpg/1920px-Puerco_Pueblo_ruin%2C_Petrified_Forest_National_Park.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Puerco_Pueblo_ruin,_Petrified_Forest_National_Park.jpg",
+      "author": "MPSharwood",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Puerco_Pueblo_petroglyphs%2C_Petrified_Forest_National_Park.jpg/960px-Puerco_Pueblo_petroglyphs%2C_Petrified_Forest_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Puerco_Pueblo_petroglyphs%2C_Petrified_Forest_National_Park.jpg/1920px-Puerco_Pueblo_petroglyphs%2C_Petrified_Forest_National_Park.jpg",
+      "width": 960,
+      "height": 614,
+      "page": "https://commons.wikimedia.org/wiki/File:Puerco_Pueblo_petroglyphs,_Petrified_Forest_National_Park.jpg",
+      "author": "MPSharwood",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Puerco_Pueblo_kiva%2C_Petrified_Forest_National_Park.jpg/960px-Puerco_Pueblo_kiva%2C_Petrified_Forest_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Puerco_Pueblo_kiva%2C_Petrified_Forest_National_Park.jpg/1920px-Puerco_Pueblo_kiva%2C_Petrified_Forest_National_Park.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Puerco_Pueblo_kiva,_Petrified_Forest_National_Park.jpg",
+      "author": "Porterhse",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Puerco_Pueblo_%285513970137%29.jpg/960px-Puerco_Pueblo_%285513970137%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Puerco_Pueblo_%285513970137%29.jpg/1920px-Puerco_Pueblo_%285513970137%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Puerco_Pueblo_(5513970137).jpg",
+      "author": "Todd Van Hoosear",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "pefo-newspaper-rock": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Newspaper_Rock%2C_Petrified_Forest_NP_03.jpg/960px-Newspaper_Rock%2C_Petrified_Forest_NP_03.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Newspaper_Rock%2C_Petrified_Forest_NP_03.jpg/1920px-Newspaper_Rock%2C_Petrified_Forest_NP_03.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Newspaper_Rock,_Petrified_Forest_NP_03.jpg",
+      "author": "ProhibitionRecords",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Newspaper_Rock_Petrified_Forest_National_Park_3.JPG/960px-Newspaper_Rock_Petrified_Forest_National_Park_3.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Newspaper_Rock_Petrified_Forest_National_Park_3.JPG/1920px-Newspaper_Rock_Petrified_Forest_National_Park_3.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Newspaper_Rock_Petrified_Forest_National_Park_3.JPG",
+      "author": "TheCatalyst31",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Newspaper_Rock_Petrified_Forest_National_Park_1.JPG/960px-Newspaper_Rock_Petrified_Forest_National_Park_1.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Newspaper_Rock_Petrified_Forest_National_Park_1.JPG/1920px-Newspaper_Rock_Petrified_Forest_National_Park_1.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Newspaper_Rock_Petrified_Forest_National_Park_1.JPG",
+      "author": "TheCatalyst31",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Newspaper_Rock%2C_Petrified_Forest%2C_AZ.jpg/960px-Newspaper_Rock%2C_Petrified_Forest%2C_AZ.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Newspaper_Rock%2C_Petrified_Forest%2C_AZ.jpg/1920px-Newspaper_Rock%2C_Petrified_Forest%2C_AZ.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Newspaper_Rock,_Petrified_Forest,_AZ.jpg",
+      "author": "Potok71",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Newspaper_Rock_at_sunset%2C_Petrified_Forest%2C_AZ.jpg/960px-Newspaper_Rock_at_sunset%2C_Petrified_Forest%2C_AZ.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Newspaper_Rock_at_sunset%2C_Petrified_Forest%2C_AZ.jpg/1920px-Newspaper_Rock_at_sunset%2C_Petrified_Forest%2C_AZ.jpg",
+      "width": 960,
+      "height": 650,
+      "page": "https://commons.wikimedia.org/wiki/File:Newspaper_Rock_at_sunset,_Petrified_Forest,_AZ.jpg",
+      "author": "Potok71",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Newspaper_Rock%2C_Petrified_Forest_NP_02.jpg/960px-Newspaper_Rock%2C_Petrified_Forest_NP_02.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Newspaper_Rock%2C_Petrified_Forest_NP_02.jpg/1920px-Newspaper_Rock%2C_Petrified_Forest_NP_02.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Newspaper_Rock,_Petrified_Forest_NP_02.jpg",
+      "author": "ProhibitionRecords",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "pefo-tepees": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Petrified_Forest_National_Park%2C_Arizona%2C_The_Tepees%2C_USA_-_54343690796.jpg/960px-Petrified_Forest_National_Park%2C_Arizona%2C_The_Tepees%2C_USA_-_54343690796.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Petrified_Forest_National_Park%2C_Arizona%2C_The_Tepees%2C_USA_-_54343690796.jpg/1920px-Petrified_Forest_National_Park%2C_Arizona%2C_The_Tepees%2C_USA_-_54343690796.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Petrified_Forest_National_Park,_Arizona,_The_Tepees,_USA_-_54343690796.jpg",
+      "author": "dconvertini",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/The_PEFO_Tepees.jpg/960px-The_PEFO_Tepees.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/The_PEFO_Tepees.jpg/1920px-The_PEFO_Tepees.jpg",
+      "width": 960,
+      "height": 568,
+      "page": "https://commons.wikimedia.org/wiki/File:The_PEFO_Tepees.jpg",
+      "author": "Finetooth",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/The_Tepees-Petrified_Forest_National_Park_-_panoramio.jpg/960px-The_Tepees-Petrified_Forest_National_Park_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/The_Tepees-Petrified_Forest_National_Park_-_panoramio.jpg/1920px-The_Tepees-Petrified_Forest_National_Park_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:The_Tepees-Petrified_Forest_National_Park_-_panoramio.jpg",
+      "author": "hakkun",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/The_Tepees_%2813974238418%29.jpg/960px-The_Tepees_%2813974238418%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/The_Tepees_%2813974238418%29.jpg/1920px-The_Tepees_%2813974238418%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:The_Tepees_(13974238418).jpg",
+      "author": "rob Stoeltje from loenen, netherlands",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/The_Tepees_%2838570110921%29.jpg/960px-The_Tepees_%2838570110921%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/The_Tepees_%2838570110921%29.jpg/1920px-The_Tepees_%2838570110921%29.jpg",
+      "width": 960,
+      "height": 444,
+      "page": "https://commons.wikimedia.org/wiki/File:The_Tepees_(38570110921).jpg",
+      "author": "ksblack99",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/The_Tepees_%2837681839375%29.jpg/960px-The_Tepees_%2837681839375%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/The_Tepees_%2837681839375%29.jpg/1920px-The_Tepees_%2837681839375%29.jpg",
+      "width": 960,
+      "height": 513,
+      "page": "https://commons.wikimedia.org/wiki/File:The_Tepees_(37681839375).jpg",
+      "author": "ksblack99",
+      "license": "Public domain"
+    }
+  ],
+  "pefo-blue-mesa": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Petrified_Forest_National_Park%2C_Blue_Mesa%2C_Arizona%2C_USA.jpg/960px-Petrified_Forest_National_Park%2C_Blue_Mesa%2C_Arizona%2C_USA.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Petrified_Forest_National_Park%2C_Blue_Mesa%2C_Arizona%2C_USA.jpg/1920px-Petrified_Forest_National_Park%2C_Blue_Mesa%2C_Arizona%2C_USA.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Petrified_Forest_National_Park,_Blue_Mesa,_Arizona,_USA.jpg",
+      "author": "dconvertini",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Blue_Mesa-Petrified_Forest_National_Park-Arizona1244.JPG/960px-Blue_Mesa-Petrified_Forest_National_Park-Arizona1244.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Blue_Mesa-Petrified_Forest_National_Park-Arizona1244.JPG/1920px-Blue_Mesa-Petrified_Forest_National_Park-Arizona1244.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Blue_Mesa-Petrified_Forest_National_Park-Arizona1244.JPG",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Blue_Mesa_Painted_Desert.jpg/960px-Blue_Mesa_Painted_Desert.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Blue_Mesa_Painted_Desert.jpg/1920px-Blue_Mesa_Painted_Desert.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Blue_Mesa_Painted_Desert.jpg",
+      "author": "Adbar",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Blue_Mesa%2C_Painted_Desert%2C_Petrified_Forest_National_Park%2C_Arizona.jpg/960px-Blue_Mesa%2C_Painted_Desert%2C_Petrified_Forest_National_Park%2C_Arizona.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Blue_Mesa%2C_Painted_Desert%2C_Petrified_Forest_National_Park%2C_Arizona.jpg/1920px-Blue_Mesa%2C_Painted_Desert%2C_Petrified_Forest_National_Park%2C_Arizona.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Blue_Mesa,_Painted_Desert,_Petrified_Forest_National_Park,_Arizona.jpg",
+      "author": "VALOHAZ",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Petrified_Forest_National_Park%2C_Blue_Mesa%2C_Arizona%2C_USA_-_54346244153.jpg/960px-Petrified_Forest_National_Park%2C_Blue_Mesa%2C_Arizona%2C_USA_-_54346244153.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Petrified_Forest_National_Park%2C_Blue_Mesa%2C_Arizona%2C_USA_-_54346244153.jpg/1920px-Petrified_Forest_National_Park%2C_Blue_Mesa%2C_Arizona%2C_USA_-_54346244153.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Petrified_Forest_National_Park,_Blue_Mesa,_Arizona,_USA_-_54346244153.jpg",
+      "author": "dconvertini",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Blue_Mesa_badlands_%2815701149093%29.jpg/960px-Blue_Mesa_badlands_%2815701149093%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Blue_Mesa_badlands_%2815701149093%29.jpg/1920px-Blue_Mesa_badlands_%2815701149093%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Blue_Mesa_badlands_(15701149093).jpg",
+      "author": "Akos Kokai",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "pefo-agate-bridge": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Agate_Bridge.jpg/960px-Agate_Bridge.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Agate_Bridge.jpg/1920px-Agate_Bridge.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Agate_Bridge.jpg",
+      "author": "Eric Kilby",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/View_of_Agate_Bridge.jpg/960px-View_of_Agate_Bridge.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/View_of_Agate_Bridge.jpg/1920px-View_of_Agate_Bridge.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:View_of_Agate_Bridge.jpg",
+      "author": "daveynin",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Agate_Bridge-_Water_Under_Bridge.jpg/960px-Agate_Bridge-_Water_Under_Bridge.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Agate_Bridge-_Water_Under_Bridge.jpg/1920px-Agate_Bridge-_Water_Under_Bridge.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Agate_Bridge-_Water_Under_Bridge.jpg",
+      "author": "daveynin",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Agate_Bridge_in_Petrified_Forest_NP.jpg/960px-Agate_Bridge_in_Petrified_Forest_NP.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Agate_Bridge_in_Petrified_Forest_NP.jpg/1920px-Agate_Bridge_in_Petrified_Forest_NP.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Agate_Bridge_in_Petrified_Forest_NP.jpg",
+      "author": "“Jon Zander (Digon3)”",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Agate_bridge_at_the_petried_forest_natural_park.jpg/960px-Agate_bridge_at_the_petried_forest_natural_park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Agate_bridge_at_the_petried_forest_natural_park.jpg/1280px-Agate_bridge_at_the_petried_forest_natural_park.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Agate_bridge_at_the_petried_forest_natural_park.jpg",
+      "author": "Jon Sullivan",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Agate_Bridge-Petrified_Forest_National_Park_-_panoramio.jpg/960px-Agate_Bridge-Petrified_Forest_National_Park_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Agate_Bridge-Petrified_Forest_National_Park_-_panoramio.jpg/1920px-Agate_Bridge-Petrified_Forest_National_Park_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Agate_Bridge-Petrified_Forest_National_Park_-_panoramio.jpg",
+      "author": "hakkun",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "pefo-jasper-forest": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Jasper_Forest-_Petrified_Forest_National_Park_%2814736525130%29.jpg/960px-Jasper_Forest-_Petrified_Forest_National_Park_%2814736525130%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Jasper_Forest-_Petrified_Forest_National_Park_%2814736525130%29.jpg/1920px-Jasper_Forest-_Petrified_Forest_National_Park_%2814736525130%29.jpg",
+      "width": 960,
+      "height": 427,
+      "page": "https://commons.wikimedia.org/wiki/File:Jasper_Forest-_Petrified_Forest_National_Park_(14736525130).jpg",
+      "author": "Andrew Kearns from Mill Valley, United States",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Jasper_Forest_%2814736821750%29.jpg/960px-Jasper_Forest_%2814736821750%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Jasper_Forest_%2814736821750%29.jpg/1920px-Jasper_Forest_%2814736821750%29.jpg",
+      "width": 960,
+      "height": 444,
+      "page": "https://commons.wikimedia.org/wiki/File:Jasper_Forest_(14736821750).jpg",
+      "author": "Andrew Kearns from Mill Valley, United States",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Petrified_Forest_National_Park_32_-_Jasper_Forest.jpg/960px-Petrified_Forest_National_Park_32_-_Jasper_Forest.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Petrified_Forest_National_Park_32_-_Jasper_Forest.jpg/1920px-Petrified_Forest_National_Park_32_-_Jasper_Forest.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Petrified_Forest_National_Park_32_-_Jasper_Forest.jpg",
+      "author": "Joe Mabel",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Petrified_Forest_National_Park_33_-_Jasper_Forest.jpg/960px-Petrified_Forest_National_Park_33_-_Jasper_Forest.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Petrified_Forest_National_Park_33_-_Jasper_Forest.jpg/1920px-Petrified_Forest_National_Park_33_-_Jasper_Forest.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Petrified_Forest_National_Park_33_-_Jasper_Forest.jpg",
+      "author": "Joe Mabel",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Jasper_Forest_at_Petrified_Forest_NP_in_AZ_16.jpg/960px-Jasper_Forest_at_Petrified_Forest_NP_in_AZ_16.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Jasper_Forest_at_Petrified_Forest_NP_in_AZ_16.jpg/1920px-Jasper_Forest_at_Petrified_Forest_NP_in_AZ_16.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Jasper_Forest_at_Petrified_Forest_NP_in_AZ_16.jpg",
+      "author": "Jeffhollett",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Jasper_Forest_at_Petrified_Forest_NP_in_AZ_15.jpg/960px-Jasper_Forest_at_Petrified_Forest_NP_in_AZ_15.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Jasper_Forest_at_Petrified_Forest_NP_in_AZ_15.jpg/1920px-Jasper_Forest_at_Petrified_Forest_NP_in_AZ_15.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Jasper_Forest_at_Petrified_Forest_NP_in_AZ_15.jpg",
+      "author": "Jeffhollett",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "pefo-crystal-forest": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Petrified_Forest_National_Park%2C_Arizona%2C_USA%2C_2024_18.jpg/960px-Petrified_Forest_National_Park%2C_Arizona%2C_USA%2C_2024_18.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Petrified_Forest_National_Park%2C_Arizona%2C_USA%2C_2024_18.jpg/1920px-Petrified_Forest_National_Park%2C_Arizona%2C_USA%2C_2024_18.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Petrified_Forest_National_Park,_Arizona,_USA,_2024_18.jpg",
+      "author": "dconvertini",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/The_Crystal_Forest-Petrified_Forest_National_Park-Arizona1250.JPG/960px-The_Crystal_Forest-Petrified_Forest_National_Park-Arizona1250.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/The_Crystal_Forest-Petrified_Forest_National_Park-Arizona1250.JPG/1920px-The_Crystal_Forest-Petrified_Forest_National_Park-Arizona1250.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:The_Crystal_Forest-Petrified_Forest_National_Park-Arizona1250.JPG",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/The_Crystal_Forest-Petrified_Forest_National_Park-Arizona1252.JPG/960px-The_Crystal_Forest-Petrified_Forest_National_Park-Arizona1252.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/The_Crystal_Forest-Petrified_Forest_National_Park-Arizona1252.JPG/1920px-The_Crystal_Forest-Petrified_Forest_National_Park-Arizona1252.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:The_Crystal_Forest-Petrified_Forest_National_Park-Arizona1252.JPG",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Petrified_Forest_National_Park_-_Crystal_Forest_-_Petrified_wood_closeup.jpg/960px-Petrified_Forest_National_Park_-_Crystal_Forest_-_Petrified_wood_closeup.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Petrified_Forest_National_Park_-_Crystal_Forest_-_Petrified_wood_closeup.jpg/1920px-Petrified_Forest_National_Park_-_Crystal_Forest_-_Petrified_wood_closeup.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Petrified_Forest_National_Park_-_Crystal_Forest_-_Petrified_wood_closeup.jpg",
+      "author": "Pciet",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Line_of_petrified_log_across_Crystal_Forest_trail.jpg/960px-Line_of_petrified_log_across_Crystal_Forest_trail.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Line_of_petrified_log_across_Crystal_Forest_trail.jpg/1920px-Line_of_petrified_log_across_Crystal_Forest_trail.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Line_of_petrified_log_across_Crystal_Forest_trail.jpg",
+      "author": "daveynin",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Crystal_Forest_Trail_Wide_View.jpg/960px-Crystal_Forest_Trail_Wide_View.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Crystal_Forest_Trail_Wide_View.jpg/1920px-Crystal_Forest_Trail_Wide_View.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Crystal_Forest_Trail_Wide_View.jpg",
+      "author": "Eric Kilby",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "pefo-rainbow-forest-museum": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Colorful_mineral_stone_of_Giant_Logs.jpg/960px-Colorful_mineral_stone_of_Giant_Logs.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Colorful_mineral_stone_of_Giant_Logs.jpg/1920px-Colorful_mineral_stone_of_Giant_Logs.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Colorful_mineral_stone_of_Giant_Logs.jpg",
+      "author": "daveynin",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Petrified_Forest_National_Park-Rainbow_Forest_Museum.jpg/960px-Petrified_Forest_National_Park-Rainbow_Forest_Museum.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Petrified_Forest_National_Park-Rainbow_Forest_Museum.jpg/1920px-Petrified_Forest_National_Park-Rainbow_Forest_Museum.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Petrified_Forest_National_Park-Rainbow_Forest_Museum.jpg",
+      "author": "Marine 69-71",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Petrified_Forest_National_Park-Rainbow_Forest_Museum-1.jpg/960px-Petrified_Forest_National_Park-Rainbow_Forest_Museum-1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Petrified_Forest_National_Park-Rainbow_Forest_Museum-1.jpg/1920px-Petrified_Forest_National_Park-Rainbow_Forest_Museum-1.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Petrified_Forest_National_Park-Rainbow_Forest_Museum-1.jpg",
+      "author": "Marine 69-71",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Petrified_Forest_National_Park_45_-_Rainbow_Forest_Museum.jpg/960px-Petrified_Forest_National_Park_45_-_Rainbow_Forest_Museum.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Petrified_Forest_National_Park_45_-_Rainbow_Forest_Museum.jpg/1920px-Petrified_Forest_National_Park_45_-_Rainbow_Forest_Museum.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Petrified_Forest_National_Park_45_-_Rainbow_Forest_Museum.jpg",
+      "author": "Joe Mabel",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Rainbow_Forest_Museum_at_the_Petrified_Forest_National_Park_-_panoramio.jpg/960px-Rainbow_Forest_Museum_at_the_Petrified_Forest_National_Park_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Rainbow_Forest_Museum_at_the_Petrified_Forest_National_Park_-_panoramio.jpg/1920px-Rainbow_Forest_Museum_at_the_Petrified_Forest_National_Park_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Rainbow_Forest_Museum_at_the_Petrified_Forest_National_Park_-_panoramio.jpg",
+      "author": "hakkun",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Marlena_on_Giant_Logs_Trail.jpg/960px-Marlena_on_Giant_Logs_Trail.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Marlena_on_Giant_Logs_Trail.jpg/1920px-Marlena_on_Giant_Logs_Trail.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Marlena_on_Giant_Logs_Trail.jpg",
+      "author": "daveynin",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "pefo-long-logs-agate-house": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Beautiful_Building_Blocks_-_Agate_House_-_Petrified_Forest_National_Park%2C_Arizona.jpg/960px-Beautiful_Building_Blocks_-_Agate_House_-_Petrified_Forest_National_Park%2C_Arizona.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Beautiful_Building_Blocks_-_Agate_House_-_Petrified_Forest_National_Park%2C_Arizona.jpg/1920px-Beautiful_Building_Blocks_-_Agate_House_-_Petrified_Forest_National_Park%2C_Arizona.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Beautiful_Building_Blocks_-_Agate_House_-_Petrified_Forest_National_Park,_Arizona.jpg",
+      "author": "daveynin",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Long_Logs_-_Petrified_Forest_National_Park._AZ_%2823823982140%29.jpg/960px-Long_Logs_-_Petrified_Forest_National_Park._AZ_%2823823982140%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Long_Logs_-_Petrified_Forest_National_Park._AZ_%2823823982140%29.jpg/1920px-Long_Logs_-_Petrified_Forest_National_Park._AZ_%2823823982140%29.jpg",
+      "width": 960,
+      "height": 518,
+      "page": "https://commons.wikimedia.org/wiki/File:Long_Logs_-_Petrified_Forest_National_Park._AZ_(23823982140).jpg",
+      "author": "Andrew Kearns from Mill Valley, United States",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Abandoned_road_on_Long_Logs_Trail%2C_Petrified_Forest_National_Park.jpg/960px-Abandoned_road_on_Long_Logs_Trail%2C_Petrified_Forest_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Abandoned_road_on_Long_Logs_Trail%2C_Petrified_Forest_National_Park.jpg/1920px-Abandoned_road_on_Long_Logs_Trail%2C_Petrified_Forest_National_Park.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Abandoned_road_on_Long_Logs_Trail,_Petrified_Forest_National_Park.jpg",
+      "author": "Mxn",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Petrified_Forest_National_Park-Agate_House-900.jpg/960px-Petrified_Forest_National_Park-Agate_House-900.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Petrified_Forest_National_Park-Agate_House-900.jpg/1920px-Petrified_Forest_National_Park-Agate_House-900.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Petrified_Forest_National_Park-Agate_House-900.jpg",
+      "author": "Marine 69-71",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Petrified_Forest_National_Park-Agate_House-900-2.jpg/960px-Petrified_Forest_National_Park-Agate_House-900-2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Petrified_Forest_National_Park-Agate_House-900-2.jpg/1920px-Petrified_Forest_National_Park-Agate_House-900-2.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Petrified_Forest_National_Park-Agate_House-900-2.jpg",
+      "author": "Marine 69-71",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/The_trail_heads_to_Agate_House.jpg/960px-The_trail_heads_to_Agate_House.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/The_trail_heads_to_Agate_House.jpg/1920px-The_trail_heads_to_Agate_House.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:The_trail_heads_to_Agate_House.jpg",
+      "author": "daveynin",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "grsa-visitor-center": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Great_Sand_Dunes_National_Park_and_Preserve_Visitor_Center.JPG/960px-Great_Sand_Dunes_National_Park_and_Preserve_Visitor_Center.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Great_Sand_Dunes_National_Park_and_Preserve_Visitor_Center.JPG/1920px-Great_Sand_Dunes_National_Park_and_Preserve_Visitor_Center.JPG",
+      "width": 960,
+      "height": 529,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Sand_Dunes_National_Park_and_Preserve_Visitor_Center.JPG",
+      "author": "Jeffrey Beall",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/United_States_Flag_over_Great_Sand_Dunes_Visitor_Center_%2834926751790%29.jpg/960px-United_States_Flag_over_Great_Sand_Dunes_Visitor_Center_%2834926751790%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/United_States_Flag_over_Great_Sand_Dunes_Visitor_Center_%2834926751790%29.jpg/1920px-United_States_Flag_over_Great_Sand_Dunes_Visitor_Center_%2834926751790%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:United_States_Flag_over_Great_Sand_Dunes_Visitor_Center_(34926751790).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Great_Sand_Dunes_National_Park_and_Preserve_Visitor_Center_2.JPG/960px-Great_Sand_Dunes_National_Park_and_Preserve_Visitor_Center_2.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Great_Sand_Dunes_National_Park_and_Preserve_Visitor_Center_2.JPG/1920px-Great_Sand_Dunes_National_Park_and_Preserve_Visitor_Center_2.JPG",
+      "width": 960,
+      "height": 491,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Sand_Dunes_National_Park_and_Preserve_Visitor_Center_2.JPG",
+      "author": "Jeffrey Beall",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Great_Sand_Dunes_-_panoramio_%281%29.jpg/960px-Great_Sand_Dunes_-_panoramio_%281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Great_Sand_Dunes_-_panoramio_%281%29.jpg/1920px-Great_Sand_Dunes_-_panoramio_%281%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Sand_Dunes_-_panoramio_(1).jpg",
+      "author": "Thomson M",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Great_Sand_Dunes_National_Monument.jpg/960px-Great_Sand_Dunes_National_Monument.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Great_Sand_Dunes_National_Monument.jpg/1920px-Great_Sand_Dunes_National_Monument.jpg",
+      "width": 960,
+      "height": 453,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Sand_Dunes_National_Monument.jpg",
+      "author": "dwhartwig",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Great_Sand_Dunes_National_Monument_-_51198109647.jpg/960px-Great_Sand_Dunes_National_Monument_-_51198109647.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Great_Sand_Dunes_National_Monument_-_51198109647.jpg/1920px-Great_Sand_Dunes_National_Monument_-_51198109647.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Sand_Dunes_National_Monument_-_51198109647.jpg",
+      "author": "dwhartwig",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "grsa-dunefield": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Couple_Walking_at_Base_of_Dunes_%2823088833242%29.jpg/960px-Couple_Walking_at_Base_of_Dunes_%2823088833242%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Couple_Walking_at_Base_of_Dunes_%2823088833242%29.jpg/1920px-Couple_Walking_at_Base_of_Dunes_%2823088833242%29.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Couple_Walking_at_Base_of_Dunes_(23088833242).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Hikers_on_Dune%2C_Panorama_of_Dunefield_%2822727377059%29.jpg/960px-Hikers_on_Dune%2C_Panorama_of_Dunefield_%2822727377059%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Hikers_on_Dune%2C_Panorama_of_Dunefield_%2822727377059%29.jpg/1920px-Hikers_on_Dune%2C_Panorama_of_Dunefield_%2822727377059%29.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Hikers_on_Dune,_Panorama_of_Dunefield_(22727377059).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/2016.10.24_Great_Sand_Dunes_NP%2C_CO_%2829%29.jpg/960px-2016.10.24_Great_Sand_Dunes_NP%2C_CO_%2829%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/2016.10.24_Great_Sand_Dunes_NP%2C_CO_%2829%29.jpg/1920px-2016.10.24_Great_Sand_Dunes_NP%2C_CO_%2829%29.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:2016.10.24_Great_Sand_Dunes_NP,_CO_(29).jpg",
+      "author": "NealVickers",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/2016.10.24_Great_Sand_Dunes_NP%2C_CO_%2863%29.jpg/960px-2016.10.24_Great_Sand_Dunes_NP%2C_CO_%2863%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/2016.10.24_Great_Sand_Dunes_NP%2C_CO_%2863%29.jpg/1920px-2016.10.24_Great_Sand_Dunes_NP%2C_CO_%2863%29.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:2016.10.24_Great_Sand_Dunes_NP,_CO_(63).jpg",
+      "author": "NealVickers",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Great_Sand_Dunes_2016.jpg/960px-Great_Sand_Dunes_2016.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Great_Sand_Dunes_2016.jpg/1920px-Great_Sand_Dunes_2016.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Sand_Dunes_2016.jpg",
+      "author": "Ramendoctor",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Great_Sand_Dunes_National_Park_and_Preserve_GRSA3211.jpg/960px-Great_Sand_Dunes_National_Park_and_Preserve_GRSA3211.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Great_Sand_Dunes_National_Park_and_Preserve_GRSA3211.jpg/1920px-Great_Sand_Dunes_National_Park_and_Preserve_GRSA3211.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Sand_Dunes_National_Park_and_Preserve_GRSA3211.jpg",
+      "author": "National Park Service Digital Image Archives",
+      "license": "Public domain"
+    }
+  ],
+  "grsa-medano-creek": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Surge_Flow_in_Medano_Creek_%2851876816519%29.jpg/960px-Surge_Flow_in_Medano_Creek_%2851876816519%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Surge_Flow_in_Medano_Creek_%2851876816519%29.jpg/1920px-Surge_Flow_in_Medano_Creek_%2851876816519%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Surge_Flow_in_Medano_Creek_(51876816519).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Springtime_Cottonwoods%2C_Dunes%2C_and_Medano_Creek_%2826644863944%29.jpg/960px-Springtime_Cottonwoods%2C_Dunes%2C_and_Medano_Creek_%2826644863944%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Springtime_Cottonwoods%2C_Dunes%2C_and_Medano_Creek_%2826644863944%29.jpg/1920px-Springtime_Cottonwoods%2C_Dunes%2C_and_Medano_Creek_%2826644863944%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Springtime_Cottonwoods,_Dunes,_and_Medano_Creek_(26644863944).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Medano_Creek_2016-07-12_821.jpg/960px-Medano_Creek_2016-07-12_821.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Medano_Creek_2016-07-12_821.jpg/1920px-Medano_Creek_2016-07-12_821.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Medano_Creek_2016-07-12_821.jpg",
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Medano_Creek_2016-07-12_824.jpg/960px-Medano_Creek_2016-07-12_824.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Medano_Creek_2016-07-12_824.jpg/1920px-Medano_Creek_2016-07-12_824.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Medano_Creek_2016-07-12_824.jpg",
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Great_Sand_Dunes_National_Park_-_Medano_Creek%2C_dunes_and_Sangre_de_Cristo_Mountains.jpg/960px-Great_Sand_Dunes_National_Park_-_Medano_Creek%2C_dunes_and_Sangre_de_Cristo_Mountains.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Great_Sand_Dunes_National_Park_-_Medano_Creek%2C_dunes_and_Sangre_de_Cristo_Mountains.jpg/1920px-Great_Sand_Dunes_National_Park_-_Medano_Creek%2C_dunes_and_Sangre_de_Cristo_Mountains.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Sand_Dunes_National_Park_-_Medano_Creek,_dunes_and_Sangre_de_Cristo_Mountains.jpg",
+      "author": "Pimlico27",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Medano_Creek_at_the_Great_Sand_Dunes_National_Park_and_Preserve_in_Colorado_%2848257161496%29.jpg/960px-Medano_Creek_at_the_Great_Sand_Dunes_National_Park_and_Preserve_in_Colorado_%2848257161496%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Medano_Creek_at_the_Great_Sand_Dunes_National_Park_and_Preserve_in_Colorado_%2848257161496%29.jpg/1920px-Medano_Creek_at_the_Great_Sand_Dunes_National_Park_and_Preserve_in_Colorado_%2848257161496%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Medano_Creek_at_the_Great_Sand_Dunes_National_Park_and_Preserve_in_Colorado_(48257161496).jpg",
+      "author": "PEO ACWA",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "grsa-high-dune": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Panorama_of_the_Dunefield_%2852536947906%29.jpg/960px-Panorama_of_the_Dunefield_%2852536947906%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Panorama_of_the_Dunefield_%2852536947906%29.jpg/1920px-Panorama_of_the_Dunefield_%2852536947906%29.jpg",
+      "width": 960,
+      "height": 365,
+      "page": "https://commons.wikimedia.org/wiki/File:Panorama_of_the_Dunefield_(52536947906).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Panoramic_View_from_High_Dune_on_First_Ridge_%2828624880026%29.jpg/960px-Panoramic_View_from_High_Dune_on_First_Ridge_%2828624880026%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Panoramic_View_from_High_Dune_on_First_Ridge_%2828624880026%29.jpg/1920px-Panoramic_View_from_High_Dune_on_First_Ridge_%2828624880026%29.jpg",
+      "width": 960,
+      "height": 477,
+      "page": "https://commons.wikimedia.org/wiki/File:Panoramic_View_from_High_Dune_on_First_Ridge_(28624880026).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/North_from_High_Dune_-_panoramio.jpg/960px-North_from_High_Dune_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/North_from_High_Dune_-_panoramio.jpg/1920px-North_from_High_Dune_-_panoramio.jpg",
+      "width": 960,
+      "height": 717,
+      "page": "https://commons.wikimedia.org/wiki/File:North_from_High_Dune_-_panoramio.jpg",
+      "author": "Kevin R Foote",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Climbing_a_high_dune%2C_Great_Sand_Dunes_National_Park%2C_2009.jpg/960px-Climbing_a_high_dune%2C_Great_Sand_Dunes_National_Park%2C_2009.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Climbing_a_high_dune%2C_Great_Sand_Dunes_National_Park%2C_2009.jpg/1920px-Climbing_a_high_dune%2C_Great_Sand_Dunes_National_Park%2C_2009.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Climbing_a_high_dune,_Great_Sand_Dunes_National_Park,_2009.jpg",
+      "author": "DimiTalen",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Handstands_on_Sand_Dunes%2C_Colorado.jpg/960px-Handstands_on_Sand_Dunes%2C_Colorado.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Handstands_on_Sand_Dunes%2C_Colorado.jpg/1920px-Handstands_on_Sand_Dunes%2C_Colorado.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Handstands_on_Sand_Dunes,_Colorado.jpg",
+      "author": "Chakarsj",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/2016.10.24_Great_Sand_Dunes_NP%2C_CO_%2867%29.jpg/960px-2016.10.24_Great_Sand_Dunes_NP%2C_CO_%2867%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/2016.10.24_Great_Sand_Dunes_NP%2C_CO_%2867%29.jpg/1920px-2016.10.24_Great_Sand_Dunes_NP%2C_CO_%2867%29.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:2016.10.24_Great_Sand_Dunes_NP,_CO_(67).jpg",
+      "author": "NealVickers",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "grsa-star-dune": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Star_Dune_and_Crestone_Peaks_%2851985120756%29.jpg/960px-Star_Dune_and_Crestone_Peaks_%2851985120756%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Star_Dune_and_Crestone_Peaks_%2851985120756%29.jpg/1920px-Star_Dune_and_Crestone_Peaks_%2851985120756%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Star_Dune_and_Crestone_Peaks_(51985120756).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Fresh_Snow_on_Crestone_Peaks_Above_Star_Dune%2C_August_2016_%2828969914192%29.jpg/960px-Fresh_Snow_on_Crestone_Peaks_Above_Star_Dune%2C_August_2016_%2828969914192%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Fresh_Snow_on_Crestone_Peaks_Above_Star_Dune%2C_August_2016_%2828969914192%29.jpg/1920px-Fresh_Snow_on_Crestone_Peaks_Above_Star_Dune%2C_August_2016_%2828969914192%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Fresh_Snow_on_Crestone_Peaks_Above_Star_Dune,_August_2016_(28969914192).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Great_Sand_Dunes_National_Park_%26_Preserve_%2829941070041%29.jpg/960px-Great_Sand_Dunes_National_Park_%26_Preserve_%2829941070041%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Great_Sand_Dunes_National_Park_%26_Preserve_%2829941070041%29.jpg/1920px-Great_Sand_Dunes_National_Park_%26_Preserve_%2829941070041%29.jpg",
+      "width": 960,
+      "height": 734,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Sand_Dunes_National_Park_%26_Preserve_(29941070041).jpg",
+      "author": "NPS Natural Resources",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Dunes_-_Great_Sand_Dunes_National_Park.jpg/960px-Dunes_-_Great_Sand_Dunes_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Dunes_-_Great_Sand_Dunes_National_Park.jpg/1920px-Dunes_-_Great_Sand_Dunes_National_Park.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Dunes_-_Great_Sand_Dunes_National_Park.jpg",
+      "author": "Andrew Russell",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Great_Sand_Dunes_National_Park_01.jpg/960px-Great_Sand_Dunes_National_Park_01.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Great_Sand_Dunes_National_Park_01.jpg/1920px-Great_Sand_Dunes_National_Park_01.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Sand_Dunes_National_Park_01.jpg",
+      "author": "Niagara66",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Dune_Access_2016-07-12_818.jpg/960px-Dune_Access_2016-07-12_818.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Dune_Access_2016-07-12_818.jpg/1920px-Dune_Access_2016-07-12_818.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Dune_Access_2016-07-12_818.jpg",
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "grsa-sandboarding": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Girl_Sandboarding_%288621892115%29.jpg/960px-Girl_Sandboarding_%288621892115%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Girl_Sandboarding_%288621892115%29.jpg/1920px-Girl_Sandboarding_%288621892115%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Girl_Sandboarding_(8621892115).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Man_Sandboarding_%2825868277651%29.jpg/960px-Man_Sandboarding_%2825868277651%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Man_Sandboarding_%2825868277651%29.jpg/1920px-Man_Sandboarding_%2825868277651%29.jpg",
+      "width": 960,
+      "height": 501,
+      "page": "https://commons.wikimedia.org/wiki/File:Man_Sandboarding_(25868277651).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Great_Sand_Dunes_National_Park_03.jpg/960px-Great_Sand_Dunes_National_Park_03.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Great_Sand_Dunes_National_Park_03.jpg/1920px-Great_Sand_Dunes_National_Park_03.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Sand_Dunes_National_Park_03.jpg",
+      "author": "Niagara66",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Great_Sand_Dunes_National_Park_04.jpg/960px-Great_Sand_Dunes_National_Park_04.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Great_Sand_Dunes_National_Park_04.jpg/1920px-Great_Sand_Dunes_National_Park_04.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Sand_Dunes_National_Park_04.jpg",
+      "author": "Niagara66",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Colorado_Great_Sand_Dunes_National_Park.jpg/960px-Colorado_Great_Sand_Dunes_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Colorado_Great_Sand_Dunes_National_Park.jpg/1920px-Colorado_Great_Sand_Dunes_National_Park.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Colorado_Great_Sand_Dunes_National_Park.jpg",
+      "author": "Mshuang2",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Great_Sand_Dunes_National_Park_-_with_hikers.jpg/960px-Great_Sand_Dunes_National_Park_-_with_hikers.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Great_Sand_Dunes_National_Park_-_with_hikers.jpg/1920px-Great_Sand_Dunes_National_Park_-_with_hikers.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Sand_Dunes_National_Park_-_with_hikers.jpg",
+      "author": "Lovemedead",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "grsa-night-sky": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Milky_Way_over_a_Dune_Ridge_%2853908885943%29.jpg/960px-Milky_Way_over_a_Dune_Ridge_%2853908885943%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Milky_Way_over_a_Dune_Ridge_%2853908885943%29.jpg/1920px-Milky_Way_over_a_Dune_Ridge_%2853908885943%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Milky_Way_over_a_Dune_Ridge_(53908885943).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Night_Sky_Above_Dunes_and_Cleveland_Peak_%2826507963410%29.jpg/960px-Night_Sky_Above_Dunes_and_Cleveland_Peak_%2826507963410%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Night_Sky_Above_Dunes_and_Cleveland_Peak_%2826507963410%29.jpg/1920px-Night_Sky_Above_Dunes_and_Cleveland_Peak_%2826507963410%29.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Night_Sky_Above_Dunes_and_Cleveland_Peak_(26507963410).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Milky_Way_over_dunes_in_Great_Sand_Dunes_National_Park%2C_Colorado%2C_United_States.jpg/960px-Milky_Way_over_dunes_in_Great_Sand_Dunes_National_Park%2C_Colorado%2C_United_States.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Milky_Way_over_dunes_in_Great_Sand_Dunes_National_Park%2C_Colorado%2C_United_States.jpg/1920px-Milky_Way_over_dunes_in_Great_Sand_Dunes_National_Park%2C_Colorado%2C_United_States.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Milky_Way_over_dunes_in_Great_Sand_Dunes_National_Park,_Colorado,_United_States.jpg",
+      "author": "NPS/Patrick Myers",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Cosmic_Nightlight_%283856837472%29.jpg/960px-Cosmic_Nightlight_%283856837472%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Cosmic_Nightlight_%283856837472%29.jpg/1920px-Cosmic_Nightlight_%283856837472%29.jpg",
+      "width": 960,
+      "height": 1442,
+      "page": "https://commons.wikimedia.org/wiki/File:Cosmic_Nightlight_(3856837472).jpg",
+      "author": "Zach Dischner",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Milky_Way_over_Great_Sand_Dunes_National_Park.jpg/960px-Milky_Way_over_Great_Sand_Dunes_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Milky_Way_over_Great_Sand_Dunes_National_Park.jpg/1920px-Milky_Way_over_Great_Sand_Dunes_National_Park.jpg",
+      "width": 960,
+      "height": 1438,
+      "page": "https://commons.wikimedia.org/wiki/File:Milky_Way_over_Great_Sand_Dunes_National_Park.jpg",
+      "author": "Andrew Russell",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "grsa-montville-trail": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Dunes_from_Montville_Trail_%2851830874429%29.jpg/960px-Dunes_from_Montville_Trail_%2851830874429%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Dunes_from_Montville_Trail_%2851830874429%29.jpg/1920px-Dunes_from_Montville_Trail_%2851830874429%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Dunes_from_Montville_Trail_(51830874429).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Snow-Covered_Dunes_and_Mount_Herard_from_Montville_Trail_%2812639991223%29.jpg/960px-Snow-Covered_Dunes_and_Mount_Herard_from_Montville_Trail_%2812639991223%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Snow-Covered_Dunes_and_Mount_Herard_from_Montville_Trail_%2812639991223%29.jpg/1920px-Snow-Covered_Dunes_and_Mount_Herard_from_Montville_Trail_%2812639991223%29.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Snow-Covered_Dunes_and_Mount_Herard_from_Montville_Trail_(12639991223).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Montville_Trail_View_%28237145029%29.jpeg/960px-Montville_Trail_View_%28237145029%29.jpeg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Montville_Trail_View_%28237145029%29.jpeg/1920px-Montville_Trail_View_%28237145029%29.jpeg",
+      "width": 960,
+      "height": 600,
+      "page": "https://commons.wikimedia.org/wiki/File:Montville_Trail_View_(237145029).jpeg",
+      "author": "John Tabor",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Sangre_de_Cristo_mountains_-_panoramio.jpg/960px-Sangre_de_Cristo_mountains_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Sangre_de_Cristo_mountains_-_panoramio.jpg/1920px-Sangre_de_Cristo_mountains_-_panoramio.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Sangre_de_Cristo_mountains_-_panoramio.jpg",
+      "author": "Thomson M",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Great_Sand_Dunes_National_Monument_-_51199883180.jpg/960px-Great_Sand_Dunes_National_Monument_-_51199883180.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Great_Sand_Dunes_National_Monument_-_51199883180.jpg/1920px-Great_Sand_Dunes_National_Monument_-_51199883180.jpg",
+      "width": 960,
+      "height": 494,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Sand_Dunes_National_Monument_-_51199883180.jpg",
+      "author": "dwhartwig",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Great_Sand_Dunes_National_Monument_-_51198823091.jpg/960px-Great_Sand_Dunes_National_Monument_-_51198823091.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Great_Sand_Dunes_National_Monument_-_51198823091.jpg/1920px-Great_Sand_Dunes_National_Monument_-_51198823091.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Sand_Dunes_National_Monument_-_51198823091.jpg",
+      "author": "dwhartwig",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "grsa-mosca-pass-trail": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Mosca_Pass_View_%2854429743625%29.jpg/960px-Mosca_Pass_View_%2854429743625%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Mosca_Pass_View_%2854429743625%29.jpg/1920px-Mosca_Pass_View_%2854429743625%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Mosca_Pass_View_(54429743625).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Golden_Aspens%2C_Mosca_Pass_Trail_%2836725223263%29.jpg/960px-Golden_Aspens%2C_Mosca_Pass_Trail_%2836725223263%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Golden_Aspens%2C_Mosca_Pass_Trail_%2836725223263%29.jpg/1920px-Golden_Aspens%2C_Mosca_Pass_Trail_%2836725223263%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Golden_Aspens,_Mosca_Pass_Trail_(36725223263).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Great_Sand_Dunes_National_Monument_-_51199030443.jpg/960px-Great_Sand_Dunes_National_Monument_-_51199030443.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Great_Sand_Dunes_National_Monument_-_51199030443.jpg/1920px-Great_Sand_Dunes_National_Monument_-_51199030443.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Sand_Dunes_National_Monument_-_51199030443.jpg",
+      "author": "dwhartwig",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Great_Sand_Dunes_National_Monument_-_51199030458.jpg/960px-Great_Sand_Dunes_National_Monument_-_51199030458.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Great_Sand_Dunes_National_Monument_-_51199030458.jpg/1920px-Great_Sand_Dunes_National_Monument_-_51199030458.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Sand_Dunes_National_Monument_-_51199030458.jpg",
+      "author": "dwhartwig",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Great_Sand_Dunes_-_panoramio.jpg/960px-Great_Sand_Dunes_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Great_Sand_Dunes_-_panoramio.jpg/1280px-Great_Sand_Dunes_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Sand_Dunes_-_panoramio.jpg",
+      "author": "Peter K.",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Great_Sand_Dunes_and_Mount_Herard_-_panoramio.jpg/960px-Great_Sand_Dunes_and_Mount_Herard_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Great_Sand_Dunes_and_Mount_Herard_-_panoramio.jpg/1280px-Great_Sand_Dunes_and_Mount_Herard_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Sand_Dunes_and_Mount_Herard_-_panoramio.jpg",
+      "author": "Peter K.",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "grsa-castle-creek": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Point_of_no_return_%2837397174634%29.jpg/960px-Point_of_no_return_%2837397174634%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Point_of_no_return_%2837397174634%29.jpg/1920px-Point_of_no_return_%2837397174634%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Point_of_no_return_(37397174634).jpg",
+      "author": "Christian Collins",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Girl_Sandboarding_Above_Medano_Creek%2C_Castle_Creek_Picnic_Area_%2823076291176%29.jpg/960px-Girl_Sandboarding_Above_Medano_Creek%2C_Castle_Creek_Picnic_Area_%2823076291176%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Girl_Sandboarding_Above_Medano_Creek%2C_Castle_Creek_Picnic_Area_%2823076291176%29.jpg/1920px-Girl_Sandboarding_Above_Medano_Creek%2C_Castle_Creek_Picnic_Area_%2823076291176%29.jpg",
+      "width": 960,
+      "height": 613,
+      "page": "https://commons.wikimedia.org/wiki/File:Girl_Sandboarding_Above_Medano_Creek,_Castle_Creek_Picnic_Area_(23076291176).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Mount_Zwischen_west_aspect.JPG/960px-Mount_Zwischen_west_aspect.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Mount_Zwischen_west_aspect.JPG/1920px-Mount_Zwischen_west_aspect.JPG",
+      "width": 960,
+      "height": 559,
+      "page": "https://commons.wikimedia.org/wiki/File:Mount_Zwischen_west_aspect.JPG",
+      "author": "Jeffrey Beall",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Great_Sand_Dunes_National_Park_August_2021_dune_view.jpg/960px-Great_Sand_Dunes_National_Park_August_2021_dune_view.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Great_Sand_Dunes_National_Park_August_2021_dune_view.jpg/1920px-Great_Sand_Dunes_National_Park_August_2021_dune_view.jpg",
+      "width": 960,
+      "height": 756,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Sand_Dunes_National_Park_August_2021_dune_view.jpg",
+      "author": "Djngsf",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Sunflowers_and_Ripples_%2853183397355%29.jpg/960px-Sunflowers_and_Ripples_%2853183397355%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Sunflowers_and_Ripples_%2853183397355%29.jpg/1920px-Sunflowers_and_Ripples_%2853183397355%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunflowers_and_Ripples_(53183397355).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "Public domain"
+    }
+  ],
+  "grsa-medano-pass-road": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Medano_Pass_Primitive_Road.JPG/960px-Medano_Pass_Primitive_Road.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Medano_Pass_Primitive_Road.JPG/1920px-Medano_Pass_Primitive_Road.JPG",
+      "width": 960,
+      "height": 533,
+      "page": "https://commons.wikimedia.org/wiki/File:Medano_Pass_Primitive_Road.JPG",
+      "author": "Jeffrey Beall",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Lenticular_Cloud_Above_Dunes_and_Medano_Pass_%2830416185870%29.jpg/960px-Lenticular_Cloud_Above_Dunes_and_Medano_Pass_%2830416185870%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Lenticular_Cloud_Above_Dunes_and_Medano_Pass_%2830416185870%29.jpg/1920px-Lenticular_Cloud_Above_Dunes_and_Medano_Pass_%2830416185870%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Lenticular_Cloud_Above_Dunes_and_Medano_Pass_(30416185870).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Fresh_Snow_Above_Dunes_on_Mount_Zwischen_%2828020799508%29.jpg/960px-Fresh_Snow_Above_Dunes_on_Mount_Zwischen_%2828020799508%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Fresh_Snow_Above_Dunes_on_Mount_Zwischen_%2828020799508%29.jpg/1920px-Fresh_Snow_Above_Dunes_on_Mount_Zwischen_%2828020799508%29.jpg",
+      "width": 960,
+      "height": 706,
+      "page": "https://commons.wikimedia.org/wiki/File:Fresh_Snow_Above_Dunes_on_Mount_Zwischen_(28020799508).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Indian_Grove_%28Great_Sand_Dunes_National_Park_and_Preserve%29_3.JPG/960px-Indian_Grove_%28Great_Sand_Dunes_National_Park_and_Preserve%29_3.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Indian_Grove_%28Great_Sand_Dunes_National_Park_and_Preserve%29_3.JPG/1920px-Indian_Grove_%28Great_Sand_Dunes_National_Park_and_Preserve%29_3.JPG",
+      "width": 960,
+      "height": 525,
+      "page": "https://commons.wikimedia.org/wiki/File:Indian_Grove_(Great_Sand_Dunes_National_Park_and_Preserve)_3.JPG",
+      "author": "Jeffrey Beall",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "grsa-zapata-falls": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Zapata_Falls.jpg/960px-Zapata_Falls.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Zapata_Falls.jpg/1920px-Zapata_Falls.jpg",
+      "width": 960,
+      "height": 1438,
+      "page": "https://commons.wikimedia.org/wiki/File:Zapata_Falls.jpg",
+      "author": "Andrew Russell",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/View_of_Dunes_and_Crestone_Peaks_from_Zapata_Falls_%2814984021843%29.jpg/960px-View_of_Dunes_and_Crestone_Peaks_from_Zapata_Falls_%2814984021843%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/View_of_Dunes_and_Crestone_Peaks_from_Zapata_Falls_%2814984021843%29.jpg/1920px-View_of_Dunes_and_Crestone_Peaks_from_Zapata_Falls_%2814984021843%29.jpg",
+      "width": 960,
+      "height": 614,
+      "page": "https://commons.wikimedia.org/wiki/File:View_of_Dunes_and_Crestone_Peaks_from_Zapata_Falls_(14984021843).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Zapata_Falls_in_spring.JPG/960px-Zapata_Falls_in_spring.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Zapata_Falls_in_spring.JPG/1920px-Zapata_Falls_in_spring.JPG",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Zapata_Falls_in_spring.JPG",
+      "author": "Imranchwilder",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Family_hike_at_Zapata_Falls_%2854074075601%29.jpg/960px-Family_hike_at_Zapata_Falls_%2854074075601%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Family_hike_at_Zapata_Falls_%2854074075601%29.jpg/1920px-Family_hike_at_Zapata_Falls_%2854074075601%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Family_hike_at_Zapata_Falls_(54074075601).jpg",
+      "author": "mypubliclands",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Zapata_Falls_I_%28184352739%29.jpeg/960px-Zapata_Falls_I_%28184352739%29.jpeg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Zapata_Falls_I_%28184352739%29.jpeg/1920px-Zapata_Falls_I_%28184352739%29.jpeg",
+      "width": 960,
+      "height": 960,
+      "page": "https://commons.wikimedia.org/wiki/File:Zapata_Falls_I_(184352739).jpeg",
+      "author": "Eric Johnson",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Boy_at_Zapata_Falls_%2812659536554%29.jpg/960px-Boy_at_Zapata_Falls_%2812659536554%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Boy_at_Zapata_Falls_%2812659536554%29.jpg/1920px-Boy_at_Zapata_Falls_%2812659536554%29.jpg",
+      "width": 960,
+      "height": 1434,
+      "page": "https://commons.wikimedia.org/wiki/File:Boy_at_Zapata_Falls_(12659536554).jpg",
+      "author": "Great Sand Dunes National Park and Preserve",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "blca-visitor-center": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Gunnison_Point_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg/960px-Gunnison_Point_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Gunnison_Point_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg/1920px-Gunnison_Point_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Gunnison_Point_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg",
+      "author": "The Dye Clan",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/South_Rim_Visitor_Center_%287960dea7-5b1a-4959-8bcf-f9f64d16a1ba%29.JPG/960px-South_Rim_Visitor_Center_%287960dea7-5b1a-4959-8bcf-f9f64d16a1ba%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/South_Rim_Visitor_Center_%287960dea7-5b1a-4959-8bcf-f9f64d16a1ba%29.JPG/1920px-South_Rim_Visitor_Center_%287960dea7-5b1a-4959-8bcf-f9f64d16a1ba%29.JPG",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:South_Rim_Visitor_Center_(7960dea7-5b1a-4959-8bcf-f9f64d16a1ba).JPG",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Visitor_Center_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg/960px-Visitor_Center_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Visitor_Center_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg/1920px-Visitor_Center_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Visitor_Center_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg",
+      "author": "The Dye Clan",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Canyon-side_view_of_the_Black_Canyon_visitor_center.JPG/960px-Canyon-side_view_of_the_Black_Canyon_visitor_center.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Canyon-side_view_of_the_Black_Canyon_visitor_center.JPG/1920px-Canyon-side_view_of_the_Black_Canyon_visitor_center.JPG",
+      "width": 960,
+      "height": 573,
+      "page": "https://commons.wikimedia.org/wiki/File:Canyon-side_view_of_the_Black_Canyon_visitor_center.JPG",
+      "author": "Jeffrey Beall",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Gunnison_River_%28Black_Canyon_of_the_Gunnison_National_Park%2C_Colorado%2C_USA%29_1_%2819684583350%29.jpg/960px-Gunnison_River_%28Black_Canyon_of_the_Gunnison_National_Park%2C_Colorado%2C_USA%29_1_%2819684583350%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Gunnison_River_%28Black_Canyon_of_the_Gunnison_National_Park%2C_Colorado%2C_USA%29_1_%2819684583350%29.jpg/1920px-Gunnison_River_%28Black_Canyon_of_the_Gunnison_National_Park%2C_Colorado%2C_USA%29_1_%2819684583350%29.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Gunnison_River_(Black_Canyon_of_the_Gunnison_National_Park,_Colorado,_USA)_1_(19684583350).jpg",
+      "author": "James St. John",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Cedar_Point%2C_Black_Canyon_of_the_Gunnison_-_48826251367.jpg/960px-Cedar_Point%2C_Black_Canyon_of_the_Gunnison_-_48826251367.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Cedar_Point%2C_Black_Canyon_of_the_Gunnison_-_48826251367.jpg/1920px-Cedar_Point%2C_Black_Canyon_of_the_Gunnison_-_48826251367.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Cedar_Point,_Black_Canyon_of_the_Gunnison_-_48826251367.jpg",
+      "author": "John Manard",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "blca-tomichi-point": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Black_canyon_gunnison_Colorado.jpg/960px-Black_canyon_gunnison_Colorado.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Black_canyon_gunnison_Colorado.jpg/1920px-Black_canyon_gunnison_Colorado.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Black_canyon_gunnison_Colorado.jpg",
+      "author": "G. Edward Johnson",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Tomichi_Point_%28eb6c9576-b2b0-40b8-9aee-2d348c559372%29.jpg/960px-Tomichi_Point_%28eb6c9576-b2b0-40b8-9aee-2d348c559372%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Tomichi_Point_%28eb6c9576-b2b0-40b8-9aee-2d348c559372%29.jpg/1920px-Tomichi_Point_%28eb6c9576-b2b0-40b8-9aee-2d348c559372%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Tomichi_Point_(eb6c9576-b2b0-40b8-9aee-2d348c559372).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/A_haze_fills_the_meandering_canyon_walls_as_sunset_approaches._%28b2722ba9-8e17-448e-aa91-1cbf109abd81%29.jpg/960px-A_haze_fills_the_meandering_canyon_walls_as_sunset_approaches._%28b2722ba9-8e17-448e-aa91-1cbf109abd81%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/A_haze_fills_the_meandering_canyon_walls_as_sunset_approaches._%28b2722ba9-8e17-448e-aa91-1cbf109abd81%29.jpg/1920px-A_haze_fills_the_meandering_canyon_walls_as_sunset_approaches._%28b2722ba9-8e17-448e-aa91-1cbf109abd81%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:A_haze_fills_the_meandering_canyon_walls_as_sunset_approaches._(b2722ba9-8e17-448e-aa91-1cbf109abd81).jpg",
+      "author": "Victoria Stauffenberg",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Overlook_in_winter_%28e8def075-71da-45df-9106-976cfef34fc6%29.JPG/960px-Overlook_in_winter_%28e8def075-71da-45df-9106-976cfef34fc6%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Overlook_in_winter_%28e8def075-71da-45df-9106-976cfef34fc6%29.JPG/1920px-Overlook_in_winter_%28e8def075-71da-45df-9106-976cfef34fc6%29.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Overlook_in_winter_(e8def075-71da-45df-9106-976cfef34fc6).JPG",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Gunnison_Point_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%282%29.jpg/960px-Gunnison_Point_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%282%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Gunnison_Point_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%282%29.jpg/1920px-Gunnison_Point_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%282%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Gunnison_Point_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_(2).jpg",
+      "author": "The Dye Clan",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Oak_Flat_Loop_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg/960px-Oak_Flat_Loop_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Oak_Flat_Loop_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg/1920px-Oak_Flat_Loop_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Oak_Flat_Loop_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg",
+      "author": "The Dye Clan",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "blca-oak-flat-loop": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Canyon_From_Oak_Flat_Trail%2C_Black_Canyon_Of_The_Gunnison.jpg/960px-Canyon_From_Oak_Flat_Trail%2C_Black_Canyon_Of_The_Gunnison.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Canyon_From_Oak_Flat_Trail%2C_Black_Canyon_Of_The_Gunnison.jpg/1920px-Canyon_From_Oak_Flat_Trail%2C_Black_Canyon_Of_The_Gunnison.jpg",
+      "width": 960,
+      "height": 637,
+      "page": "https://commons.wikimedia.org/wiki/File:Canyon_From_Oak_Flat_Trail,_Black_Canyon_Of_The_Gunnison.jpg",
+      "author": "NPS/Zach Schierl",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Oak_Flat_Loop_1679.jpg/960px-Oak_Flat_Loop_1679.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Oak_Flat_Loop_1679.jpg/1920px-Oak_Flat_Loop_1679.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Oak_Flat_Loop_1679.jpg",
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Oak_Flat_Loop_Trail%2C_Black_Canyon_of_the_Gunnison.jpg/960px-Oak_Flat_Loop_Trail%2C_Black_Canyon_of_the_Gunnison.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Oak_Flat_Loop_Trail%2C_Black_Canyon_of_the_Gunnison.jpg/1920px-Oak_Flat_Loop_Trail%2C_Black_Canyon_of_the_Gunnison.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Oak_Flat_Loop_Trail,_Black_Canyon_of_the_Gunnison.jpg",
+      "author": "John Manard",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Oak_Flat_Loop_Trail%2C_Black_Canyon_of_the_Gunnison_-_48834497518.jpg/960px-Oak_Flat_Loop_Trail%2C_Black_Canyon_of_the_Gunnison_-_48834497518.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Oak_Flat_Loop_Trail%2C_Black_Canyon_of_the_Gunnison_-_48834497518.jpg/1920px-Oak_Flat_Loop_Trail%2C_Black_Canyon_of_the_Gunnison_-_48834497518.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Oak_Flat_Loop_Trail,_Black_Canyon_of_the_Gunnison_-_48834497518.jpg",
+      "author": "John Manard",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Oak_Flat_Loop_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%281%29.jpg/960px-Oak_Flat_Loop_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Oak_Flat_Loop_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%281%29.jpg/1920px-Oak_Flat_Loop_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%281%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Oak_Flat_Loop_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_(1).jpg",
+      "author": "The Dye Clan",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Black_Canyon_of_the_Gunnison_National_Park_-_Summer_Morning_View_on_the_Oak_Flat_Trail.jpg/960px-Black_Canyon_of_the_Gunnison_National_Park_-_Summer_Morning_View_on_the_Oak_Flat_Trail.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Black_Canyon_of_the_Gunnison_National_Park_-_Summer_Morning_View_on_the_Oak_Flat_Trail.jpg/1920px-Black_Canyon_of_the_Gunnison_National_Park_-_Summer_Morning_View_on_the_Oak_Flat_Trail.jpg",
+      "width": 960,
+      "height": 1440,
+      "page": "https://commons.wikimedia.org/wiki/File:Black_Canyon_of_the_Gunnison_National_Park_-_Summer_Morning_View_on_the_Oak_Flat_Trail.jpg",
+      "author": "TheFirstMotion",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "blca-rim-rock-trail": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/View_looking_up_canyon_from_Rim_Rock_Trail_%281fd61255-85ea-401b-b6f1-e497bf484bec%29.jpeg/960px-View_looking_up_canyon_from_Rim_Rock_Trail_%281fd61255-85ea-401b-b6f1-e497bf484bec%29.jpeg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/View_looking_up_canyon_from_Rim_Rock_Trail_%281fd61255-85ea-401b-b6f1-e497bf484bec%29.jpeg/1920px-View_looking_up_canyon_from_Rim_Rock_Trail_%281fd61255-85ea-401b-b6f1-e497bf484bec%29.jpeg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:View_looking_up_canyon_from_Rim_Rock_Trail_(1fd61255-85ea-401b-b6f1-e497bf484bec).jpeg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/North_Rim_Road%2C_Black_Canyon_of_the_Gunnison_National_Park.JPG/960px-North_Rim_Road%2C_Black_Canyon_of_the_Gunnison_National_Park.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/North_Rim_Road%2C_Black_Canyon_of_the_Gunnison_National_Park.JPG/1920px-North_Rim_Road%2C_Black_Canyon_of_the_Gunnison_National_Park.JPG",
+      "width": 960,
+      "height": 617,
+      "page": "https://commons.wikimedia.org/wiki/File:North_Rim_Road,_Black_Canyon_of_the_Gunnison_National_Park.JPG",
+      "author": "Jeffrey Beall",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/North_Rim_Road%2C_Black_Canyon_of_the_Gunnison_National_Park_2.JPG/960px-North_Rim_Road%2C_Black_Canyon_of_the_Gunnison_National_Park_2.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/North_Rim_Road%2C_Black_Canyon_of_the_Gunnison_National_Park_2.JPG/1920px-North_Rim_Road%2C_Black_Canyon_of_the_Gunnison_National_Park_2.JPG",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:North_Rim_Road,_Black_Canyon_of_the_Gunnison_National_Park_2.JPG",
+      "author": "Jeffrey Beall",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Black_canyon_viewing_platform.jpg/960px-Black_canyon_viewing_platform.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Black_canyon_viewing_platform.jpg/1920px-Black_canyon_viewing_platform.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Black_canyon_viewing_platform.jpg",
+      "author": "Xrzt",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/View_from_Gunnison_Point_%286257302767%29.jpg/960px-View_from_Gunnison_Point_%286257302767%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/View_from_Gunnison_Point_%286257302767%29.jpg/1280px-View_from_Gunnison_Point_%286257302767%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:View_from_Gunnison_Point_(6257302767).jpg",
+      "author": "Greg Willis from Denver, CO, usa",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Gunnison_Point_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%281%29.jpg/960px-Gunnison_Point_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Gunnison_Point_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%281%29.jpg/1920px-Gunnison_Point_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%281%29.jpg",
+      "width": 960,
+      "height": 1280,
+      "page": "https://commons.wikimedia.org/wiki/File:Gunnison_Point_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_(1).jpg",
+      "author": "The Dye Clan",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "blca-gunnison-route": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Rafter_portages_a_section_during_a_trip_from_East_Portal_to_Gunnison_Route_%288e768772-890c-4e39-8930-3887b8bbe119%29.JPG/960px-Rafter_portages_a_section_during_a_trip_from_East_Portal_to_Gunnison_Route_%288e768772-890c-4e39-8930-3887b8bbe119%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Rafter_portages_a_section_during_a_trip_from_East_Portal_to_Gunnison_Route_%288e768772-890c-4e39-8930-3887b8bbe119%29.JPG/1920px-Rafter_portages_a_section_during_a_trip_from_East_Portal_to_Gunnison_Route_%288e768772-890c-4e39-8930-3887b8bbe119%29.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Rafter_portages_a_section_during_a_trip_from_East_Portal_to_Gunnison_Route_(8e768772-890c-4e39-8930-3887b8bbe119).JPG",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/U.S._Route_50_Colorado_Black_Canyon_Painted_Wall_-_Flickr_-_Mobilus_In_Mobili.jpg/960px-U.S._Route_50_Colorado_Black_Canyon_Painted_Wall_-_Flickr_-_Mobilus_In_Mobili.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/U.S._Route_50_Colorado_Black_Canyon_Painted_Wall_-_Flickr_-_Mobilus_In_Mobili.jpg/1920px-U.S._Route_50_Colorado_Black_Canyon_Painted_Wall_-_Flickr_-_Mobilus_In_Mobili.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:U.S._Route_50_Colorado_Black_Canyon_Painted_Wall_-_Flickr_-_Mobilus_In_Mobili.jpg",
+      "author": "Mobilus In Mobili",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/BlackCanyonInner.jpg/960px-BlackCanyonInner.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/BlackCanyonInner.jpg/1280px-BlackCanyonInner.jpg",
+      "width": 960,
+      "height": 768,
+      "page": "https://commons.wikimedia.org/wiki/File:BlackCanyonInner.jpg",
+      "author": "NPS/Lisa Lynch",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Ponderosa_Pine_along_Gunnison_River%2C_Colorado_%281eb16141-ca9d-4482-b16e-546e692e0393%29.jpg/960px-Ponderosa_Pine_along_Gunnison_River%2C_Colorado_%281eb16141-ca9d-4482-b16e-546e692e0393%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Ponderosa_Pine_along_Gunnison_River%2C_Colorado_%281eb16141-ca9d-4482-b16e-546e692e0393%29.jpg/1920px-Ponderosa_Pine_along_Gunnison_River%2C_Colorado_%281eb16141-ca9d-4482-b16e-546e692e0393%29.jpg",
+      "width": 960,
+      "height": 1440,
+      "page": "https://commons.wikimedia.org/wiki/File:Ponderosa_Pine_along_Gunnison_River,_Colorado_(1eb16141-ca9d-4482-b16e-546e692e0393).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    }
+  ],
+  "blca-pulpit-rock": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Pulpit_Rock_Overlook_%283eed778b-2e27-43e7-83e0-3a86fc026741%29.jpg/960px-Pulpit_Rock_Overlook_%283eed778b-2e27-43e7-83e0-3a86fc026741%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Pulpit_Rock_Overlook_%283eed778b-2e27-43e7-83e0-3a86fc026741%29.jpg/1920px-Pulpit_Rock_Overlook_%283eed778b-2e27-43e7-83e0-3a86fc026741%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Pulpit_Rock_Overlook_(3eed778b-2e27-43e7-83e0-3a86fc026741).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Pulpit_Rock_Overlook_1697.jpg/960px-Pulpit_Rock_Overlook_1697.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Pulpit_Rock_Overlook_1697.jpg/1920px-Pulpit_Rock_Overlook_1697.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Pulpit_Rock_Overlook_1697.jpg",
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Pulpit_Rock_Overlook_1664.jpg/960px-Pulpit_Rock_Overlook_1664.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Pulpit_Rock_Overlook_1664.jpg/1920px-Pulpit_Rock_Overlook_1664.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Pulpit_Rock_Overlook_1664.jpg",
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/BlackCanyonoftheGunnisonNationalPark.jpg/960px-BlackCanyonoftheGunnisonNationalPark.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/BlackCanyonoftheGunnisonNationalPark.jpg/1920px-BlackCanyonoftheGunnisonNationalPark.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:BlackCanyonoftheGunnisonNationalPark.jpg",
+      "author": "Massimo Catarinella",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Montrose%2C_CO%2C_USA_-_panoramio_%281%29.jpg/960px-Montrose%2C_CO%2C_USA_-_panoramio_%281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Montrose%2C_CO%2C_USA_-_panoramio_%281%29.jpg/1920px-Montrose%2C_CO%2C_USA_-_panoramio_%281%29.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Montrose,_CO,_USA_-_panoramio_(1).jpg",
+      "author": "olekinderhook",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Montrose%2C_CO%2C_USA_-_panoramio.jpg/960px-Montrose%2C_CO%2C_USA_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Montrose%2C_CO%2C_USA_-_panoramio.jpg/1920px-Montrose%2C_CO%2C_USA_-_panoramio.jpg",
+      "width": 960,
+      "height": 475,
+      "page": "https://commons.wikimedia.org/wiki/File:Montrose,_CO,_USA_-_panoramio.jpg",
+      "author": "olekinderhook",
+      "license": "CC BY 3.0"
+    }
+  ],
+  "blca-cross-fissures": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Cross_Fissures_Overlook%2C_Black_Canyon_Of_The_Gunnison.jpg/960px-Cross_Fissures_Overlook%2C_Black_Canyon_Of_The_Gunnison.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Cross_Fissures_Overlook%2C_Black_Canyon_Of_The_Gunnison.jpg/1920px-Cross_Fissures_Overlook%2C_Black_Canyon_Of_The_Gunnison.jpg",
+      "width": 960,
+      "height": 637,
+      "page": "https://commons.wikimedia.org/wiki/File:Cross_Fissures_Overlook,_Black_Canyon_Of_The_Gunnison.jpg",
+      "author": "NPS/Zach Schierl",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Cross_Fissures%2C_Black_Canyon_of_the_Gunnison.jpg/960px-Cross_Fissures%2C_Black_Canyon_of_the_Gunnison.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Cross_Fissures%2C_Black_Canyon_of_the_Gunnison.jpg/1920px-Cross_Fissures%2C_Black_Canyon_of_the_Gunnison.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Cross_Fissures,_Black_Canyon_of_the_Gunnison.jpg",
+      "author": "John Manard",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Cross_Fissures%2C_Black_Canyon_of_the_Gunnison_-_48825755943.jpg/960px-Cross_Fissures%2C_Black_Canyon_of_the_Gunnison_-_48825755943.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Cross_Fissures%2C_Black_Canyon_of_the_Gunnison_-_48825755943.jpg/1920px-Cross_Fissures%2C_Black_Canyon_of_the_Gunnison_-_48825755943.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Cross_Fissures,_Black_Canyon_of_the_Gunnison_-_48825755943.jpg",
+      "author": "John Manard",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Devils_Lookout_%288540b79c-5d41-4ee3-8dd6-2f113bb0697b%29.jpg/960px-Devils_Lookout_%288540b79c-5d41-4ee3-8dd6-2f113bb0697b%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Devils_Lookout_%288540b79c-5d41-4ee3-8dd6-2f113bb0697b%29.jpg/1920px-Devils_Lookout_%288540b79c-5d41-4ee3-8dd6-2f113bb0697b%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Devils_Lookout_(8540b79c-5d41-4ee3-8dd6-2f113bb0697b).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/View_from_Cross_Fissures_%286257307203%29.jpg/960px-View_from_Cross_Fissures_%286257307203%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/View_from_Cross_Fissures_%286257307203%29.jpg/1280px-View_from_Cross_Fissures_%286257307203%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:View_from_Cross_Fissures_(6257307203).jpg",
+      "author": "Greg Willis from Denver, CO, usa",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Rock_faces_can_appear_to_dramatically_change_color_at_sunset_as_walls_are_illuminated_or_draped_in_shadows._%2854cf5b08-ae55-42ae-854c-c8d740fd98db%29.jpg/960px-Rock_faces_can_appear_to_dramatically_change_color_at_sunset_as_walls_are_illuminated_or_draped_in_shadows._%2854cf5b08-ae55-42ae-854c-c8d740fd98db%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Rock_faces_can_appear_to_dramatically_change_color_at_sunset_as_walls_are_illuminated_or_draped_in_shadows._%2854cf5b08-ae55-42ae-854c-c8d740fd98db%29.jpg/1920px-Rock_faces_can_appear_to_dramatically_change_color_at_sunset_as_walls_are_illuminated_or_draped_in_shadows._%2854cf5b08-ae55-42ae-854c-c8d740fd98db%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Rock_faces_can_appear_to_dramatically_change_color_at_sunset_as_walls_are_illuminated_or_draped_in_shadows._(54cf5b08-ae55-42ae-854c-c8d740fd98db).jpg",
+      "author": "Victoria Stauffenberg",
+      "license": "Public domain"
+    }
+  ],
+  "blca-chasm-view": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Chasm_View%2C_Black_Canyon_Of_The_Gunnison.jpg/960px-Chasm_View%2C_Black_Canyon_Of_The_Gunnison.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Chasm_View%2C_Black_Canyon_Of_The_Gunnison.jpg/1920px-Chasm_View%2C_Black_Canyon_Of_The_Gunnison.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Chasm_View,_Black_Canyon_Of_The_Gunnison.jpg",
+      "author": "NPS/Lisa Lynch",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Chasm_View%2C_Black_Canyon_of_the_Gunnison.jpg/960px-Chasm_View%2C_Black_Canyon_of_the_Gunnison.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Chasm_View%2C_Black_Canyon_of_the_Gunnison.jpg/1920px-Chasm_View%2C_Black_Canyon_of_the_Gunnison.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Chasm_View,_Black_Canyon_of_the_Gunnison.jpg",
+      "author": "John Manard",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Chasm_View%2C_Black_Canyon_of_the_Gunnison_-_48826266607.jpg/960px-Chasm_View%2C_Black_Canyon_of_the_Gunnison_-_48826266607.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Chasm_View%2C_Black_Canyon_of_the_Gunnison_-_48826266607.jpg/1920px-Chasm_View%2C_Black_Canyon_of_the_Gunnison_-_48826266607.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Chasm_View,_Black_Canyon_of_the_Gunnison_-_48826266607.jpg",
+      "author": "John Manard",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Chasm_View_%288597dcab-621c-4d27-8367-b76a6b10fca2%29.JPG/960px-Chasm_View_%288597dcab-621c-4d27-8367-b76a6b10fca2%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Chasm_View_%288597dcab-621c-4d27-8367-b76a6b10fca2%29.JPG/1920px-Chasm_View_%288597dcab-621c-4d27-8367-b76a6b10fca2%29.JPG",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Chasm_View_(8597dcab-621c-4d27-8367-b76a6b10fca2).JPG",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Painted_Wall%2C_Black_Canyon_Of_The_Gunnison.jpg/960px-Painted_Wall%2C_Black_Canyon_Of_The_Gunnison.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Painted_Wall%2C_Black_Canyon_Of_The_Gunnison.jpg/1920px-Painted_Wall%2C_Black_Canyon_Of_The_Gunnison.jpg",
+      "width": 960,
+      "height": 670,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Wall,_Black_Canyon_Of_The_Gunnison.jpg",
+      "author": "NPS/Lisa Lynch",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Painted_Wall_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg/960px-Painted_Wall_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Painted_Wall_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg/1920px-Painted_Wall_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Wall_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg",
+      "author": "The Dye Clan",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "blca-painted-wall-view": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Painted_Wall%2C_Black_Canyon_of_the_Gunnison.jpg/960px-Painted_Wall%2C_Black_Canyon_of_the_Gunnison.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Painted_Wall%2C_Black_Canyon_of_the_Gunnison.jpg/1920px-Painted_Wall%2C_Black_Canyon_of_the_Gunnison.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Wall,_Black_Canyon_of_the_Gunnison.jpg",
+      "author": "John Manard",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Painted_Wall_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%281%29.jpg/960px-Painted_Wall_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Painted_Wall_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%281%29.jpg/1920px-Painted_Wall_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%281%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Wall_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_(1).jpg",
+      "author": "The Dye Clan",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Painted_Wall_%284260e8b8-bee4-4637-806f-22e42b48cbe7%29.jpg/960px-Painted_Wall_%284260e8b8-bee4-4637-806f-22e42b48cbe7%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Painted_Wall_%284260e8b8-bee4-4637-806f-22e42b48cbe7%29.jpg/1920px-Painted_Wall_%284260e8b8-bee4-4637-806f-22e42b48cbe7%29.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Wall_(4260e8b8-bee4-4637-806f-22e42b48cbe7).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Soft_light_on_Painted_Wall_%2812359233-510c-41e2-9b8c-4702b68c07c1%29.jpg/960px-Soft_light_on_Painted_Wall_%2812359233-510c-41e2-9b8c-4702b68c07c1%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Soft_light_on_Painted_Wall_%2812359233-510c-41e2-9b8c-4702b68c07c1%29.jpg/1920px-Soft_light_on_Painted_Wall_%2812359233-510c-41e2-9b8c-4702b68c07c1%29.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Soft_light_on_Painted_Wall_(12359233-510c-41e2-9b8c-4702b68c07c1).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Painted_Wall%2C_Black_Canyon_of_the_Gunniso.jpg/960px-Painted_Wall%2C_Black_Canyon_of_the_Gunniso.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Painted_Wall%2C_Black_Canyon_of_the_Gunniso.jpg/1920px-Painted_Wall%2C_Black_Canyon_of_the_Gunniso.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Wall,_Black_Canyon_of_the_Gunniso.jpg",
+      "author": "John Manard",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/2016.10.23_Black_Canyon_NP%2C_CO_%28103%29.jpg/960px-2016.10.23_Black_Canyon_NP%2C_CO_%28103%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/2016.10.23_Black_Canyon_NP%2C_CO_%28103%29.jpg/1920px-2016.10.23_Black_Canyon_NP%2C_CO_%28103%29.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:2016.10.23_Black_Canyon_NP,_CO_(103).jpg",
+      "author": "NealVickers",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "blca-cedar-point": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Cedar_Point%2C_Black_Canyon_of_the_Gunnison.jpg/960px-Cedar_Point%2C_Black_Canyon_of_the_Gunnison.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Cedar_Point%2C_Black_Canyon_of_the_Gunnison.jpg/1920px-Cedar_Point%2C_Black_Canyon_of_the_Gunnison.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Cedar_Point,_Black_Canyon_of_the_Gunnison.jpg",
+      "author": "John Manard",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Sunset_View_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg/960px-Sunset_View_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Sunset_View_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg/1920px-Sunset_View_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunset_View_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg",
+      "author": "The Dye Clan",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Sunset_View_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%282%29.jpg/960px-Sunset_View_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%282%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Sunset_View_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%282%29.jpg/1920px-Sunset_View_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%282%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunset_View_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_(2).jpg",
+      "author": "The Dye Clan",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/God%27s_Path_is_Higher_than_Men%27s_Path.jpg/960px-God%27s_Path_is_Higher_than_Men%27s_Path.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/God%27s_Path_is_Higher_than_Men%27s_Path.jpg/1920px-God%27s_Path_is_Higher_than_Men%27s_Path.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:God%27s_Path_is_Higher_than_Men%27s_Path.jpg",
+      "author": "Wing-Chi Poon",
+      "license": "CC BY-SA 2.5"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Black_Canyon_of_the_Gunnison_20150710_7926-31.jpg/960px-Black_Canyon_of_the_Gunnison_20150710_7926-31.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Black_Canyon_of_the_Gunnison_20150710_7926-31.jpg/1920px-Black_Canyon_of_the_Gunnison_20150710_7926-31.jpg",
+      "width": 960,
+      "height": 1301,
+      "page": "https://commons.wikimedia.org/wiki/File:Black_Canyon_of_the_Gunnison_20150710_7926-31.jpg",
+      "author": "Kbh3rd",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "blca-dragon-point": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Dragon_Point_%2831e4409e-bb80-4c78-9443-ac98b5acf65f%29.jpg/960px-Dragon_Point_%2831e4409e-bb80-4c78-9443-ac98b5acf65f%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Dragon_Point_%2831e4409e-bb80-4c78-9443-ac98b5acf65f%29.jpg/1920px-Dragon_Point_%2831e4409e-bb80-4c78-9443-ac98b5acf65f%29.jpg",
+      "width": 960,
+      "height": 585,
+      "page": "https://commons.wikimedia.org/wiki/File:Dragon_Point_(31e4409e-bb80-4c78-9443-ac98b5acf65f).jpg",
+      "author": "Victoria Stauffenberg",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Dragon_Point_%28328701e1-53c4-4d1d-aadc-d963307d605a%29.jpg/960px-Dragon_Point_%28328701e1-53c4-4d1d-aadc-d963307d605a%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Dragon_Point_%28328701e1-53c4-4d1d-aadc-d963307d605a%29.jpg/1920px-Dragon_Point_%28328701e1-53c4-4d1d-aadc-d963307d605a%29.jpg",
+      "width": 960,
+      "height": 622,
+      "page": "https://commons.wikimedia.org/wiki/File:Dragon_Point_(328701e1-53c4-4d1d-aadc-d963307d605a).jpg",
+      "author": "Victoria Stauffenberg",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Dragon_Point%2C_Black_Canyon_of_the_Gunnison.jpg/960px-Dragon_Point%2C_Black_Canyon_of_the_Gunnison.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Dragon_Point%2C_Black_Canyon_of_the_Gunnison.jpg/1920px-Dragon_Point%2C_Black_Canyon_of_the_Gunnison.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Dragon_Point,_Black_Canyon_of_the_Gunnison.jpg",
+      "author": "John Manard",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Dragon_Point%2C_Black_Canyon_of_the_Gunnison_-_48834822701.jpg/960px-Dragon_Point%2C_Black_Canyon_of_the_Gunnison_-_48834822701.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Dragon_Point%2C_Black_Canyon_of_the_Gunnison_-_48834822701.jpg/1920px-Dragon_Point%2C_Black_Canyon_of_the_Gunnison_-_48834822701.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Dragon_Point,_Black_Canyon_of_the_Gunnison_-_48834822701.jpg",
+      "author": "John Manard",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Dragon_Point_%289b161b1d-4634-454b-a772-d11ee6f07f92%29.jpeg/960px-Dragon_Point_%289b161b1d-4634-454b-a772-d11ee6f07f92%29.jpeg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Dragon_Point_%289b161b1d-4634-454b-a772-d11ee6f07f92%29.jpeg/1280px-Dragon_Point_%289b161b1d-4634-454b-a772-d11ee6f07f92%29.jpeg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Dragon_Point_(9b161b1d-4634-454b-a772-d11ee6f07f92).jpeg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Painted_Wall_-_panoramio.jpg/960px-Painted_Wall_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Painted_Wall_-_panoramio.jpg/1280px-Painted_Wall_-_panoramio.jpg",
+      "width": 960,
+      "height": 1099,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Wall_-_panoramio.jpg",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "blca-sunset-view": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Sunset_View%2C_Black_Canyon_of_the_Gunnison.jpg/960px-Sunset_View%2C_Black_Canyon_of_the_Gunnison.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Sunset_View%2C_Black_Canyon_of_the_Gunnison.jpg/1920px-Sunset_View%2C_Black_Canyon_of_the_Gunnison.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunset_View,_Black_Canyon_of_the_Gunnison.jpg",
+      "author": "John Manard",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Sunset_offers_spectacular_views_of_the_canyon._%2869ce15ab-06f2-4154-979f-470143d93fa6%29.jpg/960px-Sunset_offers_spectacular_views_of_the_canyon._%2869ce15ab-06f2-4154-979f-470143d93fa6%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Sunset_offers_spectacular_views_of_the_canyon._%2869ce15ab-06f2-4154-979f-470143d93fa6%29.jpg/1920px-Sunset_offers_spectacular_views_of_the_canyon._%2869ce15ab-06f2-4154-979f-470143d93fa6%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunset_offers_spectacular_views_of_the_canyon._(69ce15ab-06f2-4154-979f-470143d93fa6).jpg",
+      "author": "Victoria Stauffenberg",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/The_canyon_at_sunset_offers_spectacular_views._%28a957a008-1144-4d4b-b2a3-e131c1e1810e%29.jpg/960px-The_canyon_at_sunset_offers_spectacular_views._%28a957a008-1144-4d4b-b2a3-e131c1e1810e%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/The_canyon_at_sunset_offers_spectacular_views._%28a957a008-1144-4d4b-b2a3-e131c1e1810e%29.jpg/1920px-The_canyon_at_sunset_offers_spectacular_views._%28a957a008-1144-4d4b-b2a3-e131c1e1810e%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:The_canyon_at_sunset_offers_spectacular_views._(a957a008-1144-4d4b-b2a3-e131c1e1810e).jpg",
+      "author": "Victoria Stauffenberg",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Sunset_View%2C_Black_Canyon_of_the_Gunnison_-_48825960946.jpg/960px-Sunset_View%2C_Black_Canyon_of_the_Gunnison_-_48825960946.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Sunset_View%2C_Black_Canyon_of_the_Gunnison_-_48825960946.jpg/1920px-Sunset_View%2C_Black_Canyon_of_the_Gunnison_-_48825960946.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunset_View,_Black_Canyon_of_the_Gunnison_-_48825960946.jpg",
+      "author": "John Manard",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Sunset_View_%28628b3b12-d63a-4fca-902f-8671a120f91f%29.JPG/960px-Sunset_View_%28628b3b12-d63a-4fca-902f-8671a120f91f%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Sunset_View_%28628b3b12-d63a-4fca-902f-8671a120f91f%29.JPG/1920px-Sunset_View_%28628b3b12-d63a-4fca-902f-8671a120f91f%29.JPG",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunset_View_(628b3b12-d63a-4fca-902f-8671a120f91f).JPG",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Sunset_View_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%281%29.jpg/960px-Sunset_View_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Sunset_View_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%281%29.jpg/1920px-Sunset_View_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%281%29.jpg",
+      "width": 960,
+      "height": 1280,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunset_View_Overlook_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_(1).jpg",
+      "author": "The Dye Clan",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "blca-warner-point": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Warner_Point_Trail_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%283%29.jpg/960px-Warner_Point_Trail_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%283%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Warner_Point_Trail_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%283%29.jpg/1920px-Warner_Point_Trail_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%283%29.jpg",
+      "width": 960,
+      "height": 500,
+      "page": "https://commons.wikimedia.org/wiki/File:Warner_Point_Trail_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_(3).jpg",
+      "author": "The Dye Clan",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Warner_Point_Nature_Trail%2C_Black_Canyon_of_the_Gunnison_-_48825568068.jpg/960px-Warner_Point_Nature_Trail%2C_Black_Canyon_of_the_Gunnison_-_48825568068.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Warner_Point_Nature_Trail%2C_Black_Canyon_of_the_Gunnison_-_48825568068.jpg/1920px-Warner_Point_Nature_Trail%2C_Black_Canyon_of_the_Gunnison_-_48825568068.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Warner_Point_Nature_Trail,_Black_Canyon_of_the_Gunnison_-_48825568068.jpg",
+      "author": "John Manard",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Warner_Point_Nature_Trail%2C_Black_Canyon_of_the_Gunnison.jpg/960px-Warner_Point_Nature_Trail%2C_Black_Canyon_of_the_Gunnison.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Warner_Point_Nature_Trail%2C_Black_Canyon_of_the_Gunnison.jpg/1920px-Warner_Point_Nature_Trail%2C_Black_Canyon_of_the_Gunnison.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Warner_Point_Nature_Trail,_Black_Canyon_of_the_Gunnison.jpg",
+      "author": "John Manard",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Warner_Point_Trail_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg/960px-Warner_Point_Trail_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Warner_Point_Trail_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg/1920px-Warner_Point_Trail_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Warner_Point_Trail_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio.jpg",
+      "author": "The Dye Clan",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Black_Canyon_Of_The_Gunnison_%28183013049%29.jpeg/960px-Black_Canyon_Of_The_Gunnison_%28183013049%29.jpeg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Black_Canyon_Of_The_Gunnison_%28183013049%29.jpeg/1920px-Black_Canyon_Of_The_Gunnison_%28183013049%29.jpeg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Black_Canyon_Of_The_Gunnison_(183013049).jpeg",
+      "author": "Ej Lowell",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "blca-east-portal": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Gunnison_Diversion_Dam_%285932698332%29.jpg/960px-Gunnison_Diversion_Dam_%285932698332%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Gunnison_Diversion_Dam_%285932698332%29.jpg/1920px-Gunnison_Diversion_Dam_%285932698332%29.jpg",
+      "width": 960,
+      "height": 881,
+      "page": "https://commons.wikimedia.org/wiki/File:Gunnison_Diversion_Dam_(5932698332).jpg",
+      "author": "Alan Stark from Goodyear, AZ, United States",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Gunnison_River_%282%29_%285932698150%29.jpg/960px-Gunnison_River_%282%29_%285932698150%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Gunnison_River_%282%29_%285932698150%29.jpg/1920px-Gunnison_River_%282%29_%285932698150%29.jpg",
+      "width": 960,
+      "height": 878,
+      "page": "https://commons.wikimedia.org/wiki/File:Gunnison_River_(2)_(5932698150).jpg",
+      "author": "Alan Stark from Goodyear, AZ, United States",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Hiker_looks_down_on_river_from_ledge_%28e6055d11-0f90-43a5-9487-ecd8a70cebaa%29.jpg/960px-Hiker_looks_down_on_river_from_ledge_%28e6055d11-0f90-43a5-9487-ecd8a70cebaa%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Hiker_looks_down_on_river_from_ledge_%28e6055d11-0f90-43a5-9487-ecd8a70cebaa%29.jpg/1920px-Hiker_looks_down_on_river_from_ledge_%28e6055d11-0f90-43a5-9487-ecd8a70cebaa%29.jpg",
+      "width": 960,
+      "height": 1030,
+      "page": "https://commons.wikimedia.org/wiki/File:Hiker_looks_down_on_river_from_ledge_(e6055d11-0f90-43a5-9487-ecd8a70cebaa).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    }
+  ],
+  "blca-north-rim-drive": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Kneeling_Camel_View_%28043ce7bd-158b-4d1f-a556-a9b4314e6186%29.jpg/960px-Kneeling_Camel_View_%28043ce7bd-158b-4d1f-a556-a9b4314e6186%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Kneeling_Camel_View_%28043ce7bd-158b-4d1f-a556-a9b4314e6186%29.jpg/1920px-Kneeling_Camel_View_%28043ce7bd-158b-4d1f-a556-a9b4314e6186%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Kneeling_Camel_View_(043ce7bd-158b-4d1f-a556-a9b4314e6186).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Gunnison_River%2C_Black_Canyon%2C_Colorado_%2828795235600%29.jpg/960px-Gunnison_River%2C_Black_Canyon%2C_Colorado_%2828795235600%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Gunnison_River%2C_Black_Canyon%2C_Colorado_%2828795235600%29.jpg/1920px-Gunnison_River%2C_Black_Canyon%2C_Colorado_%2828795235600%29.jpg",
+      "width": 960,
+      "height": 646,
+      "page": "https://commons.wikimedia.org/wiki/File:Gunnison_River,_Black_Canyon,_Colorado_(28795235600).jpg",
+      "author": "Tony Webster from Minneapolis, Minnesota",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/The_Narrows_View_%2801ff10ce-f38f-4509-980f-17e3eae6acd3%29.jpg/960px-The_Narrows_View_%2801ff10ce-f38f-4509-980f-17e3eae6acd3%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/The_Narrows_View_%2801ff10ce-f38f-4509-980f-17e3eae6acd3%29.jpg/1920px-The_Narrows_View_%2801ff10ce-f38f-4509-980f-17e3eae6acd3%29.jpg",
+      "width": 960,
+      "height": 579,
+      "page": "https://commons.wikimedia.org/wiki/File:The_Narrows_View_(01ff10ce-f38f-4509-980f-17e3eae6acd3).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Black_Canyon_Kneeling_Camel_View.JPG/960px-Black_Canyon_Kneeling_Camel_View.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Black_Canyon_Kneeling_Camel_View.JPG/1920px-Black_Canyon_Kneeling_Camel_View.JPG",
+      "width": 960,
+      "height": 1280,
+      "page": "https://commons.wikimedia.org/wiki/File:Black_Canyon_Kneeling_Camel_View.JPG",
+      "author": "Jesse Varner",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "blca-north-chasm-view": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Fog_drifts_over_canyon_rim_%280aa34824-c08f-445d-adde-9e457f640a0f%29.JPG/960px-Fog_drifts_over_canyon_rim_%280aa34824-c08f-445d-adde-9e457f640a0f%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Fog_drifts_over_canyon_rim_%280aa34824-c08f-445d-adde-9e457f640a0f%29.JPG/1920px-Fog_drifts_over_canyon_rim_%280aa34824-c08f-445d-adde-9e457f640a0f%29.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Fog_drifts_over_canyon_rim_(0aa34824-c08f-445d-adde-9e457f640a0f).JPG",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Painted_Wall_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%282%29.jpg/960px-Painted_Wall_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%282%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Painted_Wall_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%282%29.jpg/1920px-Painted_Wall_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_%282%29.jpg",
+      "width": 960,
+      "height": 1280,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Wall_at_Black_Canyon_of_the_Gunnison_National_Park_dyeclan.com_-_panoramio_(2).jpg",
+      "author": "The Dye Clan",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "blca-exclamation-point": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Painted_Wall_from_North_Vista_Trail.jpg/960px-Painted_Wall_from_North_Vista_Trail.jpg",
+      "large": "https://upload.wikimedia.org/wikipedia/commons/3/38/Painted_Wall_from_North_Vista_Trail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "width": 960,
+      "height": 636,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Wall_from_North_Vista_Trail.jpg",
+      "author": "David Lee Short",
+      "license": "CC BY 3.0"
+    }
+  ],
+  "blca-night-sky": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/A_park_ranger_looks_through_a_solar_telescope_viewfinder_to_see_the_sun._%28b91541cd-2b93-4736-be82-a2166dd59adc%29.JPG/960px-A_park_ranger_looks_through_a_solar_telescope_viewfinder_to_see_the_sun._%28b91541cd-2b93-4736-be82-a2166dd59adc%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/A_park_ranger_looks_through_a_solar_telescope_viewfinder_to_see_the_sun._%28b91541cd-2b93-4736-be82-a2166dd59adc%29.JPG/1920px-A_park_ranger_looks_through_a_solar_telescope_viewfinder_to_see_the_sun._%28b91541cd-2b93-4736-be82-a2166dd59adc%29.JPG",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:A_park_ranger_looks_through_a_solar_telescope_viewfinder_to_see_the_sun._(b91541cd-2b93-4736-be82-a2166dd59adc).JPG",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/A_park_ranger_looks_through_a_solar_telescope_viewfinder_to_see_the_sun._%28fcb668f1-0eae-423d-afa0-92d671f2d038%29.JPG/960px-A_park_ranger_looks_through_a_solar_telescope_viewfinder_to_see_the_sun._%28fcb668f1-0eae-423d-afa0-92d671f2d038%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/A_park_ranger_looks_through_a_solar_telescope_viewfinder_to_see_the_sun._%28fcb668f1-0eae-423d-afa0-92d671f2d038%29.JPG/1920px-A_park_ranger_looks_through_a_solar_telescope_viewfinder_to_see_the_sun._%28fcb668f1-0eae-423d-afa0-92d671f2d038%29.JPG",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:A_park_ranger_looks_through_a_solar_telescope_viewfinder_to_see_the_sun._(fcb668f1-0eae-423d-afa0-92d671f2d038).JPG",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    }
   ]
 };

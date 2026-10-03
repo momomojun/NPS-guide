@@ -29,6 +29,12 @@ import { rockyMountain } from "./romo";
 import { glacier } from "./glac";
 import { kenaiFjords } from "./kefj";
 import { wrangellStElias } from "./wrst";
+import { whiteSands } from "./whsa";
+import { carlsbadCaverns } from "./cave";
+import { mesaVerde } from "./meve";
+import { petrifiedForest } from "./pefo";
+import { greatSandDunes } from "./grsa";
+import { blackCanyon } from "./blca";
 import { trails, type TrailPath } from "./trails.generated";
 import type { Attraction, GooglePlace, Photo } from "./types";
 import { yellowstone } from "./yell";
@@ -109,6 +115,12 @@ const withData: AttractionWithPhoto[] = [
   ...glacier,
   ...kenaiFjords,
   ...wrangellStElias,
+  ...whiteSands,
+  ...carlsbadCaverns,
+  ...mesaVerde,
+  ...petrifiedForest,
+  ...greatSandDunes,
+  ...blackCanyon,
 ].map((attraction) => ({
   ...attraction,
   photo: gallery[attraction.id]?.[0],

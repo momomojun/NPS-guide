@@ -148,7 +148,11 @@ export const zion: Attraction[] = [
     bestTime: ["sunrise"],
     mustSee: true,
     summary: "隧道东口旁的短步道，终点俯瞰整条锡安峡谷，日出时尤其漂亮，花一小时就能看到大片景色。",
-    tips: ["不在班车路线上，可以自驾；停车位很少，早去", "从峡谷过来要穿过 Zion–Mt. Carmel 隧道，房车等大车需要办理通行证"],
+    tips: [
+      "2026 年 9 月 30 日起锡安–卡梅尔山公路从 Canyon Junction 到东门一段不能穿行，重开时间未定（NPS 没说原因）：从锡安峡谷这边过不去，出发前看 NPS 公告，从东门能不能进来也以公告为准",
+      "不在班车路线上，可以自驾；停车位很少，早去",
+      "从峡谷过来要穿过 Zion–Mt. Carmel 隧道，房车等大车需要办理通行证",
+    ],
     photoFile: "Overlook trail view - Zion Canyon.jpg",
   },
   {
@@ -231,6 +235,7 @@ export const zion: Attraction[] = [
     hike: { distanceMi: 6.7, gainFt: 700, difficulty: "moderate" },
     summary: "比天使降临还高的观景台，俯瞰整条锡安峡谷，天使降临在脚下像一道小山脊。从东侧台地走过去，爬升不大。",
     tips: [
+      "2026 年 9 月 30 日起锡安–卡梅尔山公路从 Canyon Junction 到东门一段不能穿行，重开时间未定（NPS 没说原因）：从锡安峡谷这边过不去，出发前看 NPS 公告，从东门能不能进来也以公告为准",
       "原来从峡谷里 Weeping Rock 上去的路 2019 年落石后关闭，现在从东侧的 East Mesa 步道口进",
       "去步道口要走一段土路，下雨后泥泞，最好开高底盘车",
     ],
@@ -246,7 +251,10 @@ export const zion: Attraction[] = [
     lon: -112.87855,
     durationMin: 15,
     summary: "东入口附近的一座砂岩山，表面被风化出横竖交错的纹路，像一块巨大的棋盘。",
-    tips: ["路边有观景停车区，开车经过顺便停一下"],
+    tips: [
+      "2026 年 9 月 30 日起锡安–卡梅尔山公路从 Canyon Junction 到东门一段不能穿行，重开时间未定（NPS 没说原因）：从锡安峡谷这边过不去，出发前看 NPS 公告，从东门能不能进来也以公告为准",
+      "路边有观景停车区，开车经过顺便停一下",
+    ],
   },
   {
     id: "zion-human-history-museum",

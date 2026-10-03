@@ -20,6 +20,8 @@ const CITIES = [
   { id: "slc", nameZh: "盐湖城", nameEn: "Salt Lake City", lat: 40.7608, lon: -111.891, map: "west" },
   { id: "phx", nameZh: "凤凰城", nameEn: "Phoenix", lat: 33.4484, lon: -112.074, map: "west" },
   { id: "den", nameZh: "丹佛", nameEn: "Denver", lat: 39.7392, lon: -104.9903, map: "west" },
+  { id: "abq", nameZh: "阿尔伯克基", nameEn: "Albuquerque", lat: 35.0844, lon: -106.6504, map: "west" },
+  { id: "elp", nameZh: "埃尔帕索", nameEn: "El Paso", lat: 31.7619, lon: -106.485, map: "west" },
   { id: "yyc", nameZh: "卡尔加里", nameEn: "Calgary", lat: 51.0447, lon: -114.0719, map: "west" },
   { id: "yvr", nameZh: "温哥华", nameEn: "Vancouver", lat: 49.2827, lon: -123.1207, map: "west" },
   // 阿拉斯加小图只标安克雷奇：费尔班克斯离德纳里太近，标签会挤在一起
@@ -41,6 +43,7 @@ const VIEWS = {
       "Arizona",
       "Colorado",
       "New Mexico",
+      "Texas",
       "British Columbia",
       "Alberta",
       "Saskatchewan",
@@ -57,11 +60,12 @@ const VIEWS = {
       "Utah",
       "Arizona",
       "Colorado",
+      "New Mexico",
       "British Columbia",
       "Alberta",
     ],
-    /** 视野按经纬度框取：南边到海峡群岛以南，东边到落基山国家公园以东，北边到贾斯珀以北 */
-    bounds: { west: -124.9, east: -104.3, south: 33.1, north: 53.6 },
+    /** 视野按经纬度框取：南边到埃尔帕索以南，东边到卡尔斯巴德洞窟以东，北边到贾斯珀以北 */
+    bounds: { west: -124.9, east: -103.4, south: 31.3, north: 53.6 },
     labels: {
       Washington: "WASHINGTON",
       Oregon: "OREGON",
@@ -72,6 +76,7 @@ const VIEWS = {
       Utah: "UTAH",
       Arizona: "ARIZONA",
       Colorado: "COLORADO",
+      "New Mexico": "NEW MEXICO",
       "British Columbia": "BRITISH COLUMBIA",
       Alberta: "ALBERTA",
     },
@@ -79,7 +84,8 @@ const VIEWS = {
     labelAt: {
       Washington: [-118.5, 47.5],
       California: [-121.3, 39.2],
-      Colorado: [-105.5, 38.1],
+      // 原来的位置正好压在大沙丘上，挪到东边丹佛下方的空地
+      Colorado: [-103.85, 38.94],
       "British Columbia": [-122.4, 52.4],
       Alberta: [-112.6, 52.1],
     },

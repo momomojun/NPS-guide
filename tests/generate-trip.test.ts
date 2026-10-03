@@ -175,3 +175,42 @@ test("轻松节奏不排很难、很长的徒步", () => {
     assert.ok(stop.kind !== "hike" || stop.hike?.difficulty !== "hard", `${id} 太难`);
   }
 });
+
+test("约书亚树 3 月 2 天：星空排在第一天天黑以后，看星空的时间不算进每天的节奏上限", () => {
+  const { trip, timelines } = generate({ parks: ["jotr"], start: "2027-03-01", days: 2, airport: "PSP" });
+  const day = trip.days.findIndex((items) => items.some((item) => item.id === "jotr-night-sky"));
+  assert.equal(day, 0);
+  const entry = timelines[0].entries.at(-1)!;
+  assert.equal(entry.id, "jotr-night-sky");
+  assert.equal(entry.slot, "night");
+  assert.deepEqual(entry.warnings, []);
+  assert.equal(timelines[0].overloaded, false);
+  assert.equal(timelines[0].lateReturn, false);
+});
+
+test("先看日落再看星空：日落观景点排在日落，星空排在天黑以后", () => {
+  const byId = new Map(attractions.map((a) => [a.id, a as PlanStop]));
+  const sun = { sunrise: 7 * 60 + 30, sunset: 18 * 60 + 45 };
+  const timeline = buildTimeline([byId.get("care-goosenecks-sunset-point")!, byId.get("care-panorama-point")!], { sun });
+  const [goosenecks, panorama] = timeline.entries;
+  assert.equal(goosenecks.slot, "sunset");
+  assert.equal(goosenecks.end, sun.sunset + 15);
+  assert.equal(panorama.slot, "night");
+  assert.equal(panorama.start, sun.sunset + 60);
+  assert.deepEqual([...goosenecks.warnings, ...panorama.warnings], []);
+});
+
+test("只定了月份：按公布日期举行的满月徒步、卢塞罗湖导览不自动排；定了日期、那天有的才排，按那天的时间", () => {
+  const month = generate({ parks: ["whsa", "cave"], month: 11, days: 3, airport: "ELP" });
+  assert.ok(!planned(month.trip).some((id) => id === "whsa-moonlight-hike" || id === "whsa-lake-lucero"));
+  assert.ok(!Object.values(month.guide.skipped).flat().includes("whsa-moonlight-hike"));
+  // 2026 年 11 月 24 日 16:30 有一场
+  const dated = generate({ parks: ["whsa", "cave"], start: "2026-11-23", days: 3, airport: "ELP" });
+  const day = dated.trip.days.findIndex((items) => items.some((item) => item.id === "whsa-moonlight-hike"));
+  if (day >= 0) {
+    assert.equal(day, 1);
+    const entry = dated.timelines[1].entries.find((item) => item.id === "whsa-moonlight-hike")!;
+    assert.equal(entry.start, 16 * 60 + 30);
+    assert.deepEqual(entry.warnings, []);
+  }
+});

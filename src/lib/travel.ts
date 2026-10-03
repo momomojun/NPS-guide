@@ -29,7 +29,7 @@ const pairIndexCache = new WeakMap<PairTable, { a: Map<string, number>; b: Map<s
 
 /** 相邻公园的跨园车程；不在表里（比如公园定位点）时返回 null */
 function lookupPair(from: string, to: string, fromPark: string, toPark: string): number | null {
-  const table = pairTravel[[fromPark, toPark].sort().join("|")];
+  const table = pairTravel[fromPark < toPark ? `${fromPark}|${toPark}` : `${toPark}|${fromPark}`];
   if (!table) return null;
   let index = pairIndexCache.get(table);
   if (!index) {
@@ -50,8 +50,13 @@ export function gatewayNode(park: string): string {
   return `${park}:gateway`;
 }
 
-// 景点 id 统一以公园代码开头，例如 "zion-narrows"
-const parkOf = (node: string) => node.split(/[-:]/)[0];
+// 景点 id 统一以公园代码开头，例如 "zion-narrows"（排行程时要查上百万次，算过的存起来）
+const parks = new Map<string, string>();
+const parkOf = (node: string) => {
+  let park = parks.get(node);
+  if (park === undefined) parks.set(node, (park = node.split(/[-:]/)[0]));
+  return park;
+};
 const tableNode = (node: string) => (node.endsWith(":gateway") ? "gateway" : node);
 
 /** 两个景点（或公园定位点）之间的开车分钟数；跨公园时查相邻公园的表，没有就经过两边的定位点 */

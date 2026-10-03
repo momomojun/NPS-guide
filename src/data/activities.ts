@@ -1700,4 +1700,345 @@ export const activities: ParkActivity[] = [
     booking: "看不用预约；Chitina 的抄网捕鱼是只限阿拉斯加居民的个人用渔业，游客不能参加。",
     attraction: "wrst-chitina",
   },
+  {
+    park: "whsa",
+    nameZh: "满月之夜",
+    nameEn: "Full Moon Night",
+    months: [5, 6, 7, 8, 9, 10],
+    summary:
+      "5–10 月每个满月的晚上，公园比平时晚关约 2 小时，可以在月光照亮的白沙里自己走走；有几个满月夜会在沙丘中心的露天剧场办音乐会或讲座。",
+    booking:
+      "不用买票也不用预约，交公园门票就行。露天剧场停车场在活动开始前 1.5 小时开放，停满就封，从收费站开过去要多留 30 分钟；剧场不提供座位，自带折叠椅或毯子。",
+    status:
+      "2026 年的满月之夜是 5/1、5/31、6/29、7/29、8/27、9/26、10/25；最后一场 10 月 25 日有护林员 David Bustos 讲化石脚印（庆祝国家化石日），当天公园开到 20:00。2027 年的日期还没公布。",
+    url: "https://www.nps.gov/whsa/planyourvisit/full-moon-night.htm",
+  },
+  {
+    park: "whsa",
+    nameZh: "满月月光徒步",
+    nameEn: "Moonlight Hike",
+    months: [3, 4, 5, 6, 7, 8, 9, 10, 11],
+    summary: "满月前后的晚上跟护林员走沙丘生命自然步道，全程不开手电，月光下的白沙亮得能看见自己的影子。",
+    booking:
+      "Recreation.gov 买票，16 岁以上 $8、15 岁以下 $4，另收公园门票；活动前一个月早上 8 点（山地时间）开售，每团 50 人，常几分钟卖完，每单最多 6 张。",
+    status: "2026 年还剩 10 月 26 日 18:00、11 月 24 日 16:30 两场（7 月 30 日那场已取消）；2027 年的日期还没公布。",
+    url: "https://www.nps.gov/whsa/planyourvisit/moonlight-hike.htm",
+    attraction: "whsa-moonlight-hike",
+  },
+  {
+    park: "whsa",
+    nameZh: "卢塞罗湖导览",
+    nameEn: "Lake Lucero Tour",
+    months: [11, 12, 1, 2, 3],
+    summary:
+      "每月一次跟护林员车队开进导弹靶场，下到白沙的“源头”卢塞罗湖湖床，看露出地面的透石膏晶体，听白沙是怎么形成的。",
+    booking:
+      "Recreation.gov 买票，16 岁以上 $8、15 岁以下 $4，不另收公园门票；导览前一个月开售，每团 50 人，一张票只能开一辆车。",
+    status:
+      "2026–27 年冬季：2026 年 11 月 21 日、12 月 19 日，2027 年 1 月 9 日、2 月 13 日、3 月 13 日，都是周六 10:00 出发。",
+    url: "https://www.nps.gov/whsa/planyourvisit/lake-lucero-tour.htm",
+    attraction: "whsa-lake-lucero",
+  },
+  {
+    park: "whsa",
+    nameZh: "护林员日落漫步",
+    nameEn: "Sunset Stroll",
+    summary: "护林员带着在沙丘里慢慢走约 800 米，讲石膏沙和沙丘里的动植物，正好在日落时结束。",
+    booking: "免费，不用也不能预约，交公园门票就行；在沙丘大道尽头的“Sunset Stroll Meets Here”牌子下集合。",
+    status: "2026 年只在周五、周六、周日举行，开始时间随日落从 16:00 到 19:00 不等，高温警报时取消。",
+    url: "https://www.nps.gov/whsa/planyourvisit/sunset-stroll.htm",
+    attraction: "whsa-sunset-stroll",
+  },
+  {
+    park: "whsa",
+    nameZh: "白沙热气球节",
+    nameEn: "White Sands Balloon Invitational",
+    months: [9],
+    summary: "每年 9 月的一个周末，成群的热气球一早在白色沙丘上空升起，是园里一年中最热闹的早晨。",
+    booking:
+      "不用买票，交公园门票（每车 $25）就行；最好 5:30–6:30 到，7:00 飞行员简报，7:30–8:00 升空，天气不好会取消。",
+    status:
+      "2026 年是第 34 届：9 月 19 日（周六）在公园里升空，9 月 20 日在 Alamogordo 的 Ed Brabson 热气球公园（免费）；今年没有夜间灯光秀和摊位。2027 年的日期还没公布。",
+    url: "https://www.whitesandsballoons.com/",
+    attraction: "whsa-dunes-drive",
+  },
+  {
+    park: "cave",
+    nameZh: "蝙蝠出洞讲解",
+    nameEn: "Bat Flight Program",
+    months: [4, 5, 6, 7, 8, 9, 10],
+    summary:
+      "每天傍晚在天然入口的露天剧场听护林员讲蝙蝠，然后看几十万只巴西犬吻蝠盘旋着飞出洞口觅食；8–9 月小蝙蝠加入、北方的蝙蝠迁徙路过，数量最多。",
+    booking:
+      "免费，不用预约，也不需要洞穴门票，座位先到先得；为保护蝙蝠，剧场一带禁止一切电子设备（手机、相机都不行）。",
+    status: "2026 年 4–10 月每晚举行，开始时间随日落变，当天在游客中心问；打雷闪电时取消。",
+    url: "https://www.nps.gov/cave/planyourvisit/bat_flight_program.htm",
+    attraction: "cave-bat-flight",
+  },
+  {
+    park: "cave",
+    nameZh: "国王宫殿导览",
+    nameEn: "King's Palace Tour",
+    summary: "护林员带着走进 Big Room 旁边装饰最密集的四个洞厅，下到游客能到的最深处，中途关灯体验洞里的漆黑。",
+    booking:
+      "2026 年只在游客中心卖当天的现场票：成人 $10，儿童（6–15 岁）和老人卡、残障卡持有者 $5，另要分时段入场预约和洞穴门票；每团 12 人。",
+    status: "2026 年周四到周二 10:30、13:30 两场（周三不开），只在当天人手够时开。",
+    url: "https://www.nps.gov/cave/planyourvisit/tour_schedule.htm",
+    attraction: "cave-kings-palace",
+  },
+  {
+    park: "cave",
+    nameZh: "下层洞穴探险导览",
+    nameEn: "Lower Cave Tour",
+    summary: "戴头盔头灯，下绳坡、爬梯子进入没有电灯和步道的下层洞穴，看洞穴珍珠和 1924 年探险队留下的痕迹。",
+    booking:
+      "Recreation.gov 提前 30 天放票，成人 $30，儿童和老人卡、残障卡持有者 $15，另要分时段入场预约和洞穴门票；12 岁以上，每团 12 人。",
+    status: "2026 年每周三 9:30 一场，约 3 小时。",
+    url: "https://www.nps.gov/cave/planyourvisit/lower_cave.htm",
+    attraction: "cave-lower-cave",
+  },
+  {
+    park: "cave",
+    nameZh: "观星和夜间徒步",
+    nameEn: "Night Sky Programs",
+    months: [6, 7, 8, 9, 10],
+    summary:
+      "公园远离城市灯光，夏秋的部分周末，蝙蝠讲解结束后有护林员带的观星（在游客中心东停车场用望远镜看）和夜间徒步。",
+    booking: "免费；夜间徒步每场最多 25 人，当天在游客中心服务台登记，观星不用登记。",
+    status:
+      "NPS 的活动介绍页还写着暂停，但 2026 年的公园日历上有：9 月 11–13 日、10 月 9–11 日观星，9 月 25–27 日、10 月 23–25 日夜间徒步；以公园日历为准。",
+    url: "https://www.nps.gov/cave/planyourvisit/calendar.htm",
+  },
+  {
+    park: "meve",
+    nameZh: "崖居护林员导览",
+    nameEn: "Ranger-Guided Cliff Dwelling Tours",
+    months: [5, 6, 7, 8, 9, 10],
+    summary:
+      "进悬崖宫殿、阳台屋、长屋这几处大崖居只能跟护林员导览：悬崖宫殿约 45 分钟、要爬 4 段梯子；阳台屋 1 小时，要爬 10 米木梯、钻岩缝隧道；长屋在 Wetherill Mesa，连走路约 2 小时。",
+    booking:
+      "只在 Recreation.gov（或电话 1-877-444-6777）卖票，按滚动窗口提前 14 天、山地时间早上 8 点开放，每人 $8（3 岁以上）；旺季当天就会订满，有人退票会放回网上，开团前 2 小时都能捡漏。园内不卖票，也没有候补名单。",
+    status: "2026 年导览季 5 月 4 日到 10 月 21 日，Wetherill Mesa 的长屋 5 月 22 日起；2027 年的日期还没公布。",
+    url: "https://www.nps.gov/meve/planyourvisit/cliff_dwelling_tours.htm",
+    attraction: "meve-cliff-palace",
+  },
+  {
+    park: "meve",
+    nameZh: "700 Years Tour 大巴导览团",
+    nameEn: "700 Years Tour",
+    months: [5, 6, 7, 8, 9, 10],
+    summary:
+      "特许经营商 Aramark 的半日大巴团，从 Far View Lodge 出发，导游沿途讲台地顶的半地穴屋和村落遗址，最后跟护林员下到悬崖宫殿，不用自己抢导览票、开山路。",
+    booking:
+      "在 visitmesaverde.com 网上订，或在 Far View Lodge、Far View Terrace、Morefield 营地现场订；8:00–12:00、13:00–17:00 两团，成人 $129、5–11 岁 $99、4 岁以下免费，订票时全额付款，出发 72 小时前取消才能全额退款。",
+    status: "2026 年 5 月 4 日到 10 月 18 日运营；Far View Lodge 离入口约 30 分钟车程，按时到。",
+    url: "https://www.visitmesaverde.com/activities/tours/700-years-tour",
+    attraction: "meve-cliff-palace",
+  },
+  {
+    park: "meve",
+    nameZh: "护林员荒野徒步团（方塔屋、马克杯屋）",
+    nameEn: "Backcountry Tours: Square Tower House & Mug House",
+    months: [5, 6, 7, 8, 9, 10],
+    summary:
+      "每天只有一团、限 10 人的小团，下到平时只能远看的崖居：方塔屋有全园最高的四层方塔和保存完整的地穴屋顶；马克杯屋在 Wetherill Mesa，沿途还有岩画和石峡谷风景。都要攀石、爬梯子、走崖边，适合体力好的人。",
+    booking:
+      "Recreation.gov 提前 14 天、山地时间早上 8 点开票，每人 $25（3 岁以上）。方塔屋 8:30 在步道口集合、8:45 出发；马克杯屋 8:45 在 Wetherill Mesa 游客亭集合、9:00 出发，都是约 2 小时。",
+    status: "2026 年方塔屋 5 月 4 日到 10 月 21 日、马克杯屋 5 月 22 日到 9 月 7 日每天一团。",
+    url: "https://www.recreation.gov/ticket/facility/233362",
+    attraction: "meve-square-tower-house",
+  },
+  {
+    park: "meve",
+    nameZh: "周三星空讲解",
+    nameEn: "Wednesday Night Sky Programs",
+    months: [5, 6, 7, 8, 9, 10],
+    summary:
+      "梅萨维德是国际暗夜公园。每周三晚上护林员在 Morefield 营地露天剧场先讲 30 分钟，再用激光笔认星座、架望远镜看星星（天气好时）；阴天也照常讲。",
+    booking: "免费、不用预约；带保暖衣服和手电（最好是红光）。",
+    status: "2026 年 5 月 27 日–9 月 2 日 21:00、9 月 9–23 日 20:30、9 月 30 日–10 月 14 日 20:00 开始。",
+    url: "https://www.nps.gov/meve/planyourvisit/stargazing.htm",
+    attraction: "meve-night-sky",
+  },
+  {
+    park: "meve",
+    nameZh: "冬季越野滑雪和雪鞋",
+    nameEn: "Cross-Country Skiing & Snowshoeing",
+    months: [12, 1, 2, 3],
+    summary:
+      "积雪够厚时，冬天封闭的 Cliff Palace Loop 和 Morefield 营地的环路会压出越野滑雪、雪鞋道，沿途能看到雪中的崖居，几乎遇不到别人。",
+    booking: "免费；游客与研究中心每天中午前免费借雪鞋（大人小孩尺码都有），15:30 前还回。",
+    status: "要看当年积雪，NPS 会在 Winter Activities 页面更新压雪情况。",
+    url: "https://www.nps.gov/meve/planyourvisit/winter-activities.htm",
+  },
+  {
+    park: "pefo",
+    nameZh: "彩绘沙漠旅馆的纳瓦霍手工艺展示",
+    nameEn: "Cultural Demonstrations at the Painted Desert Inn",
+    summary:
+      "公园有 30 多个关系密切的部落。有些日子会有纳瓦霍等部落的艺人在彩绘沙漠旅馆现场做银饰、串珠、陶器、织毯或讲故事，可以边看边聊，有的作品当场出售。",
+    booking: "免费、不用预约；在彩绘沙漠旅馆，通常 10:00–15:00。",
+    status: "日程按月公布在官网（例如 2026 年 8 月几乎每天都有安排），随时可能调整，出发前看一眼。",
+    url: "https://www.nps.gov/pefo/planyourvisit/cultural-demonstrations.htm",
+    attraction: "pefo-painted-desert-inn",
+  },
+  {
+    park: "pefo",
+    nameZh: "石化林野外学院向导游",
+    nameEn: "Petrified Forest Field Institute Guided Trips",
+    summary:
+      "公园官方合作的非营利博物馆协会开的小团，你开自己的车跟着向导走：3–4 小时的 Insider's Tour 把主要景点串起来；Ancient Wonders 从彩虹森林博物馆出发，去岩画峡谷（Petroglyph Canyon）和玛瑙屋；还有蓝台地、观鸟植物和要开四驱车去的冰淇淋岩（Ice Cream Rocks）。",
+    booking: "至少提前 7 天打电话（928-524-1286）或在官网留言约时间；每人 $69–$89，不含门票。",
+    status: "按预约安排，没有固定班次。",
+    url: "https://www.petrifiedforestfieldinstitute.org/guided-custom-trips/",
+  },
+  {
+    park: "pefo",
+    nameZh: "普埃科村落的夏至光斑",
+    nameEn: "Summer Solstice Solar Marker at Puerco Pueblo",
+    months: [6],
+    summary:
+      "普埃科村落步道旁一块巨石上刻着一个小螺旋。夏至那几天的早上，一道光斑投到石面上，慢慢往下移，正好碰到螺旋的中心，是古普韦布洛人用来记录节令的“太阳历”。",
+    booking: "免费；6 月 21 日前后早上去普埃科村落。",
+    status: "公园 8:00 才开门，有没有护林员带的观看活动、几点开始，以 NPS 活动日历为准。",
+    url: "https://www.nps.gov/articles/000/archeoastronomy-in-stone.htm",
+    attraction: "pefo-puerco-pueblo",
+  },
+  {
+    park: "pefo",
+    nameZh: "季风雷雨季",
+    nameEn: "Monsoon Season",
+    months: [7, 8, 9],
+    summary:
+      "亚利桑那的季风季从 6 月 15 日到 9 月 30 日，石化林通常 7 月初才下第一场雨，之后午后常常积起雷雨云。雨后的荒地和化石木颜色特别鲜艳，草原也会变绿。",
+    booking: "不用预约。把户外活动排在上午，下午听到雷声就回车里（遮阳棚是金属顶，不安全）；不要穿越有水的冲沟和路面。",
+    status: "暴雨可能让步道、支路临时关闭，看公园 Alerts。",
+    url: "https://www.nps.gov/pefo/planyourvisit/conditions.htm",
+  },
+  {
+    park: "pefo",
+    nameZh: "魔鬼游乐场许可证徒步",
+    nameEn: "Devil's Playground Permit Hike",
+    summary:
+      "北区荒野里一片偏远的荒地，被侵蚀成各种奇形怪状的石柱，带着灰、紫、蓝色条纹；没有步道，要走一段土路再自己找路。",
+    booking:
+      "每周只有 3 张免费许可证，从周三开始在游客中心先到先得，必须在徒步当天中午前领到，不能电话预留（可以先打 928-524-6228 分机 236 问还剩几张）。",
+    status:
+      "官网写的是只在彩绘沙漠游客中心发放，2026 年那里施工关闭，北区的咨询暂时在彩绘沙漠旅馆，去之前打电话确认在哪领。进去的土路风险自负，雨后不要开。",
+    url: "https://www.nps.gov/pefo/planyourvisit/hiking.htm",
+  },
+  {
+    park: "grsa",
+    nameZh: "梅达诺溪春季涌浪",
+    nameEn: "Medano Creek Surge Flow",
+    months: [5, 6],
+    summary:
+      "雪大的年份，5 月下旬到 6 月初融水最多，沙丘脚下的梅达诺溪漫开成一片宽浅的“沙滩”：水流把河床的沙堆成一道道小沙坝，冲垮时就涌下一波浪，大约 20 秒一波，水大时浪高 30 厘米以上。",
+    booking:
+      "不用预约，交公园门票就行；周末入口排长队、停车场爆满，尽量工作日去。可以给小孩带个扁平的充气垫，水大时能顺浪漂一小段。",
+    status:
+      "2026 年积雪接近历史最低，溪水整个春天都没流到主停车场，只在东边的 Sand Pit、城堡溪一带有细流；2027 年的流量预测 NPS 一般在 4 月发布。",
+    url: "https://www.nps.gov/grsa/planyourvisit/medano-creek.htm",
+    attraction: "grsa-medano-creek",
+  },
+  {
+    park: "grsa",
+    nameZh: "护林员晚间讲座和看星星",
+    nameEn: "Ranger Evening Programs & Night Sky",
+    months: [7, 8, 9, 10],
+    summary:
+      "夏秋的部分晚上，护林员在 Piñon Flats 营地下方的露天剧场讲公园里的动物、地质和夜空；散场后正好去沙丘上看星星，7 月下旬到 9 月银河入夜后就高挂天上。",
+    booking: "免费、不用预约，交公园门票就行；开车停露天剧场（Amphitheater）停车场。",
+    status:
+      "2026 年只在 7 月下旬到 10 月初的部分周六举行（7 月底周五也有），开始时间随日落从 21:00 提前到 19:30；2027 年的安排以公园日历为准。",
+    url: "https://www.nps.gov/grsa/planyourvisit/calendar.htm",
+    attraction: "grsa-night-sky",
+  },
+  {
+    park: "grsa",
+    nameZh: "秋季山杨和棉白杨变黄",
+    nameEn: "Fall Aspen & Cottonwood Colors",
+    months: [9, 10],
+    summary:
+      "9 月下旬到 10 月初，沙丘上方山坡的山杨林变成金黄色，莫斯卡山口步道和梅达诺山口四驱路一路都是；10 月中旬轮到沙丘脚下沿溪的棉白杨，黄叶衬着沙丘和刚落雪的山顶。",
+    booking: "不用预约；9 月是全年天气最好的时候，下午沙丘也不太烫，周末人比 5–6 月少。",
+    status: "高处先变色、低处晚一两周，每年随天气提前或推后；秋天上面的国家保护区是打猎区，进山穿颜色鲜艳的衣服。",
+    url: "https://www.nps.gov/grsa/planyourvisit/conditions-to-expect.htm",
+    attraction: "grsa-mosca-pass-trail",
+  },
+  {
+    park: "grsa",
+    nameZh: "沙丘边的草原向日葵",
+    nameEn: "Prairie Sunflower Bloom",
+    months: [8],
+    summary: "夏天雨水多的年份，8 月下半月沙丘边缘和草原上会开出成片的草原向日葵，黄花一直铺到沙丘脚下，背后是雪山。",
+    booking: "不用预约；进园公路两边和沙丘停车场附近就能看到，清早或傍晚光线最好，也避开午后雷暴。",
+    status: "要看 7–8 月的季风雨，干旱的年份几乎不开，花期每年可能前后差一两周。",
+    url: "https://www.nps.gov/grsa/planyourvisit/conditions-to-expect.htm",
+    attraction: "grsa-dunefield",
+  },
+  {
+    park: "grsa",
+    nameZh: "圣路易斯谷沙丘鹤迁徙",
+    nameEn: "Sandhill Crane Migration (San Luis Valley)",
+    months: [2, 3, 10, 11],
+    summary:
+      "每年春秋两季，两万多只大沙丘鹤在圣路易斯谷的农田和湿地停留几个星期补充体力，早晚成群起落、跳求偶舞，3 月上旬数量最多。看鹤最集中的是公园西南约 1 小时 15 分车程的 Monte Vista 国家野生动物保护区。",
+    booking:
+      "看鹤不用预约，在 Monte Vista 保护区周边的公路旁停车看，别进私人农田；每年 3 月上旬 Monte Vista 镇有沙丘鹤节（2026 年是 3 月 6–8 日），部分观鹤巴士团和讲座要在鹤节官网提前报名。",
+    status: "春季约 2 月初到 3 月底，秋季约 9 月下旬到 11 月中下旬（秋天比较分散）；2027 年鹤节的日期还没公布。",
+    url: "https://www.nps.gov/grsa/planyourvisit/sandhill-crane-migration.htm",
+  },
+  {
+    park: "grsa",
+    nameZh: "梅达诺山口四驱路吉普团",
+    nameEn: "Medano Pass 4WD Tours",
+    months: [5, 6, 7, 8, 9, 10, 11],
+    summary:
+      "没有四驱车也能走梅达诺山口四驱路：本地向导开吉普带你穿过深沙、在峡谷里涉水过溪，一路讲沙丘东侧的地质和动物，秋天山杨变黄时最受欢迎。",
+    booking:
+      "NPS 列出的几家（Dunes 4x4、Mountain Master Off-Road Tours、Pathfinders 4x4）都要提前打电话或网上订；Mountain Master 的团约 3.5 小时、从游客中心出发，2026 年 1–2 人一车 $410，3–4 人另加价。",
+    status: "四驱路全线通常 5 月中下旬到 11 月底开放，冬天只能开到城堡溪野餐区；暴雨后溪水上涨可能临时封路。",
+    url: "https://www.nps.gov/grsa/planyourvisit/guided-tours-and-4wd-vehicle-rentals.htm",
+    attraction: "grsa-medano-pass-road",
+  },
+  {
+    park: "blca",
+    nameZh: "护林员观景台讲解",
+    nameEn: "Ranger Talks at Pulpit Rock",
+    months: [5, 6, 7, 8, 9, 10],
+    summary:
+      "夏天每天上午 10 点在讲坛岩观景台有 20–30 分钟的地质讲解（峡谷为什么这么深、这么陡、岩石有多老），下午 2 点是护林员选题讲解（历史、植物或动物），站在崖边听，适合第一次来的人。",
+    booking: "免费、不用预约，交了公园门票就能参加；准时到讲坛岩观景台集合。",
+    status:
+      "2026 年两场讲解每天都有，日历排到 10 月 14 日；黄昏讲座和营地晚间节目 2026 年不办，人手不够或天气不好时会取消。",
+    url: "https://www.nps.gov/blca/planyourvisit/ranger-programs.htm",
+    attraction: "blca-pulpit-rock",
+  },
+  {
+    park: "blca",
+    nameZh: "天文观星活动与 AstroFest 天文节",
+    nameEn: "Astronomy Programs & Black Canyon Curecanti AstroFest",
+    months: [6, 7, 8, 9],
+    summary:
+      "公园是国际暗夜公园，夏天护林员、志愿者和当地的黑峡谷天文学会常架望远镜带大家看星星、认星座，白天也有太阳望远镜观测；每年 9 月还有两天的 AstroFest 天文节。",
+    booking: "免费、不用预约，交公园门票即可；日期和地点不固定，看公园日历或到南缘游客中心问。带保暖衣服和红光手电。",
+    status:
+      "2026 年的 AstroFest 已在 9 月 11–12 日办完（11 日晚上在南缘游客中心，12 日在 Curecanti 的 Elk Creek 露天剧场），2027 年的日期还没公布。",
+    url: "https://www.nps.gov/blca/planyourvisit/astronomy.htm",
+    attraction: "blca-night-sky",
+  },
+  {
+    park: "blca",
+    nameZh: "冬季越野滑雪和雪鞋",
+    nameEn: "Cross-Country Skiing & Snowshoeing",
+    months: [12, 1, 2, 3],
+    summary:
+      "冬天游客中心以西的南缘公路不通车，积雪够时公园把路面压成越野滑雪（传统式和自由式）和雪鞋道，到高点单程约 9.7 公里，能到平时开车去的观景台；1 月到 3 月上旬积雪好时，周末还有护林员带队的雪鞋徒步。",
+    booking:
+      "自己滑、自己走都免费（交公园门票），园内不租装备，在 Montrose 等镇上租；护林员雪鞋徒步周六、日 11:00 出发，约 90 分钟、1.6 公里左右，免费借雪鞋，名额有限，活动前一周开始发邮件到 BLCA_info@nps.gov 预约，提前 15 分钟到游客中心旁的滑雪道起点集合。",
+    status: "要看当年积雪，压道情况在公园 Current Conditions 页面更新；2026/27 季的雪鞋徒步日期还没公布。",
+    url: "https://www.nps.gov/blca/planyourvisit/winteractivities.htm",
+    attraction: "blca-visitor-center",
+  },
 ];

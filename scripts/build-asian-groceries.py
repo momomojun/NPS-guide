@@ -57,6 +57,7 @@ EXCLUDE = {
     "0ec9565c-a42c-4fb7-97db-5048e80713fa": "大创，卖日用品",
     "9e692d89-0550-43d4-a2a5-5210fa4493a3": "日本生活杂货店",
     "a1d207ae-e638-407d-a203-985c6ace667c": "和 Rams Bazaar 是同一家",
+    "d037f0b9-6204-4e4b-9de6-bb3df20db19f": "日本的超市（サンディ），坐标错放在阿尔伯克基",
 }
 # 店名太长或者带着别的字：Overture id → 显示的名字
 RENAME = {
@@ -127,7 +128,7 @@ def main():
     con.execute("INSTALL httpfs; LOAD httpfs; SET s3_region='us-west-2';")
 
     def search(south, west, north, east):
-        """一块范围里的亚洲超市"""
+        """一块范围里的亚洲超市。只收美国、加拿大的店：卡尔斯巴德一带的范围伸进了墨西哥的华雷斯，还有坐标错放到美国的日本店"""
         rows = con.execute(
             f"""
             SELECT id, names.primary, brand.names.primary, taxonomy.primary, confidence, bbox.ymin, bbox.xmin
@@ -136,6 +137,7 @@ def main():
               AND taxonomy.primary IN ({categories})
               AND confidence >= {MIN_CONFIDENCE}
               AND coalesce(operating_status, 'open') NOT IN ('permanently_closed', 'temporarily_closed')
+              AND coalesce(addresses[1].country, 'US') IN ('US', 'CA')
             """
         ).fetchall()
         kept = []

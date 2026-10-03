@@ -58,6 +58,24 @@ const EXCLUDE = {
     "NPS Rangers Cinimin and Mariah",
     "Denali Depot",
     "Welcome to beautiful downtown Talkeetna",
+    // 马里兰、纽约的 Point Lookout（灯塔、海滩、海岸），不是梅萨维德
+    "Point Lookout, lighthouse",
+    "Point Lookout 19-10-16",
+    "Point-lookout-2023",
+    "Sunset at Point Lookout",
+    // 别处的沙丘、日落、河流（法国皮拉沙丘、菲律宾、佛罗伦萨、印度、阿拉斯加），BLM 的社交媒体合集，古罗马钱币，蛾子
+    "Dune du pyla",
+    "Paoay Ilocos Norte",
+    "Sunset view from Ponte Vecchio",
+    "Sunset view from Gokulam Resort",
+    "Delta Wild and Scenic River",
+    "February -conservationlands15",
+    "Roman coin",
+    "Republican Coin",
+    "M. Aemilius Scaurus",
+    "COIN (FindID",
+    "Breakdown (Giant's Coffin",
+    "Erebinae",
     "CALLE EN TALKEETNA",
     "Talkeetna, AK 99676",
     "PARADA EN LA PARKER HIGHWAY",
@@ -520,6 +538,81 @@ const EXCLUDE = {
   ],
   "wrst-glacier-hike": ["The guardians of the Columbia"],
   "wrst-bonanza-mine": ["AK-June-15"],
+  // 白沙一带的照片很多是白沙导弹靶场和 NASA 试验场的（飞船、直升机、颁奖），月光徒步、卢塞罗湖附近都是
+  "whsa-dune-life-trail": ["Young Great Horned Owl"],
+  "whsa-dunes-drive": ["Dunes and Dreams - Figure", "White Sands National Monument WHSA26", "Treasures of poetry"],
+  "whsa-playa-trail": ["Psilostrophe tagetina leaf", "Oenothera hartwegii"],
+  "whsa-alkali-flat": ["LeeWhiteSands"],
+  "whsa-moonlight-hike": [
+    "Orion",
+    "Boeing CST-100 Starliner",
+    "Adam Wroblewski",
+    "Pilatus PC-12",
+    "View of the Glenn Research Center",
+    "Team Members Prep for Test Flight",
+    "Small crater in",
+    "Dr. Wernher von Braun",
+  ],
+  "whsa-lake-lucero": ["HFCA 1607", "20150225-APHIS", "Flickr - Official U.S. Navy Imagery", "03 - San Carlos de Bariloche"],
+  "cave-bat-flight": ["CCC structures in Carlsbad Caverns", "Carlsbad Caverns National Park and White's City"],
+  "cave-walnut-canyon-overlook": ["Parthenium incanum foliage", "Historic Carlsbad Caverns in New Mexico"],
+  // 田纳西州也有个 Rattlesnake Springs
+  "cave-rattlesnake-springs": [
+    "An over grown house at Rattlesnake Springs",
+    "A damaged home at Rattlesnake Springs",
+    "Hot springs travertine",
+  ],
+  "meve-visitor-center": ["American Flag, Far View Visitors Center"],
+  // USS Mesa Verde 是军舰
+  "meve-night-sky": ["USS Mesa Verde"],
+  "meve-balcony-house": ["Balcony House tour at Mesa Verde NP"],
+  // 大峡谷的 Desert View 瞭望塔、谢伊峡谷的页岩，名字里都有 Painted Desert / Chinle
+  "pefo-painted-desert-vc": ["Desert View Watchtower"],
+  // 塔瓦观景点、Onyx Bridge 路线都在彩绘沙漠旅馆旁边，附近照片多是旅馆的
+  "pefo-tawa-point": ["Shales (Chinle Formation", "Fred Harvey counter", "Painted Desert Inn"],
+  "pefo-onyx-bridge": [
+    "Painted Desert front entrance",
+    "Inside the cafe of Painted Desert Inn",
+    "Painted Desert Inn",
+    "The bar stool in Painted Desert Inn",
+  ],
+  // 大峡谷游客中心的放映厅（银幕上是大峡谷星空派对），1972 年的老照片
+  "grsa-visitor-center": ["Boy Next To Mosca Creek", "Visitor Center Theater"],
+  "grsa-montville-trail": ["Great Sand Dunes National Monument, 05-1972"],
+  "grsa-sandboarding": ["Great Sand Dunes National Park - partially burnt"],
+  "grsa-zapata-falls": ["Zapata Falls, United States (Unsplash", "Baker the dog", "Dogs at Zapata Falls"],
+  // 护林员合影、停车场
+  "blca-visitor-center": ["Black Canyon of the Gunnison National Park (2fcf9a56", "Black Canyon of the Gunnison National Park (4df1144e"],
+  // 老明信片、大章克申那边的 Dominguez-Escalante、Curecanti 的蓝台水库
+  "blca-gunnison-route": ["Rocky Mountain Views - Black Canyon", "Dominguez-Escalante NCA", "Blue Mesa Reservoir"],
+  // 按 “Sunset View” 搜，各国的日落照片都会搜出来
+  "blca-sunset-view": [
+    "Sunset View Point",
+    "Sunset view from",
+    "Foggy sunset view from",
+    "Sunset view bhattarika",
+    "Beautiful sunset view",
+    "Sunset view at the port",
+    "Sunset view on hill",
+    "Craigdarroch Castle",
+    "Sunset Finder",
+    "Sunset view in Villag",
+  ],
+  "blca-warner-point": ["Mariposa lily", "Toxicoscordion"],
+  // 大章克申的 Redlands 水坝和那里的鱼道、别的灌溉渠
+  "blca-east-portal": [
+    "Redlands Diversion Dam",
+    "Colorado Pikeminnow",
+    "Bluehead Sucker",
+    "Fire Mountain Canal",
+    "USDA Rural Development",
+    "Releasing Fish Through",
+    "Drought Mitigation",
+    "Girl Walking towards her Mom",
+    "Fish Ladder Baffles",
+    "Turning a river into the heart of a mountain",
+  ],
+  "blca-night-sky": ["Rock faces can appear to dramatically change color"],
 };
 
 /**
@@ -773,6 +866,126 @@ const TUNING = {
   "wrst-root-glacier": { geo: false, search: ["Root Glacier", "Root Glacier Trail"] },
   "wrst-kennecott": { search: ["Kennecott Mines", "Kennecott Alaska"] },
   "wrst-mill-tour": { search: ["Kennecott Concentration Mill", "Kennecott mill"] },
+  "whsa-visitor-center": { search: ["White Sands Visitor Center", "White Sands National Monument Visitor Center"] },
+  "whsa-dunes-drive": { search: ["Dunes Drive White Sands", "Heart of the Sands White Sands"] },
+  "whsa-dune-life-trail": { search: ["Dune Life Nature Trail", "Big Dune Trail White Sands"] },
+  "whsa-playa-trail": { search: ["White Sands National Park Playa", "Playa Trail White Sands"] },
+  "whsa-interdune-boardwalk": { search: ["Interdune Boardwalk White Sands"] },
+  "whsa-sledding": { search: ["White Sands sledding", "sledding White Sands National Park"] },
+  "whsa-backcountry-loop": { search: ["White Sands backcountry camping trail"] },
+  "whsa-alkali-flat": { search: ["Alkali Flat Trail White Sands", "Alkali Flats Trail"] },
+  "whsa-sunset-stroll": {
+    geo: false,
+    search: ["White Sands sunset", "Sunset White Sands National Monument", "White Sands National Park sunset dunes"],
+  },
+  "whsa-moonlight-hike": {
+    geo: false,
+    search: ["White Sands moonrise", "Moon at White Sands"],
+  },
+  "whsa-lake-lucero": { search: ["Lake Lucero", "Lake Lucero selenite"] },
+  "cave-visitor-center": {
+    geo: false,
+    search: ["Carlsbad Caverns Visitor Center", "Carlsbad Caverns National Park visitor center"],
+  },
+  "cave-natural-entrance": { search: ["Natural Entrance Carlsbad Cavern", "Carlsbad Caverns Natural Entrance"] },
+  "cave-big-room": { name: false, geo: false, search: ["Big Room Carlsbad Cavern", "Carlsbad Caverns Big Room"] },
+  "cave-kings-palace": {
+    name: false,
+    geo: false,
+    search: ["King's Palace Carlsbad Cavern", "Queen's Chamber Carlsbad Cavern"],
+  },
+  "cave-lower-cave": { name: false, geo: false, search: ["Lower Cave Carlsbad Cavern", "Rookery Lower Cave Carlsbad"] },
+  "cave-bat-flight": {
+    search: ["Bat Flight Amphitheater", "Carlsbad Caverns bat flight", "Tadarida brasiliensis Carlsbad"],
+  },
+  "cave-desert-nature-trail": {
+    geo: false,
+    search: ["Chihuahuan Desert Nature Trail Carlsbad", "Carlsbad Caverns desert plants"],
+  },
+  "cave-walnut-canyon-overlook": {
+    name: false,
+    geo: false,
+    search: ["Walnut Canyon Overlook Carlsbad", "Walnut Canyon Carlsbad Caverns"],
+  },
+  "cave-walnut-canyon-drive": {
+    name: false,
+    search: ["Walnut Canyon Desert Drive Carlsbad", "Walnut Canyon Carlsbad Caverns"],
+  },
+  "cave-rattlesnake-springs": {
+    name: false,
+    search: ["Rattlesnake Springs Carlsbad Caverns", "Rattlesnake Springs New Mexico"],
+  },
+  "cave-slaughter-canyon-cave": { search: ["Slaughter Canyon Cave", "Slaughter Canyon Carlsbad"] },
+  "meve-visitor-center": { search: ["Mesa Verde Visitor and Research Center"] },
+  "meve-point-lookout": { search: ["Point Lookout Mesa Verde"] },
+  "meve-night-sky": { search: ["Mesa Verde night sky", "Mesa Verde Milky Way"], geo: false },
+  "meve-park-point": { search: ["Park Point Lookout Mesa Verde", "Park Point Mesa Verde"] },
+  "meve-far-view-sites": { search: ["Far View House Mesa Verde", "Far View Sites Complex Mesa Verde"] },
+  "meve-museum": { search: ["Chapin Mesa Archeological Museum", "Chapin Mesa Museum"] },
+  "meve-spruce-tree-house": { search: ["Spruce Tree House Mesa Verde"] },
+  "meve-petroglyph-point": { search: ["Petroglyph Point Trail Mesa Verde", "Petroglyph Point MVNP"] },
+  "meve-pithouses": { search: ["Pithouse Mesa Top Loop Mesa Verde", "Mesa Top Sites Mesa Verde"] },
+  "meve-square-tower-house": { search: ["Square Tower House Mesa Verde"] },
+  "meve-sun-point-view": { search: ["Sun Point View Mesa Verde", "Cliff Palace Sun Point View"] },
+  "meve-sun-temple": { search: ["Sun Temple Mesa Verde"] },
+  "meve-cliff-palace": { search: ["Cliff Palace Mesa Verde"] },
+  "meve-cliff-palace-overlook": { search: ["Cliff Palace Overlook Mesa Verde"] },
+  "meve-balcony-house": { search: ["Balcony House Mesa Verde"] },
+  "meve-soda-canyon-overlook": { search: ["Soda Canyon Overlook Trail", "Balcony House Soda Canyon Overlook"] },
+  "meve-long-house": { search: ["Long House Mesa Verde", "Long House Wetherill Mesa"] },
+  "meve-step-house": { search: ["Step House Wetherill Mesa"] },
+  "pefo-painted-desert-vc": { search: ["Painted Desert Visitor Center", "Painted Desert Community Complex"] },
+  "pefo-tiponi-point": { search: ["Tiponi Point Petrified Forest"] },
+  "pefo-tawa-point": { search: ["Tawa Point Painted Desert", "Painted Desert Rim Petrified Forest"] },
+  "pefo-painted-desert-inn": { search: ["Painted Desert Inn", "View near Painted Desert Inn"] },
+  "pefo-pintado-point": { search: ["Pintado Point Petrified Forest", "Chinde Point Petrified Forest"] },
+  "pefo-onyx-bridge": {
+    search: ["View near Painted Desert Inn NHL", "Black Forest Petrified Forest", "Onyx Bridge Petrified Forest"],
+  },
+  "pefo-route-66": { search: ["Route 66 Petrified Forest", "1932 Studebaker Petrified Forest"] },
+  "pefo-puerco-pueblo": { search: ["Puerco Pueblo"] },
+  "pefo-newspaper-rock": { search: ["Newspaper Rock Petrified Forest"] },
+  "pefo-tepees": { search: ["The Tepees Petrified Forest"] },
+  "pefo-blue-mesa": { search: ["Blue Mesa Petrified Forest", "Blue Mesa Trail Petrified Forest"] },
+  "pefo-agate-bridge": { search: ["Agate Bridge Petrified Forest"] },
+  "pefo-jasper-forest": { search: ["Jasper Forest Petrified Forest"] },
+  "pefo-crystal-forest": { search: ["Crystal Forest Petrified Forest"] },
+  "pefo-rainbow-forest-museum": { search: ["Rainbow Forest Museum", "Giant Logs Petrified Forest"] },
+  "pefo-long-logs-agate-house": { search: ["Long Logs Petrified Forest", "Agate House Petrified Forest"] },
+  "grsa-visitor-center": { search: ["Great Sand Dunes Visitor Center"] },
+  "grsa-dunefield": { search: ["Great Sand Dunes dunefield", "Great Sand Dunes Medano Creek dunes"] },
+  "grsa-medano-creek": { search: ["Medano Creek surge flow", "Medano Creek Great Sand Dunes"] },
+  "grsa-high-dune": { search: ["High Dune on First Ridge", "High Dune Great Sand Dunes"] },
+  "grsa-star-dune": { search: ["Star Dune Great Sand Dunes", "Star Dune Crestone Peaks"] },
+  "grsa-sandboarding": { search: ["Great Sand Dunes sandboarding", "Great Sand Dunes sand sledding"] },
+  "grsa-night-sky": { search: ["Great Sand Dunes Milky Way", "Great Sand Dunes night sky stars"], geo: false },
+  "grsa-montville-trail": { search: ["Montville Trail Great Sand Dunes", "Mosca Creek Great Sand Dunes"] },
+  "grsa-mosca-pass-trail": { search: ["Mosca Pass Trail", "Mosca Pass aspens"] },
+  "grsa-castle-creek": { search: ["Castle Creek Picnic Area Great Sand Dunes", "Point of No Return Great Sand Dunes"] },
+  "grsa-medano-pass-road": { search: ["Medano Pass Primitive Road", "Medano Pass Great Sand Dunes"] },
+  "grsa-zapata-falls": { search: ["Zapata Falls"] },
+  "blca-visitor-center": { search: ["South Rim Visitor Center Black Canyon", "Gunnison Point Black Canyon"] },
+  "blca-tomichi-point": { search: ["Tomichi Point Black Canyon"] },
+  "blca-cross-fissures": {
+    search: ["Cross Fissures Black Canyon", "Rock Point Black Canyon Gunnison", "Devils Lookout Black Canyon"],
+  },
+  "blca-chasm-view": { search: ["Chasm View Black Canyon"] },
+  // “Sunset View” 太常见，按名字搜会搜到佛罗伦萨、印度的日落
+  "blca-sunset-view": { name: false, search: ["Sunset View Black Canyon Gunnison", "Sunset View Overlook Black Canyon"] },
+  "blca-painted-wall-view": { search: ["Painted Wall Black Canyon Gunnison"] },
+  "blca-gunnison-route": { search: ["Gunnison Route Black Canyon", "Gunnison River inner canyon Black Canyon"] },
+  // 垦务局的照片说明里常提到 Gunnison，按名字搜会搜到别处的水坝、鱼道
+  "blca-east-portal": { name: false, search: ["Gunnison Diversion Dam", "East Portal Black Canyon of the Gunnison"] },
+  "blca-north-rim-drive": {
+    // 只搜 “Kneeling Camel” 会搜到印着跪着的骆驼的古罗马钱币
+    search: ["North Rim Road Black Canyon", "Kneeling Camel View Black Canyon", "The Narrows View Black Canyon"],
+  },
+  "blca-north-chasm-view": { search: ["North Chasm View Black Canyon", "Chasm View Nature Trail North Rim"] },
+  "blca-exclamation-point": { search: ["North Vista Trail Black Canyon", "Exclamation Point Black Canyon"] },
+  "blca-night-sky": {
+    search: ["Black Canyon of the Gunnison night sky", "Black Canyon of the Gunnison stars"],
+    geo: false,
+  },
 };
 
 /** 搜索时代表公园的词。红杉和国王峡谷的照片一般只写其中一个；拉森的照片很少写全称 */
@@ -847,11 +1060,20 @@ const PARK_IN_NAME = {
   glac: /glacier national/i,
   kefj: /kenai fjords/i,
   wrst: /wrangell/i,
+  whsa: /white sands/i,
+  cave: /carlsbad cavern/i,
+  meve: /mesa verde/i,
+  pefo: /petrified forest/i,
+  grsa: /great sand dunes/i,
+  blca: /black canyon of the gunnison/i,
 };
 const BAD_CATEGORY =
   /\b(paintings?|drawings?|maps?|satellite|aerial|ISS Expedition|astronaut|HAER|HABS|book scans|illustrations?|engravings?|lithographs?|postcards?|historical images|black and white photographs|signs|information boards|plaques|diagrams?|logos?)\b/i;
-/** 物种照片常见的文件名：“拉丁学名 + 编号”，比如 “Cortinarius alboviolaceus 832949.jpg”（iNaturalist 导入） */
-const SPECIES_PHOTO = /^[A-Z][a-z]+ [a-z]+( (var|subsp)\. [a-z]+)? \d{4,}/;
+/**
+ * 物种照片常见的文件名：“拉丁学名 + 编号”，比如 “Cortinarius alboviolaceus 832949.jpg”（iNaturalist 导入）；
+ * 美国地质调查局的蜜蜂标本照：“Perdita albihirta geraeae, female, side 2012-08-01…”
+ */
+const SPECIES_PHOTO = /^[A-Z][a-z]+ [a-z]+( (var|subsp)\. [a-z]+)? \d{4,}|^[A-Z][a-z]+ [a-z]+( [a-z]+)?, (fe)?male\b/;
 const BAD_AUTHOR =
   /George A\. Grant|Carl E\. Jepson|Ansel Adams|Carleton Watkins|Matson Collection|Internet Archive Book Images|Albert Bierstadt|William Keith/i;
 const QUALITY = {

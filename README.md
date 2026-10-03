@@ -19,10 +19,10 @@ A Chinese-language trip planner for U.S. national parks and the Canadian Rockies
 ![MapLibre GL](https://img.shields.io/badge/MapLibre_GL-6-1c1b18)
 ![PWA](https://img.shields.io/badge/PWA-offline-1c1b18?logo=pwa&logoColor=white)
 <br>
-![27 national parks](https://img.shields.io/badge/national_parks-27-a04c2e)
+![33 national parks](https://img.shields.io/badge/national_parks-33-a04c2e)
 ![4 scenic sites](https://img.shields.io/badge/scenic_sites-4-a04c2e)
-![487 attractions](https://img.shields.io/badge/attractions-487-a04c2e)
-![196 trails](https://img.shields.io/badge/trails-196-a04c2e)
+![573 attractions](https://img.shields.io/badge/attractions-573-a04c2e)
+![225 trails](https://img.shields.io/badge/trails-225-a04c2e)
 ![49 creator routes](https://img.shields.io/badge/creator_routes-49-a04c2e)
 
 </div>
@@ -39,7 +39,7 @@ NPS Guide 把这些按日期串起来：选好公园和日子，它告诉你那�
 
 ## 功能
 
-- **景点地图**：24 座美国国家公园、加拿大落基山 3 座国家公园和 4 处园外名胜，共 487 个景点，地图和列表联动；196 条徒步路线按 OpenStreetMap 真实步道画出；每个景点最多 6 张照片、Google 评分和园内热度排名；普通地图、卫星图和 3D 地形随时切换。
+- **景点地图**：30 座美国国家公园、加拿大落基山 3 座国家公园和 4 处园外名胜，共 573 个景点，地图和列表联动；225 条徒步路线按 OpenStreetMap 真实步道画出；每个景点最多 6 张照片、Google 评分和园内热度排名；普通地图、卫星图和 3D 地形随时切换。
 - **一键生成攻略**：选公园（可以几座顺路的一起，比如盐湖城进出、先大提顿再黄石）、月份或日期、天数、从哪个机场或城市出发，自动挑景点、排出每天几点到哪、定好每晚住处（园内酒店、门户小镇或民宿区，附 Airbnb 链接）。
 - **按日期提醒**：按当天日出日落安排日出 / 日落观景点；季节性关闭、许可证和预约写明原因和替代方案；Tioga Road、向阳大道这些冬天封闭的山路按近 20 年的开通、关闭日期算出“往年这一天通没通车”；16 天天气预报和 NWS 预警；NPS 实时公告附中文翻译，对到具体哪天哪个景点。
 - **要提前订的**：按行程日期算出园内住宿、营地、许可证抽签（天使降临、半穹顶、The Wave……）、入园预约和船票各自哪天开订、还剩几天，错过了还有什么机会；可以一键加到手机日历，开放前提醒。
@@ -101,7 +101,7 @@ NPS Guide 把这些按日期串起来：选好公园和日子，它告诉你那�
 
 ## 覆盖的公园
 
-**美国国家公园**（24 座）
+**美国国家公园**（30 座）
 
 | 片区 | 公园 | 代码 | 2026 年非居民附加费 |
 |---|---|---|---|
@@ -119,6 +119,9 @@ NPS Guide 把这些按日期串起来：选好公园和日子，它告诉你那�
 | 落基山北部 | 大提顿 Grand Teton | `grte` | $100 / 人 |
 | 落基山北部 | 冰川 Glacier | `glac` | $100 / 人 |
 | 科罗拉多 | 落基山 Rocky Mountain | `romo` | $100 / 人 |
+| 科罗拉多 | 梅萨维德 Mesa Verde | `meve` | — |
+| 科罗拉多 | 大沙丘 Great Sand Dunes | `grsa` | — |
+| 科罗拉多 | 甘尼森黑峡谷 Black Canyon of the Gunnison | `blca` | — |
 | 拉斯维加斯周边 | 死亡谷 Death Valley | `deva` | — |
 | 拉斯维加斯周边 | 锡安 Zion | `zion` | $100 / 人 |
 | 拉斯维加斯周边 | 布莱斯峡谷 Bryce Canyon | `brca` | $100 / 人 |
@@ -126,6 +129,9 @@ NPS Guide 把这些按日期串起来：选好公园和日子，它告诉你那�
 | 犹他东部 · 摩押 | 拱门 Arches | `arch` | — |
 | 犹他东部 · 摩押 | 峡谷地 Canyonlands | `cany` | — |
 | 犹他东部 · 摩押 | 圆顶礁 Capitol Reef | `care` | — |
+| 亚利桑那 · 新墨西哥 | 石化林 Petrified Forest | `pefo` | — |
+| 亚利桑那 · 新墨西哥 | 白沙 White Sands | `whsa` | — |
+| 亚利桑那 · 新墨西哥 | 卡尔斯巴德洞窟 Carlsbad Caverns | `cave` | — |
 | 阿拉斯加 | 德纳里 Denali | `dena` | — |
 | 阿拉斯加 | 基奈峡湾 Kenai Fjords | `kefj` | — |
 | 阿拉斯加 | 兰格尔–圣伊莱亚斯 Wrangell–St. Elias | `wrst` | — |
@@ -209,9 +215,9 @@ npm run dev                  # 打开 http://localhost:3000
 
 ## English
 
-**NPS Guide** is an unofficial, Chinese-language (Simplified & Traditional) trip planner for 24 U.S. national parks in the West: Yosemite, Sequoia & Kings Canyon, Channel Islands, Joshua Tree, Redwood, Lassen Volcanic, Crater Lake, Mount Rainier, Olympic, North Cascades, Yellowstone, Grand Teton, Glacier, Rocky Mountain, Death Valley, Zion, Bryce Canyon, Grand Canyon, Arches, Canyonlands, Capitol Reef, Denali, Kenai Fjords and Wrangell–St. Elias. It also covers Banff, Jasper and Yoho in the Canadian Rockies, and four famous non-park sites listed separately: Antelope Canyon, Horseshoe Bend, Monument Valley and The Wave.
+**NPS Guide** is an unofficial, Chinese-language (Simplified & Traditional) trip planner for 30 U.S. national parks in the West: Yosemite, Sequoia & Kings Canyon, Channel Islands, Joshua Tree, Redwood, Lassen Volcanic, Crater Lake, Mount Rainier, Olympic, North Cascades, Yellowstone, Grand Teton, Glacier, Rocky Mountain, Mesa Verde, Great Sand Dunes, Black Canyon of the Gunnison, Death Valley, Zion, Bryce Canyon, Grand Canyon, Arches, Canyonlands, Capitol Reef, Petrified Forest, White Sands, Carlsbad Caverns, Denali, Kenai Fjords and Wrangell–St. Elias. It also covers Banff, Jasper and Yoho in the Canadian Rockies, and four famous non-park sites listed separately: Antelope Canyon, Horseshoe Bend, Monument Valley and The Wave.
 
-- **Attraction maps**: 487 curated sights, 196 hiking trails traced on real OpenStreetMap paths, photo galleries, satellite and 3D terrain views.
+- **Attraction maps**: 573 curated sights, 225 hiking trails traced on real OpenStreetMap paths, photo galleries, satellite and 3D terrain views.
 - **Auto-generated itineraries**: pick parks, dates and an arrival airport, and get a day-by-day plan with times, drive durations, sunrise and sunset stops, and nightly lodging.
 - **Date-aware alerts**: seasonal closures, permits and reservations, the odds that a mountain road (Tioga Road, Going-to-the-Sun Road…) is open on your date based on 20 years of opening and closing dates, a 16-day forecast, NWS warnings, and live NPS alerts translated into Chinese.
 - **Booking timeline**: when each lodge, campground, permit lottery, timed entry or boat ticket on your trip opens for booking, with calendar (.ics) reminders; mandatory shuttles (Zion, Grand Canyon, Mariposa Grove, Moraine Lake, Kennecott) are built into the timings.

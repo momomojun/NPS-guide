@@ -17,9 +17,9 @@ import type { AttractionWithPhoto } from "@/data/attractions";
 import type { ParkAlert } from "@/lib/alert-match";
 import { fill, formatDuration, formatMonths } from "@/i18n/format";
 import { monthOf } from "@/lib/dates";
-import { lodgingLeg } from "@/lib/planner";
+import { entryWindow, lodgingLeg } from "@/lib/planner";
 import { formatClock } from "@/lib/sun";
-import { departuresOn, tourScheduleOf, tourSeason } from "@/lib/tours";
+import { datedSchedule, departuresOn, runsOn, tourScheduleOf, tourSeason } from "@/lib/tours";
 import { moveItem, removeItem, setItemStatus } from "@/lib/trip-edit";
 import type { Trip } from "@/lib/trip-store";
 import { ActionMenu } from "./action-menu";
@@ -180,12 +180,30 @@ export function DayCard({
       if (departures.times.length > 0) {
         const times = departures.times.map((time) => formatClock(time)).join("、");
         notes.push({ text: fill(t.warnings.tourTimes, { times, checkIn: departures.checkIn, year }), tone: "info" });
-      } else {
+        // 定了日期的：只在某几天开的（比如 Diablo 湖游船周一周二不开）按星期提醒
+        if (dateLabel && !runsOn(stop.id, view.date, true)) notes.push({ text: t.warnings.tourWeekday, tone: "warn" });
+      } else if (!datedSchedule(schedule)) {
         const season = tourSeason(schedule);
         const range = fill(t.warnings.tourSeason, { year, from: monthDay(season.from), to: monthDay(season.to) });
         notes.push({ text: range, tone: "info" });
       }
       if (schedule.daysZh) notes.push({ text: fill(t.warnings.tourDays, { days: schedule.daysZh }), tone: "warn" });
+    }
+    // 进去的时间有限制的（洞穴入场、公园大门）
+    const window = entryWindow(stop, view.date);
+    if (window) {
+      const values = {
+        open: formatClock(window.open),
+        last: window.lastEntry !== undefined ? formatClock(window.lastEntry) : "",
+        close: window.close !== undefined ? formatClock(window.close) : "",
+      };
+      const template =
+        window.lastEntry !== undefined && window.close !== undefined
+          ? t.warnings.entryBoth
+          : window.lastEntry !== undefined
+            ? t.warnings.entryLast
+            : t.warnings.entryClose;
+      notes.push({ text: fill(template, values), tone: "info" });
     }
     return notes;
   };

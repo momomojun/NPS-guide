@@ -1,16 +1,18 @@
 import Link from "next/link";
 import { alaskaMap, westMap, type MapView } from "@/data/map.generated";
+import { MapDeclutter } from "./map-declutter";
+import { LABEL_CLASS, type Side } from "./map-sides";
 
 export interface MapPark {
   code: string;
   href: string;
   nameZh: string;
   nameEn: string;
+  /** 热门程度（各景点的 Google 评论数加起来）：名字挤在一起时，冷门得多的公园先让 */
+  weight?: number;
 }
 
-type Side = "left" | "right" | "below" | "above";
-
-/** 公园名放在圆点哪一侧，避开旁边的公园和城市 */
+/** 公园名放在圆点哪一侧，避开旁边的公园和城市（大屏上按这个摆；挤的时候 MapDeclutter 会换边） */
 const LABEL_SIDE: Record<string, Side> = {
   olym: "left",
   noca: "right",
@@ -43,13 +45,14 @@ const LABEL_SIDE: Record<string, Side> = {
   // 左边就是小图边框
   kefj: "below",
   wrst: "right",
-};
-
-const SIDE_CLASS: Record<Side, string> = {
-  right: "left-6 top-1/2 -translate-y-1/2",
-  left: "right-6 top-1/2 -translate-y-1/2 text-right",
-  below: "top-6 left-1/2 -translate-x-1/2 text-center",
-  above: "bottom-6 left-1/2 -translate-x-1/2 text-center",
+  // 白沙、卡尔斯巴德洞窟挨着地图右下角，石化林右边是新墨西哥的州名
+  whsa: "left",
+  cave: "above",
+  meve: "right",
+  pefo: "left",
+  // 大沙丘下面是梅萨维德的名字；甘尼森黑峡谷的英文名太长，挤的时候让给大沙丘
+  grsa: "right",
+  blca: "right",
 };
 
 /**
@@ -130,19 +133,22 @@ function Marker({ park, view, compact = false }: { park: MapPark; view: MapView;
   return (
     <Link
       href={park.href}
+      data-marker
+      data-weight={park.weight ?? 0}
       className="group absolute -translate-x-1/2 -translate-y-1/2"
       style={{ left: `${(x / view.width) * 100}%`, top: `${(y / view.height) * 100}%` }}
     >
-      <span className="block size-3 rounded-full bg-ink ring-[5px] ring-ink/10 transition-all duration-500 group-hover:scale-125 group-hover:bg-clay-600 group-hover:ring-clay-600/20" />
-      <span className={`absolute whitespace-nowrap ${SIDE_CLASS[side]}`}>
+      <span data-dot className="block size-3 rounded-full bg-ink ring-[5px] ring-ink/10 transition-all duration-500 group-hover:scale-125 group-hover:bg-clay-600 group-hover:ring-clay-600/20" />
+      <span data-label data-side={side} className={LABEL_CLASS[side]}>
         <span
+          data-zh
           className={`block font-serif leading-tight transition-colors duration-500 group-hover:text-clay-700 ${
             compact ? "text-xs sm:text-sm xl:text-lg" : "text-sm sm:text-lg"
           }`}
         >
           {lines(park.nameZh)}
         </span>
-        <span className={`eyebrow hidden text-[10px] text-mute ${compact ? "xl:block" : "sm:block"}`}>{lines(park.nameEn)}</span>
+        <span data-en className={`eyebrow hidden text-[10px] text-mute ${compact ? "xl:block" : "sm:block"}`}>{lines(park.nameEn)}</span>
       </span>
     </Link>
   );
@@ -154,6 +160,7 @@ export function WestMap({
   cityNames,
   alaskaLabel,
 }: {
+  /** 按热门程度排好：名字挤在一起时排在前面的先摆 */
   parks: MapPark[];
   /** 城市 id → 当前语言的名字 */
   cityNames: Record<string, string>;
@@ -162,21 +169,21 @@ export function WestMap({
   const alaskaParks = parks.filter((park) => alaskaMap.parks[park.code]);
   return (
     <div className="relative">
-      <div className="relative" style={{ aspectRatio: `${westMap.width} / ${westMap.height}` }}>
+      <MapDeclutter className="relative" style={{ aspectRatio: `${westMap.width} / ${westMap.height}` }}>
         <Shapes view={westMap} cityNames={cityNames} />
         {parks.map((park) => (
           <Marker key={park.code} park={park} view={westMap} />
         ))}
-      </div>
+      </MapDeclutter>
 
       <div className="mt-6 w-2/3 border border-line bg-paper p-4 sm:absolute sm:top-0 sm:right-0 sm:mt-0 sm:w-[30%]">
         <p className="eyebrow text-mute">{alaskaLabel}</p>
-        <div className="relative mt-2" style={{ aspectRatio: `${alaskaMap.width} / ${alaskaMap.height}` }}>
+        <MapDeclutter className="relative mt-2" style={{ aspectRatio: `${alaskaMap.width} / ${alaskaMap.height}` }}>
           <Shapes view={alaskaMap} cityNames={cityNames} textScale={3} />
           {alaskaParks.map((park) => (
             <Marker key={park.code} park={park} view={alaskaMap} compact />
           ))}
-        </div>
+        </MapDeclutter>
       </div>
     </div>
   );

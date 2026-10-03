@@ -1,7 +1,8 @@
 // 按 OpenStreetMap 上的真实步道生成徒步路线：Valhalla 步行路线，允许所有难度的山路
 // （雾径、半穹顶这类在 OSM 里标成 mountain_hiking，默认设置会绕开）。
 // 输出 src/data/attractions/trails.generated.ts。新增或修改景点的 trail 后重新跑：npm run data:trails
-import { writeFileSync } from "node:fs";
+// 只重算几个公园或景点、其他的照旧：UPDATE=whsa,cave,meve-cliff-palace npm run data:trails；没算出来的保留原来的路线
+import { existsSync, writeFileSync } from "node:fs";
 import { attractions, sleep, USER_AGENT } from "./load-data.mjs";
 
 const OUTPUT = new URL("../src/data/attractions/trails.generated.ts", import.meta.url);
@@ -67,8 +68,16 @@ function simplify(points) {
   return points.filter((_, i) => keep[i]);
 }
 
+const previous = existsSync(OUTPUT) ? (await import(OUTPUT.href)).trails : {};
+const update = (process.env.UPDATE ?? "").split(",").filter(Boolean);
+const wanted = (id) => update.length === 0 || update.some((key) => id === key || id.startsWith(`${key}-`));
+
 const trails = {};
 for (const attraction of attractions.filter((a) => a.trail)) {
+  if (!wanted(attraction.id) && previous[attraction.id]) {
+    trails[attraction.id] = previous[attraction.id];
+    continue;
+  }
   const start = attraction.start ?? attraction;
   const via = attraction.trail.via ?? [{ lat: attraction.lat, lon: attraction.lon }];
   const locations = [start, ...via, ...(attraction.trail.loop ? [start] : [])].map(({ lat, lon }) => ({ lat, lon }));
@@ -86,6 +95,7 @@ for (const attraction of attractions.filter((a) => a.trail)) {
   const data = await res.json();
   if (!data.trip) {
     console.warn(`✗ ${attraction.id}: ${data.error ?? JSON.stringify(data).slice(0, 120)}`);
+    if (previous[attraction.id]) trails[attraction.id] = previous[attraction.id];
     await sleep(1100);
     continue;
   }

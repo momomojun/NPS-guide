@@ -30,6 +30,12 @@ import { rockyMountain } from "../src/data/attractions/romo.ts";
 import { glacier } from "../src/data/attractions/glac.ts";
 import { kenaiFjords } from "../src/data/attractions/kefj.ts";
 import { wrangellStElias } from "../src/data/attractions/wrst.ts";
+import { whiteSands } from "../src/data/attractions/whsa.ts";
+import { carlsbadCaverns } from "../src/data/attractions/cave.ts";
+import { mesaVerde } from "../src/data/attractions/meve.ts";
+import { petrifiedForest } from "../src/data/attractions/pefo.ts";
+import { greatSandDunes } from "../src/data/attractions/grsa.ts";
+import { blackCanyon } from "../src/data/attractions/blca.ts";
 import { lodgingOptions } from "../src/data/lodging.ts";
 import { parks } from "../src/data/parks.ts";
 
@@ -67,6 +73,12 @@ export const attractions = [
   ...glacier,
   ...kenaiFjords,
   ...wrangellStElias,
+  ...whiteSands,
+  ...carlsbadCaverns,
+  ...mesaVerde,
+  ...petrifiedForest,
+  ...greatSandDunes,
+  ...blackCanyon,
 ];
 
 /** 补给点的查询范围在外包框四边各放宽这么多度，门户小镇都在里面 */

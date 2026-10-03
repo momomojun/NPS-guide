@@ -2,7 +2,7 @@ import { CAD_TO_USD } from "@/data/fees-manual";
 
 // 油价、电价：预算和价格页用。
 // 汽油是 AAA 各州均价（https://gasprices.aaa.com/state-gas-price-averages/），美元 / 加仑。
-// 下面是 2026-09-26 的快照（科罗拉多是 09-28）：价格页和预算优先用实时的（gas.ts，自用阶段每 12 小时读一次），读不到时用这份。
+// 下面是 2026-09-26 的快照（科罗拉多是 09-28，新墨西哥是 10-01）：价格页和预算优先用实时的（gas.ts，自用阶段每 12 小时读一次），读不到时用这份。
 // 加拿大的艾伯塔、不列颠哥伦比亚 AAA 没有，用 finder.com 2026-09-22 的省均价（加元 / 升）换算成美元 / 加仑，只有普通汽油。
 export const fuelPricesDate = "2026-09-26";
 
@@ -26,6 +26,7 @@ export const gasSnapshot: Record<string, StateFuel> = {
   UT: { regular: 4.96, midGrade: 5.26, premium: 5.5, diesel: 6.58 },
   WA: { regular: 5.54, midGrade: 5.81, premium: 6.06, diesel: 7.46 },
   WY: { regular: 4.55, midGrade: 4.86, premium: 5.17, diesel: 6.24 },
+  NM: { regular: 4.42, midGrade: 4.85, premium: 5.17, diesel: 6.11 },
   AB: canadian(1.77),
   BC: canadian(1.99),
 };
@@ -68,10 +69,16 @@ export const parkState: Record<string, string> = {
   hsbd: "AZ",
   mova: "UT",
   wave: "UT",
+  whsa: "NM",
+  cave: "NM",
+  meve: "CO",
+  pefo: "AZ",
+  grsa: "CO",
+  blca: "CO",
 };
 
 /** 价格页列出的州：公园所在的州，加上常见出发地内华达（拉斯维加斯）、爱达荷（黄石西门）；最后是加拿大的两个省 */
-export const TRIP_STATES = ["CA", "NV", "UT", "AZ", "CO", "OR", "WA", "WY", "ID", "MT", "AK", "AB", "BC"];
+export const TRIP_STATES = ["CA", "NV", "UT", "AZ", "NM", "CO", "OR", "WA", "WY", "ID", "MT", "AK", "AB", "BC"];
 
 /** 租来的中型 SUV / 轿车，每加仑大约跑多少英里 */
 export const MILES_PER_GALLON = 25;

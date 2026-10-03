@@ -30,6 +30,14 @@ const photoOf = (id: string) => attractions.find((attraction) => attraction.id =
 /** Commons 缩略图换成 1920 宽，做全屏大图 */
 const large = (url: string) => url.replace("/960px-", "/1920px-");
 
+/** 地图上名字挤在一起时热门的公园先摆：各景点的 Google 评论数加起来（游客中心、园外景点不算，和热度排名一样） */
+const mapPopularity = new Map<string, number>();
+for (const attraction of attractions) {
+  if (!attraction.google || attraction.kind === "visitor" || attraction.outsidePark) continue;
+  mapPopularity.set(attraction.park, (mapPopularity.get(attraction.park) ?? 0) + attraction.google.reviews);
+}
+const popularity = (code: string) => mapPopularity.get(code) ?? 0;
+
 export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const { locale } = await params;
   if (!hasLocale(locale)) notFound();
@@ -275,12 +283,15 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
           </div>
           <Reveal className="lg:col-span-8">
             <WestMap
-              parks={localParks.map((park) => ({
-                code: park.code,
-                href: `/${locale}/parks/${park.code}`,
-                nameZh: park.nameZh,
-                nameEn: park.nameEn,
-              }))}
+              parks={[...localParks]
+                .sort((a, b) => popularity(b.code) - popularity(a.code))
+                .map((park) => ({
+                  code: park.code,
+                  href: `/${locale}/parks/${park.code}`,
+                  nameZh: park.nameZh,
+                  nameEn: park.nameEn,
+                  weight: popularity(park.code),
+                }))}
               cityNames={cityNames}
               alaskaLabel={`Alaska · ${dict.regions.alaska}`}
             />

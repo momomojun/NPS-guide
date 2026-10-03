@@ -7,6 +7,7 @@ export type RegionId =
   | "colorado"
   | "vegas"
   | "utah"
+  | "southwest"
   | "alaska"
   | "canada";
 
@@ -73,6 +74,7 @@ export const regionOrder: RegionId[] = [
   "colorado",
   "vegas",
   "utah",
+  "southwest",
   "alaska",
   "canada",
 ];
@@ -458,10 +460,93 @@ export const parks: Park[] = [
     gateway: { nameZh: "Beaver Meadows 游客中心", lat: 40.3662, lon: -105.5609 },
     timeZone: "America/Denver",
     airports: ["DEN"],
-    nearby: ["arch", "cany"],
+    nearby: ["arch", "cany", "grsa"],
     nonresidentSurcharge: true,
     lodgingTip:
       "园内没有酒店，只有 Moraine Park、Glacier Basin、Aspenglen、Timber Creek 等露营地（在 recreation.gov 订，营地预约自带入住当天下午起的进园时段，常常一开放就订满）。大多数人住东门外的 Estes Park：酒店、木屋和餐厅最多，到 Beaver Meadows 入口约 10 分钟，6–9 月和麋鹿季的周末要提前几个月订；想横穿 Trail Ridge Road 就在西边的 Grand Lake 住一晚，再便宜些住 Granby。丹佛机场进出的第一晚、最后一晚可以住 Boulder 或丹佛。",
+  },
+  {
+    code: "meve",
+    nameZh: "梅萨维德",
+    nameEn: "Mesa Verde",
+    region: "colorado",
+    tagline: "悬崖上的古村落",
+    stateEn: "Colorado",
+    hero: "meve-cliff-palace",
+    intro:
+      "科罗拉多西南角的一块大台地。古普韦布洛人（Ancestral Pueblo）在这里生活了七百多年，先住台地顶的半地穴屋和村落，最后约一百年把村子建进峡谷崖壁的岩洞里，留下悬崖宫殿等约 600 处崖居，是世界文化遗产。几处大崖居只能跟护林员导览进去（约 5–10 月，提前 14 天在 Recreation.gov 抢票），其余时间可以在台地顶环路的观景台隔着峡谷看；从入口到崖居集中的 Chapin Mesa 要开约 45 分钟山路，西侧的 Wetherill Mesa 只在夏秋开放。",
+    bestMonths: [5, 6, 9, 10],
+    seasonNote:
+      "5 月初到 10 月下旬有崖居导览（2026 年 5 月 4 日–10 月 21 日），5–6 月和 9–10 月最舒服；7–8 月白天热、午后多雷雨；11 月到次年 4 月导览、Wetherill Mesa 和园内住宿都关闭，只能看台地顶环路、博物馆和云杉树屋观景台。",
+    areas: {
+      entrance: "入口 · Morefield 营地",
+      "far-view": "Far View · Park Point",
+      chapin: "Chapin Mesa 博物馆区",
+      "mesa-top-loop": "台地顶环路（Mesa Top Loop）",
+      "cliff-palace-loop": "悬崖宫殿环路（Cliff Palace Loop）",
+      wetherill: "Wetherill Mesa（西侧台地）",
+    },
+    gateway: { nameZh: "梅萨维德游客与研究中心（入口）", lat: 37.3359, lon: -108.40817 },
+    timeZone: "America/Denver",
+    airports: ["DRO", "ABQ", "PHX", "DEN", "SLC"],
+    nearby: ["mova", "arch", "cany", "pefo", "blca", "grsa"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内唯一的酒店是 Far View Lodge（2026 年 4 月 17 日–10 月 18 日营业），离崖居最近、夏天要早订；入口进来约 6.5 公里的 Morefield 营地有 267 个营位（约 4 月下旬到 10 月中旬）。多数人住西边约 15 分钟车程的 Cortez（连锁酒店、超市多）或东边的 Mancos 小镇，想住河边小木屋可以看北边的 Dolores；从杜兰戈机场进出就住 Durango（到入口约 45 分钟）。冬天园内没有住宿，只能住园外。",
+  },
+  {
+    code: "grsa",
+    nameZh: "大沙丘",
+    nameEn: "Great Sand Dunes",
+    region: "colorado",
+    tagline: "北美最高的沙丘",
+    stateEn: "Colorado",
+    hero: "grsa-star-dune",
+    intro:
+      "科罗拉多南部圣路易斯谷的东缘，风把谷地里的沙子一路吹到桑格雷-德克里斯托山（Sangre de Cristo）脚下，堆成约 78 平方公里的沙丘区：最高的星形沙丘（Star Dune）和 Hidden Dune 从底到顶约 225 米，是北美最高的沙丘，背后就是 4,000 米级的雪山。沙丘里没有步道，可以随便爬、随便滑沙；春末融雪时，沙丘脚下的梅达诺溪（Medano Creek）漫成一片浅浅的“沙滩”，还会冲起一波波小浪。公园海拔约 2,500 米，24 小时开放、不用预约，也是国际暗夜公园，沙丘后面的国家保护区一直延伸到高山湖泊和苔原。",
+    bestMonths: [5, 6, 9, 10],
+    seasonNote:
+      "5 月下旬到 6 月初梅达诺溪水最大、人也最多；7–8 月午后沙面能到 65°C 以上、常有雷暴，只能清早或傍晚上沙丘；9 月到 10 月上旬天气最稳、山杨变黄；3–5 月午后风大扬沙，冬天夜里常冷到零下十几度，沙丘上不时积一层薄雪。",
+    areas: {
+      "visitor-center": "游客中心 · 莫斯卡山口步道",
+      dunes: "沙丘区 · 梅达诺溪（Dunes Parking Area）",
+      "medano-road": "梅达诺山口四驱路 · 东侧沙丘",
+      zapata: "园外南侧 · 萨帕塔瀑布（BLM）",
+    },
+    gateway: { nameZh: "大沙丘游客中心", lat: 37.73321, lon: -105.51213 },
+    timeZone: "America/Denver",
+    airports: ["ALS", "COS", "DEN", "ABQ"],
+    nearby: ["romo", "meve", "blca"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内没有酒店，只有 Piñon Flats 营地（4–10 月，Recreation.gov 提前 3 个月放出，5–6 月几乎天天订满）。离沙丘最近的是入口外约 6 公里的 Great Sand Dunes Lodge（约 3 月中到 10 月）和 Oasis 的木屋、营地（4–10 月，只能打电话订），旺季要早订；酒店、超市最多的是约 45 分钟车程的 Alamosa。想住整栋民宿可以看公园南边 Zapata Falls 一带的木屋（Airbnb 上多写 Mosca），从东边过来也可以住 Fort Garland。",
+  },
+  {
+    code: "blca",
+    nameZh: "甘尼森黑峡谷",
+    nameEn: "Black Canyon of the Gunnison",
+    region: "colorado",
+    tagline: "又深又窄的黑色峡谷",
+    stateEn: "Colorado",
+    hero: "blca-painted-wall-view",
+    intro:
+      "甘尼森河用两百多万年，在约 17 亿年前形成的坚硬片麻岩里切出这道峡谷：最深处约 830 米，最窄处谷底只有约 12 米宽，有的地段一天只照到半小时左右的太阳，崖壁总显得发黑，因此得名。南缘有约 11 公里的铺装观景路和十几个观景台，能看到科罗拉多州最高的悬崖彩绘崖壁；北缘是砂石路，更偏、更安静。两缘之间没有桥，开车绕园外要 2 小时以上。",
+    bestMonths: [5, 6, 9, 10],
+    seasonNote:
+      "5–6 月和 9–10 月最舒服；7–8 月白天热、午后常有雷暴；冬天南缘公路只铲雪到游客中心（其余改成滑雪、雪鞋道），北缘和谷底 East Portal 的路封闭，4 月中旬到 5 月初陆续开通。",
+    areas: {
+      "visitor-center": "南缘 · 游客中心一带",
+      "south-rim-drive": "南缘观景路（游客中心以西）",
+      "east-portal": "East Portal（谷底河边）",
+      "north-rim": "北缘",
+    },
+    gateway: { nameZh: "南缘游客中心", lat: 38.55507, lon: -107.68663 },
+    timeZone: "America/Denver",
+    airports: ["MTJ", "GJT", "GUC", "DEN"],
+    nearby: ["meve", "arch", "cany", "romo", "grsa"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内没有酒店，只有三个小营地：南缘营地只能在 Recreation.gov 预约（2025 年山火后 2026 年只开 25 个营位），北缘和谷底 East Portal 的营地先到先得。多数人住西边约 25 分钟车程的 Montrose，连锁酒店、超市最多，一般提前几周订就够；想住山城可以选南边约 1 小时 10 分的 Ouray，或半路上整栋民宿多的 Ridgway，从东边过来可以住约 1 小时 15 分的 Gunnison。去北缘就住 Crawford 一带，旅馆很少，要早订。",
   },
   {
     code: "deva",
@@ -700,7 +785,7 @@ export const parks: Park[] = [
     gateway: { nameZh: "拱门游客中心", lat: 38.61654, lon: -109.61989 },
     timeZone: "America/Denver",
     airports: ["CNY", "GJT", "SLC", "DEN", "LAS"],
-    nearby: ["cany", "care", "mova", "romo"],
+    nearby: ["cany", "care", "mova", "romo", "blca"],
     nonresidentSurcharge: false,
     lodgingTip:
       "园内没有酒店，只有北端的 Devils Garden 露营地（3–10 月的营位在 recreation.gov 提前 6 个月开放、很快订满，11–2 月先到先得）。绝大多数人住南边约 10 分钟车程的 Moab 镇，酒店、民宿和餐厅都多，但 3–10 月旺季房价高、周末常满，最好提前几个月订；想住整套房子可以看镇南的 Spanish Valley，订不到时往北住 Green River（约 1 小时）。和峡谷地连着玩，在 Moab 住两三晚最省事。",
@@ -722,7 +807,7 @@ export const parks: Park[] = [
     gateway: { nameZh: "天空之岛游客中心", lat: 38.45991, lon: -109.82099 },
     timeZone: "America/Denver",
     airports: ["CNY", "GJT", "SLC", "DEN"],
-    nearby: ["arch", "care", "mova", "romo"],
+    nearby: ["arch", "care", "mova", "romo", "blca"],
     nonresidentSurcharge: false,
     lodgingTip:
       "园内没有酒店：天空之岛的 Willow Flat 露营地只有 12 个先到先得的营位，针尖区露营地的 B 区可以在 recreation.gov 提前 6 个月订。玩天空之岛一般住 Moab（开车约 40–50 分钟），想住得更近可以订死马点州立公园里的蒙古包（提前 4 个月开放，很抢手）；去针尖区可以住园区门口的 Needles Outpost 帐篷营地（约 3–11 月营业）或东南边的 Monticello（约 1 小时）。去马蹄峡谷住 Green River 最近。",
@@ -755,6 +840,89 @@ export const parks: Park[] = [
     nonresidentSurcharge: false,
     lodgingTip:
       "园内没有酒店，只有 Fruita 露营地（71 个营位，在 recreation.gov 提前 6 个月订，3 月中到 10 月几乎天天订满）。最方便的是西边约 15 分钟车程的 Torrey 小镇，汽车旅馆、餐厅和加油站都在 24 号公路边，旺季要提前订；想住整套木屋可以看旁边的 Teasdale。从东边来、或者要去妖精谷和马蹄峡谷，可以住 Hanksville（约 50 分钟）；沿 12 号公路从布莱斯过来，也可以在 Boulder 小镇住一晚。",
+  },
+  {
+    code: "whsa",
+    nameZh: "白沙",
+    nameEn: "White Sands",
+    region: "southwest",
+    tagline: "世界最大的石膏沙丘",
+    stateEn: "New Mexico",
+    hero: "whsa-dunes-drive",
+    intro:
+      "世界上最大的石膏沙丘区（约 710 平方公里）在新墨西哥州南部的图拉罗萨盆地，白沙公园保护了其中的一大部分：雪一样白的沙丘一直铺到圣安德烈斯山脚，2019 年由国家纪念地升格为国家公园。园里只有一条约 13 公里的沙丘大道，开到尽头就是纯白的沙丘中心，可以徒步、滑沙、看日落。公园被白沙导弹靶场包围，导弹试验时沙丘大道和 70 号公路会临时封闭几个小时。",
+    bestMonths: [2, 3, 10, 11],
+    seasonNote:
+      "10–11 月和 2–3 月最舒服；6–8 月白天常到 35–38°C，只适合清早和傍晚活动，7–8 月午后多雷暴；3–5 月风大、常有沙尘暴；冬天白天十几度，夜里会到冰点以下。",
+    areas: {
+      "visitor-center": "游客中心 · 入口",
+      "dunes-drive": "沙丘大道沿线",
+      "heart-of-sands": "沙丘中心（Heart of the Sands）",
+      "lake-lucero": "卢塞罗湖（导弹靶场内）",
+    },
+    gateway: { nameZh: "白沙游客中心", lat: 32.77967, lon: -106.17242 },
+    timeZone: "America/Denver",
+    airports: ["ELP", "ABQ"],
+    nearby: ["cave"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内没有住宿和营地（野营区 2026 年仍关闭）。最近的是约 20 分钟车程的 Alamogordo，连锁酒店集中在 White Sands Blvd 南段，一般提前几天到几周订就行，9 月热气球节那个周末要早订；Las Cruces 酒店最多，从埃尔帕索机场过来顺路，到公园约 55 分钟。夏天想住凉快些，可以住萨克拉门托山上海拔约 2,600 米的 Cloudcroft，木屋多，到公园约 45 分钟。",
+  },
+  {
+    code: "cave",
+    nameZh: "卡尔斯巴德洞窟",
+    nameEn: "Carlsbad Caverns",
+    region: "southwest",
+    tagline: "地下洞厅与蝙蝠群",
+    stateEn: "New Mexico",
+    hero: "cave-big-room",
+    intro:
+      "地面上是约 2.6 亿年前海底礁石抬升成的瓜达卢普山脊，地下藏着 119 个以上的洞穴，是含硫酸的地下水溶蚀石灰岩形成的。主角卡尔斯巴德洞窟可以从天然入口一路走下约 230 米，也可以坐电梯直达 Big Room——北美按体积最大的单个洞厅；4–10 月每天傍晚还能在洞口看几十万只蝙蝠飞出觅食。1995 年列入世界遗产。",
+    bestMonths: [4, 5, 8, 9, 10],
+    seasonNote:
+      "洞里常年约 13°C，一年四季都能去；想看蝙蝠出洞要 4–10 月，8–9 月最多；夏天地面常到 32–40°C，8–9 月多午后雷雨，冬天偶尔下雪结冰。",
+    areas: {
+      "visitor-center": "游客中心 · 蝙蝠剧场",
+      cavern: "卡尔斯巴德洞窟（地下）",
+      "walnut-canyon": "Walnut Canyon · 进园公路",
+      rattlesnake: "Rattlesnake Springs",
+      slaughter: "Slaughter Canyon（西南角）",
+    },
+    gateway: { nameZh: "卡尔斯巴德洞窟游客中心", lat: 32.17543, lon: -104.4442 },
+    timeZone: "America/Denver",
+    airports: ["ELP", "CNM", "MAF"],
+    nearby: ["whsa"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内没有住宿和露营地，只能凭免费许可证在背包野营区过夜。最近的是公园大门外的 White's City，只有一家老旅馆和 RV 营地，上山到游客中心约 15 分钟；多数人住约 35 分钟车程的 Carlsbad，连锁酒店多，但常被油田工人订走，平日也不便宜，最好提前几周订。从埃尔帕索飞进飞出的，第一晚或最后一晚可以住埃尔帕索机场附近（到洞窟约 2.5 小时），路上正好经过瓜达卢普山国家公园。",
+  },
+  {
+    code: "pefo",
+    nameZh: "石化林",
+    nameEn: "Petrified Forest",
+    region: "southwest",
+    tagline: "彩绘沙漠与化石木",
+    stateEn: "Arizona",
+    hero: "pefo-blue-mesa",
+    intro:
+      "这里保存着世界上最集中、颜色最艳的化石木之一：2 亿多年前三叠纪的大树被河水冲倒、掩埋，二氧化硅慢慢取代木质，变成五颜六色的石头。北段是红、粉、紫色条纹的彩绘沙漠和一段 66 号公路旧址，中段有古普韦布洛人的村落和岩画，南段是成片的化石木。一条约 45 公里的公园路从 I-40 的 311 号出口通到 180 号公路，多数人从一头进、另一头出，半天到一天就能看完；公园 8:00–17:00 开放，带走任何一块化石木都违法。",
+    bestMonths: [4, 5, 9, 10],
+    seasonNote:
+      "春秋最舒服；6 月中旬到 9 月是季风雨季，7 月起午后常有雷暴和山洪，但雨后荒地颜色最鲜艳；冬天冷、偶尔下雪，路面结冰时会推迟开园。",
+    areas: {
+      "painted-desert": "彩绘沙漠（北段）",
+      "route-66-puerco": "66 号公路 · 普埃科河",
+      "blue-mesa": "蓝台地 · 圆锥丘",
+      "crystal-forest": "玛瑙桥 · 水晶森林",
+      "rainbow-forest": "彩虹森林（南入口）",
+    },
+    gateway: { nameZh: "彩绘沙漠游客中心（北入口，I-40 311 号出口）", lat: 35.06551, lon: -109.78257 },
+    timeZone: "America/Phoenix",
+    airports: ["PHX", "FLG", "ABQ", "LAS"],
+    nearby: ["grca", "mova", "ante", "hsbd", "meve"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内没有酒店和营地（只能背包进荒野区过夜，当天在游客中心领免费许可证）。最近的是西边约 30 分钟车程的 Holbrook，66 号公路沿线的老汽车旅馆多，招牌是能住进水泥“帐篷”的 Wigwam Motel；再往西约 1 小时的 Winslow 有修复的老铁路酒店 La Posada；从新墨西哥过来可以住 Gallup（到北入口约 1 小时 15 分，夏天比亚利桑那快 1 小时）。凤凰城或弗拉格斯塔夫机场进出、或者接着去大峡谷，就住 Flagstaff（约 2 小时）。一般不难订，提前几周就够。",
   },
   {
     code: "dena",

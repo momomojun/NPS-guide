@@ -1,7 +1,34 @@
+import { Fragment } from "react";
 import type { ParkActivity } from "@/data/activities";
 import type { AttractionWithPhoto } from "@/data/attractions";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { formatMonths } from "@/i18n/format";
+
+/** 开放月份和说明都一样的景点（比如同一条冬天不通车的观景路上的几个观景台）合成一条，说明只写一次 */
+function groupByNote(list: AttractionWithPhoto[]): AttractionWithPhoto[][] {
+  const groups = new Map<string, AttractionWithPhoto[]>();
+  for (const attraction of list) {
+    const key = `${(attraction.openMonths ?? []).join(",")}|${attraction.closedNote ?? attraction.id}`;
+    groups.set(key, [...(groups.get(key) ?? []), attraction]);
+  }
+  return [...groups.values()];
+}
+
+/** 几个景点的名字，用顿号隔开，各自链到景点卡片 */
+function Names({ group, className }: { group: AttractionWithPhoto[]; className: string }) {
+  return (
+    <span>
+      {group.map((attraction, index) => (
+        <Fragment key={attraction.id}>
+          {index > 0 && <span className="text-mute">、</span>}
+          <a href={`#attraction-${attraction.id}`} className={className}>
+            {attraction.nameZh}
+          </a>
+        </Fragment>
+      ))}
+    </span>
+  );
+}
 
 /** 公园页：值得专门安排的活动、节庆和季节现象，以及哪些景点目前关闭、哪些只在某些月份开放、为什么 */
 export function ActivitiesSection({
@@ -66,12 +93,12 @@ export function ActivitiesSection({
             <div className="mt-6 border-l-2 border-clay-600 bg-clay-50 px-5 py-4">
               <p className="text-xs tracking-[0.1em] text-clay-700">{t.closedNow}</p>
               <ul className="mt-3 space-y-3">
-                {closedNow.map((a) => (
-                  <li key={a.id} className="text-sm leading-6">
-                    <a href={`#attraction-${a.id}`} className="font-serif text-base hover:text-clay-700">
-                      {a.nameZh}
-                    </a>
-                    {a.closedNote && <span className="mt-0.5 block text-xs leading-6 text-clay-800">{a.closedNote}</span>}
+                {groupByNote(closedNow).map((group) => (
+                  <li key={group[0].id} className="text-sm leading-6">
+                    <Names group={group} className="font-serif text-base hover:text-clay-700" />
+                    {group[0].closedNote && (
+                      <span className="mt-0.5 block text-xs leading-6 text-clay-800">{group[0].closedNote}</span>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -81,15 +108,13 @@ export function ActivitiesSection({
             <div className="mt-6">
               <p className="text-xs tracking-[0.1em] text-mute">{t.seasonal}</p>
               <ul className="mt-3 divide-y divide-line border-y border-line">
-                {seasonal.map((a) => (
-                  <li key={a.id} className="py-3 text-sm leading-6">
+                {groupByNote(seasonal).map((group) => (
+                  <li key={group[0].id} className="py-3 text-sm leading-6">
                     <p className="flex flex-wrap items-baseline justify-between gap-x-3">
-                      <a href={`#attraction-${a.id}`} className="font-serif text-base hover:text-clay-700">
-                        {a.nameZh}
-                      </a>
-                      <span className="text-xs text-ink-soft">{formatMonths(a.openMonths ?? [], dict.units)}</span>
+                      <Names group={group} className="font-serif text-base hover:text-clay-700" />
+                      <span className="text-xs text-ink-soft">{formatMonths(group[0].openMonths ?? [], dict.units)}</span>
                     </p>
-                    {a.closedNote && <p className="mt-0.5 text-xs leading-6 text-mute">{a.closedNote}</p>}
+                    {group[0].closedNote && <p className="mt-0.5 text-xs leading-6 text-mute">{group[0].closedNote}</p>}
                   </li>
                 ))}
               </ul>
