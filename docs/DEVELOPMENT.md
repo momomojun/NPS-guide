@@ -20,7 +20,7 @@ npm run dev                  # http://localhost:3000
 ## 测试
 
 ```bash
-npm test                     # 自动生成攻略、季节性山路、个人配速、预约开放日期、班车、车程校正、行程分享、文案空格的测试，几秒跑完，不联网
+npm test                     # 自动生成攻略、季节性山路、个人配速、预约开放日期、班车、车程校正、行程分享、文案空格、游客人次的测试，几秒跑完，不联网
 ```
 
 用 Node 自带的测试工具（`node --test`），Node 24 能直接跑 TypeScript；`tests/register.mjs` 补上项目里不写扩展名的相对路径和 `@/` 别名（测试只能引用 `.ts`，不能引用带 JSX 的 `.tsx`）。自动生成攻略的测试和行程页用一样的输入，弗雷斯诺到优胜美地、盐湖城到拱门和峡谷地各景点的车程（OSRM 查好、按车速校正过）存在 `tests/fixtures/`，其他机场按直线估算。改了排行程、生成攻略的逻辑，或者整理了景点数据之后跑一下；数据变了导致个别断言不再成立时（比如某个景点改了停留时间），看清楚是不是真的退步了再改测试。
@@ -60,12 +60,17 @@ npm test                     # 自动生成攻略、季节性山路、个人配�
 | `src/components/prices/` | 价格页：机票（可以一次比较某个公园附近的几个机场）、各机场租车参考价、公园所在各州的油价和油费 / 电费计算 |
 | `src/components/plan/` | 行程页：每天的卡片（天气、公告、班车）、总览、要提前订的（`trip-bookings.tsx`）、攻略说明、补给、机票和租车、预算（`budget.ts` 计算）、打印和离线保存 |
 | `src/data/creators.ts` | 博主同款路线：YouTube / B 站视频（中文、英语、日语、韩语、西语、法语、意语、德语博主）按文稿、简介或章节整理的路线、季节、对景点的评价和提醒，景点卡片上显示“博主怎么说” |
-| `src/lib/seasons.ts` | 什么时候去：按月份整理每个公园能去的景点比例、去不了的必去景点、往年同期天气和特别活动，页面按出发日期打分；选了具体日期时，季节性山路通了就能去的景点按往年这几天里把握最大的一天算（和自动生成攻略一样），原因里写上往年通车的年数 |
+| `src/lib/seasons.ts` | 什么时候去：按月份整理每个公园能去的景点比例、去不了的必去景点、往年同期天气和特别活动，页面按出发日期打分；选了具体日期时，季节性山路通了就能去的景点按往年这几天里把握最大的一天算（和自动生成攻略一样），原因里写上往年通车的年数；人多不多（`src/lib/crowd.ts`）按这几天和这个公园最挤的月份比，分最挤、人多、人不算多、人少四档，只列出来、不算进分类 |
+| `src/data/national-parks.ts` | 美国 63 座国家公园（名字就叫 National Park 的）：NPS 单位代码、中文名、所在州、设立日期、面积、对应的公园页（红杉 `sequ`、国王峡谷 `kica` 都对应 `seki`），按设立日期排；加拿大落基山 3 座的设立日期和面积；`pendingPark` 是国会通过、等总统签字的下一座（奇里卡瓦），签了以后加进列表 |
+| `scripts/build-visits.mjs`、`src/data/visits.generated.ts`、`src/lib/visits.ts` | 游客人次：NPS 63 座国家公园 1979 年以来每年的人次（12 个月加起来，和 NPS 每年的新闻稿对得上），每个月平均每天多少人次（最近 3 年各月占全年的比例取平均、乘最近一年的总数；某年某个月的比例不到 3 年中位数的一半——政府停摆闭园、山火封路——不算），北瀑布另算旁边两个国家休闲区；加拿大按 Parks Canada 各财年的开放数据。`visitRanking` 排名，`parkVisits` 给公园页（seki 是两座加起来） |
+| `src/app/[locale]/rankings/`、`src/components/rankings/` | 榜单页：63 座国家公园按人次（或面积）排、可以只看网站上有的，网站上有的公园用强调色；现有国家公园按设立时间累计的阶梯图和按年代的列表；媒体推荐、U.S. News 最佳国家公园；世界遗产（同一处遗产的几座公园合成一行）和暗夜公园 |
+| `src/data/honors.ts` | 世界遗产、暗夜公园认证和媒体推荐（Lonely Planet Best in Travel、国家地理 Best of the World、TIME World's Greatest Places 2024 年以来的，U.S. News 只记收录了哪些、不记名次）：key 是 NPS 单位代码，加拿大用网站的公园代码；为什么选是我们自己的话，附原文链接 |
+| `src/components/park/park-profile.tsx`、`visits-section.tsx` | 公园页的“档案”（哪年设立、美国第几座、面积、最近一年的人次和排名、荣誉和推荐）和“人多不多”（每个月平均每天的人次、1979 年以来每年的人次、升为国家公园的那年，可以展开看每年的数字） |
 | `public/sw.js`、`src/app/manifest.ts` | 离线：构建版注册 service worker，缓存看过的页面、脚本、接口数据和地图瓦片；可以装到手机主屏 |
 | `src/components/map/park-map.tsx`、`sources.ts` | MapLibre 地图：OpenFreeMap 底图 + 地形阴影 + 卫星图（美国用 USGS，加拿大用 EOX Sentinel-2）+ 3D 地形，都不需要 key |
 | `src/app/globals.css` | 设计基调：纸色底、墨色字、砂岩红强调色；标题 Cormorant Garamond + 思源宋体，正文 Jost；开场动画、滚动渐显 |
 | `src/components/home/` | 首页：开场动画、全屏轮播、公园目录、线描地图（`src/data/map.generated.ts`；公园名放在圆点哪边写在 `west-map.tsx` 的 `LABEL_SIDE`，屏幕窄、名字挤在一起时按各景点 Google 评论数加起来的热门程度先后摆：尽量留在定好的一侧，放不下才换到完全不碰别的圆点和名字、离自己的圆点最近的一侧，还不行就只留圆点；英文名最先让；手机上压住冷门得多的公园的圆点，就让那个公园不显示，平板和电脑上每座公园的圆点都留着。见 `map-declutter.tsx`、`map-sides.ts`） |
-| `src/components/site/` | 页头（压在大图上时透明，滚动后变纸色）、页脚、滚动渐显 |
+| `src/components/site/` | 页头（压在大图上时透明，滚动后变纸色；1024 像素以上放 6 项导航，手机和平板用全屏菜单）、页脚、滚动渐显 |
 
 ## 部署
 
@@ -124,6 +129,10 @@ npm run data:roads       # 季节性山路的历年开通、关闭日期：NPS�
 ```
 
 `data:travel` 也会算各机场到公园定位点的车程（机票和租车里比较附近机场用）。
+
+```bash
+npm run data:visits      # 游客人次：NPS 的 IRMA 统计接口（1979 年以来逐月，不用 key）和 Parks Canada 各财年的开放数据；每年二三月 NPS 公布上一年的数字以后跑一次
+```
 
 新增景点后，到 Google Maps 查它的评分和评论数，补进 `src/data/attractions/google.ts`（没有的话不参与热度排名）。
 
@@ -222,6 +231,10 @@ README 里的截图用 `npm run docs:screenshots` 重新生成（`scripts/screen
 | 地图底图 / 地形 / 卫星 | OpenFreeMap、AWS Terrain Tiles、USGS The National Map（美国）、EOX Sentinel-2 cloudless（加拿大） | 不需要 |
 | 首页线描地图 | Natural Earth 州界、省界（公共领域） | 不需要 |
 | 字体 | Google Fonts（Cormorant Garamond、Jost、思源宋体），next/font 构建时下载、自托管 | 不需要 |
+| 游客人次 | NPS Visitor Use Statistics（`irmaservices.nps.gov/v3/rest/stats`，美国政府数据）；Parks Canada attendance（open.canada.ca，Open Government Licence – Canada，按财年） | 不需要 |
+| 世界遗产、暗夜公园 | 联合国教科文组织世界遗产中心（whc.unesco.org，2026 年 9–10 月打不开，按 Wayback 存档核对）、DarkSky International 的地点页、加拿大皇家天文学会（RASC）的暗夜保护区名单 | 不需要 |
+| 媒体推荐 | Lonely Planet Best in Travel、国家地理 Best of the World、TIME World's Greatest Places、U.S. News Best National Parks in the USA 的公开页面（只记谁选了什么、链接原文，理由自己概括） | 不需要 |
+| 国家公园设立日期、面积 | NPS 的 National Park System Areas Listed in Chronological Order 和 2023 年面积报告，经 Wikipedia「List of national parks of the United States」整理（2026-10-02） | 不需要 |
 
 ## 注意事项
 
@@ -253,6 +266,9 @@ README 里的截图用 `npm run docs:screenshots` 重新生成（`scripts/screen
 - 车程来自 OSRM 公共服务，开高速明显偏慢（拉斯维加斯到锡安 227 分钟，实际约 160）。浏览器里现查的（机场、自定义住处到景点）和 `data:travel` 预先生成的车程表都按平均车速校正（`src/lib/drive-speed.ts`）：主要走高速的乘 0.77，山路、园区里的路基本不变；平均已经 54 英里/时以上的（OSRM 用上了路边限速，比如冰川南边的 2 号公路，原始 63 分钟、实际约 65 分钟）不再缩短。2026-09-30 重跑后，跨公园、机场到公园的车程平均短了约 23%，园内的路（优胜美地）不变，死亡谷这种沙漠公路多的短了约 11%
 - 车程按自驾算，班车季只能坐班车的路按班车算（`src/data/shuttles.ts`）。班车每站坐多久多是按官方全程时间和站间距离估算的；时刻表只有 2026 年的，之后的年份按同样的日期估算。德纳里公园路巴士本身就是一个景点（时长含坐车），没有再按班车算
 - 季节性山路（`scripts/build-roads.mjs`）：冰川的历年表 2023 年以后没更新，2023–2025 年的关闭日期是按当地新闻补的（2024 年 10 月 17 日因结冰提前关，之后有没有短暂重开没查到）；冰川 2013 年政府停摆提前关、没记关闭日期，只算开通。每年秋天路都关了以后，把今年的开通、关闭日期补进 FIXES 再跑 `npm run data:roads`。优胜美地冰川点路 2026 年 9 月 23 日起因 Dome Fire 临时封闭，没算作季节关闭，写在说明里。拉森、落基山的几条路没有能直接读的历年表格式，是逐年整理进 `scripts/data/roads-manual.json` 的（附来源）：Trail Ridge Road 的关闭日期用官方宣布“本季关闭”的那天，实际常提前一两个星期因雪封路、不再重开，所以秋天的把握偏乐观；拉森、Trail Ridge Road 2025 年秋天正赶上联邦政府停摆，关闭日期说不清，秋天不算；Old Fall River Road 2009、2010、2013 年没查到开通日期；火山口湖的历年表只到 2023 年，东环湖路 2023–2026 年分段重修（夏天只能开进去再原路出来，2026 年 9 月下旬才恢复全线通车），这几年都不算。雷尼尔山两条路是 2026-10-01 整理的：只收官方写明了日期的年份，只知道一个范围的（比如 Sunrise Road 2024、2025 年、Stevens Canyon Road 2025 年）没收，公园页上空着；关闭日大多只公布过计划日期（Sunrise Road 查到 5 年、Stevens Canyon Road 2 年），秋天不估；Stevens Canyon Road 2022–2023 年修路、2015 年清理塌方不算，2011 年 9 月起修路封路只算开通；倒影湖在 Stevens Canyon Road 西头，从 Paradise 那边常常比全线早通，不按这条路算。幽鹤谷路（Takakkaw Falls）、Exit Glacier 路、国王峡谷 180 号公路（Cedar Grove）2026-10-01 也查过：官方没有历年表，能对上来源的确切年份只有 3–7 年，不够按往年估，没收；查到的规律（幽鹤谷路 6 月中旬开、加拿大感恩节后的星期二关，Exit Glacier 路 5 月中下旬的周五开，180 号公路 4 月第四个周五开、11 月中旬关）和景点现有的开放说明一致
+- 游客人次（`npm run data:visits`）是 NPS 各公园按自己的方法统计的（车辆计数器乘每车人数、门口计数等），方法改过的年份前后不完全可比：红木 2025 年比上一年多了九成多、北瀑布多了近两倍，石化林 2025 年少了四成多（10 月停摆闭园，其他月份也少）。2025 年 10 月 1 日到 11 月 12 日联邦政府停摆，卡尔斯巴德洞窟 10 月是 0、白沙和火山口湖 10 月也少很多，按月的人数不算这几个月；拉森 2024 年 8 月（Park Fire）、甘尼森黑峡谷 2025 年 7–8 月（南缘山火）同理。北瀑布国家公园本身一年只有几万人次，20 号公路、Diablo 湖一带算在 Ross Lake 国家休闲区（`rola`），公园页另外说三处加起来的数字。加拿大的公园没有按月的数字；贾斯珀 2024–25 财年赶上 2024 年 7 月的山火（全园疏散），只有平常的一半
+- 世界遗产、暗夜公园和媒体推荐（`src/data/honors.ts`）是 2026-10-02 整理的。媒体推荐只收条目就是这座公园、围绕它，或者是公园里的体验、住宿的；整个州、地区的条目顺带提一句、只在图片说明里出现的不收（Lonely Planet 2024 的蒙大拿、2026 的缅因、2027 的新墨西哥和阿拉斯加，国家地理 2026 的毛伊岛、2024 的西弗吉尼亚漂流）。Lonely Planet 2025 的“被低估的公园”榜（峡谷地第一、航海家第二）只在书里，网上只有 Time Out 等媒体转述，没收。Lonely Planet 没有单独的条目页，2026 年的链接到 Wayback 存档；2027 年的（2026 年 9 月 22 日公布）链接到现在的页面。国家地理 2027 年的榜单一般 10 月下旬公布，到时候补。U.S. News 的名次不记，数组按代码排。暗夜公园：大峡谷 2016 年临时认证、2019 年正式认证，按 2019 年；恶地的地点页写 2025 年认证，2026 年 7 月才公布
+- 奇里卡瓦（Chiricahua）升为国家公园的法案 2026 年 10 月 1 日国会通过、等总统签字（`pendingPark`）。签了以后：在 `src/data/national-parks.ts` 加一行（代码 `chir`），`pendingPark` 改成 undefined，跑 `npm run data:visits`
 - 游船、导览团的班次（`src/data/tours.ts`）是 2026-10-01 按各家官网整理的 2026 年时刻表（Major Marine Tours 已经公布的长线用的是 2027 年的日期），之后的年份按同样的日期和时间估；基奈峡湾的几条航线把 Kenai Fjords Tours 和 Major Marine Tours 两家的班次合在一起；Diablo 湖游船官网只写了几点开始报到，按报到开始算。德纳里的公园路巴士大约 30 分钟一班，按一般开放时间算；海峡群岛的船、羚羊峡谷的导览团、约书亚树的 Keys Ranch 还没收
 - 预约规则（`src/data/bookings.ts`）是 2026-09-28 按官方页面整理的，没查到官方写明的就没收（比如 Yavapai Lodge 提前多久开订）；2027 年的季度抽签日期、Moraine Lake 班车开订日这类还没公布的，按 2026 年的写并在说明里注明
 - 不爬小红书（没有 API，有法律风险）；博主内容只做摘要 + 链接 / 嵌入

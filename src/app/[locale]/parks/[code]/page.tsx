@@ -9,7 +9,9 @@ import { AlertsSection } from "@/components/park/alerts-section";
 import { BookingsSection } from "@/components/park/bookings-section";
 import { ChargersSection } from "@/components/park/chargers-section";
 import { FeesSection } from "@/components/park/fees-section";
+import { ParkProfile } from "@/components/park/park-profile";
 import { RoadsSection } from "@/components/park/roads-section";
+import { VisitsSection } from "@/components/park/visits-section";
 import { SectionSkeleton } from "@/components/section";
 import { IconArrowRight } from "@/components/icons";
 import { SectionNav } from "@/components/site/section-nav";
@@ -29,6 +31,7 @@ import { getDictionary } from "@/i18n/dictionaries";
 import { fill, formatMonths } from "@/i18n/format";
 import { isUsingDemoKey } from "@/lib/datagov";
 import { roadsOf } from "@/lib/roads";
+import { parkVisits } from "@/lib/visits";
 
 // 不写 generateStaticParams：页面每次请求时渲染，接口数据由 fetch 缓存兜住，
 // 这样 build 不会一次性调几十次接口，接口失败也不会把错误页缓存下来。
@@ -62,7 +65,10 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
       skip ? [year, open, close, localize(skip, locale)] : [year, open, close],
     ),
   }));
-  const hasSeasonInfo = parkActivities.length > 0 || attractions.some((a) => a.openMonths) || parkRoads.length > 0;
+  // 游客人次（园外名胜没有）
+  const visits = parkVisits(park.code);
+  const hasSeasonInfo =
+    parkActivities.length > 0 || attractions.some((a) => a.openMonths) || parkRoads.length > 0 || visits !== null;
   // “适用于”只写没收录的地名会让人以为只管那几处，所以有这一行时把对上的景点和住宿也列上
   const targetName = (id: string) =>
     attractions.find((a) => a.id === id)?.nameZh ?? localize(lodgingOptions.find((l) => l.id === id)?.nameZh ?? id, locale);
@@ -221,6 +227,7 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
             <p className="eyebrow text-mute">{t.seasonTitle}</p>
             <p className="mt-4 text-sm leading-7 text-ink-soft">{park.seasonNote}</p>
           </div>
+          <ParkProfile code={park.code} visits={visits} locale={locale} dict={dict} />
           <div>
             <p className="eyebrow text-mute">{t.areasTitle}</p>
             <ul className="mt-4 border-t border-line text-sm">
@@ -239,6 +246,7 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
           <div className={`${container} py-20 lg:py-28`}>
             <p className="eyebrow mb-12 text-mute">{t.activities.eyebrow}</p>
             <ActivitiesSection activities={parkActivities} attractions={attractions} dict={dict} />
+            {visits && <VisitsSection visits={visits} locale={locale} dict={dict} />}
             {parkRoads.length > 0 && <RoadsSection roads={parkRoads} attractions={attractions} dict={dict} />}
           </div>
         </section>

@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
+import { localize } from "../src/i18n/convert";
 import { fill, tidyChinese } from "../src/i18n/format";
 
 test("汉字紧挨着英文、数字开头或结尾的值补空格", () => {
@@ -30,4 +31,14 @@ test("机器翻译：汉字和英文、数字之间补空格，去掉括号里�
   assert.equal(tidyChinese("雷尼尔山Fryingpan Creek桥梁更换项目"), "雷尼尔山 Fryingpan Creek 桥梁更换项目");
   assert.equal(tidyChinese("到 2029 年， Fryingpan Creek Bridge 两侧 ；"), "到 2029 年，Fryingpan Creek Bridge 两侧；");
   assert.equal(tidyChinese("已经有空格的 SR 165 不变"), "已经有空格的 SR 165 不变");
+});
+
+test("繁体：音译地名里的“里”、不湿的“干”不转错", () => {
+  assert.equal(localize("德纳里峰", "zh-Hant"), "德納里峰");
+  assert.equal(localize("马里波萨巨杉林", "zh-Hant"), "馬里波薩巨杉林");
+  assert.equal(localize("沿干河床走到干湖", "zh-Hant"), "沿乾河床走到乾湖");
+  assert.equal(localize("干龟岛、维尔京群岛", "zh-Hant"), "乾龜島、維京群島");
+  // 该转的照样转：里面、树干
+  assert.equal(localize("峡谷里的树干", "zh-Hant"), "峽谷裡的樹幹");
+  assert.equal(localize("约 2,000 米", "zh-Hant"), "約 2,000 公尺");
 });

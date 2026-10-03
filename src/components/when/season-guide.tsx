@@ -5,7 +5,8 @@ import { useState } from "react";
 import { IconArrowRight } from "@/components/icons";
 import { seasonalRoads } from "@/data/roads";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { fill, formatMonths } from "@/i18n/format";
+import { fill, formatBig, formatMonths } from "@/i18n/format";
+import { crowdOf } from "@/lib/crowd";
 import { addDays } from "@/lib/dates";
 import { bestRoadDay, recordYears, ROAD_LIKELY, roadStatus, type RoadStatus } from "@/lib/roads";
 import type { MonthClimateSummary, ParkMonth, ParkSeason } from "@/lib/seasons";
@@ -63,6 +64,8 @@ interface ParkWindow {
   climate?: MonthClimateSummary;
   events: string[];
   roads: RoadReason[];
+  /** 这几天人多不多（加拿大的公园没有按月的数字） */
+  crowd: ReturnType<typeof crowdOf>;
 }
 
 /**
@@ -128,6 +131,7 @@ function combine(park: ParkSeason, weights: Map<number, number>, dates: string[]
       (event) => entries.reduce((sum, { info, share }) => sum + (info.events.includes(event) ? share : 0), 0) > 0.5,
     ),
     roads,
+    crowd: crowdOf(park.daily, weights),
   };
 }
 
@@ -175,6 +179,16 @@ function reasonsOf(item: ParkWindow, text: SeasonText): Reason[] {
     else if (climate.wetDays >= 10) reasons.push({ text: fill(t.rainy, { n: Math.round(climate.wetDays) }), good: false });
   }
   if (item.events.length) reasons.push({ text: fill(t.events, { names: item.events.slice(0, 3).join("、") }), good: true });
+  const crowd = item.crowd;
+  if (crowd) {
+    // 往下取整：0.79 是“人比较多”，不能说成“8 成”（八成以上算最挤）
+    const p = Math.floor(crowd.ratio * 10);
+    const n = formatBig(crowd.perDay, text.units);
+    if (crowd.level === "peak") reasons.push({ text: fill(t.crowdPeak, { n }), good: false });
+    else if (crowd.level === "busy") reasons.push({ text: fill(t.crowdBusy, { p }), good: false });
+    else if (crowd.level === "moderate") reasons.push({ text: fill(t.crowdModerate, { p }), good: true });
+    else reasons.push({ text: t.crowdQuiet, good: true });
+  }
   return reasons;
 }
 

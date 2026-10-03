@@ -73,6 +73,14 @@ export function formatCount(n: number): string {
   return n.toLocaleString("en-US");
 }
 
+/** 人次这类大数：3.23 亿、1153 万、47 万、3.2 万、2 万（不写“2.0 万”）；一万以下照常写（4,243） */
+export function formatBig(n: number, units: { wan: string; yi: string }): string {
+  if (n >= 1e8) return fill(units.yi, { n: Number((n / 1e8).toFixed(2)) });
+  if (n >= 1e5) return fill(units.wan, { n: Math.round(n / 1e4) });
+  if (n >= 1e4) return fill(units.wan, { n: Number((n / 1e4).toFixed(1)) });
+  return formatCount(Math.round(n));
+}
+
 export function formatMeters(feet: number, units: UnitText): string {
   return fill(units.meters, { m: Math.round((feet * 0.3048) / 10) * 10 });
 }

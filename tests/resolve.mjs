@@ -1,4 +1,5 @@
-// 模块解析钩子：@/xxx → src/xxx；没写扩展名的依次试 .ts、/index.ts（测试只引用 .ts，不引用带 JSX 的 .tsx）
+// 模块解析钩子：@/xxx → src/xxx；没写扩展名的依次试 .ts、/index.ts（测试只引用 .ts，不引用带 JSX 的 .tsx）；
+// server-only 按服务端组件的条件解析成空模块，只在服务端用的文件（简繁转换）也能测
 import { existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
@@ -6,6 +7,7 @@ const SRC = new URL("../src/", import.meta.url);
 const HAS_EXTENSION = /\.(?:[cm]?[jt]s|json)$/;
 
 export async function resolve(specifier, context, next) {
+  if (specifier === "server-only") return next(specifier, { ...context, conditions: [...context.conditions, "react-server"] });
   const target = specifier.startsWith("@/") ? new URL(specifier.slice(2), SRC).href : specifier;
   const local = target.startsWith(".") || target.startsWith("file:");
   if (local && !HAS_EXTENSION.test(target) && context.parentURL) {

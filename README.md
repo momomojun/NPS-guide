@@ -46,7 +46,8 @@ NPS Guide 把这些按日期串起来：选好公园和日子，它告诉你那�
 - **班车算进时间**：锡安峡谷、大峡谷 Hermit Road、马里波萨巨杉林、班夫梦莲湖、阿拉斯加的 Kennecott 这些私家车开不进去的路，时间按“开到换乘点 + 等车 + 坐车”算，赶不上末班车会提醒。
 - **出发后也能改**：拖拽排序、换到别的天、标记完成或跳过，按实际进度重排剩下的行程；出发后打开是“今天”：下一站、按现在的时间几点能到、离日落还有多久、一键导航；到了、走了各点一下，按你实际停留和开车的时间学配速（徒步、其他景点和开车分开算），后面的时间跟着调整。
 - **补给和预算**：每晚住处附近的超市、加油站、快充和亚洲超市，进园前的最后补给点，落地后离机场最近的亚洲超市；门票（含 2026 年非居民附加费、买年卡划不划算）、住宿、吃饭、油费、租车、机票，合计和人均。
-- **什么时候去**：选一个出发日期，所有公园分成“最适合 / 可以去 / 不太合适”，每座写明原因（开放情况、季节性山路往年这几天通没通车、往年同期的天气、特别活动）。
+- **什么时候去**：选一个出发日期，所有公园分成“最适合 / 可以去 / 不太合适”，每座写明原因（开放情况、季节性山路往年这几天通没通车、往年同期的天气、特别活动、这时候人多不多）。
+- **榜单**：美国 63 座国家公园按 NPS 官方统计的游客人次（或面积）排名，网站上有的一眼能看出来；现有国家公园按设立时间累计的时间线，从 1872 年的黄石到 2020 年的新河峡谷；Lonely Planet、国家地理、TIME 近几年选中的公园（写明谁选的、为什么，附原文链接），U.S. News 的最佳国家公园，世界遗产和国际暗夜公园。每座公园页上有“档案”（哪年设立、美国第几座、面积、人次排名、荣誉和推荐）和“人多不多”：每个月平均每天多少人、1979 年以来每年的人次。
 - **博主同款路线**：49 条中文、英语、日语、韩语和欧洲博主的 YouTube / B 站路线，按公园和语言筛选；博主对景点的评价显示在景点卡片上，一键照着排行程。
 - **机票、租车、油价**：比较公园附近几个机场的机票，各机场租车参考价，公园所在各州的实时油价和油费计算。
 - **手机和离线**：手机上一样好用；可以装到主屏（PWA），看过的页面、行程和地图在没信号的园区里也能打开；出发前可以按行程范围下载离线地图和照片；电脑上排好的行程用链接或二维码发到手机；行程可以打印或存成 PDF。
@@ -195,6 +196,7 @@ npm run dev                  # 打开 http://localhost:3000
 
 - **公园、公告、门票**：[NPS API](https://www.nps.gov/subjects/developer/api-documentation.htm)；加拿大的公园和园外名胜按 Parks Canada、纳瓦霍部落公园、BLM 等官方页面整理；**充电桩**：NLR Alternative Fuel Stations
 - **天气**：[Open-Meteo](https://open-meteo.com)（16 天预报、往年同期）、[NWS](https://www.weather.gov/documentation/services-web-api)（预警）
+- **游客人次**：[NPS Visitor Use Statistics](https://irma.nps.gov/Stats/)（1979 年以来逐月）、[Parks Canada attendance](https://open.canada.ca/data/en/dataset/1e2bd6b2-d6c7-415b-8c95-f5f6b2459759)（按财年）；**设立日期、面积**：NPS 的设立时间表和面积报告；**世界遗产、暗夜公园**：联合国教科文组织世界遗产中心、DarkSky International、加拿大皇家天文学会；**媒体推荐**：Lonely Planet、国家地理、TIME、U.S. News 的公开榜单，只写谁选了什么，理由是我们的概括，附原文链接
 - **地图、车程、步道、补给点**：[OpenStreetMap](https://www.openstreetmap.org)（Overpass、OSRM、Valhalla、Photon）；亚洲超市另外用 [Overture Maps](https://overturemaps.org) 的地点数据补
 - **季节性山路**：NPS 和华盛顿州交通部（WSDOT）的历年开通、关闭日期
 - **照片**：[Wikimedia Commons](https://commons.wikimedia.org)，按授权逐张署名
@@ -204,7 +206,7 @@ npm run dev                  # 打开 http://localhost:3000
 
 ## 路线图
 
-已经能用：景点地图和图集、自动生成攻略、按日期的开放和许可提醒、季节性山路按往年算通不通、要提前订的（开订日期和日历提醒）、班车算进时间、每晚住宿、拖拽调整和按进度重排、“今天”模式和个人配速、天气和 NPS 公告、补给（含亚洲超市补漏）、预算、机票租车油价、什么时候去、博主路线、发到手机、离线地图和打印。
+已经能用：景点地图和图集、自动生成攻略、按日期的开放和许可提醒、季节性山路按往年算通不通、要提前订的（开订日期和日历提醒）、班车算进时间、每晚住宿、拖拽调整和按进度重排、“今天”模式和个人配速、天气和 NPS 公告、补给（含亚洲超市补漏）、预算、机票租车油价、什么时候去（含人多不多）、榜单（游客人次、设立时间、媒体推荐、世界遗产和暗夜公园）、博主路线、发到手机、离线地图和打印。
 
 接下来：
 
@@ -224,6 +226,7 @@ npm run dev                  # 打开 http://localhost:3000
 - **On the road**: a “today” view with the next stop and live arrival times, check-ins that learn how long you actually spend at stops and on the road and adjust the rest of the trip, trip sharing to your phone by link or QR code, and offline map downloads.
 - **Budget and logistics**: park fees (including the 2026 nonresident surcharge), lodging and meals, fuel or EV charging, car rental, flights, and supplies near each night's stay.
 - **Creator routes**: 49 routes from Chinese, English, Japanese, Korean and European YouTube and Bilibili creators.
+- **Rankings**: all 63 U.S. national parks ranked by official NPS visitation (or area), a timeline of when each became a national park, recent Lonely Planet, National Geographic and TIME picks, World Heritage sites and International Dark Sky Parks; every park page shows its monthly crowd levels and visitors per year since 1979.
 - **Offline**: a PWA that keeps your trip and viewed maps available without cell signal.
 
 Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4 and MapLibre GL, mostly on open data (NPS API, OpenStreetMap, Open-Meteo, Wikimedia Commons). No keys are required to run it locally: `npm install && npm run dev`.

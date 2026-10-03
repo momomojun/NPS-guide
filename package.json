@@ -19,6 +19,7 @@
     "data:fees": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-fees.mjs",
     "data:perdiem": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-perdiem.mjs",
     "data:roads": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-roads.mjs",
+    "data:visits": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/build-visits.mjs",
     "data:asian": "python scripts/build-asian-groceries.py",
     "docs:screenshots": "node scripts/screenshots.mjs"
   },

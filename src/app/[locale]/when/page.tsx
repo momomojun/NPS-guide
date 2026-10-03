@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SeasonGuide } from "@/components/when/season-guide";
 import { isSite, parks } from "@/data/parks";
+import { dailyYears } from "@/data/visits.generated";
 import { hasLocale } from "@/i18n/config";
 import { localize } from "@/i18n/convert";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -46,7 +47,11 @@ export default async function WhenPage({ params }: PageProps<"/[locale]/when">) 
         <p className="mt-5 text-sm leading-7 text-ink-soft">{fill(t.intro, { n: seasons.length })}</p>
       </header>
       <div className="mt-10">
-        <SeasonGuide parks={seasons} locale={locale} text={{ ...t, units: dict.units }} />
+        <SeasonGuide
+          parks={seasons}
+          locale={locale}
+          text={{ ...t, source: fill(t.source, { years: dailyYears }), units: dict.units }}
+        />
       </div>
     </div>
   );

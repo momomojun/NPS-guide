@@ -17,6 +17,7 @@ export interface MenuText {
   when: string;
   routes: string;
   prices: string;
+  rankings: string;
   start: string;
   allParks: string;
   inSeason: string;
@@ -147,7 +148,7 @@ export function ParksMenu({
   );
 }
 
-/** 手机页头的菜单：全屏展开，行程、开始规划和所有公园 */
+/** 手机和平板页头的菜单：全屏展开，行程、开始规划、各个页面和所有公园 */
 export function MobileMenu({
   locale,
   wordmark,
@@ -176,14 +177,14 @@ export function MobileMenu({
 
   return (
     <>
-      <button type="button" aria-label={text.menu} aria-expanded={open} onClick={() => setOpen(true)} className="text-xl sm:hidden">
+      <button type="button" aria-label={text.menu} aria-expanded={open} onClick={() => setOpen(true)} className="text-xl lg:hidden">
         <IconMenu />
       </button>
       {/* 页头有 backdrop-filter，会把 fixed 的子元素限制在页头里，所以菜单挂到 body 上 */}
       {open &&
         createPortal(
-        <div className="fixed inset-0 z-[60] overflow-y-auto bg-paper text-ink tracking-normal whitespace-normal sm:hidden">
-          <div className="flex h-16 items-center justify-between border-b border-line px-5">
+        <div className="fixed inset-0 z-[60] overflow-y-auto bg-paper text-ink tracking-normal whitespace-normal lg:hidden">
+          <div className="flex h-16 items-center justify-between border-b border-line px-5 sm:px-10">
             <Link href={`/${locale}`} onClick={close} className="font-serif text-base tracking-[0.3em] uppercase">
               {wordmark}
             </Link>
@@ -191,8 +192,8 @@ export function MobileMenu({
               <IconClose />
             </button>
           </div>
-          <nav className="space-y-9 px-5 pt-7 pb-16">
-            <div className="grid grid-cols-2 gap-3">
+          <nav className="space-y-9 px-5 pt-7 pb-16 sm:px-10">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               <Link href={`/${locale}/plan`} onClick={close} className="bg-ink px-4 py-3 text-center text-sm tracking-[0.12em] text-paper">
                 {text.start}
               </Link>
@@ -208,11 +209,14 @@ export function MobileMenu({
               <Link href={`/${locale}/prices`} onClick={close} className="border border-ink/25 px-4 py-3 text-center text-sm tracking-[0.12em]">
                 {text.prices}
               </Link>
+              <Link href={`/${locale}/rankings`} onClick={close} className="border border-ink/25 px-4 py-3 text-center text-sm tracking-[0.12em]">
+                {text.rankings}
+              </Link>
             </div>
             {regions.map((region) => (
               <div key={region.id}>
                 <p className="eyebrow border-b border-line pb-2 text-mute">{region.label}</p>
-                <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-3">
+                <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-3 md:grid-cols-4">
                   {region.parks.map((park) => (
                     <li key={park.code}>
                       <ParkLink locale={locale} park={park} month={month} inSeasonLabel={text.inSeason} onNavigate={close} />

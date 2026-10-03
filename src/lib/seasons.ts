@@ -5,6 +5,7 @@ import { climate } from "@/data/climate.generated";
 import type { Park } from "@/data/parks";
 import { seasonalRoads } from "@/data/roads";
 import { roadDecides, roadFor } from "@/lib/roads";
+import { parkVisits } from "@/lib/visits";
 
 // “什么时候去哪个公园”：按月整理每个公园能去的景点比例、去不了的必去景点、往年同期天气和特别活动，
 // 页面上按出发日期（前后十天，跨月按天数加权）打分排序
@@ -54,6 +55,8 @@ export interface ParkSeason {
   roadStops: RoadStop[];
   /** 这个公园的季节性道路 id → 名字 */
   roadNames: Record<string, string>;
+  /** 每个月平均每天多少人次（NPS 近 3 年，下标 0 是 1 月）；加拿大的公园没有 */
+  daily?: number[];
 }
 
 const round1 = (value: number) => Math.round(value * 10) / 10;
@@ -100,6 +103,7 @@ export function parkSeason(park: Park): ParkSeason {
         .map((activity) => activity.nameZh),
     };
   });
+  const daily = parkVisits(park.code)?.daily;
   const roadStops = stops.flatMap((stop): RoadStop[] => {
     const road = roadFor(stop.id);
     if (!road || !roadDecides(road, stop.id)) return [];
@@ -118,5 +122,6 @@ export function parkSeason(park: Park): ParkSeason {
     roadNames: Object.fromEntries(
       seasonalRoads.filter((road) => roadStops.some((stop) => stop.road === road.id)).map((road) => [road.id, road.nameZh]),
     ),
+    ...(daily ? { daily } : {}),
   };
 }
