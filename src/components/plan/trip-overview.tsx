@@ -166,6 +166,10 @@ export function TripOverview({
       notes.push(fill(t.late, { day: view.day + 1, time: formatClock(view.timeline.returnAt) }));
     }
     if (view.timeline.overloaded) notes.push(fill(t.overloaded, { day: view.day + 1 }));
+    const fullLots = view.timeline.entries.flatMap((entry, k) =>
+      entry.warnings.includes("parkingFull") && view.rows[k]?.item.status === "planned" ? [view.rows[k].stop.nameZh] : [],
+    );
+    if (fullLots.length) notes.push(fill(t.parking, { day: view.day + 1, names: fullLots.join("、") }));
   }
   // 班车：哪几天要坐哪条线
   const shuttleDays = new Map<string, number[]>();

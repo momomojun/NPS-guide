@@ -1,7 +1,7 @@
-import type { AttractionKind, EntryHours, TimeOfDay } from "../data/attractions/types";
+import type { AttractionKind, EntryHours, ParkingRule, TimeOfDay } from "../data/attractions/types";
 import { lastBusMinutes, shuttleLeg, shuttleOptions, type ShuttleRide } from "./shuttle";
 import { aroundMinutes } from "./roads";
-import { departuresOn, type Departures } from "./tours";
+import { departuresOn, weekdayOf, type Departures } from "./tours";
 import { gatewayNode, travelMinutes } from "./travel";
 
 export interface PlanStop {
@@ -16,6 +16,8 @@ export interface PlanStop {
   start?: { lat: number; lon: number };
   /** 能进去的时间（见 Attraction.hours） */
   hours?: EntryHours[];
+  /** 旺季早上就停满的停车场（见 parking.ts） */
+  parking?: ParkingRule;
 }
 
 /**
@@ -92,6 +94,13 @@ const LEAVING_EVENING_MAX_DRIVE = 60;
 export const FAR_TRANSFER_MIN = 10 * 60;
 /** 一天的景点不超过这么多就逐一比较所有顺序（6! = 720 种）；更多的从路线顺序出发一站一站挪着找 */
 const MAX_PERMUTE = 6;
+/** 第一站停车场一早就满：提早出发，在停满前这么多分钟到，但不早于 PARKING_EARLIEST（更早满的给提醒和别的办法，比如坐班车） */
+const PARKING_MARGIN = 15;
+const PARKING_EARLIEST = 6 * 60;
+/** 官方没说几点以后有空位的：按下午 5 点以后玩了一天的人陆续离开算（傍晚去看日落、散步的不提醒） */
+const PARKING_FREE_DEFAULT = 17 * 60;
+/** 排当天顺序时，到的时候停车场多半已经满了算多开了这么多分钟的车（满了要等车位、停远处或者改天再来） */
+const PARKING_FULL_COST = 90;
 /** 一站一站挪着找最多试几轮 */
 const RELOCATE_ROUNDS = 6;
 
@@ -439,7 +448,8 @@ export type StopWarning =
   | "missDeparture"
   | "noService"
   | "afterHours"
-  | "offTime";
+  | "offTime"
+  | "parkingFull";
 
 export interface TimelineEntry {
   id: string;
@@ -489,6 +499,8 @@ function simulate(
   departures: (Departures | null)[] = [],
   /** 进去的时间有限制的景点这天的时间，和 stops 一一对应 */
   windows: (EntryWindow | null)[] = [],
+  /** 停车场一早就满的景点这天的情况，和 stops 一一对应 */
+  parking: (ParkingWindow | null)[] = [],
 ): DayTimeline {
   const morning = drives[0] ?? 0;
   const sunriseStart = sun.sunrise - 20;
@@ -516,8 +528,20 @@ function simulate(
       if (departAt !== undefined) departAt = early;
     }
   }
+  // 第一站旺季停车场一早就满（拱门的 Delicate Arch、冰川的洛根山口）：按平常的时间出发到的时候已经满了，就提早出发；
+  // 刚落地的那天不提早，最早 6 点出发也赶不上的（落基山 Glacier Gorge 天一亮就满）也不白提早，提醒坐班车之类的办法
+  const lot = parking[0];
+  if (startAt === undefined && !arriving && slots[0] === "any" && !first && lot && clock + morning > lot.full - PARKING_MARGIN) {
+    const early = Math.max(lot.full - PARKING_MARGIN - morning, PARKING_EARLIEST);
+    if (early < clock && early + morning < lot.full) {
+      clock = early;
+      if (departAt !== undefined) departAt = early;
+    }
+  }
   let driveTotal = returnDrive;
   let activeTotal = returnDrive;
+  // 这天已经停好车的停车场：同一个停车场的景点只看第一个
+  const parked = new Set<string>();
 
   const entries = stops.map((stop, index): TimelineEntry => {
     const warnings: StopWarning[] = [];
@@ -562,6 +586,12 @@ function simulate(
       warnings.push("afterHours");
     }
     if (stop.kind === "hike" && end > sun.sunset + 20) warnings.push("dark");
+    // 到的时候停车场多半已经满了（还没到又有空位的时候）。要等日落、等班次、等开门的，可以晚点再过来，按开始的时间看
+    const lotHere = parking[index];
+    if (lotHere && !parked.has(lotHere.lot)) {
+      parked.add(lotHere.lot);
+      if (start > lotHere.full && start < lotHere.free) warnings.push("parkingFull");
+    }
 
     driveTotal += driveMin;
     activeTotal += driveMin + stop.durationMin;
@@ -634,6 +664,32 @@ export function entryWindow(stop: PlanStop, date: string | null | undefined): En
   };
 }
 
+/** 停车场这一天的情况（当天第几分钟）：几点停满、几点以后又有空位，同一个停车场的景点 lot 一样 */
+export interface ParkingWindow {
+  full: number;
+  free: number;
+  /** free 是官方说的（不是按傍晚估的），可以写出来 */
+  freeStated: boolean;
+  lot: string;
+}
+
+/**
+ * 这一天这个景点的停车场一般几点停满：旺季才算，只在周末满的按星期算；
+ * 班车季坐班车去的（停车看换乘点）、不知道日期的都是 null
+ */
+export function parkingOn(stop: PlanStop, date: string | null | undefined): ParkingWindow | null {
+  const rule = stop.parking;
+  if (!rule || !date || !rule.months.includes(Number(date.slice(5, 7)))) return null;
+  if (rule.weekends && !["Sat", "Sun"].includes(weekdayOf(date))) return null;
+  if (shuttleOptions(stop.id, date).length > 0) return null;
+  return {
+    full: clockOf(rule.fullBy),
+    free: rule.freeAfter ? clockOf(rule.freeAfter) : PARKING_FREE_DEFAULT,
+    freeStated: Boolean(rule.freeAfter),
+    lot: rule.lot ?? stop.id,
+  };
+}
+
 /** 按当天顺序推算几点出发、几点到每个景点、几点回到住处 */
 export function buildTimeline(stops: PlanStop[], context: DayContext): DayTimeline {
   const legs = stops.map((stop, index) =>
@@ -651,6 +707,7 @@ export function buildTimeline(stops: PlanStop[], context: DayContext): DayTimeli
     context.to?.endpoint === "destination",
     stops.map((stop) => departuresOn(stop.id, context.date)),
     stops.map((stop) => entryWindow(stop, context.date)),
+    stops.map((stop) => parkingOn(stop, context.date)),
   );
   return withShuttles(timeline, stops, legs, back, context.date, context.sun);
 }
@@ -739,6 +796,7 @@ export function buildLiveTimeline(
     // 已经到了的那一站不用再等班次、等开门
     live.map((stop, index) => (index === 0 && arrivedAt !== undefined ? null : departuresOn(stop.id, context.date))),
     live.map((stop, index) => (index === 0 && arrivedAt !== undefined ? null : entryWindow(stop, context.date))),
+    live.map((stop, index) => (index === 0 && arrivedAt !== undefined ? null : parkingOn(stop, context.date))),
   );
   return withShuttles(timeline, live, legs, back, context.date, context.sun);
 }
@@ -766,6 +824,7 @@ function orderCost(timeline: DayTimeline, stops: PlanStop[], departures: (Depart
     if (entry.warnings.includes("dark")) cost += 240;
     if (entry.warnings.includes("missDeparture")) cost += 240;
     if (entry.warnings.includes("missSunset")) cost += 60;
+    if (entry.warnings.includes("parkingFull")) cost += PARKING_FULL_COST;
     if (entry.slot !== "any") cost -= 40;
     if (prefers.includes("morning") && entry.start > 12 * 60) cost += 15;
     if (prefers.includes("afternoon") && entry.start < 12 * 60) cost += 15;
@@ -785,6 +844,7 @@ export function arrangeDay(stops: PlanStop[], context: DayContext): PlanStop[] {
   const date = context.date;
   const departures = stops.map((stop) => departuresOn(stop.id, date));
   const windows = stops.map((stop) => entryWindow(stop, date));
+  const parking = stops.map((stop) => parkingOn(stop, date));
   const evaluate = (order: number[]) => {
     const ordered = order.map((i) => stops[i]);
     const times = order.map((i) => departures[i]);
@@ -800,6 +860,7 @@ export function arrangeDay(stops: PlanStop[], context: DayContext): PlanStop[] {
       context.to?.endpoint === "destination",
       times,
       order.map((i) => windows[i]),
+      order.map((i) => parking[i]),
     );
     // 赶不上末班车的顺序尽量不要
     const stranded = date
@@ -814,25 +875,47 @@ export function arrangeDay(stops: PlanStop[], context: DayContext): PlanStop[] {
   let bestOrder = [...order];
   let bestCost = evaluate(order);
   if (n > MAX_PERMUTE) {
-    // 景点多的一天：从路线顺序出发，把某一站挪到别的位置，更好就留下，挪到再挪都不更好为止（逐一比较所有顺序太慢）
-    for (let round = 0; round < RELOCATE_ROUNDS; round++) {
-      let improved = false;
-      for (let from = 0; from < n; from++) {
-        for (let to = 0; to < n; to++) {
-          if (to === from) continue;
-          const next = [...bestOrder];
-          next.splice(to, 0, ...next.splice(from, 1));
-          const cost = evaluate(next);
-          if (cost < bestCost) {
-            bestCost = cost;
-            bestOrder = next;
-            improved = true;
+    // 景点多的一天：从某个顺序出发，把某一站挪到别的位置，更好就留下，挪到再挪都不更好为止（逐一比较所有顺序太慢）
+    const relocate = (start: number[]) => {
+      let current = start;
+      let currentCost = evaluate(start);
+      for (let round = 0; round < RELOCATE_ROUNDS; round++) {
+        let improved = false;
+        for (let from = 0; from < n; from++) {
+          for (let to = 0; to < n; to++) {
+            if (to === from) continue;
+            const next = [...current];
+            next.splice(to, 0, ...next.splice(from, 1));
+            const cost = evaluate(next);
+            if (cost < currentCost) {
+              currentCost = cost;
+              current = next;
+              improved = true;
+            }
           }
         }
+        if (!improved) break;
       }
-      if (!improved) break;
+      return { order: current, cost: currentCost };
+    };
+    let best = relocate(order);
+    // 有停车场一早就满的：再从“看日出的、停车场早满的放前面，其他按路线”出发各找一遍。
+    // 从路线顺序出发一站一站地挪，常常找不到“先看日出、接着赶在停车场满之前到”这种要同时挪两站的顺序
+    if (parking.some(Boolean)) {
+      const sunrise = order.filter((i) => stops[i].bestTime?.includes("sunrise"));
+      const lots = order
+        .filter((i) => parking[i] && !sunrise.includes(i))
+        .sort((a, b) => parking[a]!.full - parking[b]!.full);
+      const rest = order.filter((i) => !sunrise.includes(i) && !lots.includes(i));
+      for (const seed of [
+        [...sunrise, ...lots, ...rest],
+        [...lots, ...sunrise, ...rest],
+      ]) {
+        const found = relocate(seed);
+        if (found.cost < best.cost) best = found;
+      }
     }
-    return bestOrder.map((k) => stops[k]);
+    return best.order.map((k) => stops[k]);
   }
   // Heap 算法逐一生成所有顺序
   const counters = new Array<number>(n).fill(0);

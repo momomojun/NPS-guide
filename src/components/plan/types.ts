@@ -9,6 +9,8 @@ export type PlannerText = Pick<
 > & {
   /** 班车线 id → 当前语言的名字 */
   shuttleNames: Record<string, string>;
+  /** 班车线 id → 换乘点怎么停车（当前语言） */
+  shuttleParking: Record<string, string>;
   /** 季节性道路 id → 当前语言的名字 */
   roadNames: Record<string, string>;
 };
@@ -29,6 +31,20 @@ export interface PlannerPark {
   /** 园外名胜（不是国家公园） */
   site: boolean;
   country: "US" | "CA";
+  /** 每个月平均每天多少人次（NPS 近 3 年，下标 0 是 1 月）；加拿大的公园、园外名胜没有 */
+  daily?: number[];
+  /** 国际暗夜公园（或者加拿大的暗夜保护区）哪年认证的 */
+  darkSky?: { year: number; rasc: boolean };
+}
+
+/** 攻略说明里的“看星空”：暗夜公园这几晚月亮碍不碍事，园里有哪些看星空的景点 */
+export interface StargazingInfo {
+  park: PlannerPark;
+  /** 在这个公园的晚上（定了日期才有）：第几天、月亮亮了几成、日落后一两个小时在不在天上 */
+  nights: { day: number; fraction: number; up: boolean }[];
+  /** 这几天日落晚（夏天），看完星空回住处要很晚 */
+  lateDark: boolean;
+  stops: { id: string; nameZh: string }[];
 }
 
 /** 解析后的住处：推荐住宿补上名字和说明，自定义住处带着查好的车程 */
@@ -66,6 +82,8 @@ export interface DayView {
   from?: ResolvedLodging;
   /** 当晚住处 */
   to?: ResolvedLodging;
+  /** 这天所在公园的时区（算月亮几点升落） */
+  timeZone?: string;
 }
 
 export interface DragSpot {

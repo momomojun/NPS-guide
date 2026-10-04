@@ -196,7 +196,7 @@ export function VisitsSection({
     : fill(t.hintCanada, { first: visits.firstYear, next: String(visits.firstYear + 1).slice(2) });
 
   return (
-    <div className="mt-24">
+    <div id="crowds" className="mt-24 scroll-mt-32">
       <h3 className="font-serif text-2xl">{t.title}</h3>
       <p className="mt-2 max-w-3xl text-xs leading-6 text-mute">{hint}</p>
       <div className="mt-8 grid gap-x-16 gap-y-10 lg:grid-cols-12">

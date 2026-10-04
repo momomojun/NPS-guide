@@ -5,7 +5,7 @@ import type { ParkActivity } from "@/data/activities";
 import { fill, formatDuration, formatMonths } from "@/i18n/format";
 import type { GuideInfo, GuideSkipped } from "@/lib/generate-trip";
 import type { LodgingRank } from "@/lib/planner";
-import type { PlannerPark, PlannerText, ResolvedLodging } from "./types";
+import type { PlannerPark, PlannerText, ResolvedLodging, StargazingInfo } from "./types";
 
 /** 自动生成的攻略说明：怎么进出、每晚住哪（附备选和民宿）、这个月的特别活动、哪些景点没排进去以及原因 */
 export function GuideSummary({
@@ -23,6 +23,7 @@ export function GuideSummary({
   closedNoteOf,
   activities,
   attractionExists,
+  stargazing = [],
   text,
 }: {
   guide: GuideInfo;
@@ -49,6 +50,8 @@ export function GuideSummary({
   /** 这些公园的特别活动（全部月份），这里按行程月份筛 */
   activities: ParkActivity[];
   attractionExists: (id: string) => boolean;
+  /** 暗夜公园这几晚月亮碍不碍事、园里看星空的景点 */
+  stargazing?: StargazingInfo[];
   text: PlannerText;
 }) {
   const g = text.plan.guide;
@@ -216,6 +219,41 @@ export function GuideSummary({
                   </div>
                 ))}
               </dl>
+            </div>
+          )}
+          {stargazing.length > 0 && (
+            <div>
+              <h3 className="font-serif text-xl">{g.stargazing}</h3>
+              <div className="mt-4 space-y-5">
+                {stargazing.map(({ park, nights, lateDark, stops }) => {
+                  const good = nights.filter((night) => night.fraction < 0.15 || !night.up);
+                  const days = (list: typeof nights) => list.map((night) => night.day + 1).join("、");
+                  return (
+                    <div key={park.code} className="space-y-1.5 text-sm leading-6 text-ink-soft">
+                      <p className="text-ink">
+                        {fill(park.darkSky!.rasc ? g.darkSkyPreserve : g.darkSkyPark, { park: park.nameZh, year: park.darkSky!.year })}
+                      </p>
+                      {!dated && <p>{g.undated}</p>}
+                      {nights.length > 0 && good.length > 0 && <p>{fill(g.goodNights, { days: days(good) })}</p>}
+                      {nights.length > 0 && good.length === 0 && <p>{fill(g.brightNights, { days: days(nights) })}</p>}
+                      {lateDark && <p className="text-xs text-mute">{g.lateDark}</p>}
+                      {stops.some((stop) => !inTrip.has(stop.id)) && (
+                        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-1">
+                          <span className="text-xs text-mute">{g.stargazingStops}</span>
+                          {stops
+                            .filter((stop) => !inTrip.has(stop.id))
+                            .map((stop) => (
+                              <span key={stop.id} className="inline-flex items-center gap-2">
+                                <span className="text-ink">{stop.nameZh}</span>
+                                <AddToTripButton id={stop.id} text={text.trip} />
+                              </span>
+                            ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           )}
           {surcharge && (

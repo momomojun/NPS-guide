@@ -1,24 +1,28 @@
+import type { ParkingRule } from "@/data/attractions";
 import type { BookingRule, BookingWindow, MonthDay } from "@/data/bookings";
 import type { ShuttleSystem } from "@/data/shuttles";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { fill } from "@/i18n/format";
+import { fill, formatMonths } from "@/i18n/format";
 
-/** 公园页：这个公园要提前订的（各自从什么时候开始能订）和班车季只能坐班车的路 */
+/** 公园页：这个公园要提前订的（各自从什么时候开始能订）、班车季只能坐班车的路和旺季早上就停满的停车场 */
 export function BookingsSection({
   rules,
   shuttles,
+  parking = [],
   planHref,
   dict,
 }: {
   rules: BookingRule[];
   shuttles: ShuttleSystem[];
+  /** 旺季早上就停满的停车场（景点名和规则） */
+  parking?: { id: string; nameZh: string; rule: ParkingRule }[];
   planHref: string;
   dict: Dictionary;
 }) {
   const t = dict.park.bookings;
   const kinds = dict.plan.bookings.kinds;
   const tzNames = dict.plan.bookings.tz;
-  if (rules.length === 0 && shuttles.length === 0) return null;
+  if (rules.length === 0 && shuttles.length === 0 && parking.length === 0) return null;
 
   const monthDay = (value: MonthDay) => {
     const [m, d] = value.split("-").map(Number);
@@ -143,61 +147,95 @@ export function BookingsSection({
         </div>
       )}
 
-      {shuttles.length > 0 && (
+      {(shuttles.length > 0 || parking.length > 0) && (
         <div className={rules.length > 0 ? "lg:col-span-5" : "lg:col-span-7"}>
-          <h3 className="font-serif text-2xl">{t.shuttleTitle}</h3>
-          <p className="mt-2 text-xs leading-6 text-mute">{t.shuttleIntro}</p>
-          <ul className="mt-6 space-y-8">
-            {shuttles.map((system) => (
-              <li key={system.id} className="border-t border-ink pt-4">
-                <p className="font-serif text-lg">{system.nameZh}</p>
-                <p className="mt-1 text-xs text-mute">{fill(t.shuttleHub, { name: system.hub.nameZh })}</p>
-                <ul className="mt-3 space-y-1 text-sm leading-6 text-ink-soft">
-                  {system.seasons.map((season) => {
-                    const lastFrom = system.stops.find((stop) => stop.id === season.lastBusFrom);
-                    return (
-                      <li key={season.from}>
-                        <span className="text-ink">{range(season.from, season.to)}</span>
-                        {"　"}
-                        {[
-                          season.firstBus ? fill(t.firstBus, { time: clock(season.firstBus) }) : null,
-                          season.lastBusFromHub
-                            ? fill(t.lastIn, { time: clock(season.lastBusFromHub) })
-                            : season.lastInAtSunset
-                              ? t.lastInSunset
-                              : null,
-                          season.lastBus
-                            ? fill(t.lastBack, { time: clock(season.lastBus), stop: lastFrom?.nameEn ?? system.hub.nameZh })
-                            : season.lastBusAfterSunsetMin !== undefined
-                              ? fill(t.lastBackSunset, { n: season.lastBusAfterSunsetMin })
-                              : null,
-                          fill(t.headway, { n: season.headwayMin }),
-                          season.days ? t.weekendsOnly : null,
-                        ]
-                          .filter(Boolean)
-                          .join("，")}
-                      </li>
-                    );
-                  })}
-                </ul>
-                {system.scheduleYear && <p className="mt-2 text-xs leading-6 text-mute">{fill(t.scheduleYear, { year: system.scheduleYear })}</p>}
-                {system.hub.parkingZh && <p className="mt-2 text-xs leading-6 text-mute">{system.hub.parkingZh}</p>}
-                {system.offSeasonZh && (
-                  <p className="mt-2 text-xs leading-6 text-mute">
-                    <span className="text-ink-soft">{t.offSeason}</span>
-                    {system.offSeasonZh}
-                  </p>
-                )}
-                {system.noteZh && <p className="mt-2 text-xs leading-6 text-mute">{system.noteZh}</p>}
-                <p className="mt-2 flex flex-wrap gap-x-5 text-xs tracking-[0.1em]">
-                  <a href={system.source} target="_blank" rel="noreferrer" className="link-line">
-                    {dict.plan.bookings.source}
-                  </a>
-                  <span className="tracking-normal text-mute">{fill(dict.plan.bookings.verified, { date: system.checked })}</span>
-                </p>
-              </li>
-            ))}
-          </ul>
+          {shuttles.length > 0 && (
+            <>
+              <h3 className="font-serif text-2xl">{t.shuttleTitle}</h3>
+              <p className="mt-2 text-xs leading-6 text-mute">{t.shuttleIntro}</p>
+              <ul className="mt-6 space-y-8">
+                {shuttles.map((system) => (
+                  <li key={system.id} className="border-t border-ink pt-4">
+                    <p className="font-serif text-lg">{system.nameZh}</p>
+                    <p className="mt-1 text-xs text-mute">{fill(t.shuttleHub, { name: system.hub.nameZh })}</p>
+                    <ul className="mt-3 space-y-1 text-sm leading-6 text-ink-soft">
+                      {system.seasons.map((season) => {
+                        const lastFrom = system.stops.find((stop) => stop.id === season.lastBusFrom);
+                        return (
+                          <li key={season.from}>
+                            <span className="text-ink">{range(season.from, season.to)}</span>
+                            {"　"}
+                            {[
+                              season.firstBus ? fill(t.firstBus, { time: clock(season.firstBus) }) : null,
+                              season.lastBusFromHub
+                                ? fill(t.lastIn, { time: clock(season.lastBusFromHub) })
+                                : season.lastInAtSunset
+                                  ? t.lastInSunset
+                                  : null,
+                              season.lastBus
+                                ? fill(t.lastBack, { time: clock(season.lastBus), stop: lastFrom?.nameEn ?? system.hub.nameZh })
+                                : season.lastBusAfterSunsetMin !== undefined
+                                  ? fill(t.lastBackSunset, { n: season.lastBusAfterSunsetMin })
+                                  : null,
+                              fill(t.headway, { n: season.headwayMin }),
+                              season.days ? t.weekendsOnly : null,
+                            ]
+                              .filter(Boolean)
+                              .join("，")}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                    {system.scheduleYear && <p className="mt-2 text-xs leading-6 text-mute">{fill(t.scheduleYear, { year: system.scheduleYear })}</p>}
+                    {system.hub.parkingZh && <p className="mt-2 text-xs leading-6 text-mute">{system.hub.parkingZh}</p>}
+                    {system.offSeasonZh && (
+                      <p className="mt-2 text-xs leading-6 text-mute">
+                        <span className="text-ink-soft">{t.offSeason}</span>
+                        {system.offSeasonZh}
+                      </p>
+                    )}
+                    {system.noteZh && <p className="mt-2 text-xs leading-6 text-mute">{system.noteZh}</p>}
+                    <p className="mt-2 flex flex-wrap gap-x-5 text-xs tracking-[0.1em]">
+                      <a href={system.source} target="_blank" rel="noreferrer" className="link-line">
+                        {dict.plan.bookings.source}
+                      </a>
+                      <span className="tracking-normal text-mute">{fill(dict.plan.bookings.verified, { date: system.checked })}</span>
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+          {parking.length > 0 && (
+            <div className={shuttles.length > 0 ? "mt-16" : ""}>
+              <h3 className="font-serif text-2xl">{t.parkingTitle}</h3>
+              <p className="mt-2 text-xs leading-6 text-mute">{t.parkingIntro}</p>
+              <ul className="mt-6 divide-y divide-line border-y border-line">
+                {parking.map(({ id, nameZh, rule }) => (
+                  <li key={id} className="space-y-1 py-4">
+                    <p className="flex flex-wrap items-baseline gap-x-3">
+                      <span className="font-serif text-base">{rule.lot ?? nameZh}</span>
+                      <span className="text-xs text-mute">
+                        {formatMonths(rule.months, dict.units)}
+                        {rule.weekends ? t.parkingWeekends : ""}
+                      </span>
+                    </p>
+                    {rule.lot && <p className="text-xs text-mute">{fill(t.parkingStops, { names: nameZh })}</p>}
+                    <p className="text-sm text-ink">
+                      {fill(rule.freeAfter ? t.parkingWindow : t.parkingBy, {
+                        time: clock(rule.fullBy),
+                        free: rule.freeAfter ? clock(rule.freeAfter) : "",
+                      })}
+                    </p>
+                    <p className="text-xs leading-6 text-mute">{rule.noteZh}</p>
+                    <a href={rule.source} target="_blank" rel="noreferrer" className="link-line inline-block text-xs tracking-[0.1em]">
+                      {dict.plan.bookings.source}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       )}
     </div>

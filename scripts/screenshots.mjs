@@ -1,5 +1,5 @@
 // README 用的网页截图：用本机装好的 Chrome / Edge（puppeteer-core，不另外下载浏览器）打开网站，
-// 截首页、公园页、行程页、什么时候去、博主路线、价格页和手机版，存到 docs/screenshots/，另外合成一张 GitHub 社交预览图。
+// 截首页、公园页、行程页、榜单、什么时候去、博主路线、价格页和手机版，存到 docs/screenshots/，另外合成一张 GitHub 社交预览图。
 // 先把网站开着（npm run dev，或者 npm run build && npm run start），再 npm run docs:screenshots。
 // BASE=http://localhost:3001 换地址；CHROME=浏览器路径；ONLY=home,plan 只截其中几张。
 // 行程页的截图是现场用“自动生成攻略”排的：黄石 + 大提顿 5 天，出发日期取两周后。
@@ -161,6 +161,18 @@ const shots = {
     await shot(page, "plan-day.jpg");
     await scrollTo(page, "#plan-budget", 1800);
     await shot(page, "plan-budget.jpg");
+    await page.close();
+  },
+
+  async rankings(browser) {
+    const page = await openPage(browser, DESKTOP);
+    await go(page, "/zh-Hans/rankings");
+    await scrollTo(page, "#visits", 1500, 120);
+    await shot(page, "rankings.jpg");
+    // 公园页的“人多不多”：每个月平均每天的人次和历年的人次
+    await go(page, "/zh-Hans/parks/zion");
+    await scrollTo(page, "#crowds", 1500);
+    await shot(page, "crowds.jpg");
     await page.close();
   },
 

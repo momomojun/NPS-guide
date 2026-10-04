@@ -17,7 +17,8 @@ import type { AttractionWithPhoto } from "@/data/attractions";
 import type { ParkAlert } from "@/lib/alert-match";
 import { fill, formatDuration, formatMonths } from "@/i18n/format";
 import { monthOf } from "@/lib/dates";
-import { entryWindow, lodgingLeg } from "@/lib/planner";
+import { moonNight } from "@/lib/moon";
+import { entryWindow, lodgingLeg, parkingOn, type TimelineEntry } from "@/lib/planner";
 import { formatClock } from "@/lib/sun";
 import { datedSchedule, departuresOn, runsOn, tourScheduleOf, tourSeason } from "@/lib/tours";
 import { moveItem, removeItem, setItemStatus } from "@/lib/trip-edit";
@@ -208,6 +209,63 @@ export function DayCard({
     return notes;
   };
 
+  // 停车场旺季一早就满的：到得早说一下几点满、满了怎么办，到得晚提醒；同一个停车场的几个景点只在第一个下面说
+  const parkedLots = new Set<string>();
+  const parkingAt = new Map<string, NonNullable<ReturnType<typeof parkingOn>>>();
+  for (const { stop } of rows) {
+    const lot = parkingOn(stop, view.date);
+    if (lot && !parkedLots.has(lot.lot)) {
+      parkedLots.add(lot.lot);
+      parkingAt.set(stop.id, lot);
+    }
+  }
+  const parkingNote = (stop: AttractionWithPhoto, entry: TimelineEntry): { text: string; tone: Tone } | null => {
+    const lot = parkingAt.get(stop.id);
+    if (!lot || !stop.parking) return null;
+    const values = {
+      time: formatClock(lot.full),
+      free: formatClock(lot.free),
+      note: stop.parking.noteZh,
+      weekends: stop.parking.weekends ? t.warnings.parkingWeekends : "",
+    };
+    const window = lot.freeStated;
+    return entry.warnings.includes("parkingFull")
+      ? {
+          text: fill(window ? t.warnings.parkingLateWindow : t.warnings.parkingLate, {
+            ...values,
+            arrive: formatClock(entry.start),
+          }),
+          tone: "warn",
+        }
+      : { text: fill(window ? t.warnings.parkingEarlyWindow : t.warnings.parkingEarly, values), tone: "info" };
+  };
+  // 晚上看星空：定了日期就说这晚月亮在不在天上、有多亮（满月前后整晚都亮，星星少很多）
+  const moonNote = (stop: AttractionWithPhoto, entry: TimelineEntry): { text: string; tone: Tone } | null => {
+    if (entry.slot !== "night" || !exactDate || !view.timeZone) return null;
+    const night = moonNight(exactDate, entry.start, entry.end, stop.lat, stop.lon, view.timeZone);
+    const pct = Math.round(night.fraction * 100);
+    if (night.fraction < 0.15) return { text: fill(t.warnings.moonDark, { pct }), tone: "info" };
+    if (night.upMin === 0 && night.set !== null && night.set <= entry.start) {
+      return { text: fill(t.warnings.moonSet, { pct, time: formatClock(night.set) }), tone: "info" };
+    }
+    if (night.upMin === 0 && night.rise !== null && night.rise >= entry.end) {
+      return { text: fill(t.warnings.moonRise, { pct, time: formatClock(night.rise) }), tone: "info" };
+    }
+    if (night.upMin === 0) return { text: fill(t.warnings.moonDark, { pct }), tone: "info" };
+    const until = night.set !== null && night.set > entry.start && night.set < entry.start + 6 * 60 ? night.set : null;
+    return {
+      text: fill(t.warnings.moonUp, { pct, until: until !== null ? fill(t.warnings.moonUntil, { time: formatClock(until) }) : "" }),
+      tone: night.fraction >= 0.5 ? "warn" : "info",
+    };
+  };
+  // 这天第一次开到班车换乘点、坐车进去的地方：说一下换乘点怎么停车
+  const hubParkingAt = new Map<number, string>();
+  timeline.entries.forEach((entry, k) => {
+    const line = entry.shuttle?.mode === "in" ? entry.shuttle.line : undefined;
+    const note = line ? text.shuttleParking[line] : undefined;
+    if (line && note && ![...hubParkingAt.values()].includes(note)) hubParkingAt.set(k, note);
+  });
+
   // 拖拽：放在某一行上 = 插到这一行前面；放在列表末尾的空白 = 加到最后
   const dropHere = (spot: DragSpot) => ({
     onDragOver: (event: DragEvent) => {
@@ -327,9 +385,20 @@ export function DayCard({
             {rows.map(({ item, index, stop }, k) => {
               const entry = timeline.entries[k];
               const finished = item.status !== "planned";
+              const parking = parkingNote(stop, entry);
+              const moon = moonNote(stop, entry);
+              const hub = hubParkingAt.get(k);
               const notes = finished
                 ? []
-                : [...notesFor(stop), ...entry.warnings.map((w) => ({ text: t.warnings[w], tone: "warn" as Tone }))];
+                : [
+                    ...notesFor(stop),
+                    ...(hub ? [{ text: fill(t.warnings.hubParking, { note: hub }), tone: "info" as Tone }] : []),
+                    ...(parking ? [parking] : []),
+                    ...(moon ? [moon] : []),
+                    ...entry.warnings
+                      .filter((w) => w !== "parkingFull" || !parking)
+                      .map((w) => ({ text: t.warnings[w], tone: "warn" as Tone })),
+                  ];
               const alerts = finished ? [] : alertsFor(stop);
               return (
                 <li

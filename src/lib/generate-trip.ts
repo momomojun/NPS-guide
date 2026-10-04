@@ -12,6 +12,7 @@ import {
   type TimelineEntry,
 } from "./planner";
 import { addDays } from "./dates";
+import { moonNight } from "./moon";
 import { acrossClosedRoad, bestRoadDay, openChance, ROAD_LIKELY, roadDecides, roadFor, roadStatus } from "./roads";
 import { datedSchedule, runsOn, tourScheduleOf } from "./tours";
 import { planTrip } from "./trip-plan";
@@ -67,6 +68,8 @@ export interface GenerateContext {
   sunFor: (day: number) => SunWindow;
   /** 第 day 天的日期（班车季要坐班车）；只定了月份时是那个月 15 号左右 */
   dateFor?: (day: number) => string | null;
+  /** 公园所在的时区（定了日期时，看星空的景点按月亮挑晚上）；不给就不挑 */
+  zoneFor?: (park: string) => string | undefined;
 }
 
 /** 没排进去的景点和原因，攻略说明里列出来 */
@@ -118,6 +121,12 @@ const SWAP_DRIVE_MAX = 90;
  * 多开的车不超过它本身的停留（至少 FILL_DETOUR_MIN）；45% 挪到 55% 不值得多开一个多小时
  */
 const MOVE_GAIN_MIN = 0.2;
+/**
+ * 看星空的晚上月亮有多碍事：月亮亮了几成 × 日落后 1–3 小时里在天上的比例。
+ * 超过 MOON_GLARE_OK 就找同一座公园月亮小得多（少 MOON_GLARE_GAIN 以上）的晚上挪过去
+ */
+const MOON_GLARE_OK = 0.3;
+const MOON_GLARE_GAIN = 0.3;
 /** 超过这么久的徒步不自动排（可以手动加） */
 const MAX_HIKE_MIN: Record<Pace, number> = { relaxed: 240, normal: 420, packed: 600 };
 /** 园内景点之间平均每天开车的分钟数，估算时间预算用 */
@@ -554,6 +563,45 @@ export function generateTrip(input: GenerateInput, context: GenerateContext): { 
       }
       if (!best) break;
       trip = best.trip;
+    }
+  }
+
+  // 晚上看星空的：定了日期，同一座公园别的晚上月亮小得多（满月前后挪到月亮已经落下、或者半夜才升起的那天），
+  // 不变得更满、没有别的景点因此排不开、多开的车不超过它本身的停留，就挪过去
+  if (tripDates.length > 0 && context.zoneFor) {
+    const zoneFor = context.zoneFor;
+    const glareOn = (stop: GuideStop, day: number) => {
+      const zone = zoneFor(stop.park);
+      if (!zone) return 0;
+      const sunset = sunFor(day).sunset;
+      const night = moonNight(tripDates[day], sunset + 60, sunset + 180, stop.lat, stop.lon, zone);
+      return night.fraction * (night.upMin / 120);
+    };
+    const nightStops = trip.days.flat().flatMap((item) => {
+      const stop = guideById.get(item.id);
+      return stop && onlyAt(stop) === "night" ? [{ item, stop }] : [];
+    });
+    for (const { item, stop } of nightStops) {
+      const d = trip.days.findIndex((day) => day.some((other) => other.id === item.id));
+      const here = d >= 0 ? glareOn(stop, d) : 0;
+      if (here < MOON_GLARE_OK) continue;
+      const before = { troubled: troubled(trip).length, excess: excess(trip), drive: totalDrive(trip) };
+      const extraMax = Math.max(FILL_DETOUR_MIN, stop.durationMin);
+      let best: { trip: Trip; glare: number; drive: number } | null = null;
+      for (let target = 0; target < trip.days.length; target++) {
+        if (target === d || !samePark(trip, target, item.id)) continue;
+        const glare = glareOn(stop, target);
+        if (glare > here - MOON_GLARE_GAIN || (best && glare > best.glare)) continue;
+        const days = trip.days.map((day, index) =>
+          index === d ? day.filter((other) => other.id !== item.id) : index === target ? [...day, item] : day,
+        );
+        const trial = rearrange({ ...trip, days }, [d, target]);
+        const drive = totalDrive(trial);
+        if (troubled(trial).length > before.troubled || excess(trial) > before.excess + FILL_SLACK_MIN) continue;
+        if (drive - before.drive > extraMax || (best && glare === best.glare && drive >= best.drive)) continue;
+        best = { trip: trial, glare, drive };
+      }
+      if (best) trip = best.trip;
     }
   }
 

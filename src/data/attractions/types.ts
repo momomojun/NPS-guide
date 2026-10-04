@@ -38,6 +38,22 @@ export interface EntryHours {
   months?: number[];
 }
 
+/** 旺季早上就停满的停车场（src/data/parking.ts）：这几个月一般几点前停满，停满了怎么办 */
+export interface ParkingRule {
+  /** 一般几点前停满（当地时间 "HH:MM"） */
+  fullBy: string;
+  /** 几点以后又陆续有空位（官方说“下午 3 点以后来”这类）；不填是一直满到傍晚 */
+  freeAfter?: string;
+  /** 停车场的名字：几个景点共用一个停车场（优胜美地山谷、拱门的 Windows 一带），一天只看第一个，后面的已经停好车了 */
+  lot?: string;
+  months: number[];
+  /** 只在周末、节假日停满 */
+  weekends?: boolean;
+  /** 停满了怎么办（我们自己的话） */
+  noteZh: string;
+  source: string;
+}
+
 export interface Attraction {
   id: string;
   /** NPS parkCode */

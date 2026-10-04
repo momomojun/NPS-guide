@@ -5,6 +5,7 @@ import { activities } from "@/data/activities";
 import { airports } from "@/data/airports";
 import { attractions } from "@/data/attractions";
 import { bookingRules } from "@/data/bookings";
+import { darkSky } from "@/data/honors";
 import { lodgingOptions } from "@/data/lodging";
 import { isSite, parks } from "@/data/parks";
 import { seasonalRoads } from "@/data/roads";
@@ -14,6 +15,7 @@ import { hasLocale } from "@/i18n/config";
 import { localizeActivity, localizeAttraction, localizeLodging, localizePark } from "@/i18n/content";
 import { localize } from "@/i18n/convert";
 import { getDictionary } from "@/i18n/dictionaries";
+import { parkVisits } from "@/lib/visits";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/plan">): Promise<Metadata> {
   const { locale } = await params;
@@ -49,6 +51,9 @@ export default async function PlanPage({ params }: PageProps<"/[locale]/plan">) 
         )}
         parks={parks.map((source) => {
           const park = localizePark(source, locale);
+          const daily = parkVisits(park.code)?.daily;
+          // 红杉与国王峡谷是两座公园（都不是暗夜公园）
+          const sky = darkSky[park.code];
           return {
             code: park.code,
             nameZh: park.nameZh,
@@ -62,6 +67,8 @@ export default async function PlanPage({ params }: PageProps<"/[locale]/plan">) 
             nonresidentSurcharge: park.nonresidentSurcharge,
             site: isSite(park),
             country: park.country ?? "US",
+            ...(daily ? { daily } : {}),
+            ...(sky ? { darkSky: { year: sky.year, rasc: sky.program === "rasc" } } : {}),
           };
         })}
         text={{
@@ -74,6 +81,11 @@ export default async function PlanPage({ params }: PageProps<"/[locale]/plan">) 
           difficulty: dict.difficulty,
           timeOfDay: dict.timeOfDay,
           shuttleNames: Object.fromEntries(shuttleSystems.map((system) => [system.id, localize(system.nameZh, locale)])),
+          shuttleParking: Object.fromEntries(
+            shuttleSystems.flatMap((system) =>
+              system.hub.parkingZh ? [[system.id, localize(system.hub.parkingZh, locale)]] : [],
+            ),
+          ),
           roadNames: Object.fromEntries(seasonalRoads.map((road) => [road.id, localize(road.nameZh, locale)])),
         }}
       />

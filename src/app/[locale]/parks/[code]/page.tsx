@@ -93,7 +93,16 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
         parkingZh: system.hub.parkingZh && localize(system.hub.parkingZh, locale),
       },
     }));
-  const hasBookings = parkBookings.length > 0 || parkShuttles.length > 0;
+  // 旺季早上就停满的停车场：共用一个停车场的几个景点合成一行
+  const parkParking = attractions
+    .filter((a) => a.parking)
+    .reduce<{ id: string; nameZh: string; rule: NonNullable<(typeof attractions)[number]["parking"]> }[]>((rows, a) => {
+      const same = rows.find((row) => a.parking!.lot && row.rule.lot === a.parking!.lot);
+      if (same) same.nameZh += `、${a.nameZh}`;
+      else rows.push({ id: a.id, nameZh: a.nameZh, rule: a.parking! });
+      return rows;
+    }, []);
+  const hasBookings = parkBookings.length > 0 || parkShuttles.length > 0 || parkParking.length > 0;
 
   const site = isSite(park);
   const canada = park.country === "CA";
@@ -259,6 +268,7 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
             <BookingsSection
               rules={parkBookings}
               shuttles={parkShuttles}
+              parking={parkParking}
               planHref={`/${locale}/plan?park=${park.code}`}
               dict={dict}
             />

@@ -15,7 +15,8 @@ import type { Photo } from "@/data/attractions/types";
 import { climate } from "@/data/climate.generated";
 import type { LodgingOption } from "@/data/lodging";
 import type { ServicePoint } from "@/data/services.generated";
-import { fill, formatDuration } from "@/i18n/format";
+import { fill, formatBig, formatDuration } from "@/i18n/format";
+import { crowdOf } from "@/lib/crowd";
 import { addDays, monthOf, nominalDate } from "@/lib/dates";
 import { airbnbUrl } from "@/lib/airbnb";
 import { alertsForStop, type AlertsResponse } from "@/lib/alert-match";
@@ -23,6 +24,7 @@ import type { BookingRule } from "@/data/bookings";
 import { bookingsForTrip } from "@/lib/booking";
 import { flightKey, useFlightStore } from "@/lib/flight-store";
 import { generateTrip, guideParks } from "@/lib/generate-trip";
+import { moonNight } from "@/lib/moon";
 import { drivingMinutesFrom, drivingRoute, type DrivingRoute } from "@/lib/osrm-client";
 import { learnDrive, learnPace, NEUTRAL_PACE, paceAdjusts, pacedMinutes } from "@/lib/personal-pace";
 import {
@@ -31,6 +33,7 @@ import {
   buildTransferTimeline,
   estimatedLeg,
   NOMINAL_SUN,
+  onlyAt,
   rankLodging,
   type PlanStop,
 } from "@/lib/planner";
@@ -75,7 +78,7 @@ import { roadNoteFor } from "./road-note";
 import { paceParts, TodayPanel } from "./today-panel";
 import { TripTools } from "./trip-tools";
 import { TripWizard, useRequestedPark, type WizardInput, type WizardPlace } from "./trip-wizard";
-import type { DayView, DragSpot, PlannerPark, PlannerText, ResolvedLodging, SunInfo } from "./types";
+import type { DayView, DragSpot, PlannerPark, PlannerText, ResolvedLodging, StargazingInfo, SunInfo } from "./types";
 import { alertCovers, type DayWeather } from "./weather";
 import { weatherNotes } from "./weather-line";
 
@@ -292,7 +295,8 @@ export function Planner({
         rows.map((row) => (row.item.status === "planned" ? paced(row.stop) : row.stop)),
         context,
       );
-    dayViews.push({ day, date: refDateOf(day), rows, sun, timeline, from, to });
+    const timeZone = parkByCode.get(rows[0]?.stop.park ?? previous?.park ?? "")?.timeZone;
+    dayViews.push({ day, date: refDateOf(day), rows, sun, timeline, from, to, timeZone });
     previous = rows.at(-1)?.stop ?? previous;
   }
 
@@ -440,6 +444,7 @@ export function Planner({
             })),
           sunFor,
           dateFor,
+          zoneFor: (code) => parkByCode.get(code)?.timeZone,
         },
       );
       updateTrip(() => generated);
@@ -494,6 +499,24 @@ export function Planner({
   const guideParkList = trip.guide
     ? guideParks(trip.guide).flatMap((code) => parks.filter((park) => park.code === code))
     : [];
+  // 看星空：暗夜公园在这里的几个晚上，日落后一两个小时月亮在不在天上、有多亮（定了日期才算）
+  const stargazing: StargazingInfo[] = guideParkList.flatMap((park) => {
+    if (!park.darkSky) return [];
+    const parkDays = dayViews.filter((view) => view.rows.some((row) => row.stop.park === park.code));
+    const nights = trip.startDate
+      ? parkDays.flatMap((view) => {
+          if (!view.date || view.sun.kind !== "normal") return [];
+          const sunset = view.sun.window.sunset;
+          const night = moonNight(view.date, sunset + 60, sunset + 180, park.lat, park.lon, park.timeZone);
+          return [{ day: view.day, fraction: night.fraction, up: night.upMin > 0 }];
+        })
+      : [];
+    const lateDark = parkDays.some((view) => view.sun.kind === "normal" && view.sun.window.sunset >= 20 * 60);
+    const stops = attractions
+      .filter((a) => a.park === park.code && onlyAt(a) === "night")
+      .map((a) => ({ id: a.id, nameZh: a.nameZh }));
+    return [{ park, nights, lateDark, stops }];
+  });
 
   const drag = {
     source: dragSource,
@@ -799,6 +822,20 @@ export function Planner({
       liveNotes.push(fill(t.overview.weatherPark, { park: parkName(park), note }));
     }
   });
+  // 人多：这几天是这个公园一年里最挤的时候（和它最挤的月份比，按在这个公园的日子算）
+  for (const code of stopParks) {
+    const daily = parkByCode.get(code)?.daily;
+    const weights = new Map<number, number>();
+    for (const view of dayViews) {
+      if (!view.rows.some((row) => row.stop.park === code)) continue;
+      const month = view.date ? monthOf(view.date) : tripMonth;
+      if (month !== null) weights.set(month, (weights.get(month) ?? 0) + 1);
+    }
+    const crowd = weights.size ? crowdOf(daily, weights) : null;
+    if (crowd?.level === "peak") {
+      liveNotes.push(fill(t.overview.crowdPeak, { park: parkName(code), n: formatBig(crowd.perDay, text.units) }));
+    }
+  }
   const alertStops = [...new Set([...affected.values()].flat())];
   if (affectedSoon.size) liveNotes.push(fill(t.overview.alertStops, { names: [...affectedSoon].join("、") }));
   else if (alertStops.length) liveNotes.push(fill(t.overview.alertStopsLater, { names: alertStops.join("、") }));
@@ -1161,6 +1198,7 @@ export function Planner({
           closedNoteOf={(id) => roadClosedNote(id) ?? tourClosedNote(id) ?? byId.get(id)?.closedNote}
           activities={activities.filter((activity) => guideParkList.some((p) => p.code === activity.park))}
           attractionExists={(id) => byId.has(id)}
+          stargazing={stargazing}
           text={text}
         />
       )}

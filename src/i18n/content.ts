@@ -20,6 +20,11 @@ export function localizeAttraction(attraction: AttractionWithPhoto, locale: Loca
     closedNote: attraction.closedNote && t(attraction.closedNote),
     start: attraction.start && { ...attraction.start, nameZh: t(attraction.start.nameZh) },
     creatorNotes: attraction.creatorNotes?.map((note) => ({ ...note, text: t(note.text) })),
+    parking: attraction.parking && {
+      ...attraction.parking,
+      noteZh: t(attraction.parking.noteZh),
+      ...(attraction.parking.lot ? { lot: t(attraction.parking.lot) } : {}),
+    },
   };
 }
 
