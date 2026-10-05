@@ -63,12 +63,14 @@ const zhHans = {
   home: {
     introTagline: "美国国家公园 · 行程规划",
     skip: "跳过",
-    heroEyebrow: "National Parks of the West · 美国西部国家公园",
+    heroEyebrow: "America's National Parks · 美国国家公园",
     heroTitle: ["在对的季节，", "抵达对的风景"],
     heroSubtitle: "景点、开放季节、日出日落与真实车程，排进旅途中的每一天。",
     planCta: "开始规划行程",
     browseCta: "浏览全部公园",
     explore: "进入公园",
+    previous: "上一座公园",
+    next: "下一座公园",
     photoCredit: "照片：{author} · {license}",
     continueTitle: "继续你的行程",
     continueSummary: "{n} 个景点 · {days} 天",
@@ -134,6 +136,9 @@ const zhHans = {
       "同车只要有一个人持有效年卡，全车的门票和非居民附加费都免：可以是美国居民年卡（$80，凭美国护照、美国驾照 / 州 ID 或绿卡购买）、非居民年卡（$250）或本公园年卡。持卡人不一定是司机，但必须在车上并出示带照片的证件；步行、骑车等按人收费的入口，一张卡覆盖持卡人和另外 3 名成人。",
     nonresidentSource: "来源：NPS 官网 Nonresident Fees",
     introTitle: "Overview · 公园特色",
+    highlightsEyebrow: "Highlights · 最热门",
+    highlightsTitle: "来这里，先看这几处",
+    highlightsAll: "全部 {n} 个景点",
     attractionsEyebrow: "Attractions · 景点",
     attractionsTitle: "{n} 个精选景点",
     nav: {
@@ -1471,6 +1476,7 @@ const zhHans = {
   footer: {
     tagline: "美国国家公园行程规划。按季节、日出日落和真实车程，把每一天排得刚刚好。",
     parksTitle: "Parks · 公园",
+    pagesTitle: "Explore · 浏览",
     dataTitle: "Data · 数据来源",
     sources:
       "National Park Service（公告、门票、游客人次）、Parks Canada、U.S. DOE / NLR、OpenStreetMap、Wikimedia Commons（照片按各自授权署名）、Natural Earth。",

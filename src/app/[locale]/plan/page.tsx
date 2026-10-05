@@ -16,6 +16,7 @@ import { localizeActivity, localizeAttraction, localizeLodging, localizePark } f
 import { localize } from "@/i18n/convert";
 import { getDictionary } from "@/i18n/dictionaries";
 import { parkVisits } from "@/lib/visits";
+import { headerPhoto } from "@/components/site/header-photo";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/plan">): Promise<Metadata> {
   const { locale } = await params;
@@ -69,6 +70,7 @@ export default async function PlanPage({ params }: PageProps<"/[locale]/plan">) 
             country: park.country ?? "US",
             ...(daily ? { daily } : {}),
             ...(sky ? { darkSky: { year: sky.year, rasc: sky.program === "rasc" } } : {}),
+            photo: headerPhoto(park.hero, locale),
           };
         })}
         text={{

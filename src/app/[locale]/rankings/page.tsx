@@ -13,6 +13,8 @@ import { localize } from "@/i18n/convert";
 import { getDictionary } from "@/i18n/dictionaries";
 import { fill, formatBig } from "@/i18n/format";
 import { parkVisits, visitRanking } from "@/lib/visits";
+import { headerPhoto } from "@/components/site/header-photo";
+import { PageHeader } from "@/components/site/page-header";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/rankings">): Promise<Metadata> {
   const { locale } = await params;
@@ -73,11 +75,12 @@ export default async function RankingsPage({ params }: PageProps<"/[locale]/rank
   return (
     <>
       <div className={`${container} pt-14 pb-14`}>
-        <header className="max-w-3xl">
-          <p className="eyebrow text-mute">{t.eyebrow}</p>
-          <h1 className="mt-5 font-serif text-[clamp(2.2rem,4vw,3.4rem)] leading-tight">{t.title}</h1>
-          <p className="mt-5 text-sm leading-7 text-ink-soft">{fill(t.intro, { n: total, ours: oursUnits })}</p>
-        </header>
+        <PageHeader
+          eyebrow={t.eyebrow}
+          title={t.title}
+          intro={fill(t.intro, { n: total, ours: oursUnits })}
+          photo={headerPhoto("yell-grand-prismatic", locale)}
+        />
         <dl className="mt-12 grid grid-cols-2 gap-x-8 gap-y-8 border-t border-line pt-6 lg:grid-cols-4">
           {stats.map(([label, value, note]) => (
             <div key={label} className="flex flex-col-reverse">

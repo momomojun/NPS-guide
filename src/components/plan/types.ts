@@ -1,4 +1,5 @@
 import type { AttractionWithPhoto } from "@/data/attractions";
+import type { HeaderPhoto } from "@/components/site/page-header";
 import type { Dictionary } from "@/i18n/dictionaries";
 import type { DayTimeline, LodgingPoint, SunWindow } from "@/lib/planner";
 import type { TripItem } from "@/lib/trip-store";
@@ -35,6 +36,8 @@ export interface PlannerPark {
   daily?: number[];
   /** 国际暗夜公园（或者加拿大的暗夜保护区）哪年认证的 */
   darkSky?: { year: number; rasc: boolean };
+  /** 公园首图，行程页的页头用（行程里第一座公园） */
+  photo?: HeaderPhoto;
 }
 
 /** 攻略说明里的“看星空”：暗夜公园这几晚月亮碍不碍事，园里有哪些看星空的景点 */

@@ -45,6 +45,8 @@ export function SiteHeader({
   return (
     <>
       <header
+        // 换页过渡时页头固定不动（globals.css 的 site-header）
+        style={{ viewTransitionName: "site-header" }}
         className={`fixed inset-x-0 top-0 z-50 transition-[background-color,color,border-color] duration-500 print:hidden ${
           solid
             ? "border-b border-line bg-paper/92 text-ink backdrop-blur-md"

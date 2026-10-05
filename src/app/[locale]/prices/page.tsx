@@ -8,6 +8,8 @@ import { hasLocale } from "@/i18n/config";
 import { localize } from "@/i18n/convert";
 import { getDictionary } from "@/i18n/dictionaries";
 import { parkState } from "@/lib/prices/fuel";
+import { headerPhoto } from "@/components/site/header-photo";
+import { PageHeader } from "@/components/site/page-header";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/prices">): Promise<Metadata> {
   const { locale } = await params;
@@ -24,11 +26,7 @@ export default async function PricesPage({ params }: PageProps<"/[locale]/prices
 
   return (
     <div className="mx-auto max-w-[1600px] px-5 pt-14 pb-28 sm:px-10">
-      <header className="max-w-3xl">
-        <p className="eyebrow text-mute">{t.eyebrow}</p>
-        <h1 className="mt-5 font-serif text-[clamp(2.2rem,4vw,3.4rem)] leading-tight">{t.title}</h1>
-        <p className="mt-5 text-sm leading-7 text-ink-soft">{t.intro}</p>
-      </header>
+      <PageHeader eyebrow={t.eyebrow} title={t.title} intro={t.intro} photo={headerPhoto("glac-going-to-the-sun-road", locale)} />
       <div className="mt-10">
         <SectionNav
           label={t.nav.label}

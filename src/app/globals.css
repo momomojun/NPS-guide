@@ -18,7 +18,8 @@
   --color-paper-deep: #ebe4d8;
   --color-ink: #1c1b18;
   --color-ink-soft: #45413a;
-  --color-mute: #857e72;
+  /* 浅灰字在纸色底上对比度要到 4.5:1（WCAG AA） */
+  --color-mute: #6f685c;
   --color-line: #d9cfbf;
 
   /* 砂岩红：强调色（热度、选中、步道） */
@@ -286,7 +287,10 @@ body {
 }
 .js .reveal-image img {
   transform: scale(1.15);
-  transition: transform 1.8s var(--ease-expo);
+  /* scale 留给悬停放大（Tailwind 的 scale-105 用的是 scale 属性，和这里的 transform 互不干扰） */
+  transition:
+    transform 1.8s var(--ease-expo),
+    scale 0.7s var(--ease-expo);
 }
 .js .reveal-image[data-shown] {
   clip-path: inset(0 0 0 0);
@@ -316,6 +320,55 @@ body {
     transform: none;
     clip-path: none;
   }
+}
+
+/*
+ * 换页过渡（View Transitions）：整页淡入淡出；从首页公园目录点进公园页时，目录的大图放大成公园页首图。
+ * 照片两头比例不同（4:5 → 全屏），新旧快照都按 cover 裁切，不拉伸。页头固定不动，压在放大的照片上面。
+ */
+::view-transition {
+  pointer-events: none;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.45s;
+  animation-timing-function: ease;
+}
+::view-transition-group(.park-morph) {
+  animation-duration: 0.9s;
+  animation-timing-function: var(--ease-expo);
+  overflow: clip;
+}
+::view-transition-old(.park-morph),
+::view-transition-new(.park-morph) {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  animation-duration: 0.9s;
+}
+::view-transition-group(site-header) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(site-header) {
+  display: none;
+}
+::view-transition-new(site-header) {
+  animation: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
+
+/* 键盘操作时的焦点框：细线、和文字同色，鼠标点击时不出现 */
+:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 3px;
 }
 
 /* MapLibre 自带控件：直角、纸色底，和页面一致 */

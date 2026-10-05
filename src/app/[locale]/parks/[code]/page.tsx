@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
+import { Suspense, ViewTransition } from "react";
 import { AttractionsExplorer } from "@/components/attractions/attractions-explorer";
 import { ActivitiesSection } from "@/components/park/activities-section";
 import { CommonsImage } from "@/components/commons-image";
@@ -67,6 +67,18 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
   }));
   // 游客人次（园外名胜没有）
   const visits = parkVisits(park.code);
+  // 照片条：Google 评论最多的几处（没有评论数的按必去、原来的顺序），首图那处已经在最上面了，不重复
+  const highlights = attractions
+    .filter((a) => a.photo && a.kind !== "visitor" && a.id !== park.hero)
+    .map((a, i) => ({ a, i }))
+    .sort(
+      (x, y) =>
+        (y.a.google?.reviews ?? 0) - (x.a.google?.reviews ?? 0) ||
+        Number(Boolean(y.a.mustSee)) - Number(Boolean(x.a.mustSee)) ||
+        x.i - y.i,
+    )
+    .slice(0, 5)
+    .map(({ a }) => a);
   const hasSeasonInfo =
     parkActivities.length > 0 || attractions.some((a) => a.openMonths) || parkRoads.length > 0 || visits !== null;
   // “适用于”只写没收录的地名会让人以为只管那几处，所以有这一行时把对上的景点和住宿也列上
@@ -140,15 +152,20 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
     <>
       <section className="relative h-[88svh] min-h-[620px] overflow-hidden bg-ink text-white">
         {heroPhoto && (
-          <CommonsImage
-            // Commons 缩略图换成 1920 宽做全屏大图
-            src={heroPhoto.url.replace("/960px-", "/1920px-")}
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="animate-kenburns object-cover"
-          />
+          // 从首页公园目录点进来时，目录里那张大图放大成这张首图（同名的 ViewTransition）
+          <ViewTransition name={`park-photo-${park.code}`} share="park-morph" default="none">
+            <div className="absolute inset-0">
+              <CommonsImage
+                // Commons 缩略图换成 1920 宽做全屏大图
+                src={heroPhoto.url.replace("/960px-", "/1920px-")}
+                alt=""
+                fill
+                priority
+                sizes="100vw"
+                className="animate-kenburns object-cover"
+              />
+            </div>
+          </ViewTransition>
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40" />
         <div className={`${container} relative z-10 flex h-full flex-col justify-end pb-10 lg:pb-14`}>
@@ -254,6 +271,45 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
           </div>
         </aside>
       </section>
+
+      {/* 照片条：几处最热门的景点，点了跳到下面的景点卡片 */}
+      {highlights.length >= 3 && (
+        <section className="border-t border-line">
+          <div className={`${container} py-20 lg:py-28`}>
+            <div className="mb-10 flex flex-wrap items-end justify-between gap-6 lg:mb-14">
+              <div>
+                <p className="eyebrow text-mute">{t.highlightsEyebrow}</p>
+                <h2 className="mt-5 font-serif text-[clamp(1.9rem,3vw,2.8rem)] leading-tight">{t.highlightsTitle}</h2>
+              </div>
+              <a href="#attractions" className="link-line inline-flex items-center gap-2 text-xs tracking-[0.1em]">
+                {fill(t.highlightsAll, { n: attractions.length })} <IconArrowRight />
+              </a>
+            </div>
+            <ol className="no-scrollbar -mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 sm:-mx-10 sm:px-10 lg:mx-0 lg:grid lg:grid-cols-5 lg:gap-8 lg:overflow-visible lg:px-0">
+              {highlights.map((a, i) => (
+                <li key={a.id} className={`w-[64vw] shrink-0 snap-start sm:w-[36vw] lg:w-auto ${i % 2 ? "lg:mt-16" : ""}`}>
+                  <a href={`#attraction-${a.id}`} className="group block">
+                    <Reveal image delay={i * 90} className="relative aspect-[3/4] overflow-hidden bg-paper-deep">
+                      <CommonsImage
+                        src={a.photo!.url}
+                        alt=""
+                        fill
+                        sizes="(min-width: 1024px) 18vw, (min-width: 640px) 36vw, 64vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </Reveal>
+                    <p className="mt-4 flex items-baseline gap-3">
+                      <span className="font-serif text-sm text-clay-600 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
+                      <span className="font-serif text-xl transition-colors duration-500 group-hover:text-clay-700">{a.nameZh}</span>
+                    </p>
+                    <p className="eyebrow mt-1.5 text-mute">{a.nameEn}</p>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      )}
 
       {hasSeasonInfo && (
         <section id="activities" className="scroll-mt-28 border-t border-line">

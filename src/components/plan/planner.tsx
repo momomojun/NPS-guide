@@ -81,6 +81,7 @@ import { TripWizard, useRequestedPark, type WizardInput, type WizardPlace } from
 import type { DayView, DragSpot, PlannerPark, PlannerText, ResolvedLodging, StargazingInfo, SunInfo } from "./types";
 import { alertCovers, type DayWeather } from "./weather";
 import { weatherNotes } from "./weather-line";
+import { PageHeader } from "@/components/site/page-header";
 
 const LODGING_COLOR = "#2f4a5a";
 /** 地图显示整个行程（每天一种颜色） */
@@ -1004,11 +1005,13 @@ export function Planner({
         );
       })()}
 
-      <header className="max-w-3xl">
-        <p className="eyebrow text-mute">Itinerary · {t.title}</p>
-        <h1 className="mt-5 font-serif text-[clamp(2.2rem,4vw,3.4rem)] leading-tight">{t.title}</h1>
-        <p className="mt-5 text-sm leading-7 text-ink-soft">{t.intro}</p>
-      </header>
+      <PageHeader
+        eyebrow={`Itinerary · ${t.title}`}
+        title={t.title}
+        intro={t.intro}
+        // 照片用行程里第一座公园的首图，还没排行程时用优胜美地
+        photo={(parks.find((park) => park.code === allIds[0]?.split("-")[0]) ?? parks.find((park) => park.code === "yose"))?.photo}
+      />
 
       <TripImportBanner
         incoming={incoming}

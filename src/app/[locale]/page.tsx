@@ -113,6 +113,8 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
           planCta: t.planCta,
           browseCta: t.browseCta,
           explore: t.explore,
+          previous: t.previous,
+          next: t.next,
         }}
         aside={
           <ContinueTrip
@@ -177,7 +179,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
                 return (
                   <Reveal key={site.code} as="li" delay={(i % 4) * 100}>
                     <Link href={`/${locale}/parks/${site.code}`} className="group block">
-                      <div className="relative aspect-[4/3] overflow-hidden bg-ink/10">
+                      <Reveal image delay={(i % 4) * 100} className="relative aspect-[4/3] overflow-hidden bg-ink/10">
                         {photo && (
                           <CommonsImage
                             src={photo.url}
@@ -187,7 +189,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
                             className="object-cover transition-transform duration-700 group-hover:scale-105"
                           />
                         )}
-                      </div>
+                      </Reveal>
                       <p className="mt-5 flex flex-wrap items-baseline gap-x-3">
                         <span className="font-serif text-2xl transition-colors duration-500 group-hover:text-clay-700">{site.nameZh}</span>
                         <span className="eyebrow text-mute">{site.nameEn}</span>
@@ -211,7 +213,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       {inSeason.length > 0 && (
         <section className="bg-paper-deep">
           <div className={`${container} grid gap-14 py-28 lg:grid-cols-12 lg:py-36`}>
-            <div className="lg:col-span-4">
+            <div className="lg:sticky lg:top-28 lg:col-span-4 lg:self-start">
               <p className="eyebrow text-mute">{t.seasonEyebrow}</p>
               <Reveal>
                 <p className="mt-8 font-serif text-[clamp(6rem,14vw,11rem)] leading-[0.85] text-clay-700">

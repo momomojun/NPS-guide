@@ -31,7 +31,7 @@ const SLIDE_MS = 6500;
 
 const order = (i: number) => ({ "--i": i }) as CSSProperties;
 
-/** 首屏：七座公园的大图轮播，慢速推近 + 交叉淡入；左下是标语，底部一条是当前公园和进度 */
+/** 首屏：各公园的大图轮播，慢速推近 + 交叉淡入；左下是标语，底部一条是当前公园和进度 */
 export function Hero({
   slides,
   planHref,
@@ -47,6 +47,8 @@ export function Hero({
     planCta: string;
     browseCta: string;
     explore: string;
+    previous: string;
+    next: string;
   };
   /** 右下角的内容，比如“继续你的行程” */
   aside?: ReactNode;
@@ -154,7 +156,7 @@ export function Hero({
           )}
         </div>
 
-        <div className="hero-fade mt-14 grid items-end gap-5 border-t border-white/25 pt-5 md:grid-cols-[1fr_auto]" style={order(3)}>
+        <div className="hero-fade mt-14 grid items-center gap-5 border-t border-white/25 pt-5 md:grid-cols-[1fr_auto]" style={order(3)}>
           <Link key={current.code} href={current.href} className="group flex flex-wrap items-baseline gap-x-4 gap-y-1" style={{ animation: "fade 1.2s var(--ease-expo) both" }}>
             <span className="font-serif text-sm text-white/60 tabular-nums">
               {String(index + 1).padStart(2, "0")} / {String(count).padStart(2, "0")}
@@ -169,28 +171,31 @@ export function Hero({
               <IconArrowRight className="transition-transform duration-500 group-hover:translate-x-1" />
             </span>
           </Link>
-          <div className="flex items-center gap-2" role="tablist">
-            {slides.map((slide, i) => (
-              <button
-                key={slide.code}
-                type="button"
-                role="tab"
-                aria-selected={i === index}
-                aria-label={slide.nameZh}
-                title={slide.nameZh}
-                onClick={() => show(i)}
-                className="group relative h-6 w-8 sm:w-12"
-              >
-                <span className="absolute inset-x-0 top-1/2 h-px bg-white/30 group-hover:bg-white/60" />
-                {i === index && (
-                  <span
-                    key={`p-${index}`}
-                    className="absolute inset-x-0 top-1/2 h-px origin-left bg-white"
-                    style={{ animation: `grow-x ${previous === null ? FIRST_MS : SLIDE_MS}ms linear both` }}
-                  />
-                )}
-              </button>
-            ))}
+          {/* 四十座公园放不下一排小横条：只留一条进度线和前后翻页 */}
+          <div className="flex items-center gap-4">
+            <button
+              type="button"
+              aria-label={text.previous}
+              onClick={() => show((index - 1 + count) % count)}
+              className="grid size-10 place-items-center border border-white/30 transition-colors duration-500 hover:border-white hover:bg-white hover:text-ink"
+            >
+              <IconArrowRight className="rotate-180" />
+            </button>
+            <span className="relative block h-px w-32 bg-white/25 sm:w-48" aria-hidden>
+              <span
+                key={`p-${index}`}
+                className="absolute inset-0 origin-left bg-white"
+                style={{ animation: `grow-x ${previous === null ? FIRST_MS : SLIDE_MS}ms linear both` }}
+              />
+            </span>
+            <button
+              type="button"
+              aria-label={text.next}
+              onClick={() => show((index + 1) % count)}
+              className="grid size-10 place-items-center border border-white/30 transition-colors duration-500 hover:border-white hover:bg-white hover:text-ink"
+            >
+              <IconArrowRight />
+            </button>
           </div>
         </div>
         <a
