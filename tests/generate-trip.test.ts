@@ -214,3 +214,42 @@ test("只定了月份：按公布日期举行的满月徒步、卢塞罗湖导�
     assert.deepEqual(entry.warnings, []);
   }
 });
+
+test("哈莱阿卡拉 3 月 3 天（卡胡卢伊进出）：山顶日出不排在刚落地那天，排在日出、凌晨从住处出发（开车一个多小时也排），每天都不太满", () => {
+  const { trip, timelines } = generate({ parks: ["hale"], start: "2027-03-10", days: 3, airport: "OGG" });
+  const day = trip.days.findIndex((items) => items.some((item) => item.id === "hale-sunrise"));
+  assert.ok(day > 0, `山顶日出排在第 ${day + 1} 天`);
+  const timeline = timelines[day];
+  const entry = timeline.entries.find((item) => item.id === "hale-sunrise")!;
+  assert.equal(entry.slot, "sunrise");
+  assert.equal(timeline.entries[0].id, "hale-sunrise");
+  assert.ok(timeline.departAt !== undefined && timeline.departAt < 5 * 60 + 30, `${timeline.departAt} 才出发`);
+  for (const t of timelines) assert.equal(t.overloaded, false);
+});
+
+test("夏威夷火山 4 月 3 天（希洛进出）：看喷发的红光排在天黑以后、当天最后一站，每天都不太满", () => {
+  const { trip, timelines } = generate({ parks: ["havo"], start: "2027-04-14", days: 3, airport: "ITO" });
+  const day = trip.days.findIndex((items) => items.some((item) => item.id === "havo-eruption-glow"));
+  assert.ok(day >= 0, "没排看喷发");
+  const last = timelines[day].entries.at(-1)!;
+  assert.equal(last.id, "havo-eruption-glow");
+  assert.equal(last.slot, "night");
+  for (const t of timelines) assert.equal(t.overloaded, false);
+});
+
+test("冰川湾 7 月 3 天（Gustavus 进出）：进湾的全天游船按每天唯一的 7:15 那班排，每天都不太满", () => {
+  const { trip, timelines } = generate({ parks: ["glba"], start: "2027-07-14", days: 3, airport: "GST" });
+  const day = trip.days.findIndex((items) => items.some((item) => item.id === "glba-day-boat"));
+  assert.ok(day >= 0, "没排全天游船");
+  const entry = timelines[day].entries.find((item) => item.id === "glba-day-boat")!;
+  assert.equal(entry.start, 7 * 60 + 15);
+  assert.deepEqual(entry.warnings, []);
+  for (const t of timelines) assert.equal(t.overloaded, false);
+});
+
+test("卡特迈 7 月 2 天（Homer 进出）：Brooks 瀑布按 Homer 起飞的一日游排；万烟谷要在 Brooks 过夜，不排、列为要抽签的", () => {
+  const { trip, guide } = generate({ parks: ["katm"], start: "2027-07-14", days: 2, airport: "HOM" });
+  assert.ok(planned(trip).includes("katm-brooks-falls"), planned(trip).join());
+  assert.ok(!planned(trip).includes("katm-vtts"));
+  assert.ok(guide.skipped.permit.includes("katm-vtts"));
+});

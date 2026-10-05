@@ -36,6 +36,13 @@ import { mesaVerde } from "./meve";
 import { petrifiedForest } from "./pefo";
 import { greatSandDunes } from "./grsa";
 import { blackCanyon } from "./blca";
+import { hawaiiVolcanoes } from "./havo";
+import { haleakala } from "./hale";
+import { glacierBay } from "./glba";
+import { gatesOfTheArctic } from "./gaar";
+import { kobukValley } from "./kova";
+import { katmai } from "./katm";
+import { lakeClark } from "./lacl";
 import { trails, type TrailPath } from "./trails.generated";
 import type { Attraction, GooglePlace, ParkingRule, Photo } from "./types";
 import { yellowstone } from "./yell";
@@ -124,6 +131,13 @@ const withData: AttractionWithPhoto[] = [
   ...petrifiedForest,
   ...greatSandDunes,
   ...blackCanyon,
+  ...hawaiiVolcanoes,
+  ...haleakala,
+  ...glacierBay,
+  ...gatesOfTheArctic,
+  ...kobukValley,
+  ...katmai,
+  ...lakeClark,
 ].map((attraction) => ({
   ...attraction,
   photo: gallery[attraction.id]?.[0],

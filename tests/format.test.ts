@@ -42,3 +42,12 @@ test("繁体：音译地名里的“里”、不湿的“干”不转错", () =>
   assert.equal(localize("峡谷里的树干", "zh-Hant"), "峽谷裡的樹幹");
   assert.equal(localize("约 2,000 米", "zh-Hant"), "約 2,000 公尺");
 });
+
+test("繁体：台湾用语别换过头（窗口、分区），十几分钟、公交也转对", () => {
+  assert.equal(localize("要在预约的 2 小时窗口内进园", "zh-Hant"), "要在預約的 2 小時窗口內進園");
+  assert.equal(localize("按环线分区玩", "zh-Hant"), "按環線分區玩");
+  assert.equal(localize("开车只隔十几分钟", "zh-Hant"), "開車只隔十幾分鐘");
+  assert.equal(localize("坐 Roam 6 路公交", "zh-Hant"), "坐 Roam 6 路公車");
+  // 该换的照样换：视频→影片、信息→資訊
+  assert.equal(localize("视频里的信息", "zh-Hant"), "影片裡的資訊");
+});

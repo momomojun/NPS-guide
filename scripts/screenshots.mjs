@@ -260,7 +260,7 @@ const shots = {
                 <p style="margin:0;font-family:${fonts.serif};font-size:50px;line-height:1.25">美国国家公园<br>按日期规划行程</p>
                 <p style="margin:26px 0 0;font-family:${fonts.sans};font-size:18px;line-height:1.8;color:#4b463f">什么开着、要不要预约、住哪、去哪加油充电、<br>大概花多少钱，一键生成攻略</p>
               </div>
-              <p style="margin:0;font-family:${fonts.sans};font-size:15px;letter-spacing:.08em;color:#8a8175">16 座公园 · 279 个景点 · 中文 · 离线可用</p>
+              <p style="margin:0;font-family:${fonts.sans};font-size:15px;letter-spacing:.08em;color:#8a8175">40 座国家公园 · 600 多个景点 · 中文 · 离线可用</p>
             </div>
             <div style="position:relative;overflow:hidden;background:#ebe4d8">
               <img src="data:image/jpeg;base64,${phonesImage}" style="position:absolute;left:-388px;top:-8px;width:1140px;max-width:none">

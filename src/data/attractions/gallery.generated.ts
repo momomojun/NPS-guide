@@ -29810,5 +29810,2866 @@ export const gallery: Record<string, Photo[]> = {
       "author": "NPS Photo",
       "license": "Public domain"
     }
+  ],
+  "havo-welcome-center": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Kilauea_Lava_Eruption_%2816222324278%29.jpg/960px-Kilauea_Lava_Eruption_%2816222324278%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Kilauea_Lava_Eruption_%2816222324278%29.jpg/1920px-Kilauea_Lava_Eruption_%2816222324278%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Kilauea_Lava_Eruption_(16222324278).jpg",
+      "author": "Thank You (22 Millions+) views from Los Angeles, USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284528772039%29.jpg/960px-Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284528772039%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284528772039%29.jpg/1920px-Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284528772039%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Hawai%CA%BBi_Volcanoes_National_Park,_Hawaii_(4528772039).jpg",
+      "author": "Ken Lund from Reno, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/K%C4%ABlauea_%2849546067147%29.jpg/960px-K%C4%ABlauea_%2849546067147%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/K%C4%ABlauea_%2849546067147%29.jpg/1920px-K%C4%ABlauea_%2849546067147%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:K%C4%ABlauea_(49546067147).jpg",
+      "author": "Adam Shostack",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Expect_large_crowds_during_an_eruption._Follow_directions_from_rangers_for_the_best_experience._%28c335acc8-e93f-47b5-bebc-f719d3c824fd%29.jpg/960px-Expect_large_crowds_during_an_eruption._Follow_directions_from_rangers_for_the_best_experience._%28c335acc8-e93f-47b5-bebc-f719d3c824fd%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Expect_large_crowds_during_an_eruption._Follow_directions_from_rangers_for_the_best_experience._%28c335acc8-e93f-47b5-bebc-f719d3c824fd%29.jpg/1920px-Expect_large_crowds_during_an_eruption._Follow_directions_from_rangers_for_the_best_experience._%28c335acc8-e93f-47b5-bebc-f719d3c824fd%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Expect_large_crowds_during_an_eruption._Follow_directions_from_rangers_for_the_best_experience._(c335acc8-e93f-47b5-bebc-f719d3c824fd).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Sulphur_Dioxide_Plume_from_Halemaumau_Crater%2C_K%C4%ABlauea_Caldera%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284539962938%29.jpg/960px-Sulphur_Dioxide_Plume_from_Halemaumau_Crater%2C_K%C4%ABlauea_Caldera%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284539962938%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Sulphur_Dioxide_Plume_from_Halemaumau_Crater%2C_K%C4%ABlauea_Caldera%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284539962938%29.jpg/1920px-Sulphur_Dioxide_Plume_from_Halemaumau_Crater%2C_K%C4%ABlauea_Caldera%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284539962938%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Sulphur_Dioxide_Plume_from_Halemaumau_Crater,_K%C4%ABlauea_Caldera,_Hawai%CA%BBi_Volcanoes_National_Park,_Hawaii_(4539962938).jpg",
+      "author": "Ken Lund from Reno, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Mauna_Loa_-_panoramio.jpg/960px-Mauna_Loa_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Mauna_Loa_-_panoramio.jpg/1920px-Mauna_Loa_-_panoramio.jpg",
+      "width": 960,
+      "height": 636,
+      "page": "https://commons.wikimedia.org/wiki/File:Mauna_Loa_-_panoramio.jpg",
+      "author": "This file was created by Thomas Tunsch. It is not in the public domain and use of this file outside of the licensing terms is a copyright violation. Please credit authorship as follows: © CC BY-SA Thomas Tunsch / Mauna Loa - panoramio.jpg (Wikimedia Commons). Source attribution by linking to this file page (//commons.wikimedia.org/wiki/File:Mauna_Loa_-_panoramio.jpg) is recommended. The application Lizenzhinweisgenerator can help to reuse pictures from Wikipedia and the free media file repository easily and legally.",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "havo-uekahuna": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/HAVO_20210930_Blue_hour_at_U%C4%93kahuna_J_Wei_%2851541345045%29.jpg/960px-HAVO_20210930_Blue_hour_at_U%C4%93kahuna_J_Wei_%2851541345045%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/HAVO_20210930_Blue_hour_at_U%C4%93kahuna_J_Wei_%2851541345045%29.jpg/1920px-HAVO_20210930_Blue_hour_at_U%C4%93kahuna_J_Wei_%2851541345045%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:HAVO_20210930_Blue_hour_at_U%C4%93kahuna_J_Wei_(51541345045).jpg",
+      "author": "Hawai‘i Volcanoes NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Kilauea_Crater_from_Jaggar_Overlook.jpg/960px-Kilauea_Crater_from_Jaggar_Overlook.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Kilauea_Crater_from_Jaggar_Overlook.jpg/1920px-Kilauea_Crater_from_Jaggar_Overlook.jpg",
+      "width": 960,
+      "height": 568,
+      "page": "https://commons.wikimedia.org/wiki/File:Kilauea_Crater_from_Jaggar_Overlook.jpg",
+      "author": "Brianna Adkins",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Telescope_at_Jaggar_Overlook%2C_Kilauea_Crater.jpg/960px-Telescope_at_Jaggar_Overlook%2C_Kilauea_Crater.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Telescope_at_Jaggar_Overlook%2C_Kilauea_Crater.jpg/1920px-Telescope_at_Jaggar_Overlook%2C_Kilauea_Crater.jpg",
+      "width": 960,
+      "height": 756,
+      "page": "https://commons.wikimedia.org/wiki/File:Telescope_at_Jaggar_Overlook,_Kilauea_Crater.jpg",
+      "author": "Brianna Adkins",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/University_Students_Join_NASA_on_Trip_to_Hawaiian_Volcano_%2820347445755%29.jpg/960px-University_Students_Join_NASA_on_Trip_to_Hawaiian_Volcano_%2820347445755%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/University_Students_Join_NASA_on_Trip_to_Hawaiian_Volcano_%2820347445755%29.jpg/1920px-University_Students_Join_NASA_on_Trip_to_Hawaiian_Volcano_%2820347445755%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:University_Students_Join_NASA_on_Trip_to_Hawaiian_Volcano_(20347445755).jpg",
+      "author": "NASA Goddard Space Flight Center from Greenbelt, MD, USA",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Hawai%27i_Volcano_another_view.jpg/960px-Hawai%27i_Volcano_another_view.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Hawai%27i_Volcano_another_view.jpg/1920px-Hawai%27i_Volcano_another_view.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Hawai%27i_Volcano_another_view.jpg",
+      "author": "Meweldon",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/K%C4%ABlauea_Caldera%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284529301400%29.jpg/960px-K%C4%ABlauea_Caldera%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284529301400%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/K%C4%ABlauea_Caldera%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284529301400%29.jpg/1920px-K%C4%ABlauea_Caldera%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284529301400%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:K%C4%ABlauea_Caldera,_Hawai%CA%BBi_Volcanoes_National_Park,_Hawaii_(4529301400).jpg",
+      "author": "Ken Lund from Reno, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "havo-kilauea-overlook": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/HAVO_20211219_Lava_visible_from_Kilauea_Overlook_J_Wei_%2851760201945%29.jpg/960px-HAVO_20211219_Lava_visible_from_Kilauea_Overlook_J_Wei_%2851760201945%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/HAVO_20211219_Lava_visible_from_Kilauea_Overlook_J_Wei_%2851760201945%29.jpg/1920px-HAVO_20211219_Lava_visible_from_Kilauea_Overlook_J_Wei_%2851760201945%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:HAVO_20211219_Lava_visible_from_Kilauea_Overlook_J_Wei_(51760201945).jpg",
+      "author": "Hawai‘i Volcanoes NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/HAVO_20210212_Two_visitors_approach_K%C4%ABlauea_Overlook_JWei_%2851003871706%29.jpg/960px-HAVO_20210212_Two_visitors_approach_K%C4%ABlauea_Overlook_JWei_%2851003871706%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/HAVO_20210212_Two_visitors_approach_K%C4%ABlauea_Overlook_JWei_%2851003871706%29.jpg/1920px-HAVO_20210212_Two_visitors_approach_K%C4%ABlauea_Overlook_JWei_%2851003871706%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:HAVO_20210212_Two_visitors_approach_K%C4%ABlauea_Overlook_JWei_(51003871706).jpg",
+      "author": "Hawai‘i Volcanoes NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/2021-10-09_13_22_29_View_southeast_across_the_K%C4%ABlauea_caldera_from_the_K%C4%ABlauea_Overlook_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg/960px-2021-10-09_13_22_29_View_southeast_across_the_K%C4%ABlauea_caldera_from_the_K%C4%ABlauea_Overlook_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/2021-10-09_13_22_29_View_southeast_across_the_K%C4%ABlauea_caldera_from_the_K%C4%ABlauea_Overlook_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg/1920px-2021-10-09_13_22_29_View_southeast_across_the_K%C4%ABlauea_caldera_from_the_K%C4%ABlauea_Overlook_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2021-10-09_13_22_29_View_southeast_across_the_K%C4%ABlauea_caldera_from_the_K%C4%ABlauea_Overlook_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County,_Hawaii.jpg",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/2021-10-09_13_22_30_View_south-southeast_across_the_K%C4%ABlauea_caldera_from_the_K%C4%ABlauea_Overlook_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg/960px-thumbnail.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/2021-10-09_13_22_30_View_south-southeast_across_the_K%C4%ABlauea_caldera_from_the_K%C4%ABlauea_Overlook_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg/1920px-thumbnail.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2021-10-09_13_22_30_View_south-southeast_across_the_K%C4%ABlauea_caldera_from_the_K%C4%ABlauea_Overlook_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County,_Hawaii.jpg",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Visitors_at_K%C4%ABlauea_Overlook_%2806793460-0223-456d-b085-8cf31219d7d5%29.jpg/960px-Visitors_at_K%C4%ABlauea_Overlook_%2806793460-0223-456d-b085-8cf31219d7d5%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Visitors_at_K%C4%ABlauea_Overlook_%2806793460-0223-456d-b085-8cf31219d7d5%29.jpg/1920px-Visitors_at_K%C4%ABlauea_Overlook_%2806793460-0223-456d-b085-8cf31219d7d5%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Visitors_at_K%C4%ABlauea_Overlook_(06793460-0223-456d-b085-8cf31219d7d5).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/K%C4%ABlauea_Iki%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284528779141%29.jpg/960px-K%C4%ABlauea_Iki%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284528779141%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/K%C4%ABlauea_Iki%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284528779141%29.jpg/1920px-K%C4%ABlauea_Iki%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284528779141%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:K%C4%ABlauea_Iki,_Hawai%CA%BBi_Volcanoes_National_Park,_Hawaii_(4528779141).jpg",
+      "author": "Ken Lund from Reno, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "havo-steam-vents": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Steaming_Bluff_at_Hawai%E2%80%98i_Volcanoes_National_Park_%2843021152900%29.jpg/960px-Steaming_Bluff_at_Hawai%E2%80%98i_Volcanoes_National_Park_%2843021152900%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Steaming_Bluff_at_Hawai%E2%80%98i_Volcanoes_National_Park_%2843021152900%29.jpg/1920px-Steaming_Bluff_at_Hawai%E2%80%98i_Volcanoes_National_Park_%2843021152900%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Steaming_Bluff_at_Hawai%E2%80%98i_Volcanoes_National_Park_(43021152900).jpg",
+      "author": "Hawai‘i Volcanoes NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/2021-10-09_13_31_42_View_south_across_the_K%C4%ABlauea_caldera_from_the_Steaming_Bluff_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg/960px-2021-10-09_13_31_42_View_south_across_the_K%C4%ABlauea_caldera_from_the_Steaming_Bluff_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/2021-10-09_13_31_42_View_south_across_the_K%C4%ABlauea_caldera_from_the_Steaming_Bluff_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg/1920px-2021-10-09_13_31_42_View_south_across_the_K%C4%ABlauea_caldera_from_the_Steaming_Bluff_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2021-10-09_13_31_42_View_south_across_the_K%C4%ABlauea_caldera_from_the_Steaming_Bluff_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County,_Hawaii.jpg",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/2021-10-09_13_31_40_View_south-southeast_across_the_K%C4%ABlauea_caldera_from_the_Steaming_Bluff_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg/960px-2021-10-09_13_31_40_View_south-southeast_across_the_K%C4%ABlauea_caldera_from_the_Steaming_Bluff_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/2021-10-09_13_31_40_View_south-southeast_across_the_K%C4%ABlauea_caldera_from_the_Steaming_Bluff_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg/1920px-2021-10-09_13_31_40_View_south-southeast_across_the_K%C4%ABlauea_caldera_from_the_Steaming_Bluff_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2021-10-09_13_31_40_View_south-southeast_across_the_K%C4%ABlauea_caldera_from_the_Steaming_Bluff_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County,_Hawaii.jpg",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Steaming_Bluff_along_Crater_Rim_Trail_in_Hawai%27i_Volcanoes_National_Park_%28DSC08448%29.jpg/960px-Steaming_Bluff_along_Crater_Rim_Trail_in_Hawai%27i_Volcanoes_National_Park_%28DSC08448%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Steaming_Bluff_along_Crater_Rim_Trail_in_Hawai%27i_Volcanoes_National_Park_%28DSC08448%29.jpg/1920px-Steaming_Bluff_along_Crater_Rim_Trail_in_Hawai%27i_Volcanoes_National_Park_%28DSC08448%29.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:Steaming_Bluff_along_Crater_Rim_Trail_in_Hawai%27i_Volcanoes_National_Park_(DSC08448).jpg",
+      "author": "Trougnouf (Benoit Brummer)",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Wahinekapu_%28Steaming_Bluff%29_%2848532329512%29.jpg/960px-Wahinekapu_%28Steaming_Bluff%29_%2848532329512%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Wahinekapu_%28Steaming_Bluff%29_%2848532329512%29.jpg/1920px-Wahinekapu_%28Steaming_Bluff%29_%2848532329512%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Wahinekapu_(Steaming_Bluff)_(48532329512).jpg",
+      "author": "Hawai‘i Volcanoes NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Volcanic_Steam_Vents_Near_K%C4%ABlauea_Crater%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284528598115%29.jpg/960px-Volcanic_Steam_Vents_Near_K%C4%ABlauea_Crater%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284528598115%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Volcanic_Steam_Vents_Near_K%C4%ABlauea_Crater%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284528598115%29.jpg/1920px-Volcanic_Steam_Vents_Near_K%C4%ABlauea_Crater%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284528598115%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Volcanic_Steam_Vents_Near_K%C4%ABlauea_Crater,_Hawai%CA%BBi_Volcanoes_National_Park,_Hawaii_(4528598115).jpg",
+      "author": "Ken Lund from Reno, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "havo-sulphur-banks": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Sulphur_banks.jpg/960px-Sulphur_banks.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Sulphur_banks.jpg/1920px-Sulphur_banks.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:Sulphur_banks.jpg",
+      "author": "Aleksomber",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Sulfur_Banks.jpg/960px-Sulfur_Banks.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Sulfur_Banks.jpg/1920px-Sulfur_Banks.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Sulfur_Banks.jpg",
+      "author": "Graeme Churchard from Bristol (51.4414, -2.5242), UK",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Sulfur_Banks3.jpg/960px-Sulfur_Banks3.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Sulfur_Banks3.jpg/1920px-Sulfur_Banks3.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Sulfur_Banks3.jpg",
+      "author": "Graeme Churchard from Bristol (51.4414, -2.5242), UK",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Biodiversity_Youth_Ambassadors._NPS_Photo._%2817679207338%29.jpg/960px-Biodiversity_Youth_Ambassadors._NPS_Photo._%2817679207338%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Biodiversity_Youth_Ambassadors._NPS_Photo._%2817679207338%29.jpg/1920px-Biodiversity_Youth_Ambassadors._NPS_Photo._%2817679207338%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Biodiversity_Youth_Ambassadors._NPS_Photo._(17679207338).jpg",
+      "author": "NPS Natural Resources",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Biodiversity_Youth_Ambassadors._NPS_Photo._%2817679191388%29.jpg/960px-Biodiversity_Youth_Ambassadors._NPS_Photo._%2817679191388%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Biodiversity_Youth_Ambassadors._NPS_Photo._%2817679191388%29.jpg/1920px-Biodiversity_Youth_Ambassadors._NPS_Photo._%2817679191388%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Biodiversity_Youth_Ambassadors._NPS_Photo._(17679191388).jpg",
+      "author": "NPS Natural Resources",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/K%C4%ABlauea_Caldera_-_panoramio.jpg/960px-K%C4%ABlauea_Caldera_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/K%C4%ABlauea_Caldera_-_panoramio.jpg/1920px-K%C4%ABlauea_Caldera_-_panoramio.jpg",
+      "width": 960,
+      "height": 636,
+      "page": "https://commons.wikimedia.org/wiki/File:K%C4%ABlauea_Caldera_-_panoramio.jpg",
+      "author": "Thomas Tunsch",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "havo-kupinai-pali": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Eruption_from_Waldron_Ledge_JWei_%2850748634683%29.jpg/960px-Eruption_from_Waldron_Ledge_JWei_%2850748634683%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Eruption_from_Waldron_Ledge_JWei_%2850748634683%29.jpg/1920px-Eruption_from_Waldron_Ledge_JWei_%2850748634683%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Eruption_from_Waldron_Ledge_JWei_(50748634683).jpg",
+      "author": "Hawai‘i Volcanoes NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/K%C4%ABlauea_-_panoramio.jpg/960px-K%C4%ABlauea_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/K%C4%ABlauea_-_panoramio.jpg/1920px-K%C4%ABlauea_-_panoramio.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:K%C4%ABlauea_-_panoramio.jpg",
+      "author": "Eric Marshall",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Crater_Rim_Trail_-_panoramio.jpg/960px-Crater_Rim_Trail_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Crater_Rim_Trail_-_panoramio.jpg/1920px-Crater_Rim_Trail_-_panoramio.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Crater_Rim_Trail_-_panoramio.jpg",
+      "author": "Eric Marshall",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/HAVO_20130305_Sandalwood_blooming_in_HVNP_JFerracane_%2832412549367%29.jpg/960px-HAVO_20130305_Sandalwood_blooming_in_HVNP_JFerracane_%2832412549367%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/HAVO_20130305_Sandalwood_blooming_in_HVNP_JFerracane_%2832412549367%29.jpg/1920px-HAVO_20130305_Sandalwood_blooming_in_HVNP_JFerracane_%2832412549367%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:HAVO_20130305_Sandalwood_blooming_in_HVNP_JFerracane_(32412549367).jpg",
+      "author": "Hawai‘i Volcanoes NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/BioBlitz_2015_in_Hawaii_Volcanoes_National_Park_%2817870140051%29.jpg/960px-BioBlitz_2015_in_Hawaii_Volcanoes_National_Park_%2817870140051%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/BioBlitz_2015_in_Hawaii_Volcanoes_National_Park_%2817870140051%29.jpg/1920px-BioBlitz_2015_in_Hawaii_Volcanoes_National_Park_%2817870140051%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:BioBlitz_2015_in_Hawaii_Volcanoes_National_Park_(17870140051).jpg",
+      "author": "NPS Natural Resources",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/BioBlitz_2015_participants_learn_how_to_make_dancing_sticks._%2817680529269%29.jpg/960px-BioBlitz_2015_participants_learn_how_to_make_dancing_sticks._%2817680529269%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/BioBlitz_2015_participants_learn_how_to_make_dancing_sticks._%2817680529269%29.jpg/1920px-BioBlitz_2015_participants_learn_how_to_make_dancing_sticks._%2817680529269%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:BioBlitz_2015_participants_learn_how_to_make_dancing_sticks._(17680529269).jpg",
+      "author": "NPS Natural Resources",
+      "license": "Public domain"
+    }
+  ],
+  "havo-kilauea-iki": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/HAVO_20190420_Hikers_Floor_Kilauea_Iki_Trail_JWei_%2847616960932%29.jpg/960px-HAVO_20190420_Hikers_Floor_Kilauea_Iki_Trail_JWei_%2847616960932%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/HAVO_20190420_Hikers_Floor_Kilauea_Iki_Trail_JWei_%2847616960932%29.jpg/1920px-HAVO_20190420_Hikers_Floor_Kilauea_Iki_Trail_JWei_%2847616960932%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:HAVO_20190420_Hikers_Floor_Kilauea_Iki_Trail_JWei_(47616960932).jpg",
+      "author": "Hawai‘i Volcanoes NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Restored_K%C4%ABlauea_Iki_Trail_After_Repairing_a_Sink_Hole_and_Damaged_Rock_Retaining_Wall_%2848767665793%29.jpg/960px-Restored_K%C4%ABlauea_Iki_Trail_After_Repairing_a_Sink_Hole_and_Damaged_Rock_Retaining_Wall_%2848767665793%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Restored_K%C4%ABlauea_Iki_Trail_After_Repairing_a_Sink_Hole_and_Damaged_Rock_Retaining_Wall_%2848767665793%29.jpg/1920px-Restored_K%C4%ABlauea_Iki_Trail_After_Repairing_a_Sink_Hole_and_Damaged_Rock_Retaining_Wall_%2848767665793%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Restored_K%C4%ABlauea_Iki_Trail_After_Repairing_a_Sink_Hole_and_Damaged_Rock_Retaining_Wall_(48767665793).jpg",
+      "author": "Hawai‘i Volcanoes NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/K%C4%ABlauea_Iki_Crater_-_panoramio_%281%29.jpg/960px-K%C4%ABlauea_Iki_Crater_-_panoramio_%281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/K%C4%ABlauea_Iki_Crater_-_panoramio_%281%29.jpg/1920px-K%C4%ABlauea_Iki_Crater_-_panoramio_%281%29.jpg",
+      "width": 960,
+      "height": 636,
+      "page": "https://commons.wikimedia.org/wiki/File:K%C4%ABlauea_Iki_Crater_-_panoramio_(1).jpg",
+      "author": "Thomas Tunsch",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/K%C4%ABlauea_Iki%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284529408620%29.jpg/960px-K%C4%ABlauea_Iki%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284529408620%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/K%C4%ABlauea_Iki%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284529408620%29.jpg/1920px-K%C4%ABlauea_Iki%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284529408620%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:K%C4%ABlauea_Iki,_Hawai%CA%BBi_Volcanoes_National_Park,_Hawaii_(4529408620).jpg",
+      "author": "Ken Lund from Reno, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/K%C4%ABlauea_Iki%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284528782999%29.jpg/960px-K%C4%ABlauea_Iki%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284528782999%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/K%C4%ABlauea_Iki%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284528782999%29.jpg/1920px-K%C4%ABlauea_Iki%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284528782999%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:K%C4%ABlauea_Iki,_Hawai%CA%BBi_Volcanoes_National_Park,_Hawaii_(4528782999).jpg",
+      "author": "Ken Lund from Reno, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/K%C4%ABlauea_Iki_Crater_-_panoramio.jpg/960px-K%C4%ABlauea_Iki_Crater_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/K%C4%ABlauea_Iki_Crater_-_panoramio.jpg/1920px-K%C4%ABlauea_Iki_Crater_-_panoramio.jpg",
+      "width": 960,
+      "height": 636,
+      "page": "https://commons.wikimedia.org/wiki/File:K%C4%ABlauea_Iki_Crater_-_panoramio.jpg",
+      "author": "Thomas Tunsch",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "havo-nahuku": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Thurston_Lava_Tube._Hawaii_Volcanoes_National_Park_%28503990%29_%2822017885880%29.jpg/960px-Thurston_Lava_Tube._Hawaii_Volcanoes_National_Park_%28503990%29_%2822017885880%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Thurston_Lava_Tube._Hawaii_Volcanoes_National_Park_%28503990%29_%2822017885880%29.jpg/1920px-Thurston_Lava_Tube._Hawaii_Volcanoes_National_Park_%28503990%29_%2822017885880%29.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:Thurston_Lava_Tube._Hawaii_Volcanoes_National_Park_(503990)_(22017885880).jpg",
+      "author": "Robert Linsdell from St. Andrews, Canada",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/N%C4%81huku_crack_monitor_installation_Nov_2019_%2849555065401%29.jpg/960px-N%C4%81huku_crack_monitor_installation_Nov_2019_%2849555065401%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/N%C4%81huku_crack_monitor_installation_Nov_2019_%2849555065401%29.jpg/1920px-N%C4%81huku_crack_monitor_installation_Nov_2019_%2849555065401%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:N%C4%81huku_crack_monitor_installation_Nov_2019_(49555065401).jpg",
+      "author": "Hawai‘i Volcanoes NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/%E2%80%98%C5%8Chi%E2%80%98a_forest_near_N%C4%81huku_%28Thurston_Lava_Tube%29_%2848253064912%29.jpg/960px-%E2%80%98%C5%8Chi%E2%80%98a_forest_near_N%C4%81huku_%28Thurston_Lava_Tube%29_%2848253064912%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/%E2%80%98%C5%8Chi%E2%80%98a_forest_near_N%C4%81huku_%28Thurston_Lava_Tube%29_%2848253064912%29.jpg/1920px-%E2%80%98%C5%8Chi%E2%80%98a_forest_near_N%C4%81huku_%28Thurston_Lava_Tube%29_%2848253064912%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:%E2%80%98%C5%8Chi%E2%80%98a_forest_near_N%C4%81huku_(Thurston_Lava_Tube)_(48253064912).jpg",
+      "author": "Hawai‘i Volcanoes NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Lava_in_the_Thurston_Lava_Tube1.jpg/960px-Lava_in_the_Thurston_Lava_Tube1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Lava_in_the_Thurston_Lava_Tube1.jpg/1920px-Lava_in_the_Thurston_Lava_Tube1.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Lava_in_the_Thurston_Lava_Tube1.jpg",
+      "author": "Graeme Churchard from Bristol (51.4414, -2.5242), UK",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/End_of_the_Thurston_Lava_Tube4.jpg/960px-End_of_the_Thurston_Lava_Tube4.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/End_of_the_Thurston_Lava_Tube4.jpg/1920px-End_of_the_Thurston_Lava_Tube4.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:End_of_the_Thurston_Lava_Tube4.jpg",
+      "author": "sethoscope from USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Welcome%21_%2821030975191%29.jpg/960px-Welcome%21_%2821030975191%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Welcome%21_%2821030975191%29.jpg/1920px-Welcome%21_%2821030975191%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Welcome!_(21030975191).jpg",
+      "author": "mail_collector",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "havo-devastation-trail": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/HAVO_20191127_Family_Devastation_Tr_JWei_%2849159631663%29.jpg/960px-HAVO_20191127_Family_Devastation_Tr_JWei_%2849159631663%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/HAVO_20191127_Family_Devastation_Tr_JWei_%2849159631663%29.jpg/1920px-HAVO_20191127_Family_Devastation_Tr_JWei_%2849159631663%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:HAVO_20191127_Family_Devastation_Tr_JWei_(49159631663).jpg",
+      "author": "Hawai‘i Volcanoes NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/HAVO_2020_0615_Devastation_Trail_to_Byron_Ledge_Trail_JFerracane_%2850016989928%29.jpg/960px-HAVO_2020_0615_Devastation_Trail_to_Byron_Ledge_Trail_JFerracane_%2850016989928%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/HAVO_2020_0615_Devastation_Trail_to_Byron_Ledge_Trail_JFerracane_%2850016989928%29.jpg/1920px-HAVO_2020_0615_Devastation_Trail_to_Byron_Ledge_Trail_JFerracane_%2850016989928%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:HAVO_2020_0615_Devastation_Trail_to_Byron_Ledge_Trail_JFerracane_(50016989928).jpg",
+      "author": "Hawai‘i Volcanoes NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Female_White-crested_Kalij_Pheasant_-_Devastation_Trail%2C_Kilauea_Iki.jpg/960px-Female_White-crested_Kalij_Pheasant_-_Devastation_Trail%2C_Kilauea_Iki.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Female_White-crested_Kalij_Pheasant_-_Devastation_Trail%2C_Kilauea_Iki.jpg/1280px-Female_White-crested_Kalij_Pheasant_-_Devastation_Trail%2C_Kilauea_Iki.jpg",
+      "width": 960,
+      "height": 706,
+      "page": "https://commons.wikimedia.org/wiki/File:Female_White-crested_Kalij_Pheasant_-_Devastation_Trail,_Kilauea_Iki.jpg",
+      "author": "brewbooks",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Female_White-crested_Kalij_Pheasant_-_Devastation_Trail%2C_Kilauea_Iki_2.jpg/960px-Female_White-crested_Kalij_Pheasant_-_Devastation_Trail%2C_Kilauea_Iki_2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Female_White-crested_Kalij_Pheasant_-_Devastation_Trail%2C_Kilauea_Iki_2.jpg/1280px-Female_White-crested_Kalij_Pheasant_-_Devastation_Trail%2C_Kilauea_Iki_2.jpg",
+      "width": 960,
+      "height": 710,
+      "page": "https://commons.wikimedia.org/wiki/File:Female_White-crested_Kalij_Pheasant_-_Devastation_Trail,_Kilauea_Iki_2.jpg",
+      "author": "brewbooks",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Peles_hair_on_Devastation_trail.jpg/960px-Peles_hair_on_Devastation_trail.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Peles_hair_on_Devastation_trail.jpg/1920px-Peles_hair_on_Devastation_trail.jpg",
+      "width": 960,
+      "height": 853,
+      "page": "https://commons.wikimedia.org/wiki/File:Peles_hair_on_Devastation_trail.jpg",
+      "author": "Brocken Inaglory",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Sadleria_cyatheoides_unfurling.jpg/960px-Sadleria_cyatheoides_unfurling.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Sadleria_cyatheoides_unfurling.jpg/1920px-Sadleria_cyatheoides_unfurling.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Sadleria_cyatheoides_unfurling.jpg",
+      "author": "brewbooks from near Seattle, USA",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "havo-keanakakoi": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/HAVO_20211006_Keanakakoi_side_of_Kilauea_and_visitors_J_Wei_%2851563438966%29.jpg/960px-HAVO_20211006_Keanakakoi_side_of_Kilauea_and_visitors_J_Wei_%2851563438966%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/HAVO_20211006_Keanakakoi_side_of_Kilauea_and_visitors_J_Wei_%2851563438966%29.jpg/1920px-HAVO_20211006_Keanakakoi_side_of_Kilauea_and_visitors_J_Wei_%2851563438966%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:HAVO_20211006_Keanakakoi_side_of_Kilauea_and_visitors_J_Wei_(51563438966).jpg",
+      "author": "Hawai‘i Volcanoes NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Rainbow_over_the_volcano.jpg/960px-Rainbow_over_the_volcano.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Rainbow_over_the_volcano.jpg/1920px-Rainbow_over_the_volcano.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Rainbow_over_the_volcano.jpg",
+      "author": "Maplemoths",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Halema%CA%BBuma%CA%BBu_activity.jpg/960px-Halema%CA%BBuma%CA%BBu_activity.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Halema%CA%BBuma%CA%BBu_activity.jpg/1920px-Halema%CA%BBuma%CA%BBu_activity.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Halema%CA%BBuma%CA%BBu_activity.jpg",
+      "author": "Maplemoths",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Take_advantage_of_the_fee-free_Veterans_Day%2C_11-11-2019_%2848877822612%29.jpg/960px-Take_advantage_of_the_fee-free_Veterans_Day%2C_11-11-2019_%2848877822612%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Take_advantage_of_the_fee-free_Veterans_Day%2C_11-11-2019_%2848877822612%29.jpg/1920px-Take_advantage_of_the_fee-free_Veterans_Day%2C_11-11-2019_%2848877822612%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Take_advantage_of_the_fee-free_Veterans_Day,_11-11-2019_(48877822612).jpg",
+      "author": "Hawai‘i Volcanoes NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Way_to_the_Lava_-_panoramio.jpg/960px-Way_to_the_Lava_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Way_to_the_Lava_-_panoramio.jpg/1920px-Way_to_the_Lava_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Way_to_the_Lava_-_panoramio.jpg",
+      "author": "Peter Gill / UK",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Book-hawaii-vtorov-109.jpg/960px-Book-hawaii-vtorov-109.jpg",
+      "large": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Book-hawaii-vtorov-109.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "width": 960,
+      "height": 480,
+      "page": "https://commons.wikimedia.org/wiki/File:Book-hawaii-vtorov-109.jpg",
+      "author": "Ivtorov",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "havo-eruption-glow": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Episode_20_%282025-05-06%29_of_Kilauea%27s_December_2024_eruption.jpg/960px-Episode_20_%282025-05-06%29_of_Kilauea%27s_December_2024_eruption.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Episode_20_%282025-05-06%29_of_Kilauea%27s_December_2024_eruption.jpg/1920px-Episode_20_%282025-05-06%29_of_Kilauea%27s_December_2024_eruption.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Episode_20_(2025-05-06)_of_Kilauea%27s_December_2024_eruption.jpg",
+      "author": "USGS/K. Mulliken",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/K%C4%ABlauea_Caldera%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284528622731%29.jpg/960px-K%C4%ABlauea_Caldera%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284528622731%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/K%C4%ABlauea_Caldera%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284528622731%29.jpg/1920px-K%C4%ABlauea_Caldera%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284528622731%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:K%C4%ABlauea_Caldera,_Hawai%CA%BBi_Volcanoes_National_Park,_Hawaii_(4528622731).jpg",
+      "author": "Ken Lund from Reno, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Volcanic_Steam_Vent_Near_K%C4%ABlauea_Crater%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284529223044%29.jpg/960px-Volcanic_Steam_Vent_Near_K%C4%ABlauea_Crater%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284529223044%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Volcanic_Steam_Vent_Near_K%C4%ABlauea_Crater%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284529223044%29.jpg/1920px-Volcanic_Steam_Vent_Near_K%C4%ABlauea_Crater%2C_Hawai%CA%BBi_Volcanoes_National_Park%2C_Hawaii_%284529223044%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Volcanic_Steam_Vent_Near_K%C4%ABlauea_Crater,_Hawai%CA%BBi_Volcanoes_National_Park,_Hawaii_(4529223044).jpg",
+      "author": "Ken Lund from Reno, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/2021-10-09_13_31_44_View_south-southwest_across_the_K%C4%ABlauea_caldera_from_the_Steaming_Bluff_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg/960px-2021-10-09_13_31_44_View_south-southwest_across_the_K%C4%ABlauea_caldera_from_the_Steaming_Bluff_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/2021-10-09_13_31_44_View_south-southwest_across_the_K%C4%ABlauea_caldera_from_the_Steaming_Bluff_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg/1920px-2021-10-09_13_31_44_View_south-southwest_across_the_K%C4%ABlauea_caldera_from_the_Steaming_Bluff_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2021-10-09_13_31_44_View_south-southwest_across_the_K%C4%ABlauea_caldera_from_the_Steaming_Bluff_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County,_Hawaii.jpg",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/2021-10-09_13_31_51_View_southwest_across_the_K%C4%ABlauea_caldera_from_the_Steaming_Bluff_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg/960px-2021-10-09_13_31_51_View_southwest_across_the_K%C4%ABlauea_caldera_from_the_Steaming_Bluff_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/2021-10-09_13_31_51_View_southwest_across_the_K%C4%ABlauea_caldera_from_the_Steaming_Bluff_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg/1920px-2021-10-09_13_31_51_View_southwest_across_the_K%C4%ABlauea_caldera_from_the_Steaming_Bluff_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2021-10-09_13_31_51_View_southwest_across_the_K%C4%ABlauea_caldera_from_the_Steaming_Bluff_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County,_Hawaii.jpg",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Pele%27s_Hair_-_panoramio.jpg/960px-Pele%27s_Hair_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Pele%27s_Hair_-_panoramio.jpg/1920px-Pele%27s_Hair_-_panoramio.jpg",
+      "width": 960,
+      "height": 636,
+      "page": "https://commons.wikimedia.org/wiki/File:Pele%27s_Hair_-_panoramio.jpg",
+      "author": "Thomas Tunsch",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "havo-chain-of-craters-road": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Chain_of_Craters_Rd%2C_Hawaii_Volcanoes_National_Park_%28504044%29_%2821805928233%29.jpg/960px-Chain_of_Craters_Rd%2C_Hawaii_Volcanoes_National_Park_%28504044%29_%2821805928233%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Chain_of_Craters_Rd%2C_Hawaii_Volcanoes_National_Park_%28504044%29_%2821805928233%29.jpg/1920px-Chain_of_Craters_Rd%2C_Hawaii_Volcanoes_National_Park_%28504044%29_%2821805928233%29.jpg",
+      "width": 960,
+      "height": 541,
+      "page": "https://commons.wikimedia.org/wiki/File:Chain_of_Craters_Rd,_Hawaii_Volcanoes_National_Park_(504044)_(21805928233).jpg",
+      "author": "Robert Linsdell from St. Andrews, Canada",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Chain_of_Craters_Road_2017.jpg/960px-Chain_of_Craters_Road_2017.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Chain_of_Craters_Road_2017.jpg/1920px-Chain_of_Craters_Road_2017.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Chain_of_Craters_Road_2017.jpg",
+      "author": "Ekrem Canli",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Sunrise_at_end_of_Chain_of_Craters-Kalapana_Road_%2848207251422%29.jpg/960px-Sunrise_at_end_of_Chain_of_Craters-Kalapana_Road_%2848207251422%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Sunrise_at_end_of_Chain_of_Craters-Kalapana_Road_%2848207251422%29.jpg/1920px-Sunrise_at_end_of_Chain_of_Craters-Kalapana_Road_%2848207251422%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunrise_at_end_of_Chain_of_Craters-Kalapana_Road_(48207251422).jpg",
+      "author": "Hawai‘i Volcanoes NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/First_bulldozer_touches_hard_lava_on_Chain_of_Craters-Kalapana_Road_%2842464097821%29.jpg/960px-First_bulldozer_touches_hard_lava_on_Chain_of_Craters-Kalapana_Road_%2842464097821%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/First_bulldozer_touches_hard_lava_on_Chain_of_Craters-Kalapana_Road_%2842464097821%29.jpg/1920px-First_bulldozer_touches_hard_lava_on_Chain_of_Craters-Kalapana_Road_%2842464097821%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:First_bulldozer_touches_hard_lava_on_Chain_of_Craters-Kalapana_Road_(42464097821).jpg",
+      "author": "Hawai‘i Volcanoes NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Chain_of_Craters_Road.JPG/960px-Chain_of_Craters_Road.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Chain_of_Craters_Road.JPG/1920px-Chain_of_Craters_Road.JPG",
+      "width": 960,
+      "height": 632,
+      "page": "https://commons.wikimedia.org/wiki/File:Chain_of_Craters_Road.JPG",
+      "author": "George Mitchell",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/2021-10-09_14_29_33_View_southeast_from_the_Kealakomo_Picnic_Ground_along_Chain_of_Craters_Road_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg/960px-thumbnail.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/2021-10-09_14_29_33_View_southeast_from_the_Kealakomo_Picnic_Ground_along_Chain_of_Craters_Road_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg/1920px-thumbnail.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2021-10-09_14_29_33_View_southeast_from_the_Kealakomo_Picnic_Ground_along_Chain_of_Craters_Road_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County,_Hawaii.jpg",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "havo-mauna-ulu": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Mauna_Ulu.jpg/960px-Mauna_Ulu.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Mauna_Ulu.jpg/1920px-Mauna_Ulu.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Mauna_Ulu.jpg",
+      "author": "Navin75",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Pu%27u_Huluhulu_crater.jpeg/960px-Pu%27u_Huluhulu_crater.jpeg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Pu%27u_Huluhulu_crater.jpeg/1920px-Pu%27u_Huluhulu_crater.jpeg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Pu%27u_Huluhulu_crater.jpeg",
+      "author": "Waifer X",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Pu%27u_Huluhulu_landscape.jpg/960px-Pu%27u_Huluhulu_landscape.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Pu%27u_Huluhulu_landscape.jpg/1920px-Pu%27u_Huluhulu_landscape.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Pu%27u_Huluhulu_landscape.jpg",
+      "author": "Graeme Churchard from Bristol (51.4414, -2.5242), UK",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Napalu_crater_-_panoramio.jpg/960px-Napalu_crater_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Napalu_crater_-_panoramio.jpg/1920px-Napalu_crater_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Napalu_crater_-_panoramio.jpg",
+      "author": "BlackNose",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Lava_Spatter_Mound_at_Mauna_Ulu_in_Hawaii.jpg/960px-Lava_Spatter_Mound_at_Mauna_Ulu_in_Hawaii.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Lava_Spatter_Mound_at_Mauna_Ulu_in_Hawaii.jpg/1920px-Lava_Spatter_Mound_at_Mauna_Ulu_in_Hawaii.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Lava_Spatter_Mound_at_Mauna_Ulu_in_Hawaii.jpg",
+      "author": "Graeme Churchard (GOC53) https://www.flickr.com/people/graeme/",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/National_Park_%2842576411390%29.jpg/960px-National_Park_%2842576411390%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/National_Park_%2842576411390%29.jpg/1920px-National_Park_%2842576411390%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:National_Park_(42576411390).jpg",
+      "author": "NPS Natural Resources",
+      "license": "Public domain"
+    }
+  ],
+  "havo-puu-loa": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Pu%CA%BBu_Loa_Petroglyphs%287%29.jpg/960px-Pu%CA%BBu_Loa_Petroglyphs%287%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Pu%CA%BBu_Loa_Petroglyphs%287%29.jpg/1920px-Pu%CA%BBu_Loa_Petroglyphs%287%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Pu%CA%BBu_Loa_Petroglyphs(7).jpg",
+      "author": "Ekrem Canli",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Petroglyphs_at_Pu%27uloa_in_Hawai%27i_Volcanoes_National_Park_%288bd38301-b941-47b3-b761-426a95503f51%29.JPG/960px-Petroglyphs_at_Pu%27uloa_in_Hawai%27i_Volcanoes_National_Park_%288bd38301-b941-47b3-b761-426a95503f51%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Petroglyphs_at_Pu%27uloa_in_Hawai%27i_Volcanoes_National_Park_%288bd38301-b941-47b3-b761-426a95503f51%29.JPG/1920px-Petroglyphs_at_Pu%27uloa_in_Hawai%27i_Volcanoes_National_Park_%288bd38301-b941-47b3-b761-426a95503f51%29.JPG",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Petroglyphs_at_Pu%27uloa_in_Hawai%27i_Volcanoes_National_Park_(8bd38301-b941-47b3-b761-426a95503f51).JPG",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Petroglyphs_at_Pu%27uloa_in_Hawai%27i_Volcanoes_National_Park_%28a053f199-6686-4b71-93fb-85a47aaa76c1%29.JPG/960px-Petroglyphs_at_Pu%27uloa_in_Hawai%27i_Volcanoes_National_Park_%28a053f199-6686-4b71-93fb-85a47aaa76c1%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Petroglyphs_at_Pu%27uloa_in_Hawai%27i_Volcanoes_National_Park_%28a053f199-6686-4b71-93fb-85a47aaa76c1%29.JPG/1920px-Petroglyphs_at_Pu%27uloa_in_Hawai%27i_Volcanoes_National_Park_%28a053f199-6686-4b71-93fb-85a47aaa76c1%29.JPG",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Petroglyphs_at_Pu%27uloa_in_Hawai%27i_Volcanoes_National_Park_(a053f199-6686-4b71-93fb-85a47aaa76c1).JPG",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Pu%CA%BBu_Loa_Petroglyphs_%287482414712%29.jpg/960px-Pu%CA%BBu_Loa_Petroglyphs_%287482414712%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Pu%CA%BBu_Loa_Petroglyphs_%287482414712%29.jpg/1920px-Pu%CA%BBu_Loa_Petroglyphs_%287482414712%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Pu%CA%BBu_Loa_Petroglyphs_(7482414712).jpg",
+      "author": "Brian Sterling from Palo Alto, CA, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Pu%CA%BBu_Loa_Petroglyphs%283%29.jpg/960px-Pu%CA%BBu_Loa_Petroglyphs%283%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Pu%CA%BBu_Loa_Petroglyphs%283%29.jpg/1920px-Pu%CA%BBu_Loa_Petroglyphs%283%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Pu%CA%BBu_Loa_Petroglyphs(3).jpg",
+      "author": "Ekrem Canli",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Pu%CA%BBu_Loa_Petroglyphs_%282661848944%29.jpg/960px-Pu%CA%BBu_Loa_Petroglyphs_%282661848944%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Pu%CA%BBu_Loa_Petroglyphs_%282661848944%29.jpg/1920px-Pu%CA%BBu_Loa_Petroglyphs_%282661848944%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Pu%CA%BBu_Loa_Petroglyphs_(2661848944).jpg",
+      "author": "Waifer X",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "havo-holei-sea-cliffs": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/2021-10-09_15_14_27_Waves_from_the_Pacific_Ocean_crashing_onto_cliffs_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg/960px-2021-10-09_15_14_27_Waves_from_the_Pacific_Ocean_crashing_onto_cliffs_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/2021-10-09_15_14_27_Waves_from_the_Pacific_Ocean_crashing_onto_cliffs_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg/1920px-2021-10-09_15_14_27_Waves_from_the_Pacific_Ocean_crashing_onto_cliffs_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2021-10-09_15_14_27_Waves_from_the_Pacific_Ocean_crashing_onto_cliffs_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County,_Hawaii.jpg",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/2021-10-09_14_53_17_Gate_at_the_southeastern_terminus_of_Chain_of_Craters_Road_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg/960px-2021-10-09_14_53_17_Gate_at_the_southeastern_terminus_of_Chain_of_Craters_Road_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/2021-10-09_14_53_17_Gate_at_the_southeastern_terminus_of_Chain_of_Craters_Road_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg/1920px-2021-10-09_14_53_17_Gate_at_the_southeastern_terminus_of_Chain_of_Craters_Road_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County%2C_Hawaii.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2021-10-09_14_53_17_Gate_at_the_southeastern_terminus_of_Chain_of_Craters_Road_within_Hawaii_Volcanoes_National_Park_in_Hawaii_County,_Hawaii.jpg",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/%28Other%29_End_of_the_road_%286480756615%29.jpg/960px-%28Other%29_End_of_the_road_%286480756615%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/%28Other%29_End_of_the_road_%286480756615%29.jpg/1920px-%28Other%29_End_of_the_road_%286480756615%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:(Other)_End_of_the_road_(6480756615).jpg",
+      "author": "Phil Whitehouse from London, United Kingdom",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Hawaii_Volcanoes_National_Park_01.jpg/960px-Hawaii_Volcanoes_National_Park_01.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Hawaii_Volcanoes_National_Park_01.jpg/1920px-Hawaii_Volcanoes_National_Park_01.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Hawaii_Volcanoes_National_Park_01.jpg",
+      "author": "Niagara66",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Hawaii_Volcanoes_National_Park_02.jpg/960px-Hawaii_Volcanoes_National_Park_02.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Hawaii_Volcanoes_National_Park_02.jpg/1920px-Hawaii_Volcanoes_National_Park_02.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Hawaii_Volcanoes_National_Park_02.jpg",
+      "author": "Niagara66",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Hawaii_Volcanoes_National_Park_%28504032%29_%2822395742681%29.jpg/960px-Hawaii_Volcanoes_National_Park_%28504032%29_%2822395742681%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Hawaii_Volcanoes_National_Park_%28504032%29_%2822395742681%29.jpg/1920px-Hawaii_Volcanoes_National_Park_%28504032%29_%2822395742681%29.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Hawaii_Volcanoes_National_Park_(504032)_(22395742681).jpg",
+      "author": "Robert Linsdell from St. Andrews, Canada",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "havo-mauna-loa-road": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Taking_in_the_view_from_Mauna_Loa_Lookout_%2827702549919%29.jpg/960px-Taking_in_the_view_from_Mauna_Loa_Lookout_%2827702549919%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Taking_in_the_view_from_Mauna_Loa_Lookout_%2827702549919%29.jpg/1920px-Taking_in_the_view_from_Mauna_Loa_Lookout_%2827702549919%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Taking_in_the_view_from_Mauna_Loa_Lookout_(27702549919).jpg",
+      "author": "Hawai‘i Volcanoes NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Looking_up_at_Mauna_Loa_Lookout_Shelter_%2827702545979%29.jpg/960px-Looking_up_at_Mauna_Loa_Lookout_Shelter_%2827702545979%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Looking_up_at_Mauna_Loa_Lookout_Shelter_%2827702545979%29.jpg/1920px-Looking_up_at_Mauna_Loa_Lookout_Shelter_%2827702545979%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Looking_up_at_Mauna_Loa_Lookout_Shelter_(27702545979).jpg",
+      "author": "Hawai‘i Volcanoes NPS",
+      "license": "Public domain"
+    }
+  ],
+  "havo-kahuku": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/The_area_around_Pu%CA%BBu_o_Lokuana_in_the_Kahuku_Unit_%28bf204e83-fce1-4ca6-85a6-61f34f258ee8%29.JPG/960px-The_area_around_Pu%CA%BBu_o_Lokuana_in_the_Kahuku_Unit_%28bf204e83-fce1-4ca6-85a6-61f34f258ee8%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/The_area_around_Pu%CA%BBu_o_Lokuana_in_the_Kahuku_Unit_%28bf204e83-fce1-4ca6-85a6-61f34f258ee8%29.JPG/1920px-The_area_around_Pu%CA%BBu_o_Lokuana_in_the_Kahuku_Unit_%28bf204e83-fce1-4ca6-85a6-61f34f258ee8%29.JPG",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:The_area_around_Pu%CA%BBu_o_Lokuana_in_the_Kahuku_Unit_(bf204e83-fce1-4ca6-85a6-61f34f258ee8).JPG",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/A_park_ranger_leads_visitors_along_the_Palm_Trail_in_the_Kahuku_Unit_%2894d2dafe-1d1b-49a1-bfc7-6388658873ac%29.jpg/960px-A_park_ranger_leads_visitors_along_the_Palm_Trail_in_the_Kahuku_Unit_%2894d2dafe-1d1b-49a1-bfc7-6388658873ac%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/A_park_ranger_leads_visitors_along_the_Palm_Trail_in_the_Kahuku_Unit_%2894d2dafe-1d1b-49a1-bfc7-6388658873ac%29.jpg/1920px-A_park_ranger_leads_visitors_along_the_Palm_Trail_in_the_Kahuku_Unit_%2894d2dafe-1d1b-49a1-bfc7-6388658873ac%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:A_park_ranger_leads_visitors_along_the_Palm_Trail_in_the_Kahuku_Unit_(94d2dafe-1d1b-49a1-bfc7-6388658873ac).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/A_View_From_the_Palm_Trail_at_the_Kahuku_Unit_of_Hawai%E2%80%98i_Volcanoes_National_Park_%2848720134347%29.jpg/960px-A_View_From_the_Palm_Trail_at_the_Kahuku_Unit_of_Hawai%E2%80%98i_Volcanoes_National_Park_%2848720134347%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/A_View_From_the_Palm_Trail_at_the_Kahuku_Unit_of_Hawai%E2%80%98i_Volcanoes_National_Park_%2848720134347%29.jpg/1920px-A_View_From_the_Palm_Trail_at_the_Kahuku_Unit_of_Hawai%E2%80%98i_Volcanoes_National_Park_%2848720134347%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:A_View_From_the_Palm_Trail_at_the_Kahuku_Unit_of_Hawai%E2%80%98i_Volcanoes_National_Park_(48720134347).jpg",
+      "author": "Hawai‘i Volcanoes NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Family_hiking_new_Pali_o_Ka%E2%80%98eo_Trail_in_Kahuku_Unit_%2828755303187%29.jpg/960px-Family_hiking_new_Pali_o_Ka%E2%80%98eo_Trail_in_Kahuku_Unit_%2828755303187%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Family_hiking_new_Pali_o_Ka%E2%80%98eo_Trail_in_Kahuku_Unit_%2828755303187%29.jpg/1920px-Family_hiking_new_Pali_o_Ka%E2%80%98eo_Trail_in_Kahuku_Unit_%2828755303187%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Family_hiking_new_Pali_o_Ka%E2%80%98eo_Trail_in_Kahuku_Unit_(28755303187).jpg",
+      "author": "Hawai‘i Volcanoes NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Arundina_graminifolia_in_Kahuku.jpg/960px-Arundina_graminifolia_in_Kahuku.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Arundina_graminifolia_in_Kahuku.jpg/1920px-Arundina_graminifolia_in_Kahuku.jpg",
+      "width": 960,
+      "height": 1200,
+      "page": "https://commons.wikimedia.org/wiki/File:Arundina_graminifolia_in_Kahuku.jpg",
+      "author": "Gnom",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "havo-punaluu": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Green_sea_turtles_on_Punaluu_Black_Sand_Beach.JPG/960px-Green_sea_turtles_on_Punaluu_Black_Sand_Beach.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Green_sea_turtles_on_Punaluu_Black_Sand_Beach.JPG/1920px-Green_sea_turtles_on_Punaluu_Black_Sand_Beach.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Green_sea_turtles_on_Punaluu_Black_Sand_Beach.JPG",
+      "author": "Wmpearl",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Black_Sand_Beach%2C_Punalu%27u_Beach%2C_Big_Island_of_Hawaii%2C_Hawaii_%284539971270%29.jpg/960px-Black_Sand_Beach%2C_Punalu%27u_Beach%2C_Big_Island_of_Hawaii%2C_Hawaii_%284539971270%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Black_Sand_Beach%2C_Punalu%27u_Beach%2C_Big_Island_of_Hawaii%2C_Hawaii_%284539971270%29.jpg/1920px-Black_Sand_Beach%2C_Punalu%27u_Beach%2C_Big_Island_of_Hawaii%2C_Hawaii_%284539971270%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Black_Sand_Beach,_Punalu%27u_Beach,_Big_Island_of_Hawaii,_Hawaii_(4539971270).jpg",
+      "author": "Ken Lund from Reno, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Black_Sands_of_Punalu%27u_Beach%2C_Big_Island_of_Hawaii%2C_Hawaii_%284529509548%29.jpg/960px-Black_Sands_of_Punalu%27u_Beach%2C_Big_Island_of_Hawaii%2C_Hawaii_%284529509548%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Black_Sands_of_Punalu%27u_Beach%2C_Big_Island_of_Hawaii%2C_Hawaii_%284529509548%29.jpg/1920px-Black_Sands_of_Punalu%27u_Beach%2C_Big_Island_of_Hawaii%2C_Hawaii_%284529509548%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Black_Sands_of_Punalu%27u_Beach,_Big_Island_of_Hawaii,_Hawaii_(4529509548).jpg",
+      "author": "Ken Lund from Reno, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/2021-10-09_16_36_53_A_green_sea_turtle_on_Punalu%CA%BBu_Black_Sand_Beach_in_Punalu%CA%BBu%2C_Hawaii_County%2C_Hawaii.jpg/960px-2021-10-09_16_36_53_A_green_sea_turtle_on_Punalu%CA%BBu_Black_Sand_Beach_in_Punalu%CA%BBu%2C_Hawaii_County%2C_Hawaii.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/2021-10-09_16_36_53_A_green_sea_turtle_on_Punalu%CA%BBu_Black_Sand_Beach_in_Punalu%CA%BBu%2C_Hawaii_County%2C_Hawaii.jpg/1920px-2021-10-09_16_36_53_A_green_sea_turtle_on_Punalu%CA%BBu_Black_Sand_Beach_in_Punalu%CA%BBu%2C_Hawaii_County%2C_Hawaii.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2021-10-09_16_36_53_A_green_sea_turtle_on_Punalu%CA%BBu_Black_Sand_Beach_in_Punalu%CA%BBu,_Hawaii_County,_Hawaii.jpg",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/2021-10-09_16_38_59_View_south_along_Punalu%CA%BBu_Black_Sand_Beach_in_Punalu%CA%BBu%2C_Hawaii_County%2C_Hawaii.jpg/960px-2021-10-09_16_38_59_View_south_along_Punalu%CA%BBu_Black_Sand_Beach_in_Punalu%CA%BBu%2C_Hawaii_County%2C_Hawaii.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/2021-10-09_16_38_59_View_south_along_Punalu%CA%BBu_Black_Sand_Beach_in_Punalu%CA%BBu%2C_Hawaii_County%2C_Hawaii.jpg/1920px-2021-10-09_16_38_59_View_south_along_Punalu%CA%BBu_Black_Sand_Beach_in_Punalu%CA%BBu%2C_Hawaii_County%2C_Hawaii.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2021-10-09_16_38_59_View_south_along_Punalu%CA%BBu_Black_Sand_Beach_in_Punalu%CA%BBu,_Hawaii_County,_Hawaii.jpg",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Sea_Turtle_at_Punalu%27u_Black_Sand_Beach_in_Hawaii.jpg/960px-Sea_Turtle_at_Punalu%27u_Black_Sand_Beach_in_Hawaii.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Sea_Turtle_at_Punalu%27u_Black_Sand_Beach_in_Hawaii.jpg/1920px-Sea_Turtle_at_Punalu%27u_Black_Sand_Beach_in_Hawaii.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Sea_Turtle_at_Punalu%27u_Black_Sand_Beach_in_Hawaii.jpg",
+      "author": "Aren Elliott",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "havo-rainbow-falls": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Rainbow_Falls_Hilo_Big_Island_of_Hawaii.jpg/960px-Rainbow_Falls_Hilo_Big_Island_of_Hawaii.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Rainbow_Falls_Hilo_Big_Island_of_Hawaii.jpg/1920px-Rainbow_Falls_Hilo_Big_Island_of_Hawaii.jpg",
+      "width": 960,
+      "height": 773,
+      "page": "https://commons.wikimedia.org/wiki/File:Rainbow_Falls_Hilo_Big_Island_of_Hawaii.jpg",
+      "author": "Eric Tessmer",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Rainbow_Falls%2C_Hilo_%28504319%29_%2823458548051%29.jpg/960px-Rainbow_Falls%2C_Hilo_%28504319%29_%2823458548051%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Rainbow_Falls%2C_Hilo_%28504319%29_%2823458548051%29.jpg/1920px-Rainbow_Falls%2C_Hilo_%28504319%29_%2823458548051%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Rainbow_Falls,_Hilo_(504319)_(23458548051).jpg",
+      "author": "Robert Linsdell from St. Andrews, Canada",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Rainbow_Falls%2C_Hilo_%28504320%29_%2822913891223%29.jpg/960px-Rainbow_Falls%2C_Hilo_%28504320%29_%2822913891223%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Rainbow_Falls%2C_Hilo_%28504320%29_%2822913891223%29.jpg/1920px-Rainbow_Falls%2C_Hilo_%28504320%29_%2822913891223%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Rainbow_Falls,_Hilo_(504320)_(22913891223).jpg",
+      "author": "Robert Linsdell from St. Andrews, Canada",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Rainbow_falls_lookout_Hilo_Hawaii_%2844460166960%29.jpg/960px-Rainbow_falls_lookout_Hilo_Hawaii_%2844460166960%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Rainbow_falls_lookout_Hilo_Hawaii_%2844460166960%29.jpg/1920px-Rainbow_falls_lookout_Hilo_Hawaii_%2844460166960%29.jpg",
+      "width": 960,
+      "height": 624,
+      "page": "https://commons.wikimedia.org/wiki/File:Rainbow_falls_lookout_Hilo_Hawaii_(44460166960).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Rainbow_falls_Hilo_Hawaii_%2844460169360%29.jpg/960px-Rainbow_falls_Hilo_Hawaii_%2844460169360%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Rainbow_falls_Hilo_Hawaii_%2844460169360%29.jpg/1920px-Rainbow_falls_Hilo_Hawaii_%2844460169360%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Rainbow_falls_Hilo_Hawaii_(44460169360).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/2021-10-10_12_55_37_View_west-northwest_toward_Rainbow_%28Wai%C4%81nuenue%29_Falls_within_Wailuku_River_State_Park_in_Hilo%2C_Hawaii_County%2C_Hawaii.jpg/960px-2021-10-10_12_55_37_View_west-northwest_toward_Rainbow_%28Wai%C4%81nuenue%29_Falls_within_Wailuku_River_State_Park_in_Hilo%2C_Hawaii_County%2C_Hawaii.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/2021-10-10_12_55_37_View_west-northwest_toward_Rainbow_%28Wai%C4%81nuenue%29_Falls_within_Wailuku_River_State_Park_in_Hilo%2C_Hawaii_County%2C_Hawaii.jpg/1920px-2021-10-10_12_55_37_View_west-northwest_toward_Rainbow_%28Wai%C4%81nuenue%29_Falls_within_Wailuku_River_State_Park_in_Hilo%2C_Hawaii_County%2C_Hawaii.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2021-10-10_12_55_37_View_west-northwest_toward_Rainbow_(Wai%C4%81nuenue)_Falls_within_Wailuku_River_State_Park_in_Hilo,_Hawaii_County,_Hawaii.jpg",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "hale-hq-visitor-center": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/N%C4%93n%C4%93_at_Headquarters_Visitor_Center_lawn_%28b5ba0823-edb2-3c34-9283-8a668b98a860%29.jpg/960px-N%C4%93n%C4%93_at_Headquarters_Visitor_Center_lawn_%28b5ba0823-edb2-3c34-9283-8a668b98a860%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/N%C4%93n%C4%93_at_Headquarters_Visitor_Center_lawn_%28b5ba0823-edb2-3c34-9283-8a668b98a860%29.jpg/1920px-N%C4%93n%C4%93_at_Headquarters_Visitor_Center_lawn_%28b5ba0823-edb2-3c34-9283-8a668b98a860%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:N%C4%93n%C4%93_at_Headquarters_Visitor_Center_lawn_(b5ba0823-edb2-3c34-9283-8a668b98a860).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Visitor_centre_of_the_Mount_Haleakala_National_Park_Maui_Hawaii_%2844826505235%29.jpg/960px-Visitor_centre_of_the_Mount_Haleakala_National_Park_Maui_Hawaii_%2844826505235%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Visitor_centre_of_the_Mount_Haleakala_National_Park_Maui_Hawaii_%2844826505235%29.jpg/1920px-Visitor_centre_of_the_Mount_Haleakala_National_Park_Maui_Hawaii_%2844826505235%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Visitor_centre_of_the_Mount_Haleakala_National_Park_Maui_Hawaii_(44826505235).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Rare_plants_of_Haleakala.jpg/960px-Rare_plants_of_Haleakala.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Rare_plants_of_Haleakala.jpg/1920px-Rare_plants_of_Haleakala.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Rare_plants_of_Haleakala.jpg",
+      "author": "Zenofnow",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/HI_Maui_Haleakala_Silversword5.jpg/960px-HI_Maui_Haleakala_Silversword5.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/HI_Maui_Haleakala_Silversword5.jpg/1920px-HI_Maui_Haleakala_Silversword5.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:HI_Maui_Haleakala_Silversword5.jpg",
+      "author": "PaulT (Gunther Tschuch)",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/HI_Maui_Haleakala_Silversword6.jpg/960px-HI_Maui_Haleakala_Silversword6.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/HI_Maui_Haleakala_Silversword6.jpg/1920px-HI_Maui_Haleakala_Silversword6.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:HI_Maui_Haleakala_Silversword6.jpg",
+      "author": "PaulT (Gunther Tschuch)",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Traffic_on_the_way_to_the_top_at_Haleakala_National_Park_Maui_Hawaii_%2845690228492%29.jpg/960px-Traffic_on_the_way_to_the_top_at_Haleakala_National_Park_Maui_Hawaii_%2845690228492%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Traffic_on_the_way_to_the_top_at_Haleakala_National_Park_Maui_Hawaii_%2845690228492%29.jpg/1920px-Traffic_on_the_way_to_the_top_at_Haleakala_National_Park_Maui_Hawaii_%2845690228492%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Traffic_on_the_way_to_the_top_at_Haleakala_National_Park_Maui_Hawaii_(45690228492).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "hale-hosmer-grove": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/%27I%27iwi_at_Hosmer_Grove%2C_Haleakala%2C_Maui%2C_Hawaii_3.jpg/960px-%27I%27iwi_at_Hosmer_Grove%2C_Haleakala%2C_Maui%2C_Hawaii_3.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/%27I%27iwi_at_Hosmer_Grove%2C_Haleakala%2C_Maui%2C_Hawaii_3.jpg/1280px-%27I%27iwi_at_Hosmer_Grove%2C_Haleakala%2C_Maui%2C_Hawaii_3.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:%27I%27iwi_at_Hosmer_Grove,_Haleakala,_Maui,_Hawaii_3.jpg",
+      "author": "Kanalu Chock Camera location20° 46′ 03.6″ N, 156° 14′ 09″ W View this and other nearby images on: OpenStreetMap 20.767667; -156.235833",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/%27I%27iwi_at_Hosmer_Grove%2C_Haleakala%2C_Maui%2C_Hawaii_5.jpg/960px-%27I%27iwi_at_Hosmer_Grove%2C_Haleakala%2C_Maui%2C_Hawaii_5.jpg",
+      "large": "https://upload.wikimedia.org/wikipedia/commons/7/7f/%27I%27iwi_at_Hosmer_Grove%2C_Haleakala%2C_Maui%2C_Hawaii_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "width": 960,
+      "height": 641,
+      "page": "https://commons.wikimedia.org/wiki/File:%27I%27iwi_at_Hosmer_Grove,_Haleakala,_Maui,_Hawaii_5.jpg",
+      "author": "Kanalu Chock Camera location20° 46′ 03.6″ N, 156° 14′ 09.6″ W View this and other nearby images on: OpenStreetMap 20.767667; -156.236000",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Sagittarius_constellation_detail_long_exposure.jpg/960px-Sagittarius_constellation_detail_long_exposure.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Sagittarius_constellation_detail_long_exposure.jpg/1920px-Sagittarius_constellation_detail_long_exposure.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Sagittarius_constellation_detail_long_exposure.jpg",
+      "author": "Scott Roy Atwood",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/I%60iwi_%2849062521623%29.jpg/960px-I%60iwi_%2849062521623%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/I%60iwi_%2849062521623%29.jpg/1920px-I%60iwi_%2849062521623%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:I%60iwi_(49062521623).jpg",
+      "author": "John Leszczynski from Washington, DC, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Polystichum_bonseyi_%2814523434758%29.jpg/960px-Polystichum_bonseyi_%2814523434758%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Polystichum_bonseyi_%2814523434758%29.jpg/1920px-Polystichum_bonseyi_%2814523434758%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Polystichum_bonseyi_(14523434758).jpg",
+      "author": "John Game",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Haleakal%C4%81_National_Park_-_panoramio.jpg/960px-Haleakal%C4%81_National_Park_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Haleakal%C4%81_National_Park_-_panoramio.jpg/1920px-Haleakal%C4%81_National_Park_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Haleakal%C4%81_National_Park_-_panoramio.jpg",
+      "author": "Michelle Maria",
+      "license": "CC BY 3.0"
+    }
+  ],
+  "hale-halemauu-trail": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Starr-161010-5483-Sophora_chrysophylla-view_Switchbacks-Halemauu_Trail_Haleakala_National_Park-Maui_%2831098713462%29.jpg/960px-Starr-161010-5483-Sophora_chrysophylla-view_Switchbacks-Halemauu_Trail_Haleakala_National_Park-Maui_%2831098713462%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Starr-161010-5483-Sophora_chrysophylla-view_Switchbacks-Halemauu_Trail_Haleakala_National_Park-Maui_%2831098713462%29.jpg/1920px-Starr-161010-5483-Sophora_chrysophylla-view_Switchbacks-Halemauu_Trail_Haleakala_National_Park-Maui_%2831098713462%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Starr-161010-5483-Sophora_chrysophylla-view_Switchbacks-Halemauu_Trail_Haleakala_National_Park-Maui_(31098713462).jpg",
+      "author": "Forest and Kim Starr",
+      "license": "CC BY 3.0 us"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Haleakal%C4%81_2017%2810%29.jpg/960px-Haleakal%C4%81_2017%2810%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Haleakal%C4%81_2017%2810%29.jpg/1920px-Haleakal%C4%81_2017%2810%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Haleakal%C4%81_2017(10).jpg",
+      "author": "Ekrem Canli",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Looking_south_into_Haleakala_Crater.jpg/960px-Looking_south_into_Haleakala_Crater.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Looking_south_into_Haleakala_Crater.jpg/1920px-Looking_south_into_Haleakala_Crater.jpg",
+      "width": 960,
+      "height": 641,
+      "page": "https://commons.wikimedia.org/wiki/File:Looking_south_into_Haleakala_Crater.jpg",
+      "author": "Robot rover",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/HI_Maui_Haleakala_Nene3.jpg/960px-HI_Maui_Haleakala_Nene3.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/HI_Maui_Haleakala_Nene3.jpg/1920px-HI_Maui_Haleakala_Nene3.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:HI_Maui_Haleakala_Nene3.jpg",
+      "author": "PaulT (Gunther Tschuch)",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/HI_Maui_Haleakala_Nene1.jpg/960px-HI_Maui_Haleakala_Nene1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/HI_Maui_Haleakala_Nene1.jpg/1920px-HI_Maui_Haleakala_Nene1.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:HI_Maui_Haleakala_Nene1.jpg",
+      "author": "PaulT (Gunther Tschuch)",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Nene_Goose_Haleakala_3.jpg/960px-Nene_Goose_Haleakala_3.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Nene_Goose_Haleakala_3.jpg/1920px-Nene_Goose_Haleakala_3.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Nene_Goose_Haleakala_3.jpg",
+      "author": "Dennisg009",
+      "license": "CC0"
+    }
+  ],
+  "hale-leleiwi": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Starr-230106-0613-Dubautia_menziesii-view_overlook_and_Koolau_Gap-Leleiwi_Haleakala_National_Park-Maui_%2852666033198%29.jpg/960px-Starr-230106-0613-Dubautia_menziesii-view_overlook_and_Koolau_Gap-Leleiwi_Haleakala_National_Park-Maui_%2852666033198%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Starr-230106-0613-Dubautia_menziesii-view_overlook_and_Koolau_Gap-Leleiwi_Haleakala_National_Park-Maui_%2852666033198%29.jpg/1920px-Starr-230106-0613-Dubautia_menziesii-view_overlook_and_Koolau_Gap-Leleiwi_Haleakala_National_Park-Maui_%2852666033198%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Starr-230106-0613-Dubautia_menziesii-view_overlook_and_Koolau_Gap-Leleiwi_Haleakala_National_Park-Maui_(52666033198).jpg",
+      "author": "Forest and Kim Starr",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Starr-130801-2825-Leptecophylla_tameiameiae-habit_view_overlook_and_Koolau_Gap-Leleiwi_HNP-Maui_%2825259317135%29.jpg/960px-Starr-130801-2825-Leptecophylla_tameiameiae-habit_view_overlook_and_Koolau_Gap-Leleiwi_HNP-Maui_%2825259317135%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Starr-130801-2825-Leptecophylla_tameiameiae-habit_view_overlook_and_Koolau_Gap-Leleiwi_HNP-Maui_%2825259317135%29.jpg/1920px-Starr-130801-2825-Leptecophylla_tameiameiae-habit_view_overlook_and_Koolau_Gap-Leleiwi_HNP-Maui_%2825259317135%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Starr-130801-2825-Leptecophylla_tameiameiae-habit_view_overlook_and_Koolau_Gap-Leleiwi_HNP-Maui_(25259317135).jpg",
+      "author": "Forest and Kim Starr",
+      "license": "CC BY 3.0 us"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Landscape_of_the_Haleakala_National_Park_Maui_Hawaii_%2845690236262%29.jpg/960px-Landscape_of_the_Haleakala_National_Park_Maui_Hawaii_%2845690236262%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Landscape_of_the_Haleakala_National_Park_Maui_Hawaii_%2845690236262%29.jpg/1920px-Landscape_of_the_Haleakala_National_Park_Maui_Hawaii_%2845690236262%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Landscape_of_the_Haleakala_National_Park_Maui_Hawaii_(45690236262).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Street_to_the_Haleakala_National_Park_Maui_Hawaii_%2845690233552%29.jpg/960px-Street_to_the_Haleakala_National_Park_Maui_Hawaii_%2845690233552%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Street_to_the_Haleakala_National_Park_Maui_Hawaii_%2845690233552%29.jpg/1920px-Street_to_the_Haleakala_National_Park_Maui_Hawaii_%2845690233552%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Street_to_the_Haleakala_National_Park_Maui_Hawaii_(45690233552).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "hale-kalahaku": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Craters_from_Kalahaku_Overlook_Haleakala_National_Park_east_Maui_Hawaii_%2815791976445%29.jpg/960px-Craters_from_Kalahaku_Overlook_Haleakala_National_Park_east_Maui_Hawaii_%2815791976445%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Craters_from_Kalahaku_Overlook_Haleakala_National_Park_east_Maui_Hawaii_%2815791976445%29.jpg/1920px-Craters_from_Kalahaku_Overlook_Haleakala_National_Park_east_Maui_Hawaii_%2815791976445%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Craters_from_Kalahaku_Overlook_Haleakala_National_Park_east_Maui_Hawaii_(15791976445).jpg",
+      "author": "Jim Morefield from Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Kalahaku_Overlook_Mount_Haleakala_Maui%2C_Hawaii_%2831869097578%29.jpg/960px-Kalahaku_Overlook_Mount_Haleakala_Maui%2C_Hawaii_%2831869097578%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Kalahaku_Overlook_Mount_Haleakala_Maui%2C_Hawaii_%2831869097578%29.jpg/1920px-Kalahaku_Overlook_Mount_Haleakala_Maui%2C_Hawaii_%2831869097578%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Kalahaku_Overlook_Mount_Haleakala_Maui,_Hawaii_(31869097578).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/HAWAIIAN_PETREL_%285-3-2018%29_kalahaku_overlook%2C_haleakala_nat_park%2C_maui_co%2C_hawaii_-01_%2827074327107%29.jpg/960px-HAWAIIAN_PETREL_%285-3-2018%29_kalahaku_overlook%2C_haleakala_nat_park%2C_maui_co%2C_hawaii_-01_%2827074327107%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/HAWAIIAN_PETREL_%285-3-2018%29_kalahaku_overlook%2C_haleakala_nat_park%2C_maui_co%2C_hawaii_-01_%2827074327107%29.jpg/1920px-HAWAIIAN_PETREL_%285-3-2018%29_kalahaku_overlook%2C_haleakala_nat_park%2C_maui_co%2C_hawaii_-01_%2827074327107%29.jpg",
+      "width": 960,
+      "height": 722,
+      "page": "https://commons.wikimedia.org/wiki/File:HAWAIIAN_PETREL_(5-3-2018)_kalahaku_overlook,_haleakala_nat_park,_maui_co,_hawaii_-01_(27074327107).jpg",
+      "author": "ALAN SCHMIERER from southeast AZ, USA",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Starr_030721-0137_Helicopter_over_clouds%2C_Kalahaku_overlook%2C_HNP%2C_Maui.jpg/960px-Starr_030721-0137_Helicopter_over_clouds%2C_Kalahaku_overlook%2C_HNP%2C_Maui.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Starr_030721-0137_Helicopter_over_clouds%2C_Kalahaku_overlook%2C_HNP%2C_Maui.jpg/1280px-Starr_030721-0137_Helicopter_over_clouds%2C_Kalahaku_overlook%2C_HNP%2C_Maui.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Starr_030721-0137_Helicopter_over_clouds,_Kalahaku_overlook,_HNP,_Maui.jpg",
+      "author": "Forest & Kim Starr",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Starr-060924-0361-Plantago_lanceolata-habit_and_Kim_looking_through_scope-Kalahaku_HNP-Maui_%2824238077183%29.jpg/960px-Starr-060924-0361-Plantago_lanceolata-habit_and_Kim_looking_through_scope-Kalahaku_HNP-Maui_%2824238077183%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Starr-060924-0361-Plantago_lanceolata-habit_and_Kim_looking_through_scope-Kalahaku_HNP-Maui_%2824238077183%29.jpg/1920px-Starr-060924-0361-Plantago_lanceolata-habit_and_Kim_looking_through_scope-Kalahaku_HNP-Maui_%2824238077183%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Starr-060924-0361-Plantago_lanceolata-habit_and_Kim_looking_through_scope-Kalahaku_HNP-Maui_(24238077183).jpg",
+      "author": "Forest and Kim Starr",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Starr-060924-0362-Deschampsia_nubigena-habit_and_Kim_looking_through_scope-Kalahaku_HNP-Maui_%2824236760714%29.jpg/960px-Starr-060924-0362-Deschampsia_nubigena-habit_and_Kim_looking_through_scope-Kalahaku_HNP-Maui_%2824236760714%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Starr-060924-0362-Deschampsia_nubigena-habit_and_Kim_looking_through_scope-Kalahaku_HNP-Maui_%2824236760714%29.jpg/1920px-Starr-060924-0362-Deschampsia_nubigena-habit_and_Kim_looking_through_scope-Kalahaku_HNP-Maui_%2824236760714%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Starr-060924-0362-Deschampsia_nubigena-habit_and_Kim_looking_through_scope-Kalahaku_HNP-Maui_(24236760714).jpg",
+      "author": "Forest and Kim Starr",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "hale-visitor-center": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Haleakala_Visitor_Center_Hawaii_2021.jpg/960px-Haleakala_Visitor_Center_Hawaii_2021.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Haleakala_Visitor_Center_Hawaii_2021.jpg/1920px-Haleakala_Visitor_Center_Hawaii_2021.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Haleakala_Visitor_Center_Hawaii_2021.jpg",
+      "author": "Larry D. Moore",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/HI_Maui_Haleakala_Visitor_Center_Sunrise1.jpg/960px-HI_Maui_Haleakala_Visitor_Center_Sunrise1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/HI_Maui_Haleakala_Visitor_Center_Sunrise1.jpg/1920px-HI_Maui_Haleakala_Visitor_Center_Sunrise1.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:HI_Maui_Haleakala_Visitor_Center_Sunrise1.jpg",
+      "author": "PaulT (Gunther Tschuch)",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/HI_Maui_Haleakala_Visitor_Center_Sunrise2.jpg/960px-HI_Maui_Haleakala_Visitor_Center_Sunrise2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/HI_Maui_Haleakala_Visitor_Center_Sunrise2.jpg/1920px-HI_Maui_Haleakala_Visitor_Center_Sunrise2.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:HI_Maui_Haleakala_Visitor_Center_Sunrise2.jpg",
+      "author": "PaulT (Gunther Tschuch)",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/The_visitor%27s_center_is_here_next_to_the_crater_and_the_second_highest_spot._%282960392849%29.jpg/960px-The_visitor%27s_center_is_here_next_to_the_crater_and_the_second_highest_spot._%282960392849%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/The_visitor%27s_center_is_here_next_to_the_crater_and_the_second_highest_spot._%282960392849%29.jpg/1920px-The_visitor%27s_center_is_here_next_to_the_crater_and_the_second_highest_spot._%282960392849%29.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:The_visitor%27s_center_is_here_next_to_the_crater_and_the_second_highest_spot._(2960392849).jpg",
+      "author": "Bill Abbott",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Before_sunrise_from_Haleakal%C4%81_national_park.jpg/960px-Before_sunrise_from_Haleakal%C4%81_national_park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Before_sunrise_from_Haleakal%C4%81_national_park.jpg/1920px-Before_sunrise_from_Haleakal%C4%81_national_park.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Before_sunrise_from_Haleakal%C4%81_national_park.jpg",
+      "author": "Legoktm",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Sunrise_at_Haleakal%C4%81_national_park.jpg/960px-Sunrise_at_Haleakal%C4%81_national_park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Sunrise_at_Haleakal%C4%81_national_park.jpg/1920px-Sunrise_at_Haleakal%C4%81_national_park.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunrise_at_Haleakal%C4%81_national_park.jpg",
+      "author": "Legoktm",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "hale-puu-ulaula": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Haleakala_Summit_Scenic_Overlook_Hawaii_2021.jpg/960px-Haleakala_Summit_Scenic_Overlook_Hawaii_2021.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Haleakala_Summit_Scenic_Overlook_Hawaii_2021.jpg/1920px-Haleakala_Summit_Scenic_Overlook_Hawaii_2021.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Haleakala_Summit_Scenic_Overlook_Hawaii_2021.jpg",
+      "author": "Larry D. Moore",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Haleakala_Summit%2C_Starry_Sky_%28Unsplash%29.jpg/960px-Haleakala_Summit%2C_Starry_Sky_%28Unsplash%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Haleakala_Summit%2C_Starry_Sky_%28Unsplash%29.jpg/1920px-Haleakala_Summit%2C_Starry_Sky_%28Unsplash%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Haleakala_Summit,_Starry_Sky_(Unsplash).jpg",
+      "author": "Farid Askerov whereisfarid",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Moonlight_at_Haleakala_Summit_%28Unsplash%29.jpg/960px-Moonlight_at_Haleakala_Summit_%28Unsplash%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Moonlight_at_Haleakala_Summit_%28Unsplash%29.jpg/1920px-Moonlight_at_Haleakala_Summit_%28Unsplash%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Moonlight_at_Haleakala_Summit_(Unsplash).jpg",
+      "author": "Farid Askerov whereisfarid",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Pu%27u_%27Ula%27ula_Haleakal%C4%81_Haleakala_National_Park_Maui_Hawaii_2185214800_o.jpg/960px-Pu%27u_%27Ula%27ula_Haleakal%C4%81_Haleakala_National_Park_Maui_Hawaii_2185214800_o.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Pu%27u_%27Ula%27ula_Haleakal%C4%81_Haleakala_National_Park_Maui_Hawaii_2185214800_o.jpg/1920px-Pu%27u_%27Ula%27ula_Haleakal%C4%81_Haleakala_National_Park_Maui_Hawaii_2185214800_o.jpg",
+      "width": 960,
+      "height": 576,
+      "page": "https://commons.wikimedia.org/wiki/File:Pu%27u_%27Ula%27ula_Haleakal%C4%81_Haleakala_National_Park_Maui_Hawaii_2185214800_o.jpg",
+      "author": "Tony Webster",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Haleakala_National_Park_01.jpg/960px-Haleakala_National_Park_01.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Haleakala_National_Park_01.jpg/1920px-Haleakala_National_Park_01.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Haleakala_National_Park_01.jpg",
+      "author": "Niagara66",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Haleakala_-_panoramio.jpg/960px-Haleakala_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Haleakala_-_panoramio.jpg/1920px-Haleakala_-_panoramio.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Haleakala_-_panoramio.jpg",
+      "author": "米田賢一",
+      "license": "CC BY 3.0"
+    }
+  ],
+  "hale-sliding-sands": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Vulcanic_Cones_on_Haleakala%2C_Maui%2C_Hawaii.jpg/960px-Vulcanic_Cones_on_Haleakala%2C_Maui%2C_Hawaii.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Vulcanic_Cones_on_Haleakala%2C_Maui%2C_Hawaii.jpg/1920px-Vulcanic_Cones_on_Haleakala%2C_Maui%2C_Hawaii.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Vulcanic_Cones_on_Haleakala,_Maui,_Hawaii.jpg",
+      "author": "Christoph Strässler",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Small_craters_inside_Haleakala_National_Park%2C_Maui%2C_Hawaii_-_panoramio_%285%29.jpg/960px-Small_craters_inside_Haleakala_National_Park%2C_Maui%2C_Hawaii_-_panoramio_%285%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Small_craters_inside_Haleakala_National_Park%2C_Maui%2C_Hawaii_-_panoramio_%285%29.jpg/1920px-Small_craters_inside_Haleakala_National_Park%2C_Maui%2C_Hawaii_-_panoramio_%285%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Small_craters_inside_Haleakala_National_Park,_Maui,_Hawaii_-_panoramio_(5).jpg",
+      "author": "Aaron Zhu",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Haleakala_Cinder_Cones_%5E_Eric_Tessmer_-_panoramio_%281%29.jpg/960px-Haleakala_Cinder_Cones_%5E_Eric_Tessmer_-_panoramio_%281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Haleakala_Cinder_Cones_%5E_Eric_Tessmer_-_panoramio_%281%29.jpg/1920px-Haleakala_Cinder_Cones_%5E_Eric_Tessmer_-_panoramio_%281%29.jpg",
+      "width": 960,
+      "height": 669,
+      "page": "https://commons.wikimedia.org/wiki/File:Haleakala_Cinder_Cones_%5E_Eric_Tessmer_-_panoramio_(1).jpg",
+      "author": "Eric Tessmer",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Haleakala_Crater_%281%29.jpg/960px-Haleakala_Crater_%281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Haleakala_Crater_%281%29.jpg/1920px-Haleakala_Crater_%281%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Haleakala_Crater_(1).jpg",
+      "author": "Abhinaba Basu from Redmond, United States",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Haleakala_National_Park_02.jpg/960px-Haleakala_National_Park_02.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Haleakala_National_Park_02.jpg/1920px-Haleakala_National_Park_02.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Haleakala_National_Park_02.jpg",
+      "author": "Niagara66",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Haleakala_-_panoramio_%281%29.jpg/960px-Haleakala_-_panoramio_%281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Haleakala_-_panoramio_%281%29.jpg/1920px-Haleakala_-_panoramio_%281%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Haleakala_-_panoramio_(1).jpg",
+      "author": "米田賢一",
+      "license": "CC BY 3.0"
+    }
+  ],
+  "hale-sunrise": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Sunrise_on_Haleakala_%28In_Explorer_May_2021%29_-_Flickr_-_G_Yancy.jpg/960px-Sunrise_on_Haleakala_%28In_Explorer_May_2021%29_-_Flickr_-_G_Yancy.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Sunrise_on_Haleakala_%28In_Explorer_May_2021%29_-_Flickr_-_G_Yancy.jpg/1920px-Sunrise_on_Haleakala_%28In_Explorer_May_2021%29_-_Flickr_-_G_Yancy.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunrise_on_Haleakala_(In_Explorer_May_2021)_-_Flickr_-_G_Yancy.jpg",
+      "author": "G Yancy",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Sunrise_at_Haleakal%C4%81_.jpg/960px-Sunrise_at_Haleakal%C4%81_.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Sunrise_at_Haleakal%C4%81_.jpg/1920px-Sunrise_at_Haleakal%C4%81_.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunrise_at_Haleakal%C4%81_.jpg",
+      "author": "Magdalene246",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Haleakala_Sunrise_Jan2009.jpg/960px-Haleakala_Sunrise_Jan2009.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Haleakala_Sunrise_Jan2009.jpg/1920px-Haleakala_Sunrise_Jan2009.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Haleakala_Sunrise_Jan2009.jpg",
+      "author": "Clayoquot",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Haleakala_sunrise_from_Kalahaku.jpg/960px-Haleakala_sunrise_from_Kalahaku.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Haleakala_sunrise_from_Kalahaku.jpg/1920px-Haleakala_sunrise_from_Kalahaku.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Haleakala_sunrise_from_Kalahaku.jpg",
+      "author": "National Park Service",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Haleakala%2C_Maui%2C_Hawaii_Sunrise_DSC_4137_%281994577077%29.jpg/960px-Haleakala%2C_Maui%2C_Hawaii_Sunrise_DSC_4137_%281994577077%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Haleakala%2C_Maui%2C_Hawaii_Sunrise_DSC_4137_%281994577077%29.jpg/1920px-Haleakala%2C_Maui%2C_Hawaii_Sunrise_DSC_4137_%281994577077%29.jpg",
+      "width": 960,
+      "height": 464,
+      "page": "https://commons.wikimedia.org/wiki/File:Haleakala,_Maui,_Hawaii_Sunrise_DSC_4137_(1994577077).jpg",
+      "author": "Dylan Parker",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Haleakala%2C_Maui%2C_Hawaii_Sunrise_Silhouettes_DSC_4135_%281994581757%29.jpg/960px-Haleakala%2C_Maui%2C_Hawaii_Sunrise_Silhouettes_DSC_4135_%281994581757%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Haleakala%2C_Maui%2C_Hawaii_Sunrise_Silhouettes_DSC_4135_%281994581757%29.jpg/1920px-Haleakala%2C_Maui%2C_Hawaii_Sunrise_Silhouettes_DSC_4135_%281994581757%29.jpg",
+      "width": 960,
+      "height": 651,
+      "page": "https://commons.wikimedia.org/wiki/File:Haleakala,_Maui,_Hawaii_Sunrise_Silhouettes_DSC_4135_(1994581757).jpg",
+      "author": "Dylan Parker",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "hale-sunset": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Sunset_above_cloud_layer_Haleakala_Maui.jpg/960px-Sunset_above_cloud_layer_Haleakala_Maui.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Sunset_above_cloud_layer_Haleakala_Maui.jpg/1920px-Sunset_above_cloud_layer_Haleakala_Maui.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunset_above_cloud_layer_Haleakala_Maui.jpg",
+      "author": "Lianguanlun",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Haleakal%C4%81_National_Park%2C_United_States_%28Unsplash%29.jpg/960px-Haleakal%C4%81_National_Park%2C_United_States_%28Unsplash%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Haleakal%C4%81_National_Park%2C_United_States_%28Unsplash%29.jpg/1920px-Haleakal%C4%81_National_Park%2C_United_States_%28Unsplash%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Haleakal%C4%81_National_Park,_United_States_(Unsplash).jpg",
+      "author": "Bryce Evans artofbryce",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Haleakala_Observatory_above_sunset_clouds_%28Unsplash%29.jpg/960px-Haleakala_Observatory_above_sunset_clouds_%28Unsplash%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Haleakala_Observatory_above_sunset_clouds_%28Unsplash%29.jpg/1920px-Haleakala_Observatory_above_sunset_clouds_%28Unsplash%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Haleakala_Observatory_above_sunset_clouds_(Unsplash).jpg",
+      "author": "Jad Limcaco jadlimcaco",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Starr-110712-6914-Dodonaea_viscosa-habitat_and_sunset-Holua_Hilton_HNP-Maui_%2825098695215%29.jpg/960px-Starr-110712-6914-Dodonaea_viscosa-habitat_and_sunset-Holua_Hilton_HNP-Maui_%2825098695215%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Starr-110712-6914-Dodonaea_viscosa-habitat_and_sunset-Holua_Hilton_HNP-Maui_%2825098695215%29.jpg/1920px-Starr-110712-6914-Dodonaea_viscosa-habitat_and_sunset-Holua_Hilton_HNP-Maui_%2825098695215%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Starr-110712-6914-Dodonaea_viscosa-habitat_and_sunset-Holua_Hilton_HNP-Maui_(25098695215).jpg",
+      "author": "Forest and Kim Starr",
+      "license": "CC BY 3.0 us"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Starr-110808-7784-Coprosma_montana-habitat_with_Forest_and_Kim_at_sunset-Kapalaoa_cabin_HNP-Maui_%2824807142560%29.jpg/960px-Starr-110808-7784-Coprosma_montana-habitat_with_Forest_and_Kim_at_sunset-Kapalaoa_cabin_HNP-Maui_%2824807142560%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Starr-110808-7784-Coprosma_montana-habitat_with_Forest_and_Kim_at_sunset-Kapalaoa_cabin_HNP-Maui_%2824807142560%29.jpg/1920px-Starr-110808-7784-Coprosma_montana-habitat_with_Forest_and_Kim_at_sunset-Kapalaoa_cabin_HNP-Maui_%2824807142560%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Starr-110808-7784-Coprosma_montana-habitat_with_Forest_and_Kim_at_sunset-Kapalaoa_cabin_HNP-Maui_(24807142560).jpg",
+      "author": "Forest and Kim Starr",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Sunset_on_Haleakala_Maui_Hawaii_%2831869221948%29.jpg/960px-Sunset_on_Haleakala_Maui_Hawaii_%2831869221948%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Sunset_on_Haleakala_Maui_Hawaii_%2831869221948%29.jpg/1920px-Sunset_on_Haleakala_Maui_Hawaii_%2831869221948%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunset_on_Haleakala_Maui_Hawaii_(31869221948).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "hale-stargazing": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Milky_way_haleakala_crater_maui.JPG/960px-Milky_way_haleakala_crater_maui.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Milky_way_haleakala_crater_maui.JPG/1920px-Milky_way_haleakala_crater_maui.JPG",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Milky_way_haleakala_crater_maui.JPG",
+      "author": "Maurice Chédel",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Chukar_partridge_near_Haleakala_summit_Maui.jpg/960px-Chukar_partridge_near_Haleakala_summit_Maui.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Chukar_partridge_near_Haleakala_summit_Maui.jpg/1920px-Chukar_partridge_near_Haleakala_summit_Maui.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Chukar_partridge_near_Haleakala_summit_Maui.jpg",
+      "author": "Lianguanlun",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Haleakala_volcano%2C_June_1983_-_panoramio.jpg/960px-Haleakala_volcano%2C_June_1983_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Haleakala_volcano%2C_June_1983_-_panoramio.jpg/1920px-Haleakala_volcano%2C_June_1983_-_panoramio.jpg",
+      "width": 960,
+      "height": 661,
+      "page": "https://commons.wikimedia.org/wiki/File:Haleakala_volcano,_June_1983_-_panoramio.jpg",
+      "author": "Dan Bolinger",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Haleakala_crater%2C_June_1983_-_panoramio.jpg/960px-Haleakala_crater%2C_June_1983_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Haleakala_crater%2C_June_1983_-_panoramio.jpg/1920px-Haleakala_crater%2C_June_1983_-_panoramio.jpg",
+      "width": 960,
+      "height": 662,
+      "page": "https://commons.wikimedia.org/wiki/File:Haleakala_crater,_June_1983_-_panoramio.jpg",
+      "author": "Dan Bolinger",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Small_craters_inside_Haleakala_National_Park%2C_Maui%2C_Hawaii_-_panoramio.jpg/960px-Small_craters_inside_Haleakala_National_Park%2C_Maui%2C_Hawaii_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Small_craters_inside_Haleakala_National_Park%2C_Maui%2C_Hawaii_-_panoramio.jpg/1920px-Small_craters_inside_Haleakala_National_Park%2C_Maui%2C_Hawaii_-_panoramio.jpg",
+      "width": 960,
+      "height": 589,
+      "page": "https://commons.wikimedia.org/wiki/File:Small_craters_inside_Haleakala_National_Park,_Maui,_Hawaii_-_panoramio.jpg",
+      "author": "Aaron Zhu",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Small_craters_inside_Haleakala_National_Park%2C_Maui%2C_Hawaii_-_panoramio_%281%29.jpg/960px-Small_craters_inside_Haleakala_National_Park%2C_Maui%2C_Hawaii_-_panoramio_%281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Small_craters_inside_Haleakala_National_Park%2C_Maui%2C_Hawaii_-_panoramio_%281%29.jpg/1920px-Small_craters_inside_Haleakala_National_Park%2C_Maui%2C_Hawaii_-_panoramio_%281%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Small_craters_inside_Haleakala_National_Park,_Maui,_Hawaii_-_panoramio_(1).jpg",
+      "author": "Aaron Zhu",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "hale-kipahulu-visitor-center": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Oheo_Stream.JPG/960px-Oheo_Stream.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Oheo_Stream.JPG/1920px-Oheo_Stream.JPG",
+      "width": 960,
+      "height": 717,
+      "page": "https://commons.wikimedia.org/wiki/File:Oheo_Stream.JPG",
+      "author": "Jackie Frost/ NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Kuloa_Point.jpg/960px-Kuloa_Point.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Kuloa_Point.jpg/1920px-Kuloa_Point.jpg",
+      "width": 960,
+      "height": 717,
+      "page": "https://commons.wikimedia.org/wiki/File:Kuloa_Point.jpg",
+      "author": "Jackie Frost/ NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/OheO_Gulch%2C_Kapahulu_near_Hana%2C_Maui%2C_Hawaii_-_panoramio.jpg/960px-OheO_Gulch%2C_Kapahulu_near_Hana%2C_Maui%2C_Hawaii_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/OheO_Gulch%2C_Kapahulu_near_Hana%2C_Maui%2C_Hawaii_-_panoramio.jpg/1920px-OheO_Gulch%2C_Kapahulu_near_Hana%2C_Maui%2C_Hawaii_-_panoramio.jpg",
+      "width": 960,
+      "height": 579,
+      "page": "https://commons.wikimedia.org/wiki/File:OheO_Gulch,_Kapahulu_near_Hana,_Maui,_Hawaii_-_panoramio.jpg",
+      "author": "Aaron Zhu",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Coast_of_Kapahulu%2C_Hana%2C_Maui%2C_Hawaii_-_panoramio.jpg/960px-Coast_of_Kapahulu%2C_Hana%2C_Maui%2C_Hawaii_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Coast_of_Kapahulu%2C_Hana%2C_Maui%2C_Hawaii_-_panoramio.jpg/1920px-Coast_of_Kapahulu%2C_Hana%2C_Maui%2C_Hawaii_-_panoramio.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Coast_of_Kapahulu,_Hana,_Maui,_Hawaii_-_panoramio.jpg",
+      "author": "Aaron Zhu",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Seven_Sacred_Pools_%2816040000203%29.jpg/960px-Seven_Sacred_Pools_%2816040000203%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Seven_Sacred_Pools_%2816040000203%29.jpg/1920px-Seven_Sacred_Pools_%2816040000203%29.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Seven_Sacred_Pools_(16040000203).jpg",
+      "author": "Joe Parks from Berkeley, CA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/%22Seven_Sacred%22_pools_-_panoramio.jpg/960px-%22Seven_Sacred%22_pools_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/%22Seven_Sacred%22_pools_-_panoramio.jpg/1920px-%22Seven_Sacred%22_pools_-_panoramio.jpg",
+      "width": 960,
+      "height": 1440,
+      "page": "https://commons.wikimedia.org/wiki/File:%22Seven_Sacred%22_pools_-_panoramio.jpg",
+      "author": "Dieter F",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "hale-pipiwai-trail": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Waimoku_Falls_in_Haleakala_National_Park%2C_Maui%2C_Hawaii1.jpg/960px-Waimoku_Falls_in_Haleakala_National_Park%2C_Maui%2C_Hawaii1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Waimoku_Falls_in_Haleakala_National_Park%2C_Maui%2C_Hawaii1.jpg/1920px-Waimoku_Falls_in_Haleakala_National_Park%2C_Maui%2C_Hawaii1.jpg",
+      "width": 960,
+      "height": 605,
+      "page": "https://commons.wikimedia.org/wiki/File:Waimoku_Falls_in_Haleakala_National_Park,_Maui,_Hawaii1.jpg",
+      "author": "Christoph Strässler",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Waimoku_Falls_-_Flickr_-_Thomas_James_Caldwell.jpg/960px-Waimoku_Falls_-_Flickr_-_Thomas_James_Caldwell.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Waimoku_Falls_-_Flickr_-_Thomas_James_Caldwell.jpg/1920px-Waimoku_Falls_-_Flickr_-_Thomas_James_Caldwell.jpg",
+      "width": 960,
+      "height": 768,
+      "page": "https://commons.wikimedia.org/wiki/File:Waimoku_Falls_-_Flickr_-_Thomas_James_Caldwell.jpg",
+      "author": "Thomas from Philadelphia Area, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Makahiku_Falls_green_wall.jpg/960px-Makahiku_Falls_green_wall.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Makahiku_Falls_green_wall.jpg/1920px-Makahiku_Falls_green_wall.jpg",
+      "width": 960,
+      "height": 762,
+      "page": "https://commons.wikimedia.org/wiki/File:Makahiku_Falls_green_wall.jpg",
+      "author": "Angela Sevin from SF Bay Area, US",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Waimoku_Falls%2C_HI.jpg/960px-Waimoku_Falls%2C_HI.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Waimoku_Falls%2C_HI.jpg/1920px-Waimoku_Falls%2C_HI.jpg",
+      "width": 960,
+      "height": 1550,
+      "page": "https://commons.wikimedia.org/wiki/File:Waimoku_Falls,_HI.jpg",
+      "author": "Ekrem Canli",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Oheo_Stream_outflow.jpg/960px-Oheo_Stream_outflow.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Oheo_Stream_outflow.jpg/1920px-Oheo_Stream_outflow.jpg",
+      "width": 960,
+      "height": 717,
+      "page": "https://commons.wikimedia.org/wiki/File:Oheo_Stream_outflow.jpg",
+      "author": "Jackie Frost/ NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Pacific_Ocean_from_Kuloa_Point_Trail_%281%29.jpg/960px-Pacific_Ocean_from_Kuloa_Point_Trail_%281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Pacific_Ocean_from_Kuloa_Point_Trail_%281%29.jpg/1920px-Pacific_Ocean_from_Kuloa_Point_Trail_%281%29.jpg",
+      "width": 960,
+      "height": 717,
+      "page": "https://commons.wikimedia.org/wiki/File:Pacific_Ocean_from_Kuloa_Point_Trail_(1).jpg",
+      "author": "Jackie Frost/ NPS Photo",
+      "license": "Public domain"
+    }
+  ],
+  "hale-kuloa-point": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Pools_of_%60Ohe%60o_at_Haleakal%C4%81_National_Park%2C_Maui%2C_Hawaii.jpg/960px-Pools_of_%60Ohe%60o_at_Haleakal%C4%81_National_Park%2C_Maui%2C_Hawaii.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Pools_of_%60Ohe%60o_at_Haleakal%C4%81_National_Park%2C_Maui%2C_Hawaii.jpg/1920px-Pools_of_%60Ohe%60o_at_Haleakal%C4%81_National_Park%2C_Maui%2C_Hawaii.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Pools_of_%60Ohe%60o_at_Haleakal%C4%81_National_Park,_Maui,_Hawaii.jpg",
+      "author": "Christoph Strässler",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Hala_trees_with_fruit.jpg/960px-Hala_trees_with_fruit.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Hala_trees_with_fruit.jpg/1920px-Hala_trees_with_fruit.jpg",
+      "width": 960,
+      "height": 717,
+      "page": "https://commons.wikimedia.org/wiki/File:Hala_trees_with_fruit.jpg",
+      "author": "Jackie Frost/ NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Hala_tree_fruit_%28ripe%29.jpg/960px-Hala_tree_fruit_%28ripe%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Hala_tree_fruit_%28ripe%29.jpg/1920px-Hala_tree_fruit_%28ripe%29.jpg",
+      "width": 960,
+      "height": 717,
+      "page": "https://commons.wikimedia.org/wiki/File:Hala_tree_fruit_(ripe).jpg",
+      "author": "Jackie Frost/ NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Coast_of_Kapahulu%2C_Hana%2C_Maui%2C_Hawaii_-_panoramio_%281%29.jpg/960px-Coast_of_Kapahulu%2C_Hana%2C_Maui%2C_Hawaii_-_panoramio_%281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Coast_of_Kapahulu%2C_Hana%2C_Maui%2C_Hawaii_-_panoramio_%281%29.jpg/1920px-Coast_of_Kapahulu%2C_Hana%2C_Maui%2C_Hawaii_-_panoramio_%281%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Coast_of_Kapahulu,_Hana,_Maui,_Hawaii_-_panoramio_(1).jpg",
+      "author": "Aaron Zhu",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Coast_of_Kapahulu%2C_Hana%2C_Maui%2C_Hawaii_-_panoramio_%282%29.jpg/960px-Coast_of_Kapahulu%2C_Hana%2C_Maui%2C_Hawaii_-_panoramio_%282%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Coast_of_Kapahulu%2C_Hana%2C_Maui%2C_Hawaii_-_panoramio_%282%29.jpg/1920px-Coast_of_Kapahulu%2C_Hana%2C_Maui%2C_Hawaii_-_panoramio_%282%29.jpg",
+      "width": 960,
+      "height": 522,
+      "page": "https://commons.wikimedia.org/wiki/File:Coast_of_Kapahulu,_Hana,_Maui,_Hawaii_-_panoramio_(2).jpg",
+      "author": "Aaron Zhu",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Ohe%27o_Gulch_%2851541322300%29.jpg/960px-Ohe%27o_Gulch_%2851541322300%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Ohe%27o_Gulch_%2851541322300%29.jpg/1920px-Ohe%27o_Gulch_%2851541322300%29.jpg",
+      "width": 960,
+      "height": 1440,
+      "page": "https://commons.wikimedia.org/wiki/File:Ohe%27o_Gulch_(51541322300).jpg",
+      "author": "Brady Riemenschneider",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "hale-road-to-hana": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Bridge_on_Hana_Highway.jpg/960px-Bridge_on_Hana_Highway.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Bridge_on_Hana_Highway.jpg/1920px-Bridge_on_Hana_Highway.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:Bridge_on_Hana_Highway.jpg",
+      "author": "Jonathanking",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Hazy_view_of_West_Maui_from_the_Haleakala_Road_%288017286468%29.jpg/960px-Hazy_view_of_West_Maui_from_the_Haleakala_Road_%288017286468%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Hazy_view_of_West_Maui_from_the_Haleakala_Road_%288017286468%29.jpg/1920px-Hazy_view_of_West_Maui_from_the_Haleakala_Road_%288017286468%29.jpg",
+      "width": 960,
+      "height": 508,
+      "page": "https://commons.wikimedia.org/wiki/File:Hazy_view_of_West_Maui_from_the_Haleakala_Road_(8017286468).jpg",
+      "author": "Frank Kovalchek from Anchorage, Alaska, USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Halfway_Road_to_Hana_Maui_%2831869408438%29.jpg/960px-Halfway_Road_to_Hana_Maui_%2831869408438%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Halfway_Road_to_Hana_Maui_%2831869408438%29.jpg/1920px-Halfway_Road_to_Hana_Maui_%2831869408438%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Halfway_Road_to_Hana_Maui_(31869408438).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Halfway_Road_to_Hana_Maui_Hawaii_%2830800648097%29.jpg/960px-Halfway_Road_to_Hana_Maui_Hawaii_%2830800648097%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Halfway_Road_to_Hana_Maui_Hawaii_%2830800648097%29.jpg/1920px-Halfway_Road_to_Hana_Maui_Hawaii_%2830800648097%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Halfway_Road_to_Hana_Maui_Hawaii_(30800648097).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Road_To_Hana_%2850890194%29.jpeg/960px-Road_To_Hana_%2850890194%29.jpeg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Road_To_Hana_%2850890194%29.jpeg/1920px-Road_To_Hana_%2850890194%29.jpeg",
+      "width": 960,
+      "height": 623,
+      "page": "https://commons.wikimedia.org/wiki/File:Road_To_Hana_(50890194).jpeg",
+      "author": "Dana Hutchinson",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Maui-Keanae-school-oblright.JPG/960px-Maui-Keanae-school-oblright.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Maui-Keanae-school-oblright.JPG/1920px-Maui-Keanae-school-oblright.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Maui-Keanae-school-oblright.JPG",
+      "author": "Joel Bradshaw",
+      "license": "CC0"
+    }
+  ],
+  "hale-waianapanapa": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Waianapanapa_black_sand_beach_Maui_Hawaii_%2831869652128%29.jpg/960px-Waianapanapa_black_sand_beach_Maui_Hawaii_%2831869652128%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Waianapanapa_black_sand_beach_Maui_Hawaii_%2831869652128%29.jpg/1920px-Waianapanapa_black_sand_beach_Maui_Hawaii_%2831869652128%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Waianapanapa_black_sand_beach_Maui_Hawaii_(31869652128).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Waianapanapa_State_Park_-_panoramio.jpg/960px-Waianapanapa_State_Park_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Waianapanapa_State_Park_-_panoramio.jpg/1920px-Waianapanapa_State_Park_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Waianapanapa_State_Park_-_panoramio.jpg",
+      "author": "schuss42",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Waianapanapa_State_Park_-_panoramio_%283%29.jpg/960px-Waianapanapa_State_Park_-_panoramio_%283%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Waianapanapa_State_Park_-_panoramio_%283%29.jpg/1920px-Waianapanapa_State_Park_-_panoramio_%283%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Waianapanapa_State_Park_-_panoramio_(3).jpg",
+      "author": "schuss42",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Waianapanapa_State_Park_Maui_Hawaii_Road_to_Hana_%2845690767052%29.jpg/960px-Waianapanapa_State_Park_Maui_Hawaii_Road_to_Hana_%2845690767052%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Waianapanapa_State_Park_Maui_Hawaii_Road_to_Hana_%2845690767052%29.jpg/1920px-Waianapanapa_State_Park_Maui_Hawaii_Road_to_Hana_%2845690767052%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Waianapanapa_State_Park_Maui_Hawaii_Road_to_Hana_(45690767052).jpg",
+      "author": "dronepicr",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Coast_at_Waianapanapa_State_Park%2C_Maui%2C_Hawaii3.jpg/960px-Coast_at_Waianapanapa_State_Park%2C_Maui%2C_Hawaii3.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Coast_at_Waianapanapa_State_Park%2C_Maui%2C_Hawaii3.jpg/1920px-Coast_at_Waianapanapa_State_Park%2C_Maui%2C_Hawaii3.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Coast_at_Waianapanapa_State_Park,_Maui,_Hawaii3.jpg",
+      "author": "Christoph Strässler",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Wai%27anapanapa_State_Park._Maui._%2811106754484%29.jpg/960px-Wai%27anapanapa_State_Park._Maui._%2811106754484%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Wai%27anapanapa_State_Park._Maui._%2811106754484%29.jpg/1920px-Wai%27anapanapa_State_Park._Maui._%2811106754484%29.jpg",
+      "width": 960,
+      "height": 391,
+      "page": "https://commons.wikimedia.org/wiki/File:Wai%27anapanapa_State_Park._Maui._(11106754484).jpg",
+      "author": "Bernard Spragg. NZ from Christchurch, New Zealand",
+      "license": "CC0"
+    }
+  ],
+  "glba-visitor-center": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/The_Glacier_Bay_Lodge_as_seen_from_Bartlett_Cove_%28d236c4dd-9b99-4137-9de4-9c3c6677586d%29.JPG/960px-The_Glacier_Bay_Lodge_as_seen_from_Bartlett_Cove_%28d236c4dd-9b99-4137-9de4-9c3c6677586d%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/The_Glacier_Bay_Lodge_as_seen_from_Bartlett_Cove_%28d236c4dd-9b99-4137-9de4-9c3c6677586d%29.JPG/1920px-The_Glacier_Bay_Lodge_as_seen_from_Bartlett_Cove_%28d236c4dd-9b99-4137-9de4-9c3c6677586d%29.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:The_Glacier_Bay_Lodge_as_seen_from_Bartlett_Cove_(d236c4dd-9b99-4137-9de4-9c3c6677586d).JPG",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Stromatolites_in_limestone%2C_Going-to-the-Sun_Highway%2C_Glacier_NP.jpg/960px-Stromatolites_in_limestone%2C_Going-to-the-Sun_Highway%2C_Glacier_NP.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Stromatolites_in_limestone%2C_Going-to-the-Sun_Highway%2C_Glacier_NP.jpg/1920px-Stromatolites_in_limestone%2C_Going-to-the-Sun_Highway%2C_Glacier_NP.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Stromatolites_in_limestone,_Going-to-the-Sun_Highway,_Glacier_NP.jpg",
+      "author": "James St. John",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/National_Park_Service_%2848754400721%29.jpg/960px-National_Park_Service_%2848754400721%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/National_Park_Service_%2848754400721%29.jpg/1920px-National_Park_Service_%2848754400721%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:National_Park_Service_(48754400721).jpg",
+      "author": "NPS Natural Resources",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Alaska_aboard_the_Admiralty_Dream_%287761741158%29.jpg/960px-Alaska_aboard_the_Admiralty_Dream_%287761741158%29.jpg",
+      "large": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Alaska_aboard_the_Admiralty_Dream_%287761741158%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "width": 960,
+      "height": 585,
+      "page": "https://commons.wikimedia.org/wiki/File:Alaska_aboard_the_Admiralty_Dream_(7761741158).jpg",
+      "author": "Christopher Michel",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Close_up_of_two_carved_figures_%2896792a1c-1dd8-b71b-0b0b-a4deb6863d0d%29.JPG/960px-Close_up_of_two_carved_figures_%2896792a1c-1dd8-b71b-0b0b-a4deb6863d0d%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Close_up_of_two_carved_figures_%2896792a1c-1dd8-b71b-0b0b-a4deb6863d0d%29.JPG/1920px-Close_up_of_two_carved_figures_%2896792a1c-1dd8-b71b-0b0b-a4deb6863d0d%29.JPG",
+      "width": 960,
+      "height": 1280,
+      "page": "https://commons.wikimedia.org/wiki/File:Close_up_of_two_carved_figures_(96792a1c-1dd8-b71b-0b0b-a4deb6863d0d).JPG",
+      "author": "NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Dramatic_detail_on_the_Wooshkeetaan_Clan_House_Post_%2896abcda6-1dd8-b71b-0b08-bf953e44fccf%29.JPG/960px-Dramatic_detail_on_the_Wooshkeetaan_Clan_House_Post_%2896abcda6-1dd8-b71b-0b08-bf953e44fccf%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Dramatic_detail_on_the_Wooshkeetaan_Clan_House_Post_%2896abcda6-1dd8-b71b-0b08-bf953e44fccf%29.JPG/1920px-Dramatic_detail_on_the_Wooshkeetaan_Clan_House_Post_%2896abcda6-1dd8-b71b-0b08-bf953e44fccf%29.JPG",
+      "width": 960,
+      "height": 1280,
+      "page": "https://commons.wikimedia.org/wiki/File:Dramatic_detail_on_the_Wooshkeetaan_Clan_House_Post_(96abcda6-1dd8-b71b-0b08-bf953e44fccf).JPG",
+      "author": "NPS",
+      "license": "Public domain"
+    }
+  ],
+  "glba-day-boat": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Glaciar_Margerie%2C_Parque_Nacional_Bah%C3%ADa_del_Glaciar%2C_Alaska%2C_Estados_Unidos%2C_2017-08-19%2C_DD_33.jpg/960px-Glaciar_Margerie%2C_Parque_Nacional_Bah%C3%ADa_del_Glaciar%2C_Alaska%2C_Estados_Unidos%2C_2017-08-19%2C_DD_33.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Glaciar_Margerie%2C_Parque_Nacional_Bah%C3%ADa_del_Glaciar%2C_Alaska%2C_Estados_Unidos%2C_2017-08-19%2C_DD_33.jpg/1920px-Glaciar_Margerie%2C_Parque_Nacional_Bah%C3%ADa_del_Glaciar%2C_Alaska%2C_Estados_Unidos%2C_2017-08-19%2C_DD_33.jpg",
+      "width": 960,
+      "height": 528,
+      "page": "https://commons.wikimedia.org/wiki/File:Glaciar_Margerie,_Parque_Nacional_Bah%C3%ADa_del_Glaciar,_Alaska,_Estados_Unidos,_2017-08-19,_DD_33.jpg",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Day_Boat_and_Margerie_Glacier_%282014%29_%28fc81cb1f-6a2e-4acd-804d-7e2abe5bca02%29.jpg/960px-Day_Boat_and_Margerie_Glacier_%282014%29_%28fc81cb1f-6a2e-4acd-804d-7e2abe5bca02%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Day_Boat_and_Margerie_Glacier_%282014%29_%28fc81cb1f-6a2e-4acd-804d-7e2abe5bca02%29.jpg/1920px-Day_Boat_and_Margerie_Glacier_%282014%29_%28fc81cb1f-6a2e-4acd-804d-7e2abe5bca02%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Day_Boat_and_Margerie_Glacier_(2014)_(fc81cb1f-6a2e-4acd-804d-7e2abe5bca02).jpg",
+      "author": "National Park Service",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/There_are_those_rare_days_in_May_when_there_is_snow_to_the_ocean_and_the_15_%282f67ef08-1dd8-b71c-0718-1d4a55941829%29.jpg/960px-There_are_those_rare_days_in_May_when_there_is_snow_to_the_ocean_and_the_15_%282f67ef08-1dd8-b71c-0718-1d4a55941829%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/There_are_those_rare_days_in_May_when_there_is_snow_to_the_ocean_and_the_15_%282f67ef08-1dd8-b71c-0718-1d4a55941829%29.jpg/1920px-There_are_those_rare_days_in_May_when_there_is_snow_to_the_ocean_and_the_15_%282f67ef08-1dd8-b71c-0718-1d4a55941829%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:There_are_those_rare_days_in_May_when_there_is_snow_to_the_ocean_and_the_15_(2f67ef08-1dd8-b71c-0718-1d4a55941829).jpg",
+      "author": "NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Glacier_Bay_Alaska._Margerie_Glacier_-_Flickr_-_gailhampshire.jpg/960px-Glacier_Bay_Alaska._Margerie_Glacier_-_Flickr_-_gailhampshire.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Glacier_Bay_Alaska._Margerie_Glacier_-_Flickr_-_gailhampshire.jpg/1920px-Glacier_Bay_Alaska._Margerie_Glacier_-_Flickr_-_gailhampshire.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Glacier_Bay_Alaska._Margerie_Glacier_-_Flickr_-_gailhampshire.jpg",
+      "author": "gailhampshire from Cradley, Malvern, U.K",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Glacier_Bay_Alaska_-_Flickr_-_gailhampshire.jpg/960px-Glacier_Bay_Alaska_-_Flickr_-_gailhampshire.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Glacier_Bay_Alaska_-_Flickr_-_gailhampshire.jpg/1920px-Glacier_Bay_Alaska_-_Flickr_-_gailhampshire.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Glacier_Bay_Alaska_-_Flickr_-_gailhampshire.jpg",
+      "author": "gailhampshire from Cradley, Malvern, U.K",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Glacier_Bay_National_Park%2C_Alaska_-_panoramio_-_Jack_Borno.jpg/960px-Glacier_Bay_National_Park%2C_Alaska_-_panoramio_-_Jack_Borno.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Glacier_Bay_National_Park%2C_Alaska_-_panoramio_-_Jack_Borno.jpg/1920px-Glacier_Bay_National_Park%2C_Alaska_-_panoramio_-_Jack_Borno.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Glacier_Bay_National_Park,_Alaska_-_panoramio_-_Jack_Borno.jpg",
+      "author": "Jack Borno",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "glba-forest-trail": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Exploring_the_Forest_Loop_Trail_%282ee63d55-1dd8-b71c-0714-7a02d6af23b9%29.jpg/960px-Exploring_the_Forest_Loop_Trail_%282ee63d55-1dd8-b71c-0714-7a02d6af23b9%29.jpg",
+      "large": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Exploring_the_Forest_Loop_Trail_%282ee63d55-1dd8-b71c-0714-7a02d6af23b9%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Exploring_the_Forest_Loop_Trail_(2ee63d55-1dd8-b71c-0714-7a02d6af23b9).jpg",
+      "author": "National Park Service",
+      "license": "Public domain"
+    }
+  ],
+  "glba-tribal-house": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Tribal_House_%28390fc59b-1dd8-b71b-0b5b-18256d8fbbd9%29.jpg/960px-Tribal_House_%28390fc59b-1dd8-b71b-0b5b-18256d8fbbd9%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Tribal_House_%28390fc59b-1dd8-b71b-0b5b-18256d8fbbd9%29.jpg/1920px-Tribal_House_%28390fc59b-1dd8-b71b-0b5b-18256d8fbbd9%29.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Tribal_House_(390fc59b-1dd8-b71b-0b5b-18256d8fbbd9).jpg",
+      "author": "NPS",
+      "license": "Public domain"
+    }
+  ],
+  "glba-bartlett-river": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Glacier_Bay_National_Park%2C_Bartlett_River_and_Lake_Trail.jpg/960px-Glacier_Bay_National_Park%2C_Bartlett_River_and_Lake_Trail.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Glacier_Bay_National_Park%2C_Bartlett_River_and_Lake_Trail.jpg/1920px-Glacier_Bay_National_Park%2C_Bartlett_River_and_Lake_Trail.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Glacier_Bay_National_Park,_Bartlett_River_and_Lake_Trail.jpg",
+      "author": "Pi3.124",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "glba-shore-walk": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Beach_at_Bartlett_Cove_233.jpg/960px-Beach_at_Bartlett_Cove_233.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Beach_at_Bartlett_Cove_233.jpg/1920px-Beach_at_Bartlett_Cove_233.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Beach_at_Bartlett_Cove_233.jpg",
+      "author": "Dankarl",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "glba-kayak": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Kayaking_from_the_Lodge_%282df0fb95-1dd8-b71c-0753-6fda311e21aa%29.JPG/960px-Kayaking_from_the_Lodge_%282df0fb95-1dd8-b71c-0753-6fda311e21aa%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Kayaking_from_the_Lodge_%282df0fb95-1dd8-b71c-0753-6fda311e21aa%29.JPG/1920px-Kayaking_from_the_Lodge_%282df0fb95-1dd8-b71c-0753-6fda311e21aa%29.JPG",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Kayaking_from_the_Lodge_(2df0fb95-1dd8-b71c-0753-6fda311e21aa).JPG",
+      "author": "National Park Service",
+      "license": "Public domain"
+    }
+  ],
+  "glba-flightseeing": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Fairweather_Range_aerial.jpg/960px-Fairweather_Range_aerial.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Fairweather_Range_aerial.jpg/1920px-Fairweather_Range_aerial.jpg",
+      "width": 960,
+      "height": 589,
+      "page": "https://commons.wikimedia.org/wiki/File:Fairweather_Range_aerial.jpg",
+      "author": "Unknown authorUnknown author",
+      "license": "Public domain"
+    }
+  ],
+  "glba-whale-watching": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Lunge_Feeding_Humpback_Whale_%283aa1294d-1dd8-b71b-0b12-c10c510ac244%29.jpg/960px-Lunge_Feeding_Humpback_Whale_%283aa1294d-1dd8-b71b-0b12-c10c510ac244%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Lunge_Feeding_Humpback_Whale_%283aa1294d-1dd8-b71b-0b12-c10c510ac244%29.jpg/1920px-Lunge_Feeding_Humpback_Whale_%283aa1294d-1dd8-b71b-0b12-c10c510ac244%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Lunge_Feeding_Humpback_Whale_(3aa1294d-1dd8-b71b-0b12-c10c510ac244).jpg",
+      "author": "NPS",
+      "license": "Public domain"
+    }
+  ],
+  "glba-nagoonberry-loop": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Take_a_rest_and_commune_with_nature_along_the_Nagoonberry_Loop_Trail_%28dd10b63f-1dd8-b71c-0775-83ac512dbb99%29.jpg/960px-Take_a_rest_and_commune_with_nature_along_the_Nagoonberry_Loop_Trail_%28dd10b63f-1dd8-b71c-0775-83ac512dbb99%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Take_a_rest_and_commune_with_nature_along_the_Nagoonberry_Loop_Trail_%28dd10b63f-1dd8-b71c-0775-83ac512dbb99%29.jpg/1920px-Take_a_rest_and_commune_with_nature_along_the_Nagoonberry_Loop_Trail_%28dd10b63f-1dd8-b71c-0775-83ac512dbb99%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Take_a_rest_and_commune_with_nature_along_the_Nagoonberry_Loop_Trail_(dd10b63f-1dd8-b71c-0775-83ac512dbb99).jpg",
+      "author": "NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Gustavus_Dock_%28mike%29_-_Flickr.jpg/960px-Gustavus_Dock_%28mike%29_-_Flickr.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Gustavus_Dock_%28mike%29_-_Flickr.jpg/1920px-Gustavus_Dock_%28mike%29_-_Flickr.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Gustavus_Dock_(mike)_-_Flickr.jpg",
+      "author": "mike from New York, NY, US",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Alaska_%283733264559%29.jpg/960px-Alaska_%283733264559%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Alaska_%283733264559%29.jpg/1280px-Alaska_%283733264559%29.jpg",
+      "width": 960,
+      "height": 580,
+      "page": "https://commons.wikimedia.org/wiki/File:Alaska_(3733264559).jpg",
+      "author": "Christopher Michel",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "gaar-yukon-river": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/DOT%26PF_Dalton_Tour_%285861529291%29.jpg/960px-DOT%26PF_Dalton_Tour_%285861529291%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/DOT%26PF_Dalton_Tour_%285861529291%29.jpg/1920px-DOT%26PF_Dalton_Tour_%285861529291%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:DOT%26PF_Dalton_Tour_(5861529291).jpg",
+      "author": "Alaska DOT&PF",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/RIO_YUKON_EN_LA_DALTON_HIGHWAY_-_panoramio.jpg/960px-RIO_YUKON_EN_LA_DALTON_HIGHWAY_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/RIO_YUKON_EN_LA_DALTON_HIGHWAY_-_panoramio.jpg/1920px-RIO_YUKON_EN_LA_DALTON_HIGHWAY_-_panoramio.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:RIO_YUKON_EN_LA_DALTON_HIGHWAY_-_panoramio.jpg",
+      "author": "Manuel Velazquez",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/DALTON_HIGH_WAY%2C_PUENTE_SOBRE_EL_YUKON_-_panoramio.jpg/960px-DALTON_HIGH_WAY%2C_PUENTE_SOBRE_EL_YUKON_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/DALTON_HIGH_WAY%2C_PUENTE_SOBRE_EL_YUKON_-_panoramio.jpg/1920px-DALTON_HIGH_WAY%2C_PUENTE_SOBRE_EL_YUKON_-_panoramio.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:DALTON_HIGH_WAY,_PUENTE_SOBRE_EL_YUKON_-_panoramio.jpg",
+      "author": "Manuel Velazquez",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Waiting_for_summer_%2849565692028%29.jpg/960px-Waiting_for_summer_%2849565692028%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Waiting_for_summer_%2849565692028%29.jpg/1920px-Waiting_for_summer_%2849565692028%29.jpg",
+      "width": 960,
+      "height": 624,
+      "page": "https://commons.wikimedia.org/wiki/File:Waiting_for_summer_(49565692028).jpg",
+      "author": "BLM Alaska",
+      "license": "Public domain"
+    }
+  ],
+  "gaar-finger-mountain": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Finger_Mountain_%2839360823301%29.jpg/960px-Finger_Mountain_%2839360823301%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Finger_Mountain_%2839360823301%29.jpg/1920px-Finger_Mountain_%2839360823301%29.jpg",
+      "width": 960,
+      "height": 531,
+      "page": "https://commons.wikimedia.org/wiki/File:Finger_Mountain_(39360823301).jpg",
+      "author": "BLM Alaska",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/USFWSAlaska_%2840794153763%29.jpg/960px-USFWSAlaska_%2840794153763%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/USFWSAlaska_%2840794153763%29.jpg/1920px-USFWSAlaska_%2840794153763%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:USFWSAlaska_(40794153763).jpg",
+      "author": "USFWSAlaska",
+      "license": "Public domain"
+    }
+  ],
+  "gaar-arctic-circle": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Arctic_Circle_sign_%2829650507696%29.jpg/960px-Arctic_Circle_sign_%2829650507696%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Arctic_Circle_sign_%2829650507696%29.jpg/1920px-Arctic_Circle_sign_%2829650507696%29.jpg",
+      "width": 960,
+      "height": 770,
+      "page": "https://commons.wikimedia.org/wiki/File:Arctic_Circle_sign_(29650507696).jpg",
+      "author": "BLM Alaska",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/USFWSAlaska_%2846844064875%29.jpg/960px-USFWSAlaska_%2846844064875%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/USFWSAlaska_%2846844064875%29.jpg/1920px-USFWSAlaska_%2846844064875%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:USFWSAlaska_(46844064875).jpg",
+      "author": "USFWSAlaska",
+      "license": "Public domain"
+    }
+  ],
+  "gaar-arctic-visitor-center": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Arctic_Interagency_Visitor_Center_%2829076501453%29.jpg/960px-Arctic_Interagency_Visitor_Center_%2829076501453%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Arctic_Interagency_Visitor_Center_%2829076501453%29.jpg/1920px-Arctic_Interagency_Visitor_Center_%2829076501453%29.jpg",
+      "width": 960,
+      "height": 620,
+      "page": "https://commons.wikimedia.org/wiki/File:Arctic_Interagency_Visitor_Center_(29076501453).jpg",
+      "author": "BLM Alaska",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/20110731_Coldfoot_Camp.jpg/960px-20110731_Coldfoot_Camp.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/20110731_Coldfoot_Camp.jpg/1920px-20110731_Coldfoot_Camp.jpg",
+      "width": 960,
+      "height": 593,
+      "page": "https://commons.wikimedia.org/wiki/File:20110731_Coldfoot_Camp.jpg",
+      "author": "schizoform",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Messages_left_by_tourist_%2847760745731%29.jpg/960px-Messages_left_by_tourist_%2847760745731%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Messages_left_by_tourist_%2847760745731%29.jpg/1920px-Messages_left_by_tourist_%2847760745731%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Messages_left_by_tourist_(47760745731).jpg",
+      "author": "USFWSAlaska",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Tourists_show_off_certificates_%2846844065645%29.jpg/960px-Tourists_show_off_certificates_%2846844065645%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Tourists_show_off_certificates_%2846844065645%29.jpg/1920px-Tourists_show_off_certificates_%2846844065645%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Tourists_show_off_certificates_(46844065645).jpg",
+      "author": "USFWSAlaska",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Pterourus_canadensis_canadensis_%28Canadian_Tiger_Swallowtail%29.jpg/960px-Pterourus_canadensis_canadensis_%28Canadian_Tiger_Swallowtail%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Pterourus_canadensis_canadensis_%28Canadian_Tiger_Swallowtail%29.jpg/1920px-Pterourus_canadensis_canadensis_%28Canadian_Tiger_Swallowtail%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Pterourus_canadensis_canadensis_(Canadian_Tiger_Swallowtail).jpg",
+      "author": "Kristof Zyskowski & Yulia Bereshpolova",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "gaar-wiseman": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Wiseman%2C_AK.jpg/960px-Wiseman%2C_AK.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Wiseman%2C_AK.jpg/1920px-Wiseman%2C_AK.jpg",
+      "width": 960,
+      "height": 636,
+      "page": "https://commons.wikimedia.org/wiki/File:Wiseman,_AK.jpg",
+      "author": "FairbanksMike",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Animal_tracks_%2847707969592%29.jpg/960px-Animal_tracks_%2847707969592%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Animal_tracks_%2847707969592%29.jpg/1920px-Animal_tracks_%2847707969592%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Animal_tracks_(47707969592).jpg",
+      "author": "USFWSAlaska",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Animal_tracks_%2840794155053%29.jpg/960px-Animal_tracks_%2840794155053%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Animal_tracks_%2840794155053%29.jpg/1920px-Animal_tracks_%2840794155053%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Animal_tracks_(40794155053).jpg",
+      "author": "USFWSAlaska",
+      "license": "Public domain"
+    }
+  ],
+  "gaar-wiseman-hike": [],
+  "gaar-sukakpak": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Sukakpak_Mountain_and_Dalton_Highway_%2829059313024%29.jpg/960px-Sukakpak_Mountain_and_Dalton_Highway_%2829059313024%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Sukakpak_Mountain_and_Dalton_Highway_%2829059313024%29.jpg/1920px-Sukakpak_Mountain_and_Dalton_Highway_%2829059313024%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Sukakpak_Mountain_and_Dalton_Highway_(29059313024).jpg",
+      "author": "BLM Alaska",
+      "license": "Public domain"
+    }
+  ],
+  "gaar-atigun-pass": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Atigun_Pass.jpg/960px-Atigun_Pass.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Atigun_Pass.jpg/1920px-Atigun_Pass.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Atigun_Pass.jpg",
+      "author": "Giskard mb at English Wikipedia",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Tenere_no_artico.jpg/960px-Tenere_no_artico.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Tenere_no_artico.jpg/1920px-Tenere_no_artico.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Tenere_no_artico.jpg",
+      "author": "Thaisharue",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "gaar-aurora": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Curtain_aurora%2C_Wiseman%2C_Alaska.jpg/960px-Curtain_aurora%2C_Wiseman%2C_Alaska.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Curtain_aurora%2C_Wiseman%2C_Alaska.jpg/1920px-Curtain_aurora%2C_Wiseman%2C_Alaska.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Curtain_aurora,_Wiseman,_Alaska.jpg",
+      "author": "Nina Matthews",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Animal_tracks_%2833883562518%29.jpg/960px-Animal_tracks_%2833883562518%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Animal_tracks_%2833883562518%29.jpg/1920px-Animal_tracks_%2833883562518%29.jpg",
+      "width": 960,
+      "height": 1280,
+      "page": "https://commons.wikimedia.org/wiki/File:Animal_tracks_(33883562518).jpg",
+      "author": "USFWSAlaska",
+      "license": "Public domain"
+    }
+  ],
+  "gaar-gates-flight": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/GatesOfTheArcticKoyukuck.jpg/960px-GatesOfTheArcticKoyukuck.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/GatesOfTheArcticKoyukuck.jpg/1920px-GatesOfTheArcticKoyukuck.jpg",
+      "width": 960,
+      "height": 393,
+      "page": "https://commons.wikimedia.org/wiki/File:GatesOfTheArcticKoyukuck.jpg",
+      "author": "Cacophony",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "gaar-arrigetch-flight": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Gates_of_the_Arctic_-_Arrigetch_Peaks_%2833306728222%29.jpg/960px-Gates_of_the_Arctic_-_Arrigetch_Peaks_%2833306728222%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Gates_of_the_Arctic_-_Arrigetch_Peaks_%2833306728222%29.jpg/1920px-Gates_of_the_Arctic_-_Arrigetch_Peaks_%2833306728222%29.jpg",
+      "width": 960,
+      "height": 641,
+      "page": "https://commons.wikimedia.org/wiki/File:Gates_of_the_Arctic_-_Arrigetch_Peaks_(33306728222).jpg",
+      "author": "AlaskaNPS",
+      "license": "Public domain"
+    }
+  ],
+  "gaar-fairbanks-flight": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Gates_of_the_Arctic_National_Park_%26_Preserve_%2829398124834%29.jpg/960px-Gates_of_the_Arctic_National_Park_%26_Preserve_%2829398124834%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Gates_of_the_Arctic_National_Park_%26_Preserve_%2829398124834%29.jpg/1920px-Gates_of_the_Arctic_National_Park_%26_Preserve_%2829398124834%29.jpg",
+      "width": 960,
+      "height": 641,
+      "page": "https://commons.wikimedia.org/wiki/File:Gates_of_the_Arctic_National_Park_%26_Preserve_(29398124834).jpg",
+      "author": "NPS Natural Resources",
+      "license": "Public domain"
+    }
+  ],
+  "gaar-anaktuvuk-pass": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Anaktuvuk_Pass_-_panoramio.jpg/960px-Anaktuvuk_Pass_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Anaktuvuk_Pass_-_panoramio.jpg/1920px-Anaktuvuk_Pass_-_panoramio.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Anaktuvuk_Pass_-_panoramio.jpg",
+      "author": "olekinderhook",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Visit_with_the_Nunamiut_people_in_Anaktuvuk_Pass_within_Gates_of_the_Arctic_National_Park%2C_Alaska_on_May_16%2C_2026_-_6.jpg/960px-Visit_with_the_Nunamiut_people_in_Anaktuvuk_Pass_within_Gates_of_the_Arctic_National_Park%2C_Alaska_on_May_16%2C_2026_-_6.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Visit_with_the_Nunamiut_people_in_Anaktuvuk_Pass_within_Gates_of_the_Arctic_National_Park%2C_Alaska_on_May_16%2C_2026_-_6.jpg/1920px-Visit_with_the_Nunamiut_people_in_Anaktuvuk_Pass_within_Gates_of_the_Arctic_National_Park%2C_Alaska_on_May_16%2C_2026_-_6.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Visit_with_the_Nunamiut_people_in_Anaktuvuk_Pass_within_Gates_of_the_Arctic_National_Park,_Alaska_on_May_16,_2026_-_6.jpg",
+      "author": "U.S. Department of the Interior",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Visit_with_the_Nunamiut_people_in_Anaktuvuk_Pass_within_Gates_of_the_Arctic_National_Park%2C_Alaska_on_May_16%2C_2026_-_8.jpg/960px-Visit_with_the_Nunamiut_people_in_Anaktuvuk_Pass_within_Gates_of_the_Arctic_National_Park%2C_Alaska_on_May_16%2C_2026_-_8.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Visit_with_the_Nunamiut_people_in_Anaktuvuk_Pass_within_Gates_of_the_Arctic_National_Park%2C_Alaska_on_May_16%2C_2026_-_8.jpg/1920px-Visit_with_the_Nunamiut_people_in_Anaktuvuk_Pass_within_Gates_of_the_Arctic_National_Park%2C_Alaska_on_May_16%2C_2026_-_8.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Visit_with_the_Nunamiut_people_in_Anaktuvuk_Pass_within_Gates_of_the_Arctic_National_Park,_Alaska_on_May_16,_2026_-_8.jpg",
+      "author": "U.S. Department of the Interior",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Village_of_Anaktuvuk_Pass_%28357890106%29.jpg/960px-Village_of_Anaktuvuk_Pass_%28357890106%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Village_of_Anaktuvuk_Pass_%28357890106%29.jpg/1280px-Village_of_Anaktuvuk_Pass_%28357890106%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Village_of_Anaktuvuk_Pass_(357890106).jpg",
+      "author": "Joseph from Cabin On The Road, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Another_piece_of_life_advice_-_panoramio.jpg/960px-Another_piece_of_life_advice_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Another_piece_of_life_advice_-_panoramio.jpg/1920px-Another_piece_of_life_advice_-_panoramio.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Another_piece_of_life_advice_-_panoramio.jpg",
+      "author": "olekinderhook",
+      "license": "CC BY 3.0"
+    }
+  ],
+  "kova-heritage-center": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Fossils_of_glacial_mammals%2C_Northwest_Arctic_Heritage_Center.jpg/960px-Fossils_of_glacial_mammals%2C_Northwest_Arctic_Heritage_Center.jpg",
+      "large": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Fossils_of_glacial_mammals%2C_Northwest_Arctic_Heritage_Center.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "width": 960,
+      "height": 721,
+      "page": "https://commons.wikimedia.org/wiki/File:Fossils_of_glacial_mammals,_Northwest_Arctic_Heritage_Center.jpg",
+      "author": "16Terezka",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Northwest_Arctic_Heritage_Center%2C_Cake_Art_%284683279238%29.jpg/960px-Northwest_Arctic_Heritage_Center%2C_Cake_Art_%284683279238%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Northwest_Arctic_Heritage_Center%2C_Cake_Art_%284683279238%29.jpg/1920px-Northwest_Arctic_Heritage_Center%2C_Cake_Art_%284683279238%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Northwest_Arctic_Heritage_Center,_Cake_Art_(4683279238).jpg",
+      "author": "Education Specialist",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Cake_made_by_Kotzebue_resident_for_summer_grand_opening_of_Northwest_Arctic_Heritage_Center_in_Kotzebue%2C_AK._The_public_is_%28c5429e8f-1dd8-b71c-0788-55b03fbbab46%29.jpg/960px-thumbnail.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Cake_made_by_Kotzebue_resident_for_summer_grand_opening_of_Northwest_Arctic_Heritage_Center_in_Kotzebue%2C_AK._The_public_is_%28c5429e8f-1dd8-b71c-0788-55b03fbbab46%29.jpg/1920px-thumbnail.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Cake_made_by_Kotzebue_resident_for_summer_grand_opening_of_Northwest_Arctic_Heritage_Center_in_Kotzebue,_AK._The_public_is_(c5429e8f-1dd8-b71c-0788-55b03fbbab46).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Tundra_Sail_%283817145252%29.jpg/960px-Tundra_Sail_%283817145252%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Tundra_Sail_%283817145252%29.jpg/1920px-Tundra_Sail_%283817145252%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Tundra_Sail_(3817145252).jpg",
+      "author": "Joseph from Cabin On The Road, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Kotzebue_Sound.jpg/960px-Kotzebue_Sound.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Kotzebue_Sound.jpg/1920px-Kotzebue_Sound.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Kotzebue_Sound.jpg",
+      "author": "just_a_cheeseburger",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Kotzebue_Sound_-_18588878706.jpg/960px-Kotzebue_Sound_-_18588878706.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Kotzebue_Sound_-_18588878706.jpg/1920px-Kotzebue_Sound_-_18588878706.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Kotzebue_Sound_-_18588878706.jpg",
+      "author": "just_a_cheeseburger",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "kova-kotzebue": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Aerial_view_of_Kotzebue_2013.jpg/960px-Aerial_view_of_Kotzebue_2013.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Aerial_view_of_Kotzebue_2013.jpg/1920px-Aerial_view_of_Kotzebue_2013.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Kotzebue_2013.jpg",
+      "author": "Petty Officer 1st Class Shawn Eggert",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/The_bush_village_of_Kotzebue%2C_gateway_to_Kobuk_Valley_%288029761188%29.jpg/960px-The_bush_village_of_Kotzebue%2C_gateway_to_Kobuk_Valley_%288029761188%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/The_bush_village_of_Kotzebue%2C_gateway_to_Kobuk_Valley_%288029761188%29.jpg/1920px-The_bush_village_of_Kotzebue%2C_gateway_to_Kobuk_Valley_%288029761188%29.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:The_bush_village_of_Kotzebue,_gateway_to_Kobuk_Valley_(8029761188).jpg",
+      "author": "National Park Service, Alaska Region",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Waterways%2C_Kotzebue_Sound_%288029777609%29.jpg/960px-Waterways%2C_Kotzebue_Sound_%288029777609%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Waterways%2C_Kotzebue_Sound_%288029777609%29.jpg/1920px-Waterways%2C_Kotzebue_Sound_%288029777609%29.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:Waterways,_Kotzebue_Sound_(8029777609).jpg",
+      "author": "National Park Service, Alaska Region",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Kotzebue_Sound_-_18610611312.jpg/960px-Kotzebue_Sound_-_18610611312.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Kotzebue_Sound_-_18610611312.jpg/1920px-Kotzebue_Sound_-_18610611312.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Kotzebue_Sound_-_18610611312.jpg",
+      "author": "just_a_cheeseburger",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Kotzebue_Sound_-_18617431651.jpg/960px-Kotzebue_Sound_-_18617431651.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Kotzebue_Sound_-_18617431651.jpg/1920px-Kotzebue_Sound_-_18617431651.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Kotzebue_Sound_-_18617431651.jpg",
+      "author": "just_a_cheeseburger",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Kotzebue_AK_-_water_front.jpg/960px-Kotzebue_AK_-_water_front.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Kotzebue_AK_-_water_front.jpg/1920px-Kotzebue_AK_-_water_front.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Kotzebue_AK_-_water_front.jpg",
+      "author": "Chris Lott from Fairbanks, USA",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "kova-sand-dunes": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/2012_07_22_Great_Kobuk_Sand_Dunes.jpg/960px-2012_07_22_Great_Kobuk_Sand_Dunes.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/2012_07_22_Great_Kobuk_Sand_Dunes.jpg/1920px-2012_07_22_Great_Kobuk_Sand_Dunes.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:2012_07_22_Great_Kobuk_Sand_Dunes.jpg",
+      "author": "NPS Photo by Neal Herbert",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Wind_on_the_Great_Kobuk_Sand_Dunes_thrashes_the_flexible_grass_stems_in_all_directions%2C_resulting_in_neat_circles_around_the_%289322b3f3-1dd8-b71c-0706-691054e643cc%29.jpg/960px-thumbnail.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Wind_on_the_Great_Kobuk_Sand_Dunes_thrashes_the_flexible_grass_stems_in_all_directions%2C_resulting_in_neat_circles_around_the_%289322b3f3-1dd8-b71c-0706-691054e643cc%29.jpg/1920px-thumbnail.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Wind_on_the_Great_Kobuk_Sand_Dunes_thrashes_the_flexible_grass_stems_in_all_directions,_resulting_in_neat_circles_around_the_(9322b3f3-1dd8-b71c-0706-691054e643cc).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Caribou_migrate_across_the_Great_Kobuk_Sand_Dunes%2C_heading_north_in_the_summer_and_south_in_the_fall._Some_survive_and_some_don_%2893a6f513-1dd8-b71c-0711-f7621877e961%29.jpg/960px-thumbnail.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Caribou_migrate_across_the_Great_Kobuk_Sand_Dunes%2C_heading_north_in_the_summer_and_south_in_the_fall._Some_survive_and_some_don_%2893a6f513-1dd8-b71c-0711-f7621877e961%29.jpg/1920px-thumbnail.jpg",
+      "width": 960,
+      "height": 626,
+      "page": "https://commons.wikimedia.org/wiki/File:Caribou_migrate_across_the_Great_Kobuk_Sand_Dunes,_heading_north_in_the_summer_and_south_in_the_fall._Some_survive_and_some_don_(93a6f513-1dd8-b71c-0711-f7621877e961).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Awaiting_takeoff_at_the_Great_Kobuk_Sand_Dunes_%288029769093%29.jpg/960px-Awaiting_takeoff_at_the_Great_Kobuk_Sand_Dunes_%288029769093%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Awaiting_takeoff_at_the_Great_Kobuk_Sand_Dunes_%288029769093%29.jpg/1920px-Awaiting_takeoff_at_the_Great_Kobuk_Sand_Dunes_%288029769093%29.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:Awaiting_takeoff_at_the_Great_Kobuk_Sand_Dunes_(8029769093).jpg",
+      "author": "National Park Service, Alaska Region",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Kobuk_Sand_Dunes.jpg/960px-Kobuk_Sand_Dunes.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Kobuk_Sand_Dunes.jpg/1280px-Kobuk_Sand_Dunes.jpg",
+      "width": 960,
+      "height": 641,
+      "page": "https://commons.wikimedia.org/wiki/File:Kobuk_Sand_Dunes.jpg",
+      "author": "Anthony Remboldt",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Landing_on_the_Dunes_%288451817831%29.jpg/960px-Landing_on_the_Dunes_%288451817831%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Landing_on_the_Dunes_%288451817831%29.jpg/1920px-Landing_on_the_Dunes_%288451817831%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Landing_on_the_Dunes_(8451817831).jpg",
+      "author": "Western Arctic National Parklands",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "kova-onion-portage": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/KOVA_Onion_Portage_%2834900152484%29.jpg/960px-KOVA_Onion_Portage_%2834900152484%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/KOVA_Onion_Portage_%2834900152484%29.jpg/1920px-KOVA_Onion_Portage_%2834900152484%29.jpg",
+      "width": 960,
+      "height": 628,
+      "page": "https://commons.wikimedia.org/wiki/File:KOVA_Onion_Portage_(34900152484).jpg",
+      "author": "National Park Service, Alaska Region",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Gidding%27s_Cabin_at_Onion_Portage_%288485281966%29.jpg/960px-Gidding%27s_Cabin_at_Onion_Portage_%288485281966%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Gidding%27s_Cabin_at_Onion_Portage_%288485281966%29.jpg/1920px-Gidding%27s_Cabin_at_Onion_Portage_%288485281966%29.jpg",
+      "width": 960,
+      "height": 642,
+      "page": "https://commons.wikimedia.org/wiki/File:Gidding%27s_Cabin_at_Onion_Portage_(8485281966).jpg",
+      "author": "Western Arctic National Parklands",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Early_morning_fog_blankets_the_low_lying_area_between_Onion_Portage_and_the_Baird_Mountains._%28c506c2f7-1dd8-b71c-0797-a4d613c6a250%29.jpg/960px-Early_morning_fog_blankets_the_low_lying_area_between_Onion_Portage_and_the_Baird_Mountains._%28c506c2f7-1dd8-b71c-0797-a4d613c6a250%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Early_morning_fog_blankets_the_low_lying_area_between_Onion_Portage_and_the_Baird_Mountains._%28c506c2f7-1dd8-b71c-0797-a4d613c6a250%29.jpg/1920px-Early_morning_fog_blankets_the_low_lying_area_between_Onion_Portage_and_the_Baird_Mountains._%28c506c2f7-1dd8-b71c-0797-a4d613c6a250%29.jpg",
+      "width": 960,
+      "height": 539,
+      "page": "https://commons.wikimedia.org/wiki/File:Early_morning_fog_blankets_the_low_lying_area_between_Onion_Portage_and_the_Baird_Mountains._(c506c2f7-1dd8-b71c-0797-a4d613c6a250).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Gidding%27s_Cabin_at_Onion_Portage_%28c54f6f71-1dd8-b71c-074c-75eb35032212%29.jpg/960px-Gidding%27s_Cabin_at_Onion_Portage_%28c54f6f71-1dd8-b71c-074c-75eb35032212%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Gidding%27s_Cabin_at_Onion_Portage_%28c54f6f71-1dd8-b71c-074c-75eb35032212%29.jpg/1920px-Gidding%27s_Cabin_at_Onion_Portage_%28c54f6f71-1dd8-b71c-074c-75eb35032212%29.jpg",
+      "width": 960,
+      "height": 642,
+      "page": "https://commons.wikimedia.org/wiki/File:Gidding%27s_Cabin_at_Onion_Portage_(c54f6f71-1dd8-b71c-074c-75eb35032212).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    }
+  ],
+  "kova-flightseeing": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Kobuk_River_%288029774281%29.jpg/960px-Kobuk_River_%288029774281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Kobuk_River_%288029774281%29.jpg/1920px-Kobuk_River_%288029774281%29.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:Kobuk_River_(8029774281).jpg",
+      "author": "National Park Service, Alaska Region",
+      "license": "Public domain"
+    }
+  ],
+  "katm-brooks-falls": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Grizzly_Bears.jpg/960px-Grizzly_Bears.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Grizzly_Bears.jpg/1920px-Grizzly_Bears.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Grizzly_Bears.jpg",
+      "author": "Joseph C Boone",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Lots_of_bears_at_Brooks_Falls_%289371882091%29.jpg/960px-Lots_of_bears_at_Brooks_Falls_%289371882091%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Lots_of_bears_at_Brooks_Falls_%289371882091%29.jpg/1920px-Lots_of_bears_at_Brooks_Falls_%289371882091%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Lots_of_bears_at_Brooks_Falls_(9371882091).jpg",
+      "author": "Katmai National Park and Preserve",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Lots_and_lots_of_bears_at_Brooks_Falls.jpg/960px-Lots_and_lots_of_bears_at_Brooks_Falls.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Lots_and_lots_of_bears_at_Brooks_Falls.jpg/1920px-Lots_and_lots_of_bears_at_Brooks_Falls.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Lots_and_lots_of_bears_at_Brooks_Falls.jpg",
+      "author": "NPS/Michael Fitz",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Lots_and_lots_of_bears_at_Brooks_Falls_%28cropped%29.jpg/960px-Lots_and_lots_of_bears_at_Brooks_Falls_%28cropped%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Lots_and_lots_of_bears_at_Brooks_Falls_%28cropped%29.jpg/1920px-Lots_and_lots_of_bears_at_Brooks_Falls_%28cropped%29.jpg",
+      "width": 960,
+      "height": 556,
+      "page": "https://commons.wikimedia.org/wiki/File:Lots_and_lots_of_bears_at_Brooks_Falls_(cropped).jpg",
+      "author": "NPS/Michael Fitz",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Brown_Bears_at_Brooks_Falls%2C_Katmai_National_Park_%2810106289804%29.jpg/960px-Brown_Bears_at_Brooks_Falls%2C_Katmai_National_Park_%2810106289804%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Brown_Bears_at_Brooks_Falls%2C_Katmai_National_Park_%2810106289804%29.jpg/1920px-Brown_Bears_at_Brooks_Falls%2C_Katmai_National_Park_%2810106289804%29.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Brown_Bears_at_Brooks_Falls,_Katmai_National_Park_(10106289804).jpg",
+      "author": "Christoph Strässler from Oberdorf BL, Schweiz",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Fishing_Brown_Bear_at_Brooks_Falls%2C_Katmai_National_Park_%2810106346915%29.jpg/960px-Fishing_Brown_Bear_at_Brooks_Falls%2C_Katmai_National_Park_%2810106346915%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Fishing_Brown_Bear_at_Brooks_Falls%2C_Katmai_National_Park_%2810106346915%29.jpg/1920px-Fishing_Brown_Bear_at_Brooks_Falls%2C_Katmai_National_Park_%2810106346915%29.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Fishing_Brown_Bear_at_Brooks_Falls,_Katmai_National_Park_(10106346915).jpg",
+      "author": "Christoph Strässler from Oberdorf BL, Schweiz",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "katm-coastal-bears": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Brown_bear_on_beach_near_south_Hallo_Bay_meadows_%282%29%2C_GYRE_Trip%2C_Hallo_Bay%2C_June_2013_%28NPS_M._Fitz%29_%2816521575055%29.jpg/960px-Brown_bear_on_beach_near_south_Hallo_Bay_meadows_%282%29%2C_GYRE_Trip%2C_Hallo_Bay%2C_June_2013_%28NPS_M._Fitz%29_%2816521575055%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Brown_bear_on_beach_near_south_Hallo_Bay_meadows_%282%29%2C_GYRE_Trip%2C_Hallo_Bay%2C_June_2013_%28NPS_M._Fitz%29_%2816521575055%29.jpg/1920px-Brown_bear_on_beach_near_south_Hallo_Bay_meadows_%282%29%2C_GYRE_Trip%2C_Hallo_Bay%2C_June_2013_%28NPS_M._Fitz%29_%2816521575055%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Brown_bear_on_beach_near_south_Hallo_Bay_meadows_(2),_GYRE_Trip,_Hallo_Bay,_June_2013_(NPS_M._Fitz)_(16521575055).jpg",
+      "author": "Katmai National Park and Preserve",
+      "license": "Public domain"
+    }
+  ],
+  "katm-vtts": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Valley_of_Ten_Thousand_Smokes_from_Overlook_Cabin.jpg/960px-Valley_of_Ten_Thousand_Smokes_from_Overlook_Cabin.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Valley_of_Ten_Thousand_Smokes_from_Overlook_Cabin.jpg/1280px-Valley_of_Ten_Thousand_Smokes_from_Overlook_Cabin.jpg",
+      "width": 960,
+      "height": 642,
+      "page": "https://commons.wikimedia.org/wiki/File:Valley_of_Ten_Thousand_Smokes_from_Overlook_Cabin.jpg",
+      "author": "R. McGimsey",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Valley_of_Ten_Thousand_Smokes%2C_Katmai_National_Park_%2810106288236%29.jpg/960px-Valley_of_Ten_Thousand_Smokes%2C_Katmai_National_Park_%2810106288236%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Valley_of_Ten_Thousand_Smokes%2C_Katmai_National_Park_%2810106288236%29.jpg/1920px-Valley_of_Ten_Thousand_Smokes%2C_Katmai_National_Park_%2810106288236%29.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Valley_of_Ten_Thousand_Smokes,_Katmai_National_Park_(10106288236).jpg",
+      "author": "Christoph Strässler from Oberdorf BL, Schweiz",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Ten_Thousand_Smokes_Valley_-_panoramio.jpg/960px-Ten_Thousand_Smokes_Valley_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Ten_Thousand_Smokes_Valley_-_panoramio.jpg/1920px-Ten_Thousand_Smokes_Valley_-_panoramio.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Ten_Thousand_Smokes_Valley_-_panoramio.jpg",
+      "author": "Eric Spenle",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Ten_Thousand_Smokes_Valley_-_panoramio_%281%29.jpg/960px-Ten_Thousand_Smokes_Valley_-_panoramio_%281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Ten_Thousand_Smokes_Valley_-_panoramio_%281%29.jpg/1920px-Ten_Thousand_Smokes_Valley_-_panoramio_%281%29.jpg",
+      "width": 960,
+      "height": 595,
+      "page": "https://commons.wikimedia.org/wiki/File:Ten_Thousand_Smokes_Valley_-_panoramio_(1).jpg",
+      "author": "Eric Spenle",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Valley_of_Ten_Thousand_Smokes%2C_Katmai_National_Park_%2810106297443%29.jpg/960px-Valley_of_Ten_Thousand_Smokes%2C_Katmai_National_Park_%2810106297443%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Valley_of_Ten_Thousand_Smokes%2C_Katmai_National_Park_%2810106297443%29.jpg/1920px-Valley_of_Ten_Thousand_Smokes%2C_Katmai_National_Park_%2810106297443%29.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Valley_of_Ten_Thousand_Smokes,_Katmai_National_Park_(10106297443).jpg",
+      "author": "Christoph Strässler from Oberdorf BL, Schweiz",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/The_Confluence_%2813542760925%29.jpg/960px-The_Confluence_%2813542760925%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/The_Confluence_%2813542760925%29.jpg/1920px-The_Confluence_%2813542760925%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:The_Confluence_(13542760925).jpg",
+      "author": "Katmai National Park and Preserve",
+      "license": "Public domain"
+    }
+  ],
+  "katm-dumpling-mountain": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/KATM_Dumpling_Mountain_View_NPS_Photo_RTaylor_%2842387203342%29.jpg/960px-KATM_Dumpling_Mountain_View_NPS_Photo_RTaylor_%2842387203342%29.jpg",
+      "large": "https://upload.wikimedia.org/wikipedia/commons/9/98/KATM_Dumpling_Mountain_View_NPS_Photo_RTaylor_%2842387203342%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "width": 960,
+      "height": 641,
+      "page": "https://commons.wikimedia.org/wiki/File:KATM_Dumpling_Mountain_View_NPS_Photo_RTaylor_(42387203342).jpg",
+      "author": "Katmai National Park and Preserve",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/The_trailhead_to_Dumpling_Overlook_-_NPS_Photo-L_Law_%2851430031847%29.jpg/960px-The_trailhead_to_Dumpling_Overlook_-_NPS_Photo-L_Law_%2851430031847%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/The_trailhead_to_Dumpling_Overlook_-_NPS_Photo-L_Law_%2851430031847%29.jpg/1920px-The_trailhead_to_Dumpling_Overlook_-_NPS_Photo-L_Law_%2851430031847%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:The_trailhead_to_Dumpling_Overlook_-_NPS_Photo-L_Law_(51430031847).jpg",
+      "author": "KatmaiNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/5_Food_and_Gear_Cache_%2811426042146%29.jpg/960px-5_Food_and_Gear_Cache_%2811426042146%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/5_Food_and_Gear_Cache_%2811426042146%29.jpg/1920px-5_Food_and_Gear_Cache_%2811426042146%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:5_Food_and_Gear_Cache_(11426042146).jpg",
+      "author": "Katmai National Park and Preserve",
+      "license": "Public domain"
+    }
+  ],
+  "lacl-coastal-bears": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Brown_Bear%2C_Silver_Salmon_Creek.jpg/960px-Brown_Bear%2C_Silver_Salmon_Creek.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Brown_Bear%2C_Silver_Salmon_Creek.jpg/1280px-Brown_Bear%2C_Silver_Salmon_Creek.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Brown_Bear,_Silver_Salmon_Creek.jpg",
+      "author": "NPS/Kevyn Jalone",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Peninsular_Grizzly_Bear_%28Ursus_arctos_gyas%29_-_Flickr_-_Gregory_%22Slobirdr%22_Smith.jpg/960px-Peninsular_Grizzly_Bear_%28Ursus_arctos_gyas%29_-_Flickr_-_Gregory_%22Slobirdr%22_Smith.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Peninsular_Grizzly_Bear_%28Ursus_arctos_gyas%29_-_Flickr_-_Gregory_%22Slobirdr%22_Smith.jpg/1920px-Peninsular_Grizzly_Bear_%28Ursus_arctos_gyas%29_-_Flickr_-_Gregory_%22Slobirdr%22_Smith.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Peninsular_Grizzly_Bear_(Ursus_arctos_gyas)_-_Flickr_-_Gregory_%22Slobirdr%22_Smith.jpg",
+      "author": "Gregory \"Slobirdr\" Smith",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "lacl-crescent-lake": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Brown_bear_on_the_shore_of_Crescent_Lake_%2854382236228%29.jpg/960px-Brown_bear_on_the_shore_of_Crescent_Lake_%2854382236228%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Brown_bear_on_the_shore_of_Crescent_Lake_%2854382236228%29.jpg/1920px-Brown_bear_on_the_shore_of_Crescent_Lake_%2854382236228%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Brown_bear_on_the_shore_of_Crescent_Lake_(54382236228).jpg",
+      "author": "Eric Kilby from Somerville, MA, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Bear_Foraging_in_the_Morning_-_Flickr_-_Eric_Kilby.jpg/960px-Bear_Foraging_in_the_Morning_-_Flickr_-_Eric_Kilby.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Bear_Foraging_in_the_Morning_-_Flickr_-_Eric_Kilby.jpg/1920px-Bear_Foraging_in_the_Morning_-_Flickr_-_Eric_Kilby.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Bear_Foraging_in_the_Morning_-_Flickr_-_Eric_Kilby.jpg",
+      "author": "Eric Kilby from Somerville, MA, USA",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "lacl-proenneke-cabin": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Proenneke%27s_Cabin.jpg/960px-Proenneke%27s_Cabin.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Proenneke%27s_Cabin.jpg/1920px-Proenneke%27s_Cabin.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Proenneke%27s_Cabin.jpg",
+      "author": "Caitlin Marr",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Proenneke_Cabin_%2827955074846%29.jpg/960px-Proenneke_Cabin_%2827955074846%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Proenneke_Cabin_%2827955074846%29.jpg/1920px-Proenneke_Cabin_%2827955074846%29.jpg",
+      "width": 960,
+      "height": 1280,
+      "page": "https://commons.wikimedia.org/wiki/File:Proenneke_Cabin_(27955074846).jpg",
+      "author": "AlaskaNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Winter_changes_chain_%2827887559492%29.jpg/960px-Winter_changes_chain_%2827887559492%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Winter_changes_chain_%2827887559492%29.jpg/1920px-Winter_changes_chain_%2827887559492%29.jpg",
+      "width": 960,
+      "height": 1280,
+      "page": "https://commons.wikimedia.org/wiki/File:Winter_changes_chain_(27887559492).jpg",
+      "author": "AlaskaNPS",
+      "license": "Public domain"
+    }
+  ],
+  "lacl-port-alsworth": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Tanalian_Falls_-_panoramio.jpg/960px-Tanalian_Falls_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Tanalian_Falls_-_panoramio.jpg/1280px-Tanalian_Falls_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Tanalian_Falls_-_panoramio.jpg",
+      "author": "palm_ak",
+      "license": "CC BY 3.0"
+    }
+  ],
+  "lacl-tanalian-mountain": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Tanalian_Mountain.jpg/960px-Tanalian_Mountain.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Tanalian_Mountain.jpg/1920px-Tanalian_Mountain.jpg",
+      "width": 960,
+      "height": 311,
+      "page": "https://commons.wikimedia.org/wiki/File:Tanalian_Mountain.jpg",
+      "author": "Lake Clark National Park & Preserve",
+      "license": "Public domain"
+    }
   ]
 };

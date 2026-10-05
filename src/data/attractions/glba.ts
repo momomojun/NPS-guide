@@ -1,0 +1,291 @@
+import type { Attraction } from "./types";
+
+// Glacier Bay Lodge、游客中心、进湾游船和护林员活动只在夏季营业：2026 年是 5 月 22 日到 9 月 7 日
+const SEASON = [5, 6, 7, 8, 9];
+// 进湾游船、皮划艇都从 Glacier Bay Lodge 下方的公共码头出发
+const BARTLETT_DOCK = { lat: 58.4547, lon: -135.886, nameZh: "Bartlett Cove 公共码头（Glacier Bay Lodge 下方）" };
+// 码头边 Visitor Information Station 旁的停车场，走到酒店、特林吉特步道都只要几分钟
+const DOCK_PARKING = { lat: 58.45398, lon: -135.88596, nameZh: "Bartlett Cove 码头停车场（Visitor Information Station 旁）" };
+
+export const glacierBay: Attraction[] = [
+  {
+    id: "glba-visitor-center",
+    park: "glba",
+    nameZh: "冰川湾游客中心（Glacier Bay Lodge 二楼）",
+    nameEn: "Glacier Bay Visitor Center",
+    kind: "visitor",
+    area: "bartlett-cove",
+    lat: 58.45464,
+    lon: -135.8825,
+    durationMin: 30,
+    openMonths: SEASON,
+    closedNote:
+      "游客中心在 Glacier Bay Lodge 二楼，只在酒店营业季开（2026 年护林员服务台 5 月 22 日到 9 月 6 日每天 11:00–17:30 有人）；5 月和 9 月可以去码头边的 Visitor Information Station（5 月 1 日到 9 月 30 日每天 7:00–17:00）问情况，冬季两处都关，打公园电话 907-697-2230。",
+    summary:
+      "公园唯一的游客中心，在 Bartlett Cove 的 Glacier Bay Lodge 二楼：有自然史展览、公园影片、书店，还有能听湾里座头鲸叫声的水听器展台；夏季护林员每天在这里带森林步道讲解，每晚 6 点在楼上的放映厅有 30 分钟的讲座。",
+    tips: [
+      "冰川湾不收门票，不用买年卡",
+      "展览跟着酒店前台的时间开（约 6:00–23:00），护林员服务台 11:00–17:30 有人",
+      "到了先在这里或码头边的 Visitor Information Station 问潮汐和熊的出没情况",
+    ],
+    photoFile: "The Glacier Bay Lodge as seen from Bartlett Cove (d236c4dd-9b99-4137-9de4-9c3c6677586d).JPG",
+  },
+  {
+    id: "glba-day-boat",
+    park: "glba",
+    nameZh: "冰川湾全天游船（到 Margerie 冰川）",
+    nameEn: "Glacier Bay Day Boat Tour",
+    kind: "experience",
+    area: "bay",
+    lat: 59.0405,
+    lon: -137.065,
+    start: BARTLETT_DOCK,
+    durationMin: 495,
+    openMonths: SEASON,
+    closedNote:
+      "进湾的游船只在 Glacier Bay Lodge 营业季每天开一班（2026 年是 5 月 22 日到 9 月 7 日），冬季停航；这时只能坐小飞机从空中看，或者向有许可证的包船公司包船。",
+    bestMonths: [6, 7, 8],
+    permit: "向 Glacier Bay Lodge & Tours 订票（2026 年成人 $273.57、3–12 岁 $142.92，含午餐），夏季常订满",
+    mustSee: true,
+    summary:
+      "不坐邮轮的人进湾的主要方式，也是湾里唯一每天固定开的观光船：约 150 座的双体船从 Bartlett Cove 出发，沿西臂开到湾底，在 Margerie 和 Grand Pacific 冰川前停一阵，看高出水面七十多米的冰墙崩落入海。船上有 NPS 护林员一路讲解，常见座头鲸、海獭、斯特勒海狮和海鸟，岸边有时能看到棕熊和山羊。",
+    tips: [
+      "6:50 登船、7:15 开船、约 15:30 回到码头；住 Gustavus 的提前约好出租车或酒店接驳，早上赶到码头",
+      "船舱有暖气，甲板上很冷，带防水外套、帽子、手套和望远镜",
+      "去湾里背包露营、划皮划艇的人也坐这班船在指定地点上下船，皮划艇位置有限，要提前订",
+    ],
+    photoFile: "Glaciar Margerie, Parque Nacional Bahía del Glaciar, Alaska, Estados Unidos, 2017-08-19, DD 33.jpg",
+  },
+  {
+    id: "glba-forest-trail",
+    park: "glba",
+    nameZh: "森林步道（Forest Trail）",
+    nameEn: "Forest Trail",
+    kind: "hike",
+    area: "bartlett-cove",
+    lat: 58.45105,
+    lon: -135.88441,
+    start: { lat: 58.45447, lon: -135.88264, nameZh: "Glacier Bay Lodge 门口的步道口" },
+    durationMin: 60,
+    trail: {
+      via: [
+        { lat: 58.45389, lon: -135.88455 },
+        { lat: 58.45232, lon: -135.8826 },
+        { lat: 58.45105, lon: -135.88441 },
+        { lat: 58.45056, lon: -135.88744 },
+        { lat: 58.45093, lon: -135.89021 },
+        { lat: 58.45201, lon: -135.89193 },
+      ],
+      loop: true,
+    },
+    hike: { distanceMi: 1, difficulty: "easy", loop: true },
+    bestMonths: [5, 6, 7, 8],
+    mustSee: true,
+    summary:
+      "从酒店门口出发的 1 英里（约 1.6 公里）环线，穿过挂满苔藓的云杉、铁杉温带雨林，经过 Blackwater 池塘的观景台，再沿着营地边的海滩绕回来。脚下这片森林是冰川退走之后才长起来的，走一圈能看到冰川留下的痕迹和植物重新占领地面的过程。",
+    tips: [
+      "夏季护林员每天 13:30 从酒店门口带 90 分钟的讲解步行（2026 年 5 月 22 日到 9 月 7 日）",
+      "酒店到 Blackwater 池塘观景台一段可以推轮椅",
+      "这一带有黑熊和棕熊，结伴走、边走边出声",
+    ],
+    photoFile: "Exploring the Forest Loop Trail (2ee63d55-1dd8-b71c-0714-7a02d6af23b9).jpg",
+  },
+  {
+    id: "glba-tribal-house",
+    park: "glba",
+    nameZh: "Huna 部落屋（Xunaa Shuká Hít）与特林吉特步道",
+    nameEn: "Xunaa Shuká Hít (Huna Tribal House) & Tlingit Trail",
+    kind: "landmark",
+    area: "bartlett-cove",
+    lat: 58.45548,
+    lon: -135.88013,
+    start: DOCK_PARKING,
+    durationMin: 60,
+    trail: {
+      via: [
+        { lat: 58.45445, lon: -135.88566 },
+        { lat: 58.45457, lon: -135.88473 },
+        { lat: 58.45545, lon: -135.88152 },
+        { lat: 58.45548, lon: -135.88013 },
+      ],
+    },
+    hours: [{ open: "13:00", close: "17:30", months: [6, 7, 8] }],
+    bestMonths: [6, 7, 8],
+    mustSee: true,
+    summary:
+      "2016 年落成的特林吉特氏族屋（“Huna 祖先之屋”），是 18 世纪冰川把 Huna 人逼出这片海湾之后，湾里第一座永久的部落屋：正面画着巨大的鹰和渡鸦，屋里立着代表各氏族的雕刻屋柱。从码头沿海边的特林吉特步道走约 400 米就到，路上还有约 14 米长的座头鲸骨架、码头口的“疗愈图腾柱”和传统独木舟。",
+    tips: [
+      "2026 年 5 月 26 日到 8 月 29 日的周二到周六 13:00–17:30 开门，有部落讲解员，15:45、16:30 放两部关于部落屋的影片；其他时间只能在外面看",
+      "开放时间会因部落活动调整，去之前看 NPS 的活动日历",
+    ],
+    photoFile: "Tribal House (390fc59b-1dd8-b71b-0b5b-18256d8fbbd9).jpg",
+  },
+  {
+    id: "glba-bartlett-river",
+    park: "glba",
+    nameZh: "Bartlett 河步道",
+    nameEn: "Bartlett River Trail",
+    kind: "hike",
+    area: "bartlett-cove",
+    lat: 58.47257,
+    lon: -135.84782,
+    start: { lat: 58.45432, lon: -135.86915, nameZh: "Bartlett River / Bartlett Lake 步道口停车场" },
+    durationMin: 240,
+    trail: {
+      via: [
+        { lat: 58.46071, lon: -135.85845 },
+        { lat: 58.46572, lon: -135.85619 },
+        { lat: 58.46959, lon: -135.85414 },
+        { lat: 58.4712, lon: -135.84879 },
+        { lat: 58.47257, lon: -135.84782 },
+      ],
+    },
+    hike: { distanceMi: 4, difficulty: "moderate" },
+    bestMonths: [7, 8],
+    summary:
+      "往返约 6.4 公里，穿过云杉、铁杉雨林，沿着潮间带的潟湖走到 Bartlett 河入海口。夏末鲑鱼洄游时，河口常有海豹、水獭追着鱼，熊也会来；潮间带上常见驼鹿、郊狼和成群的水鸟。",
+    tips: [
+      "路上树根、石头多，雨后泥泞，穿防水的鞋；NPS 估计要 4–5 小时",
+      "鲑鱼季河口熊多，带熊喷雾、结伴走、出声，看到熊就绕开",
+      "约 400 米处分出去的 Bartlett Lake 步道往返约 16 公里，维护少、要自己认路",
+    ],
+    photoFile: "Glacier Bay National Park, Bartlett River and Lake Trail.jpg",
+  },
+  {
+    id: "glba-shore-walk",
+    park: "glba",
+    nameZh: "Bartlett Cove 海滩漫步",
+    nameEn: "Bartlett Cove Shoreline (toward Point Gustavus)",
+    kind: "hike",
+    area: "bartlett-cove",
+    lat: 58.44238,
+    lon: -135.89819,
+    start: { lat: 58.45353, lon: -135.88755, nameZh: "码头南边的海滩入口" },
+    durationMin: 90,
+    trail: {
+      via: [
+        { lat: 58.4496, lon: -135.89641 },
+        { lat: 58.44238, lon: -135.89819 },
+      ],
+    },
+    hike: { difficulty: "easy" },
+    bestMonths: [5, 6, 7, 8],
+    summary:
+      "从码头往南沿着海滩走，想走多远都行，一直能走到约 10 公里外的 Point Gustavus。退潮时露出大片礁石和潮池，能看到海星、海葵，海上常有海獭、海豹，天晴时对岸是终年积雪的 Fairweather 山脉。",
+    tips: [
+      "湾里潮差能到 7 米，出发前看好潮汐表，别被涨潮困在礁石或沙洲上",
+      "走远了沿岸常有熊，结伴、出声",
+    ],
+    photoFile: "Beach at Bartlett Cove 233.jpg",
+  },
+  {
+    id: "glba-kayak",
+    park: "glba",
+    nameZh: "Bartlett Cove 海上皮划艇",
+    nameEn: "Guided Sea Kayaking in Bartlett Cove",
+    kind: "experience",
+    area: "bartlett-cove",
+    lat: 58.46817,
+    lon: -135.91445,
+    start: BARTLETT_DOCK,
+    durationMin: 210,
+    openMonths: SEASON,
+    closedNote:
+      "皮划艇向导团和租船大约只在夏季营业（官网没写具体日期，NPS 的荒野服务季是 5 月 1 日到 9 月 30 日），冬季没有。",
+    bestMonths: [6, 7, 8],
+    permit:
+      "跟 Glacier Bay Sea Kayaks 报名：半日团 $125/人（9:00–12:30 或 14:00–17:30）、全日团 $195/人（9:00–15:00），10 岁以上、要会游泳；名额少，提前订",
+    mustSee: true,
+    summary:
+      "跟向导划双人皮划艇，在 Bartlett Cove 和 Lester 岛、Point Gustavus 一带安静的水湾里转，常见海豹、海獭、港湾鼠海豚和白头海雕，岸上偶尔有熊和驼鹿，运气好座头鲸会游进来。不需要经验；有经验的也可以自己租船。",
+    tips: [
+      "公司发雨衣、雨靴和划船装备，全日团含午餐，还能从 Gustavus 的住处接送",
+      "海水只有几度，里面穿速干和抓绒，别穿棉",
+      "想去湾里的冰川附近划，要坐游船去上游，再参加多日的露营团或自己带足装备（要先参加 NPS 的荒野说明会）",
+    ],
+    photoFile: "Kayaking from the Lodge (2df0fb95-1dd8-b71c-0753-6fda311e21aa).JPG",
+  },
+  {
+    id: "glba-flightseeing",
+    park: "glba",
+    nameZh: "冰川湾观光飞行",
+    nameEn: "Glacier Bay Flightseeing",
+    kind: "experience",
+    area: "bay",
+    lat: 58.87874,
+    lon: -137.02813,
+    start: { lat: 58.42232, lon: -135.70353, nameZh: "Gustavus 机场（Alaska Seaplanes 航站楼）" },
+    durationMin: 120,
+    openMonths: [4, 5, 6, 7, 8, 9],
+    closedNote: "观光飞行一般在 4 月到 9 月飞，冬季天短、天气差，大多只接包机。",
+    bestMonths: [5, 6, 7, 8],
+    permit: "从 Gustavus 出发要提前向 Alaska Seaplanes 等航空公司包机；从 Haines、Skagway 出发可以按人订 Mountain Flying Service 的团",
+    summary:
+      "从空中一次看完游船要开一整天的地方：小飞机从 Gustavus 起飞，沿着峡湾飞到西臂的 Johns Hopkins 湾、Margerie 和 Grand Pacific 冰川，背后是 4,600 多米高的 Fairweather 山；长线还会飞到外海岸，看 1958 年掀起巨浪的 Lituya 湾和直接崩落进太平洋的 La Perouse 冰川。",
+    tips: [
+      "Gustavus 出发多是整架包机，人多分摊更划算；Haines、Skagway 的 Mountain Flying Service 按人收（2026 年西臂线 Haines 出发 $400/人，约 1.2–1.5 小时），朱诺也有包机",
+      "看天气起飞，云低就改期，行程里留一点弹性",
+    ],
+    photoFile: "Fairweather Range aerial.jpg",
+  },
+  {
+    id: "glba-whale-watching",
+    park: "glba",
+    nameZh: "Point Adolphus 看鲸游船（Icy Strait）",
+    nameEn: "Icy Strait Whale Watching (Point Adolphus)",
+    kind: "experience",
+    area: "gustavus",
+    lat: 58.28583,
+    lon: -135.78167,
+    start: { lat: 58.39001, lon: -135.72974, nameZh: "Gustavus 码头（Dock Road 尽头）" },
+    durationMin: 210,
+    openMonths: [6, 7, 8],
+    closedNote:
+      "Gustavus 出发的看鲸游船只在夏季开（TAZ 一般 5 月底到 9 月初，以官网为准）；其余时间可以问 Gustavus 的钓鱼包船公司能不能包船看鲸。",
+    bestTime: ["morning"],
+    bestMonths: [7, 8],
+    permit: "向 TAZ Whale Watching（Glacier Bay Lodge 也代订）或 Gustavus 的包船公司预订",
+    outsidePark: true,
+    summary:
+      "Gustavus 对面的 Point Adolphus 是东南阿拉斯加最有名的座头鲸聚食地：游船开约 35 分钟穿过 Icy Strait，到了就熄火随鲸鱼漂，常看到座头鲸成群觅食、拍尾，也有虎鲸、斯特勒海狮、海獭和白头海雕。",
+    tips: [
+      "TAZ 每天一班，10:00 开、13:30 回到 Gustavus 码头，船上提供望远镜、零食和热饮",
+      "Icy Strait 风浪比湾里大，容易晕船的提前吃药",
+    ],
+    photoFile: "Lunge Feeding Humpback Whale (3aa1294d-1dd8-b71b-0b12-c10c510ac244).jpg",
+  },
+  {
+    id: "glba-nagoonberry-loop",
+    park: "glba",
+    nameZh: "Nagoonberry 环线与 Gustavus 海滩",
+    nameEn: "Nagoonberry Loop Trail (Gustavus Beach)",
+    kind: "hike",
+    area: "gustavus",
+    lat: 58.39601,
+    lon: -135.71053,
+    start: { lat: 58.40817, lon: -135.71262, nameZh: "Nagoonberry 步道停车场（Glen's Ditch Road 尽头）" },
+    durationMin: 75,
+    trail: {
+      via: [
+        { lat: 58.4075, lon: -135.7097 },
+        { lat: 58.40698, lon: -135.70159 },
+        { lat: 58.40507, lon: -135.70309 },
+        { lat: 58.39947, lon: -135.70864 },
+        { lat: 58.39688, lon: -135.71088 },
+        { lat: 58.39601, lon: -135.71053 },
+      ],
+      loop: true,
+    },
+    hike: { distanceMi: 2.2, difficulty: "easy", loop: true },
+    bestMonths: [5, 6, 7, 8, 9],
+    outsidePark: true,
+    summary:
+      "Gustavus 镇边一条平坦的 2.2 英里（约 3.5 公里）环线，属于大自然保护协会（TNC）的 Gustavus Forelands 保护区：从云杉林走进开满羽扇豆、野草莓的草甸，一直到 Icy Strait 边的沙滩。冰川退走后这里的地面每年还在抬升约 4 厘米，八十多年前的海边如今离海快 1.6 公里了。",
+    tips: [
+      "步道口在机场和加油站之间的 Glen's Ditch Road 尽头，留 45 分钟到 2 小时",
+      "春秋有成千上万的沙丘鹤路过，草甸边常有黑熊、驼鹿，出声走",
+    ],
+    photoFile:
+      "Take a rest and commune with nature along the Nagoonberry Loop Trail (dd10b63f-1dd8-b71c-0775-83ac512dbb99).jpg",
+  },
+];

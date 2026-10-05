@@ -36,6 +36,13 @@ import { mesaVerde } from "../src/data/attractions/meve.ts";
 import { petrifiedForest } from "../src/data/attractions/pefo.ts";
 import { greatSandDunes } from "../src/data/attractions/grsa.ts";
 import { blackCanyon } from "../src/data/attractions/blca.ts";
+import { hawaiiVolcanoes } from "../src/data/attractions/havo.ts";
+import { haleakala } from "../src/data/attractions/hale.ts";
+import { glacierBay } from "../src/data/attractions/glba.ts";
+import { gatesOfTheArctic } from "../src/data/attractions/gaar.ts";
+import { kobukValley } from "../src/data/attractions/kova.ts";
+import { katmai } from "../src/data/attractions/katm.ts";
+import { lakeClark } from "../src/data/attractions/lacl.ts";
 import { lodgingOptions } from "../src/data/lodging.ts";
 import { parks } from "../src/data/parks.ts";
 
@@ -79,6 +86,13 @@ export const attractions = [
   ...petrifiedForest,
   ...greatSandDunes,
   ...blackCanyon,
+  ...hawaiiVolcanoes,
+  ...haleakala,
+  ...glacierBay,
+  ...gatesOfTheArctic,
+  ...kobukValley,
+  ...katmai,
+  ...lakeClark,
 ];
 
 /** 补给点的查询范围在外包框四边各放宽这么多度，门户小镇都在里面 */

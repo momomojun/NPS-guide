@@ -296,4 +296,79 @@ export const tourSchedules: TourSchedule[] = [
       "https://www.nps.gov/meve/planyourvisit/wetherill-mesa.htm",
     ],
   },
+  {
+    id: "glba-day-boat",
+    scheduleYear: 2026,
+    periods: [{ from: "05-22", to: "09-07", departures: ["07:15"] }],
+    checkInMin: 25,
+    meetZh: "Bartlett Cove 公共码头（Glacier Bay Lodge 下方）",
+    noteZh:
+      "每天只有这一班：6:50 登船、7:15 开、约 15:30 回到码头（约 8 小时）；住 Gustavus 的要提前约好出租车或接驳车，早上赶到码头。",
+    sources: [
+      "https://www.nps.gov/glba/planyourvisit/glacier-bay-lodge.htm",
+      "https://www.visitglacierbay.com/tours/glacier-bay-day-tour/",
+    ],
+  },
+  {
+    id: "glba-kayak",
+    scheduleYear: 2026,
+    // Glacier Bay Sea Kayaks 官网写了几点出发，没写营业日期；这里先按 Glacier Bay Lodge、游船的营业季算
+    periods: [{ from: "05-22", to: "09-07", departures: ["09:00", "14:00"] }],
+    checkInMin: 15,
+    meetZh: "Bartlett Cove 码头边的海滩（住 Gustavus 的可以让公司开车来接）",
+    noteZh: "半日团 9:00–12:30、14:00–17:30，全日团 9:00–15:00；官网没写具体的营业日期，出发前以订票确认为准。",
+    sources: ["https://glacierbayseakayaks.com/day-trips/one-day-kayak-adventure/"],
+  },
+  {
+    id: "gaar-fairbanks-flight",
+    scheduleYear: 2026,
+    // 北阿拉斯加旅游公司的 Gates of the Arctic Air Adventure，2027 年也是 6 月 1 日到 8 月 31 日每天 19:00
+    periods: [{ from: "06-01", to: "08-31", departures: ["19:00"] }],
+    checkInMin: 60,
+    meetZh: "费尔班克斯机场东侧北阿拉斯加旅游公司航站（3820 University Ave S）",
+    noteZh: "全程约 4.5–5 小时，中途在 Coldfoot 落地休息，23:30–24:00 回到费尔班克斯；起飞前至少 1 小时报到。",
+    sources: [
+      "https://www.northernalaska.com/tours/gates-of-the-arctic-air-adventure/",
+      "https://www.alaskatravel.com/fairbanks/arctic-circle-fly/",
+    ],
+  },
+  {
+    id: "gaar-anaktuvuk-pass",
+    scheduleYear: 2026,
+    // Wright Air 的定期航班（2026 年 8 月时刻表）：工作日 9:00、13:00，周末只有 13:00；当天往返只能坐工作日早班
+    periods: [{ from: "01-01", to: "12-31", departures: ["09:00"], days: ["Mon", "Tue", "Wed", "Thu", "Fri"] }],
+    checkInMin: 60,
+    daysZh: "当天往返只能坐周一到周五早上 9:00 的航班；周末只有 13:00 一班，来不及当天回，博物馆周末也不开",
+    meetZh: "费尔班克斯机场东侧 Wright Air 航站（3842 University Ave S）",
+    noteZh:
+      "这是航空公司的定期航班，不是旅行团：航空公司希望提前 90 分钟报到，最晚 60 分钟；有时经停 Coldfoot。时刻表每季会变，订票时确认回程时间。",
+    sources: ["https://wrightairservice.com/wp-content/uploads/2026/08/CURRENT-TIMETABLE-2026-08.pdf"],
+  },
+  {
+    id: "katm-vtts",
+    scheduleYear: 2026,
+    // 景点的出发点是 King Salmon 的水上飞机码头：checkInMin 包括约 20 分钟的水上飞机和到了 Brooks Camp 先听的熊安全讲座
+    periods: [{ from: "06-05", to: "09-17", departures: ["09:00"] }],
+    checkInMin: 60,
+    meetZh: "Brooks Camp 下游观熊台（河口高架桥南头）集合；从 King Salmon 来的先坐 Katmai Air 的水上飞机（约 20 分钟）",
+    noteZh:
+      "每天只有这一班，9:00 开、16:00 回到 Brooks Camp，再坐水上飞机回 King Salmon；住 Brooks Lodge 或营地的直接去集合点。",
+    sources: [
+      "https://katmailand.com/katmai-national-park/valley-of-ten-thousand-smokes/",
+      "https://katmailand.com/wp-content/uploads/2026/02/2026-Brooks-Lodge-Trip-Planner.pdf",
+    ],
+  },
+  {
+    id: "lacl-crescent-lake",
+    scheduleYear: 2026,
+    // Rust's 的 Lake Clark National Park Bear Viewing：8 月 8:00、9 月 9:00 起飞，约 11 小时
+    periods: [
+      { from: "08-01", to: "08-31", departures: ["08:00"] },
+      { from: "09-01", to: "09-25", departures: ["09:00"] },
+    ],
+    checkInMin: 30,
+    meetZh: "安克雷奇 Lake Hood 南岸的 Rust's Flying Service",
+    noteZh: "全程约 11 小时，单程飞约 70 分钟；官网没写要提前多久到，按 30 分钟算，以确认邮件为准。看天气起飞。",
+    sources: ["https://flyrusts.com/bearviewing/lake-clark-national-park-bear-viewing/"],
+  },
 ];

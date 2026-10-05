@@ -78,8 +78,10 @@ const countyKey = (name) =>
 // ---- 1. 每个住处在哪个县（FCC） ----
 
 const counties = existsSync(COUNTY_CACHE) ? JSON.parse(readFileSync(COUNTY_CACHE, "utf8")) : {};
-// 阿拉斯加不归 GSA 管，加拿大的公园也不在范围里
-const outside = new Set(parks.filter((park) => park.country === "CA" || park.stateEn === "Alaska").map((park) => park.code));
+// 阿拉斯加、夏威夷不归 GSA 管（国防部另定标准），加拿大的公园也不在范围里
+const outside = new Set(
+  parks.filter((park) => park.country === "CA" || park.stateEn === "Alaska" || park.stateEn === "Hawaii").map((park) => park.code),
+);
 const stays = lodgingOptions.filter((stay) => !outside.has(stay.park));
 for (const stay of stays) {
   const key = `${stay.lat},${stay.lon}`;

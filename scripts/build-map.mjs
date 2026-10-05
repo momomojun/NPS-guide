@@ -1,4 +1,4 @@
-// 首页的线描地图：美国西部和加拿大落基山（本土的公园）+ 阿拉斯加小图。
+// 首页的线描地图：美国西部和加拿大落基山（本土的公园）+ 阿拉斯加、夏威夷两张小图。
 // 州界、省界来自 Natural Earth（公共领域），按 Albers 等积圆锥投影、化简后输出 SVG 路径，
 // 公园和参考城市的位置也一起投影好。
 // 输出 src/data/map.generated.ts。重新跑：npm run data:map
@@ -26,6 +26,7 @@ const CITIES = [
   { id: "yvr", nameZh: "温哥华", nameEn: "Vancouver", lat: 49.2827, lon: -123.1207, map: "west" },
   // 阿拉斯加小图只标安克雷奇：费尔班克斯离德纳里太近，标签会挤在一起
   { id: "anc", nameZh: "安克雷奇", nameEn: "Anchorage", lat: 61.2181, lon: -149.9003, map: "alaska" },
+  { id: "hnl", nameZh: "檀香山", nameEn: "Honolulu", lat: 21.3069, lon: -157.8583, map: "hawaii" },
 ];
 
 const VIEWS = {
@@ -96,8 +97,8 @@ const VIEWS = {
     states: ["Alaska"],
     focus: ["Alaska"],
     labels: { Alaska: "ALASKA" },
-    /** 三座公园都在中南部，只画这一块，否则德纳里、基奈峡湾、兰格尔的圆点会挤在安克雷奇周围；东边多留点地方放兰格尔的名字 */
-    bounds: { west: -155, east: -135, south: 58.8, north: 65.2 },
+    /** 北极圈里有北极之门、科伯克谷，东南狭长地带有冰川湾，西南有卡特迈：画整个阿拉斯加本土（不含阿留申群岛） */
+    bounds: { west: -167, east: -130, south: 54.6, north: 71.5 },
     margin: 0.05,
     /** 去掉阿留申群岛和东南狭长地带的小岛，只画本土 */
     keep: (ring) => {
@@ -106,7 +107,21 @@ const VIEWS = {
       return meanLon > -166 && meanLon < -129 && ring.length > 20;
     },
   },
+  hawaii: {
+    projection: { lon0: -157.5, lat0: 20.5, lat1: 19, lat2: 22 },
+    states: ["Hawaii"],
+    focus: ["Hawaii"],
+    labels: {},
+    /** 只画有人住的主要岛屿（尼豪岛到夏威夷大岛） */
+    bounds: { west: -160.4, east: -154.7, south: 18.8, north: 22.35 },
+    margin: 0.05,
+    /** 去掉西北夏威夷群岛的小岛（在 -161° 以西） */
+    keep: (ring) => ring.reduce((sum, [lon]) => sum + lon, 0) / ring.length > -161,
+  },
 };
+
+/** 公园画在哪张图上 */
+const viewOf = (park) => (park.region === "alaska" || park.region === "hawaii" ? park.region : "west");
 
 const rad = Math.PI / 180;
 
@@ -246,8 +261,9 @@ for (const [viewId, view] of Object.entries(VIEWS)) {
   const place = (lon, lat) => toView(project(lon, lat)).map(round);
   const parkPoints = Object.fromEntries(
     parks
-      .filter((park) => (viewId === "alaska") === (park.region === "alaska"))
-      .map((park) => [park.code, place(park.gateway.lon, park.gateway.lat)]),
+      .filter((park) => viewOf(park) === viewId)
+      // 只能飞进去的公园，gateway 是开车能到的出发城镇，圆点画在 mapAt（公园本身的位置）
+      .map((park) => [park.code, place((park.mapAt ?? park.gateway).lon, (park.mapAt ?? park.gateway).lat)]),
   );
   const cities = CITIES.filter((city) => city.map === viewId).map(({ id, nameZh, nameEn, lat, lon }) => {
     const [x, y] = place(lon, lat);
@@ -275,6 +291,8 @@ export interface MapView {
 export const westMap: MapView = ${JSON.stringify(output.west)};
 
 export const alaskaMap: MapView = ${JSON.stringify(output.alaska)};
+
+export const hawaiiMap: MapView = ${JSON.stringify(output.hawaii)};
 `,
 );
 console.log(`已写入 ${OUTPUT.pathname}`);

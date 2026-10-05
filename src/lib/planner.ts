@@ -88,6 +88,8 @@ const DAY_LIMIT_MIN = 11 * 60;
 export const LATE_RETURN = 22 * 60;
 /** 早上开车超过这个时长，就不安排赶日出了 */
 const SUNRISE_MAX_DRIVE = 60;
+/** 专门去看日出的体验（哈莱阿卡拉山顶日出：大家凌晨三四点从山下出发）：早上开车再久也排日出，不超过这么久 */
+const SUNRISE_TRIP_MAX_DRIVE = 150;
 /** 最后一天开回机场、城市：回程超过这个时长就不等日落、不等天黑 */
 const LEAVING_EVENING_MAX_DRIVE = 60;
 /** 单段车程超过这个时长，建议飞过去或者拆成两段旅行 */
@@ -349,9 +351,14 @@ function eveningMinutes(context: Omit<DayContext, "sun">, last: PlanStop | undef
 
 export type LodgingLookup = (day: number) => { from?: LodgingPoint; to?: LodgingPoint; date?: string | null; drive?: number };
 
+/** 最忙那天在这么久以内都算一样轻松（和自动生成攻略正常节奏的上限一样），再比各天平不平均（平方和），见 splitIntoDays */
+const SPLIT_COMFORT_MIN = 9 * 60;
+
 /**
  * 把排好顺序的景点切成 dayCount 天，让最忙的一天尽量轻松（线性划分，动态规划）；最忙那天一样时，
  * 选各天更平均的分法（工作量平方和小的），不然别的天怎么分都算一样好，常常把最后一天空着。
+ * 最忙那天不到 10 小时的都算一样：只为了让最忙那天少半小时，就把顺路的景点挪到第二天、从住处专门折回去（Dalton 公路上的北极圈），
+ * 平方和会大，就不这么切。
  * 一天的工作量 = 景点停留时间 + 当天的车程（含从住处出发、回住处，或跨公园的来程）。
  */
 export function splitIntoDays(sequence: PlanStop[], dayCount: number, lodgingFor?: LodgingLookup): PlanStop[][] {
@@ -371,8 +378,12 @@ export function splitIntoDays(sequence: PlanStop[], dayCount: number, lodgingFor
     if (j <= i) {
       // 没安排景点的一天：要换地方（比如最后一天开回机场）也得开车，按从前一个景点开到当晚住处估；连住同一家是休息日
       const { from, to } = lodging;
-      if (!to || !sequence[i - 1] || from?.id === to.id) return 0;
-      return eveningMinutes(lodging, sequence[i - 1]) * drive;
+      if (!to || from?.id === to.id) return 0;
+      if (sequence[i - 1]) return eveningMinutes(lodging, sequence[i - 1]) * drive;
+      // 第一天就没景点、却要从机场开到住处（费尔班克斯到 Coldfoot 6 小时）：按路过第一个景点估。
+      // 不算的话这一天算成 0，切分时会把它空着，第二天再从住处折回去看路上的景点
+      if (!from || !sequence[i]) return 0;
+      return (morningMinutes(lodging, sequence[i]) + eveningMinutes(lodging, sequence[i])) * drive;
     }
     return (
       duration[j] -
@@ -391,7 +402,7 @@ export function splitIntoDays(sequence: PlanStop[], dayCount: number, lodgingFor
     for (let j = 0; j <= n; j++) {
       for (let i = 0; i <= j; i++) {
         const dayLoad = load(i, j, d - 1);
-        const value = Math.max(best[d - 1][i], dayLoad);
+        const value = Math.max(best[d - 1][i], dayLoad, SPLIT_COMFORT_MIN);
         const even = spread[d - 1][i] + dayLoad ** 2;
         // 最忙那天差不到 1 分钟算一样，比平均；再一样就选更靠后的切点，让空闲日留在行程末尾
         if (value < best[d][j] - 1 || (value <= best[d][j] + 1 && even <= spread[d][j])) {
@@ -416,11 +427,13 @@ export function splitIntoDays(sequence: PlanStop[], dayCount: number, lodgingFor
 type Slot = "sunrise" | "sunset" | "night" | "any";
 
 /** 只在晚上才有的（星空），或者只在日落才有的体验（日落漫步、火瀑布）：别的时间去没意义；日落观景点这类别的时间也能看的不算 */
-export function onlyAt(stop: PlanStop): "sunset" | "night" | null {
+export function onlyAt(stop: PlanStop): "sunrise" | "sunset" | "night" | null {
   const times = stop.bestTime ?? [];
   if (times.length === 0) return null;
   if (times.every((time) => time === "night")) return "night";
   if (stop.kind === "experience" && times.every((time) => time === "sunset")) return "sunset";
+  // 专门去看日出的（哈莱阿卡拉山顶日出）：只能排在当天第一站，刚落地的那天赶不上
+  if (stop.kind === "experience" && times.every((time) => time === "sunrise")) return "sunrise";
   return null;
 }
 
@@ -504,9 +517,14 @@ function simulate(
 ): DayTimeline {
   const morning = drives[0] ?? 0;
   const sunriseStart = sun.sunrise - 20;
+  const sunriseTrip = stops[0]?.kind === "experience" && stops[0].bestTime?.length === 1 && stops[0].bestTime[0] === "sunrise";
   const allowSunrise =
     !arriving &&
-    (startAt !== undefined ? startAt + morning <= sunriseStart : fromLodging ? morning <= SUNRISE_MAX_DRIVE : morning === 0);
+    (startAt !== undefined
+      ? startAt + morning <= sunriseStart
+      : fromLodging
+        ? morning <= (sunriseTrip ? SUNRISE_TRIP_MAX_DRIVE : SUNRISE_MAX_DRIVE)
+        : morning === 0);
   const slots = slotsFor(stops, allowSunrise, !leaving || returnDrive <= LEAVING_EVENING_MAX_DRIVE);
   let departAt =
     startAt !== undefined
@@ -575,7 +593,7 @@ function simulate(
       }
     }
     const end = start + stop.durationMin;
-    // 只在日落、晚上才有的（日落漫步、火瀑布、星空）没排在当天最后
+    // 只在日落、晚上才有的（日落漫步、火瀑布、星空）没排在当天最后；只在日出才有的没排在日出
     const needs = onlyAt(stop);
     if (!departures[index] && needs && slots[index] !== needs && !(needs === "sunset" && slots[index] === "night")) {
       warnings.push("offTime");

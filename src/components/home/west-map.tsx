@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { alaskaMap, westMap, type MapView } from "@/data/map.generated";
+import { alaskaMap, hawaiiMap, westMap, type MapView } from "@/data/map.generated";
 import { MapDeclutter } from "./map-declutter";
 import { LABEL_CLASS, type Side } from "./map-sides";
 
@@ -22,7 +22,8 @@ const LABEL_SIDE: Record<string, Side> = {
   lavo: "right",
   yose: "right",
   seki: "left",
-  chis: "left",
+  // 左下角是夏威夷小图
+  chis: "above",
   yell: "right",
   grte: "left",
   deva: "below",
@@ -44,7 +45,12 @@ const LABEL_SIDE: Record<string, Side> = {
   glac: "right",
   // 左边就是小图边框
   kefj: "below",
-  wrst: "right",
+  // 阿拉斯加小图：科伯克谷右边紧挨着北极之门，卡特迈、克拉克湖右边是基奈峡湾
+  kova: "left",
+  katm: "left",
+  lacl: "left",
+  // 夏威夷小图：夏威夷火山在大岛东南角，右边就是小图边框
+  havo: "left",
   // 白沙、卡尔斯巴德洞窟挨着地图右下角，石化林右边是新墨西哥的州名
   whsa: "left",
   cave: "above",
@@ -154,19 +160,25 @@ function Marker({ park, view, compact = false }: { park: MapPark; view: MapView;
   );
 }
 
-/** 首页的线描地图：美国西部的公园 + 阿拉斯加小图（放在右上角蒙大拿一带的空白处） */
+/**
+ * 首页的线描地图：美国西部的公园 + 阿拉斯加小图（放在右上角萨斯喀彻温、蒙大拿一带的空白处）
+ * + 夏威夷小图（左下角加州外海）；手机上两张小图排在大图下面
+ */
 export function WestMap({
   parks,
   cityNames,
   alaskaLabel,
+  hawaiiLabel,
 }: {
   /** 按热门程度排好：名字挤在一起时排在前面的先摆 */
   parks: MapPark[];
   /** 城市 id → 当前语言的名字 */
   cityNames: Record<string, string>;
   alaskaLabel: string;
+  hawaiiLabel: string;
 }) {
   const alaskaParks = parks.filter((park) => alaskaMap.parks[park.code]);
+  const hawaiiParks = parks.filter((park) => hawaiiMap.parks[park.code]);
   return (
     <div className="relative">
       <MapDeclutter className="relative" style={{ aspectRatio: `${westMap.width} / ${westMap.height}` }}>
@@ -176,12 +188,22 @@ export function WestMap({
         ))}
       </MapDeclutter>
 
-      <div className="mt-6 w-2/3 border border-line bg-paper p-4 sm:absolute sm:top-0 sm:right-0 sm:mt-0 sm:w-[30%]">
-        <p className="eyebrow text-mute">{alaskaLabel}</p>
+      <div className="mt-6 w-full border border-line bg-paper p-4 sm:absolute sm:top-0 sm:right-0 sm:mt-0 sm:w-[36%]">
+        <p className="eyebrow break-keep text-mute">{alaskaLabel}</p>
         <MapDeclutter className="relative mt-2" style={{ aspectRatio: `${alaskaMap.width} / ${alaskaMap.height}` }}>
           <Shapes view={alaskaMap} cityNames={cityNames} textScale={3} />
           {alaskaParks.map((park) => (
             <Marker key={park.code} park={park} view={alaskaMap} compact />
+          ))}
+        </MapDeclutter>
+      </div>
+
+      <div className="mt-4 w-1/2 border border-line bg-paper p-3 sm:absolute sm:bottom-0 sm:left-0 sm:mt-0 sm:w-[22%]">
+        <p className="eyebrow break-keep text-mute">{hawaiiLabel}</p>
+        <MapDeclutter className="relative mt-2" style={{ aspectRatio: `${hawaiiMap.width} / ${hawaiiMap.height}` }}>
+          <Shapes view={hawaiiMap} cityNames={cityNames} textScale={4} />
+          {hawaiiParks.map((park) => (
+            <Marker key={park.code} park={park} view={hawaiiMap} compact />
           ))}
         </MapDeclutter>
       </div>

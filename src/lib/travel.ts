@@ -9,11 +9,17 @@ import {
 
 // 车程表里没有的组合（比如新加了景点还没重新生成表），先按半小时算
 const FALLBACK_MIN = 30;
+/**
+ * 车程表里有、但两点之间不通公路的（OSRM 算不出来：夏威夷和本土、只能坐飞机去的 Gustavus 和 King Salmon）：
+ * 按这么久算，排行程时会提示这一段太远、建议飞过去
+ */
+export const NO_ROAD_MIN = 12 * 60;
 
 const indexCache = new WeakMap<TravelTable, Map<string, number>>();
 
-function lookup(table: TravelTable | undefined, from: string, to: string): number | null {
-  if (!table) return null;
+/** 表里没有这两个点是 undefined，有但不通公路是 null */
+function lookup(table: TravelTable | undefined, from: string, to: string): number | null | undefined {
+  if (!table) return undefined;
   let index = indexCache.get(table);
   if (!index) {
     index = new Map(table.nodes.map((node, i) => [node, i]));
@@ -21,9 +27,11 @@ function lookup(table: TravelTable | undefined, from: string, to: string): numbe
   }
   const i = index.get(from);
   const j = index.get(to);
-  if (i === undefined || j === undefined) return null;
+  if (i === undefined || j === undefined) return undefined;
   return table.minutes[i][j];
 }
+
+const minutesOr = (value: number | null | undefined) => (value === undefined ? FALLBACK_MIN : value === null ? NO_ROAD_MIN : value);
 
 const pairIndexCache = new WeakMap<PairTable, { a: Map<string, number>; b: Map<string, number> }>();
 
@@ -65,15 +73,16 @@ export function travelMinutes(from: string, to: string): number {
   const fromPark = parkOf(from);
   const toPark = parkOf(to);
   if (fromPark === toPark) {
-    return lookup(parkTravel[fromPark], tableNode(from), tableNode(to)) ?? FALLBACK_MIN;
+    return minutesOr(lookup(parkTravel[fromPark], tableNode(from), tableNode(to)));
   }
   // 相邻公园直接查跨园表，不用绕两边的定位点
   const direct = lookupPair(from, to, fromPark, toPark);
   if (direct !== null) return direct;
-  const toGateway = lookup(parkTravel[fromPark], tableNode(from), "gateway") ?? 0;
-  const between = lookup(interParkTravel, fromPark, toPark) ?? FALLBACK_MIN;
-  const fromGateway = lookup(parkTravel[toPark], "gateway", tableNode(to)) ?? 0;
-  return toGateway + between + fromGateway;
+  const toGateway = lookup(parkTravel[fromPark], tableNode(from), "gateway");
+  const between = lookup(interParkTravel, fromPark, toPark);
+  const fromGateway = lookup(parkTravel[toPark], "gateway", tableNode(to));
+  if (toGateway === null || between === null || fromGateway === null) return NO_ROAD_MIN;
+  return (toGateway ?? 0) + (between ?? FALLBACK_MIN) + (fromGateway ?? 0);
 }
 
 /** 从机场开到公园定位点的分钟数（OSRM）；表里没有就是 null */

@@ -68,4 +68,10 @@ export const airports: Record<string, Airport> = {
     lat: 38.5324,
     lon: -106.9398,
   },
+  ITO: { code: "ITO", nameZh: "希洛国际机场", city: "希洛", lat: 19.7214, lon: -155.0454 },
+  KOA: { code: "KOA", nameZh: "科纳国际机场", city: "凯卢阿-科纳", lat: 19.7388, lon: -156.0456 },
+  OGG: { code: "OGG", nameZh: "卡胡卢伊机场", city: "卡胡卢伊", lat: 20.8963, lon: -156.4318 },
+  GST: { code: "GST", nameZh: "古斯塔夫斯机场", city: "古斯塔夫斯（Gustavus，冰川湾）", lat: 58.42167, lon: -135.70219 },
+  OTZ: { code: "OTZ", nameZh: "科策布机场（Ralph Wien 纪念机场）", city: "科策布（Kotzebue）", lat: 66.89102, lon: -162.60215 },
+  HOM: { code: "HOM", nameZh: "霍默机场", city: "霍默（Homer）", lat: 59.64318, lon: -151.49288 },
 };

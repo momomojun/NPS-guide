@@ -18,7 +18,7 @@ import type { ParkAlert } from "@/lib/alert-match";
 import { fill, formatDuration, formatMonths } from "@/i18n/format";
 import { monthOf } from "@/lib/dates";
 import { moonNight } from "@/lib/moon";
-import { entryWindow, lodgingLeg, parkingOn, type TimelineEntry } from "@/lib/planner";
+import { entryWindow, lodgingLeg, onlyAt, parkingOn, type TimelineEntry } from "@/lib/planner";
 import { formatClock } from "@/lib/sun";
 import { datedSchedule, departuresOn, runsOn, tourScheduleOf, tourSeason } from "@/lib/tours";
 import { moveItem, removeItem, setItemStatus } from "@/lib/trip-edit";
@@ -397,7 +397,10 @@ export function DayCard({
                     ...(moon ? [moon] : []),
                     ...entry.warnings
                       .filter((w) => w !== "parkingFull" || !parking)
-                      .map((w) => ({ text: t.warnings[w], tone: "warn" as Tone })),
+                      .map((w) => ({
+                        text: w === "offTime" && onlyAt(stop) === "sunrise" ? t.warnings.offTimeSunrise : t.warnings[w],
+                        tone: "warn" as Tone,
+                      })),
                   ];
               const alerts = finished ? [] : alertsFor(stop);
               return (

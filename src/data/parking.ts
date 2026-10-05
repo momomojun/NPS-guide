@@ -267,6 +267,21 @@ export const parkingRules: Record<string, ParkingRule> = Object.fromEntries([
     noteZh: "10:30 前或者 15:30 后到；也可以拼车、骑车，或者从 Seward 坐接驳车过来。",
     source: "https://home.nps.gov/kefj/planyourvisit/exit-glacier-area.htm",
   }),
+  ...lot(["havo-nahuku"], {
+    lot: "Nāhuku 熔岩管停车场（14 个车位）",
+    fullBy: "09:00",
+    freeAfter: "17:00",
+    months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    noteZh: "停满了就停约 800 米外的 Kīlauea Iki 观景台停车场走过来（那里也常满），或者从 Devastation 步道口经 Byron Ledge 走过来；不要沿 Crater Rim Drive 路边走。",
+    source: "https://www.nps.gov/havo/planyourvisit/day-hike-nahuku.htm",
+  }),
+  ...lot(["havo-kilauea-iki"], {
+    lot: "Kīlauea Iki 观景台停车场（64 个车位）",
+    fullBy: "10:00",
+    months: [12, 1, 6, 7],
+    noteZh: "停满了就停 Puʻupuaʻi 观景台或 Devastation 步道口，经 Byron Ledge 走到 Kīlauea Iki（往返多走约 3–4 公里），也可以从 Kīlauea 游客中心停车场沿火山口边缘步道过来。",
+    source: "https://www.nps.gov/havo/planyourvisit/eruption-viewing.htm",
+  }),
 ]);
 
 /** 整理的日期 */

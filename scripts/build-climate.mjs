@@ -154,7 +154,11 @@ for (const park of parks) {
       console.log(`${park.code}/${area}: 没有景点，跳过`);
       continue;
     }
-    const points = stops.map((a) => a.start ?? a);
+    // 停车场、步道口离景点不远时用它（观景台挂在崖边，海拔会差很多）；坐飞机、坐船去的体验，出发点在几十上百公里外的城镇，用目的地
+    // 坐飞机进去爬的山（克拉克湖的 Tanalian 山）位置是山顶，不代表这个片区，片区里有别的景点就不用它
+    const flyInHike = (a) => a.kind === "hike" && a.start && distanceKm(a.start, a) >= 20;
+    const usable = stops.some((a) => !flyInHike(a)) ? stops.filter((a) => !flyInHike(a)) : stops;
+    const points = usable.map((a) => (a.start && distanceKm(a.start, a) < 20 ? a.start : a));
     const center = { lat: mean(points.map((p) => p.lat)), lon: mean(points.map((p) => p.lon)) };
     const nearest = points.reduce((best, p) => (distanceKm(p, center) < distanceKm(best, center) ? p : best));
     const lat = round(nearest.lat, 3);

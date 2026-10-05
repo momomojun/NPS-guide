@@ -9,6 +9,7 @@ export type RegionId =
   | "utah"
   | "southwest"
   | "alaska"
+  | "hawaii"
   | "canada";
 
 export interface Park {
@@ -53,6 +54,11 @@ export interface Park {
   areas: Record<string, string>;
   /** 查询周边充电桩、补给点，以及排行程时的起点 */
   gateway: { nameZh: string; lat: number; lon: number };
+  /**
+   * 首页地图上的圆点画在哪：不填就是 gateway。只能飞进去的公园，gateway 是开车能到的出发城镇（卡特迈的 Homer），
+   * 圆点要画在公园本身的位置
+   */
+  mapAt?: { lat: number; lon: number };
   /** IANA 时区，用于显示日出日落时间 */
   timeZone: string;
   /** 常用机场 IATA 代码，按推荐顺序 */
@@ -76,6 +82,7 @@ export const regionOrder: RegionId[] = [
   "utah",
   "southwest",
   "alaska",
+  "hawaii",
   "canada",
 ];
 
@@ -944,7 +951,7 @@ export const parks: Park[] = [
     gateway: { nameZh: "德纳里游客中心", lat: 63.7373, lon: -148.8963 },
     timeZone: "America/Anchorage",
     airports: ["ANC", "FAI"],
-    nearby: ["kefj", "wrst"],
+    nearby: ["kefj", "wrst", "gaar", "lacl"],
     nonresidentSurcharge: false,
     lodgingTip:
       "园内几乎没有普通酒店，住宿集中在入口外的 Nenana Canyon（酒店、餐厅、漂流公司都在这一带）和北边约 15 分钟的 Healy；夏季旺季房价高、要早订。南边的 Cantwell、Talkeetna 适合顺路过夜。",
@@ -971,7 +978,7 @@ export const parks: Park[] = [
     gateway: { nameZh: "基奈峡湾国家公园游客中心（Seward）", lat: 60.11628, lon: -149.43973 },
     timeZone: "America/Anchorage",
     airports: ["ANC"],
-    nearby: ["dena", "wrst"],
+    nearby: ["dena", "wrst", "katm", "lacl"],
     nonresidentSurcharge: false,
     lodgingTip:
       "园内没有开车能到的住宿，大家都住 Seward：港口一带酒店、民宿最多，走路就到游船码头，到 Exit Glacier 约 20 分钟；夏季房价高，7 月 4 日前后和周末很早订满。想便宜安静可以住北边约 35 分钟的 Moose Pass 或 1 小时的 Cooper Landing；从安克雷奇当天来回单程要开约 2.5 小时，也可以坐阿拉斯加铁路的火车。",
@@ -1003,6 +1010,190 @@ export const parks: Park[] = [
     nonresidentSurcharge: false,
     lodgingTip:
       "园内住宿集中在 McCarthy 和 Kennecott，只在夏季营业、房间少，要早订；路尽头步行桥的西岸有营地和小木屋。去 McCarthy 前一晚可以住 Copper Center 或 Glennallen（全年有旅馆、加油站和超市），第二天一早出发，到路尽头约 4–4.5 小时；多数租车公司不允许开砂石路，订车前先问清楚。",
+  },
+  {
+    code: "glba",
+    nameZh: "冰川湾",
+    nameEn: "Glacier Bay",
+    region: "alaska",
+    tagline: "潮水冰川与座头鲸的海湾",
+    stateEn: "Alaska",
+    hero: "glba-day-boat",
+    intro:
+      "250 多年前整个海湾还被一条大冰川填满，一直伸到湾口的 Icy Strait；之后冰川退了约 100 公里，留下一条长长的峡湾，湾底的 Margerie、Grand Pacific 等潮水冰川还在往海里崩落，夏天湾里有座头鲸、海獭、海豹，岸上有熊和山羊。这里是 Huna 特林吉特人（Xunaa Lingít）世代的家园。多数人是坐邮轮在湾里看一天；自己来要先飞到 Gustavus（从朱诺没有公路），住在湾口的 Bartlett Cove 或 Gustavus 小镇，再坐每天一班的游船进湾。",
+    bestMonths: [6, 7, 8],
+    seasonNote:
+      "5 月下旬到 9 月上旬 Glacier Bay Lodge、游客中心和进湾的游船都开（2026 年是 5 月 22 日到 9 月 7 日），7 月人最多；座头鲸 6 月中以后多起来，7–8 月最多。4–6 月雨相对少，9–10 月雨最多；冬季几乎所有服务都关，只有小飞机进出。",
+    areas: {
+      "bartlett-cove": "Bartlett Cove（公园总部）",
+      bay: "冰川湾里（坐船 · 坐飞机）",
+      gustavus: "Gustavus 小镇 · Icy Strait",
+    },
+    gateway: { nameZh: "冰川湾游客中心（Bartlett Cove 的 Glacier Bay Lodge 二楼）", lat: 58.45464, lon: -135.8825 },
+    timeZone: "America/Juneau",
+    airports: ["GST"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内只有 Bartlett Cove 的 Glacier Bay Lodge（2026 年 5 月 21 日到 9 月 8 日营业），游客中心在酒店二楼，进湾的游船就在门口码头上船；其余住处都在约 16 公里外的 Gustavus 小镇，有民宿、小木屋和几家包三餐的度假屋，夏季要早订。从朱诺没有公路：Alaska Airlines 夏季每天一班喷气机（2026 年 6 月 6 日到 8 月 30 日，约 30 分钟），Alaska Seaplanes 的小飞机全年每天都飞，州营渡轮夏季大约每周两班。Gustavus 只有一家小租车行，多数人靠酒店接驳车、出租车和自行车。不少人是坐邮轮在湾里看一天，不上岸过夜；Bartlett Cove 还有一个免费、不能预约的步行进入式帐篷营地。",
+  },
+  {
+    code: "gaar",
+    nameZh: "北极之门",
+    nameEn: "Gates of the Arctic",
+    region: "alaska",
+    tagline: "没有路也没有步道的北极荒野",
+    stateEn: "Alaska",
+    hero: "gaar-arrigetch-flight",
+    intro:
+      "美国最北、面积第二大的国家公园，整个在北极圈以北：布鲁克斯山脉中部 3.4 万平方公里的荒野里没有一条公路、一条步道，也没有任何设施，一年只有一万多人次来。名字是 1930 年代 Bob Marshall 起的，他把 Koyukuk 河北叉两岸对峙的 Frigid Crags 和 Boreal Mountain 叫作“北极之门”。普通游客有两种去法：从费尔班克斯沿砂石为主的 Dalton 公路开约 6 小时到 Coldfoot、Wiseman，公园东界就在公路以西几公里到十来公里，但没有路，要自己越野走进去；或者从 Coldfoot、Bettles、费尔班克斯坐小飞机飞进山里，在湖上降落看一看。",
+    bestMonths: [6, 7, 8],
+    seasonNote:
+      "6–8 月是主要季节：午夜太阳、苔原开花，Coldfoot 的观光飞行 6 月到 9 月中营业，但 6 月中到 8 月蚊子极多；8 月下旬到 9 月初秋色最好、开始能看到极光，也可能下雪。Dalton 公路全年通车，但 10 月下旬到次年 4 月上旬冰雪、极寒，BLM 不建议自驾，冬天去 Coldfoot 看极光一般跟团。",
+    areas: {
+      "dalton-south": "Dalton 公路南段（育空河 · 北极圈）",
+      "coldfoot-wiseman": "Coldfoot · Wiseman",
+      "dalton-north": "Dalton 公路北段（Sukakpak 山 · Atigun 山口）",
+      "fly-in": "坐小飞机进园",
+    },
+    gateway: { nameZh: "北极跨部门游客中心（Coldfoot，Dalton 公路 175 英里处）", lat: 67.25274, lon: -150.18711 },
+    timeZone: "America/Anchorage",
+    airports: ["FAI"],
+    nearby: ["dena"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内没有任何住宿和营地设施。开车去的话住 Dalton 公路 175 英里处的 Coldfoot Camp：全年营业，旅馆由输油管工地的工人宿舍改建，每间两张单人床、带卫浴，2026 年 $269/晚，夏季旅行团多、要早订；也可以住往北约 20 分钟的 Wiseman 村里两家家庭经营的小木屋民宿（房间很少），自带帐篷的可以住 Coldfoot Camp 的免费营地或北边 5 英里的 BLM Marion Creek 营地。往返路上的第一晚、最后一晚住费尔班克斯，想把 6 小时的路拆开可以住 56 英里处育空河边的 Yukon River Camp。另一个门户村 Bettles 只能坐飞机去（从费尔班克斯约 1 小时），村里的 Bettles Lodge 全年营业，常和观光飞行、极光打包卖；园内和园边还有 Iniakuk Lake 这类只能飞进去的荒野小屋，都要提前订。",
+  },
+  {
+    code: "kova",
+    nameZh: "科伯克谷",
+    nameEn: "Kobuk Valley",
+    region: "alaska",
+    tagline: "北极圈里的沙丘与驯鹿渡口",
+    stateEn: "Alaska",
+    hero: "kova-sand-dunes",
+    intro:
+      "布鲁克斯山脉南麓的一片宽谷，在北极圈以北约 50 公里，最出名的是冰期留下的沙丘：三片沙丘共约 78 平方公里，最大的科伯克大沙丘高约 30 米，夏天沙面能晒到 38°C，是北极最大的活动沙丘。Kobuk（Iñupiaq 语“大河”）河从谷中穿过，西部北极驯鹿群每年春秋渡河，Onion Portage 一带的渡口已有 8,000 多年的狩猎历史。公园没有路、步道和任何设施，要从海边小城 Kotzebue 坐小飞机进去，降落在沙丘上或河面上。",
+    bestMonths: [7, 8],
+    seasonNote:
+      "6–9 月才有观光飞行和背包客：7 月最暖，6、7 月蚊子最多，8、9 月虫子少、秋色好，晚上开始能看到极光；驯鹿秋季南迁渡河 2000 年以前多在 8 月中下旬开始，近年常拖到 9 月以后甚至 10–11 月。9 月中下旬河面开始结冰，10 月到次年 5 月冰雪覆盖，只有天气好时的包机。",
+    areas: {
+      kotzebue: "Kotzebue（科策布）",
+      "kobuk-valley": "科伯克河谷（坐小飞机）",
+    },
+    gateway: { nameZh: "西北极遗产中心（Kotzebue 的公园游客中心）", lat: 66.89257, lon: -162.6052 },
+    mapAt: { lat: 67.05465, lon: -158.9057 },
+    timeZone: "America/Nome",
+    airports: ["OTZ"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内没有住宿和营地设施，进园前后都住 Kotzebue：Nullagvik 酒店最大（79 间房，原住民公司 NANA 开的），离机场、游客中心和小飞机机库都走得到；另有几家家庭民宿，有的挂在 Airbnb 上。镇上房间不多，夏季和秋季打猎季常被工作的人订满，订好机票就订房。Kotzebue 没有户外装备出租，要在园里露营就自带装备，防熊食物桶可以在遗产中心借；漂流 Kobuk 河的人从上游的 Ambler 村下水、到下游的 Kiana 村上岸，两个村子都只有很少的补给，吃的用的在 Kotzebue 买齐。",
+  },
+  {
+    code: "katm",
+    nameZh: "卡特迈",
+    nameEn: "Katmai",
+    region: "alaska",
+    tagline: "Brooks 瀑布的棕熊与万烟谷",
+    stateEn: "Alaska",
+    hero: "katm-brooks-falls",
+    intro:
+      "全园估计有约 2,200 头棕熊，是世界上看熊最好的地方之一：7 月红鲑逆流跳过 Brooks 瀑布，棕熊就站在瀑布顶上张嘴接鱼；太平洋海岸的草甸和泥滩上，熊在吃莎草、挖蛤蜊。1912 年 Novarupta 火山爆发是 20 世纪最大的一次喷发，火山灰把一整条山谷填成了“万烟谷”。公园不通公路，要从 Homer、安克雷奇或 King Salmon 坐小飞机进去，多数人当天来回。",
+    bestMonths: [7, 9],
+    seasonNote:
+      "Brooks Camp 的护林员、Brooks Lodge 和定期航班大约只在 6 月 1 日到 9 月 17 日（2026 年 Brooks Lodge、Katmai Air 到 9 月 18 日）；Brooks 瀑布熊最多的是 7 月（抓跳跃的红鲑）和 9 月（在下游吃产完卵的鱼），6 月和 8 月有时一整天看不到熊。海岸看熊 6–8 月最好，Homer 的看熊航班大约 5 月中到 9 月中飞；冬季没有服务。",
+    areas: {
+      brooks: "Brooks Camp（坐水上飞机）",
+      coast: "卡特迈海岸（坐小飞机）",
+      vtts: "万烟谷",
+    },
+    gateway: { nameZh: "Homer（Beluga 湖水上飞机基地，看熊一日游出发地）", lat: 59.64063, lon: -151.50855 },
+    mapAt: { lat: 58.55429, lon: -155.77749 },
+    timeZone: "America/Anchorage",
+    airports: ["ANC", "HOM"],
+    nearby: ["lacl", "kefj"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内的住处都只能坐飞机进去：Brooks Camp 的 Brooks Lodge 只有 16 间房，旺季要提前一年半抽签（2028 年的在 2026 年 12 月 1–30 日报名），旁边的 Brooks Camp 营地在 Recreation.gov 预约，另外还有几家飞进去的钓鱼、看熊度假屋。所以多数人住在开车能到的出发地、当天来回：Homer 的 Beluga 湖边、市区和 Homer Spit 都有酒店民宿，去 Brooks 和海岸看熊都从这里飞，离安克雷奇约 4.5 小时车程；不想去 Homer 的可以住安克雷奇，坐 Katmai Air、Rust's 的一日游。经 King Salmon 进出的住镇上的小旅馆，那里和公路网不通。",
+  },
+  {
+    code: "lacl",
+    nameZh: "克拉克湖",
+    nameEn: "Lake Clark",
+    region: "alaska",
+    tagline: "火山、冰川湖与海岸棕熊",
+    stateEn: "Alaska",
+    hero: "lacl-crescent-lake",
+    intro:
+      "在安克雷奇西南约 200 公里，阿拉斯加山脉和阿留申山脉在这里相接：Redoubt、Iliamna 两座活火山终年积雪，山谷里挂着冰川，Lake Clark、Twin Lakes、Crescent 湖这些冰川湖是青绿色的。Cook 湾海岸的盐沼和泥滩上常能一次看到一二十头棕熊；Twin Lakes 湖边是 Dick Proenneke 1960 年代末亲手盖、独自住了约 30 年的小木屋。公园不通公路，从安克雷奇坐小飞机约 1 小时，多数人当天来回。",
+    bestMonths: [6, 7, 8, 9],
+    seasonNote:
+      "6–9 月看熊团、航班最多，Port Alsworth 的游客中心只在 6–8 月开；海岸看熊 6 月到 8 月最好（初夏在盐沼吃莎草，夏末到溪口抓鲑鱼），Crescent 湖看熊在 8–9 月鲑鱼季；Proenneke 小屋大约 5 月底湖面化冰后到 9 月底开放。冬季基本只能包机。",
+    areas: {
+      coast: "Cook 湾海岸（坐小飞机）",
+      crescent: "Crescent 湖（坐水上飞机）",
+      "twin-lakes": "Twin Lakes（坐水上飞机）",
+      "port-alsworth": "Port Alsworth · Lake Clark 湖",
+    },
+    gateway: { nameZh: "安克雷奇 Lake Hood 水上飞机基地（一日游出发地）", lat: 61.17933, lon: -149.97099 },
+    mapAt: { lat: 60.2021, lon: -154.3131 },
+    timeZone: "America/Anchorage",
+    airports: ["ANC", "HOM"],
+    nearby: ["katm", "kefj", "dena"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内的住处都只能飞进去：Port Alsworth 有八九家小旅馆和一个私营营地，海岸的 Silver Salmon Creek、Chinitna 湾和 Crescent 湖边有几家看熊、钓鱼的度假屋，Lake Clark 湖边还有两座在 Recreation.gov 预订的公共小木屋，Twin Lakes 有不用预约的简易营地。多数人住在安克雷奇当天来回：Lake Hood 旁的机场酒店区离水上飞机最近，市中心选择最多。去海岸看熊也可以住 Homer 或 Soldotna，从那里飞更近、更便宜。",
+  },
+  {
+    code: "havo",
+    nameZh: "夏威夷火山",
+    nameEn: "Hawaiʻi Volcanoes",
+    region: "hawaii",
+    tagline: "活火山口边的熔岩红光",
+    stateEn: "Hawaii",
+    hero: "havo-kilauea-overlook",
+    intro:
+      "公园里有地球上最活跃的火山之一基拉韦厄（Kīlauea），和体积最大的活火山冒纳罗亚（Mauna Loa）。基拉韦厄山顶的破火山口边上有一圈观景台和步道，能看到 2018 年塌陷后的 Halemaʻumaʻu 火山口、冒着蒸汽的喷气孔、熔岩管和 1959 年的熔岩湖；火山口链公路（Chain of Craters Road）从山顶一路下到海边，沿途是几十年间新流出的熔岩原。2024 年 12 月起，山顶的 Halemaʻumaʻu 火山口里间歇喷发：每次熔岩喷泉持续几个小时，间隔几天到几周，喷发时在火山口边的观景台就能看到。",
+    bestMonths: [4, 5, 9, 10],
+    seasonNote:
+      "全年开放、24 小时都能进。山顶海拔约 1,200 米，常年凉爽多雨，夜里常在 10°C 上下；12–1 月和 6–7 月游客最多、停车最难，4–5 月和 9–10 月人少一些。火山喷发不分季节，出发前看 USGS 夏威夷火山观测站的每日公告；6–11 月是飓风季，2026 年 8 月（飓风 Lala）和 9 月（Nolo）公园都因风暴临时关过。",
+    areas: {
+      summit: "Kīlauea 山顶 · 火山口边缘",
+      "chain-of-craters": "火山口链公路（Chain of Craters Road）",
+      "mauna-loa": "冒纳罗亚路（Mauna Loa Road）",
+      kahuku: "Kahuku 园区（Kaʻū 南部，周四到周日开）",
+      nearby: "园外顺路（希洛、Punaluʻu 黑沙滩）",
+    },
+    gateway: { nameZh: "夏威夷火山国家公园入口（Volcano 村旁）", lat: 19.42865, lon: -155.25453 },
+    timeZone: "Pacific/Honolulu",
+    airports: ["ITO", "KOA"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内开车能到的住处只有火山口边上的 Volcano House 酒店（33 间房）和往西约 5 公里 Nāmakanipaio 营地的 10 间小木屋，都由 Volcano House 经营，常常很早订满。多数人住入口外约 2 公里的 Volcano 村：雨林里的民宿、小木屋很多，有两家小超市和加油站，开到山顶观景台约 10 分钟，夜里看完火山红光回去最方便。希洛（Hilo）酒店、餐馆多，到公园约 45 分钟；科纳（Kona）的度假酒店单程约 2.5 小时，只适合当天来回或者顺路过来。园内的 Kilauea Military Camp 只接待军人等有资格的客人，一般游客不能住。",
+  },
+  {
+    code: "hale",
+    nameZh: "哈莱阿卡拉",
+    nameEn: "Haleakalā",
+    region: "hawaii",
+    tagline: "云海之上的火山口日出",
+    stateEn: "Hawaii",
+    hero: "hale-sunrise",
+    intro:
+      "茂宜岛东半边就是一座巨大的盾状火山，最高点 Puʻuʻulaʻula 海拔 3,055 米。山顶的“火山口”其实是雨水侵蚀出来的大山谷，长约 12 公里、宽约 4 公里，谷底散落着红、黑、橙色的渣锥；在云海之上看日出、日落和星空是这里的招牌，还能看到只长在这座山上的银剑草和夏威夷雁。公园的另一半在东南海岸的 Kīpahulu，和山顶不通路，要走哈纳公路过去：雨林、竹林步道和一串流进大海的瀑布水潭。",
+    bestMonths: [5, 6, 9, 10],
+    seasonNote:
+      "全年开放、24 小时都能进，但凌晨 3–7 点进山顶区要提前订日出预约。山顶比海边冷十几到二十几度，日出前常在 0°C 上下，冬天偶尔下雪结冰；12–3 月游客最多，日落前山顶停车场常满。5–10 月是夏威夷的旱季，银剑草多在夏天开花；Kīpahulu 一年到头湿热多雨，冬天雨更多、溪水容易暴涨。",
+    areas: {
+      summit: "山顶区（Summit District）",
+      kipahulu: "Kīpahulu 区（哈纳以南的海岸）",
+      "hana-highway": "哈纳公路（去 Kīpahulu 的路上）",
+    },
+    gateway: { nameZh: "哈莱阿卡拉公园总部游客中心（山顶区）", lat: 20.75944, lon: -156.24673 },
+    timeZone: "Pacific/Honolulu",
+    airports: ["OGG"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内没有酒店，只有山顶区的 Hosmer Grove 和海边的 Kīpahulu 两个小营地（都要在 Recreation.gov 提前 30 天内订），以及要徒步下到火山口里的三间荒野小屋。看日出的人多住山腰的 Kula 或 Pukalani、Makawao 一带，开到山顶约 1–1.5 小时；住机场旁的卡胡卢伊或北岸小镇 Paia 约 1.5–2 小时，Paia 也是哈纳公路的起点。去 Kīpahulu 最好在哈纳（Hāna）住一晚，开到瀑布步道约 30 分钟。南岸的 Kīhei、Wailea 度假区去山顶要 2–2.5 小时，凌晨出发看日出很辛苦。",
   },
   {
     code: "banf",
