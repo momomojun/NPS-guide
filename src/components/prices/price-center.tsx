@@ -196,7 +196,7 @@ export function PriceCenter({
         <p className="mt-3 max-w-3xl text-sm leading-7 text-ink-soft">{text.flightsIntro}</p>
 
         <div className="mt-8 flex flex-wrap items-end gap-x-8 gap-y-5">
-          <label className="eyebrow text-mute">
+          <label className="eyebrow max-w-full text-mute">
             {text.home}
             <input
               value={homeDraft ?? home}
@@ -211,23 +211,23 @@ export function PriceCenter({
               className={`${field} w-28 uppercase`}
             />
           </label>
-          <label className="eyebrow text-mute">
+          <label className="eyebrow max-w-full text-mute">
             {text.to}
-            <select value={destination} onChange={(event) => setDestination(event.target.value)} className={field}>
+            <select value={destination} onChange={(event) => setDestination(event.target.value)} className={`${field} max-w-full`}>
               {airportOptions}
             </select>
           </label>
-          <label className="eyebrow text-mute">
+          <label className="eyebrow max-w-full text-mute">
             {text.depart}
             <input type="date" value={outDate} onChange={(event) => setOut(event.target.value)} className={field} />
           </label>
-          <label className="eyebrow text-mute">
+          <label className="eyebrow max-w-full text-mute">
             {text.return}
             <input type="date" value={backDate} onChange={(event) => setBack(event.target.value)} className={field} />
           </label>
-          <label className="eyebrow text-mute">
+          <label className="eyebrow max-w-full text-mute">
             {text.travelers}
-            <select value={adults} onChange={(event) => updatePrefs({ travelers: Number(event.target.value) })} className={field}>
+            <select value={adults} onChange={(event) => updatePrefs({ travelers: Number(event.target.value) })} className={`${field} max-w-full`}>
               {Array.from({ length: 8 }, (_, i) => i + 1).map((n) => (
                 <option key={n} value={n}>
                   {fill(text.travelersOption, { n })}
@@ -273,9 +273,9 @@ export function PriceCenter({
               <p className="mt-1 text-[11px] text-mute">{fill(text.compareHint, { n: adults })}</p>
             </div>
             <div className="flex flex-wrap items-end gap-4">
-              <label className="eyebrow text-mute">
+              <label className="eyebrow max-w-full text-mute">
                 {text.park}
-                <select value={comparePark} onChange={(event) => setComparePark(event.target.value)} className={field}>
+                <select value={comparePark} onChange={(event) => setComparePark(event.target.value)} className={`${field} max-w-full`}>
                   {parks.map((p) => (
                     <option key={p.code} value={p.code}>
                       {p.nameZh}
@@ -329,9 +329,9 @@ export function PriceCenter({
         <p className="mt-3 max-w-3xl text-sm leading-7 text-ink-soft">{text.carIntro}</p>
 
         <div className="mt-8 flex flex-wrap items-end gap-x-8 gap-y-5">
-          <label className="eyebrow text-mute">
+          <label className="eyebrow max-w-full text-mute">
             {text.pickup}
-            <select value={pickup} onChange={(event) => setPickup(event.target.value)} className={field}>
+            <select value={pickup} onChange={(event) => setPickup(event.target.value)} className={`${field} max-w-full`}>
               {airportList.map((a) => (
                 <option key={a.code} value={a.code}>
                   {a.code} · {a.nameZh}
@@ -339,9 +339,9 @@ export function PriceCenter({
               ))}
             </select>
           </label>
-          <label className="eyebrow text-mute">
+          <label className="eyebrow max-w-full text-mute">
             {text.dropoff}
-            <select value={drop} onChange={(event) => setDropoff(event.target.value)} className={field}>
+            <select value={drop} onChange={(event) => setDropoff(event.target.value)} className={`${field} max-w-full`}>
               {airportList.map((a) => (
                 <option key={a.code} value={a.code}>
                   {a.code} · {a.nameZh}
@@ -349,11 +349,11 @@ export function PriceCenter({
               ))}
             </select>
           </label>
-          <label className="eyebrow text-mute">
+          <label className="eyebrow max-w-full text-mute">
             {text.pickupDate}
             <input type="date" value={rentFrom} onChange={(event) => setCarFrom(event.target.value)} className={field} />
           </label>
-          <label className="eyebrow text-mute">
+          <label className="eyebrow max-w-full text-mute">
             {text.dropoffDate}
             <input type="date" value={rentTo} onChange={(event) => setCarTo(event.target.value)} className={field} />
           </label>
@@ -474,7 +474,7 @@ export function PriceCenter({
 
         <div className="mt-10 grid gap-8 border border-line bg-paper p-5 lg:grid-cols-[auto_1fr]">
           <div className="flex flex-wrap items-end gap-x-8 gap-y-4">
-            <label className="eyebrow text-mute">
+            <label className="eyebrow max-w-full text-mute">
               {text.distance}
               <input
                 type="number"
@@ -485,7 +485,7 @@ export function PriceCenter({
                 className={`${field} w-28 tabular-nums`}
               />
             </label>
-            <label className="eyebrow text-mute">
+            <label className="eyebrow max-w-full text-mute">
               {text.mpg}
               <input
                 type="number"
@@ -496,9 +496,9 @@ export function PriceCenter({
                 className={`${field} w-20 tabular-nums`}
               />
             </label>
-            <label className="eyebrow text-mute">
+            <label className="eyebrow max-w-full text-mute">
               {text.fuelState}
-              <select value={fuelState} onChange={(event) => setFuelState(event.target.value)} className={field}>
+              <select value={fuelState} onChange={(event) => setFuelState(event.target.value)} className={`${field} max-w-full`}>
                 {TRIP_STATES.map((state) => (
                   <option key={state} value={state}>
                     {text.states[state] ?? state}

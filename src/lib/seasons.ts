@@ -57,6 +57,8 @@ export interface ParkSeason {
   roadNames: Record<string, string>;
   /** 每个月平均每天多少人次（NPS 近 3 年，下标 0 是 1 月）；加拿大的公园没有 */
   daily?: number[];
+  /** 公园首图（Commons 缩略图），“什么时候去”的卡片用 */
+  photo?: string;
 }
 
 const round1 = (value: number) => Math.round(value * 10) / 10;
@@ -123,5 +125,6 @@ export function parkSeason(park: Park): ParkSeason {
       seasonalRoads.filter((road) => roadStops.some((stop) => stop.road === road.id)).map((road) => [road.id, road.nameZh]),
     ),
     ...(daily ? { daily } : {}),
+    photo: attractions.find((a) => a.id === park.hero)?.photo?.url,
   };
 }

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { CommonsImage } from "@/components/commons-image";
 import { IconArrowRight } from "@/components/icons";
 import { seasonalRoads } from "@/data/roads";
 import type { Dictionary } from "@/i18n/dictionaries";
@@ -287,7 +288,26 @@ export function SeasonGuide({ parks, locale, text }: { parks: ParkSeason[]; loca
                 <p className="mt-1 text-xs text-mute">{text.verdictHints[verdict]}</p>
                 <ul className="mt-6 grid gap-x-10 gap-y-8 md:grid-cols-2 xl:grid-cols-3">
                   {items.map((item) => (
-                    <li key={item.park.code} className="flex flex-col border-t border-line pt-4">
+                    <li key={item.park.code} className="group/card flex flex-col">
+                      {/* 公园首图；不太合适的公园照片褪成灰色 */}
+                      {item.park.photo && (
+                        <Link
+                          href={`/${locale}/parks/${item.park.code}`}
+                          tabIndex={-1}
+                          aria-hidden
+                          className="relative mb-4 block aspect-[2/1] overflow-hidden bg-paper-deep md:aspect-[16/9]"
+                        >
+                          <CommonsImage
+                            src={item.park.photo}
+                            alt=""
+                            fill
+                            sizes="(min-width: 1280px) 30vw, (min-width: 768px) 46vw, 100vw"
+                            className={`object-cover transition-[scale,filter] duration-700 group-hover/card:scale-105 ${
+                              item.verdict === "poor" ? "grayscale-[85%] group-hover/card:grayscale-0" : ""
+                            }`}
+                          />
+                        </Link>
+                      )}
                       <div className="flex items-baseline justify-between gap-3">
                         <Link href={`/${locale}/parks/${item.park.code}`} className="group">
                           <span className="font-serif text-xl group-hover:text-clay-700">{item.park.nameZh}</span>
@@ -296,13 +316,29 @@ export function SeasonGuide({ parks, locale, text }: { parks: ParkSeason[]; loca
                       </div>
                       <p className="mt-1 text-xs text-ink-soft">{item.park.tagline}</p>
                       {item.climate && (
-                        <p className="mt-3 text-sm tabular-nums">
-                          {fill(text.climate, {
+                        // 往年同期的天气：三个大数字，读屏读整句
+                        <dl
+                          className="mt-4 grid grid-cols-3 border-y border-line pt-2 pb-3"
+                          aria-label={fill(text.climate, {
                             high: degrees(item.climate.high),
                             low: degrees(item.climate.low),
                             n: Math.round(item.climate.wetDays),
                           })}
-                        </p>
+                        >
+                          <div className="col-span-3 mb-2 text-[11px] tracking-[0.08em] text-mute" aria-hidden>
+                            {text.climateTitle}
+                          </div>
+                          {[
+                            [text.climateHigh, `${degrees(item.climate.high)}°`],
+                            [text.climateLow, `${degrees(item.climate.low)}°`],
+                            [text.climateWet, fill(text.climateDays, { n: Math.round(item.climate.wetDays) })],
+                          ].map(([label, value]) => (
+                            <div key={label} className="flex flex-col-reverse" aria-hidden>
+                              <dt className="mt-1 text-[11px] tracking-[0.08em] text-mute">{label}</dt>
+                              <dd className="font-serif text-2xl leading-none tabular-nums">{value}</dd>
+                            </div>
+                          ))}
+                        </dl>
                       )}
                       <ul className="mt-3 space-y-1 text-xs leading-5">
                         {reasonsOf(item, text).map((reason) => (

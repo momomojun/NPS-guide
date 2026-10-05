@@ -35,7 +35,8 @@ export function PageHeader({
     <header className="grid gap-10 pb-10 lg:grid-cols-12 lg:gap-16 lg:pb-14">
       <div className="flex flex-col justify-end lg:col-span-7">
         <p className="eyebrow text-mute">{eyebrow}</p>
-        <h1 className="mt-6 font-serif text-[clamp(2.4rem,4.8vw,4.4rem)] leading-[1.12]">{title}</h1>
+        {/* 中文标题只在标点处换行，不会剩一个字在下一行 */}
+        <h1 className="mt-6 font-serif text-[clamp(2.4rem,4.8vw,4.4rem)] leading-[1.12] text-balance [word-break:keep-all]">{title}</h1>
         {intro && <div className="mt-6 max-w-2xl text-[15px] leading-8 text-ink-soft">{intro}</div>}
         {children}
       </div>

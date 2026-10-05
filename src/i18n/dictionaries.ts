@@ -1326,6 +1326,11 @@ const zhHans = {
     },
     count: "{n} 座",
     climate: "往年这时候：白天约 {high}°C，夜里约 {low}°C，约 {n} 天有雨雪",
+    climateTitle: "往年这时候",
+    climateHigh: "白天 °C",
+    climateLow: "夜里 °C",
+    climateWet: "有雨雪",
+    climateDays: "{n} 天",
     reasons: {
       best: "正是最佳季节",
       notBest: "不是最佳季节（最佳{months}）",

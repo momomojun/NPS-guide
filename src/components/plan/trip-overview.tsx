@@ -306,7 +306,48 @@ export function TripOverview({
         )}
       </div>
 
-      <div className="mt-10 overflow-x-auto">
+      {/* 手机上表格放不下，每天一段：第几天、几点到几点、开车多久，下面是去哪、住哪 */}
+      <ol className="mt-10 border-t border-ink sm:hidden">
+        {views.map((view) => {
+          const names = view.rows.map((row) => row.stop.nameZh);
+          const lodging = view.day < views.length - 1 || !view.to?.endpoint ? view.to?.name : undefined;
+          const active = view.rows.length > 0 || moving(view);
+          return (
+            <li key={view.day} className="border-b border-line">
+              <button type="button" className="block w-full py-4 text-left" onClick={() => onJump(view.day)}>
+                <span className="flex items-baseline justify-between gap-3">
+                  <span className="flex items-center gap-2">
+                    <span aria-hidden className="inline-block h-[3px] w-4 self-center" style={{ backgroundColor: dayColor(view.day) }} />
+                    <span className="font-medium">{fill(text.plan.day, { n: view.day + 1 })}</span>
+                    {dateLabels[view.day] && <span className="text-xs text-mute">{dateLabels[view.day]}</span>}
+                  </span>
+                  {active && (
+                    <span className="text-xs text-mute tabular-nums">
+                      {view.rows.length > 0 && view.timeline.entries.length > 0
+                        ? `${formatClock(view.timeline.departAt ?? view.timeline.entries[0].start)}–${formatClock(
+                            view.timeline.returnAt ?? view.timeline.entries.at(-1)!.end,
+                          )}`
+                        : `${formatClock(view.timeline.departAt!)}–${formatClock(view.timeline.returnAt!)}`}
+                      {" · "}
+                      {duration(view.timeline.driveMin)}
+                    </span>
+                  )}
+                </span>
+                <span className="mt-2 block text-sm leading-6">
+                  {names.length ? names.join(" → ") : <span className="text-mute">{moving(view) ? t.table.move : t.table.free}</span>}
+                </span>
+                {lodging && (
+                  <span className="mt-1 block text-xs text-mute">
+                    {t.table.sleep}：{lodging}
+                  </span>
+                )}
+              </button>
+            </li>
+          );
+        })}
+      </ol>
+
+      <div className="mt-10 hidden overflow-x-auto sm:block">
         <table className="w-full min-w-[40rem] border-collapse text-left text-sm">
           <thead>
             <tr className="border-b border-ink text-xs text-mute">

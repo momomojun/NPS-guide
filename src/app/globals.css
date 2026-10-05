@@ -119,7 +119,8 @@ body {
  */
 @utility cv-auto {
   content-visibility: auto;
-  contain-intrinsic-size: auto var(--cv-h, 900px);
+  /* 只估高度：写成 contain-intrinsic-size 的话宽度也会按这个数撑开，手机上网格一列被撑到 1000px 宽 */
+  contain-intrinsic-block-size: auto var(--cv-h, 900px);
 }
 
 /* 竖排中文，做装饰性的标题 */
