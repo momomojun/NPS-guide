@@ -36,6 +36,7 @@ function MonthlyChart({ daily, text, units }: { daily: number[]; text: Text; uni
             <div
               key={i}
               tabIndex={0}
+              role="img"
               aria-label={label}
               className="group relative flex h-full flex-1 items-end justify-center outline-none"
             >

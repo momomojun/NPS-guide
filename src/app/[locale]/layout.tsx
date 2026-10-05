@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Jost, Noto_Serif_SC, Noto_Serif_TC } from "next/fon
 import { notFound } from "next/navigation";
 import { BackToTop } from "@/components/site/back-to-top";
 import { OfflineBanner, ServiceWorkerRegister } from "@/components/site/offline";
+import { PageTransition } from "@/components/site/page-transition";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { isSite, parks, regionOrder } from "@/data/parks";
@@ -92,6 +93,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
           }}
         />
         <main className="flex-1">{children}</main>
+        <PageTransition />
         <SiteFooter locale={locale} dict={dict} />
         <BackToTop label={dict.nav.backToTop} />
         <OfflineBanner label={dict.common.offline} />

@@ -141,6 +141,8 @@ function Marker({ park, view, compact = false }: { park: MapPark; view: MapView;
       href={park.href}
       data-marker
       data-weight={park.weight ?? 0}
+      // 名字挤不下时会藏起来，链接本身也要有名字
+      aria-label={`${park.nameZh} ${park.nameEn}`}
       className="group absolute -translate-x-1/2 -translate-y-1/2"
       style={{ left: `${(x / view.width) * 100}%`, top: `${(y / view.height) * 100}%` }}
     >

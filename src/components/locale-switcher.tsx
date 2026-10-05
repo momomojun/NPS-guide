@@ -20,7 +20,7 @@ export function LocaleSwitcher({ current }: { current: Locale }) {
             href={`/${locale}${rest}`}
             lang={locale}
             aria-current={locale === current ? "true" : undefined}
-            className={locale === current ? "" : "opacity-45 transition-opacity hover:opacity-100"}
+            className={locale === current ? "" : "opacity-70 transition-opacity hover:opacity-100"}
           >
             {localeLabels[locale]}
           </Link>

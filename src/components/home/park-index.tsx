@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState, ViewTransition } from "react";
 import { CommonsImage } from "@/components/commons-image";
 import { IconArrowRight } from "@/components/icons";
+import { usePastHero } from "./use-past-hero";
 
 export interface ParkIndexItem {
   code: string;
@@ -31,6 +32,7 @@ export function ParkIndex({ items, inSeasonLabel }: { items: ParkIndexItem[]; in
   // 大图只加载看到过的公园，不然一打开首页就同时下载几十张
   const [shown, setShown] = useState(() => new Set([items[0]?.code]));
   const list = useRef<HTMLDivElement>(null);
+  const pastHero = usePastHero();
   const activeIndex = Math.max(0, items.findIndex((item) => item.code === active));
   const activeItem = items[activeIndex];
   const activate = (code: string) => {
@@ -76,7 +78,12 @@ export function ParkIndex({ items, inSeasonLabel }: { items: ParkIndexItem[]; in
               .filter((item) => item.image && shown.has(item.code))
               .map((item) => (
                 // 点进公园页时这张图放大成公园页的首图（公园页上有同名的 ViewTransition）
-                <ViewTransition key={item.code} name={`park-photo-${item.code}`} share="park-morph" default="none">
+                <ViewTransition
+                  key={item.code}
+                  name={pastHero ? `park-photo-${item.code}` : undefined}
+                  share="park-morph"
+                  default="none"
+                >
                   <div
                     className={`absolute inset-0 transition-[opacity,transform] duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
                       item.code === active ? "scale-100 opacity-100" : "scale-105 opacity-0"

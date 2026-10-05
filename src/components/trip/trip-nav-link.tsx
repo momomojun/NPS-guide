@@ -13,7 +13,7 @@ export function TripNavLink({ href, label }: { href: string; label: string }) {
   return (
     <Link href={href} className={`inline-flex items-baseline gap-1.5 hover:opacity-60 ${active ? "link-line" : ""}`}>
       {label}
-      {count > 0 && <span className="text-[11px] tabular-nums opacity-60">{count}</span>}
+      {count > 0 && <span className="text-[11px] tabular-nums opacity-70">{count}</span>}
     </Link>
   );
 }

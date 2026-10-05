@@ -154,7 +154,8 @@ const shots = {
     const page = await openPage(browser, DESKTOP);
     await generateTrip(page);
     await scrollTo(page, "#plan-overview", 2500);
-    await mapSettled(page);
+    // 地图要滚到附近才加载，总览这一屏没有地图
+    await page.waitForNetworkIdle({ idleTime: 1500, timeout: 30000 }).catch(() => {});
     await shot(page, "plan.jpg");
     await scrollTo(page, "#plan-day-1", 2000);
     await mapSettled(page);
@@ -187,7 +188,8 @@ const shots = {
   async routes(browser) {
     const page = await openPage(browser, DESKTOP);
     await go(page, "/zh-Hans/routes");
-    await page.evaluate(() => window.scrollTo({ top: 260, behavior: "instant" }));
+    // 筛选条和第一排路线卡片（页头有照片，标题那一屏放不下卡片）
+    await scrollTo(page, "main li.scroll-mt-32", 1500, -290);
     await sleep(1500);
     await shot(page, "routes.jpg");
     await page.close();
@@ -215,7 +217,8 @@ const shots = {
     await scrollTo(page, "#plan-day-1", 2000);
     const plan = await page.screenshot({ type: "jpeg", quality: QUALITY });
     await go(page, "/zh-Hans/parks/yell");
-    await scrollTo(page, "#attractions", 2000, 560);
+    // 第一张景点卡片：照片下半截、名字、热度和简介
+    await scrollTo(page, 'article[id^="attraction-"]', 2000, 420);
     await imagesLoaded(page);
     const park = await page.screenshot({ type: "jpeg", quality: QUALITY });
     await page.close();

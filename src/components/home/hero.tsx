@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
+import { useEffect, useRef, useState, ViewTransition, type CSSProperties, type ReactNode } from "react";
 import { CommonsImage } from "@/components/commons-image";
 import { IconArrowRight } from "@/components/icons";
 import { buttonLarge } from "@/components/ui";
+import { usePastHero } from "./use-past-hero";
 
 export interface HeroSlide {
   code: string;
@@ -56,6 +57,7 @@ export function Hero({
   const [index, setIndex] = useState(0);
   const [previous, setPrevious] = useState<number | null>(null);
   const firstImage = useRef<HTMLImageElement>(null);
+  const pastHero = usePastHero();
 
   // 第一张图在 React 接手之前就从缓存里加载好了的话，onLoad 不会再触发，这里补一次
   useEffect(() => {
@@ -89,23 +91,30 @@ export function Hero({
   return (
     <section className="relative h-[100svh] min-h-[640px] overflow-hidden bg-ink text-white">
       {slides.map((slide, i) => (
-        <div
+        // 点“进入公园”时，当前这张大图过渡成公园页的首图（公园页上有同名的 ViewTransition）
+        <ViewTransition
           key={slide.code}
-          className={`absolute inset-0 transition-opacity duration-[1800ms] ease-out ${i === index ? "opacity-100" : "opacity-0"}`}
+          name={i === index && !pastHero ? `park-photo-${slide.code}` : undefined}
+          share="park-morph"
+          default="none"
         >
-          {mounted(i) && (
-            <CommonsImage
-              src={slide.image}
-              alt=""
-              fill
-              priority={i === 0}
-              ref={i === 0 ? firstImage : undefined}
-              onLoad={i === 0 ? announceReady : undefined}
-              sizes="100vw"
-              className={`object-cover ${animated(i) ? "animate-kenburns" : ""}`}
-            />
-          )}
-        </div>
+          <div
+            className={`absolute inset-0 transition-opacity duration-[1800ms] ease-out ${i === index ? "opacity-100" : "opacity-0"}`}
+          >
+            {mounted(i) && (
+              <CommonsImage
+                src={slide.image}
+                alt=""
+                fill
+                priority={i === 0}
+                ref={i === 0 ? firstImage : undefined}
+                onLoad={i === 0 ? announceReady : undefined}
+                sizes="100vw"
+                className={`object-cover ${animated(i) ? "animate-kenburns" : ""}`}
+              />
+            )}
+          </div>
+        </ViewTransition>
       ))}
       <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-black/35" />
       <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-black/40 to-transparent" />

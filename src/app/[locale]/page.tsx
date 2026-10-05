@@ -147,7 +147,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       </section>
 
       {/* 公园目录 */}
-      <section id="parks" className={`${container} scroll-mt-16 pb-28 lg:pb-44`}>
+      <section id="parks" className={`${container} cv-auto [--cv-h:6000px] scroll-mt-16 pb-28 lg:pb-44`}>
         <div className="mb-14 grid gap-6 lg:mb-20 lg:grid-cols-12">
           <p className="eyebrow text-mute lg:col-span-3">{t.parksEyebrow}</p>
           <div className="lg:col-span-9">
@@ -162,7 +162,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
       {/* 园外名胜：不归国家公园管的地方，和国家公园分开放 */}
       {localSites.length > 0 && (
-        <section id="places" className="scroll-mt-16 border-t border-line bg-paper-deep">
+        <section id="places" className="cv-auto [--cv-h:900px] scroll-mt-16 border-t border-line bg-paper-deep">
           <div className={`${container} py-24 lg:py-32`}>
             <div className="mb-12 grid gap-6 lg:grid-cols-12">
               <p className="eyebrow text-mute lg:col-span-3">{t.sitesEyebrow}</p>
@@ -211,7 +211,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
       {/* 当季 */}
       {inSeason.length > 0 && (
-        <section className="bg-paper-deep">
+        <section className="cv-auto [--cv-h:2400px] bg-paper-deep">
           <div className={`${container} grid gap-14 py-28 lg:grid-cols-12 lg:py-36`}>
             <div className="lg:sticky lg:top-28 lg:col-span-4 lg:self-start">
               <p className="eyebrow text-mute">{t.seasonEyebrow}</p>
@@ -253,7 +253,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       )}
 
       {/* 怎么用 */}
-      <section className={`${container} py-28 lg:py-40`}>
+      <section className={`${container} cv-auto [--cv-h:700px] py-28 lg:py-40`}>
         <div className="grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <p className="eyebrow text-mute">{t.stepsEyebrow}</p>
@@ -274,7 +274,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       </section>
 
       {/* 地图 */}
-      <section className="border-t border-line">
+      <section className="cv-auto [--cv-h:1200px] border-t border-line">
         <div className={`${container} grid gap-14 py-28 lg:grid-cols-12 lg:py-40`}>
           <div className="lg:col-span-4">
             <p className="eyebrow text-mute">{t.mapEyebrow}</p>

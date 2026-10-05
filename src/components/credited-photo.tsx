@@ -27,7 +27,7 @@ export function CreditedPhoto({
 }) {
   const credit = fill(creditTemplate, { author: photo.author, license: photo.license });
   const creditClass =
-    "absolute right-0 bottom-0 max-w-[90%] truncate bg-black/45 px-2 py-0.5 text-[10px] text-white/85";
+    "absolute right-0 bottom-0 max-w-[90%] truncate bg-black/60 px-2 py-1 text-[10px] leading-4 text-white/90";
 
   return (
     <div className={`relative overflow-hidden bg-paper-deep ${className}`}>

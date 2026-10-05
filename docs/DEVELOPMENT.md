@@ -68,8 +68,8 @@ npm test                     # 自动生成攻略、季节性山路、个人配�
 | `src/data/honors.ts` | 世界遗产、暗夜公园认证和媒体推荐（Lonely Planet Best in Travel、国家地理 Best of the World、TIME World's Greatest Places 2024 年以来的，U.S. News 只记收录了哪些、不记名次）：key 是 NPS 单位代码，加拿大用网站的公园代码；为什么选是我们自己的话，附原文链接 |
 | `src/components/park/park-profile.tsx`、`visits-section.tsx` | 公园页的“档案”（哪年设立、美国第几座、面积、最近一年的人次和排名、荣誉和推荐）和“人多不多”（每个月平均每天的人次、1979 年以来每年的人次、升为国家公园的那年，可以展开看每年的数字） |
 | `public/sw.js`、`src/app/manifest.ts` | 离线：构建版注册 service worker，缓存看过的页面、脚本、接口数据和地图瓦片；可以装到手机主屏 |
-| `src/components/map/park-map.tsx`、`sources.ts` | MapLibre 地图：OpenFreeMap 底图 + 地形阴影 + 卫星图（美国用 USGS，加拿大用 EOX Sentinel-2）+ 3D 地形，都不需要 key |
-| `src/app/globals.css` | 设计基调：纸色底、墨色字、砂岩红强调色；标题 Cormorant Garamond + 思源宋体，正文 Jost；开场动画、滚动渐显、换页过渡（从首页公园目录点进公园页时，目录的大图放大成公园页首图，用 React 的 `ViewTransition`，两边的 `name` 都是 `park-photo-公园代码`）；浅灰字 `mute` 的对比度按 WCAG AA（4.5:1）定 |
+| `src/components/map/park-map.tsx`、`sources.ts` | MapLibre 地图：OpenFreeMap 底图 + 地形阴影 + 卫星图（美国用 USGS，加拿大用 EOX Sentinel-2）+ 3D 地形，都不需要 key。地图快滚到屏幕附近（上下 800 像素）才加载 maplibre-gl（1 MB），公园页一打开不再先下载、执行它 |
+| `src/app/globals.css` | 设计基调：纸色底、墨色字、砂岩红强调色；标题 Cormorant Garamond + 思源宋体，正文 Jost；开场动画、滚动渐显、换页时整页淡入淡出（`src/components/site/page-transition.tsx`）、换页过渡（从首页公园目录点进公园页时，目录的大图放大成公园页首图，用 React 的 `ViewTransition`，两边的 `name` 都是 `park-photo-公园代码`）；浅灰字 `mute` 的对比度按 WCAG AA（4.5:1）定；屏幕外的大区块和景点卡片用 `cv-auto`（content-visibility，`--cv-h` 是估计高度）先不排版，中文字体每加载一片都要整页重排，手机上主线程能省下一大半 |
 | `src/components/home/` | 首页：开场动画、全屏轮播、公园目录、线描地图（`src/data/map.generated.ts`；公园名放在圆点哪边写在 `west-map.tsx` 的 `LABEL_SIDE`，屏幕窄、名字挤在一起时按各景点 Google 评论数加起来的热门程度先后摆：尽量留在定好的一侧，放不下才换到完全不碰别的圆点和名字、离自己的圆点最近的一侧，还不行就只留圆点；英文名最先让；手机上压住冷门得多的公园的圆点，就让那个公园不显示，平板和电脑上每座公园的圆点都留着。见 `map-declutter.tsx`、`map-sides.ts`） |
 | `src/components/site/` | 页头（压在大图上时透明，滚动后变纸色；1024 像素以上放 6 项导航，手机和平板用全屏菜单）、页脚（公园按片区分栏）、滚动渐显、内页页头 `page-header.tsx`（大标题 + 一张照片，照片用 `header-photo.ts` 按景点 id 取；行程页用行程里第一座公园的首图） |
 

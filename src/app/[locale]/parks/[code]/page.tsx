@@ -312,7 +312,7 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
       )}
 
       {hasSeasonInfo && (
-        <section id="activities" className="scroll-mt-28 border-t border-line">
+        <section id="activities" className="cv-auto [--cv-h:3000px] scroll-mt-28 border-t border-line">
           <div className={`${container} py-20 lg:py-28`}>
             <p className="eyebrow mb-12 text-mute">{t.activities.eyebrow}</p>
             <ActivitiesSection activities={parkActivities} attractions={attractions} dict={dict} />
@@ -323,7 +323,7 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
       )}
 
       {hasBookings && (
-        <section id="bookings" className="scroll-mt-28 border-t border-line">
+        <section id="bookings" className="cv-auto [--cv-h:2000px] scroll-mt-28 border-t border-line">
           <div className={`${container} py-20 lg:py-28`}>
             <p className="eyebrow mb-12 text-mute">{t.bookings.eyebrow}</p>
             <BookingsSection
@@ -365,7 +365,7 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
       </section>
 
       {parkCreators.length > 0 && (
-        <section id="creators" className="scroll-mt-28 border-t border-line">
+        <section id="creators" className="cv-auto [--cv-h:1500px] scroll-mt-28 border-t border-line">
           <div className={`${container} py-20 lg:py-28`}>
             <p className="eyebrow text-mute">{r.parkEyebrow}</p>
             <h2 className="mt-5 font-serif text-[clamp(2rem,3.5vw,3.2rem)] leading-tight">{r.parkTitle}</h2>
@@ -394,7 +394,7 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
         </section>
       )}
 
-      <section id="live" className="scroll-mt-28 bg-paper-deep">
+      <section id="live" className="cv-auto [--cv-h:1500px] scroll-mt-28 bg-paper-deep">
         <div className={`${container} py-20 lg:py-28`}>
           <p className="eyebrow text-mute">{t.infoEyebrow}</p>
           <h2 className="mt-5 font-serif text-[clamp(2rem,3.5vw,3.2rem)] leading-tight">{t.infoTitle}</h2>

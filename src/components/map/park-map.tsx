@@ -159,8 +159,26 @@ export function ParkMap({
 
   const handleSelect = useEffectEvent((id: string) => onSelect?.(id));
 
+  // 地图快滚到屏幕里（上下 800 像素以内）才加载：maplibre-gl 有 1 MB，公园页的地图在很下面，一打开就加载手机上要卡好几秒
+  const [near, setNear] = useState(false);
+  useEffect(() => {
+    const element = containerRef.current;
+    if (!element) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setNear(true);
+        observer.disconnect();
+      },
+      { rootMargin: "800px 0px" },
+    );
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+
   // 地图只初始化一次；maplibre-gl 依赖浏览器环境，动态加载
   useEffect(() => {
+    if (!near) return;
     let cancelled = false;
     let map: MapLibreMap | undefined;
 
@@ -374,7 +392,7 @@ export function ParkMap({
       map?.remove();
       mapRef.current = null;
     };
-  }, []);
+  }, [near]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -436,7 +454,7 @@ export function ParkMap({
       {/* maplibre 的 CSS 会把容器设成 position: relative，所以用 h-full 而不是 inset-0 撑满 */}
       <div ref={containerRef} className={`h-full w-full transition-opacity duration-500 ${ready ? "opacity-100" : "opacity-0"}`} />
       {!ready && (
-        <div className="eyebrow absolute inset-0 flex animate-pulse items-center justify-center text-mute">
+        <div className="eyebrow absolute inset-0 flex items-center justify-center text-ink-soft">
           {text.loading}
         </div>
       )}

@@ -18,8 +18,8 @@
   --color-paper-deep: #ebe4d8;
   --color-ink: #1c1b18;
   --color-ink-soft: #45413a;
-  /* 浅灰字在纸色底上对比度要到 4.5:1（WCAG AA） */
-  --color-mute: #6f685c;
+  /* 浅灰字在纸色底、深一点的纸色底上对比度都要到 4.5:1（WCAG AA） */
+  --color-mute: #68615a;
   --color-line: #d9cfbf;
 
   /* 砂岩红：强调色（热度、选中、步道） */
@@ -79,9 +79,13 @@ body {
 }
 
 /* 小号大写标签，比如 “DESTINATIONS” */
+/* 手机上 12px（再小在户外看不清），宽屏 11px */
 @utility eyebrow {
   font-family: var(--font-jost), var(--font-sans-cjk);
-  font-size: 11px;
+  font-size: 12px;
+  @media (width >= 40rem) {
+    font-size: 11px;
+  }
   line-height: 1.4;
   letter-spacing: 0.24em;
   text-transform: uppercase;
@@ -107,6 +111,15 @@ body {
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+/*
+ * 屏幕外的大区块先不排版（content-visibility），滚到附近再排：中文字体按字符分片，每加载一片整页都要重排一次，
+ * 首页、公园页几十个区块全排一遍很慢。--cv-h 是没排版时占的估计高度，排过一次以后记住真实高度。
+ */
+@utility cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto var(--cv-h, 900px);
 }
 
 /* 竖排中文，做装饰性的标题 */
@@ -333,6 +346,10 @@ body {
 ::view-transition-new(root) {
   animation-duration: 0.45s;
   animation-timing-function: ease;
+}
+/* 换页的标记点（page-transition.tsx）本身不画出来 */
+::view-transition-group(.page-marker) {
+  display: none;
 }
 ::view-transition-group(.park-morph) {
   animation-duration: 0.9s;

@@ -191,7 +191,7 @@ export function AttractionCard({
   const tips = attractionTips(a, text);
 
   return (
-    <article id={`attraction-${a.id}`} className="group scroll-mt-32 border-b border-line pb-12">
+    <article id={`attraction-${a.id}`} className="group cv-auto [--cv-h:1000px] scroll-mt-32 border-b border-line pb-12">
       {a.gallery.length > 0 && <PhotoGallery photos={a.gallery} title={a.nameZh} alt={`${a.nameZh} ${a.nameEn}`} text={t} />}
 
       <div className="space-y-5 pt-6">

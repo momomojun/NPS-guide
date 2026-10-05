@@ -201,17 +201,17 @@ export function AttractionsExplorer({
           <div className="flex flex-wrap gap-x-5 gap-y-2">
             <button type="button" className={filterClass(filter === "all")} onClick={() => setFilter("all")}>
               {t.all}
-              <span className="text-[11px] tabular-nums opacity-60">{attractions.length}</span>
+              <span className="text-[11px] tabular-nums opacity-70">{attractions.length}</span>
             </button>
             <button type="button" className={filterClass(filter === "mustSee")} onClick={() => setFilter("mustSee")}>
               {t.mustSee}
-              <span className="text-[11px] tabular-nums opacity-60">{mustSeeIds.length}</span>
+              <span className="text-[11px] tabular-nums opacity-70">{mustSeeIds.length}</span>
             </button>
             {kinds.map((kind) => (
               <button key={kind} type="button" className={filterClass(filter === kind)} onClick={() => setFilter(kind)}>
                 <span className="size-1.5 rounded-full" style={{ backgroundColor: KIND_COLORS[kind] }} />
                 {text.kinds[kind]}
-                <span className="text-[11px] tabular-nums opacity-60">{attractions.filter((a) => a.kind === kind).length}</span>
+                <span className="text-[11px] tabular-nums opacity-70">{attractions.filter((a) => a.kind === kind).length}</span>
               </button>
             ))}
           </div>
