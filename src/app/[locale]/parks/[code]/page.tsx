@@ -19,7 +19,7 @@ import { Reveal } from "@/components/site/reveal";
 import { activities } from "@/data/activities";
 import { bookingRules } from "@/data/bookings";
 import { getParkAttractions } from "@/data/attractions";
-import { creatorRoutes } from "@/data/creators";
+import { creatorRoutes, type CreatorRoute } from "@/data/creators";
 import { lodgingOptions } from "@/data/lodging";
 import { getPark, isSite, npsCodeOf } from "@/data/parks";
 import type { RoadYear } from "@/data/roads";
@@ -128,8 +128,13 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
     ...byDetail.filter((route) => !firstOfLanguage.includes(route)),
   ].slice(0, 4);
   const r = dict.routes;
-  const viewsText = (n: number) =>
-    n >= 10000 ? fill(r.viewsWan, { n: (n / 10000).toFixed(1) }) : fill(r.views, { n });
+  // 视频按播放量，图文按阅读量
+  const viewsText = (route: CreatorRoute) => {
+    const article = route.format === "article";
+    return route.views >= 10000
+      ? fill(article ? r.readsWan : r.viewsWan, { n: (route.views / 10000).toFixed(1) })
+      : fill(article ? r.reads : r.views, { n: route.views });
+  };
 
   return (
     <>
@@ -312,8 +317,8 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
               {featuredCreators.map((route) => (
                 <li key={route.id} className="border-t border-ink pt-4">
                   <p className="text-xs text-mute">
-                    <span className="text-ink-soft">{route.creator}</span> · {r.platforms[route.platform]} · {r.languages[route.language]} ·{" "}
-                    {viewsText(route.views)}
+                    <span className="text-ink-soft">{route.creator}</span> · {r.platforms[route.platform]}
+                    {route.format === "article" && ` ${r.article}`} · {r.languages[route.language]} · {viewsText(route)}
                     {route.days ? ` · ${fill(r.days, { n: route.days })}` : ""}
                   </p>
                   <a href={route.url} target="_blank" rel="noreferrer" className="mt-2 block font-serif text-lg leading-snug hover:text-clay-700">

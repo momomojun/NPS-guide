@@ -342,16 +342,20 @@ export function TripOverview({
                     )}
                   </td>
                   <td className="py-3 pr-4 leading-6">
-                    {names.length ? names.join(" → ") : <span className="text-mute">{t.table.free}</span>}
+                    {names.length ? names.join(" → ") : <span className="text-mute">{moving(view) ? t.table.move : t.table.free}</span>}
                   </td>
                   <td className="py-3 pr-4 whitespace-nowrap tabular-nums">
                     {view.rows.length > 0 && view.timeline.entries.length > 0
                       ? `${formatClock(view.timeline.departAt ?? view.timeline.entries[0].start)}–${formatClock(
                           view.timeline.returnAt ?? view.timeline.entries.at(-1)!.end,
                         )}`
-                      : "—"}
+                      : moving(view)
+                        ? `${formatClock(view.timeline.departAt!)}–${formatClock(view.timeline.returnAt!)}`
+                        : "—"}
                   </td>
-                  <td className="py-3 pr-4 whitespace-nowrap">{view.rows.length > 0 ? duration(view.timeline.driveMin) : "—"}</td>
+                  <td className="py-3 pr-4 whitespace-nowrap">
+                    {view.rows.length > 0 || moving(view) ? duration(view.timeline.driveMin) : "—"}
+                  </td>
                   <td className="py-3 leading-6">
                     {lodging ?? <span className="text-mute">{view.day === views.length - 1 ? "—" : t.table.unset}</span>}
                   </td>

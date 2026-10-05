@@ -48,7 +48,7 @@ NPS Guide 把这些按日期串起来：选好公园和日子，它告诉你那�
 - **补给和预算**：每晚住处附近的超市、加油站、快充和亚洲超市，进园前的最后补给点，落地后离机场最近的亚洲超市；门票（含 2026 年非居民附加费、买年卡划不划算）、住宿、吃饭、油费、租车、机票，合计和人均。
 - **什么时候去**：选一个出发日期，所有公园分成“最适合 / 可以去 / 不太合适”，每座写明原因（开放情况、季节性山路往年这几天通没通车、往年同期的天气、特别活动、这时候人多不多）。
 - **榜单**：美国 63 座国家公园按 NPS 官方统计的游客人次（或面积）排名，网站上有的一眼能看出来；现有国家公园按设立时间累计的时间线，从 1872 年的黄石到 2020 年的新河峡谷；Lonely Planet、国家地理、TIME 近几年选中的公园（写明谁选的、为什么，附原文链接），U.S. News 的最佳国家公园，世界遗产和国际暗夜公园。每座公园页上有“档案”（哪年设立、美国第几座、面积、人次排名、荣誉和推荐）和“人多不多”：每个月平均每天多少人、1979 年以来每年的人次。
-- **博主同款路线**：49 条中文、英语、日语、韩语和欧洲博主的 YouTube / B 站路线，按公园和语言筛选；博主对景点的评价显示在景点卡片上，一键照着排行程。
+- **博主同款路线**：72 条中文、英语、日语、韩语和欧洲博主的 YouTube / B 站路线（B 站也收了博主写的图文攻略），按公园和语言筛选；博主对景点的评价显示在景点卡片上，一键照着排行程。
 - **机票、租车、油价**：比较公园附近几个机场的机票，各机场租车参考价，公园所在各州的实时油价和油费计算。
 - **手机和离线**：手机上一样好用；可以装到主屏（PWA），看过的页面、行程和地图在没信号的园区里也能打开；出发前可以按行程范围下载离线地图和照片；电脑上排好的行程用链接或二维码发到手机；行程可以打印或存成 PDF。
 - **简体 / 繁體**：内容用简体撰写，繁体按台湾用语自动转换。
@@ -212,7 +212,7 @@ npm run dev                  # 打开 http://localhost:3000
 - **照片**：[Wikimedia Commons](https://commons.wikimedia.org)，按授权逐张署名
 - **住宿和餐饮标准**：GSA Per Diem；**油价**：AAA；**租车**：Kayak 参考价；**机票**：Google Flights / SerpApi
 - **热度和评分**：Google Maps 评分和评论数（手动快照，只在自用阶段使用）
-- **博主路线**：YouTube / B 站公开视频的简介、章节和文稿，转述并附原视频链接
+- **博主路线**：YouTube / B 站公开视频的简介、章节和文稿，B 站的图文攻略；B 站视频没有公开字幕，用本机的语音识别（faster-whisper）转成文字后整理，转述并附原视频、原文链接
 
 ## 路线图
 
@@ -235,7 +235,7 @@ npm run dev                  # 打开 http://localhost:3000
 - **Booking timeline**: when each lodge, campground, permit lottery, timed entry or boat ticket on your trip opens for booking, with calendar (.ics) reminders; mandatory shuttles (Zion, Grand Canyon, Mariposa Grove, Moraine Lake, Kennecott) are built into the timings.
 - **On the road**: a “today” view with the next stop and live arrival times, check-ins that learn how long you actually spend at stops and on the road and adjust the rest of the trip, trip sharing to your phone by link or QR code, and offline map downloads.
 - **Budget and logistics**: park fees (including the 2026 nonresident surcharge), lodging and meals, fuel or EV charging, car rental, flights, and supplies near each night's stay.
-- **Creator routes**: 49 routes from Chinese, English, Japanese, Korean and European YouTube and Bilibili creators.
+- **Creator routes**: 72 routes from Chinese, English, Japanese, Korean and European YouTube and Bilibili creators, including Bilibili written guides.
 - **Rankings**: all 63 U.S. national parks ranked by official NPS visitation (or area), a timeline of when each became a national park, recent Lonely Planet, National Geographic and TIME picks, World Heritage sites and International Dark Sky Parks; every park page shows its monthly crowd levels and visitors per year since 1979.
 - **Offline**: a PWA that keeps your trip and viewed maps available without cell signal.
 
@@ -246,4 +246,4 @@ Built with Next.js 16, React 19, TypeScript, Tailwind CSS 4 and MapLibre GL, mos
 - 非官方项目，与美国国家公园管理局（National Park Service）无关，名字里的 NPS 只是说明用途。
 - 景点的开放情况、活动日期和价格是整理时的快照，会过时；出发前请以官网和预订页面为准。
 - 照片来自 Wikimedia Commons，作者和授权在网站上逐张标注（截图里也能看到）；地图数据 © OpenStreetMap contributors。
-- 博主路线是我们的转述，版权归原作者，想看完整内容请点原视频。
+- 博主路线是我们的转述，版权归原作者，想看完整内容请点原视频或原文。

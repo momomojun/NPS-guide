@@ -52,25 +52,42 @@ export function CreatorRoutes({
     .filter((route) => !language || route.language === language)
     .sort((a, b) => (sort === "views" ? b.views - a.views : b.published.localeCompare(a.published)));
 
-  const views = (n: number) => (n >= 10000 ? fill(text.viewsWan, { n: (n / 10000).toFixed(1) }) : fill(text.views, { n }));
+  // 视频按播放量，图文按阅读量
+  const views = (route: CreatorRoute) => {
+    const article = route.format === "article";
+    return route.views >= 10000
+      ? fill(article ? text.readsWan : text.viewsWan, { n: (route.views / 10000).toFixed(1) })
+      : fill(article ? text.reads : text.views, { n: route.views });
+  };
   const known = (stop: string) => stop in stopNames;
 
   const apply = (route: CreatorRoute) => {
-    const days = (route.route ?? []).map((day) => day.stops.filter(known)).filter((ids) => ids.length > 0);
-    if (days.length === 0) return;
+    // 同一个景点只排一次：博主隔天又去的（比如两天都逛班夫镇），留在第一次去的那天
+    const seen = new Set<string>();
+    const days = (route.route ?? []).map((day) =>
+      day.stops.filter((stop) => {
+        if (!known(stop) || seen.has(stop)) return false;
+        seen.add(stop);
+        return true;
+      }),
+    );
+    if (!days.some((ids) => ids.length > 0)) return;
     if (route.byDay) {
       if (tripIds(trip).length > 0 && !window.confirm(text.replaceConfirm)) return;
-      const kept = days.slice(0, MAX_DAYS);
+      // 中间没有收录景点的一天（开车赶路、去园外的地方）留成空的一天，不然后面几天会往前挤；开头和最后的空天去掉
+      const first = days.findIndex((ids) => ids.length > 0);
+      const last = days.findLastIndex((ids) => ids.length > 0);
+      const kept = days.slice(first, last + 1).slice(0, MAX_DAYS);
       updateTrip(() => ({
         version: 2,
         startDate: "",
         dayCount: kept.length,
-        days: kept.map((ids) => [...new Set(ids)].map((id) => ({ id, status: "planned" as const }))),
+        days: kept.map((ids) => ids.map((id) => ({ id, status: "planned" as const }))),
         pool: [],
         nights: Array.from({ length: kept.length + 1 }, () => null),
       }));
     } else {
-      addToTrip([...new Set(days.flat())]);
+      addToTrip(days.flat());
     }
     setDone(route.id);
     router.push(`/${locale}/plan`);
@@ -134,6 +151,7 @@ export function CreatorRoutes({
                   }`}
                 >
                   {text.platforms[route.platform]}
+                  {route.format === "article" && ` · ${text.article}`}
                 </span>
                 <span className="border border-line px-1.5 py-0.5 text-[11px] text-ink-soft">
                   {text.languages[route.language]}
@@ -141,8 +159,8 @@ export function CreatorRoutes({
                 </span>
                 <span className="text-ink-soft">{route.creator}</span>
                 <span>· {fill(text.published, { date: route.published })}</span>
-                <span>· {views(route.views)}</span>
-                <span>· {fill(text.minutes, { n: route.durationMin })}</span>
+                <span>· {views(route)}</span>
+                {route.durationMin !== undefined && <span>· {fill(text.minutes, { n: route.durationMin })}</span>}
               </p>
               <h2 className="mt-3 font-serif text-xl leading-snug">
                 <a href={route.url} target="_blank" rel="noreferrer" className="hover:text-clay-700">
@@ -222,7 +240,7 @@ export function CreatorRoutes({
 
               <div className="mt-5 flex flex-wrap items-center gap-3">
                 <a href={route.url} target="_blank" rel="noreferrer" className={buttonSecondary}>
-                  {text.watch} <IconArrowUpRight />
+                  {route.format === "article" ? text.read : text.watch} <IconArrowUpRight />
                 </a>
                 {linked.length > 0 && (
                   <button
