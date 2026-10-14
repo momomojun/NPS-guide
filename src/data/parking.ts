@@ -282,6 +282,51 @@ export const parkingRules: Record<string, ParkingRule> = Object.fromEntries([
     noteZh: "停满了就停 Puʻupuaʻi 观景台或 Devastation 步道口，经 Byron Ledge 走到 Kīlauea Iki（往返多走约 3–4 公里），也可以从 Kīlauea 游客中心停车场沿火山口边缘步道过来。",
     source: "https://www.nps.gov/havo/planyourvisit/eruption-viewing.htm",
   }),
+  ...lot(["pinn-bear-gulch-cave", "pinn-high-peaks", "pinn-condor-gulch-overlook"], {
+    lot: "Bear Gulch 一带（Moses Spring 停车场、Bear Gulch 日间区）",
+    fullBy: "08:00",
+    freeAfter: "15:00",
+    months: [3, 4, 5],
+    weekends: true,
+    noteZh:
+      "停满了就往回开到 Peaks View 或营地停车，走 Bench、Sycamore 步道上来（营地到 Bear Gulch 单程约 3.7 公里），春季周末也可以从营地坐接驳车；公园有时会在路口拦车，等有车出来再放行。",
+    source: "https://www.nps.gov/pinn/planyourvisit/hours.htm",
+  }),
+  ...lot(["pinn-old-pinnacles-balconies"], {
+    lot: "Old Pinnacles 停车场",
+    fullBy: "08:00",
+    freeAfter: "15:00",
+    months: [3, 4, 5],
+    weekends: true,
+    noteZh: "停车场不大，满了只能从营地沿 Bench 步道走过来（营地到 Balconies 往返约 15 公里），或者改天从西侧的 Chaparral 进。",
+    source: "https://www.nps.gov/pinn/planyourvisit/hours.htm",
+  }),
+  ...lot(["pinn-balconies-cave", "pinn-juniper-canyon"], {
+    lot: "Chaparral 停车场（西侧）",
+    fullBy: "08:00",
+    freeAfter: "15:00",
+    months: [3, 4, 5],
+    weekends: true,
+    noteZh:
+      "停满了就停回头约 0.5 公里的 Jawbone 停车场，沿 Jawbone 步道走过来；再满就停游客服务站，走 Jawbone 步道下来（单程约 1.9 公里、下坡约 170 米）。",
+    source: "https://www.nps.gov/pinn/planyourvisit/hours.htm",
+  }),
+  ...lot(["bibe-lost-mine"], {
+    lot: "Lost Mine 步道口停车场（约 15 个车位）",
+    fullBy: "08:00",
+    months: [11, 12, 1, 2, 3, 4],
+    noteZh:
+      "停满了不能在盆地路边乱停，可以先下到盆地走 Window 或盆地环线，下午再回来碰运气；住盆地小屋的也要开车上来，没有接驳车。",
+    source: "https://www.nps.gov/places/lost-mine-trail.htm",
+  }),
+  ...lot(["gumo-guadalupe-peak", "gumo-devils-hall"], {
+    lot: "Pine Springs 步道口停车场",
+    fullBy: "10:00",
+    months: [3, 4, 5, 9, 10, 11, 12],
+    weekends: true,
+    noteZh: "停满了就停 Pine Springs 游客中心的停车场，沿营地连接小路走到步道口；不要停在 62/180 号公路边。",
+    source: "https://www.nps.gov/gumo/planyourvisit/parking.htm",
+  }),
 ]);
 
 /** 整理的日期 */

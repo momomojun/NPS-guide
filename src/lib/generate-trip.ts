@@ -1,6 +1,7 @@
 import {
   arrangeDay,
   buildTimeline,
+  buildTransferTimeline,
   LATE_RETURN,
   lodgingLeg,
   onlyAt,
@@ -364,27 +365,37 @@ export function generateTrip(input: GenerateInput, context: GenerateContext): { 
   }
 
   // 偏远片区当天只排了一两个不是必去的景点、为它们要多开很久的车（比如摩押几天里顺带去峡谷地的 Needles 片区）：
-  // 去掉，后面补景点时补更顺路的。一整天都在那个片区的不动（专门去的）；那个片区别的天还有景点的也不动（只是分到了这天）
+  // 去掉，后面补景点时补更顺路的。一整天都在那个片区的也算：为了一个 45 分钟的小步道专门开一天车（瓜达卢佩山最后一天绕去 Dog Canyon
+  // 再回埃尔帕索），和直接开过去比多开的车超过它停留的 1.5 倍、至少 1 小时就去掉；专门去玩一整天的（停留够长）不会被去掉。
+  // 那个片区别的天还有景点的不动（只是分到了这天）
   const guideById = new Map(context.stops.map((stop) => [stop.id, stop]));
   const areaKey = (stop: PlanStop) => `${stop.park}|${guideById.get(stop.id)?.area ?? stop.id}`;
-  for (let round = 0; round < 4; round++) {
+  const remoteGroups = (current: Trip) => {
     const inTrip = new Map<string, number>();
-    for (const item of trip.days.flat()) {
+    for (const item of current.days.flat()) {
       const stop = stopById.get(item.id);
       if (stop) inTrip.set(areaKey(stop), (inTrip.get(areaKey(stop)) ?? 0) + 1);
     }
-    const remote = dayContexts(trip).flatMap(({ stops, context: day }) => {
+    return dayContexts(current).flatMap(({ stops, context: day }) => {
       const groups = new Map<string, GuideStop[]>();
       for (const stop of stops) groups.set(areaKey(stop), [...(groups.get(areaKey(stop)) ?? []), guideById.get(stop.id)!]);
       return [...groups.entries()].flatMap(([key, group]) => {
-        if (group.length > REMOTE_GROUP_MAX || group.length === stops.length || inTrip.get(key) !== group.length) return [];
+        if (group.length > REMOTE_GROUP_MAX || inTrip.get(key) !== group.length) return [];
         if (group.some((stop) => stop.mustSee)) return [];
         const without = stops.filter((stop) => !group.some((member) => member.id === stop.id));
-        const detour = buildTimeline(stops, day).driveMin - buildTimeline(without, day).driveMin;
+        // 一整天只有它们：和直接从前一晚住处开到当晚住处比（连住同一家就是 0）
+        const base =
+          without.length > 0
+            ? buildTimeline(without, day).driveMin
+            : (buildTransferTimeline(day, [...stopById.values()].filter((stop) => stop.park === group[0].park))?.driveMin ?? 0);
+        const detour = buildTimeline(stops, day).driveMin - base;
         const visit = group.reduce((sum, stop) => sum + stop.durationMin, 0);
         return detour > Math.max(REMOTE_DETOUR_MIN, visit * REMOTE_DETOUR_FACTOR) ? [group] : [];
       });
     });
+  };
+  for (let round = 0; round < 4; round++) {
+    const remote = remoteGroups(trip);
     if (remote.length === 0) break;
     const far = new Set(remote.flat().map((stop) => stop.id));
     skipped.tooFar.push(...far);
@@ -627,6 +638,22 @@ export function generateTrip(input: GenerateInput, context: GenerateContext): { 
     skipped.noTime.push(victim.id);
     const days = trip.days.map((day) => day.filter((item) => item.id !== victim.id));
     trip = arrangeAll(chooseLodging(arrangeAll({ ...trip, days })));
+  }
+
+  // 住处最后定下来以后再看一遍有没有专门绕远路的（瓜达卢佩山 4 天：最后一晚住到 Dell City，第二天绕去 Dog Canyon 再回埃尔帕索）
+  const lateRemote = remoteGroups(trip);
+  if (lateRemote.length > 0) {
+    const far = new Set(lateRemote.flat().map((stop) => stop.id));
+    skipped.tooFar.push(...far);
+    trip = arrangeAll(chooseLodging(arrangeAll({ ...trip, days: trip.days.map((day) => day.filter((item) => !far.has(item.id))) })));
+  }
+
+  // 去掉景点以后第一天空了（比如第一天排的 Anaktuvuk Pass 飞行后来去掉了）：第二天就得从住处折回去看路上的景点。
+  // 把第二天整天挪到第一天（空出来的一天留在住处休息、补景点），排不开的没变多、没变得更满才换
+  if (trip.days[0]?.length === 0 && (trip.days[1]?.length ?? 0) > 0) {
+    const days = [trip.days[1], trip.days[0], ...trip.days.slice(2)];
+    const trial = rearrange({ ...trip, days }, [0, 1]);
+    if (troubled(trial).length <= troubled(trip).length && excess(trial) <= excess(trip) + FILL_SLACK_MIN) trip = trial;
   }
 
   // 没排进去的里面，这几天山路一直封着、在路另一侧的（比如 5 月 Trail Ridge Road 没通时西边的 Grand Lake 一带）单独说

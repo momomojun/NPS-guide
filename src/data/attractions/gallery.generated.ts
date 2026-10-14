@@ -32671,5 +32671,5367 @@ export const gallery: Record<string, Photo[]> = {
       "author": "Lake Clark National Park & Preserve",
       "license": "Public domain"
     }
-  ]
+  ],
+  "pinn-visitor-center": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Western_Bluebird_%28male%29_Pinnacles_Visitor_Center_Paicines_CA_2017-04-08_10-30-23_%2833513061183%29.jpg/960px-Western_Bluebird_%28male%29_Pinnacles_Visitor_Center_Paicines_CA_2017-04-08_10-30-23_%2833513061183%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Western_Bluebird_%28male%29_Pinnacles_Visitor_Center_Paicines_CA_2017-04-08_10-30-23_%2833513061183%29.jpg/1920px-Western_Bluebird_%28male%29_Pinnacles_Visitor_Center_Paicines_CA_2017-04-08_10-30-23_%2833513061183%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Western_Bluebird_(male)_Pinnacles_Visitor_Center_Paicines_CA_2017-04-08_10-30-23_(33513061183).jpg",
+      "author": "Bettina Arrigoni",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Red-shouldered_Hawk_Pinnacles_Visitor_Center_Paicines_CA_2017-04-08_10-27-15_%2834192252471%29.jpg/960px-Red-shouldered_Hawk_Pinnacles_Visitor_Center_Paicines_CA_2017-04-08_10-27-15_%2834192252471%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Red-shouldered_Hawk_Pinnacles_Visitor_Center_Paicines_CA_2017-04-08_10-27-15_%2834192252471%29.jpg/1920px-Red-shouldered_Hawk_Pinnacles_Visitor_Center_Paicines_CA_2017-04-08_10-27-15_%2834192252471%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Red-shouldered_Hawk_Pinnacles_Visitor_Center_Paicines_CA_2017-04-08_10-27-15_(34192252471).jpg",
+      "author": "Bettina Arrigoni",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Pinnacles_National_Park_%288726907623%29.jpg/960px-Pinnacles_National_Park_%288726907623%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Pinnacles_National_Park_%288726907623%29.jpg/1920px-Pinnacles_National_Park_%288726907623%29.jpg",
+      "width": 960,
+      "height": 717,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_National_Park_(8726907623).jpg",
+      "author": "Joyce Cory on Flickr as docentjoyce",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Pinnacles_National_Park%2C_California_%2813412701965%29.jpg/960px-Pinnacles_National_Park%2C_California_%2813412701965%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Pinnacles_National_Park%2C_California_%2813412701965%29.jpg/1920px-Pinnacles_National_Park%2C_California_%2813412701965%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_National_Park,_California_(13412701965).jpg",
+      "author": "Ken Lund from Reno, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Pica_nuttalli_San_Benito.jpg/960px-Pica_nuttalli_San_Benito.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Pica_nuttalli_San_Benito.jpg/1920px-Pica_nuttalli_San_Benito.jpg",
+      "width": 960,
+      "height": 642,
+      "page": "https://commons.wikimedia.org/wiki/File:Pica_nuttalli_San_Benito.jpg",
+      "author": "Kai Schreiber from Jersey City, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Admetovis_similaris.jpg/960px-Admetovis_similaris.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Admetovis_similaris.jpg/1920px-Admetovis_similaris.jpg",
+      "width": 960,
+      "height": 960,
+      "page": "https://commons.wikimedia.org/wiki/File:Admetovis_similaris.jpg",
+      "author": "Ken-ichi Ueda",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "pinn-bear-gulch-cave": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Bear_Gulch_Reservoir%2C_Pinnacles_National_Park%2C_California_%2813414023934%29.jpg/960px-Bear_Gulch_Reservoir%2C_Pinnacles_National_Park%2C_California_%2813414023934%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Bear_Gulch_Reservoir%2C_Pinnacles_National_Park%2C_California_%2813414023934%29.jpg/1920px-Bear_Gulch_Reservoir%2C_Pinnacles_National_Park%2C_California_%2813414023934%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Bear_Gulch_Reservoir,_Pinnacles_National_Park,_California_(13414023934).jpg",
+      "author": "Ken Lund from Reno, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Bear_Gulch_Reservoir%2C_Pinnacles_National_Park%2C_California_%2813413975664%29.jpg/960px-Bear_Gulch_Reservoir%2C_Pinnacles_National_Park%2C_California_%2813413975664%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Bear_Gulch_Reservoir%2C_Pinnacles_National_Park%2C_California_%2813413975664%29.jpg/1920px-Bear_Gulch_Reservoir%2C_Pinnacles_National_Park%2C_California_%2813413975664%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Bear_Gulch_Reservoir,_Pinnacles_National_Park,_California_(13413975664).jpg",
+      "author": "Ken Lund from Reno, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Bear_gulch_reservoir.JPG/960px-Bear_gulch_reservoir.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Bear_gulch_reservoir.JPG/1920px-Bear_gulch_reservoir.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Bear_gulch_reservoir.JPG",
+      "author": "Inklein",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Pinnacles_National_Park_dec_2017_-_1.jpg/960px-Pinnacles_National_Park_dec_2017_-_1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Pinnacles_National_Park_dec_2017_-_1.jpg/1920px-Pinnacles_National_Park_dec_2017_-_1.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_National_Park_dec_2017_-_1.jpg",
+      "author": "Effeietsanders",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Pinnacles_National_Park_dec_2017_-_2.jpg/960px-Pinnacles_National_Park_dec_2017_-_2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Pinnacles_National_Park_dec_2017_-_2.jpg/1920px-Pinnacles_National_Park_dec_2017_-_2.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_National_Park_dec_2017_-_2.jpg",
+      "author": "Effeietsanders",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Pinnacles_National_Park_-_54515093471.jpg/960px-Pinnacles_National_Park_-_54515093471.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Pinnacles_National_Park_-_54515093471.jpg/1920px-Pinnacles_National_Park_-_54515093471.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_National_Park_-_54515093471.jpg",
+      "author": "lamblukas",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "pinn-high-peaks": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/High_Peaks_of_Pinnacles.JPG/960px-High_Peaks_of_Pinnacles.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/High_Peaks_of_Pinnacles.JPG/1920px-High_Peaks_of_Pinnacles.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:High_Peaks_of_Pinnacles.JPG",
+      "author": "Sierra Willoughby",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/High_Peaks_and_Hain_Wilderness_in_Pinnacles_National_Park%2C_California%2C_US.jpg/960px-High_Peaks_and_Hain_Wilderness_in_Pinnacles_National_Park%2C_California%2C_US.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/High_Peaks_and_Hain_Wilderness_in_Pinnacles_National_Park%2C_California%2C_US.jpg/1920px-High_Peaks_and_Hain_Wilderness_in_Pinnacles_National_Park%2C_California%2C_US.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:High_Peaks_and_Hain_Wilderness_in_Pinnacles_National_Park,_California,_US.jpg",
+      "author": "Clyde Charles Brown",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Pinnacle_peaks_-_panoramio.jpg/960px-Pinnacle_peaks_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Pinnacle_peaks_-_panoramio.jpg/1920px-Pinnacle_peaks_-_panoramio.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacle_peaks_-_panoramio.jpg",
+      "author": "Annette Teng",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Bear_Gulch%2C_Pinnacles_National_Park_%2813413166624%29.jpg/960px-Bear_Gulch%2C_Pinnacles_National_Park_%2813413166624%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Bear_Gulch%2C_Pinnacles_National_Park_%2813413166624%29.jpg/1920px-Bear_Gulch%2C_Pinnacles_National_Park_%2813413166624%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Bear_Gulch,_Pinnacles_National_Park_(13413166624).jpg",
+      "author": "Ken Lund from Reno, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Bear_Gulch%2C_Pinnacles_National_Park_%2813412826445%29.jpg/960px-Bear_Gulch%2C_Pinnacles_National_Park_%2813412826445%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Bear_Gulch%2C_Pinnacles_National_Park_%2813412826445%29.jpg/1920px-Bear_Gulch%2C_Pinnacles_National_Park_%2813412826445%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Bear_Gulch,_Pinnacles_National_Park_(13412826445).jpg",
+      "author": "Ken Lund from Reno, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/High_peaks._Dynamics_of_statics._-_panoramio.jpg/960px-High_peaks._Dynamics_of_statics._-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/High_peaks._Dynamics_of_statics._-_panoramio.jpg/1920px-High_peaks._Dynamics_of_statics._-_panoramio.jpg",
+      "width": 960,
+      "height": 353,
+      "page": "https://commons.wikimedia.org/wiki/File:High_peaks._Dynamics_of_statics._-_panoramio.jpg",
+      "author": "Vadim Manuylov",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "pinn-condor-gulch-overlook": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/View_of_Pinnacles_in_High_Peaks_Area%2C_Pinnacles_National_Park_%2813412906643%29.jpg/960px-View_of_Pinnacles_in_High_Peaks_Area%2C_Pinnacles_National_Park_%2813412906643%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/View_of_Pinnacles_in_High_Peaks_Area%2C_Pinnacles_National_Park_%2813412906643%29.jpg/1920px-View_of_Pinnacles_in_High_Peaks_Area%2C_Pinnacles_National_Park_%2813412906643%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:View_of_Pinnacles_in_High_Peaks_Area,_Pinnacles_National_Park_(13412906643).jpg",
+      "author": "Ken Lund from Reno, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Bear_Gulch%2C_Pinnacles_National_Park_%2813412844405%29.jpg/960px-Bear_Gulch%2C_Pinnacles_National_Park_%2813412844405%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Bear_Gulch%2C_Pinnacles_National_Park_%2813412844405%29.jpg/1920px-Bear_Gulch%2C_Pinnacles_National_Park_%2813412844405%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Bear_Gulch,_Pinnacles_National_Park_(13412844405).jpg",
+      "author": "Ken Lund from Reno, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Pinnacles_National_Park_-_54515444035.jpg/960px-Pinnacles_National_Park_-_54515444035.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Pinnacles_National_Park_-_54515444035.jpg/1920px-Pinnacles_National_Park_-_54515444035.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_National_Park_-_54515444035.jpg",
+      "author": "lamblukas",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "pinn-chalone-peak": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/South_and_North_Chalone_Peaks_from_Pinnacles_National_Monument_Chalone_Peak_Trail.jpg/960px-South_and_North_Chalone_Peaks_from_Pinnacles_National_Monument_Chalone_Peak_Trail.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/South_and_North_Chalone_Peaks_from_Pinnacles_National_Monument_Chalone_Peak_Trail.jpg/1920px-South_and_North_Chalone_Peaks_from_Pinnacles_National_Monument_Chalone_Peak_Trail.jpg",
+      "width": 960,
+      "height": 494,
+      "page": "https://commons.wikimedia.org/wiki/File:South_and_North_Chalone_Peaks_from_Pinnacles_National_Monument_Chalone_Peak_Trail.jpg",
+      "author": "Miguel Vieira",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Bear_Gulch_Cave_Trailhead%2C_Pinnacles_National_Park_%2813413216944%29.jpg/960px-Bear_Gulch_Cave_Trailhead%2C_Pinnacles_National_Park_%2813413216944%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Bear_Gulch_Cave_Trailhead%2C_Pinnacles_National_Park_%2813413216944%29.jpg/1920px-Bear_Gulch_Cave_Trailhead%2C_Pinnacles_National_Park_%2813413216944%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Bear_Gulch_Cave_Trailhead,_Pinnacles_National_Park_(13413216944).jpg",
+      "author": "Ken Lund from Reno, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Bear_Gulch_Cave_Trailhead%2C_Pinnacles_National_Park_%2813412875075%29.jpg/960px-Bear_Gulch_Cave_Trailhead%2C_Pinnacles_National_Park_%2813412875075%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Bear_Gulch_Cave_Trailhead%2C_Pinnacles_National_Park_%2813412875075%29.jpg/1920px-Bear_Gulch_Cave_Trailhead%2C_Pinnacles_National_Park_%2813412875075%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Bear_Gulch_Cave_Trailhead,_Pinnacles_National_Park_(13412875075).jpg",
+      "author": "Ken Lund from Reno, Nevada, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Pinnacles_National_Park_-_54515357548.jpg/960px-Pinnacles_National_Park_-_54515357548.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Pinnacles_National_Park_-_54515357548.jpg/1920px-Pinnacles_National_Park_-_54515357548.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_National_Park_-_54515357548.jpg",
+      "author": "lamblukas",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "pinn-old-pinnacles-balconies": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Machete_Ridge_in_Pinnacles_National_Park%2C_California%2C_US.jpg/960px-Machete_Ridge_in_Pinnacles_National_Park%2C_California%2C_US.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Machete_Ridge_in_Pinnacles_National_Park%2C_California%2C_US.jpg/1920px-Machete_Ridge_in_Pinnacles_National_Park%2C_California%2C_US.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Machete_Ridge_in_Pinnacles_National_Park,_California,_US.jpg",
+      "author": "Clyde Charles Brown",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Pinnacles%2C_trail_to_Balconies_cave_-_panoramio.jpg/960px-Pinnacles%2C_trail_to_Balconies_cave_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Pinnacles%2C_trail_to_Balconies_cave_-_panoramio.jpg/1280px-Pinnacles%2C_trail_to_Balconies_cave_-_panoramio.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles,_trail_to_Balconies_cave_-_panoramio.jpg",
+      "author": "Vadim Manuylov",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Inside_Balconies_Cave_2.jpg/960px-Inside_Balconies_Cave_2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Inside_Balconies_Cave_2.jpg/1920px-Inside_Balconies_Cave_2.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Inside_Balconies_Cave_2.jpg",
+      "author": "Brocken Inaglory",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/The_Pinnacles_-_Flickr_-_GregTheBusker.jpg/960px-The_Pinnacles_-_Flickr_-_GregTheBusker.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/The_Pinnacles_-_Flickr_-_GregTheBusker.jpg/1920px-The_Pinnacles_-_Flickr_-_GregTheBusker.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:The_Pinnacles_-_Flickr_-_GregTheBusker.jpg",
+      "author": "Greg Schechter from San Francisco, USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Pinnacles_-_panoramio.jpg/960px-Pinnacles_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Pinnacles_-_panoramio.jpg/1920px-Pinnacles_-_panoramio.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_-_panoramio.jpg",
+      "author": "Annette Teng",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Chaparral_Picnic_Area_in_Pinnacles_National_Park%2C_California%2C_US.jpg/960px-Chaparral_Picnic_Area_in_Pinnacles_National_Park%2C_California%2C_US.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Chaparral_Picnic_Area_in_Pinnacles_National_Park%2C_California%2C_US.jpg/1920px-Chaparral_Picnic_Area_in_Pinnacles_National_Park%2C_California%2C_US.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Chaparral_Picnic_Area_in_Pinnacles_National_Park,_California,_US.jpg",
+      "author": "Clyde Charles Brown",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "pinn-west-visitor-station": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Pinnacles_West_%28Chaparral_Station%29_-_panoramio.jpg/960px-Pinnacles_West_%28Chaparral_Station%29_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Pinnacles_West_%28Chaparral_Station%29_-_panoramio.jpg/1280px-Pinnacles_West_%28Chaparral_Station%29_-_panoramio.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_West_(Chaparral_Station)_-_panoramio.jpg",
+      "author": "Vadim Manuylov",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Pinnacles_National_Park_%285839423135%29.jpg/960px-Pinnacles_National_Park_%285839423135%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Pinnacles_National_Park_%285839423135%29.jpg/1920px-Pinnacles_National_Park_%285839423135%29.jpg",
+      "width": 960,
+      "height": 750,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_National_Park_(5839423135).jpg",
+      "author": "Rennett Stowe from USA",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "pinn-prewett-point": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Pinnacles_prospect_-_panoramio.jpg/960px-Pinnacles_prospect_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Pinnacles_prospect_-_panoramio.jpg/1920px-Pinnacles_prospect_-_panoramio.jpg",
+      "width": 960,
+      "height": 454,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_prospect_-_panoramio.jpg",
+      "author": "Vadim Manuylov",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Turkey_Vultures%2C_Pinnacles_NP%2C_California_panoramio.jpg/960px-Turkey_Vultures%2C_Pinnacles_NP%2C_California_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Turkey_Vultures%2C_Pinnacles_NP%2C_California_panoramio.jpg/1280px-Turkey_Vultures%2C_Pinnacles_NP%2C_California_panoramio.jpg",
+      "width": 960,
+      "height": 1440,
+      "page": "https://commons.wikimedia.org/wiki/File:Turkey_Vultures,_Pinnacles_NP,_California_panoramio.jpg",
+      "author": "Vadim Manuylov",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "pinn-balconies-cave": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Inside_Balconies_Cave_at_Pinnacles_National_Park.jpg/960px-Inside_Balconies_Cave_at_Pinnacles_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Inside_Balconies_Cave_at_Pinnacles_National_Park.jpg/1920px-Inside_Balconies_Cave_at_Pinnacles_National_Park.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Inside_Balconies_Cave_at_Pinnacles_National_Park.jpg",
+      "author": "Brocken Inaglory",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/View_on_Balconies_-_%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D1%81%D0%BA%D0%B0%D0%BB%D1%83_Balconies_-_panoramio.jpg/960px-View_on_Balconies_-_%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D1%81%D0%BA%D0%B0%D0%BB%D1%83_Balconies_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/View_on_Balconies_-_%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D1%81%D0%BA%D0%B0%D0%BB%D1%83_Balconies_-_panoramio.jpg/1280px-View_on_Balconies_-_%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D1%81%D0%BA%D0%B0%D0%BB%D1%83_Balconies_-_panoramio.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:View_on_Balconies_-_%D0%92%D0%B8%D0%B4_%D0%BD%D0%B0_%D1%81%D0%BA%D0%B0%D0%BB%D1%83_Balconies_-_panoramio.jpg",
+      "author": "Vadim Manuylov",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Balconies_-_panoramio_-_Vadim_Manuylov.jpg/960px-Balconies_-_panoramio_-_Vadim_Manuylov.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Balconies_-_panoramio_-_Vadim_Manuylov.jpg/1280px-Balconies_-_panoramio_-_Vadim_Manuylov.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Balconies_-_panoramio_-_Vadim_Manuylov.jpg",
+      "author": "Vadim Manuylov",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Pinnacle_View_-_panoramio.jpg/960px-Pinnacle_View_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Pinnacle_View_-_panoramio.jpg/1920px-Pinnacle_View_-_panoramio.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacle_View_-_panoramio.jpg",
+      "author": "Annette Teng",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/At_The_Pinnacle_S_%2843702062%29.jpeg/960px-At_The_Pinnacle_S_%2843702062%29.jpeg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/At_The_Pinnacle_S_%2843702062%29.jpeg/1920px-At_The_Pinnacle_S_%2843702062%29.jpeg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:At_The_Pinnacle_S_(43702062).jpeg",
+      "author": "Charlton",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Primula_clevelandii_patula.jpg/960px-Primula_clevelandii_patula.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Primula_clevelandii_patula.jpg/1920px-Primula_clevelandii_patula.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Primula_clevelandii_patula.jpg",
+      "author": "iNatutralist user: joergmlpts",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "pinn-juniper-canyon": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/High_Peaks_Trail_in_Pinnacles_National_Park%2C_California%2C_US.jpg/960px-High_Peaks_Trail_in_Pinnacles_National_Park%2C_California%2C_US.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/High_Peaks_Trail_in_Pinnacles_National_Park%2C_California%2C_US.jpg/1920px-High_Peaks_Trail_in_Pinnacles_National_Park%2C_California%2C_US.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:High_Peaks_Trail_in_Pinnacles_National_Park,_California,_US.jpg",
+      "author": "Clyde Charles Brown",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Pinnacles_National_Park_-_54515441575.jpg/960px-Pinnacles_National_Park_-_54515441575.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Pinnacles_National_Park_-_54515441575.jpg/1920px-Pinnacles_National_Park_-_54515441575.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_National_Park_-_54515441575.jpg",
+      "author": "lamblukas",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Pinnacles_National_Park_-_54515091081.jpg/960px-Pinnacles_National_Park_-_54515091081.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Pinnacles_National_Park_-_54515091081.jpg/1920px-Pinnacles_National_Park_-_54515091081.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_National_Park_-_54515091081.jpg",
+      "author": "lamblukas",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Ascending_toward_Scout_Peak_in_Pinnacles_National_Park%2C_California%2C_US.jpg/960px-Ascending_toward_Scout_Peak_in_Pinnacles_National_Park%2C_California%2C_US.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Ascending_toward_Scout_Peak_in_Pinnacles_National_Park%2C_California%2C_US.jpg/1920px-Ascending_toward_Scout_Peak_in_Pinnacles_National_Park%2C_California%2C_US.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Ascending_toward_Scout_Peak_in_Pinnacles_National_Park,_California,_US.jpg",
+      "author": "Clyde Charles Brown",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Natural_fortress_-_panoramio.jpg/960px-Natural_fortress_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Natural_fortress_-_panoramio.jpg/1920px-Natural_fortress_-_panoramio.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Natural_fortress_-_panoramio.jpg",
+      "author": "Vadim Manuylov",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Sunset_in_Pinnacles%2C_men_draw_on_sky_-_%D0%97%D0%B0%D0%BA%D0%B0%D1%82_%D0%B2_Pinnacles%2C_%D0%B8_%D0%B7%D0%B4%D0%B5%D1%81%D1%8C_%D0%BD%D0%B5%D0%B1%D0%BE_%D1%80%D0%B0%D0%B7%D1%80%D0%B8%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%BE..._-_panoramio.jpg/960px-Sunset_in_Pinnacles%2C_men_draw_on_sky_-_%D0%97%D0%B0%D0%BA%D0%B0%D1%82_%D0%B2_Pinnacles%2C_%D0%B8_%D0%B7%D0%B4%D0%B5%D1%81%D1%8C_%D0%BD%D0%B5%D0%B1%D0%BE_%D1%80%D0%B0%D0%B7%D1%80%D0%B8%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%BE..._-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Sunset_in_Pinnacles%2C_men_draw_on_sky_-_%D0%97%D0%B0%D0%BA%D0%B0%D1%82_%D0%B2_Pinnacles%2C_%D0%B8_%D0%B7%D0%B4%D0%B5%D1%81%D1%8C_%D0%BD%D0%B5%D0%B1%D0%BE_%D1%80%D0%B0%D0%B7%D1%80%D0%B8%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%BE..._-_panoramio.jpg/1280px-Sunset_in_Pinnacles%2C_men_draw_on_sky_-_%D0%97%D0%B0%D0%BA%D0%B0%D1%82_%D0%B2_Pinnacles%2C_%D0%B8_%D0%B7%D0%B4%D0%B5%D1%81%D1%8C_%D0%BD%D0%B5%D0%B1%D0%BE_%D1%80%D0%B0%D0%B7%D1%80%D0%B8%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%BE..._-_panoramio.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunset_in_Pinnacles,_men_draw_on_sky_-_%D0%97%D0%B0%D0%BA%D0%B0%D1%82_%D0%B2_Pinnacles,_%D0%B8_%D0%B7%D0%B4%D0%B5%D1%81%D1%8C_%D0%BD%D0%B5%D0%B1%D0%BE_%D1%80%D0%B0%D0%B7%D1%80%D0%B8%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%BE..._-_panoramio.jpg",
+      "author": "Vadim Manuylov",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "grba-lehman-caves-vc": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/2015-01-14_12_03_05_The_Lehman_Caves_Visitor_Center_in_Great_Basin_National_Park%2C_Nevada.JPG/960px-2015-01-14_12_03_05_The_Lehman_Caves_Visitor_Center_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/2015-01-14_12_03_05_The_Lehman_Caves_Visitor_Center_in_Great_Basin_National_Park%2C_Nevada.JPG/1920px-2015-01-14_12_03_05_The_Lehman_Caves_Visitor_Center_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2015-01-14_12_03_05_The_Lehman_Caves_Visitor_Center_in_Great_Basin_National_Park,_Nevada.JPG",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/2015-01-14_11_57_19_View_east_toward_some_low_clouds_from_the_Lehman_Caves_Visitor_Center_in_Great_Basin_National_Park%2C_Nevada.JPG/960px-2015-01-14_11_57_19_View_east_toward_some_low_clouds_from_the_Lehman_Caves_Visitor_Center_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/2015-01-14_11_57_19_View_east_toward_some_low_clouds_from_the_Lehman_Caves_Visitor_Center_in_Great_Basin_National_Park%2C_Nevada.JPG/1920px-2015-01-14_11_57_19_View_east_toward_some_low_clouds_from_the_Lehman_Caves_Visitor_Center_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2015-01-14_11_57_19_View_east_toward_some_low_clouds_from_the_Lehman_Caves_Visitor_Center_in_Great_Basin_National_Park,_Nevada.JPG",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Great_Basin_National_Park_-_53837991150.jpg/960px-Great_Basin_National_Park_-_53837991150.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Great_Basin_National_Park_-_53837991150.jpg/1920px-Great_Basin_National_Park_-_53837991150.jpg",
+      "width": 960,
+      "height": 723,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Basin_National_Park_-_53837991150.jpg",
+      "author": "Roller Coaster Philosophy",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Great_Basin_National_Park_-_53837991135.jpg/960px-Great_Basin_National_Park_-_53837991135.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Great_Basin_National_Park_-_53837991135.jpg/1920px-Great_Basin_National_Park_-_53837991135.jpg",
+      "width": 960,
+      "height": 723,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Basin_National_Park_-_53837991135.jpg",
+      "author": "Roller Coaster Philosophy",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "grba-lehman-caves": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/2015-01-14_13_58_36_Rock_formations_within_Lehman_Caves_in_Great_Basin_National_Park%2C_Nevada.JPG/960px-2015-01-14_13_58_36_Rock_formations_within_Lehman_Caves_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/2015-01-14_13_58_36_Rock_formations_within_Lehman_Caves_in_Great_Basin_National_Park%2C_Nevada.JPG/1920px-2015-01-14_13_58_36_Rock_formations_within_Lehman_Caves_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2015-01-14_13_58_36_Rock_formations_within_Lehman_Caves_in_Great_Basin_National_Park,_Nevada.JPG",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/2015-01-14_13_19_18_Rock_formations_within_Lehman_Caves_in_Great_Basin_National_Park%2C_Nevada.JPG/960px-2015-01-14_13_19_18_Rock_formations_within_Lehman_Caves_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/2015-01-14_13_19_18_Rock_formations_within_Lehman_Caves_in_Great_Basin_National_Park%2C_Nevada.JPG/1920px-2015-01-14_13_19_18_Rock_formations_within_Lehman_Caves_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2015-01-14_13_19_18_Rock_formations_within_Lehman_Caves_in_Great_Basin_National_Park,_Nevada.JPG",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Great_Basin_National_Park_-_53837546091.jpg/960px-Great_Basin_National_Park_-_53837546091.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Great_Basin_National_Park_-_53837546091.jpg/1920px-Great_Basin_National_Park_-_53837546091.jpg",
+      "width": 960,
+      "height": 723,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Basin_National_Park_-_53837546091.jpg",
+      "author": "Roller Coaster Philosophy",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Great_Basin_National_Park_-_53836653342.jpg/960px-Great_Basin_National_Park_-_53836653342.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Great_Basin_National_Park_-_53836653342.jpg/1920px-Great_Basin_National_Park_-_53836653342.jpg",
+      "width": 960,
+      "height": 723,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Basin_National_Park_-_53836653342.jpg",
+      "author": "Roller Coaster Philosophy",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "grba-mountain-view-trail": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Rhodes_Cabin_Great_Basin_NV_NPS.jpg/960px-Rhodes_Cabin_Great_Basin_NV_NPS.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Rhodes_Cabin_Great_Basin_NV_NPS.jpg/1920px-Rhodes_Cabin_Great_Basin_NV_NPS.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Rhodes_Cabin_Great_Basin_NV_NPS.jpg",
+      "author": "National Park Service",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/2015-01-14_13_22_16_Rock_formations_within_Lehman_Caves_in_Great_Basin_National_Park%2C_Nevada.JPG/960px-2015-01-14_13_22_16_Rock_formations_within_Lehman_Caves_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/2015-01-14_13_22_16_Rock_formations_within_Lehman_Caves_in_Great_Basin_National_Park%2C_Nevada.JPG/1920px-2015-01-14_13_22_16_Rock_formations_within_Lehman_Caves_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2015-01-14_13_22_16_Rock_formations_within_Lehman_Caves_in_Great_Basin_National_Park,_Nevada.JPG",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/2015-01-14_13_31_39_Rock_formations_within_Lehman_Caves_in_Great_Basin_National_Park%2C_Nevada.JPG/960px-2015-01-14_13_31_39_Rock_formations_within_Lehman_Caves_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/2015-01-14_13_31_39_Rock_formations_within_Lehman_Caves_in_Great_Basin_National_Park%2C_Nevada.JPG/1920px-2015-01-14_13_31_39_Rock_formations_within_Lehman_Caves_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2015-01-14_13_31_39_Rock_formations_within_Lehman_Caves_in_Great_Basin_National_Park,_Nevada.JPG",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Great_Basin_National_Park_-_53836629702.jpg/960px-Great_Basin_National_Park_-_53836629702.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Great_Basin_National_Park_-_53836629702.jpg/1920px-Great_Basin_National_Park_-_53836629702.jpg",
+      "width": 960,
+      "height": 723,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Basin_National_Park_-_53836629702.jpg",
+      "author": "Roller Coaster Philosophy",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Great_Basin_National_Park_-_53836630007.jpg/960px-Great_Basin_National_Park_-_53836630007.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Great_Basin_National_Park_-_53836630007.jpg/1920px-Great_Basin_National_Park_-_53836630007.jpg",
+      "width": 960,
+      "height": 723,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Basin_National_Park_-_53836630007.jpg",
+      "author": "Roller Coaster Philosophy",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "grba-scenic-drive": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/2013-07-14_09_37_43_Wheeler_Peak_viewed_from_Wheeler_Peak_Scenic_Drive_in_Great_Basin_National_Park.jpg/960px-2013-07-14_09_37_43_Wheeler_Peak_viewed_from_Wheeler_Peak_Scenic_Drive_in_Great_Basin_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/2013-07-14_09_37_43_Wheeler_Peak_viewed_from_Wheeler_Peak_Scenic_Drive_in_Great_Basin_National_Park.jpg/1920px-2013-07-14_09_37_43_Wheeler_Peak_viewed_from_Wheeler_Peak_Scenic_Drive_in_Great_Basin_National_Park.jpg",
+      "width": 960,
+      "height": 776,
+      "page": "https://commons.wikimedia.org/wiki/File:2013-07-14_09_37_43_Wheeler_Peak_viewed_from_Wheeler_Peak_Scenic_Drive_in_Great_Basin_National_Park.jpg",
+      "author": "Famartin",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/2013-07-14_09_22_54_Conifer_forest_along_Wheeler_Peak_Scenic_Drive_in_Great_Basin_National_Park.jpg/960px-2013-07-14_09_22_54_Conifer_forest_along_Wheeler_Peak_Scenic_Drive_in_Great_Basin_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/2013-07-14_09_22_54_Conifer_forest_along_Wheeler_Peak_Scenic_Drive_in_Great_Basin_National_Park.jpg/1920px-2013-07-14_09_22_54_Conifer_forest_along_Wheeler_Peak_Scenic_Drive_in_Great_Basin_National_Park.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2013-07-14_09_22_54_Conifer_forest_along_Wheeler_Peak_Scenic_Drive_in_Great_Basin_National_Park.jpg",
+      "author": "Famartin",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/On_Wheeler_Peak_Scenic_Drive%2C_Great_Basin_National_Park%2C_Nevada_%288124291042%29.jpg/960px-On_Wheeler_Peak_Scenic_Drive%2C_Great_Basin_National_Park%2C_Nevada_%288124291042%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/On_Wheeler_Peak_Scenic_Drive%2C_Great_Basin_National_Park%2C_Nevada_%288124291042%29.jpg/1920px-On_Wheeler_Peak_Scenic_Drive%2C_Great_Basin_National_Park%2C_Nevada_%288124291042%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:On_Wheeler_Peak_Scenic_Drive,_Great_Basin_National_Park,_Nevada_(8124291042).jpg",
+      "author": "Murray Foubister",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/On_Wheeler_Peak_scenic_drive%2C_Great_Basin_National_Park%2C_Nevada_%288124273105%29.jpg/960px-On_Wheeler_Peak_scenic_drive%2C_Great_Basin_National_Park%2C_Nevada_%288124273105%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/On_Wheeler_Peak_scenic_drive%2C_Great_Basin_National_Park%2C_Nevada_%288124273105%29.jpg/1920px-On_Wheeler_Peak_scenic_drive%2C_Great_Basin_National_Park%2C_Nevada_%288124273105%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:On_Wheeler_Peak_scenic_drive,_Great_Basin_National_Park,_Nevada_(8124273105).jpg",
+      "author": "Murray Foubister",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Great_Basin_National_Park_-_53836632317.jpg/960px-Great_Basin_National_Park_-_53836632317.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Great_Basin_National_Park_-_53836632317.jpg/1920px-Great_Basin_National_Park_-_53836632317.jpg",
+      "width": 960,
+      "height": 723,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Basin_National_Park_-_53836632317.jpg",
+      "author": "Roller Coaster Philosophy",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Great_Basin_National_Park_-_53836631697.jpg/960px-Great_Basin_National_Park_-_53836631697.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Great_Basin_National_Park_-_53836631697.jpg/1920px-Great_Basin_National_Park_-_53836631697.jpg",
+      "width": 960,
+      "height": 723,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Basin_National_Park_-_53836631697.jpg",
+      "author": "Roller Coaster Philosophy",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "grba-alpine-lakes": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Stella_Lake_with_Mount_Wheeler_in_background_-_Flickr_-_pellaea.jpg/960px-Stella_Lake_with_Mount_Wheeler_in_background_-_Flickr_-_pellaea.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Stella_Lake_with_Mount_Wheeler_in_background_-_Flickr_-_pellaea.jpg/1920px-Stella_Lake_with_Mount_Wheeler_in_background_-_Flickr_-_pellaea.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Stella_Lake_with_Mount_Wheeler_in_background_-_Flickr_-_pellaea.jpg",
+      "author": "Jason Hollinger",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/2014-09-15_16_04_53_View_of_Wheeler_Peak_from_the_Alpine_Lakes_Trail_in_Great_Basin_National_Park%2C_Nevada.JPG/960px-2014-09-15_16_04_53_View_of_Wheeler_Peak_from_the_Alpine_Lakes_Trail_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/2014-09-15_16_04_53_View_of_Wheeler_Peak_from_the_Alpine_Lakes_Trail_in_Great_Basin_National_Park%2C_Nevada.JPG/1920px-2014-09-15_16_04_53_View_of_Wheeler_Peak_from_the_Alpine_Lakes_Trail_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2014-09-15_16_04_53_View_of_Wheeler_Peak_from_the_Alpine_Lakes_Trail_in_Great_Basin_National_Park,_Nevada.JPG",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/2014-09-15_10_47_17_A_branch_of_Lehman_Creek_along_the_Bristlecone-Glacier-Alpine_Lakes_Trail_in_Great_Basin_National_Park%2C_Nevada.JPG/960px-2014-09-15_10_47_17_A_branch_of_Lehman_Creek_along_the_Bristlecone-Glacier-Alpine_Lakes_Trail_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/2014-09-15_10_47_17_A_branch_of_Lehman_Creek_along_the_Bristlecone-Glacier-Alpine_Lakes_Trail_in_Great_Basin_National_Park%2C_Nevada.JPG/1920px-2014-09-15_10_47_17_A_branch_of_Lehman_Creek_along_the_Bristlecone-Glacier-Alpine_Lakes_Trail_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2014-09-15_10_47_17_A_branch_of_Lehman_Creek_along_the_Bristlecone-Glacier-Alpine_Lakes_Trail_in_Great_Basin_National_Park,_Nevada.JPG",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Great_Basin_National_Park_-_53837894919.jpg/960px-Great_Basin_National_Park_-_53837894919.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Great_Basin_National_Park_-_53837894919.jpg/1920px-Great_Basin_National_Park_-_53837894919.jpg",
+      "width": 960,
+      "height": 723,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Basin_National_Park_-_53837894919.jpg",
+      "author": "Roller Coaster Philosophy",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Great_Basin_National_Park_-_53837541961.jpg/960px-Great_Basin_National_Park_-_53837541961.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Great_Basin_National_Park_-_53837541961.jpg/1920px-Great_Basin_National_Park_-_53837541961.jpg",
+      "width": 960,
+      "height": 723,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Basin_National_Park_-_53837541961.jpg",
+      "author": "Roller Coaster Philosophy",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Great_Basin_National_Park_-_53204766097.jpg/960px-Great_Basin_National_Park_-_53204766097.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Great_Basin_National_Park_-_53204766097.jpg/1920px-Great_Basin_National_Park_-_53204766097.jpg",
+      "width": 960,
+      "height": 432,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Basin_National_Park_-_53204766097.jpg",
+      "author": "John Manard",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "grba-bristlecone-grove": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/2014-09-15_14_01_24_Bristlecone_Pines_along_the_Bristlecone_Trail_in_Great_Basin_National_Park%2C_Nevada.JPG/960px-2014-09-15_14_01_24_Bristlecone_Pines_along_the_Bristlecone_Trail_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/2014-09-15_14_01_24_Bristlecone_Pines_along_the_Bristlecone_Trail_in_Great_Basin_National_Park%2C_Nevada.JPG/1920px-2014-09-15_14_01_24_Bristlecone_Pines_along_the_Bristlecone_Trail_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2014-09-15_14_01_24_Bristlecone_Pines_along_the_Bristlecone_Trail_in_Great_Basin_National_Park,_Nevada.JPG",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/2014-09-15_13_44_24_View_of_a_Bristlecone_Pine_and_Wheeler_Peak_from_the_Glacier_Trail_in_Great_Basin_National_Park%2C_Nevada.JPG/960px-2014-09-15_13_44_24_View_of_a_Bristlecone_Pine_and_Wheeler_Peak_from_the_Glacier_Trail_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/2014-09-15_13_44_24_View_of_a_Bristlecone_Pine_and_Wheeler_Peak_from_the_Glacier_Trail_in_Great_Basin_National_Park%2C_Nevada.JPG/1920px-2014-09-15_13_44_24_View_of_a_Bristlecone_Pine_and_Wheeler_Peak_from_the_Glacier_Trail_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2014-09-15_13_44_24_View_of_a_Bristlecone_Pine_and_Wheeler_Peak_from_the_Glacier_Trail_in_Great_Basin_National_Park,_Nevada.JPG",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Bristlecone_Pine_1591.jpg/960px-Bristlecone_Pine_1591.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Bristlecone_Pine_1591.jpg/1920px-Bristlecone_Pine_1591.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Bristlecone_Pine_1591.jpg",
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/National_Park_Service_%2848754400391%29.jpg/960px-National_Park_Service_%2848754400391%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/National_Park_Service_%2848754400391%29.jpg/1920px-National_Park_Service_%2848754400391%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:National_Park_Service_(48754400391).jpg",
+      "author": "NPS Natural Resources",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Great_Basin_National_Park_-_53837537776.jpg/960px-Great_Basin_National_Park_-_53837537776.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Great_Basin_National_Park_-_53837537776.jpg/1920px-Great_Basin_National_Park_-_53837537776.jpg",
+      "width": 960,
+      "height": 723,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Basin_National_Park_-_53837537776.jpg",
+      "author": "Roller Coaster Philosophy",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Great_Basin_National_Park_-_53837889974.jpg/960px-Great_Basin_National_Park_-_53837889974.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Great_Basin_National_Park_-_53837889974.jpg/1920px-Great_Basin_National_Park_-_53837889974.jpg",
+      "width": 960,
+      "height": 723,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Basin_National_Park_-_53837889974.jpg",
+      "author": "Roller Coaster Philosophy",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "grba-wheeler-peak": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/2013-07-14_14_03_22_The_summit_of_Wheeler_Peak_in_Great_Basin_National_Park.jpg/960px-2013-07-14_14_03_22_The_summit_of_Wheeler_Peak_in_Great_Basin_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/2013-07-14_14_03_22_The_summit_of_Wheeler_Peak_in_Great_Basin_National_Park.jpg/1920px-2013-07-14_14_03_22_The_summit_of_Wheeler_Peak_in_Great_Basin_National_Park.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2013-07-14_14_03_22_The_summit_of_Wheeler_Peak_in_Great_Basin_National_Park.jpg",
+      "author": "Famartin",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/2013-07-14_11_01_21_Krummholz_Engelmann_Spruce_near_tree-line_along_the_Wheeler_Peak_Summit_Trail_in_Great_Basin_National_Park%2C_Nevada.jpg/960px-2013-07-14_11_01_21_Krummholz_Engelmann_Spruce_near_tree-line_along_the_Wheeler_Peak_Summit_Trail_in_Great_Basin_National_Park%2C_Nevada.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/2013-07-14_11_01_21_Krummholz_Engelmann_Spruce_near_tree-line_along_the_Wheeler_Peak_Summit_Trail_in_Great_Basin_National_Park%2C_Nevada.jpg/1920px-2013-07-14_11_01_21_Krummholz_Engelmann_Spruce_near_tree-line_along_the_Wheeler_Peak_Summit_Trail_in_Great_Basin_National_Park%2C_Nevada.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2013-07-14_11_01_21_Krummholz_Engelmann_Spruce_near_tree-line_along_the_Wheeler_Peak_Summit_Trail_in_Great_Basin_National_Park,_Nevada.jpg",
+      "author": "Famartin",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Wheeler_Peak_summit_view.jpg/960px-Wheeler_Peak_summit_view.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Wheeler_Peak_summit_view.jpg/1920px-Wheeler_Peak_summit_view.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Wheeler_Peak_summit_view.jpg",
+      "author": "Michael Kwok",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Wheeler_Peak%2C_Great_Basin_National_Park%2C_Nevada132.jpg/960px-Wheeler_Peak%2C_Great_Basin_National_Park%2C_Nevada132.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Wheeler_Peak%2C_Great_Basin_National_Park%2C_Nevada132.jpg/1920px-Wheeler_Peak%2C_Great_Basin_National_Park%2C_Nevada132.jpg",
+      "width": 960,
+      "height": 723,
+      "page": "https://commons.wikimedia.org/wiki/File:Wheeler_Peak,_Great_Basin_National_Park,_Nevada132.jpg",
+      "author": "Ken Lund",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Sunset_at_Wheeler_Peak%2C_NV.jpg/960px-Sunset_at_Wheeler_Peak%2C_NV.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Sunset_at_Wheeler_Peak%2C_NV.jpg/1920px-Sunset_at_Wheeler_Peak%2C_NV.jpg",
+      "width": 960,
+      "height": 620,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunset_at_Wheeler_Peak,_NV.jpg",
+      "author": "Michael Kwok",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Polemonium_viscosum_1.jpg/960px-Polemonium_viscosum_1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Polemonium_viscosum_1.jpg/1920px-Polemonium_viscosum_1.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Polemonium_viscosum_1.jpg",
+      "author": "J Brew",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "grba-night-sky": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Milky_Way_over_Great_Basin_%2826939087396%29.jpg/960px-Milky_Way_over_Great_Basin_%2826939087396%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Milky_Way_over_Great_Basin_%2826939087396%29.jpg/1280px-Milky_Way_over_Great_Basin_%2826939087396%29.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:Milky_Way_over_Great_Basin_(26939087396).jpg",
+      "author": "U.S. National Park Service",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/2015-01-14_12_29_21_View_east_toward_some_low_clouds_from_the_Lehman_Caves_Visitor_Center_in_Great_Basin_National_Park%2C_Nevada.JPG/960px-2015-01-14_12_29_21_View_east_toward_some_low_clouds_from_the_Lehman_Caves_Visitor_Center_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/2015-01-14_12_29_21_View_east_toward_some_low_clouds_from_the_Lehman_Caves_Visitor_Center_in_Great_Basin_National_Park%2C_Nevada.JPG/1920px-2015-01-14_12_29_21_View_east_toward_some_low_clouds_from_the_Lehman_Caves_Visitor_Center_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2015-01-14_12_29_21_View_east_toward_some_low_clouds_from_the_Lehman_Caves_Visitor_Center_in_Great_Basin_National_Park,_Nevada.JPG",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/2015-01-14_13_04_47_Artificial_entrance_to_Lehman_Caves_in_Great_Basin_National_Park%2C_Nevada.JPG/960px-2015-01-14_13_04_47_Artificial_entrance_to_Lehman_Caves_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/2015-01-14_13_04_47_Artificial_entrance_to_Lehman_Caves_in_Great_Basin_National_Park%2C_Nevada.JPG/1920px-2015-01-14_13_04_47_Artificial_entrance_to_Lehman_Caves_in_Great_Basin_National_Park%2C_Nevada.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2015-01-14_13_04_47_Artificial_entrance_to_Lehman_Caves_in_Great_Basin_National_Park,_Nevada.JPG",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Great_Basin_National_Park_-_53837545771.jpg/960px-Great_Basin_National_Park_-_53837545771.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Great_Basin_National_Park_-_53837545771.jpg/1920px-Great_Basin_National_Park_-_53837545771.jpg",
+      "width": 960,
+      "height": 723,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Basin_National_Park_-_53837545771.jpg",
+      "author": "Roller Coaster Philosophy",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Great_Basin_National_Park_-_53837545866.jpg/960px-Great_Basin_National_Park_-_53837545866.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Great_Basin_National_Park_-_53837545866.jpg/1920px-Great_Basin_National_Park_-_53837545866.jpg",
+      "width": 960,
+      "height": 723,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Basin_National_Park_-_53837545866.jpg",
+      "author": "Roller Coaster Philosophy",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "grba-baker-creek": [],
+  "grba-lexington-arch": [],
+  "grba-great-basin-vc": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Backlit_flag_Great_Basin_VC_-_Baker_Nevada.jpg/960px-Backlit_flag_Great_Basin_VC_-_Baker_Nevada.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Backlit_flag_Great_Basin_VC_-_Baker_Nevada.jpg/1920px-Backlit_flag_Great_Basin_VC_-_Baker_Nevada.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Backlit_flag_Great_Basin_VC_-_Baker_Nevada.jpg",
+      "author": "Ian Poellet",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Strawberry_Fire_8-9-16_-_with_Great_Basin_Visitor_Center_%2873628f70-1dd8-b71b-0b91-777c97b9b743%29.JPG/960px-Strawberry_Fire_8-9-16_-_with_Great_Basin_Visitor_Center_%2873628f70-1dd8-b71b-0b91-777c97b9b743%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Strawberry_Fire_8-9-16_-_with_Great_Basin_Visitor_Center_%2873628f70-1dd8-b71b-0b91-777c97b9b743%29.JPG/1920px-Strawberry_Fire_8-9-16_-_with_Great_Basin_Visitor_Center_%2873628f70-1dd8-b71b-0b91-777c97b9b743%29.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Strawberry_Fire_8-9-16_-_with_Great_Basin_Visitor_Center_(73628f70-1dd8-b71b-0b91-777c97b9b743).JPG",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Great_Basin_National_Park_-_53837547821.jpg/960px-Great_Basin_National_Park_-_53837547821.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Great_Basin_National_Park_-_53837547821.jpg/1920px-Great_Basin_National_Park_-_53837547821.jpg",
+      "width": 960,
+      "height": 723,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Basin_National_Park_-_53837547821.jpg",
+      "author": "Roller Coaster Philosophy",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Great_Basin_National_Park_-_53837804288.jpg/960px-Great_Basin_National_Park_-_53837804288.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Great_Basin_National_Park_-_53837804288.jpg/1920px-Great_Basin_National_Park_-_53837804288.jpg",
+      "width": 960,
+      "height": 723,
+      "page": "https://commons.wikimedia.org/wiki/File:Great_Basin_National_Park_-_53837804288.jpg",
+      "author": "Roller Coaster Philosophy",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/2014-08-09_14_22_24_Central_Baker%2C_Nevada.JPG/960px-2014-08-09_14_22_24_Central_Baker%2C_Nevada.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/2014-08-09_14_22_24_Central_Baker%2C_Nevada.JPG/1920px-2014-08-09_14_22_24_Central_Baker%2C_Nevada.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2014-08-09_14_22_24_Central_Baker,_Nevada.JPG",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/2014-08-09_14_21_23_View_west_from_the_east_end_of_Nevada_State_Route_488_%28Lehman_Caves_Road%29_at_the_junction_with_Nevada_State_Route_487_%28Baker_Road%29_in_Baker%2C_Nevada.JPG/960px-thumbnail.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/2014-08-09_14_21_23_View_west_from_the_east_end_of_Nevada_State_Route_488_%28Lehman_Caves_Road%29_at_the_junction_with_Nevada_State_Route_487_%28Baker_Road%29_in_Baker%2C_Nevada.JPG/1920px-thumbnail.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:2014-08-09_14_21_23_View_west_from_the_east_end_of_Nevada_State_Route_488_(Lehman_Caves_Road)_at_the_junction_with_Nevada_State_Route_487_(Baker_Road)_in_Baker,_Nevada.JPG",
+      "author": "Famartin",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "bibe-panther-junction": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Big_Bend_National_Park%2C_Texas_21.JPG/960px-Big_Bend_National_Park%2C_Texas_21.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Big_Bend_National_Park%2C_Texas_21.JPG/1920px-Big_Bend_National_Park%2C_Texas_21.JPG",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Big_Bend_National_Park,_Texas_21.JPG",
+      "author": "John Cummings",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Panther_Junction_Ranger_Station_in_Big_Bend_National_Park_-_panoramio.jpg/960px-Panther_Junction_Ranger_Station_in_Big_Bend_National_Park_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Panther_Junction_Ranger_Station_in_Big_Bend_National_Park_-_panoramio.jpg/1920px-Panther_Junction_Ranger_Station_in_Big_Bend_National_Park_-_panoramio.jpg",
+      "width": 960,
+      "height": 692,
+      "page": "https://commons.wikimedia.org/wiki/File:Panther_Junction_Ranger_Station_in_Big_Bend_National_Park_-_panoramio.jpg",
+      "author": "Idawriter",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Big_Bend_National_Park_at_Southern_Terminus_of_385_-_panoramio.jpg/960px-Big_Bend_National_Park_at_Southern_Terminus_of_385_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Big_Bend_National_Park_at_Southern_Terminus_of_385_-_panoramio.jpg/1920px-Big_Bend_National_Park_at_Southern_Terminus_of_385_-_panoramio.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Big_Bend_National_Park_at_Southern_Terminus_of_385_-_panoramio.jpg",
+      "author": "Idawriter",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Greater_Roadrunner_-_Flickr_-_GregTheBusker.jpg/960px-Greater_Roadrunner_-_Flickr_-_GregTheBusker.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Greater_Roadrunner_-_Flickr_-_GregTheBusker.jpg/1920px-Greater_Roadrunner_-_Flickr_-_GregTheBusker.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Greater_Roadrunner_-_Flickr_-_GregTheBusker.jpg",
+      "author": "Greg Schechter from San Francisco, USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Green_Heron_and_Big_Bend_Red-eared_Slider_-_Flickr_-_GregTheBusker.jpg/960px-Green_Heron_and_Big_Bend_Red-eared_Slider_-_Flickr_-_GregTheBusker.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Green_Heron_and_Big_Bend_Red-eared_Slider_-_Flickr_-_GregTheBusker.jpg/1920px-Green_Heron_and_Big_Bend_Red-eared_Slider_-_Flickr_-_GregTheBusker.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Green_Heron_and_Big_Bend_Red-eared_Slider_-_Flickr_-_GregTheBusker.jpg",
+      "author": "Greg Schechter from San Francisco, USA",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "bibe-fossil-discovery": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Deinosuchus_Head_at_Fossil_Discovery_Exhibit.jpg/960px-Deinosuchus_Head_at_Fossil_Discovery_Exhibit.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Deinosuchus_Head_at_Fossil_Discovery_Exhibit.jpg/1920px-Deinosuchus_Head_at_Fossil_Discovery_Exhibit.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Deinosuchus_Head_at_Fossil_Discovery_Exhibit.jpg",
+      "author": "Jonathan Cutrer",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/FouquieriaSplendens_2006_BigBend.jpg/960px-FouquieriaSplendens_2006_BigBend.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/FouquieriaSplendens_2006_BigBend.jpg/1920px-FouquieriaSplendens_2006_BigBend.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:FouquieriaSplendens_2006_BigBend.jpg",
+      "author": "Leaflet",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Deinosuchus-0251.jpg/960px-Deinosuchus-0251.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Deinosuchus-0251.jpg/1920px-Deinosuchus-0251.jpg",
+      "width": 960,
+      "height": 607,
+      "page": "https://commons.wikimedia.org/wiki/File:Deinosuchus-0251.jpg",
+      "author": "Source: Jonathan CutrerDerivative: User:MathKnight",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Brewster_County%2C_TX%2C_USA_-_panoramio_-_Idawriter_%2823%29.jpg/960px-Brewster_County%2C_TX%2C_USA_-_panoramio_-_Idawriter_%2823%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Brewster_County%2C_TX%2C_USA_-_panoramio_-_Idawriter_%2823%29.jpg/1920px-Brewster_County%2C_TX%2C_USA_-_panoramio_-_Idawriter_%2823%29.jpg",
+      "width": 960,
+      "height": 548,
+      "page": "https://commons.wikimedia.org/wiki/File:Brewster_County,_TX,_USA_-_panoramio_-_Idawriter_(23).jpg",
+      "author": "Idawriter",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Grusonia_aggeria_15.jpg/960px-Grusonia_aggeria_15.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Grusonia_aggeria_15.jpg/1920px-Grusonia_aggeria_15.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Grusonia_aggeria_15.jpg",
+      "author": "Joseph Aubert",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "bibe-balanced-rock": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Balanced_Rock_in_Big_bend.jpg/960px-Balanced_Rock_in_Big_bend.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Balanced_Rock_in_Big_bend.jpg/1920px-Balanced_Rock_in_Big_bend.jpg",
+      "width": 960,
+      "height": 916,
+      "page": "https://commons.wikimedia.org/wiki/File:Balanced_Rock_in_Big_bend.jpg",
+      "author": "Sefor4",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Gfp-texas-big-bend-national-park-balanced-rock.jpg/960px-Gfp-texas-big-bend-national-park-balanced-rock.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Gfp-texas-big-bend-national-park-balanced-rock.jpg/1920px-Gfp-texas-big-bend-national-park-balanced-rock.jpg",
+      "width": 960,
+      "height": 634,
+      "page": "https://commons.wikimedia.org/wiki/File:Gfp-texas-big-bend-national-park-balanced-rock.jpg",
+      "author": "Yinan Chen",
+      "license": "Public Domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Balanced-rock.jpg_-_panoramio.jpg/960px-Balanced-rock.jpg_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Balanced-rock.jpg_-_panoramio.jpg/1920px-Balanced-rock.jpg_-_panoramio.jpg",
+      "width": 960,
+      "height": 634,
+      "page": "https://commons.wikimedia.org/wiki/File:Balanced-rock.jpg_-_panoramio.jpg",
+      "author": "Good Free Photos",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Balanced_Rock_%28128322285%29.jpeg/960px-Balanced_Rock_%28128322285%29.jpeg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Balanced_Rock_%28128322285%29.jpeg/1920px-Balanced_Rock_%28128322285%29.jpeg",
+      "width": 960,
+      "height": 634,
+      "page": "https://commons.wikimedia.org/wiki/File:Balanced_Rock_(128322285).jpeg",
+      "author": "Yinan Chen",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Echinocereus_stramineus_27.jpg/960px-Echinocereus_stramineus_27.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Echinocereus_stramineus_27.jpg/1280px-Echinocereus_stramineus_27.jpg",
+      "width": 960,
+      "height": 1280,
+      "page": "https://commons.wikimedia.org/wiki/File:Echinocereus_stramineus_27.jpg",
+      "author": "Trevor Harding",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Echinocereus_stramineus_28.jpg/960px-Echinocereus_stramineus_28.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Echinocereus_stramineus_28.jpg/1280px-Echinocereus_stramineus_28.jpg",
+      "width": 960,
+      "height": 1280,
+      "page": "https://commons.wikimedia.org/wiki/File:Echinocereus_stramineus_28.jpg",
+      "author": "Trevor Harding",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "bibe-lost-mine": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Crown_Mountain_from_Lost_Mine_Trail.jpg/960px-Crown_Mountain_from_Lost_Mine_Trail.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Crown_Mountain_from_Lost_Mine_Trail.jpg/1920px-Crown_Mountain_from_Lost_Mine_Trail.jpg",
+      "width": 960,
+      "height": 593,
+      "page": "https://commons.wikimedia.org/wiki/File:Crown_Mountain_from_Lost_Mine_Trail.jpg",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Chisos_from_Lost_Mine_Trail_1.JPG/960px-Chisos_from_Lost_Mine_Trail_1.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Chisos_from_Lost_Mine_Trail_1.JPG/1920px-Chisos_from_Lost_Mine_Trail_1.JPG",
+      "width": 960,
+      "height": 441,
+      "page": "https://commons.wikimedia.org/wiki/File:Chisos_from_Lost_Mine_Trail_1.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Gfp-texas-big-bend-national-park-path-to-lost-mine-peak.jpg/960px-Gfp-texas-big-bend-national-park-path-to-lost-mine-peak.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Gfp-texas-big-bend-national-park-path-to-lost-mine-peak.jpg/1920px-Gfp-texas-big-bend-national-park-path-to-lost-mine-peak.jpg",
+      "width": 960,
+      "height": 622,
+      "page": "https://commons.wikimedia.org/wiki/File:Gfp-texas-big-bend-national-park-path-to-lost-mine-peak.jpg",
+      "author": "Yinan Chen",
+      "license": "Public Domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Gfp-texas-big-bend-national-park-on-the-lost-mine-trail.jpg/960px-Gfp-texas-big-bend-national-park-on-the-lost-mine-trail.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Gfp-texas-big-bend-national-park-on-the-lost-mine-trail.jpg/1920px-Gfp-texas-big-bend-national-park-on-the-lost-mine-trail.jpg",
+      "width": 960,
+      "height": 624,
+      "page": "https://commons.wikimedia.org/wiki/File:Gfp-texas-big-bend-national-park-on-the-lost-mine-trail.jpg",
+      "author": "Yinan Chen",
+      "license": "Public Domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Lost_on_Lost_Mine_Trail_%285483665893%29.jpg/960px-Lost_on_Lost_Mine_Trail_%285483665893%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Lost_on_Lost_Mine_Trail_%285483665893%29.jpg/1920px-Lost_on_Lost_Mine_Trail_%285483665893%29.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Lost_on_Lost_Mine_Trail_(5483665893).jpg",
+      "author": "Adam Baker from Houston, TX",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Mountaintops_on_the_Lost_Mine_Trail.jpg/960px-Mountaintops_on_the_Lost_Mine_Trail.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Mountaintops_on_the_Lost_Mine_Trail.jpg/1920px-Mountaintops_on_the_Lost_Mine_Trail.jpg",
+      "width": 960,
+      "height": 594,
+      "page": "https://commons.wikimedia.org/wiki/File:Mountaintops_on_the_Lost_Mine_Trail.jpg",
+      "author": "Clinton Steeds",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "bibe-window-view": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Big_Bend_National_Park_BIBE3113.jpg/960px-Big_Bend_National_Park_BIBE3113.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Big_Bend_National_Park_BIBE3113.jpg/1920px-Big_Bend_National_Park_BIBE3113.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Big_Bend_National_Park_BIBE3113.jpg",
+      "author": "National Park Service Digital Image Archives",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Bbnp_the_window.jpg/960px-Bbnp_the_window.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Bbnp_the_window.jpg/1920px-Bbnp_the_window.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Bbnp_the_window.jpg",
+      "author": "Lutz Fischer",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Big_Bend_National_Park_01.jpg/960px-Big_Bend_National_Park_01.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Big_Bend_National_Park_01.jpg/1920px-Big_Bend_National_Park_01.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Big_Bend_National_Park_01.jpg",
+      "author": "Niagara66",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Casa_Grande_Night_Clouds_-_Flickr_-_Gregory_%22Slobirdr%22_Smith.jpg/960px-Casa_Grande_Night_Clouds_-_Flickr_-_Gregory_%22Slobirdr%22_Smith.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Casa_Grande_Night_Clouds_-_Flickr_-_Gregory_%22Slobirdr%22_Smith.jpg/1920px-Casa_Grande_Night_Clouds_-_Flickr_-_Gregory_%22Slobirdr%22_Smith.jpg",
+      "width": 960,
+      "height": 672,
+      "page": "https://commons.wikimedia.org/wiki/File:Casa_Grande_Night_Clouds_-_Flickr_-_Gregory_%22Slobirdr%22_Smith.jpg",
+      "author": "Gregory \"Slobirdr\" Smith",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Casa_Grande_Peak_from_Chisos_Basin_Visitors_Center.jpg/960px-Casa_Grande_Peak_from_Chisos_Basin_Visitors_Center.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Casa_Grande_Peak_from_Chisos_Basin_Visitors_Center.jpg/1920px-Casa_Grande_Peak_from_Chisos_Basin_Visitors_Center.jpg",
+      "width": 960,
+      "height": 599,
+      "page": "https://commons.wikimedia.org/wiki/File:Casa_Grande_Peak_from_Chisos_Basin_Visitors_Center.jpg",
+      "author": "jaygannett",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Vernon_Bailey_Peak_from_east.jpg/960px-Vernon_Bailey_Peak_from_east.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Vernon_Bailey_Peak_from_east.jpg/1920px-Vernon_Bailey_Peak_from_east.jpg",
+      "width": 960,
+      "height": 646,
+      "page": "https://commons.wikimedia.org/wiki/File:Vernon_Bailey_Peak_from_east.jpg",
+      "author": "Jonathan Cutrer",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "bibe-window-trail": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/The_Window_-_Big_Bend_NP.jpg/960px-The_Window_-_Big_Bend_NP.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/The_Window_-_Big_Bend_NP.jpg/1920px-The_Window_-_Big_Bend_NP.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:The_Window_-_Big_Bend_NP.jpg",
+      "author": "Jonathan Cutrer",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Window_Trail_Hikers_-_Big_Bend_National_Park.jpg/960px-Window_Trail_Hikers_-_Big_Bend_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Window_Trail_Hikers_-_Big_Bend_National_Park.jpg/1920px-Window_Trail_Hikers_-_Big_Bend_National_Park.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Window_Trail_Hikers_-_Big_Bend_National_Park.jpg",
+      "author": "Surfsupusa at English Wikipedia",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Big_Bend_NP_HY_copy.jpg/960px-Big_Bend_NP_HY_copy.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Big_Bend_NP_HY_copy.jpg/1920px-Big_Bend_NP_HY_copy.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Big_Bend_NP_HY_copy.jpg",
+      "author": "Hiroooooo",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Roosevelt_Stone_cottage_101.jpg/960px-Roosevelt_Stone_cottage_101.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Roosevelt_Stone_cottage_101.jpg/1920px-Roosevelt_Stone_cottage_101.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Roosevelt_Stone_cottage_101.jpg",
+      "author": "Larry D. Moore",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Roosevelt_Stone_cottage_102.jpg/960px-Roosevelt_Stone_cottage_102.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Roosevelt_Stone_cottage_102.jpg/1920px-Roosevelt_Stone_cottage_102.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Roosevelt_Stone_cottage_102.jpg",
+      "author": "Larry D. Moore",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Pseudosermyle_strigata.jpg/960px-Pseudosermyle_strigata.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Pseudosermyle_strigata.jpg/1920px-Pseudosermyle_strigata.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Pseudosermyle_strigata.jpg",
+      "author": "Annika Lindqvist",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "bibe-emory-peak": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Gfp-texas-big-bend-national-park-rim-from-emory-peak.jpg/960px-Gfp-texas-big-bend-national-park-rim-from-emory-peak.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Gfp-texas-big-bend-national-park-rim-from-emory-peak.jpg/1920px-Gfp-texas-big-bend-national-park-rim-from-emory-peak.jpg",
+      "width": 960,
+      "height": 622,
+      "page": "https://commons.wikimedia.org/wiki/File:Gfp-texas-big-bend-national-park-rim-from-emory-peak.jpg",
+      "author": "Yinan Chen",
+      "license": "Public Domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Emory_Peak_Trail.JPG/960px-Emory_Peak_Trail.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Emory_Peak_Trail.JPG/1920px-Emory_Peak_Trail.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Emory_Peak_Trail.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Emory_Peak_in_fog_2008.jpg/960px-Emory_Peak_in_fog_2008.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Emory_Peak_in_fog_2008.jpg/1920px-Emory_Peak_in_fog_2008.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Emory_Peak_in_fog_2008.jpg",
+      "author": "Leaflet",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Emory_Peak_View_-_panoramio.jpg/960px-Emory_Peak_View_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Emory_Peak_View_-_panoramio.jpg/1920px-Emory_Peak_View_-_panoramio.jpg",
+      "width": 960,
+      "height": 681,
+      "page": "https://commons.wikimedia.org/wiki/File:Emory_Peak_View_-_panoramio.jpg",
+      "author": "On^ste82",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Gfp-texas-big-bend-national-park-looking-at-the-peak.jpg/960px-Gfp-texas-big-bend-national-park-looking-at-the-peak.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Gfp-texas-big-bend-national-park-looking-at-the-peak.jpg/1920px-Gfp-texas-big-bend-national-park-looking-at-the-peak.jpg",
+      "width": 960,
+      "height": 623,
+      "page": "https://commons.wikimedia.org/wiki/File:Gfp-texas-big-bend-national-park-looking-at-the-peak.jpg",
+      "author": "Yinan Chen",
+      "license": "Public Domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Roosevelt_Stone_cottage_104.jpg/960px-Roosevelt_Stone_cottage_104.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Roosevelt_Stone_cottage_104.jpg/1920px-Roosevelt_Stone_cottage_104.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Roosevelt_Stone_cottage_104.jpg",
+      "author": "Larry D. Moore",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "bibe-south-rim": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Big_Bend_South_Rim_sunset.jpg/960px-Big_Bend_South_Rim_sunset.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Big_Bend_South_Rim_sunset.jpg/1920px-Big_Bend_South_Rim_sunset.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Big_Bend_South_Rim_sunset.jpg",
+      "author": "Adam Baker from Houston / Moscow / Toulouse (travel a lot)",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Chihuahuan_Desert_from_South_Rim_BIBE.jpg/960px-Chihuahuan_Desert_from_South_Rim_BIBE.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Chihuahuan_Desert_from_South_Rim_BIBE.jpg/1920px-Chihuahuan_Desert_from_South_Rim_BIBE.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Chihuahuan_Desert_from_South_Rim_BIBE.jpg",
+      "author": "daveynin from United States",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Big_Bend_South_Rim.jpg/960px-Big_Bend_South_Rim.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Big_Bend_South_Rim.jpg/1920px-Big_Bend_South_Rim.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Big_Bend_South_Rim.jpg",
+      "author": "Bpluke01",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Big_Bend_South_Rim_2008.jpg/960px-Big_Bend_South_Rim_2008.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Big_Bend_South_Rim_2008.jpg/1920px-Big_Bend_South_Rim_2008.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Big_Bend_South_Rim_2008.jpg",
+      "author": "Leaflet",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Juniperus_flaccida_Big_Bend_NP_1.jpg/960px-Juniperus_flaccida_Big_Bend_NP_1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Juniperus_flaccida_Big_Bend_NP_1.jpg/1920px-Juniperus_flaccida_Big_Bend_NP_1.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Juniperus_flaccida_Big_Bend_NP_1.jpg",
+      "author": "annikaml",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Echinocereus_russanthus_russanthus_22.jpg/960px-Echinocereus_russanthus_russanthus_22.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Echinocereus_russanthus_russanthus_22.jpg/1920px-Echinocereus_russanthus_russanthus_22.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Echinocereus_russanthus_russanthus_22.jpg",
+      "author": "Kaden Slone",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "bibe-burro-mesa-pouroff": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Burro_Mesa_Pouroff.JPG/960px-Burro_Mesa_Pouroff.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Burro_Mesa_Pouroff.JPG/1920px-Burro_Mesa_Pouroff.JPG",
+      "width": 960,
+      "height": 1280,
+      "page": "https://commons.wikimedia.org/wiki/File:Burro_Mesa_Pouroff.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Burro_Mesa_Pouroff_Trail_-_panoramio.jpg/960px-Burro_Mesa_Pouroff_Trail_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Burro_Mesa_Pouroff_Trail_-_panoramio.jpg/1920px-Burro_Mesa_Pouroff_Trail_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Burro_Mesa_Pouroff_Trail_-_panoramio.jpg",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "bibe-sotol-vista": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/SotolVistaView1.jpg/960px-SotolVistaView1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/SotolVistaView1.jpg/1920px-SotolVistaView1.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:SotolVistaView1.jpg",
+      "author": "MDuchek",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Goat_from_Sotol.jpg/960px-Goat_from_Sotol.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Goat_from_Sotol.jpg/1280px-Goat_from_Sotol.jpg",
+      "width": 960,
+      "height": 497,
+      "page": "https://commons.wikimedia.org/wiki/File:Goat_from_Sotol.jpg",
+      "author": "jaygannett",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Kit_Mountain.jpg/960px-Kit_Mountain.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Kit_Mountain.jpg/1920px-Kit_Mountain.jpg",
+      "width": 960,
+      "height": 480,
+      "page": "https://commons.wikimedia.org/wiki/File:Kit_Mountain.jpg",
+      "author": "lns1122",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Big_Bend_NP_Panoramic.jpg/960px-Big_Bend_NP_Panoramic.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Big_Bend_NP_Panoramic.jpg/1920px-Big_Bend_NP_Panoramic.jpg",
+      "width": 960,
+      "height": 455,
+      "page": "https://commons.wikimedia.org/wiki/File:Big_Bend_NP_Panoramic.jpg",
+      "author": "Jonathan Cutrer",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Homer_Wilson_Ranch.jpg/960px-Homer_Wilson_Ranch.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Homer_Wilson_Ranch.jpg/1920px-Homer_Wilson_Ranch.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Homer_Wilson_Ranch.jpg",
+      "author": "Jubileejourney",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Homer_Wilson_Ranch_interior.JPG/960px-Homer_Wilson_Ranch_interior.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Homer_Wilson_Ranch_interior.JPG/1920px-Homer_Wilson_Ranch_interior.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Homer_Wilson_Ranch_interior.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "bibe-mule-ears": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Mule_Ears_Peaks_in_Big_Bend_National_Park.jpg/960px-Mule_Ears_Peaks_in_Big_Bend_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Mule_Ears_Peaks_in_Big_Bend_National_Park.jpg/1920px-Mule_Ears_Peaks_in_Big_Bend_National_Park.jpg",
+      "width": 960,
+      "height": 626,
+      "page": "https://commons.wikimedia.org/wiki/File:Mule_Ears_Peaks_in_Big_Bend_National_Park.jpg",
+      "author": "lns1122",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Sunset_at_Mule_Ears_Overlook_%28051c2e94-3291-4889-9683-677ab2651b00%29.jpg/960px-Sunset_at_Mule_Ears_Overlook_%28051c2e94-3291-4889-9683-677ab2651b00%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Sunset_at_Mule_Ears_Overlook_%28051c2e94-3291-4889-9683-677ab2651b00%29.jpg/1280px-Sunset_at_Mule_Ears_Overlook_%28051c2e94-3291-4889-9683-677ab2651b00%29.jpg",
+      "width": 960,
+      "height": 650,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunset_at_Mule_Ears_Overlook_(051c2e94-3291-4889-9683-677ab2651b00).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Small_mountain_in_Big_Bend.JPG/960px-Small_mountain_in_Big_Bend.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Small_mountain_in_Big_Bend.JPG/1920px-Small_mountain_in_Big_Bend.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Small_mountain_in_Big_Bend.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Echinocereus_enneacanthus_enneacanthus_18.jpg/960px-Echinocereus_enneacanthus_enneacanthus_18.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Echinocereus_enneacanthus_enneacanthus_18.jpg/1920px-Echinocereus_enneacanthus_enneacanthus_18.jpg",
+      "width": 960,
+      "height": 768,
+      "page": "https://commons.wikimedia.org/wiki/File:Echinocereus_enneacanthus_enneacanthus_18.jpg",
+      "author": "Frank Sengpiel",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Echinocereus_russanthus_russanthus_20.jpg/960px-Echinocereus_russanthus_russanthus_20.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Echinocereus_russanthus_russanthus_20.jpg/1920px-Echinocereus_russanthus_russanthus_20.jpg",
+      "width": 960,
+      "height": 768,
+      "page": "https://commons.wikimedia.org/wiki/File:Echinocereus_russanthus_russanthus_20.jpg",
+      "author": "Frank Sengpiel",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Strymon_solitario.jpg/960px-Strymon_solitario.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Strymon_solitario.jpg/1280px-Strymon_solitario.jpg",
+      "width": 960,
+      "height": 896,
+      "page": "https://commons.wikimedia.org/wiki/File:Strymon_solitario.jpg",
+      "author": "Nick Block",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "bibe-tuff-canyon": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Tuff_Canyon.jpg/960px-Tuff_Canyon.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Tuff_Canyon.jpg/1920px-Tuff_Canyon.jpg",
+      "width": 960,
+      "height": 636,
+      "page": "https://commons.wikimedia.org/wiki/File:Tuff_Canyon.jpg",
+      "author": "Colin J. McMechan",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Tuff_Canyon_4.JPG/960px-Tuff_Canyon_4.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Tuff_Canyon_4.JPG/1920px-Tuff_Canyon_4.JPG",
+      "width": 960,
+      "height": 450,
+      "page": "https://commons.wikimedia.org/wiki/File:Tuff_Canyon_4.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Tuff_Canyon_1.JPG/960px-Tuff_Canyon_1.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Tuff_Canyon_1.JPG/1920px-Tuff_Canyon_1.JPG",
+      "width": 960,
+      "height": 1280,
+      "page": "https://commons.wikimedia.org/wiki/File:Tuff_Canyon_1.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Echinocereus_dasyacanthus_dasyacanthus_17.jpg/960px-Echinocereus_dasyacanthus_dasyacanthus_17.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Echinocereus_dasyacanthus_dasyacanthus_17.jpg/1280px-Echinocereus_dasyacanthus_dasyacanthus_17.jpg",
+      "width": 960,
+      "height": 734,
+      "page": "https://commons.wikimedia.org/wiki/File:Echinocereus_dasyacanthus_dasyacanthus_17.jpg",
+      "author": "Ian McFaul",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Echinocereus_russanthus_russanthus_12.jpg/960px-Echinocereus_russanthus_russanthus_12.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Echinocereus_russanthus_russanthus_12.jpg/1920px-Echinocereus_russanthus_russanthus_12.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Echinocereus_russanthus_russanthus_12.jpg",
+      "author": "Ian McFaul",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "bibe-castolon": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Castolon_Army_Compound_Big_Bend_TX.jpg/960px-Castolon_Army_Compound_Big_Bend_TX.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Castolon_Army_Compound_Big_Bend_TX.jpg/1920px-Castolon_Army_Compound_Big_Bend_TX.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Castolon_Army_Compound_Big_Bend_TX.jpg",
+      "author": "LaurelHoffman",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Alvino_House_2.JPG/960px-Alvino_House_2.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Alvino_House_2.JPG/1920px-Alvino_House_2.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Alvino_House_2.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Alvino_House_1.JPG/960px-Alvino_House_1.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Alvino_House_1.JPG/1920px-Alvino_House_1.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Alvino_House_1.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Cerro_Castellan_w.jpg/960px-Cerro_Castellan_w.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Cerro_Castellan_w.jpg/1920px-Cerro_Castellan_w.jpg",
+      "width": 960,
+      "height": 636,
+      "page": "https://commons.wikimedia.org/wiki/File:Cerro_Castellan_w.jpg",
+      "author": "Jonathan Cutrer",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Echinocereus_enneacanthus_enneacanthus_10.jpg/960px-Echinocereus_enneacanthus_enneacanthus_10.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Echinocereus_enneacanthus_enneacanthus_10.jpg/1280px-Echinocereus_enneacanthus_enneacanthus_10.jpg",
+      "width": 960,
+      "height": 712,
+      "page": "https://commons.wikimedia.org/wiki/File:Echinocereus_enneacanthus_enneacanthus_10.jpg",
+      "author": "Ian McFaul",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Grusonia_aggeria_5.jpg/960px-Grusonia_aggeria_5.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Grusonia_aggeria_5.jpg/1920px-Grusonia_aggeria_5.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Grusonia_aggeria_5.jpg",
+      "author": "Ian McFaul",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "bibe-santa-elena-canyon": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Santa_Elena_-_05.jpg/960px-Santa_Elena_-_05.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Santa_Elena_-_05.jpg/1920px-Santa_Elena_-_05.jpg",
+      "width": 960,
+      "height": 541,
+      "page": "https://commons.wikimedia.org/wiki/File:Santa_Elena_-_05.jpg",
+      "author": "P. Hughes",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Santa_Elena_Canyon_Trail.jpg/960px-Santa_Elena_Canyon_Trail.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Santa_Elena_Canyon_Trail.jpg/1920px-Santa_Elena_Canyon_Trail.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:Santa_Elena_Canyon_Trail.jpg",
+      "author": "Dontyoufanta",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Big_Bend_Santa_Elena_Canyon_2006.JPG/960px-Big_Bend_Santa_Elena_Canyon_2006.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Big_Bend_Santa_Elena_Canyon_2006.JPG/1920px-Big_Bend_Santa_Elena_Canyon_2006.JPG",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Big_Bend_Santa_Elena_Canyon_2006.JPG",
+      "author": "Leaflet",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/USA_Texas_Big_Bend_Santa_Elena_Canyon_Bank_09-10-18.jpg/960px-USA_Texas_Big_Bend_Santa_Elena_Canyon_Bank_09-10-18.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/USA_Texas_Big_Bend_Santa_Elena_Canyon_Bank_09-10-18.jpg/1920px-USA_Texas_Big_Bend_Santa_Elena_Canyon_Bank_09-10-18.jpg",
+      "width": 960,
+      "height": 674,
+      "page": "https://commons.wikimedia.org/wiki/File:USA_Texas_Big_Bend_Santa_Elena_Canyon_Bank_09-10-18.jpg",
+      "author": "Ralf Kiepert",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Santa_Elena_Canyon_BIBE.jpg/960px-Santa_Elena_Canyon_BIBE.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Santa_Elena_Canyon_BIBE.jpg/1920px-Santa_Elena_Canyon_BIBE.jpg",
+      "width": 960,
+      "height": 623,
+      "page": "https://commons.wikimedia.org/wiki/File:Santa_Elena_Canyon_BIBE.jpg",
+      "author": "R Hensley from US",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Santa_Elena_Canyon_Oct_2013_3.JPG/960px-Santa_Elena_Canyon_Oct_2013_3.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Santa_Elena_Canyon_Oct_2013_3.JPG/1920px-Santa_Elena_Canyon_Oct_2013_3.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Santa_Elena_Canyon_Oct_2013_3.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "bibe-night-sky": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Night_Sky_Over_Chisos_Mountains_%28de3b5b2d-7015-4ca5-871b-4da5a8858774%29.jpg/960px-Night_Sky_Over_Chisos_Mountains_%28de3b5b2d-7015-4ca5-871b-4da5a8858774%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Night_Sky_Over_Chisos_Mountains_%28de3b5b2d-7015-4ca5-871b-4da5a8858774%29.jpg/1920px-Night_Sky_Over_Chisos_Mountains_%28de3b5b2d-7015-4ca5-871b-4da5a8858774%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Night_Sky_Over_Chisos_Mountains_(de3b5b2d-7015-4ca5-871b-4da5a8858774).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Data_mosaic_shows_%22all_sky%22_brightness_measurements_from_celestial_and_outdoor_lighting_sources%2C_Emory_Peak%2C_Big_Bend_National_%28dbed6a46-1dd8-b71b-0b40-cbca553dec0d%29.jpg/960px-thumbnail.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Data_mosaic_shows_%22all_sky%22_brightness_measurements_from_celestial_and_outdoor_lighting_sources%2C_Emory_Peak%2C_Big_Bend_National_%28dbed6a46-1dd8-b71b-0b40-cbca553dec0d%29.jpg/1280px-thumbnail.jpg",
+      "width": 960,
+      "height": 702,
+      "page": "https://commons.wikimedia.org/wiki/File:Data_mosaic_shows_%22all_sky%22_brightness_measurements_from_celestial_and_outdoor_lighting_sources,_Emory_Peak,_Big_Bend_National_(dbed6a46-1dd8-b71b-0b40-cbca553dec0d).jpg",
+      "author": "NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Homer_Wilson_Ranch_porch.JPG/960px-Homer_Wilson_Ranch_porch.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Homer_Wilson_Ranch_porch.JPG/1920px-Homer_Wilson_Ranch_porch.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Homer_Wilson_Ranch_porch.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/View_of_Valley_Below_Homer_Wilson_Ranch.JPG/960px-View_of_Valley_Below_Homer_Wilson_Ranch.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/View_of_Valley_Below_Homer_Wilson_Ranch.JPG/1920px-View_of_Valley_Below_Homer_Wilson_Ranch.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:View_of_Valley_Below_Homer_Wilson_Ranch.JPG",
+      "author": "JRick1",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Tarantula%2C_Big_Bend_National_Park_%288180036588%29.jpg/960px-Tarantula%2C_Big_Bend_National_Park_%288180036588%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Tarantula%2C_Big_Bend_National_Park_%288180036588%29.jpg/1920px-Tarantula%2C_Big_Bend_National_Park_%288180036588%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Tarantula,_Big_Bend_National_Park_(8180036588).jpg",
+      "author": "daveynin from United States",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Ross_Maxwell_Scenic_Drive.jpg/960px-Ross_Maxwell_Scenic_Drive.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Ross_Maxwell_Scenic_Drive.jpg/1920px-Ross_Maxwell_Scenic_Drive.jpg",
+      "width": 960,
+      "height": 588,
+      "page": "https://commons.wikimedia.org/wiki/File:Ross_Maxwell_Scenic_Drive.jpg",
+      "author": "Jonathan Cutrer",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "bibe-hot-springs": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Hot_Springs_Pool.JPG/960px-Hot_Springs_Pool.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Hot_Springs_Pool.JPG/1920px-Hot_Springs_Pool.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Hot_Springs_Pool.JPG",
+      "author": "JRick1",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Big_Bend_NP_Trip_2008_66_Hot_Springs_Post_Office.jpg/960px-Big_Bend_NP_Trip_2008_66_Hot_Springs_Post_Office.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Big_Bend_NP_Trip_2008_66_Hot_Springs_Post_Office.jpg/1920px-Big_Bend_NP_Trip_2008_66_Hot_Springs_Post_Office.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Big_Bend_NP_Trip_2008_66_Hot_Springs_Post_Office.jpg",
+      "author": "GregsTexas (facebook.com/GregsTexas)",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Big_Bend_NP_Trip_2008_63_Hot_Springs_Area.jpg/960px-Big_Bend_NP_Trip_2008_63_Hot_Springs_Area.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Big_Bend_NP_Trip_2008_63_Hot_Springs_Area.jpg/1920px-Big_Bend_NP_Trip_2008_63_Hot_Springs_Area.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Big_Bend_NP_Trip_2008_63_Hot_Springs_Area.jpg",
+      "author": "GregsTexas (facebook.com/GregsTexas)",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Hot_Springs_Guest_Rooms_1.JPG/960px-Hot_Springs_Guest_Rooms_1.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Hot_Springs_Guest_Rooms_1.JPG/1920px-Hot_Springs_Guest_Rooms_1.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Hot_Springs_Guest_Rooms_1.JPG",
+      "author": "JRick1",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Big_Bend_-_Boquillas_Hot_Springs_-_panoramio.jpg/960px-Big_Bend_-_Boquillas_Hot_Springs_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Big_Bend_-_Boquillas_Hot_Springs_-_panoramio.jpg/1920px-Big_Bend_-_Boquillas_Hot_Springs_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Big_Bend_-_Boquillas_Hot_Springs_-_panoramio.jpg",
+      "author": "Todd Dwyer",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Brewster_County%2C_TX%2C_USA_-_panoramio_%281%29.jpg/960px-Brewster_County%2C_TX%2C_USA_-_panoramio_%281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Brewster_County%2C_TX%2C_USA_-_panoramio_%281%29.jpg/1920px-Brewster_County%2C_TX%2C_USA_-_panoramio_%281%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Brewster_County,_TX,_USA_-_panoramio_(1).jpg",
+      "author": "Todd Dwyer",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "bibe-rgv-nature-trail": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Sunset_behind_the_Chisos_Mountains%2C_as_seen_from_Rio_Grande_Village_Nature_Trail_%2857fabf55-96f2-4dae-bc34-3e2014bb5186%29.jpg/960px-Sunset_behind_the_Chisos_Mountains%2C_as_seen_from_Rio_Grande_Village_Nature_Trail_%2857fabf55-96f2-4dae-bc34-3e2014bb5186%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Sunset_behind_the_Chisos_Mountains%2C_as_seen_from_Rio_Grande_Village_Nature_Trail_%2857fabf55-96f2-4dae-bc34-3e2014bb5186%29.jpg/1920px-Sunset_behind_the_Chisos_Mountains%2C_as_seen_from_Rio_Grande_Village_Nature_Trail_%2857fabf55-96f2-4dae-bc34-3e2014bb5186%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunset_behind_the_Chisos_Mountains,_as_seen_from_Rio_Grande_Village_Nature_Trail_(57fabf55-96f2-4dae-bc34-3e2014bb5186).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Sierra_del_Carmen.JPG/960px-Sierra_del_Carmen.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Sierra_del_Carmen.JPG/1920px-Sierra_del_Carmen.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Sierra_del_Carmen.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Grusonia_aggeria_25.jpg/960px-Grusonia_aggeria_25.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Grusonia_aggeria_25.jpg/1280px-Grusonia_aggeria_25.jpg",
+      "width": 960,
+      "height": 688,
+      "page": "https://commons.wikimedia.org/wiki/File:Grusonia_aggeria_25.jpg",
+      "author": "Tom Field",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Grusonia_aggeria_30.jpg/960px-Grusonia_aggeria_30.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Grusonia_aggeria_30.jpg/1280px-Grusonia_aggeria_30.jpg",
+      "width": 960,
+      "height": 700,
+      "page": "https://commons.wikimedia.org/wiki/File:Grusonia_aggeria_30.jpg",
+      "author": "Craig Martin",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Echinocereus_enneacanthus_enneacanthus_7.jpg/960px-Echinocereus_enneacanthus_enneacanthus_7.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Echinocereus_enneacanthus_enneacanthus_7.jpg/1280px-Echinocereus_enneacanthus_enneacanthus_7.jpg",
+      "width": 960,
+      "height": 1280,
+      "page": "https://commons.wikimedia.org/wiki/File:Echinocereus_enneacanthus_enneacanthus_7.jpg",
+      "author": "Trevor Harding",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Echinocereus_stramineus_33.jpg/960px-Echinocereus_stramineus_33.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Echinocereus_stramineus_33.jpg/1280px-Echinocereus_stramineus_33.jpg",
+      "width": 960,
+      "height": 1280,
+      "page": "https://commons.wikimedia.org/wiki/File:Echinocereus_stramineus_33.jpg",
+      "author": "Trevor Harding",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "bibe-boquillas-crossing": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Boquillas_del_Carmen_crossing_the_Rio_Grande_%282%29.JPG/960px-Boquillas_del_Carmen_crossing_the_Rio_Grande_%282%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Boquillas_del_Carmen_crossing_the_Rio_Grande_%282%29.JPG/1920px-Boquillas_del_Carmen_crossing_the_Rio_Grande_%282%29.JPG",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Boquillas_del_Carmen_crossing_the_Rio_Grande_(2).JPG",
+      "author": "Bic",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Gfp-mexico-boquillas-del-carmen-crossing-the-rio-grande.jpg/960px-Gfp-mexico-boquillas-del-carmen-crossing-the-rio-grande.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Gfp-mexico-boquillas-del-carmen-crossing-the-rio-grande.jpg/1920px-Gfp-mexico-boquillas-del-carmen-crossing-the-rio-grande.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Gfp-mexico-boquillas-del-carmen-crossing-the-rio-grande.jpg",
+      "author": "Yinan Chen",
+      "license": "Public Domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Boquillas_del_Carmen_3.JPG/960px-Boquillas_del_Carmen_3.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Boquillas_del_Carmen_3.JPG/1920px-Boquillas_del_Carmen_3.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Boquillas_del_Carmen_3.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Boquillas_del_Carmen_2.JPG/960px-Boquillas_del_Carmen_2.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Boquillas_del_Carmen_2.JPG/1920px-Boquillas_del_Carmen_2.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Boquillas_del_Carmen_2.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Canyon-at-boquillas-jpg_-_panoramio.jpg/960px-Canyon-at-boquillas-jpg_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Canyon-at-boquillas-jpg_-_panoramio.jpg/1920px-Canyon-at-boquillas-jpg_-_panoramio.jpg",
+      "width": 960,
+      "height": 608,
+      "page": "https://commons.wikimedia.org/wiki/File:Canyon-at-boquillas-jpg_-_panoramio.jpg",
+      "author": "Good Free Photos",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Town-of-boquillas.jpg_-_panoramio.jpg/960px-Town-of-boquillas.jpg_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Town-of-boquillas.jpg_-_panoramio.jpg/1920px-Town-of-boquillas.jpg_-_panoramio.jpg",
+      "width": 960,
+      "height": 628,
+      "page": "https://commons.wikimedia.org/wiki/File:Town-of-boquillas.jpg_-_panoramio.jpg",
+      "author": "Good Free Photos",
+      "license": "CC BY 3.0"
+    }
+  ],
+  "bibe-boquillas-canyon": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Boquillas_Canyon.JPG/960px-Boquillas_Canyon.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Boquillas_Canyon.JPG/1920px-Boquillas_Canyon.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Boquillas_Canyon.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Boquillas_Canyon_-_panoramio.jpg/960px-Boquillas_Canyon_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Boquillas_Canyon_-_panoramio.jpg/1920px-Boquillas_Canyon_-_panoramio.jpg",
+      "width": 960,
+      "height": 1280,
+      "page": "https://commons.wikimedia.org/wiki/File:Boquillas_Canyon_-_panoramio.jpg",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Eleodes_P1570221a.jpg/960px-Eleodes_P1570221a.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Eleodes_P1570221a.jpg/1920px-Eleodes_P1570221a.jpg",
+      "width": 960,
+      "height": 661,
+      "page": "https://commons.wikimedia.org/wiki/File:Eleodes_P1570221a.jpg",
+      "author": "xpda",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/USA_Big_Bend_Rio_Grande_TX.jpg/960px-USA_Big_Bend_Rio_Grande_TX.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/USA_Big_Bend_Rio_Grande_TX.jpg/1920px-USA_Big_Bend_Rio_Grande_TX.jpg",
+      "width": 960,
+      "height": 457,
+      "page": "https://commons.wikimedia.org/wiki/File:USA_Big_Bend_Rio_Grande_TX.jpg",
+      "author": "Daniel Schwen",
+      "license": "CC BY-SA 2.5"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Sierra_Del_Caballo_Muerto_%284439122260%29.jpg/960px-Sierra_Del_Caballo_Muerto_%284439122260%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Sierra_Del_Caballo_Muerto_%284439122260%29.jpg/1920px-Sierra_Del_Caballo_Muerto_%284439122260%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Sierra_Del_Caballo_Muerto_(4439122260).jpg",
+      "author": "Chris M Morris",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Rio_Grande_%284439122220%29.jpg/960px-Rio_Grande_%284439122220%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Rio_Grande_%284439122220%29.jpg/1920px-Rio_Grande_%284439122220%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Rio_Grande_(4439122220).jpg",
+      "author": "Chris M Morris",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "bibe-terlingua": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Ruins_of_homes_in_Terlingua_ghost_town_%2851386294245%29.jpg/960px-Ruins_of_homes_in_Terlingua_ghost_town_%2851386294245%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Ruins_of_homes_in_Terlingua_ghost_town_%2851386294245%29.jpg/1920px-Ruins_of_homes_in_Terlingua_ghost_town_%2851386294245%29.jpg",
+      "width": 960,
+      "height": 724,
+      "page": "https://commons.wikimedia.org/wiki/File:Ruins_of_homes_in_Terlingua_ghost_town_(51386294245).jpg",
+      "author": "Lars Plougmann from United States",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Terlingua_ghost_town_home_01.jpg/960px-Terlingua_ghost_town_home_01.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Terlingua_ghost_town_home_01.jpg/1920px-Terlingua_ghost_town_home_01.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Terlingua_ghost_town_home_01.jpg",
+      "author": "ClaudiaDurand",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Terlingua_ghost_town_car.jpg/960px-Terlingua_ghost_town_car.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Terlingua_ghost_town_car.jpg/1920px-Terlingua_ghost_town_car.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Terlingua_ghost_town_car.jpg",
+      "author": "ClaudiaDurand",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Grusonia_aggeria_22.jpg/960px-Grusonia_aggeria_22.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Grusonia_aggeria_22.jpg/1280px-Grusonia_aggeria_22.jpg",
+      "width": 960,
+      "height": 777,
+      "page": "https://commons.wikimedia.org/wiki/File:Grusonia_aggeria_22.jpg",
+      "author": "Kaden Slone",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "bibe-river-road": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/View_of_the_Rio_Grande_River_along_Texas_Rt._170%2C_which_runs_through_Big_Bend_Ranch_State_Park%2C_Texas_LCCN2014630283.tif/lossy-page1-960px-View_of_the_Rio_Grande_River_along_Texas_Rt._170%2C_which_runs_through_Big_Bend_Ranch_State_Park%2C_Texas_LCCN2014630283.tif.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/View_of_the_Rio_Grande_River_along_Texas_Rt._170%2C_which_runs_through_Big_Bend_Ranch_State_Park%2C_Texas_LCCN2014630283.tif/lossy-page1-960px-View_of_the_Rio_Grande_River_along_Texas_Rt._170%2C_which_runs_through_Big_Bend_Ranch_State_Park%2C_Texas_LCCN2014630283.tif.jpg",
+      "width": 960,
+      "height": 641,
+      "page": "https://commons.wikimedia.org/wiki/File:View_of_the_Rio_Grande_River_along_Texas_Rt._170,_which_runs_through_Big_Bend_Ranch_State_Park,_Texas_LCCN2014630283.tif",
+      "author": "Carol M. Highsmith",
+      "license": "Public domain"
+    }
+  ],
+  "thro-south-unit-vc": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Maltese_Cross_Cabin_Theodore_Roosevelt_NP_ND1.jpg/960px-Maltese_Cross_Cabin_Theodore_Roosevelt_NP_ND1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Maltese_Cross_Cabin_Theodore_Roosevelt_NP_ND1.jpg/1920px-Maltese_Cross_Cabin_Theodore_Roosevelt_NP_ND1.jpg",
+      "width": 960,
+      "height": 742,
+      "page": "https://commons.wikimedia.org/wiki/File:Maltese_Cross_Cabin_Theodore_Roosevelt_NP_ND1.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Theodore_Roosevelt%27s_Maltese_Croos_Cabin%2C_TRNP%2C_ND.jpg/960px-Theodore_Roosevelt%27s_Maltese_Croos_Cabin%2C_TRNP%2C_ND.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Theodore_Roosevelt%27s_Maltese_Croos_Cabin%2C_TRNP%2C_ND.jpg/1920px-Theodore_Roosevelt%27s_Maltese_Croos_Cabin%2C_TRNP%2C_ND.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Theodore_Roosevelt%27s_Maltese_Croos_Cabin,_TRNP,_ND.jpg",
+      "author": "Podruznik at English Wikipedia",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Chimney_Park_Medora_ND1.jpg/960px-Chimney_Park_Medora_ND1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Chimney_Park_Medora_ND1.jpg/1920px-Chimney_Park_Medora_ND1.jpg",
+      "width": 960,
+      "height": 543,
+      "page": "https://commons.wikimedia.org/wiki/File:Chimney_Park_Medora_ND1.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Cowboy_Cafe_-_Medora%2C_North_Dakota.jpg/960px-Cowboy_Cafe_-_Medora%2C_North_Dakota.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Cowboy_Cafe_-_Medora%2C_North_Dakota.jpg/1920px-Cowboy_Cafe_-_Medora%2C_North_Dakota.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Cowboy_Cafe_-_Medora,_North_Dakota.jpg",
+      "author": "Farragutful",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Medora_Union_Congregational_Church_02.jpg/960px-Medora_Union_Congregational_Church_02.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Medora_Union_Congregational_Church_02.jpg/1920px-Medora_Union_Congregational_Church_02.jpg",
+      "width": 960,
+      "height": 669,
+      "page": "https://commons.wikimedia.org/wiki/File:Medora_Union_Congregational_Church_02.jpg",
+      "author": "Farragutful",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Painted_Canyon_Overlook_%28251161923%29.jpeg/960px-Painted_Canyon_Overlook_%28251161923%29.jpeg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Painted_Canyon_Overlook_%28251161923%29.jpeg/1920px-Painted_Canyon_Overlook_%28251161923%29.jpeg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Canyon_Overlook_(251161923).jpeg",
+      "author": "Ray Schauweker",
+      "license": "CC BY 3.0"
+    }
+  ],
+  "thro-skyline-vista": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Theodore_Roosevelt_NP_-_panoramio.jpg/960px-Theodore_Roosevelt_NP_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Theodore_Roosevelt_NP_-_panoramio.jpg/1920px-Theodore_Roosevelt_NP_-_panoramio.jpg",
+      "width": 960,
+      "height": 1440,
+      "page": "https://commons.wikimedia.org/wiki/File:Theodore_Roosevelt_NP_-_panoramio.jpg",
+      "author": "GIS Photo Viewer",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Prairie_dog_-_Theodore_Roosevelt_National_Park.jpg/960px-Prairie_dog_-_Theodore_Roosevelt_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Prairie_dog_-_Theodore_Roosevelt_National_Park.jpg/1920px-Prairie_dog_-_Theodore_Roosevelt_National_Park.jpg",
+      "width": 960,
+      "height": 645,
+      "page": "https://commons.wikimedia.org/wiki/File:Prairie_dog_-_Theodore_Roosevelt_National_Park.jpg",
+      "author": "Farragutful",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Prairie_Dog_Town_-_Theodore_Roosevelt_National_Park_01.jpg/960px-Prairie_Dog_Town_-_Theodore_Roosevelt_National_Park_01.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Prairie_Dog_Town_-_Theodore_Roosevelt_National_Park_01.jpg/1920px-Prairie_Dog_Town_-_Theodore_Roosevelt_National_Park_01.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Prairie_Dog_Town_-_Theodore_Roosevelt_National_Park_01.jpg",
+      "author": "Farragutful",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Triangulation_station_-_panoramio.jpg/960px-Triangulation_station_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Triangulation_station_-_panoramio.jpg/1920px-Triangulation_station_-_panoramio.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Triangulation_station_-_panoramio.jpg",
+      "author": "GIS Photo Viewer",
+      "license": "CC BY 3.0"
+    }
+  ],
+  "thro-prairie-dog-town": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Prairie_dog_town_Theodore_Roosevelt_National_Park_ND1.jpg/960px-Prairie_dog_town_Theodore_Roosevelt_National_Park_ND1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Prairie_dog_town_Theodore_Roosevelt_National_Park_ND1.jpg/1920px-Prairie_dog_town_Theodore_Roosevelt_National_Park_ND1.jpg",
+      "width": 960,
+      "height": 562,
+      "page": "https://commons.wikimedia.org/wiki/File:Prairie_dog_town_Theodore_Roosevelt_National_Park_ND1.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Prairie_Dog_Town_-_Theodore_Roosevelt_National_Park_02.jpg/960px-Prairie_Dog_Town_-_Theodore_Roosevelt_National_Park_02.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Prairie_Dog_Town_-_Theodore_Roosevelt_National_Park_02.jpg/1920px-Prairie_Dog_Town_-_Theodore_Roosevelt_National_Park_02.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Prairie_Dog_Town_-_Theodore_Roosevelt_National_Park_02.jpg",
+      "author": "Farragutful",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Prairie_Dog_Town_%284056774247%29.jpg/960px-Prairie_Dog_Town_%284056774247%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Prairie_Dog_Town_%284056774247%29.jpg/1920px-Prairie_Dog_Town_%284056774247%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Prairie_Dog_Town_(4056774247).jpg",
+      "author": "Chris M Morris",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Prairie_dog_Theodore_Roosevelt_NP_ND1.jpg/960px-Prairie_dog_Theodore_Roosevelt_NP_ND1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Prairie_dog_Theodore_Roosevelt_NP_ND1.jpg/1920px-Prairie_dog_Theodore_Roosevelt_NP_ND1.jpg",
+      "width": 960,
+      "height": 734,
+      "page": "https://commons.wikimedia.org/wiki/File:Prairie_dog_Theodore_Roosevelt_NP_ND1.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Black-tailed_Prairie_Dog_%284057508006%29.jpg/960px-Black-tailed_Prairie_Dog_%284057508006%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Black-tailed_Prairie_Dog_%284057508006%29.jpg/1920px-Black-tailed_Prairie_Dog_%284057508006%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Black-tailed_Prairie_Dog_(4057508006).jpg",
+      "author": "Chris M Morris",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Prairie_Dog_Town.jpg/960px-Prairie_Dog_Town.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Prairie_Dog_Town.jpg/1920px-Prairie_Dog_Town.jpg",
+      "width": 960,
+      "height": 1280,
+      "page": "https://commons.wikimedia.org/wiki/File:Prairie_Dog_Town.jpg",
+      "author": "NPS",
+      "license": "Public domain"
+    }
+  ],
+  "thro-peaceful-valley": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Peaceful_Valley_Ranch_Theodore_Roosevelt_NP_ND1.jpg/960px-Peaceful_Valley_Ranch_Theodore_Roosevelt_NP_ND1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Peaceful_Valley_Ranch_Theodore_Roosevelt_NP_ND1.jpg/1920px-Peaceful_Valley_Ranch_Theodore_Roosevelt_NP_ND1.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Peaceful_Valley_Ranch_Theodore_Roosevelt_NP_ND1.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Peaceful_Valley_Ranch_ND.jpg/960px-Peaceful_Valley_Ranch_ND.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Peaceful_Valley_Ranch_ND.jpg/1920px-Peaceful_Valley_Ranch_ND.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Peaceful_Valley_Ranch_ND.jpg",
+      "author": "EmarieMR",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Peaceful_Valley_Ranch_Theodore_Roosevelt_NP_ND2.jpg/960px-Peaceful_Valley_Ranch_Theodore_Roosevelt_NP_ND2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Peaceful_Valley_Ranch_Theodore_Roosevelt_NP_ND2.jpg/1920px-Peaceful_Valley_Ranch_Theodore_Roosevelt_NP_ND2.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Peaceful_Valley_Ranch_Theodore_Roosevelt_NP_ND2.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Little_Missouri_River_%284057505554%29.jpg/960px-Little_Missouri_River_%284057505554%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Little_Missouri_River_%284057505554%29.jpg/1920px-Little_Missouri_River_%284057505554%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Little_Missouri_River_(4057505554).jpg",
+      "author": "Chris M Morris",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "thro-wind-canyon": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Theodore_Roosevelt_National_Park%2C_ND%2C_US%2C_2024_1.jpg/960px-Theodore_Roosevelt_National_Park%2C_ND%2C_US%2C_2024_1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Theodore_Roosevelt_National_Park%2C_ND%2C_US%2C_2024_1.jpg/1920px-Theodore_Roosevelt_National_Park%2C_ND%2C_US%2C_2024_1.jpg",
+      "width": 960,
+      "height": 600,
+      "page": "https://commons.wikimedia.org/wiki/File:Theodore_Roosevelt_National_Park,_ND,_US,_2024_1.jpg",
+      "author": "Sharon Mollerus",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Hiking_Wind_Canyon.jpg/960px-Hiking_Wind_Canyon.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Hiking_Wind_Canyon.jpg/1920px-Hiking_Wind_Canyon.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Hiking_Wind_Canyon.jpg",
+      "author": "aparlette",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Little_Missouri_in_Theodore_Roosevelt_NP_ND1.jpg/960px-Little_Missouri_in_Theodore_Roosevelt_NP_ND1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Little_Missouri_in_Theodore_Roosevelt_NP_ND1.jpg/1920px-Little_Missouri_in_Theodore_Roosevelt_NP_ND1.jpg",
+      "width": 960,
+      "height": 609,
+      "page": "https://commons.wikimedia.org/wiki/File:Little_Missouri_in_Theodore_Roosevelt_NP_ND1.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Bison_Theodore_Roosevelt_NP_ND2.jpg/960px-Bison_Theodore_Roosevelt_NP_ND2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Bison_Theodore_Roosevelt_NP_ND2.jpg/1920px-Bison_Theodore_Roosevelt_NP_ND2.jpg",
+      "width": 960,
+      "height": 602,
+      "page": "https://commons.wikimedia.org/wiki/File:Bison_Theodore_Roosevelt_NP_ND2.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Portrait_of_a_Bison_-_Theodore_Roosevelt_National_Park_%2852566325939%29.jpg/960px-Portrait_of_a_Bison_-_Theodore_Roosevelt_National_Park_%2852566325939%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Portrait_of_a_Bison_-_Theodore_Roosevelt_National_Park_%2852566325939%29.jpg/1920px-Portrait_of_a_Bison_-_Theodore_Roosevelt_National_Park_%2852566325939%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Portrait_of_a_Bison_-_Theodore_Roosevelt_National_Park_(52566325939).jpg",
+      "author": "Andrew Parlette from Elkridge,MD, US",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Where_the_Buffalo_Roam_%2852491158945%29.jpg/960px-Where_the_Buffalo_Roam_%2852491158945%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Where_the_Buffalo_Roam_%2852491158945%29.jpg/1920px-Where_the_Buffalo_Roam_%2852491158945%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Where_the_Buffalo_Roam_(52491158945).jpg",
+      "author": "Andrew Parlette from Elkridge,MD, US",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "thro-boicourt": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Badlands_View_-_Theodore_Roosevelt_National_Park.jpg/960px-Badlands_View_-_Theodore_Roosevelt_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Badlands_View_-_Theodore_Roosevelt_National_Park.jpg/1920px-Badlands_View_-_Theodore_Roosevelt_National_Park.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Badlands_View_-_Theodore_Roosevelt_National_Park.jpg",
+      "author": "aparlette",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Theodore_Roosevelt_National_Park_-_Scenic_Loop_Overlook.jpg/960px-Theodore_Roosevelt_National_Park_-_Scenic_Loop_Overlook.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Theodore_Roosevelt_National_Park_-_Scenic_Loop_Overlook.jpg/1920px-Theodore_Roosevelt_National_Park_-_Scenic_Loop_Overlook.jpg",
+      "width": 960,
+      "height": 368,
+      "page": "https://commons.wikimedia.org/wiki/File:Theodore_Roosevelt_National_Park_-_Scenic_Loop_Overlook.jpg",
+      "author": "Eddy23",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Theodore_Roosevelt_National_Park%2C_ND%2C_US%2C_2024_7.jpg/960px-Theodore_Roosevelt_National_Park%2C_ND%2C_US%2C_2024_7.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Theodore_Roosevelt_National_Park%2C_ND%2C_US%2C_2024_7.jpg/1920px-Theodore_Roosevelt_National_Park%2C_ND%2C_US%2C_2024_7.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Theodore_Roosevelt_National_Park,_ND,_US,_2024_7.jpg",
+      "author": "Sharon Mollerus",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/South_Unit_loop_road_Theodore_Roosevelt_NP_ND1.jpg/960px-South_Unit_loop_road_Theodore_Roosevelt_NP_ND1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/South_Unit_loop_road_Theodore_Roosevelt_NP_ND1.jpg/1920px-South_Unit_loop_road_Theodore_Roosevelt_NP_ND1.jpg",
+      "width": 960,
+      "height": 759,
+      "page": "https://commons.wikimedia.org/wiki/File:South_Unit_loop_road_Theodore_Roosevelt_NP_ND1.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Badlands_Theodore_Roosevelt_NP_ND1.jpg/960px-Badlands_Theodore_Roosevelt_NP_ND1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Badlands_Theodore_Roosevelt_NP_ND1.jpg/1920px-Badlands_Theodore_Roosevelt_NP_ND1.jpg",
+      "width": 960,
+      "height": 531,
+      "page": "https://commons.wikimedia.org/wiki/File:Badlands_Theodore_Roosevelt_NP_ND1.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/I_Think_He%27s_Noticed_Me_%283875851465%29.jpg/960px-I_Think_He%27s_Noticed_Me_%283875851465%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/I_Think_He%27s_Noticed_Me_%283875851465%29.jpg/1920px-I_Think_He%27s_Noticed_Me_%283875851465%29.jpg",
+      "width": 960,
+      "height": 942,
+      "page": "https://commons.wikimedia.org/wiki/File:I_Think_He%27s_Noticed_Me_(3875851465).jpg",
+      "author": "Matt Reinbold from USA",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "thro-buck-hill": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Sandstones_%28Sentinel_Butte_Formation%2C_Upper_Paleocene%3B_Buck_Hill%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_1.jpg/960px-Sandstones_%28Sentinel_Butte_Formation%2C_Upper_Paleocene%3B_Buck_Hill%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Sandstones_%28Sentinel_Butte_Formation%2C_Upper_Paleocene%3B_Buck_Hill%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_1.jpg/1920px-Sandstones_%28Sentinel_Butte_Formation%2C_Upper_Paleocene%3B_Buck_Hill%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_1.jpg",
+      "width": 960,
+      "height": 578,
+      "page": "https://commons.wikimedia.org/wiki/File:Sandstones_(Sentinel_Butte_Formation,_Upper_Paleocene;_Buck_Hill,_Little_Missouri_Badlands,_North_Dakota,_USA)_1.jpg",
+      "author": "James St. John",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Sandstones_%28Sentinel_Butte_Formation%2C_Upper_Paleocene%3B_Buck_Hill%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_2.jpg/960px-Sandstones_%28Sentinel_Butte_Formation%2C_Upper_Paleocene%3B_Buck_Hill%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Sandstones_%28Sentinel_Butte_Formation%2C_Upper_Paleocene%3B_Buck_Hill%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_2.jpg/1920px-Sandstones_%28Sentinel_Butte_Formation%2C_Upper_Paleocene%3B_Buck_Hill%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_2.jpg",
+      "width": 960,
+      "height": 584,
+      "page": "https://commons.wikimedia.org/wiki/File:Sandstones_(Sentinel_Butte_Formation,_Upper_Paleocene;_Buck_Hill,_Little_Missouri_Badlands,_North_Dakota,_USA)_2.jpg",
+      "author": "James St. John",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Theodore_Roosevelt_NP_ND2.jpg/960px-Theodore_Roosevelt_NP_ND2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Theodore_Roosevelt_NP_ND2.jpg/1920px-Theodore_Roosevelt_NP_ND2.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Theodore_Roosevelt_NP_ND2.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Theodore_Roosevelt_NP_ND10.jpg/960px-Theodore_Roosevelt_NP_ND10.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Theodore_Roosevelt_NP_ND10.jpg/1920px-Theodore_Roosevelt_NP_ND10.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Theodore_Roosevelt_NP_ND10.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "thro-coal-vein": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Land_subsidence_from_1951-1977_lignite_coal_bed_fire_%28Coal_Vein_Trail%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_12.jpg/960px-Land_subsidence_from_1951-1977_lignite_coal_bed_fire_%28Coal_Vein_Trail%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_12.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Land_subsidence_from_1951-1977_lignite_coal_bed_fire_%28Coal_Vein_Trail%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_12.jpg/1920px-Land_subsidence_from_1951-1977_lignite_coal_bed_fire_%28Coal_Vein_Trail%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_12.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Land_subsidence_from_1951-1977_lignite_coal_bed_fire_(Coal_Vein_Trail,_Little_Missouri_Badlands,_North_Dakota,_USA)_12.jpg",
+      "author": "James St. John",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Lignite_coal_horizon_%28Sentinel_Butte_Formation%2C_Paleocene%3B_Coal_Vein_Trail%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_1.jpg/960px-Lignite_coal_horizon_%28Sentinel_Butte_Formation%2C_Paleocene%3B_Coal_Vein_Trail%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Lignite_coal_horizon_%28Sentinel_Butte_Formation%2C_Paleocene%3B_Coal_Vein_Trail%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_1.jpg/1920px-Lignite_coal_horizon_%28Sentinel_Butte_Formation%2C_Paleocene%3B_Coal_Vein_Trail%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_1.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Lignite_coal_horizon_(Sentinel_Butte_Formation,_Paleocene;_Coal_Vein_Trail,_Little_Missouri_Badlands,_North_Dakota,_USA)_1.jpg",
+      "author": "James St. John",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "thro-old-east-entrance": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Old_East_Entrance_Station_%28f60bd7be-545f-460f-96e8-c61f124a821e%29.JPG/960px-Old_East_Entrance_Station_%28f60bd7be-545f-460f-96e8-c61f124a821e%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Old_East_Entrance_Station_%28f60bd7be-545f-460f-96e8-c61f124a821e%29.JPG/1920px-Old_East_Entrance_Station_%28f60bd7be-545f-460f-96e8-c61f124a821e%29.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Old_East_Entrance_Station_(f60bd7be-545f-460f-96e8-c61f124a821e).JPG",
+      "author": "NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Old_East_Entrance_Station_%2804831166-2d60-4a98-9248-20384f137bc2%29.JPG/960px-Old_East_Entrance_Station_%2804831166-2d60-4a98-9248-20384f137bc2%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Old_East_Entrance_Station_%2804831166-2d60-4a98-9248-20384f137bc2%29.JPG/1920px-Old_East_Entrance_Station_%2804831166-2d60-4a98-9248-20384f137bc2%29.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Old_East_Entrance_Station_(04831166-2d60-4a98-9248-20384f137bc2).JPG",
+      "author": "NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/The_Old_East_Entrance_Station_in_use._%28c79de5d7-83d2-4277-a00e-bc7e0e21cea1%29.jpg/960px-The_Old_East_Entrance_Station_in_use._%28c79de5d7-83d2-4277-a00e-bc7e0e21cea1%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/The_Old_East_Entrance_Station_in_use._%28c79de5d7-83d2-4277-a00e-bc7e0e21cea1%29.jpg/1920px-The_Old_East_Entrance_Station_in_use._%28c79de5d7-83d2-4277-a00e-bc7e0e21cea1%29.jpg",
+      "width": 960,
+      "height": 740,
+      "page": "https://commons.wikimedia.org/wiki/File:The_Old_East_Entrance_Station_in_use._(c79de5d7-83d2-4277-a00e-bc7e0e21cea1).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/The_Old_East_Entrance_Station_in_use._%28883ce85c-1a88-4ee4-94c0-4f65cb20d2fe%29.jpg/960px-The_Old_East_Entrance_Station_in_use._%28883ce85c-1a88-4ee4-94c0-4f65cb20d2fe%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/The_Old_East_Entrance_Station_in_use._%28883ce85c-1a88-4ee4-94c0-4f65cb20d2fe%29.jpg/1280px-The_Old_East_Entrance_Station_in_use._%28883ce85c-1a88-4ee4-94c0-4f65cb20d2fe%29.jpg",
+      "width": 960,
+      "height": 736,
+      "page": "https://commons.wikimedia.org/wiki/File:The_Old_East_Entrance_Station_in_use._(883ce85c-1a88-4ee4-94c0-4f65cb20d2fe).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    }
+  ],
+  "thro-badlands-overlook": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Badlands_Overlook.jpg/960px-Badlands_Overlook.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Badlands_Overlook.jpg/1920px-Badlands_Overlook.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Badlands_Overlook.jpg",
+      "author": "Ymblanter",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Sentinel_Butte_Formation_%28Upper_Paleocene%3B_Painted_Canyon%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_2.jpg/960px-Sentinel_Butte_Formation_%28Upper_Paleocene%3B_Painted_Canyon%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Sentinel_Butte_Formation_%28Upper_Paleocene%3B_Painted_Canyon%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_2.jpg/1920px-Sentinel_Butte_Formation_%28Upper_Paleocene%3B_Painted_Canyon%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_2.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Sentinel_Butte_Formation_(Upper_Paleocene;_Painted_Canyon,_Little_Missouri_Badlands,_North_Dakota,_USA)_2.jpg",
+      "author": "James St. John",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Sentinel_Butte_Formation_%28Upper_Paleocene%3B_Painted_Canyon%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_8.jpg/960px-Sentinel_Butte_Formation_%28Upper_Paleocene%3B_Painted_Canyon%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_8.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Sentinel_Butte_Formation_%28Upper_Paleocene%3B_Painted_Canyon%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_8.jpg/1920px-Sentinel_Butte_Formation_%28Upper_Paleocene%3B_Painted_Canyon%2C_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_8.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Sentinel_Butte_Formation_(Upper_Paleocene;_Painted_Canyon,_Little_Missouri_Badlands,_North_Dakota,_USA)_8.jpg",
+      "author": "James St. John",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Theodore_Roosevelt_NP_ND7.jpg/960px-Theodore_Roosevelt_NP_ND7.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Theodore_Roosevelt_NP_ND7.jpg/1920px-Theodore_Roosevelt_NP_ND7.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Theodore_Roosevelt_NP_ND7.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Theodore_Roosevelt_NP_ND8.jpg/960px-Theodore_Roosevelt_NP_ND8.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Theodore_Roosevelt_NP_ND8.jpg/1920px-Theodore_Roosevelt_NP_ND8.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Theodore_Roosevelt_NP_ND8.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "thro-painted-canyon": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Painted_Canyon_-_Theodore_Roosevelt_National_Park_01.jpg/960px-Painted_Canyon_-_Theodore_Roosevelt_National_Park_01.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Painted_Canyon_-_Theodore_Roosevelt_National_Park_01.jpg/1920px-Painted_Canyon_-_Theodore_Roosevelt_National_Park_01.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Canyon_-_Theodore_Roosevelt_National_Park_01.jpg",
+      "author": "Farragutful",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Painted_Canyon_overlook_Theodore_Roosevelt_NP2.jpg/960px-Painted_Canyon_overlook_Theodore_Roosevelt_NP2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Painted_Canyon_overlook_Theodore_Roosevelt_NP2.jpg/1920px-Painted_Canyon_overlook_Theodore_Roosevelt_NP2.jpg",
+      "width": 960,
+      "height": 578,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Canyon_overlook_Theodore_Roosevelt_NP2.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Painted_Canyon_overlook_Theodore_Roosevelt_NP_ND1.jpg/960px-Painted_Canyon_overlook_Theodore_Roosevelt_NP_ND1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Painted_Canyon_overlook_Theodore_Roosevelt_NP_ND1.jpg/1920px-Painted_Canyon_overlook_Theodore_Roosevelt_NP_ND1.jpg",
+      "width": 960,
+      "height": 766,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Canyon_overlook_Theodore_Roosevelt_NP_ND1.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Painted_Canyon_-_Theodore_Roosevelt_National_Park_03.jpg/960px-Painted_Canyon_-_Theodore_Roosevelt_National_Park_03.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Painted_Canyon_-_Theodore_Roosevelt_National_Park_03.jpg/1920px-Painted_Canyon_-_Theodore_Roosevelt_National_Park_03.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Canyon_-_Theodore_Roosevelt_National_Park_03.jpg",
+      "author": "Farragutful",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Paddock_Creek_watershed_%284057511310%29.jpg/960px-Paddock_Creek_watershed_%284057511310%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Paddock_Creek_watershed_%284057511310%29.jpg/1920px-Paddock_Creek_watershed_%284057511310%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Paddock_Creek_watershed_(4057511310).jpg",
+      "author": "Chris M Morris",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "thro-painted-canyon-trail": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Painted_Canyon_-_Theodore_Roosevelt_National_Park_02.jpg/960px-Painted_Canyon_-_Theodore_Roosevelt_National_Park_02.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Painted_Canyon_-_Theodore_Roosevelt_National_Park_02.jpg/1920px-Painted_Canyon_-_Theodore_Roosevelt_National_Park_02.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Canyon_-_Theodore_Roosevelt_National_Park_02.jpg",
+      "author": "Farragutful",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Painted_Canyon_-_Theodore_Roosevelt_National_Park_04.jpg/960px-Painted_Canyon_-_Theodore_Roosevelt_National_Park_04.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Painted_Canyon_-_Theodore_Roosevelt_National_Park_04.jpg/1920px-Painted_Canyon_-_Theodore_Roosevelt_National_Park_04.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Canyon_-_Theodore_Roosevelt_National_Park_04.jpg",
+      "author": "Farragutful",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Painted_Canyon_VC_Theodore_Roosevelt_NP_ND1.jpg/960px-Painted_Canyon_VC_Theodore_Roosevelt_NP_ND1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Painted_Canyon_VC_Theodore_Roosevelt_NP_ND1.jpg/1920px-Painted_Canyon_VC_Theodore_Roosevelt_NP_ND1.jpg",
+      "width": 960,
+      "height": 817,
+      "page": "https://commons.wikimedia.org/wiki/File:Painted_Canyon_VC_Theodore_Roosevelt_NP_ND1.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Theodore_Roosevelt_National_Park_ND2.jpg/960px-Theodore_Roosevelt_National_Park_ND2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Theodore_Roosevelt_National_Park_ND2.jpg/1920px-Theodore_Roosevelt_National_Park_ND2.jpg",
+      "width": 960,
+      "height": 612,
+      "page": "https://commons.wikimedia.org/wiki/File:Theodore_Roosevelt_National_Park_ND2.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "thro-petrified-forest": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Petrified_wood_Theodore_Roosevelt_NP_ND1.jpg/960px-Petrified_wood_Theodore_Roosevelt_NP_ND1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Petrified_wood_Theodore_Roosevelt_NP_ND1.jpg/1920px-Petrified_wood_Theodore_Roosevelt_NP_ND1.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Petrified_wood_Theodore_Roosevelt_NP_ND1.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Canthon_pilularius_%28North_Dakota%29.jpg/960px-Canthon_pilularius_%28North_Dakota%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Canthon_pilularius_%28North_Dakota%29.jpg/1280px-Canthon_pilularius_%28North_Dakota%29.jpg",
+      "width": 960,
+      "height": 809,
+      "page": "https://commons.wikimedia.org/wiki/File:Canthon_pilularius_(North_Dakota).jpg",
+      "author": "EB3658",
+      "license": "CC0"
+    }
+  ],
+  "thro-elkhorn-ranch": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/ElkhornRanchInWinter.jpg/960px-ElkhornRanchInWinter.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/ElkhornRanchInWinter.jpg/1920px-ElkhornRanchInWinter.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:ElkhornRanchInWinter.jpg",
+      "author": "Laura Thomas/NPS",
+      "license": "Public domain"
+    }
+  ],
+  "thro-cannonball-concretions": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Cannonballs_Theodore_Roosevelt_NP_north_unit_ND4.jpg/960px-Cannonballs_Theodore_Roosevelt_NP_north_unit_ND4.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Cannonballs_Theodore_Roosevelt_NP_north_unit_ND4.jpg/1920px-Cannonballs_Theodore_Roosevelt_NP_north_unit_ND4.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Cannonballs_Theodore_Roosevelt_NP_north_unit_ND4.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Cannonball_concretions_%28Sentinel_Butte_Formation%2C_Upper_Paleocene%3B_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_1.jpg/960px-Cannonball_concretions_%28Sentinel_Butte_Formation%2C_Upper_Paleocene%3B_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Cannonball_concretions_%28Sentinel_Butte_Formation%2C_Upper_Paleocene%3B_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_1.jpg/1920px-Cannonball_concretions_%28Sentinel_Butte_Formation%2C_Upper_Paleocene%3B_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_1.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Cannonball_concretions_(Sentinel_Butte_Formation,_Upper_Paleocene;_Little_Missouri_Badlands,_North_Dakota,_USA)_1.jpg",
+      "author": "James St. John",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Cannonball_concretions_%28Sentinel_Butte_Formation%2C_Upper_Paleocene%3B_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_12.jpg/960px-Cannonball_concretions_%28Sentinel_Butte_Formation%2C_Upper_Paleocene%3B_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_12.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Cannonball_concretions_%28Sentinel_Butte_Formation%2C_Upper_Paleocene%3B_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_12.jpg/1920px-Cannonball_concretions_%28Sentinel_Butte_Formation%2C_Upper_Paleocene%3B_Little_Missouri_Badlands%2C_North_Dakota%2C_USA%29_12.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Cannonball_concretions_(Sentinel_Butte_Formation,_Upper_Paleocene;_Little_Missouri_Badlands,_North_Dakota,_USA)_12.jpg",
+      "author": "James St. John",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Cannonballs_and_slump_Theodore_Roosevelt_NP_north_unit_ND1.jpg/960px-Cannonballs_and_slump_Theodore_Roosevelt_NP_north_unit_ND1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Cannonballs_and_slump_Theodore_Roosevelt_NP_north_unit_ND1.jpg/1920px-Cannonballs_and_slump_Theodore_Roosevelt_NP_north_unit_ND1.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Cannonballs_and_slump_Theodore_Roosevelt_NP_north_unit_ND1.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Strange_Rock_Formations_in_the_Badlands_07_-_Spherical_Boulder_Cannonball.jpg/960px-Strange_Rock_Formations_in_the_Badlands_07_-_Spherical_Boulder_Cannonball.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Strange_Rock_Formations_in_the_Badlands_07_-_Spherical_Boulder_Cannonball.jpg/1920px-Strange_Rock_Formations_in_the_Badlands_07_-_Spherical_Boulder_Cannonball.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Strange_Rock_Formations_in_the_Badlands_07_-_Spherical_Boulder_Cannonball.jpg",
+      "author": "Amaury Laporte",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Strange_Rock_Formations_in_the_Badlands_09_-_Spherical_Boulder_Cannonball.jpg/960px-Strange_Rock_Formations_in_the_Badlands_09_-_Spherical_Boulder_Cannonball.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Strange_Rock_Formations_in_the_Badlands_09_-_Spherical_Boulder_Cannonball.jpg/1920px-Strange_Rock_Formations_in_the_Badlands_09_-_Spherical_Boulder_Cannonball.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Strange_Rock_Formations_in_the_Badlands_09_-_Spherical_Boulder_Cannonball.jpg",
+      "author": "Amaury Laporte",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "thro-little-mo": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/North_Unit_Theodore_Roosevelt_NP_ND1.jpg/960px-North_Unit_Theodore_Roosevelt_NP_ND1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/North_Unit_Theodore_Roosevelt_NP_ND1.jpg/1920px-North_Unit_Theodore_Roosevelt_NP_ND1.jpg",
+      "width": 960,
+      "height": 608,
+      "page": "https://commons.wikimedia.org/wiki/File:North_Unit_Theodore_Roosevelt_NP_ND1.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Cannonballs_Theodore_Roosevelt_NP_north_unit_ND1.jpg/960px-Cannonballs_Theodore_Roosevelt_NP_north_unit_ND1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Cannonballs_Theodore_Roosevelt_NP_north_unit_ND1.jpg/1920px-Cannonballs_Theodore_Roosevelt_NP_north_unit_ND1.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Cannonballs_Theodore_Roosevelt_NP_north_unit_ND1.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/TRNP2009.jpg/960px-TRNP2009.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/TRNP2009.jpg/1280px-TRNP2009.jpg",
+      "width": 960,
+      "height": 1280,
+      "page": "https://commons.wikimedia.org/wiki/File:TRNP2009.jpg",
+      "author": "MDuchek",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "thro-caprock-coulee": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/North_Unit_Theodore_Roosevelt_NP_ND2.jpg/960px-North_Unit_Theodore_Roosevelt_NP_ND2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/North_Unit_Theodore_Roosevelt_NP_ND2.jpg/1920px-North_Unit_Theodore_Roosevelt_NP_ND2.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:North_Unit_Theodore_Roosevelt_NP_ND2.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Scenic_drive_Theodore_Roosevelt_NP_north_unit_ND1.jpg/960px-Scenic_drive_Theodore_Roosevelt_NP_north_unit_ND1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Scenic_drive_Theodore_Roosevelt_NP_north_unit_ND1.jpg/1920px-Scenic_drive_Theodore_Roosevelt_NP_north_unit_ND1.jpg",
+      "width": 960,
+      "height": 556,
+      "page": "https://commons.wikimedia.org/wiki/File:Scenic_drive_Theodore_Roosevelt_NP_north_unit_ND1.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "thro-river-bend": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/River_Bend_Overlook_shelter_-_Theodore_Roosevelt_National_Park_01.jpg/960px-River_Bend_Overlook_shelter_-_Theodore_Roosevelt_National_Park_01.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/River_Bend_Overlook_shelter_-_Theodore_Roosevelt_National_Park_01.jpg/1920px-River_Bend_Overlook_shelter_-_Theodore_Roosevelt_National_Park_01.jpg",
+      "width": 960,
+      "height": 670,
+      "page": "https://commons.wikimedia.org/wiki/File:River_Bend_Overlook_shelter_-_Theodore_Roosevelt_National_Park_01.jpg",
+      "author": "Farragutful",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/River_Bend_Overlook_shelter_-_Theodore_Roosevelt_National_Park_02.jpg/960px-River_Bend_Overlook_shelter_-_Theodore_Roosevelt_National_Park_02.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/River_Bend_Overlook_shelter_-_Theodore_Roosevelt_National_Park_02.jpg/1920px-River_Bend_Overlook_shelter_-_Theodore_Roosevelt_National_Park_02.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:River_Bend_Overlook_shelter_-_Theodore_Roosevelt_National_Park_02.jpg",
+      "author": "Farragutful",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Oxbow_overlook_Theodore_Roosevelt_NP_north_unit_ND1.jpg/960px-Oxbow_overlook_Theodore_Roosevelt_NP_north_unit_ND1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Oxbow_overlook_Theodore_Roosevelt_NP_north_unit_ND1.jpg/1920px-Oxbow_overlook_Theodore_Roosevelt_NP_north_unit_ND1.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Oxbow_overlook_Theodore_Roosevelt_NP_north_unit_ND1.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Oxbow_overlook_Theodore_Roosevelt_NP_north_unit_ND2.jpg/960px-Oxbow_overlook_Theodore_Roosevelt_NP_north_unit_ND2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Oxbow_overlook_Theodore_Roosevelt_NP_north_unit_ND2.jpg/1920px-Oxbow_overlook_Theodore_Roosevelt_NP_north_unit_ND2.jpg",
+      "width": 960,
+      "height": 518,
+      "page": "https://commons.wikimedia.org/wiki/File:Oxbow_overlook_Theodore_Roosevelt_NP_north_unit_ND2.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "thro-oxbow-overlook": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/2022_Theodore_Roosevelt_National_Park_-_North_Unit_68.jpg/960px-2022_Theodore_Roosevelt_National_Park_-_North_Unit_68.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/2022_Theodore_Roosevelt_National_Park_-_North_Unit_68.jpg/1920px-2022_Theodore_Roosevelt_National_Park_-_North_Unit_68.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:2022_Theodore_Roosevelt_National_Park_-_North_Unit_68.jpg",
+      "author": "Farragutful",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Oxbow_overlook_Theodore_Roosevelt_NP_north_unit_ND3.jpg/960px-Oxbow_overlook_Theodore_Roosevelt_NP_north_unit_ND3.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Oxbow_overlook_Theodore_Roosevelt_NP_north_unit_ND3.jpg/1920px-Oxbow_overlook_Theodore_Roosevelt_NP_north_unit_ND3.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Oxbow_overlook_Theodore_Roosevelt_NP_north_unit_ND3.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Oxbow_overlook_Theodore_Roosevelt_NP_north_unit_ND4.jpg/960px-Oxbow_overlook_Theodore_Roosevelt_NP_north_unit_ND4.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Oxbow_overlook_Theodore_Roosevelt_NP_north_unit_ND4.jpg/1920px-Oxbow_overlook_Theodore_Roosevelt_NP_north_unit_ND4.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Oxbow_overlook_Theodore_Roosevelt_NP_north_unit_ND4.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Oxbow_Overlook%2C_Theodore_Roosevelt_National_Park.jpg/960px-Oxbow_Overlook%2C_Theodore_Roosevelt_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Oxbow_Overlook%2C_Theodore_Roosevelt_National_Park.jpg/1920px-Oxbow_Overlook%2C_Theodore_Roosevelt_National_Park.jpg",
+      "width": 960,
+      "height": 442,
+      "page": "https://commons.wikimedia.org/wiki/File:Oxbow_Overlook,_Theodore_Roosevelt_National_Park.jpg",
+      "author": "John Fowler",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Oxbow_on_the_Little_Mo.jpg/960px-Oxbow_on_the_Little_Mo.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Oxbow_on_the_Little_Mo.jpg/1920px-Oxbow_on_the_Little_Mo.jpg",
+      "width": 960,
+      "height": 652,
+      "page": "https://commons.wikimedia.org/wiki/File:Oxbow_on_the_Little_Mo.jpg",
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/2022_Theodore_Roosevelt_National_Park_-_North_Unit_65.jpg/960px-2022_Theodore_Roosevelt_National_Park_-_North_Unit_65.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/2022_Theodore_Roosevelt_National_Park_-_North_Unit_65.jpg/1920px-2022_Theodore_Roosevelt_National_Park_-_North_Unit_65.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:2022_Theodore_Roosevelt_National_Park_-_North_Unit_65.jpg",
+      "author": "Farragutful",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "thro-medora-musical": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Medora_Musical_Stage_June_2014.jpg/960px-Medora_Musical_Stage_June_2014.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Medora_Musical_Stage_June_2014.jpg/1920px-Medora_Musical_Stage_June_2014.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Medora_Musical_Stage_June_2014.jpg",
+      "author": "Michael Holley Swtpc6800 en:User:Swtpc6800",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/TheodoreRooseveltPresidentialLibrary.jpg/960px-TheodoreRooseveltPresidentialLibrary.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/TheodoreRooseveltPresidentialLibrary.jpg/1920px-TheodoreRooseveltPresidentialLibrary.jpg",
+      "width": 960,
+      "height": 462,
+      "page": "https://commons.wikimedia.org/wiki/File:TheodoreRooseveltPresidentialLibrary.jpg",
+      "author": "Travellers & Tinkers",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/TRPLplaza.jpg/960px-TRPLplaza.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/TRPLplaza.jpg/1920px-TRPLplaza.jpg",
+      "width": 960,
+      "height": 545,
+      "page": "https://commons.wikimedia.org/wiki/File:TRPLplaza.jpg",
+      "author": "Travellers & Tinkers",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Stephen_Perkins_%2855484203866%29.jpg/960px-Stephen_Perkins_%2855484203866%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Stephen_Perkins_%2855484203866%29.jpg/1920px-Stephen_Perkins_%2855484203866%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Stephen_Perkins_(55484203866).jpg",
+      "author": "Gage Skidmore",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Theodore_Roosevelt_assassination_attempt_display_%2855483095492%29.jpg/960px-Theodore_Roosevelt_assassination_attempt_display_%2855483095492%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Theodore_Roosevelt_assassination_attempt_display_%2855483095492%29.jpg/1920px-Theodore_Roosevelt_assassination_attempt_display_%2855483095492%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Theodore_Roosevelt_assassination_attempt_display_(55483095492).jpg",
+      "author": "Gage Skidmore",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "thro-tr-library": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Theodore_Roosevelt_Presidential_Library_aerial%2C_May_2026.jpg/960px-Theodore_Roosevelt_Presidential_Library_aerial%2C_May_2026.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Theodore_Roosevelt_Presidential_Library_aerial%2C_May_2026.jpg/1920px-Theodore_Roosevelt_Presidential_Library_aerial%2C_May_2026.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Theodore_Roosevelt_Presidential_Library_aerial,_May_2026.jpg",
+      "author": "Chad Ziemendorf, for the Theodore Roosevelt Presidential Library Foundation",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Grand_opening_of_the_Theodore_Roosevelt_Presidential_Library_on_July_1%2C_2026_in_Medora%2C_North_Dakota_-_3.jpg/960px-Grand_opening_of_the_Theodore_Roosevelt_Presidential_Library_on_July_1%2C_2026_in_Medora%2C_North_Dakota_-_3.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Grand_opening_of_the_Theodore_Roosevelt_Presidential_Library_on_July_1%2C_2026_in_Medora%2C_North_Dakota_-_3.jpg/1920px-Grand_opening_of_the_Theodore_Roosevelt_Presidential_Library_on_July_1%2C_2026_in_Medora%2C_North_Dakota_-_3.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Grand_opening_of_the_Theodore_Roosevelt_Presidential_Library_on_July_1,_2026_in_Medora,_North_Dakota_-_3.jpg",
+      "author": "The White House",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Grand_opening_of_the_Theodore_Roosevelt_Presidential_Library_on_July_1%2C_2026_in_Medora%2C_North_Dakota_-_2.jpg/960px-Grand_opening_of_the_Theodore_Roosevelt_Presidential_Library_on_July_1%2C_2026_in_Medora%2C_North_Dakota_-_2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Grand_opening_of_the_Theodore_Roosevelt_Presidential_Library_on_July_1%2C_2026_in_Medora%2C_North_Dakota_-_2.jpg/1920px-Grand_opening_of_the_Theodore_Roosevelt_Presidential_Library_on_July_1%2C_2026_in_Medora%2C_North_Dakota_-_2.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Grand_opening_of_the_Theodore_Roosevelt_Presidential_Library_on_July_1,_2026_in_Medora,_North_Dakota_-_2.jpg",
+      "author": "The White House",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Theodore_Roosevelt_Presidential_Library_display_%2855484203248%29.jpg/960px-Theodore_Roosevelt_Presidential_Library_display_%2855484203248%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Theodore_Roosevelt_Presidential_Library_display_%2855484203248%29.jpg/1920px-Theodore_Roosevelt_Presidential_Library_display_%2855484203248%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Theodore_Roosevelt_Presidential_Library_display_(55484203248).jpg",
+      "author": "Gage Skidmore",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Theodore_Roosevelt_Presidential_Library_display_%2855483096997%29.jpg/960px-Theodore_Roosevelt_Presidential_Library_display_%2855483096997%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Theodore_Roosevelt_Presidential_Library_display_%2855483096997%29.jpg/1920px-Theodore_Roosevelt_Presidential_Library_display_%2855483096997%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Theodore_Roosevelt_Presidential_Library_display_(55483096997).jpg",
+      "author": "Gage Skidmore",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/TRPLsign.jpg/960px-TRPLsign.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/TRPLsign.jpg/1920px-TRPLsign.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:TRPLsign.jpg",
+      "author": "Travellers & Tinkers",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "badl-ben-reifel-vc": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Ben_Reifel_Visitor_Center%2C_Badlands_National_Park%2C_South_Dakota_%2828665957922%29.jpg/960px-Ben_Reifel_Visitor_Center%2C_Badlands_National_Park%2C_South_Dakota_%2828665957922%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Ben_Reifel_Visitor_Center%2C_Badlands_National_Park%2C_South_Dakota_%2828665957922%29.jpg/1920px-Ben_Reifel_Visitor_Center%2C_Badlands_National_Park%2C_South_Dakota_%2828665957922%29.jpg",
+      "width": 960,
+      "height": 624,
+      "page": "https://commons.wikimedia.org/wiki/File:Ben_Reifel_Visitor_Center,_Badlands_National_Park,_South_Dakota_(28665957922).jpg",
+      "author": "Tony Webster from Minneapolis, Minnesota",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Visitor_Center_PA090112.JPG/960px-Visitor_Center_PA090112.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Visitor_Center_PA090112.JPG/1920px-Visitor_Center_PA090112.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Visitor_Center_PA090112.JPG",
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Visitor_Center_PA100237.JPG/960px-Visitor_Center_PA100237.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Visitor_Center_PA100237.JPG/1920px-Visitor_Center_PA100237.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Visitor_Center_PA100237.JPG",
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Ben_Reifel_Visitor_Center_%28b1e4e526-9411-41e9-ba1a-ea8cba0c798f%29.jpg/960px-Ben_Reifel_Visitor_Center_%28b1e4e526-9411-41e9-ba1a-ea8cba0c798f%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Ben_Reifel_Visitor_Center_%28b1e4e526-9411-41e9-ba1a-ea8cba0c798f%29.jpg/1280px-Ben_Reifel_Visitor_Center_%28b1e4e526-9411-41e9-ba1a-ea8cba0c798f%29.jpg",
+      "width": 960,
+      "height": 404,
+      "page": "https://commons.wikimedia.org/wiki/File:Ben_Reifel_Visitor_Center_(b1e4e526-9411-41e9-ba1a-ea8cba0c798f).jpg",
+      "author": "NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Nonmarine_siliciclastic_sedimentary_rocks_%28White_River_Group%2C_Tertiary%3B_White_River_Badlands%2C_South_Dakota%2C_USA%29_116.jpg/960px-Nonmarine_siliciclastic_sedimentary_rocks_%28White_River_Group%2C_Tertiary%3B_White_River_Badlands%2C_South_Dakota%2C_USA%29_116.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Nonmarine_siliciclastic_sedimentary_rocks_%28White_River_Group%2C_Tertiary%3B_White_River_Badlands%2C_South_Dakota%2C_USA%29_116.jpg/1920px-Nonmarine_siliciclastic_sedimentary_rocks_%28White_River_Group%2C_Tertiary%3B_White_River_Badlands%2C_South_Dakota%2C_USA%29_116.jpg",
+      "width": 960,
+      "height": 714,
+      "page": "https://commons.wikimedia.org/wiki/File:Nonmarine_siliciclastic_sedimentary_rocks_(White_River_Group,_Tertiary;_White_River_Badlands,_South_Dakota,_USA)_116.jpg",
+      "author": "James St. John",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Panoramic_view_of_badland_formations_from_Cedar_Pass_Lodge%2C_Badlands_National_Park%2C_2009.jpg/960px-Panoramic_view_of_badland_formations_from_Cedar_Pass_Lodge%2C_Badlands_National_Park%2C_2009.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Panoramic_view_of_badland_formations_from_Cedar_Pass_Lodge%2C_Badlands_National_Park%2C_2009.jpg/1920px-Panoramic_view_of_badland_formations_from_Cedar_Pass_Lodge%2C_Badlands_National_Park%2C_2009.jpg",
+      "width": 960,
+      "height": 429,
+      "page": "https://commons.wikimedia.org/wiki/File:Panoramic_view_of_badland_formations_from_Cedar_Pass_Lodge,_Badlands_National_Park,_2009.jpg",
+      "author": "DimiTalen",
+      "license": "CC0"
+    }
+  ],
+  "badl-door-window": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Door_Trail_PA110399.jpg/960px-Door_Trail_PA110399.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Door_Trail_PA110399.jpg/1920px-Door_Trail_PA110399.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Door_Trail_PA110399.jpg",
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Door_Trail_PA110414_%28Windows_Trail_overlook%29.JPG/960px-Door_Trail_PA110414_%28Windows_Trail_overlook%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Door_Trail_PA110414_%28Windows_Trail_overlook%29.JPG/1920px-Door_Trail_PA110414_%28Windows_Trail_overlook%29.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Door_Trail_PA110414_(Windows_Trail_overlook).JPG",
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Badlands_National_Park_-_End_of_Door_Trail_at_dusk.jpg/960px-Badlands_National_Park_-_End_of_Door_Trail_at_dusk.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Badlands_National_Park_-_End_of_Door_Trail_at_dusk.jpg/1920px-Badlands_National_Park_-_End_of_Door_Trail_at_dusk.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Badlands_National_Park_-_End_of_Door_Trail_at_dusk.jpg",
+      "author": "Eekim",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Badlands_National_Park_-_Door_Trail_at_dusk.jpg/960px-Badlands_National_Park_-_Door_Trail_at_dusk.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Badlands_National_Park_-_Door_Trail_at_dusk.jpg/1920px-Badlands_National_Park_-_Door_Trail_at_dusk.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Badlands_National_Park_-_Door_Trail_at_dusk.jpg",
+      "author": "Eekim",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Prairie_from_Notch_and_Door_Trails%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg/960px-Prairie_from_Notch_and_Door_Trails%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Prairie_from_Notch_and_Door_Trails%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg/1920px-Prairie_from_Notch_and_Door_Trails%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Prairie_from_Notch_and_Door_Trails,_Badlands_National_Park,_Wall,_SD.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Pinnacles_from_Notch_and_Door_Trails%2C_Badlands_National_Park%2C_Wall%2C_SD_-_53752008294.jpg/960px-Pinnacles_from_Notch_and_Door_Trails%2C_Badlands_National_Park%2C_Wall%2C_SD_-_53752008294.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Pinnacles_from_Notch_and_Door_Trails%2C_Badlands_National_Park%2C_Wall%2C_SD_-_53752008294.jpg/1920px-Pinnacles_from_Notch_and_Door_Trails%2C_Badlands_National_Park%2C_Wall%2C_SD_-_53752008294.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_from_Notch_and_Door_Trails,_Badlands_National_Park,_Wall,_SD_-_53752008294.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "badl-notch-trail": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Notch_Trail_Badlands_NP_South_Dakota_2024.jpg/960px-Notch_Trail_Badlands_NP_South_Dakota_2024.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Notch_Trail_Badlands_NP_South_Dakota_2024.jpg/1920px-Notch_Trail_Badlands_NP_South_Dakota_2024.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Notch_Trail_Badlands_NP_South_Dakota_2024.jpg",
+      "author": "Larry D. Moore",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Notch_Trail_PA110293_Prickly_Pear_Cactus.JPG/960px-Notch_Trail_PA110293_Prickly_Pear_Cactus.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Notch_Trail_PA110293_Prickly_Pear_Cactus.JPG/1920px-Notch_Trail_PA110293_Prickly_Pear_Cactus.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Notch_Trail_PA110293_Prickly_Pear_Cactus.JPG",
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Notch_Trail_PA110306.JPG/960px-Notch_Trail_PA110306.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Notch_Trail_PA110306.JPG/1920px-Notch_Trail_PA110306.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Notch_Trail_PA110306.JPG",
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Pinnacles_from_Notch_and_Door_Trails%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg/960px-Pinnacles_from_Notch_and_Door_Trails%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Pinnacles_from_Notch_and_Door_Trails%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg/1920px-Pinnacles_from_Notch_and_Door_Trails%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_from_Notch_and_Door_Trails,_Badlands_National_Park,_Wall,_SD.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Prairie_from_Notch_and_Door_Trails%2C_Badlands_National_Park%2C_Wall%2C_SD_-_53751856518.jpg/960px-Prairie_from_Notch_and_Door_Trails%2C_Badlands_National_Park%2C_Wall%2C_SD_-_53751856518.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Prairie_from_Notch_and_Door_Trails%2C_Badlands_National_Park%2C_Wall%2C_SD_-_53751856518.jpg/1920px-Prairie_from_Notch_and_Door_Trails%2C_Badlands_National_Park%2C_Wall%2C_SD_-_53751856518.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Prairie_from_Notch_and_Door_Trails,_Badlands_National_Park,_Wall,_SD_-_53751856518.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Notch_View_Badlands_National_Park_South_Dakota_2024.jpg/960px-Notch_View_Badlands_National_Park_South_Dakota_2024.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Notch_View_Badlands_National_Park_South_Dakota_2024.jpg/1920px-Notch_View_Badlands_National_Park_South_Dakota_2024.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Notch_View_Badlands_National_Park_South_Dakota_2024.jpg",
+      "author": "Larry D. Moore",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "badl-cliff-shelf": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Evening_walk_on_the_cliff_shelf_trail_%2833051868203%29.jpg/960px-Evening_walk_on_the_cliff_shelf_trail_%2833051868203%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Evening_walk_on_the_cliff_shelf_trail_%2833051868203%29.jpg/1920px-Evening_walk_on_the_cliff_shelf_trail_%2833051868203%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Evening_walk_on_the_cliff_shelf_trail_(33051868203).jpg",
+      "author": "Christian Collins from Midland, MI, United States",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Cliff_Shelf_Nature_Trail_PA090096_Juniper_berries.JPG/960px-Cliff_Shelf_Nature_Trail_PA090096_Juniper_berries.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Cliff_Shelf_Nature_Trail_PA090096_Juniper_berries.JPG/1920px-Cliff_Shelf_Nature_Trail_PA090096_Juniper_berries.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Cliff_Shelf_Nature_Trail_PA090096_Juniper_berries.JPG",
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Cliff_Shelf_Nature_Trail_PA090104_boardwalk.JPG/960px-Cliff_Shelf_Nature_Trail_PA090104_boardwalk.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Cliff_Shelf_Nature_Trail_PA090104_boardwalk.JPG/1920px-Cliff_Shelf_Nature_Trail_PA090104_boardwalk.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Cliff_Shelf_Nature_Trail_PA090104_boardwalk.JPG",
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Prairie_from_Cliff_Shelf_Nature_Trail%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg/960px-Prairie_from_Cliff_Shelf_Nature_Trail%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Prairie_from_Cliff_Shelf_Nature_Trail%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg/1920px-Prairie_from_Cliff_Shelf_Nature_Trail%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Prairie_from_Cliff_Shelf_Nature_Trail,_Badlands_National_Park,_Wall,_SD.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Pinnacles_from_Cliff_Shelf_Nature_Trail%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg/960px-Pinnacles_from_Cliff_Shelf_Nature_Trail%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Pinnacles_from_Cliff_Shelf_Nature_Trail%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg/1920px-Pinnacles_from_Cliff_Shelf_Nature_Trail%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_from_Cliff_Shelf_Nature_Trail,_Badlands_National_Park,_Wall,_SD.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Sunset_along_the_cliff_shelf_trail_%2832150307490%29.jpg/960px-Sunset_along_the_cliff_shelf_trail_%2832150307490%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Sunset_along_the_cliff_shelf_trail_%2832150307490%29.jpg/1920px-Sunset_along_the_cliff_shelf_trail_%2832150307490%29.jpg",
+      "width": 960,
+      "height": 606,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunset_along_the_cliff_shelf_trail_(32150307490).jpg",
+      "author": "Christian Collins",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "badl-saddle-pass": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Badlands_National_Park_-_Saddle_Pass_Peak.jpg/960px-Badlands_National_Park_-_Saddle_Pass_Peak.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Badlands_National_Park_-_Saddle_Pass_Peak.jpg/1920px-Badlands_National_Park_-_Saddle_Pass_Peak.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Badlands_National_Park_-_Saddle_Pass_Peak.jpg",
+      "author": "Eekim",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Interior_Township%2C_SD%2C_USA_-_panoramio_-_Idawriter_%2816%29.jpg/960px-Interior_Township%2C_SD%2C_USA_-_panoramio_-_Idawriter_%2816%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Interior_Township%2C_SD%2C_USA_-_panoramio_-_Idawriter_%2816%29.jpg/1920px-Interior_Township%2C_SD%2C_USA_-_panoramio_-_Idawriter_%2816%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Interior_Township,_SD,_USA_-_panoramio_-_Idawriter_(16).jpg",
+      "author": "Idawriter",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Badlands_bighorn_sheep_%2833175922096%29.jpg/960px-Badlands_bighorn_sheep_%2833175922096%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Badlands_bighorn_sheep_%2833175922096%29.jpg/1920px-Badlands_bighorn_sheep_%2833175922096%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Badlands_bighorn_sheep_(33175922096).jpg",
+      "author": "Christian Collins from Midland, MI, United States",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Badlands_National_Park_-_After_sunset.jpg/960px-Badlands_National_Park_-_After_sunset.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Badlands_National_Park_-_After_sunset.jpg/1920px-Badlands_National_Park_-_After_sunset.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Badlands_National_Park_-_After_sunset.jpg",
+      "author": "Eekim",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Interior_Township%2C_SD%2C_USA_-_panoramio_-_Idawriter_%2811%29.jpg/960px-Interior_Township%2C_SD%2C_USA_-_panoramio_-_Idawriter_%2811%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Interior_Township%2C_SD%2C_USA_-_panoramio_-_Idawriter_%2811%29.jpg/1920px-Interior_Township%2C_SD%2C_USA_-_panoramio_-_Idawriter_%2811%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Interior_Township,_SD,_USA_-_panoramio_-_Idawriter_(11).jpg",
+      "author": "Idawriter",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Badlands_National_Park_10_11_17_-badlandsnps_-southdakota_%2840373509854%29.jpg/960px-Badlands_National_Park_10_11_17_-badlandsnps_-southdakota_%2840373509854%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Badlands_National_Park_10_11_17_-badlandsnps_-southdakota_%2840373509854%29.jpg/1920px-Badlands_National_Park_10_11_17_-badlandsnps_-southdakota_%2840373509854%29.jpg",
+      "width": 960,
+      "height": 600,
+      "page": "https://commons.wikimedia.org/wiki/File:Badlands_National_Park_10_11_17_-badlandsnps_-southdakota_(40373509854).jpg",
+      "author": "Sharon Mollerus",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "badl-castle-trail": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Badlands_National_Park_-_Castle_Trail.jpg/960px-Badlands_National_Park_-_Castle_Trail.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Badlands_National_Park_-_Castle_Trail.jpg/1920px-Badlands_National_Park_-_Castle_Trail.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Badlands_National_Park_-_Castle_Trail.jpg",
+      "author": "Eekim",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Castle_Trail_PA090074.JPG/960px-Castle_Trail_PA090074.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Castle_Trail_PA090074.JPG/1920px-Castle_Trail_PA090074.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Castle_Trail_PA090074.JPG",
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Badlands_National_Park_-_Castle_Trail_in_the_reeds.jpg/960px-Badlands_National_Park_-_Castle_Trail_in_the_reeds.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Badlands_National_Park_-_Castle_Trail_in_the_reeds.jpg/1920px-Badlands_National_Park_-_Castle_Trail_in_the_reeds.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Badlands_National_Park_-_Castle_Trail_in_the_reeds.jpg",
+      "author": "Eekim",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Mudcracks_%28Castle_Trail-Fossil_Exhibit_Trail_area%2C_White_River_Badlands%2C_South_Dakota%2C_USA%29_1.jpg/960px-Mudcracks_%28Castle_Trail-Fossil_Exhibit_Trail_area%2C_White_River_Badlands%2C_South_Dakota%2C_USA%29_1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Mudcracks_%28Castle_Trail-Fossil_Exhibit_Trail_area%2C_White_River_Badlands%2C_South_Dakota%2C_USA%29_1.jpg/1920px-Mudcracks_%28Castle_Trail-Fossil_Exhibit_Trail_area%2C_White_River_Badlands%2C_South_Dakota%2C_USA%29_1.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Mudcracks_(Castle_Trail-Fossil_Exhibit_Trail_area,_White_River_Badlands,_South_Dakota,_USA)_1.jpg",
+      "author": "James St. John",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Mudcracks_%28Castle_Trail-Fossil_Exhibit_Trail_area%2C_White_River_Badlands%2C_South_Dakota%2C_USA%29_2.jpg/960px-Mudcracks_%28Castle_Trail-Fossil_Exhibit_Trail_area%2C_White_River_Badlands%2C_South_Dakota%2C_USA%29_2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Mudcracks_%28Castle_Trail-Fossil_Exhibit_Trail_area%2C_White_River_Badlands%2C_South_Dakota%2C_USA%29_2.jpg/1920px-Mudcracks_%28Castle_Trail-Fossil_Exhibit_Trail_area%2C_White_River_Badlands%2C_South_Dakota%2C_USA%29_2.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Mudcracks_(Castle_Trail-Fossil_Exhibit_Trail_area,_White_River_Badlands,_South_Dakota,_USA)_2.jpg",
+      "author": "James St. John",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Badlands_Flatiron-Castle_Trail_Hike_026_%2813986003037%29.jpg/960px-Badlands_Flatiron-Castle_Trail_Hike_026_%2813986003037%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Badlands_Flatiron-Castle_Trail_Hike_026_%2813986003037%29.jpg/1280px-Badlands_Flatiron-Castle_Trail_Hike_026_%2813986003037%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Badlands_Flatiron-Castle_Trail_Hike_026_(13986003037).jpg",
+      "author": "Bureau of Land Management Oregon and Washington",
+      "license": "Public domain"
+    }
+  ],
+  "badl-fossil-exhibit": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Pinnacles_from_Fossil_Exhibit_Trail%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg/960px-Pinnacles_from_Fossil_Exhibit_Trail%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Pinnacles_from_Fossil_Exhibit_Trail%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg/1920px-Pinnacles_from_Fossil_Exhibit_Trail%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_from_Fossil_Exhibit_Trail,_Badlands_National_Park,_Wall,_SD.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Mudcracks_%28Castle_Trail-Fossil_Exhibit_Trail_area%2C_White_River_Badlands%2C_South_Dakota%2C_USA%29_3.jpg/960px-Mudcracks_%28Castle_Trail-Fossil_Exhibit_Trail_area%2C_White_River_Badlands%2C_South_Dakota%2C_USA%29_3.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Mudcracks_%28Castle_Trail-Fossil_Exhibit_Trail_area%2C_White_River_Badlands%2C_South_Dakota%2C_USA%29_3.jpg/1920px-Mudcracks_%28Castle_Trail-Fossil_Exhibit_Trail_area%2C_White_River_Badlands%2C_South_Dakota%2C_USA%29_3.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Mudcracks_(Castle_Trail-Fossil_Exhibit_Trail_area,_White_River_Badlands,_South_Dakota,_USA)_3.jpg",
+      "author": "James St. John",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Mudcracks_%28Castle_Trail-Fossil_Exhibit_Trail_area%2C_White_River_Badlands%2C_South_Dakota%2C_USA%29_4.jpg/960px-Mudcracks_%28Castle_Trail-Fossil_Exhibit_Trail_area%2C_White_River_Badlands%2C_South_Dakota%2C_USA%29_4.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Mudcracks_%28Castle_Trail-Fossil_Exhibit_Trail_area%2C_White_River_Badlands%2C_South_Dakota%2C_USA%29_4.jpg/1920px-Mudcracks_%28Castle_Trail-Fossil_Exhibit_Trail_area%2C_White_River_Badlands%2C_South_Dakota%2C_USA%29_4.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Mudcracks_(Castle_Trail-Fossil_Exhibit_Trail_area,_White_River_Badlands,_South_Dakota,_USA)_4.jpg",
+      "author": "James St. John",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Pinnacles_from_Fossil_Exhibit_Trail%2C_Badlands_National_Park%2C_Wall%2C_SD_-_53751649136.jpg/960px-Pinnacles_from_Fossil_Exhibit_Trail%2C_Badlands_National_Park%2C_Wall%2C_SD_-_53751649136.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Pinnacles_from_Fossil_Exhibit_Trail%2C_Badlands_National_Park%2C_Wall%2C_SD_-_53751649136.jpg/1920px-Pinnacles_from_Fossil_Exhibit_Trail%2C_Badlands_National_Park%2C_Wall%2C_SD_-_53751649136.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_from_Fossil_Exhibit_Trail,_Badlands_National_Park,_Wall,_SD_-_53751649136.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Fossil_Exhibit_Trail_is_a_short_trail_with_information_about_the_fossils_found_in_the_Badlands._Visitors_are_invited_to_touch_%2885765a59-fda0-4f75-b1f7-0a29807634dc%29.jpg/960px-thumbnail.jpg",
+      "large": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Fossil_Exhibit_Trail_is_a_short_trail_with_information_about_the_fossils_found_in_the_Badlands._Visitors_are_invited_to_touch_%2885765a59-fda0-4f75-b1f7-0a29807634dc%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:Fossil_Exhibit_Trail_is_a_short_trail_with_information_about_the_fossils_found_in_the_Badlands._Visitors_are_invited_to_touch_(85765a59-fda0-4f75-b1f7-0a29807634dc).jpg",
+      "author": "NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Norbeck_Pass_-_panoramio.jpg/960px-Norbeck_Pass_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Norbeck_Pass_-_panoramio.jpg/1920px-Norbeck_Pass_-_panoramio.jpg",
+      "width": 960,
+      "height": 704,
+      "page": "https://commons.wikimedia.org/wiki/File:Norbeck_Pass_-_panoramio.jpg",
+      "author": "Idawriter",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "badl-big-badlands-overlook": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Big_Badlands_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg/960px-Big_Badlands_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Big_Badlands_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg/1920px-Big_Badlands_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Big_Badlands_Overlook,_Badlands_National_Park,_Wall,_SD.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Big_Badlands_Overlook_PA090066.JPG/960px-Big_Badlands_Overlook_PA090066.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Big_Badlands_Overlook_PA090066.JPG/1920px-Big_Badlands_Overlook_PA090066.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Big_Badlands_Overlook_PA090066.JPG",
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Big_Badlands_Overlook_PA090067.JPG/960px-Big_Badlands_Overlook_PA090067.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Big_Badlands_Overlook_PA090067.JPG/1920px-Big_Badlands_Overlook_PA090067.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Big_Badlands_Overlook_PA090067.JPG",
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Big_Badlands_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD_-_53752109575.jpg/960px-Big_Badlands_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD_-_53752109575.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Big_Badlands_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD_-_53752109575.jpg/1920px-Big_Badlands_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD_-_53752109575.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Big_Badlands_Overlook,_Badlands_National_Park,_Wall,_SD_-_53752109575.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/My_Public_Lands_Roadtrip-_Terry_Badlands_in_Montana_%2820088516913%29.jpg/960px-My_Public_Lands_Roadtrip-_Terry_Badlands_in_Montana_%2820088516913%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/My_Public_Lands_Roadtrip-_Terry_Badlands_in_Montana_%2820088516913%29.jpg/1920px-My_Public_Lands_Roadtrip-_Terry_Badlands_in_Montana_%2820088516913%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:My_Public_Lands_Roadtrip-_Terry_Badlands_in_Montana_(20088516913).jpg",
+      "author": "mypubliclands",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/My_Public_Lands_Roadtrip-_Terry_Badlands_in_Montana_%2820716292701%29.jpg/960px-My_Public_Lands_Roadtrip-_Terry_Badlands_in_Montana_%2820716292701%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/My_Public_Lands_Roadtrip-_Terry_Badlands_in_Montana_%2820716292701%29.jpg/1920px-My_Public_Lands_Roadtrip-_Terry_Badlands_in_Montana_%2820716292701%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:My_Public_Lands_Roadtrip-_Terry_Badlands_in_Montana_(20716292701).jpg",
+      "author": "mypubliclands",
+      "license": "Public domain"
+    }
+  ],
+  "badl-panorama-point": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Panorama_Point_Overlook%2C_Badlands_%2831888863525%29.jpg/960px-Panorama_Point_Overlook%2C_Badlands_%2831888863525%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Panorama_Point_Overlook%2C_Badlands_%2831888863525%29.jpg/1920px-Panorama_Point_Overlook%2C_Badlands_%2831888863525%29.jpg",
+      "width": 960,
+      "height": 642,
+      "page": "https://commons.wikimedia.org/wiki/File:Panorama_Point_Overlook,_Badlands_(31888863525).jpg",
+      "author": "Nick Amoscato",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Panorama_Point_-_Badlands_National_Park.JPG/960px-Panorama_Point_-_Badlands_National_Park.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Panorama_Point_-_Badlands_National_Park.JPG/1920px-Panorama_Point_-_Badlands_National_Park.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Panorama_Point_-_Badlands_National_Park.JPG",
+      "author": "Skarz",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Panorama_Point%2C_Badlands_National_Park_-_panoramio.jpg/960px-Panorama_Point%2C_Badlands_National_Park_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Panorama_Point%2C_Badlands_National_Park_-_panoramio.jpg/1920px-Panorama_Point%2C_Badlands_National_Park_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Panorama_Point,_Badlands_National_Park_-_panoramio.jpg",
+      "author": "hakkun",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Panorama_Point_Overlook%2C_Badlands_%2831772412331%29.jpg/960px-Panorama_Point_Overlook%2C_Badlands_%2831772412331%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Panorama_Point_Overlook%2C_Badlands_%2831772412331%29.jpg/1920px-Panorama_Point_Overlook%2C_Badlands_%2831772412331%29.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Panorama_Point_Overlook,_Badlands_(31772412331).jpg",
+      "author": "Nick Amoscato",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/MK00630_Badlands_Panorama_Point.jpg/960px-MK00630_Badlands_Panorama_Point.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/MK00630_Badlands_Panorama_Point.jpg/1920px-MK00630_Badlands_Panorama_Point.jpg",
+      "width": 960,
+      "height": 394,
+      "page": "https://commons.wikimedia.org/wiki/File:MK00630_Badlands_Panorama_Point.jpg",
+      "author": "Martin Kraft",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Badlands_in_the_Fog_%289131675008%29.jpg/960px-Badlands_in_the_Fog_%289131675008%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Badlands_in_the_Fog_%289131675008%29.jpg/1920px-Badlands_in_the_Fog_%289131675008%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Badlands_in_the_Fog_(9131675008).jpg",
+      "author": "Kari from Denver, CO, United States",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "badl-yellow-mounds": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Yellow_Mounds_Overlook_kz02.jpg/960px-Yellow_Mounds_Overlook_kz02.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Yellow_Mounds_Overlook_kz02.jpg/1920px-Yellow_Mounds_Overlook_kz02.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Yellow_Mounds_Overlook_kz02.jpg",
+      "author": "Krzysztof Ziarnek, Kenraiz",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Yellow_Mounds_Overlook_kz03.jpg/960px-Yellow_Mounds_Overlook_kz03.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Yellow_Mounds_Overlook_kz03.jpg/1920px-Yellow_Mounds_Overlook_kz03.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Yellow_Mounds_Overlook_kz03.jpg",
+      "author": "Krzysztof Ziarnek, Kenraiz",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Sunflower%2C_Yellow_Mounds_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg/960px-Sunflower%2C_Yellow_Mounds_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Sunflower%2C_Yellow_Mounds_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg/1920px-Sunflower%2C_Yellow_Mounds_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunflower,_Yellow_Mounds_Overlook,_Badlands_National_Park,_Wall,_SD.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Dillon_Pass%2C_Yellow_Mounds_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg/960px-Dillon_Pass%2C_Yellow_Mounds_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Dillon_Pass%2C_Yellow_Mounds_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg/1920px-Dillon_Pass%2C_Yellow_Mounds_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Dillon_Pass,_Yellow_Mounds_Overlook,_Badlands_National_Park,_Wall,_SD.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Badlands_National_Park_-_Yellow_Mounds_1.jpg/960px-Badlands_National_Park_-_Yellow_Mounds_1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Badlands_National_Park_-_Yellow_Mounds_1.jpg/1920px-Badlands_National_Park_-_Yellow_Mounds_1.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Badlands_National_Park_-_Yellow_Mounds_1.jpg",
+      "author": "Eekim",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Badlands_National_Park_-_Yellow_Mounds_2.jpg/960px-Badlands_National_Park_-_Yellow_Mounds_2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Badlands_National_Park_-_Yellow_Mounds_2.jpg/1920px-Badlands_National_Park_-_Yellow_Mounds_2.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Badlands_National_Park_-_Yellow_Mounds_2.jpg",
+      "author": "Eekim",
+      "license": "CC0"
+    }
+  ],
+  "badl-pinnacles-overlook": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Pinnacles_Overlook_kz02.jpg/960px-Pinnacles_Overlook_kz02.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Pinnacles_Overlook_kz02.jpg/1920px-Pinnacles_Overlook_kz02.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_Overlook_kz02.jpg",
+      "author": "Krzysztof Ziarnek, Kenraiz",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Pinnacles_Overlook%2C_Badlands_%2831048114454%29.jpg/960px-Pinnacles_Overlook%2C_Badlands_%2831048114454%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Pinnacles_Overlook%2C_Badlands_%2831048114454%29.jpg/1920px-Pinnacles_Overlook%2C_Badlands_%2831048114454%29.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_Overlook,_Badlands_(31048114454).jpg",
+      "author": "Nick Amoscato",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Pinnacles_Overlook%2C_Badlands_%2831079105953%29.jpg/960px-Pinnacles_Overlook%2C_Badlands_%2831079105953%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Pinnacles_Overlook%2C_Badlands_%2831079105953%29.jpg/1920px-Pinnacles_Overlook%2C_Badlands_%2831079105953%29.jpg",
+      "width": 960,
+      "height": 642,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_Overlook,_Badlands_(31079105953).jpg",
+      "author": "Nick Amoscato",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Pinnacles_Overlook_kz03.jpg/960px-Pinnacles_Overlook_kz03.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Pinnacles_Overlook_kz03.jpg/1920px-Pinnacles_Overlook_kz03.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_Overlook_kz03.jpg",
+      "author": "Krzysztof Ziarnek, Kenraiz",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Pinnacles_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg/960px-Pinnacles_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Pinnacles_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg/1920px-Pinnacles_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_Overlook,_Badlands_National_Park,_Wall,_SD.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Pinnacles_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD_-_53750699547.jpg/960px-Pinnacles_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD_-_53750699547.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Pinnacles_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD_-_53750699547.jpg/1920px-Pinnacles_Overlook%2C_Badlands_National_Park%2C_Wall%2C_SD_-_53750699547.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_Overlook,_Badlands_National_Park,_Wall,_SD_-_53750699547.jpg",
+      "author": "w_lemay",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "badl-sage-creek-rim-road": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/In_Badlands_National_Park_-_American_Bison_%28Bison_bison%29_%2814912394577%29.jpg/960px-In_Badlands_National_Park_-_American_Bison_%28Bison_bison%29_%2814912394577%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/In_Badlands_National_Park_-_American_Bison_%28Bison_bison%29_%2814912394577%29.jpg/1920px-In_Badlands_National_Park_-_American_Bison_%28Bison_bison%29_%2814912394577%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:In_Badlands_National_Park_-_American_Bison_(Bison_bison)_(14912394577).jpg",
+      "author": "Murray Foubister",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Pinnacles_Overlook-Sage_Creek_Rim_Road_PA100142.JPG/960px-Pinnacles_Overlook-Sage_Creek_Rim_Road_PA100142.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Pinnacles_Overlook-Sage_Creek_Rim_Road_PA100142.JPG/1920px-Pinnacles_Overlook-Sage_Creek_Rim_Road_PA100142.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinnacles_Overlook-Sage_Creek_Rim_Road_PA100142.JPG",
+      "author": "Chris Light",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Badlands_National_Park_-_Sage_Creek_Basin.jpg/960px-Badlands_National_Park_-_Sage_Creek_Basin.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Badlands_National_Park_-_Sage_Creek_Basin.jpg/1920px-Badlands_National_Park_-_Sage_Creek_Basin.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Badlands_National_Park_-_Sage_Creek_Basin.jpg",
+      "author": "Eekim",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Badlands_National_Park_-_Sage_Creek_Basin_cactus_and_rocks.jpg/960px-Badlands_National_Park_-_Sage_Creek_Basin_cactus_and_rocks.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Badlands_National_Park_-_Sage_Creek_Basin_cactus_and_rocks.jpg/1920px-Badlands_National_Park_-_Sage_Creek_Basin_cactus_and_rocks.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Badlands_National_Park_-_Sage_Creek_Basin_cactus_and_rocks.jpg",
+      "author": "Eekim",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Imlay_Township%2C_SD%2C_USA_-_panoramio.jpg/960px-Imlay_Township%2C_SD%2C_USA_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Imlay_Township%2C_SD%2C_USA_-_panoramio.jpg/1920px-Imlay_Township%2C_SD%2C_USA_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Imlay_Township,_SD,_USA_-_panoramio.jpg",
+      "author": "Idawriter",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Badlands_National_Park_-_panoramio_-_Idawriter_%284%29.jpg/960px-Badlands_National_Park_-_panoramio_-_Idawriter_%284%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Badlands_National_Park_-_panoramio_-_Idawriter_%284%29.jpg/1920px-Badlands_National_Park_-_panoramio_-_Idawriter_%284%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Badlands_National_Park_-_panoramio_-_Idawriter_(4).jpg",
+      "author": "Idawriter",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "badl-sheep-mountain-table": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/The_Badlands_are_ruled_by_the_Illuminati_-_panoramio.jpg/960px-The_Badlands_are_ruled_by_the_Illuminati_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/The_Badlands_are_ruled_by_the_Illuminati_-_panoramio.jpg/1920px-The_Badlands_are_ruled_by_the_Illuminati_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:The_Badlands_are_ruled_by_the_Illuminati_-_panoramio.jpg",
+      "author": "olekinderhook",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Badlands._-_panoramio.jpg/960px-Badlands._-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Badlands._-_panoramio.jpg/1920px-Badlands._-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Badlands._-_panoramio.jpg",
+      "author": "olekinderhook",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/South_Dakota_-_Beginning_of_the_Badlands_-_June_1975_%288045072463%29.jpg/960px-South_Dakota_-_Beginning_of_the_Badlands_-_June_1975_%288045072463%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/South_Dakota_-_Beginning_of_the_Badlands_-_June_1975_%288045072463%29.jpg/1280px-South_Dakota_-_Beginning_of_the_Badlands_-_June_1975_%288045072463%29.jpg",
+      "width": 960,
+      "height": 571,
+      "page": "https://commons.wikimedia.org/wiki/File:South_Dakota_-_Beginning_of_the_Badlands_-_June_1975_(8045072463).jpg",
+      "author": "Barbara Ann Spengler from Arizona & Florida, USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/South_Dakota_-_Beginning_of_the_Badlands_-_June_1975_%288045089484%29.jpg/960px-South_Dakota_-_Beginning_of_the_Badlands_-_June_1975_%288045089484%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/South_Dakota_-_Beginning_of_the_Badlands_-_June_1975_%288045089484%29.jpg/1280px-South_Dakota_-_Beginning_of_the_Badlands_-_June_1975_%288045089484%29.jpg",
+      "width": 960,
+      "height": 525,
+      "page": "https://commons.wikimedia.org/wiki/File:South_Dakota_-_Beginning_of_the_Badlands_-_June_1975_(8045089484).jpg",
+      "author": "Barbara Ann Spengler from Arizona & Florida, USA",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "badl-white-river-vc": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Reservation_map_at_White_River_Visitor_Center.jpg/960px-Reservation_map_at_White_River_Visitor_Center.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Reservation_map_at_White_River_Visitor_Center.jpg/1920px-Reservation_map_at_White_River_Visitor_Center.jpg",
+      "width": 960,
+      "height": 617,
+      "page": "https://commons.wikimedia.org/wiki/File:Reservation_map_at_White_River_Visitor_Center.jpg",
+      "author": "Steve Elliott from UK",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Near_visitor_center_White_River_Badlands_SD_1997.jpg/960px-Near_visitor_center_White_River_Badlands_SD_1997.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Near_visitor_center_White_River_Badlands_SD_1997.jpg/1920px-Near_visitor_center_White_River_Badlands_SD_1997.jpg",
+      "width": 960,
+      "height": 660,
+      "page": "https://commons.wikimedia.org/wiki/File:Near_visitor_center_White_River_Badlands_SD_1997.jpg",
+      "author": "Jstuby",
+      "license": "CC0"
+    }
+  ],
+  "badl-night-sky-program": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Night_Walk_-_Badlands.jpg/960px-Night_Walk_-_Badlands.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Night_Walk_-_Badlands.jpg/1920px-Night_Walk_-_Badlands.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Night_Walk_-_Badlands.jpg",
+      "author": "Janusz Sobolewski",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Interior_Township%2C_SD%2C_USA_-_panoramio_-_Idawriter_%2813%29.jpg/960px-Interior_Township%2C_SD%2C_USA_-_panoramio_-_Idawriter_%2813%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Interior_Township%2C_SD%2C_USA_-_panoramio_-_Idawriter_%2813%29.jpg/1920px-Interior_Township%2C_SD%2C_USA_-_panoramio_-_Idawriter_%2813%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Interior_Township,_SD,_USA_-_panoramio_-_Idawriter_(13).jpg",
+      "author": "Idawriter",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Interior_Township%2C_SD%2C_USA_-_panoramio_-_Idawriter_%2815%29.jpg/960px-Interior_Township%2C_SD%2C_USA_-_panoramio_-_Idawriter_%2815%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Interior_Township%2C_SD%2C_USA_-_panoramio_-_Idawriter_%2815%29.jpg/1920px-Interior_Township%2C_SD%2C_USA_-_panoramio_-_Idawriter_%2815%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Interior_Township,_SD,_USA_-_panoramio_-_Idawriter_(15).jpg",
+      "author": "Idawriter",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Sunrise_at_Badlands_National_Park%2C_South_Dakota_-_panoramio.jpg/960px-Sunrise_at_Badlands_National_Park%2C_South_Dakota_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Sunrise_at_Badlands_National_Park%2C_South_Dakota_-_panoramio.jpg/1920px-Sunrise_at_Badlands_National_Park%2C_South_Dakota_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunrise_at_Badlands_National_Park,_South_Dakota_-_panoramio.jpg",
+      "author": "Sue E.",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Interior_Township%2C_SD%2C_USA_-_panoramio_%281%29.jpg/960px-Interior_Township%2C_SD%2C_USA_-_panoramio_%281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Interior_Township%2C_SD%2C_USA_-_panoramio_%281%29.jpg/1920px-Interior_Township%2C_SD%2C_USA_-_panoramio_%281%29.jpg",
+      "width": 960,
+      "height": 574,
+      "page": "https://commons.wikimedia.org/wiki/File:Interior_Township,_SD,_USA_-_panoramio_(1).jpg",
+      "author": "timlitw",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Interior_Township%2C_SD%2C_USA_-_panoramio_%282%29.jpg/960px-Interior_Township%2C_SD%2C_USA_-_panoramio_%282%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Interior_Township%2C_SD%2C_USA_-_panoramio_%282%29.jpg/1920px-Interior_Township%2C_SD%2C_USA_-_panoramio_%282%29.jpg",
+      "width": 960,
+      "height": 574,
+      "page": "https://commons.wikimedia.org/wiki/File:Interior_Township,_SD,_USA_-_panoramio_(2).jpg",
+      "author": "timlitw",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "badl-wall-drug": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Wall_Drug_%2854492730833%29.jpg/960px-Wall_Drug_%2854492730833%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Wall_Drug_%2854492730833%29.jpg/1920px-Wall_Drug_%2854492730833%29.jpg",
+      "width": 960,
+      "height": 711,
+      "page": "https://commons.wikimedia.org/wiki/File:Wall_Drug_(54492730833).jpg",
+      "author": "Seclusive Nature",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Wall_Drug_July_2007.jpg/960px-Wall_Drug_July_2007.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Wall_Drug_July_2007.jpg/1920px-Wall_Drug_July_2007.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Wall_Drug_July_2007.jpg",
+      "author": "Michael Barera",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/2006-07-27_-_15_-_Road_Trip_-_Day_04_-_United_States_-_South_Dakota_-_Wall_Drug_-_Travel_Chapel_4888594389.jpg/960px-2006-07-27_-_15_-_Road_Trip_-_Day_04_-_United_States_-_South_Dakota_-_Wall_Drug_-_Travel_Chapel_4888594389.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/2006-07-27_-_15_-_Road_Trip_-_Day_04_-_United_States_-_South_Dakota_-_Wall_Drug_-_Travel_Chapel_4888594389.jpg/1920px-2006-07-27_-_15_-_Road_Trip_-_Day_04_-_United_States_-_South_Dakota_-_Wall_Drug_-_Travel_Chapel_4888594389.jpg",
+      "width": 960,
+      "height": 716,
+      "page": "https://commons.wikimedia.org/wiki/File:2006-07-27_-_15_-_Road_Trip_-_Day_04_-_United_States_-_South_Dakota_-_Wall_Drug_-_Travel_Chapel_4888594389.jpg",
+      "author": "CGP Grey",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Wall_Drug_-_Cowboy_Orchestra_%284888599247%29.jpg/960px-Wall_Drug_-_Cowboy_Orchestra_%284888599247%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Wall_Drug_-_Cowboy_Orchestra_%284888599247%29.jpg/1920px-Wall_Drug_-_Cowboy_Orchestra_%284888599247%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Wall_Drug_-_Cowboy_Orchestra_(4888599247).jpg",
+      "author": "CGP Grey",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Wall_Drug_Ext._Day.jpg/960px-Wall_Drug_Ext._Day.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Wall_Drug_Ext._Day.jpg/1920px-Wall_Drug_Ext._Day.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Wall_Drug_Ext._Day.jpg",
+      "author": "BakedintheHole",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/The_hall_of_pictures_inside_Wall_Drug._Dan_Quayle_is_up_here_-_panoramio.jpg/960px-The_hall_of_pictures_inside_Wall_Drug._Dan_Quayle_is_up_here_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/The_hall_of_pictures_inside_Wall_Drug._Dan_Quayle_is_up_here_-_panoramio.jpg/1920px-The_hall_of_pictures_inside_Wall_Drug._Dan_Quayle_is_up_here_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:The_hall_of_pictures_inside_Wall_Drug._Dan_Quayle_is_up_here_-_panoramio.jpg",
+      "author": "olekinderhook",
+      "license": "CC BY 3.0"
+    }
+  ],
+  "badl-minuteman-missile": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Minuteman_Missile_National_Historic_Site_Visitor_Center%2C_SD%2C_US.jpg/960px-Minuteman_Missile_National_Historic_Site_Visitor_Center%2C_SD%2C_US.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Minuteman_Missile_National_Historic_Site_Visitor_Center%2C_SD%2C_US.jpg/1920px-Minuteman_Missile_National_Historic_Site_Visitor_Center%2C_SD%2C_US.jpg",
+      "width": 960,
+      "height": 641,
+      "page": "https://commons.wikimedia.org/wiki/File:Minuteman_Missile_National_Historic_Site_Visitor_Center,_SD,_US.jpg",
+      "author": "Jud McCranie",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Minuteman_Missile_National_Historic_Site_visitor_center%2C_South_Dakota.jpg/960px-Minuteman_Missile_National_Historic_Site_visitor_center%2C_South_Dakota.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Minuteman_Missile_National_Historic_Site_visitor_center%2C_South_Dakota.jpg/1920px-Minuteman_Missile_National_Historic_Site_visitor_center%2C_South_Dakota.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Minuteman_Missile_National_Historic_Site_visitor_center,_South_Dakota.jpg",
+      "author": "Eekim",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/MinutemanMissileSite.jpg/960px-MinutemanMissileSite.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/MinutemanMissileSite.jpg/1920px-MinutemanMissileSite.jpg",
+      "width": 960,
+      "height": 823,
+      "page": "https://commons.wikimedia.org/wiki/File:MinutemanMissileSite.jpg",
+      "author": "Jonathunder",
+      "license": "GFDL 1.2"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Minuteman_Missile_NHS_Visitor_Center_SD_2024.jpg/960px-Minuteman_Missile_NHS_Visitor_Center_SD_2024.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Minuteman_Missile_NHS_Visitor_Center_SD_2024.jpg/1920px-Minuteman_Missile_NHS_Visitor_Center_SD_2024.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Minuteman_Missile_NHS_Visitor_Center_SD_2024.jpg",
+      "author": "Larry D. Moore",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Meet_The_Missileers_%28cb614bce-1dd8-b71b-0b0d-f3782b5d0165%29.JPG/960px-Meet_The_Missileers_%28cb614bce-1dd8-b71b-0b0d-f3782b5d0165%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Meet_The_Missileers_%28cb614bce-1dd8-b71b-0b0d-f3782b5d0165%29.JPG/1920px-Meet_The_Missileers_%28cb614bce-1dd8-b71b-0b0d-f3782b5d0165%29.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Meet_The_Missileers_(cb614bce-1dd8-b71b-0b0d-f3782b5d0165).JPG",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Cadillac_Gage_Peacekeeper_Minuteman_NHS_2024.jpg/960px-Cadillac_Gage_Peacekeeper_Minuteman_NHS_2024.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Cadillac_Gage_Peacekeeper_Minuteman_NHS_2024.jpg/1920px-Cadillac_Gage_Peacekeeper_Minuteman_NHS_2024.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Cadillac_Gage_Peacekeeper_Minuteman_NHS_2024.jpg",
+      "author": "Larry D. Moore",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "wica-visitor-center": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Visitor_Center_Wind_Cave_National_Park_2024.jpg/960px-Visitor_Center_Wind_Cave_National_Park_2024.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Visitor_Center_Wind_Cave_National_Park_2024.jpg/1920px-Visitor_Center_Wind_Cave_National_Park_2024.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Visitor_Center_Wind_Cave_National_Park_2024.jpg",
+      "author": "Larry D. Moore",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/First_Wind_Cave_Visitor_Center_%2802a038d6-155d-4519-3e30-19596f66b416%29.jpg/960px-First_Wind_Cave_Visitor_Center_%2802a038d6-155d-4519-3e30-19596f66b416%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/First_Wind_Cave_Visitor_Center_%2802a038d6-155d-4519-3e30-19596f66b416%29.jpg/1920px-First_Wind_Cave_Visitor_Center_%2802a038d6-155d-4519-3e30-19596f66b416%29.jpg",
+      "width": 960,
+      "height": 563,
+      "page": "https://commons.wikimedia.org/wiki/File:First_Wind_Cave_Visitor_Center_(02a038d6-155d-4519-3e30-19596f66b416).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Visitor_Center_Interior_Wind_Cave_National_Park_2024.jpg/960px-Visitor_Center_Interior_Wind_Cave_National_Park_2024.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Visitor_Center_Interior_Wind_Cave_National_Park_2024.jpg/1920px-Visitor_Center_Interior_Wind_Cave_National_Park_2024.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Visitor_Center_Interior_Wind_Cave_National_Park_2024.jpg",
+      "author": "Larry D. Moore",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Wind_Cave_National_Park_Administration_Building.jpg/960px-Wind_Cave_National_Park_Administration_Building.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Wind_Cave_National_Park_Administration_Building.jpg/1920px-Wind_Cave_National_Park_Administration_Building.jpg",
+      "width": 960,
+      "height": 757,
+      "page": "https://commons.wikimedia.org/wiki/File:Wind_Cave_National_Park_Administration_Building.jpg",
+      "author": "Dena S. Markoff",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Tetons-100718_162a.jpg/960px-Tetons-100718_162a.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Tetons-100718_162a.jpg/1920px-Tetons-100718_162a.jpg",
+      "width": 960,
+      "height": 431,
+      "page": "https://commons.wikimedia.org/wiki/File:Tetons-100718_162a.jpg",
+      "author": "Thomas Knapp",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "wica-natural-entrance-tour": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Cave_Boxwork-Wind_Cave.JPG/960px-Cave_Boxwork-Wind_Cave.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Cave_Boxwork-Wind_Cave.JPG/1920px-Cave_Boxwork-Wind_Cave.JPG",
+      "width": 960,
+      "height": 672,
+      "page": "https://commons.wikimedia.org/wiki/File:Cave_Boxwork-Wind_Cave.JPG",
+      "author": "National Park Service of the United States of America",
+      "license": "Public domain"
+    }
+  ],
+  "wica-fairgrounds-tour": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Cave_Frostwork_on_Boxwork-Wind_Cave.JPG/960px-Cave_Frostwork_on_Boxwork-Wind_Cave.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Cave_Frostwork_on_Boxwork-Wind_Cave.JPG/1920px-Cave_Frostwork_on_Boxwork-Wind_Cave.JPG",
+      "width": 960,
+      "height": 718,
+      "page": "https://commons.wikimedia.org/wiki/File:Cave_Frostwork_on_Boxwork-Wind_Cave.JPG",
+      "author": "National Park Service of the United States of America",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Tour_Group_in_The_Temple_%2800ea9b11-155d-4519-3e5b-aa5555e7240c%29.jpg/960px-Tour_Group_in_The_Temple_%2800ea9b11-155d-4519-3e5b-aa5555e7240c%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Tour_Group_in_The_Temple_%2800ea9b11-155d-4519-3e5b-aa5555e7240c%29.jpg/1920px-Tour_Group_in_The_Temple_%2800ea9b11-155d-4519-3e5b-aa5555e7240c%29.jpg",
+      "width": 960,
+      "height": 1280,
+      "page": "https://commons.wikimedia.org/wiki/File:Tour_Group_in_The_Temple_(00ea9b11-155d-4519-3e5b-aa5555e7240c).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    }
+  ],
+  "wica-garden-of-eden-tour": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Wall_of_Cave_Popcorn_%28e6a1ef9c-9542-44bf-bf3b-8a00f5e6d95e%29.JPG/960px-Wall_of_Cave_Popcorn_%28e6a1ef9c-9542-44bf-bf3b-8a00f5e6d95e%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Wall_of_Cave_Popcorn_%28e6a1ef9c-9542-44bf-bf3b-8a00f5e6d95e%29.JPG/1920px-Wall_of_Cave_Popcorn_%28e6a1ef9c-9542-44bf-bf3b-8a00f5e6d95e%29.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Wall_of_Cave_Popcorn_(e6a1ef9c-9542-44bf-bf3b-8a00f5e6d95e).JPG",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    }
+  ],
+  "wica-candlelight-tour": [],
+  "wica-wild-cave-tour": [],
+  "wica-natural-entrance": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Natural_entrance_to_Wind_Cave_%28Black_Hills%2C_South_Dakota%2C_USA%29_1.jpg/960px-Natural_entrance_to_Wind_Cave_%28Black_Hills%2C_South_Dakota%2C_USA%29_1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Natural_entrance_to_Wind_Cave_%28Black_Hills%2C_South_Dakota%2C_USA%29_1.jpg/1920px-Natural_entrance_to_Wind_Cave_%28Black_Hills%2C_South_Dakota%2C_USA%29_1.jpg",
+      "width": 960,
+      "height": 714,
+      "page": "https://commons.wikimedia.org/wiki/File:Natural_entrance_to_Wind_Cave_(Black_Hills,_South_Dakota,_USA)_1.jpg",
+      "author": "James St. John",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Wind_Cave_Natural_Entrance.jpg/960px-Wind_Cave_Natural_Entrance.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Wind_Cave_Natural_Entrance.jpg/1920px-Wind_Cave_Natural_Entrance.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Wind_Cave_Natural_Entrance.jpg",
+      "author": "Stripey the crab",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Natural_entrance_to_Wind_Cave_%28Black_Hills%2C_South_Dakota%2C_USA%29_14.jpg/960px-Natural_entrance_to_Wind_Cave_%28Black_Hills%2C_South_Dakota%2C_USA%29_14.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Natural_entrance_to_Wind_Cave_%28Black_Hills%2C_South_Dakota%2C_USA%29_14.jpg/1920px-Natural_entrance_to_Wind_Cave_%28Black_Hills%2C_South_Dakota%2C_USA%29_14.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Natural_entrance_to_Wind_Cave_(Black_Hills,_South_Dakota,_USA)_14.jpg",
+      "author": "James St. John",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Natural_Entrance_to_Wind_Cave_%28012a33e6-155d-4519-3e52-cff7d287aee3%29.jpg/960px-Natural_Entrance_to_Wind_Cave_%28012a33e6-155d-4519-3e52-cff7d287aee3%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Natural_Entrance_to_Wind_Cave_%28012a33e6-155d-4519-3e52-cff7d287aee3%29.jpg/1920px-Natural_Entrance_to_Wind_Cave_%28012a33e6-155d-4519-3e52-cff7d287aee3%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Natural_Entrance_to_Wind_Cave_(012a33e6-155d-4519-3e52-cff7d287aee3).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Mike_Laycock_at_Natural_Entrance_to_Wind_Cave_%28010c0757-155d-4519-3ee2-e20422606691%29.jpg/960px-Mike_Laycock_at_Natural_Entrance_to_Wind_Cave_%28010c0757-155d-4519-3ee2-e20422606691%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Mike_Laycock_at_Natural_Entrance_to_Wind_Cave_%28010c0757-155d-4519-3ee2-e20422606691%29.jpg/1920px-Mike_Laycock_at_Natural_Entrance_to_Wind_Cave_%28010c0757-155d-4519-3ee2-e20422606691%29.jpg",
+      "width": 960,
+      "height": 1457,
+      "page": "https://commons.wikimedia.org/wiki/File:Mike_Laycock_at_Natural_Entrance_to_Wind_Cave_(010c0757-155d-4519-3ee2-e20422606691).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    }
+  ],
+  "wica-bison-flats": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Bison_in_yellow_sweetclover%2C_Wind_Cave_National_Park%2C_2009.jpg/960px-Bison_in_yellow_sweetclover%2C_Wind_Cave_National_Park%2C_2009.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Bison_in_yellow_sweetclover%2C_Wind_Cave_National_Park%2C_2009.jpg/1920px-Bison_in_yellow_sweetclover%2C_Wind_Cave_National_Park%2C_2009.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Bison_in_yellow_sweetclover,_Wind_Cave_National_Park,_2009.jpg",
+      "author": "DimiTalen",
+      "license": "CC0"
+    }
+  ],
+  "wica-rankin-ridge": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Rankin_Ridge_Fire_Tower_%2802422629-155d-4519-3e70-a1ef57867242%29.jpg/960px-Rankin_Ridge_Fire_Tower_%2802422629-155d-4519-3e70-a1ef57867242%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Rankin_Ridge_Fire_Tower_%2802422629-155d-4519-3e70-a1ef57867242%29.jpg/1920px-Rankin_Ridge_Fire_Tower_%2802422629-155d-4519-3e70-a1ef57867242%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Rankin_Ridge_Fire_Tower_(02422629-155d-4519-3e70-a1ef57867242).jpg",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    }
+  ],
+  "wica-lookout-point": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Toxicoscordion_venenosum_-_Craig_Martin_02.jpg/960px-Toxicoscordion_venenosum_-_Craig_Martin_02.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Toxicoscordion_venenosum_-_Craig_Martin_02.jpg/1920px-Toxicoscordion_venenosum_-_Craig_Martin_02.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Toxicoscordion_venenosum_-_Craig_Martin_02.jpg",
+      "author": "Craig Martin https://www.inaturalist.org/people/craigmartin",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Wild_Turkey_Wind_Cave_NP_2024.jpg/960px-Wild_Turkey_Wind_Cave_NP_2024.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Wild_Turkey_Wind_Cave_NP_2024.jpg/1920px-Wild_Turkey_Wind_Cave_NP_2024.jpg",
+      "width": 960,
+      "height": 960,
+      "page": "https://commons.wikimedia.org/wiki/File:Wild_Turkey_Wind_Cave_NP_2024.jpg",
+      "author": "Larry D. Moore",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Toxicoscordion_venenosum_-_Craig_Martin_01.jpg/960px-Toxicoscordion_venenosum_-_Craig_Martin_01.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Toxicoscordion_venenosum_-_Craig_Martin_01.jpg/1280px-Toxicoscordion_venenosum_-_Craig_Martin_01.jpg",
+      "width": 960,
+      "height": 1440,
+      "page": "https://commons.wikimedia.org/wiki/File:Toxicoscordion_venenosum_-_Craig_Martin_01.jpg",
+      "author": "Craig Martin https://www.inaturalist.org/people/craigmartin",
+      "license": "CC0"
+    }
+  ],
+  "wica-backroads": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Bison_bison_%28American_plains_buffalo%29_%28Wind_Cave_National_Park%2C_Black_Hills%2C_South_Dakota%2C_USA%29_6.jpg/960px-Bison_bison_%28American_plains_buffalo%29_%28Wind_Cave_National_Park%2C_Black_Hills%2C_South_Dakota%2C_USA%29_6.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Bison_bison_%28American_plains_buffalo%29_%28Wind_Cave_National_Park%2C_Black_Hills%2C_South_Dakota%2C_USA%29_6.jpg/1920px-Bison_bison_%28American_plains_buffalo%29_%28Wind_Cave_National_Park%2C_Black_Hills%2C_South_Dakota%2C_USA%29_6.jpg",
+      "width": 960,
+      "height": 566,
+      "page": "https://commons.wikimedia.org/wiki/File:Bison_bison_(American_plains_buffalo)_(Wind_Cave_National_Park,_Black_Hills,_South_Dakota,_USA)_6.jpg",
+      "author": "James St. John",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "wica-custer-wildlife-loop": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Pronghorn_%28Antilocapra_americana%29_along_Wildlife_Loop_Road_in_Custer_State_Park%2C_Pah%C3%A1_S%C3%A1pa_%28Black_Hills%29%2C_South_Dakota_-_Flickr_-_Jay_Sturner.jpg/960px-Pronghorn_%28Antilocapra_americana%29_along_Wildlife_Loop_Road_in_Custer_State_Park%2C_Pah%C3%A1_S%C3%A1pa_%28Black_Hills%29%2C_South_Dakota_-_Flickr_-_Jay_Sturner.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Pronghorn_%28Antilocapra_americana%29_along_Wildlife_Loop_Road_in_Custer_State_Park%2C_Pah%C3%A1_S%C3%A1pa_%28Black_Hills%29%2C_South_Dakota_-_Flickr_-_Jay_Sturner.jpg/1280px-Pronghorn_%28Antilocapra_americana%29_along_Wildlife_Loop_Road_in_Custer_State_Park%2C_Pah%C3%A1_S%C3%A1pa_%28Black_Hills%29%2C_South_Dakota_-_Flickr_-_Jay_Sturner.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Pronghorn_(Antilocapra_americana)_along_Wildlife_Loop_Road_in_Custer_State_Park,_Pah%C3%A1_S%C3%A1pa_(Black_Hills),_South_Dakota_-_Flickr_-_Jay_Sturner.jpg",
+      "author": "Jay Sturner from USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Custer_State_Park_bison.jpg/960px-Custer_State_Park_bison.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Custer_State_Park_bison.jpg/1920px-Custer_State_Park_bison.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Custer_State_Park_bison.jpg",
+      "author": "Hcrumplermd",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Buffalo_in_Custer_State_Park.jpg/960px-Buffalo_in_Custer_State_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Buffalo_in_Custer_State_Park.jpg/1920px-Buffalo_in_Custer_State_Park.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Buffalo_in_Custer_State_Park.jpg",
+      "author": "BakedintheHole",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Bison%2C_Custer_State_Park_-_Flickr_-_Chad_Davis..jpg/960px-Bison%2C_Custer_State_Park_-_Flickr_-_Chad_Davis..jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Bison%2C_Custer_State_Park_-_Flickr_-_Chad_Davis..jpg/1920px-Bison%2C_Custer_State_Park_-_Flickr_-_Chad_Davis..jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Bison,_Custer_State_Park_-_Flickr_-_Chad_Davis..jpg",
+      "author": "Chad Davis from Minneapolis, United States",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Custer_SP_Museum_1.jpg/960px-Custer_SP_Museum_1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Custer_SP_Museum_1.jpg/1920px-Custer_SP_Museum_1.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Custer_SP_Museum_1.jpg",
+      "author": "Acroterion",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "wica-needles-highway": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Needles_Eye_Tunnel.jpg/960px-Needles_Eye_Tunnel.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Needles_Eye_Tunnel.jpg/1920px-Needles_Eye_Tunnel.jpg",
+      "width": 960,
+      "height": 728,
+      "page": "https://commons.wikimedia.org/wiki/File:Needles_Eye_Tunnel.jpg",
+      "author": "Little Mountain 5",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Sylvan_Lake_SD.jpg/960px-Sylvan_Lake_SD.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Sylvan_Lake_SD.jpg/1920px-Sylvan_Lake_SD.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Sylvan_Lake_SD.jpg",
+      "author": "Little Mountain 5",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Swimmers_at_Sylvan_Lake_01.jpg/960px-Swimmers_at_Sylvan_Lake_01.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Swimmers_at_Sylvan_Lake_01.jpg/1920px-Swimmers_at_Sylvan_Lake_01.jpg",
+      "width": 960,
+      "height": 718,
+      "page": "https://commons.wikimedia.org/wiki/File:Swimmers_at_Sylvan_Lake_01.jpg",
+      "author": "Runner1928",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Swimmers_at_Sylvan_Lake_03.jpg/960px-Swimmers_at_Sylvan_Lake_03.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Swimmers_at_Sylvan_Lake_03.jpg/1920px-Swimmers_at_Sylvan_Lake_03.jpg",
+      "width": 960,
+      "height": 718,
+      "page": "https://commons.wikimedia.org/wiki/File:Swimmers_at_Sylvan_Lake_03.jpg",
+      "author": "Runner1928",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Sylvan_Lake_2016_1.jpg/960px-Sylvan_Lake_2016_1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Sylvan_Lake_2016_1.jpg/1920px-Sylvan_Lake_2016_1.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Sylvan_Lake_2016_1.jpg",
+      "author": "Wusel007",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Sylvan_Lake_2016_2.jpg/960px-Sylvan_Lake_2016_2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Sylvan_Lake_2016_2.jpg/1920px-Sylvan_Lake_2016_2.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Sylvan_Lake_2016_2.jpg",
+      "author": "Wusel007",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "wica-mount-rushmore": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Mount_Rushmore_National_Memorial_%2831484741032%29.jpg/960px-Mount_Rushmore_National_Memorial_%2831484741032%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Mount_Rushmore_National_Memorial_%2831484741032%29.jpg/1920px-Mount_Rushmore_National_Memorial_%2831484741032%29.jpg",
+      "width": 960,
+      "height": 642,
+      "page": "https://commons.wikimedia.org/wiki/File:Mount_Rushmore_National_Memorial_(31484741032).jpg",
+      "author": "Nick Amoscato",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Mount_Rushmore_National_Memorial%2C_Keystone%2C_United_States_%28Unsplash%29.jpg/960px-Mount_Rushmore_National_Memorial%2C_Keystone%2C_United_States_%28Unsplash%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Mount_Rushmore_National_Memorial%2C_Keystone%2C_United_States_%28Unsplash%29.jpg/1920px-Mount_Rushmore_National_Memorial%2C_Keystone%2C_United_States_%28Unsplash%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Mount_Rushmore_National_Memorial,_Keystone,_United_States_(Unsplash).jpg",
+      "author": "May firecloak",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Mount_Rushmore_staff_on_top_of_memorial.jpg/960px-Mount_Rushmore_staff_on_top_of_memorial.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Mount_Rushmore_staff_on_top_of_memorial.jpg/1920px-Mount_Rushmore_staff_on_top_of_memorial.jpg",
+      "width": 960,
+      "height": 750,
+      "page": "https://commons.wikimedia.org/wiki/File:Mount_Rushmore_staff_on_top_of_memorial.jpg",
+      "author": "Runner1928",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Mount_Rushmore_National_Memorial._%2852819885721%29.jpg/960px-Mount_Rushmore_National_Memorial._%2852819885721%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Mount_Rushmore_National_Memorial._%2852819885721%29.jpg/1280px-Mount_Rushmore_National_Memorial._%2852819885721%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Mount_Rushmore_National_Memorial._(52819885721).jpg",
+      "author": "Bernard Spragg. NZ from Christchurch, New Zealand",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Mount_Rushmore_July_2007.jpg/960px-Mount_Rushmore_July_2007.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Mount_Rushmore_July_2007.jpg/1920px-Mount_Rushmore_July_2007.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Mount_Rushmore_July_2007.jpg",
+      "author": "Michael Barera",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/2006-07-27_-_19_-_Road_Trip_-_Day_04_-_United_States_-_South_Dakota_-_-_Mount_Rushmore_-_Alone_-_Bl_4888602351.jpg/960px-2006-07-27_-_19_-_Road_Trip_-_Day_04_-_United_States_-_South_Dakota_-_-_Mount_Rushmore_-_Alone_-_Bl_4888602351.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/2006-07-27_-_19_-_Road_Trip_-_Day_04_-_United_States_-_South_Dakota_-_-_Mount_Rushmore_-_Alone_-_Bl_4888602351.jpg/1920px-2006-07-27_-_19_-_Road_Trip_-_Day_04_-_United_States_-_South_Dakota_-_-_Mount_Rushmore_-_Alone_-_Bl_4888602351.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:2006-07-27_-_19_-_Road_Trip_-_Day_04_-_United_States_-_South_Dakota_-_-_Mount_Rushmore_-_Alone_-_Bl_4888602351.jpg",
+      "author": "CGP Grey",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "wica-rushmore-lighting": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Mount_Rushmore_Lighting_Ceremony.jpg/960px-Mount_Rushmore_Lighting_Ceremony.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Mount_Rushmore_Lighting_Ceremony.jpg/1920px-Mount_Rushmore_Lighting_Ceremony.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Mount_Rushmore_Lighting_Ceremony.jpg",
+      "author": "Hardy008",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/2006-07-27_-_18_-_Road_Trip_-_Day_04_-_United_States_-_South_Dakota_-_Mount_Rushmore_-_Cafe_4889198088.jpg/960px-2006-07-27_-_18_-_Road_Trip_-_Day_04_-_United_States_-_South_Dakota_-_Mount_Rushmore_-_Cafe_4889198088.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/2006-07-27_-_18_-_Road_Trip_-_Day_04_-_United_States_-_South_Dakota_-_Mount_Rushmore_-_Cafe_4889198088.jpg/1920px-2006-07-27_-_18_-_Road_Trip_-_Day_04_-_United_States_-_South_Dakota_-_Mount_Rushmore_-_Cafe_4889198088.jpg",
+      "width": 960,
+      "height": 641,
+      "page": "https://commons.wikimedia.org/wiki/File:2006-07-27_-_18_-_Road_Trip_-_Day_04_-_United_States_-_South_Dakota_-_Mount_Rushmore_-_Cafe_4889198088.jpg",
+      "author": "CGP Grey",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Mount_Rushmore_UT%2C_SD%2C_USA_-_panoramio_%285%29.jpg/960px-Mount_Rushmore_UT%2C_SD%2C_USA_-_panoramio_%285%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Mount_Rushmore_UT%2C_SD%2C_USA_-_panoramio_%285%29.jpg/1920px-Mount_Rushmore_UT%2C_SD%2C_USA_-_panoramio_%285%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Mount_Rushmore_UT,_SD,_USA_-_panoramio_(5).jpg",
+      "author": "Idawriter",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Mount_Rushmore_UT%2C_SD%2C_USA_-_panoramio.jpg/960px-Mount_Rushmore_UT%2C_SD%2C_USA_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Mount_Rushmore_UT%2C_SD%2C_USA_-_panoramio.jpg/1920px-Mount_Rushmore_UT%2C_SD%2C_USA_-_panoramio.jpg",
+      "width": 960,
+      "height": 574,
+      "page": "https://commons.wikimedia.org/wiki/File:Mount_Rushmore_UT,_SD,_USA_-_panoramio.jpg",
+      "author": "timlitw",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Mount_Rushmore_UT%2C_SD%2C_USA_-_panoramio_%2837%29.jpg/960px-Mount_Rushmore_UT%2C_SD%2C_USA_-_panoramio_%2837%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Mount_Rushmore_UT%2C_SD%2C_USA_-_panoramio_%2837%29.jpg/1920px-Mount_Rushmore_UT%2C_SD%2C_USA_-_panoramio_%2837%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Mount_Rushmore_UT,_SD,_USA_-_panoramio_(37).jpg",
+      "author": "sandertheone",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Mount_Rushmore_UT%2C_SD%2C_USA_-_panoramio_%2838%29.jpg/960px-Mount_Rushmore_UT%2C_SD%2C_USA_-_panoramio_%2838%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Mount_Rushmore_UT%2C_SD%2C_USA_-_panoramio_%2838%29.jpg/1920px-Mount_Rushmore_UT%2C_SD%2C_USA_-_panoramio_%2838%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Mount_Rushmore_UT,_SD,_USA_-_panoramio_(38).jpg",
+      "author": "Jana Taylor",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "wica-crazy-horse": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Crazy_Horse_Memorial.jpg/960px-Crazy_Horse_Memorial.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Crazy_Horse_Memorial.jpg/1920px-Crazy_Horse_Memorial.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Crazy_Horse_Memorial.jpg",
+      "author": "Ahzoov",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Museum_Crazy_Horse_Memorial_South_Dakota_2024.jpg/960px-Museum_Crazy_Horse_Memorial_South_Dakota_2024.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Museum_Crazy_Horse_Memorial_South_Dakota_2024.jpg/1920px-Museum_Crazy_Horse_Memorial_South_Dakota_2024.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Museum_Crazy_Horse_Memorial_South_Dakota_2024.jpg",
+      "author": "Larry D. Moore",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/CrazyH.jpg/960px-CrazyH.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/CrazyH.jpg/1920px-CrazyH.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:CrazyH.jpg",
+      "author": "Roche de Guzman",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/South_Dakota_during_Sturgis_-_panoramio.jpg/960px-South_Dakota_during_Sturgis_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/South_Dakota_during_Sturgis_-_panoramio.jpg/1920px-South_Dakota_during_Sturgis_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:South_Dakota_during_Sturgis_-_panoramio.jpg",
+      "author": "Idawriter",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/West_Custer_Township%2C_SD%2C_USA_-_panoramio_%282%29.jpg/960px-West_Custer_Township%2C_SD%2C_USA_-_panoramio_%282%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/West_Custer_Township%2C_SD%2C_USA_-_panoramio_%282%29.jpg/1920px-West_Custer_Township%2C_SD%2C_USA_-_panoramio_%282%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:West_Custer_Township,_SD,_USA_-_panoramio_(2).jpg",
+      "author": "Idawriter",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "sagu-red-hills-vc": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Saguaro_National_Park_NPS_photo_%2823890107319%29.jpg/960px-Saguaro_National_Park_NPS_photo_%2823890107319%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Saguaro_National_Park_NPS_photo_%2823890107319%29.jpg/1920px-Saguaro_National_Park_NPS_photo_%2823890107319%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Saguaro_National_Park_NPS_photo_(23890107319).jpg",
+      "author": "naturenps",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Visitor_center_with_BioBlitz_flags_-_Flickr_-_treegrow.jpg/960px-Visitor_center_with_BioBlitz_flags_-_Flickr_-_treegrow.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Visitor_center_with_BioBlitz_flags_-_Flickr_-_treegrow.jpg/1920px-Visitor_center_with_BioBlitz_flags_-_Flickr_-_treegrow.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Visitor_center_with_BioBlitz_flags_-_Flickr_-_treegrow.jpg",
+      "author": "Katja Schulz from Washington, D. C., USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Visitor_Center_in_Saguaro_National_Park_-_panoramio.jpg/960px-Visitor_Center_in_Saguaro_National_Park_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Visitor_Center_in_Saguaro_National_Park_-_panoramio.jpg/1920px-Visitor_Center_in_Saguaro_National_Park_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Visitor_Center_in_Saguaro_National_Park_-_panoramio.jpg",
+      "author": "Outdoor Craziness",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Cactus_-_Close_Up_%286989397337%29.jpg/960px-Cactus_-_Close_Up_%286989397337%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Cactus_-_Close_Up_%286989397337%29.jpg/1920px-Cactus_-_Close_Up_%286989397337%29.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Cactus_-_Close_Up_(6989397337).jpg",
+      "author": "Daniel Ramirez from Honolulu, USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Saguaros_%286989396035%29.jpg/960px-Saguaros_%286989396035%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Saguaros_%286989396035%29.jpg/1920px-Saguaros_%286989396035%29.jpg",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Saguaros_(6989396035).jpg",
+      "author": "Daniel Ramirez from Honolulu, USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Full_of_saguaros_-_Saguaro_National_Park_-_Pima_County%2C_Arizona%2C_USA_-_3_April_2015.jpg/960px-Full_of_saguaros_-_Saguaro_National_Park_-_Pima_County%2C_Arizona%2C_USA_-_3_April_2015.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Full_of_saguaros_-_Saguaro_National_Park_-_Pima_County%2C_Arizona%2C_USA_-_3_April_2015.jpg/1920px-Full_of_saguaros_-_Saguaro_National_Park_-_Pima_County%2C_Arizona%2C_USA_-_3_April_2015.jpg",
+      "width": 960,
+      "height": 636,
+      "page": "https://commons.wikimedia.org/wiki/File:Full_of_saguaros_-_Saguaro_National_Park_-_Pima_County,_Arizona,_USA_-_3_April_2015.jpg",
+      "author": "Shepard4711",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "sagu-desert-discovery": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/View_of_the_start_of_Desert_Discovery_Nature_Trail%2C_showing_lush_vegetation_and_a_shaded_ramada._%283d73c866-ef80-4868-9703-e8e025d5501c%29.jpg/960px-View_of_the_start_of_Desert_Discovery_Nature_Trail%2C_showing_lush_vegetation_and_a_shaded_ramada._%283d73c866-ef80-4868-9703-e8e025d5501c%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/View_of_the_start_of_Desert_Discovery_Nature_Trail%2C_showing_lush_vegetation_and_a_shaded_ramada._%283d73c866-ef80-4868-9703-e8e025d5501c%29.jpg/1920px-View_of_the_start_of_Desert_Discovery_Nature_Trail%2C_showing_lush_vegetation_and_a_shaded_ramada._%283d73c866-ef80-4868-9703-e8e025d5501c%29.jpg",
+      "width": 960,
+      "height": 1705,
+      "page": "https://commons.wikimedia.org/wiki/File:View_of_the_start_of_Desert_Discovery_Nature_Trail,_showing_lush_vegetation_and_a_shaded_ramada._(3d73c866-ef80-4868-9703-e8e025d5501c).jpg",
+      "author": "NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/TMD_Desert_Discovery_Stop_2_Saguaro_info.jpg_%28f955f5f1-3d66-4715-a584-59d25b0561a4%29.jpg/960px-TMD_Desert_Discovery_Stop_2_Saguaro_info.jpg_%28f955f5f1-3d66-4715-a584-59d25b0561a4%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/TMD_Desert_Discovery_Stop_2_Saguaro_info.jpg_%28f955f5f1-3d66-4715-a584-59d25b0561a4%29.jpg/1920px-TMD_Desert_Discovery_Stop_2_Saguaro_info.jpg_%28f955f5f1-3d66-4715-a584-59d25b0561a4%29.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:TMD_Desert_Discovery_Stop_2_Saguaro_info.jpg_(f955f5f1-3d66-4715-a584-59d25b0561a4).jpg",
+      "author": "NPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/2022-06-13_USA%2C_AZ%2C_Saguaro_DSC_5019_DxO.jpg/960px-2022-06-13_USA%2C_AZ%2C_Saguaro_DSC_5019_DxO.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/2022-06-13_USA%2C_AZ%2C_Saguaro_DSC_5019_DxO.jpg/1920px-2022-06-13_USA%2C_AZ%2C_Saguaro_DSC_5019_DxO.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:2022-06-13_USA,_AZ,_Saguaro_DSC_5019_DxO.jpg",
+      "author": "Laurens R. Krol",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/2022-06-13_USA%2C_AZ%2C_Saguaro_DSC_4996_DxO_1.jpg/960px-2022-06-13_USA%2C_AZ%2C_Saguaro_DSC_4996_DxO_1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/2022-06-13_USA%2C_AZ%2C_Saguaro_DSC_4996_DxO_1.jpg/1920px-2022-06-13_USA%2C_AZ%2C_Saguaro_DSC_4996_DxO_1.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:2022-06-13_USA,_AZ,_Saguaro_DSC_4996_DxO_1.jpg",
+      "author": "Laurens R. Krol",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Saguaro_%2832255131466%29.jpg/960px-Saguaro_%2832255131466%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Saguaro_%2832255131466%29.jpg/1920px-Saguaro_%2832255131466%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Saguaro_(32255131466).jpg",
+      "author": "brewbooks from near Seattle, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Saguaro_%2832255135086%29.jpg/960px-Saguaro_%2832255135086%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Saguaro_%2832255135086%29.jpg/1920px-Saguaro_%2832255135086%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Saguaro_(32255135086).jpg",
+      "author": "brewbooks from near Seattle, USA",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "sagu-valley-view-overlook": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Saguaro_National_Park_West%2C_Arizona%2C_USA_2024-5_2.jpg/960px-Saguaro_National_Park_West%2C_Arizona%2C_USA_2024-5_2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Saguaro_National_Park_West%2C_Arizona%2C_USA_2024-5_2.jpg/1920px-Saguaro_National_Park_West%2C_Arizona%2C_USA_2024-5_2.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Saguaro_National_Park_West,_Arizona,_USA_2024-5_2.jpg",
+      "author": "dconvertini",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Saguaro_-_Flickr_-_Joe_Parks.jpg/960px-Saguaro_-_Flickr_-_Joe_Parks.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Saguaro_-_Flickr_-_Joe_Parks.jpg/1920px-Saguaro_-_Flickr_-_Joe_Parks.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Saguaro_-_Flickr_-_Joe_Parks.jpg",
+      "author": "Joe Parks from Berkeley, CA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/2022-06-13_USA%2C_AZ%2C_Saguaro_DSC_5254_DxO.jpg/960px-2022-06-13_USA%2C_AZ%2C_Saguaro_DSC_5254_DxO.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/2022-06-13_USA%2C_AZ%2C_Saguaro_DSC_5254_DxO.jpg/1920px-2022-06-13_USA%2C_AZ%2C_Saguaro_DSC_5254_DxO.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:2022-06-13_USA,_AZ,_Saguaro_DSC_5254_DxO.jpg",
+      "author": "Laurens R. Krol",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/2022-06-13_USA%2C_AZ%2C_Saguaro_DSC_5292_DxO.jpg/960px-2022-06-13_USA%2C_AZ%2C_Saguaro_DSC_5292_DxO.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/2022-06-13_USA%2C_AZ%2C_Saguaro_DSC_5292_DxO.jpg/1920px-2022-06-13_USA%2C_AZ%2C_Saguaro_DSC_5292_DxO.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:2022-06-13_USA,_AZ,_Saguaro_DSC_5292_DxO.jpg",
+      "author": "Laurens R. Krol",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Members_from_SOARing_Unschoolers_surveyed_saguaros_on_Plot_38_for_the_Centennial_Saguaro_Survey_program._%28476b8107-1dd8-b71b-0b6c-b6a9bc3db007%29.JPG/960px-Members_from_SOARing_Unschoolers_surveyed_saguaros_on_Plot_38_for_the_Centennial_Saguaro_Survey_program._%28476b8107-1dd8-b71b-0b6c-b6a9bc3db007%29.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Members_from_SOARing_Unschoolers_surveyed_saguaros_on_Plot_38_for_the_Centennial_Saguaro_Survey_program._%28476b8107-1dd8-b71b-0b6c-b6a9bc3db007%29.JPG/1920px-Members_from_SOARing_Unschoolers_surveyed_saguaros_on_Plot_38_for_the_Centennial_Saguaro_Survey_program._%28476b8107-1dd8-b71b-0b6c-b6a9bc3db007%29.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Members_from_SOARing_Unschoolers_surveyed_saguaros_on_Plot_38_for_the_Centennial_Saguaro_Survey_program._(476b8107-1dd8-b71b-0b6c-b6a9bc3db007).JPG",
+      "author": "NPS Photo",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Cactuses_at_Saguaro_National_Park_West%2C_Arizona%2C_USA_2024-5_1.jpg/960px-Cactuses_at_Saguaro_National_Park_West%2C_Arizona%2C_USA_2024-5_1.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Cactuses_at_Saguaro_National_Park_West%2C_Arizona%2C_USA_2024-5_1.jpg/1920px-Cactuses_at_Saguaro_National_Park_West%2C_Arizona%2C_USA_2024-5_1.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Cactuses_at_Saguaro_National_Park_West,_Arizona,_USA_2024-5_1.jpg",
+      "author": "dconvertini",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "sagu-signal-hill": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Petroglyph_on_Signal_Hill_-_panoramio.jpg/960px-Petroglyph_on_Signal_Hill_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Petroglyph_on_Signal_Hill_-_panoramio.jpg/1920px-Petroglyph_on_Signal_Hill_-_panoramio.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Petroglyph_on_Signal_Hill_-_panoramio.jpg",
+      "author": "hakkun",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Sunshine-AZ_Photo_Saguaro_Park_West_Petroglyphs.jpg/960px-Sunshine-AZ_Photo_Saguaro_Park_West_Petroglyphs.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Sunshine-AZ_Photo_Saguaro_Park_West_Petroglyphs.jpg/1920px-Sunshine-AZ_Photo_Saguaro_Park_West_Petroglyphs.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Sunshine-AZ_Photo_Saguaro_Park_West_Petroglyphs.jpg",
+      "author": "Sunshine-AZ",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Hohokam_Petroglyphs_%2826158403555%29.jpg/960px-Hohokam_Petroglyphs_%2826158403555%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Hohokam_Petroglyphs_%2826158403555%29.jpg/1920px-Hohokam_Petroglyphs_%2826158403555%29.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:Hohokam_Petroglyphs_(26158403555).jpg",
+      "author": "Matt Kieffer from London, United Kingdom",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Hohokam_Petroglyphs_%2826132462356%29.jpg/960px-Hohokam_Petroglyphs_%2826132462356%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Hohokam_Petroglyphs_%2826132462356%29.jpg/1920px-Hohokam_Petroglyphs_%2826132462356%29.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:Hohokam_Petroglyphs_(26132462356).jpg",
+      "author": "Matt Kieffer from London, United Kingdom",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Saguaro_National_Park_Petroglyphs_at_Saguaro_NP_9817.jpg/960px-Saguaro_National_Park_Petroglyphs_at_Saguaro_NP_9817.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Saguaro_National_Park_Petroglyphs_at_Saguaro_NP_9817.jpg/1920px-Saguaro_National_Park_Petroglyphs_at_Saguaro_NP_9817.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Saguaro_National_Park_Petroglyphs_at_Saguaro_NP_9817.jpg",
+      "author": "National Park Service Digital Image Archives",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Saguaro_National_Park_-_Flickr_-_Joe_Parks.jpg/960px-Saguaro_National_Park_-_Flickr_-_Joe_Parks.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Saguaro_National_Park_-_Flickr_-_Joe_Parks.jpg/1920px-Saguaro_National_Park_-_Flickr_-_Joe_Parks.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Saguaro_National_Park_-_Flickr_-_Joe_Parks.jpg",
+      "author": "Joe Parks from Berkeley, CA",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "sagu-bajada-loop": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Saguaro_National_Park_West%2C_Arizona%2C_USA_2024-5.jpg/960px-Saguaro_National_Park_West%2C_Arizona%2C_USA_2024-5.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Saguaro_National_Park_West%2C_Arizona%2C_USA_2024-5.jpg/1920px-Saguaro_National_Park_West%2C_Arizona%2C_USA_2024-5.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Saguaro_National_Park_West,_Arizona,_USA_2024-5.jpg",
+      "author": "dconvertini",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Cactuses_at_Saguaro_National_Park_West%2C_Arizona%2C_USA_2024-5_3.jpg/960px-Cactuses_at_Saguaro_National_Park_West%2C_Arizona%2C_USA_2024-5_3.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Cactuses_at_Saguaro_National_Park_West%2C_Arizona%2C_USA_2024-5_3.jpg/1920px-Cactuses_at_Saguaro_National_Park_West%2C_Arizona%2C_USA_2024-5_3.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Cactuses_at_Saguaro_National_Park_West,_Arizona,_USA_2024-5_3.jpg",
+      "author": "dconvertini",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "sagu-wasson-peak": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/TucsonMountains_WassonPeakView_140422.JPG/960px-TucsonMountains_WassonPeakView_140422.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/TucsonMountains_WassonPeakView_140422.JPG/1920px-TucsonMountains_WassonPeakView_140422.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:TucsonMountains_WassonPeakView_140422.JPG",
+      "author": "Johannes Menzel",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Horned_Owl_%281%29_-_Flickr_-_Joe_Parks.jpg/960px-Horned_Owl_%281%29_-_Flickr_-_Joe_Parks.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Horned_Owl_%281%29_-_Flickr_-_Joe_Parks.jpg/1920px-Horned_Owl_%281%29_-_Flickr_-_Joe_Parks.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Horned_Owl_(1)_-_Flickr_-_Joe_Parks.jpg",
+      "author": "Joe Parks from Berkeley, CA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Ocotillo_-_Flickr_-_treegrow_%282%29.jpg/960px-Ocotillo_-_Flickr_-_treegrow_%282%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Ocotillo_-_Flickr_-_treegrow_%282%29.jpg/1920px-Ocotillo_-_Flickr_-_treegrow_%282%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Ocotillo_-_Flickr_-_treegrow_(2).jpg",
+      "author": "Katja Schulz from Washington, D. C., USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Ocotillo_-_Flickr_-_treegrow_%283%29.jpg/960px-Ocotillo_-_Flickr_-_treegrow_%283%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Ocotillo_-_Flickr_-_treegrow_%283%29.jpg/1920px-Ocotillo_-_Flickr_-_treegrow_%283%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Ocotillo_-_Flickr_-_treegrow_(3).jpg",
+      "author": "Katja Schulz from Washington, D. C., USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Greater_Roadrunner._Geococcyx_californianus_%281%29_-_Flickr_-_gailhampshire.jpg/960px-Greater_Roadrunner._Geococcyx_californianus_%281%29_-_Flickr_-_gailhampshire.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Greater_Roadrunner._Geococcyx_californianus_%281%29_-_Flickr_-_gailhampshire.jpg/1920px-Greater_Roadrunner._Geococcyx_californianus_%281%29_-_Flickr_-_gailhampshire.jpg",
+      "width": 960,
+      "height": 620,
+      "page": "https://commons.wikimedia.org/wiki/File:Greater_Roadrunner._Geococcyx_californianus_(1)_-_Flickr_-_gailhampshire.jpg",
+      "author": "gailhampshire from Cradley, Malvern, U.K",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/WESTERN_BANDED_GECKO_Coleonyx_variegatus_-_Flickr_-_gailhampshire.jpg/960px-WESTERN_BANDED_GECKO_Coleonyx_variegatus_-_Flickr_-_gailhampshire.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/WESTERN_BANDED_GECKO_Coleonyx_variegatus_-_Flickr_-_gailhampshire.jpg/1920px-WESTERN_BANDED_GECKO_Coleonyx_variegatus_-_Flickr_-_gailhampshire.jpg",
+      "width": 960,
+      "height": 732,
+      "page": "https://commons.wikimedia.org/wiki/File:WESTERN_BANDED_GECKO_Coleonyx_variegatus_-_Flickr_-_gailhampshire.jpg",
+      "author": "gailhampshire from Cradley, Malvern, U.K",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "sagu-desert-museum": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Arizona_Sonora_desert_museum_View.JPG/960px-Arizona_Sonora_desert_museum_View.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Arizona_Sonora_desert_museum_View.JPG/1920px-Arizona_Sonora_desert_museum_View.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Arizona_Sonora_desert_museum_View.JPG",
+      "author": "Phi",
+      "license": "CC0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Parabuteo_unicinctus_-Arizona-Sonora_Desert_Museum%2C_Tuscon%2C_USA-8f.jpg/960px-Parabuteo_unicinctus_-Arizona-Sonora_Desert_Museum%2C_Tuscon%2C_USA-8f.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Parabuteo_unicinctus_-Arizona-Sonora_Desert_Museum%2C_Tuscon%2C_USA-8f.jpg/1280px-Parabuteo_unicinctus_-Arizona-Sonora_Desert_Museum%2C_Tuscon%2C_USA-8f.jpg",
+      "width": 960,
+      "height": 508,
+      "page": "https://commons.wikimedia.org/wiki/File:Parabuteo_unicinctus_-Arizona-Sonora_Desert_Museum,_Tuscon,_USA-8f.jpg",
+      "author": "Pete Toscano",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Arizona-Sonora_Desert_Museum_%2817226707680%29.jpg/960px-Arizona-Sonora_Desert_Museum_%2817226707680%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Arizona-Sonora_Desert_Museum_%2817226707680%29.jpg/1920px-Arizona-Sonora_Desert_Museum_%2817226707680%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Arizona-Sonora_Desert_Museum_(17226707680).jpg",
+      "author": "Anna Irene from Frankfurt, Deutschland",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Arizona-Sonora_Desert_Museum_%2817228055139%29.jpg/960px-Arizona-Sonora_Desert_Museum_%2817228055139%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Arizona-Sonora_Desert_Museum_%2817228055139%29.jpg/1920px-Arizona-Sonora_Desert_Museum_%2817228055139%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Arizona-Sonora_Desert_Museum_(17228055139).jpg",
+      "author": "Anna Irene from Frankfurt, Deutschland",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Sonoran_Desert_Museum_Arizona_-_panoramio_%282%29.jpg/960px-Sonoran_Desert_Museum_Arizona_-_panoramio_%282%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Sonoran_Desert_Museum_Arizona_-_panoramio_%282%29.jpg/1920px-Sonoran_Desert_Museum_Arizona_-_panoramio_%282%29.jpg",
+      "width": 960,
+      "height": 716,
+      "page": "https://commons.wikimedia.org/wiki/File:Sonoran_Desert_Museum_Arizona_-_panoramio_(2).jpg",
+      "author": "Michelle Maria",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Sonoran_Desert_Museum_Arizona_-_panoramio_%285%29.jpg/960px-Sonoran_Desert_Museum_Arizona_-_panoramio_%285%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Sonoran_Desert_Museum_Arizona_-_panoramio_%285%29.jpg/1920px-Sonoran_Desert_Museum_Arizona_-_panoramio_%285%29.jpg",
+      "width": 960,
+      "height": 444,
+      "page": "https://commons.wikimedia.org/wiki/File:Sonoran_Desert_Museum_Arizona_-_panoramio_(5).jpg",
+      "author": "Michelle Maria",
+      "license": "CC BY 3.0"
+    }
+  ],
+  "sagu-gates-pass": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Gates_Pass%2C_Tucson%2C_Arizona%2C_USA_2024-5_2.jpg/960px-Gates_Pass%2C_Tucson%2C_Arizona%2C_USA_2024-5_2.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Gates_Pass%2C_Tucson%2C_Arizona%2C_USA_2024-5_2.jpg/1920px-Gates_Pass%2C_Tucson%2C_Arizona%2C_USA_2024-5_2.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Gates_Pass,_Tucson,_Arizona,_USA_2024-5_2.jpg",
+      "author": "dconvertini",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Gates_Pass_%2826413839402%29.jpg/960px-Gates_Pass_%2826413839402%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Gates_Pass_%2826413839402%29.jpg/1920px-Gates_Pass_%2826413839402%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Gates_Pass_(26413839402).jpg",
+      "author": "Nelo Hotsuma from Rockwall",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Gates_Pass_%2825901257054%29.jpg/960px-Gates_Pass_%2825901257054%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Gates_Pass_%2825901257054%29.jpg/1920px-Gates_Pass_%2825901257054%29.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:Gates_Pass_(25901257054).jpg",
+      "author": "Nelo Hotsuma from Rockwall",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Gates_Pass%2C_Tucson%2C_Arizona%2C_USA_2024-5_3.jpg/960px-Gates_Pass%2C_Tucson%2C_Arizona%2C_USA_2024-5_3.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Gates_Pass%2C_Tucson%2C_Arizona%2C_USA_2024-5_3.jpg/1920px-Gates_Pass%2C_Tucson%2C_Arizona%2C_USA_2024-5_3.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Gates_Pass,_Tucson,_Arizona,_USA_2024-5_3.jpg",
+      "author": "dconvertini",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Yetman_Trail_%287086120639%29.jpg/960px-Yetman_Trail_%287086120639%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Yetman_Trail_%287086120639%29.jpg/1920px-Yetman_Trail_%287086120639%29.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Yetman_Trail_(7086120639).jpg",
+      "author": "Denny Armstrong from Tucson, AZ, USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Yetman_Trail_%287086014579%29.jpg/960px-Yetman_Trail_%287086014579%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Yetman_Trail_%287086014579%29.jpg/1920px-Yetman_Trail_%287086014579%29.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Yetman_Trail_(7086014579).jpg",
+      "author": "Denny Armstrong from Tucson, AZ, USA",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "sagu-rincon-mountain-vc": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/2022-06-15_USA%2C_AZ%2C_Saguaro_DSC_6667_DxO.jpg/960px-2022-06-15_USA%2C_AZ%2C_Saguaro_DSC_6667_DxO.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/2022-06-15_USA%2C_AZ%2C_Saguaro_DSC_6667_DxO.jpg/1920px-2022-06-15_USA%2C_AZ%2C_Saguaro_DSC_6667_DxO.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:2022-06-15_USA,_AZ,_Saguaro_DSC_6667_DxO.jpg",
+      "author": "Laurens R. Krol",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/2022-06-15_USA%2C_AZ%2C_Saguaro_DSC_6708_DxO.jpg/960px-2022-06-15_USA%2C_AZ%2C_Saguaro_DSC_6708_DxO.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/2022-06-15_USA%2C_AZ%2C_Saguaro_DSC_6708_DxO.jpg/1920px-2022-06-15_USA%2C_AZ%2C_Saguaro_DSC_6708_DxO.jpg",
+      "width": 960,
+      "height": 639,
+      "page": "https://commons.wikimedia.org/wiki/File:2022-06-15_USA,_AZ,_Saguaro_DSC_6708_DxO.jpg",
+      "author": "Laurens R. Krol",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/West_u.s.a_293_%2814133656566%29.jpg/960px-West_u.s.a_293_%2814133656566%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/West_u.s.a_293_%2814133656566%29.jpg/1920px-West_u.s.a_293_%2814133656566%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:West_u.s.a_293_(14133656566).jpg",
+      "author": "rob Stoeltje from loenen, netherlands",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/USA_-_Arizona_-_Saguaro_National_Park_-_52991412606.jpg/960px-USA_-_Arizona_-_Saguaro_National_Park_-_52991412606.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/USA_-_Arizona_-_Saguaro_National_Park_-_52991412606.jpg/1920px-USA_-_Arizona_-_Saguaro_National_Park_-_52991412606.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:USA_-_Arizona_-_Saguaro_National_Park_-_52991412606.jpg",
+      "author": "Alexander Hatley",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/USA_-_Arizona_-_Saguaro_National_Park_-_52972828134.jpg/960px-USA_-_Arizona_-_Saguaro_National_Park_-_52972828134.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/USA_-_Arizona_-_Saguaro_National_Park_-_52972828134.jpg/1920px-USA_-_Arizona_-_Saguaro_National_Park_-_52972828134.jpg",
+      "width": 960,
+      "height": 719,
+      "page": "https://commons.wikimedia.org/wiki/File:USA_-_Arizona_-_Saguaro_National_Park_-_52972828134.jpg",
+      "author": "Alexander Hatley",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/PassionFlower_%2850619257711%29.jpg/960px-PassionFlower_%2850619257711%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/PassionFlower_%2850619257711%29.jpg/1920px-PassionFlower_%2850619257711%29.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:PassionFlower_(50619257711).jpg",
+      "author": "SaguaroNPS",
+      "license": "Public domain"
+    }
+  ],
+  "sagu-cactus-forest-drive": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Cactus_Forest_Drive_%2850614551188%29.jpg/960px-Cactus_Forest_Drive_%2850614551188%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Cactus_Forest_Drive_%2850614551188%29.jpg/1920px-Cactus_Forest_Drive_%2850614551188%29.jpg",
+      "width": 960,
+      "height": 650,
+      "page": "https://commons.wikimedia.org/wiki/File:Cactus_Forest_Drive_(50614551188).jpg",
+      "author": "SaguaroNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/USA_-_Arizona_-_Saguaro_National_Park.jpg/960px-USA_-_Arizona_-_Saguaro_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/USA_-_Arizona_-_Saguaro_National_Park.jpg/1920px-USA_-_Arizona_-_Saguaro_National_Park.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:USA_-_Arizona_-_Saguaro_National_Park.jpg",
+      "author": "Alexander Hatley",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/USA_-_Arizona_-_Saguaro_National_Park_-_52991412621.jpg/960px-USA_-_Arizona_-_Saguaro_National_Park_-_52991412621.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/USA_-_Arizona_-_Saguaro_National_Park_-_52991412621.jpg/1920px-USA_-_Arizona_-_Saguaro_National_Park_-_52991412621.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:USA_-_Arizona_-_Saguaro_National_Park_-_52991412621.jpg",
+      "author": "Alexander Hatley",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Pipevine_%282%29_%2850618517783%29.jpg/960px-Pipevine_%282%29_%2850618517783%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Pipevine_%282%29_%2850618517783%29.jpg/1920px-Pipevine_%282%29_%2850618517783%29.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Pipevine_(2)_(50618517783).jpg",
+      "author": "SaguaroNPS",
+      "license": "Public domain"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Cylindropuntia_thurberi_1.jpeg/960px-Cylindropuntia_thurberi_1.jpeg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Cylindropuntia_thurberi_1.jpeg/1280px-Cylindropuntia_thurberi_1.jpeg",
+      "width": 960,
+      "height": 909,
+      "page": "https://commons.wikimedia.org/wiki/File:Cylindropuntia_thurberi_1.jpeg",
+      "author": "CK2AZ",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Saguaro_field.jpg/960px-Saguaro_field.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Saguaro_field.jpg/1920px-Saguaro_field.jpg",
+      "width": 960,
+      "height": 1280,
+      "page": "https://commons.wikimedia.org/wiki/File:Saguaro_field.jpg",
+      "author": "MallardTV",
+      "license": "CC0"
+    }
+  ],
+  "sagu-javelina-rocks": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Saguaro_National_Park_East%2C_Arizona%2C_USA_2024_6.jpg/960px-Saguaro_National_Park_East%2C_Arizona%2C_USA_2024_6.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Saguaro_National_Park_East%2C_Arizona%2C_USA_2024_6.jpg/1920px-Saguaro_National_Park_East%2C_Arizona%2C_USA_2024_6.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Saguaro_National_Park_East,_Arizona,_USA_2024_6.jpg",
+      "author": "dconvertini",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Javelina_Rocks_Saguaro_National_Park_Arizona_2023.jpg/960px-Javelina_Rocks_Saguaro_National_Park_Arizona_2023.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Javelina_Rocks_Saguaro_National_Park_Arizona_2023.jpg/1920px-Javelina_Rocks_Saguaro_National_Park_Arizona_2023.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Javelina_Rocks_Saguaro_National_Park_Arizona_2023.jpg",
+      "author": "Larry D. Moore",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/USA_-_Arizona_-_Saguaro_National_Park_-_52994677039.jpg/960px-USA_-_Arizona_-_Saguaro_National_Park_-_52994677039.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/USA_-_Arizona_-_Saguaro_National_Park_-_52994677039.jpg/1920px-USA_-_Arizona_-_Saguaro_National_Park_-_52994677039.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:USA_-_Arizona_-_Saguaro_National_Park_-_52994677039.jpg",
+      "author": "Alexander Hatley",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Saguaro_National_Park_%2826344026160%29.jpg/960px-Saguaro_National_Park_%2826344026160%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Saguaro_National_Park_%2826344026160%29.jpg/1920px-Saguaro_National_Park_%2826344026160%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Saguaro_National_Park_(26344026160).jpg",
+      "author": "Bradley Weber",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Saguaro_National_Park_East%2C_Arizona%2C_USA_2024_3.jpg/960px-Saguaro_National_Park_East%2C_Arizona%2C_USA_2024_3.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Saguaro_National_Park_East%2C_Arizona%2C_USA_2024_3.jpg/1920px-Saguaro_National_Park_East%2C_Arizona%2C_USA_2024_3.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Saguaro_National_Park_East,_Arizona,_USA_2024_3.jpg",
+      "author": "dconvertini",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/DesertRoseMallow_%281%29_%2850619370212%29.jpg/960px-DesertRoseMallow_%281%29_%2850619370212%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/DesertRoseMallow_%281%29_%2850619370212%29.jpg/1920px-DesertRoseMallow_%281%29_%2850619370212%29.jpg",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:DesertRoseMallow_(1)_(50619370212).jpg",
+      "author": "SaguaroNPS",
+      "license": "Public domain"
+    }
+  ],
+  "sagu-freeman-homestead": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Saguaro_-_panoramio.jpg/960px-Saguaro_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Saguaro_-_panoramio.jpg/1920px-Saguaro_-_panoramio.jpg",
+      "width": 960,
+      "height": 645,
+      "page": "https://commons.wikimedia.org/wiki/File:Saguaro_-_panoramio.jpg",
+      "author": "On^ste82",
+      "license": "CC BY 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Jojoba_%2831583201644%29.jpg/960px-Jojoba_%2831583201644%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Jojoba_%2831583201644%29.jpg/1920px-Jojoba_%2831583201644%29.jpg",
+      "width": 960,
+      "height": 608,
+      "page": "https://commons.wikimedia.org/wiki/File:Jojoba_(31583201644).jpg",
+      "author": "brewbooks from near Seattle, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Brittlebrush_%2832275362062%29.jpg/960px-Brittlebrush_%2832275362062%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Brittlebrush_%2832275362062%29.jpg/1920px-Brittlebrush_%2832275362062%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Brittlebrush_(32275362062).jpg",
+      "author": "brewbooks from near Seattle, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/USA_-_Arizona_-_Saguaro_National_Park_-_52993935287.jpg/960px-USA_-_Arizona_-_Saguaro_National_Park_-_52993935287.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/USA_-_Arizona_-_Saguaro_National_Park_-_52993935287.jpg/1920px-USA_-_Arizona_-_Saguaro_National_Park_-_52993935287.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:USA_-_Arizona_-_Saguaro_National_Park_-_52993935287.jpg",
+      "author": "Alexander Hatley",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/USA_-_Arizona_-_Saguaro_National_Park_-_52993934967.jpg/960px-USA_-_Arizona_-_Saguaro_National_Park_-_52993934967.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/USA_-_Arizona_-_Saguaro_National_Park_-_52993934967.jpg/1920px-USA_-_Arizona_-_Saguaro_National_Park_-_52993934967.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:USA_-_Arizona_-_Saguaro_National_Park_-_52993934967.jpg",
+      "author": "Alexander Hatley",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Western_spotted_skunk_%28Spilogale_gracilis%29_%286005377909%29.jpg/960px-Western_spotted_skunk_%28Spilogale_gracilis%29_%286005377909%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Western_spotted_skunk_%28Spilogale_gracilis%29_%286005377909%29.jpg/1920px-Western_spotted_skunk_%28Spilogale_gracilis%29_%286005377909%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Western_spotted_skunk_(Spilogale_gracilis)_(6005377909).jpg",
+      "author": "SaguaroNPS",
+      "license": "Public domain"
+    }
+  ],
+  "sagu-tanque-verde-ridge": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Hiking_high_in_January_%2831680891573%29.jpg/960px-Hiking_high_in_January_%2831680891573%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Hiking_high_in_January_%2831680891573%29.jpg/1920px-Hiking_high_in_January_%2831680891573%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Hiking_high_in_January_(31680891573).jpg",
+      "author": "brewbooks from near Seattle, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Jojoba_%2832426449745%29.jpg/960px-Jojoba_%2832426449745%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Jojoba_%2832426449745%29.jpg/1920px-Jojoba_%2832426449745%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Jojoba_(32426449745).jpg",
+      "author": "brewbooks from near Seattle, USA",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/USA_-_Arizona_-_Saguaro_National_Park_-_52972822339.jpg/960px-USA_-_Arizona_-_Saguaro_National_Park_-_52972822339.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/USA_-_Arizona_-_Saguaro_National_Park_-_52972822339.jpg/1920px-USA_-_Arizona_-_Saguaro_National_Park_-_52972822339.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:USA_-_Arizona_-_Saguaro_National_Park_-_52972822339.jpg",
+      "author": "Alexander Hatley",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/USA_-_Arizona_-_Saguaro_National_Park_-_52994676334.jpg/960px-USA_-_Arizona_-_Saguaro_National_Park_-_52994676334.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/USA_-_Arizona_-_Saguaro_National_Park_-_52994676334.jpg/1920px-USA_-_Arizona_-_Saguaro_National_Park_-_52994676334.jpg",
+      "width": 960,
+      "height": 540,
+      "page": "https://commons.wikimedia.org/wiki/File:USA_-_Arizona_-_Saguaro_National_Park_-_52994676334.jpg",
+      "author": "Alexander Hatley",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Mammillaria_heyderi_flowering_in_Saguaro_NP.jpg/960px-Mammillaria_heyderi_flowering_in_Saguaro_NP.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Mammillaria_heyderi_flowering_in_Saguaro_NP.jpg/1920px-Mammillaria_heyderi_flowering_in_Saguaro_NP.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Mammillaria_heyderi_flowering_in_Saguaro_NP.jpg",
+      "author": "DataEcologist",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Spermophilus_variegatus_1_051711_FOSc15_%286005373997%29.jpg/960px-Spermophilus_variegatus_1_051711_FOSc15_%286005373997%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Spermophilus_variegatus_1_051711_FOSc15_%286005373997%29.jpg/1920px-Spermophilus_variegatus_1_051711_FOSc15_%286005373997%29.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Spermophilus_variegatus_1_051711_FOSc15_(6005373997).jpg",
+      "author": "SaguaroNPS",
+      "license": "Public domain"
+    }
+  ],
+  "sagu-bridal-wreath-falls": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Bridal_Wreath_Falls_in_the_Rincon_Mountains.jpg/960px-Bridal_Wreath_Falls_in_the_Rincon_Mountains.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Bridal_Wreath_Falls_in_the_Rincon_Mountains.jpg/1920px-Bridal_Wreath_Falls_in_the_Rincon_Mountains.jpg",
+      "width": 960,
+      "height": 1073,
+      "page": "https://commons.wikimedia.org/wiki/File:Bridal_Wreath_Falls_in_the_Rincon_Mountains.jpg",
+      "author": "Jasonctillmann",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "sagu-sabino-canyon": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Sabino_Canyon%2C_2002.jpg/960px-Sabino_Canyon%2C_2002.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Sabino_Canyon%2C_2002.jpg/1920px-Sabino_Canyon%2C_2002.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Sabino_Canyon,_2002.jpg",
+      "author": "Lee Adlaf from Birmingham, AL, USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Bear_Canyon_Trail_at_Sabino_Canyon.jpg/960px-Bear_Canyon_Trail_at_Sabino_Canyon.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Bear_Canyon_Trail_at_Sabino_Canyon.jpg/1920px-Bear_Canyon_Trail_at_Sabino_Canyon.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Bear_Canyon_Trail_at_Sabino_Canyon.jpg",
+      "author": "Jon Abbott",
+      "license": "CC BY 2.5"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Fluffy_Greater_Roadrunner_-_Flickr_-_treegrow.jpg/960px-Fluffy_Greater_Roadrunner_-_Flickr_-_treegrow.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Fluffy_Greater_Roadrunner_-_Flickr_-_treegrow.jpg/1920px-Fluffy_Greater_Roadrunner_-_Flickr_-_treegrow.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Fluffy_Greater_Roadrunner_-_Flickr_-_treegrow.jpg",
+      "author": "Katja Schulz from Washington, D. C., USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Greater_Roadrunner_-_Flickr_-_treegrow.jpg/960px-Greater_Roadrunner_-_Flickr_-_treegrow.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Greater_Roadrunner_-_Flickr_-_treegrow.jpg/1920px-Greater_Roadrunner_-_Flickr_-_treegrow.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Greater_Roadrunner_-_Flickr_-_treegrow.jpg",
+      "author": "Katja Schulz from Washington, D. C., USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Hogna_carolinensis_female_camouflage.jpeg/960px-Hogna_carolinensis_female_camouflage.jpeg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Hogna_carolinensis_female_camouflage.jpeg/1920px-Hogna_carolinensis_female_camouflage.jpeg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Hogna_carolinensis_female_camouflage.jpeg",
+      "author": "alinamartin",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Curve-billed_Thrasher_%284546525439%29.jpg/960px-Curve-billed_Thrasher_%284546525439%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Curve-billed_Thrasher_%284546525439%29.jpg/1280px-Curve-billed_Thrasher_%284546525439%29.jpg",
+      "width": 960,
+      "height": 959,
+      "page": "https://commons.wikimedia.org/wiki/File:Curve-billed_Thrasher_(4546525439).jpg",
+      "author": "Mike's Birds from Riverside, CA, US",
+      "license": "CC BY-SA 2.0"
+    }
+  ],
+  "gumo-pine-springs-vc": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Exterior_of_Pine_Springs_Visitor_Center_in_Guadalupe_Mountains_National_Park_-_DPLA_-_5d40a1148c389ccf1ee2409147573b27.jpg/960px-Exterior_of_Pine_Springs_Visitor_Center_in_Guadalupe_Mountains_National_Park_-_DPLA_-_5d40a1148c389ccf1ee2409147573b27.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Exterior_of_Pine_Springs_Visitor_Center_in_Guadalupe_Mountains_National_Park_-_DPLA_-_5d40a1148c389ccf1ee2409147573b27.jpg/1280px-Exterior_of_Pine_Springs_Visitor_Center_in_Guadalupe_Mountains_National_Park_-_DPLA_-_5d40a1148c389ccf1ee2409147573b27.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Exterior_of_Pine_Springs_Visitor_Center_in_Guadalupe_Mountains_National_Park_-_DPLA_-_5d40a1148c389ccf1ee2409147573b27.jpg",
+      "author": "Hicks, William",
+      "license": "CC BY 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/GUMO_Visitor_Center.JPG/960px-GUMO_Visitor_Center.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/GUMO_Visitor_Center.JPG/1920px-GUMO_Visitor_Center.JPG",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:GUMO_Visitor_Center.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/GUMO_visitor_center.JPG/960px-GUMO_visitor_center.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/GUMO_visitor_center.JPG/1920px-GUMO_visitor_center.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:GUMO_visitor_center.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/View_of_the_Pinery_Trail_%288110759354%29.jpg/960px-View_of_the_Pinery_Trail_%288110759354%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/View_of_the_Pinery_Trail_%288110759354%29.jpg/1920px-View_of_the_Pinery_Trail_%288110759354%29.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:View_of_the_Pinery_Trail_(8110759354).jpg",
+      "author": "daveynin from United States",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Guadalupe_Peak_Trail_Texas_October_2022.jpg/960px-Guadalupe_Peak_Trail_Texas_October_2022.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Guadalupe_Peak_Trail_Texas_October_2022.jpg/1920px-Guadalupe_Peak_Trail_Texas_October_2022.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Guadalupe_Peak_Trail_Texas_October_2022.jpg",
+      "author": "Leaflet",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Texas%2CUSA._-_panoramio_%281%29.jpg/960px-Texas%2CUSA._-_panoramio_%281%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Texas%2CUSA._-_panoramio_%281%29.jpg/1280px-Texas%2CUSA._-_panoramio_%281%29.jpg",
+      "width": 960,
+      "height": 692,
+      "page": "https://commons.wikimedia.org/wiki/File:Texas,USA._-_panoramio_(1).jpg",
+      "author": "Roman Eugeniusz",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "gumo-pinery": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Pinery_Stage_Stop%2C_TX.jpg/960px-Pinery_Stage_Stop%2C_TX.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Pinery_Stage_Stop%2C_TX.jpg/1920px-Pinery_Stage_Stop%2C_TX.jpg",
+      "width": 960,
+      "height": 682,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinery_Stage_Stop,_TX.jpg",
+      "author": "Rennett Stowe",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Pinery_Trail.JPG/960px-Pinery_Trail.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Pinery_Trail.JPG/1920px-Pinery_Trail.JPG",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinery_Trail.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Pinery_Trail_2.JPG/960px-Pinery_Trail_2.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Pinery_Trail_2.JPG/1920px-Pinery_Trail_2.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Pinery_Trail_2.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Cylindropuntia_-_Guadalupe_National_Park_%287671844124%29.jpg/960px-Cylindropuntia_-_Guadalupe_National_Park_%287671844124%29.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Cylindropuntia_-_Guadalupe_National_Park_%287671844124%29.jpg/1920px-Cylindropuntia_-_Guadalupe_National_Park_%287671844124%29.jpg",
+      "width": 960,
+      "height": 694,
+      "page": "https://commons.wikimedia.org/wiki/File:Cylindropuntia_-_Guadalupe_National_Park_(7671844124).jpg",
+      "author": "Rennett Stowe from USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Texas_madrone_%28Arbutus_xalapensis%29_bark_on_Guadalupe_Mountains_National_Park_Guadalupe_Peak_Trail.jpg/960px-Texas_madrone_%28Arbutus_xalapensis%29_bark_on_Guadalupe_Mountains_National_Park_Guadalupe_Peak_Trail.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Texas_madrone_%28Arbutus_xalapensis%29_bark_on_Guadalupe_Mountains_National_Park_Guadalupe_Peak_Trail.jpg/1920px-Texas_madrone_%28Arbutus_xalapensis%29_bark_on_Guadalupe_Mountains_National_Park_Guadalupe_Peak_Trail.jpg",
+      "width": 960,
+      "height": 1280,
+      "page": "https://commons.wikimedia.org/wiki/File:Texas_madrone_(Arbutus_xalapensis)_bark_on_Guadalupe_Mountains_National_Park_Guadalupe_Peak_Trail.jpg",
+      "author": "Miguel Vieira from Redwood City, CA, USA",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "gumo-guadalupe-peak": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Summit_of_the_Guadalupe_Peak_DSC_5539_ad.JPG/960px-Summit_of_the_Guadalupe_Peak_DSC_5539_ad.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Summit_of_the_Guadalupe_Peak_DSC_5539_ad.JPG/1920px-Summit_of_the_Guadalupe_Peak_DSC_5539_ad.JPG",
+      "width": 960,
+      "height": 643,
+      "page": "https://commons.wikimedia.org/wiki/File:Summit_of_the_Guadalupe_Peak_DSC_5539_ad.JPG",
+      "author": "Adavyd",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Arbutus_xalapensis_Guadalupe_Peak.jpg/960px-Arbutus_xalapensis_Guadalupe_Peak.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Arbutus_xalapensis_Guadalupe_Peak.jpg/1920px-Arbutus_xalapensis_Guadalupe_Peak.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Arbutus_xalapensis_Guadalupe_Peak.jpg",
+      "author": "Miguel Vieira from Walnut Creek, CA, USA",
+      "license": "CC BY 2.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Guadalupe_Peak_from_Tejas.JPG/960px-Guadalupe_Peak_from_Tejas.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Guadalupe_Peak_from_Tejas.JPG/1920px-Guadalupe_Peak_from_Tejas.JPG",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Guadalupe_Peak_from_Tejas.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/GuadalupePeakCampground13October2012.JPG/960px-GuadalupePeakCampground13October2012.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/GuadalupePeakCampground13October2012.JPG/1920px-GuadalupePeakCampground13October2012.JPG",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:GuadalupePeakCampground13October2012.JPG",
+      "author": "DrunkDriver",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/GuadalupePeakTexasHikingTrail13October2012.JPG/960px-GuadalupePeakTexasHikingTrail13October2012.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/GuadalupePeakTexasHikingTrail13October2012.JPG/1920px-GuadalupePeakTexasHikingTrail13October2012.JPG",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:GuadalupePeakTexasHikingTrail13October2012.JPG",
+      "author": "Holy Potatoes Batman",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Guadalupe_Peak_Horse_Trail.JPG/960px-Guadalupe_Peak_Horse_Trail.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Guadalupe_Peak_Horse_Trail.JPG/1920px-Guadalupe_Peak_Horse_Trail.JPG",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Guadalupe_Peak_Horse_Trail.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "gumo-devils-hall": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Devil%27s_Hall.JPG/960px-Devil%27s_Hall.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Devil%27s_Hall.JPG/1920px-Devil%27s_Hall.JPG",
+      "width": 960,
+      "height": 1445,
+      "page": "https://commons.wikimedia.org/wiki/File:Devil%27s_Hall.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Rocks_in_Devils_Hall_1.JPG/960px-Rocks_in_Devils_Hall_1.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Rocks_in_Devils_Hall_1.JPG/1920px-Rocks_in_Devils_Hall_1.JPG",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Rocks_in_Devils_Hall_1.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "gumo-el-capitan-viewpoint": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Guadalupe_Mountains_and_El_Capitan_2006.jpg/960px-Guadalupe_Mountains_and_El_Capitan_2006.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Guadalupe_Mountains_and_El_Capitan_2006.jpg/1920px-Guadalupe_Mountains_and_El_Capitan_2006.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Guadalupe_Mountains_and_El_Capitan_2006.jpg",
+      "author": "Leaflet",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/El_Capitan_viewpoint_-_panoramio.jpg/960px-El_Capitan_viewpoint_-_panoramio.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/El_Capitan_viewpoint_-_panoramio.jpg/1920px-El_Capitan_viewpoint_-_panoramio.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:El_Capitan_viewpoint_-_panoramio.jpg",
+      "author": "Peter K.",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/El_Capitan_TX_2.JPG/960px-El_Capitan_TX_2.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/El_Capitan_TX_2.JPG/1920px-El_Capitan_TX_2.JPG",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:El_Capitan_TX_2.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/El_Capitan_TX_3.JPG/960px-El_Capitan_TX_3.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/El_Capitan_TX_3.JPG/1920px-El_Capitan_TX_3.JPG",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:El_Capitan_TX_3.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/El_Capitan_P1011085mod.jpg/960px-El_Capitan_P1011085mod.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/El_Capitan_P1011085mod.jpg/1920px-El_Capitan_P1011085mod.jpg",
+      "width": 960,
+      "height": 614,
+      "page": "https://commons.wikimedia.org/wiki/File:El_Capitan_P1011085mod.jpg",
+      "author": "JYB Devot",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Guadalupe_Mountains_El_Capitan_2006.jpg/960px-Guadalupe_Mountains_El_Capitan_2006.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Guadalupe_Mountains_El_Capitan_2006.jpg/1920px-Guadalupe_Mountains_El_Capitan_2006.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Guadalupe_Mountains_El_Capitan_2006.jpg",
+      "author": "Leaflet",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "gumo-frijole-ranch": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Frijole_Ranch.JPG/960px-Frijole_Ranch.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Frijole_Ranch.JPG/1920px-Frijole_Ranch.JPG",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Frijole_Ranch.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Frijole_Ranch_2.JPG/960px-Frijole_Ranch_2.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Frijole_Ranch_2.JPG/1920px-Frijole_Ranch_2.JPG",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Frijole_Ranch_2.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Quercus_Pungens.jpg/960px-Quercus_Pungens.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Quercus_Pungens.jpg/1920px-Quercus_Pungens.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Quercus_Pungens.jpg",
+      "author": "Annika Lindqvist",
+      "license": "CC BY 4.0"
+    }
+  ],
+  "gumo-smith-spring": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Manzanita_Spring_in_Guadalupe_Mountains_National_Park.jpg/960px-Manzanita_Spring_in_Guadalupe_Mountains_National_Park.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Manzanita_Spring_in_Guadalupe_Mountains_National_Park.jpg/1920px-Manzanita_Spring_in_Guadalupe_Mountains_National_Park.jpg",
+      "width": 960,
+      "height": 641,
+      "page": "https://commons.wikimedia.org/wiki/File:Manzanita_Spring_in_Guadalupe_Mountains_National_Park.jpg",
+      "author": "Wing-Chi Poon",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Smith_Spring_Trail.JPG/960px-Smith_Spring_Trail.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Smith_Spring_Trail.JPG/1920px-Smith_Spring_Trail.JPG",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Smith_Spring_Trail.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Smith_Spring.JPG/960px-Smith_Spring.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Smith_Spring.JPG/1920px-Smith_Spring.JPG",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Smith_Spring.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Myriopteris_rufa_underside.jpg/960px-Myriopteris_rufa_underside.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Myriopteris_rufa_underside.jpg/1280px-Myriopteris_rufa_underside.jpg",
+      "width": 960,
+      "height": 1440,
+      "page": "https://commons.wikimedia.org/wiki/File:Myriopteris_rufa_underside.jpg",
+      "author": "no rights reserved",
+      "license": "CC0"
+    }
+  ],
+  "gumo-mckittrick-nature-trail": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/McKittrick_Canyon_Trail_2008.jpg/960px-McKittrick_Canyon_Trail_2008.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/McKittrick_Canyon_Trail_2008.jpg/1920px-McKittrick_Canyon_Trail_2008.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:McKittrick_Canyon_Trail_2008.jpg",
+      "author": "Leaflet",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/McKittrick_Canyon_Trail_1.JPG/960px-McKittrick_Canyon_Trail_1.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/McKittrick_Canyon_Trail_1.JPG/1920px-McKittrick_Canyon_Trail_1.JPG",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:McKittrick_Canyon_Trail_1.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/McKittrick_Canyon_Trail.JPG/960px-McKittrick_Canyon_Trail.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/McKittrick_Canyon_Trail.JPG/1920px-McKittrick_Canyon_Trail.JPG",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:McKittrick_Canyon_Trail.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Sponge_boundstone%2C_Permian_Reef_complex.jpg/960px-Sponge_boundstone%2C_Permian_Reef_complex.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Sponge_boundstone%2C_Permian_Reef_complex.jpg/1920px-Sponge_boundstone%2C_Permian_Reef_complex.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Sponge_boundstone,_Permian_Reef_complex.jpg",
+      "author": "Rygel, M.C.",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Slope_lime_mudstones.jpg/960px-Slope_lime_mudstones.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Slope_lime_mudstones.jpg/1920px-Slope_lime_mudstones.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:Slope_lime_mudstones.jpg",
+      "author": "Rygel, M.C.",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Arbutus_xalapensis_Guadalupe_Mountains.jpg/960px-Arbutus_xalapensis_Guadalupe_Mountains.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Arbutus_xalapensis_Guadalupe_Mountains.jpg/1920px-Arbutus_xalapensis_Guadalupe_Mountains.jpg",
+      "width": 960,
+      "height": 1445,
+      "page": "https://commons.wikimedia.org/wiki/File:Arbutus_xalapensis_Guadalupe_Mountains.jpg",
+      "author": "Clinton Steeds from Los Angeles, USA",
+      "license": "CC BY 2.0"
+    }
+  ],
+  "gumo-pratt-cabin": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/McKittrick_Canyon_Foliage_2008.jpg/960px-McKittrick_Canyon_Foliage_2008.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/McKittrick_Canyon_Foliage_2008.jpg/1920px-McKittrick_Canyon_Foliage_2008.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:McKittrick_Canyon_Foliage_2008.jpg",
+      "author": "Leaflet",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/McKittrick_Canyon_1.JPG/960px-McKittrick_Canyon_1.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/McKittrick_Canyon_1.JPG/1920px-McKittrick_Canyon_1.JPG",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:McKittrick_Canyon_1.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/McKittrick_Canyon_3.JPG/960px-McKittrick_Canyon_3.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/McKittrick_Canyon_3.JPG/1920px-McKittrick_Canyon_3.JPG",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:McKittrick_Canyon_3.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "gumo-grotto": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Hunter_Line_Shack.JPG/960px-Hunter_Line_Shack.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Hunter_Line_Shack.JPG/1920px-Hunter_Line_Shack.JPG",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Hunter_Line_Shack.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Ruins_near_Hunter_Line_Shack.JPG/960px-Ruins_near_Hunter_Line_Shack.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Ruins_near_Hunter_Line_Shack.JPG/1920px-Ruins_near_Hunter_Line_Shack.JPG",
+      "width": 960,
+      "height": 638,
+      "page": "https://commons.wikimedia.org/wiki/File:Ruins_near_Hunter_Line_Shack.JPG",
+      "author": "Fredlyfish4",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/McKittrick_Canyon_valley_wall_2008.jpg/960px-McKittrick_Canyon_valley_wall_2008.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/McKittrick_Canyon_valley_wall_2008.jpg/1920px-McKittrick_Canyon_valley_wall_2008.jpg",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:McKittrick_Canyon_valley_wall_2008.jpg",
+      "author": "Leaflet",
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/McKittrick_Canyon_view_west_from_The_Notch_2008.JPG/960px-McKittrick_Canyon_view_west_from_The_Notch_2008.JPG",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/McKittrick_Canyon_view_west_from_The_Notch_2008.JPG/1920px-McKittrick_Canyon_view_west_from_The_Notch_2008.JPG",
+      "width": 960,
+      "height": 720,
+      "page": "https://commons.wikimedia.org/wiki/File:McKittrick_Canyon_view_west_from_The_Notch_2008.JPG",
+      "author": "Leaflet",
+      "license": "CC BY-SA 3.0"
+    }
+  ],
+  "gumo-salt-basin-dunes": [
+    {
+      "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Salt_Basin_Dunes_-_Flickr_-_aspidoscelis.jpg/960px-Salt_Basin_Dunes_-_Flickr_-_aspidoscelis.jpg",
+      "large": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Salt_Basin_Dunes_-_Flickr_-_aspidoscelis.jpg/1920px-Salt_Basin_Dunes_-_Flickr_-_aspidoscelis.jpg",
+      "width": 960,
+      "height": 640,
+      "page": "https://commons.wikimedia.org/wiki/File:Salt_Basin_Dunes_-_Flickr_-_aspidoscelis.jpg",
+      "author": "Patrick Alexander from Las Cruces, NM",
+      "license": "CC0"
+    }
+  ],
+  "gumo-dog-canyon": []
 };

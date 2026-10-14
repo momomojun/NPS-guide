@@ -253,3 +253,16 @@ test("卡特迈 7 月 2 天（Homer 进出）：Brooks 瀑布按 Homer 起飞的
   assert.ok(!planned(trip).includes("katm-vtts"));
   assert.ok(guide.skipped.permit.includes("katm-vtts"));
 });
+
+test("北极之门 + 德纳里 7 天（费尔班克斯进出）：第一天不空着，路上的育空河、北极圈第一天顺路看，不从 Coldfoot 折回去", () => {
+  const { trip } = generate({ parks: ["gaar", "dena"], start: "2027-07-10", days: 7, airport: "FAI" });
+  assert.ok(trip.days[0].length > 0, "第一天空着");
+  const yukon = trip.days.findIndex((items) => items.some((item) => item.id === "gaar-yukon-river"));
+  assert.ok(yukon <= 0, `育空河排在第 ${yukon + 1} 天`);
+});
+
+test("瓜达卢佩山 + 卡尔斯巴德洞窟 4 天（埃尔帕索进出）：不为 45 分钟的 Dog Canyon 专门开一天车，列为离其他景点太远", () => {
+  const { trip, guide } = generate({ parks: ["gumo", "cave"], start: "2027-10-28", days: 4, airport: "ELP" });
+  assert.ok(!planned(trip).includes("gumo-dog-canyon"), planned(trip).join());
+  assert.ok(guide.skipped?.tooFar?.includes("gumo-dog-canyon"));
+});

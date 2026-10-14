@@ -77,6 +77,28 @@ const countyKey = (name) =>
 
 // ---- 1. 每个住处在哪个县（FCC） ----
 
+async function fccCounty(stay) {
+  const res = await fetch(`${FCC}?lat=${stay.lat}&lon=${stay.lon}&format=json`, { headers: { "User-Agent": USER_AGENT } });
+  if (!res.ok) return null;
+  const place = (await res.json()).results?.[0];
+  return place ? { county: place.county_name, state: place.state_code } : null;
+}
+
+/** FCC 的接口出问题时（2026-10-05 一直返回 400），改用人口普查局的地理编码接口；它只给州的 FIPS 代码 */
+const STATE_FIPS = {
+  "04": "AZ", "06": "CA", "08": "CO", "16": "ID", "30": "MT", "32": "NV", "35": "NM",
+  "38": "ND", "41": "OR", "46": "SD", "48": "TX", "49": "UT", "53": "WA", "56": "WY",
+};
+async function censusCounty(stay) {
+  const url =
+    "https://geocoding.geo.census.gov/geocoder/geographies/coordinates" +
+    `?x=${stay.lon}&y=${stay.lat}&benchmark=Public_AR_Current&vintage=Current_Current&layers=Counties&format=json`;
+  const res = await fetch(url, { headers: { "User-Agent": USER_AGENT } });
+  if (!res.ok) return null;
+  const county = (await res.json()).result?.geographies?.Counties?.[0];
+  return county && STATE_FIPS[county.STATE] ? { county: county.NAME, state: STATE_FIPS[county.STATE] } : null;
+}
+
 const counties = existsSync(COUNTY_CACHE) ? JSON.parse(readFileSync(COUNTY_CACHE, "utf8")) : {};
 // 阿拉斯加、夏威夷不归 GSA 管（国防部另定标准），加拿大的公园也不在范围里
 const outside = new Set(
@@ -86,11 +108,8 @@ const stays = lodgingOptions.filter((stay) => !outside.has(stay.park));
 for (const stay of stays) {
   const key = `${stay.lat},${stay.lon}`;
   if (counties[key]) continue;
-  const res = await fetch(`${FCC}?lat=${stay.lat}&lon=${stay.lon}&format=json`, { headers: { "User-Agent": USER_AGENT } });
-  if (!res.ok) throw new Error(`FCC ${res.status}: ${stay.id}`);
-  const place = (await res.json()).results?.[0];
-  if (!place) throw new Error(`FCC 查不到县：${stay.id}（${key}）`);
-  counties[key] = { county: place.county_name, state: place.state_code };
+  counties[key] = (await fccCounty(stay)) ?? (await censusCounty(stay));
+  if (!counties[key]) throw new Error(`查不到县：${stay.id}（${key}）`);
   mkdirSync(CACHE, { recursive: true });
   writeFileSync(COUNTY_CACHE, JSON.stringify(counties, null, 1));
   await sleep(300);

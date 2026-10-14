@@ -43,6 +43,14 @@ import { gatesOfTheArctic } from "./gaar";
 import { kobukValley } from "./kova";
 import { katmai } from "./katm";
 import { lakeClark } from "./lacl";
+import { pinnacles } from "./pinn";
+import { greatBasin } from "./grba";
+import { bigBend } from "./bibe";
+import { theodoreRoosevelt } from "./thro";
+import { badlands } from "./badl";
+import { windCave } from "./wica";
+import { saguaro } from "./sagu";
+import { guadalupeMountains } from "./gumo";
 import { trails, type TrailPath } from "./trails.generated";
 import type { Attraction, GooglePlace, ParkingRule, Photo } from "./types";
 import { yellowstone } from "./yell";
@@ -138,6 +146,14 @@ const withData: AttractionWithPhoto[] = [
   ...kobukValley,
   ...katmai,
   ...lakeClark,
+  ...pinnacles,
+  ...greatBasin,
+  ...bigBend,
+  ...theodoreRoosevelt,
+  ...badlands,
+  ...windCave,
+  ...saguaro,
+  ...guadalupeMountains,
 ].map((attraction) => ({
   ...attraction,
   photo: gallery[attraction.id]?.[0],

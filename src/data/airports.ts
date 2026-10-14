@@ -74,4 +74,12 @@ export const airports: Record<string, Airport> = {
   GST: { code: "GST", nameZh: "古斯塔夫斯机场", city: "古斯塔夫斯（Gustavus，冰川湾）", lat: 58.42167, lon: -135.70219 },
   OTZ: { code: "OTZ", nameZh: "科策布机场（Ralph Wien 纪念机场）", city: "科策布（Kotzebue）", lat: 66.89102, lon: -162.60215 },
   HOM: { code: "HOM", nameZh: "霍默机场", city: "霍默（Homer）", lat: 59.64318, lon: -151.49288 },
+  MRY: { code: "MRY", nameZh: "蒙特雷机场", city: "蒙特雷", lat: 36.58706, lon: -121.84194 },
+  SAT: { code: "SAT", nameZh: "圣安东尼奥国际机场", city: "圣安东尼奥", lat: 29.5337, lon: -98.4698 },
+  AUS: { code: "AUS", nameZh: "奥斯汀–伯格斯特罗姆国际机场", city: "奥斯汀", lat: 30.1945, lon: -97.6699 },
+  BIS: { code: "BIS", nameZh: "俾斯麦机场", city: "俾斯麦", lat: 46.7727, lon: -100.7469 },
+  DIK: { code: "DIK", nameZh: "迪金森西奥多·罗斯福地区机场", city: "迪金森", lat: 46.7975, lon: -102.8019 },
+  XWA: { code: "XWA", nameZh: "威利斯顿盆地国际机场", city: "威利斯顿", lat: 48.2609, lon: -103.7512 },
+  RAP: { code: "RAP", nameZh: "拉皮德城地区机场", city: "拉皮德城", lat: 44.0388, lon: -103.06041 },
+  TUS: { code: "TUS", nameZh: "图森国际机场", city: "图森", lat: 32.1161, lon: -110.941 },
 };

@@ -1,4 +1,4 @@
-// 由 scripts/build-fees.mjs 生成，请勿手改。门票来自 NPS API（feespasses），2026-10-04 查。
+// 由 scripts/build-fees.mjs 生成，请勿手改。门票来自 NPS API（feespasses），2026-10-05 查。
 export interface ParkFees {
   /** 自驾车（含车上所有人），美元；免费的公园为 0 */
   vehicle: number;
@@ -9,11 +9,12 @@ export interface ParkFees {
   note?: string;
 }
 
-export const feesUpdated = "2026-10-04";
+export const feesUpdated = "2026-10-05";
 
 export const parkFees: Record<string, ParkFees> = {
   yose: {"vehicle":35,"perPerson":20,"motorcycle":30},
   seki: {"vehicle":35,"perPerson":20,"motorcycle":30,"note":"红杉和国王峡谷两个公园共用一张门票，7 天内两边都能进，不用预约"},
+  pinn: {"vehicle":30,"perPerson":15,"motorcycle":25},
   chis: {"vehicle":0,"note":"公园不收门票；上岛只能坐船，Island Packers 的船票才是主要花费，要提前订"},
   jotr: {"vehicle":30,"perPerson":15,"motorcycle":25},
   redw: {"vehicle":0,"note":"国家公园和三座州立公园都不收门票；Fern Canyon / Gold Bluffs Beach 等部分日用区另收每车 $8–12（Fern Canyon 只收现金或支票），America the Beautiful 年卡可以抵"},
@@ -33,12 +34,19 @@ export const parkFees: Record<string, ParkFees> = {
   zion: {"vehicle":35,"perPerson":20,"motorcycle":30},
   brca: {"vehicle":35,"perPerson":20,"motorcycle":30},
   grca: {"vehicle":35,"perPerson":20,"motorcycle":30},
+  grba: {"vehicle":0},
   arch: {"vehicle":30,"perPerson":15,"motorcycle":25},
   cany: {"vehicle":30,"perPerson":15,"motorcycle":25},
   care: {"vehicle":20,"perPerson":10,"motorcycle":15},
   whsa: {"vehicle":25,"perPerson":15,"motorcycle":20},
   cave: {"vehicle":0,"perPerson":15},
   pefo: {"vehicle":25,"perPerson":15,"motorcycle":20},
+  sagu: {"vehicle":25,"perPerson":15,"motorcycle":20},
+  gumo: {"vehicle":0,"perPerson":10},
+  bibe: {"vehicle":30,"perPerson":15,"motorcycle":25},
+  badl: {"vehicle":30,"perPerson":15,"motorcycle":25},
+  wica: {"vehicle":0},
+  thro: {"vehicle":30,"perPerson":15,"motorcycle":25},
   dena: {"vehicle":0,"perPerson":15},
   kefj: {"vehicle":0,"note":"公园不收门票；峡湾和潮水冰川只能坐船看，游船票才是主要花费"},
   wrst: {"vehicle":0,"note":"公园不收门票；去 Kennecott 的私营接驳车、选矿厂导览和观光飞行另付"},

@@ -110,6 +110,14 @@ for (const attraction of attractions.filter((a) => a.trail)) {
   }
   const path = legs.flatMap((leg, i) => leg.points.slice(i === 0 ? 0 : 1));
   const km = Math.round(legs.reduce((sum, leg) => sum + leg.length, 0) * 100) / 100;
+  // OSM 上没有这条步道（只画出两三个点、或者走的是旁边的车道）：短到不到资料里三成的不画，免得地图上一个小点冒充步道
+  const expected = attraction.hike?.distanceMi ? (attraction.hike.distanceMi * 1.609) / (attraction.trail.loop ? 1 : 2) : null;
+  if (km < 0.05 || path.length < 3 || (expected && km < expected * 0.3)) {
+    console.warn(`✗ ${attraction.id}: 只算出 ${km} km、${path.length} 点${expected ? `（资料 ${expected.toFixed(1)} km）` : ""}，不画`);
+    delete trails[attraction.id];
+    await sleep(1100);
+    continue;
+  }
   trails[attraction.id] = {
     km,
     loop: Boolean(attraction.trail.loop),

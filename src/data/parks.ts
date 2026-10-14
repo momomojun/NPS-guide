@@ -8,6 +8,7 @@ export type RegionId =
   | "vegas"
   | "utah"
   | "southwest"
+  | "plains"
   | "alaska"
   | "hawaii"
   | "canada";
@@ -81,6 +82,7 @@ export const regionOrder: RegionId[] = [
   "vegas",
   "utah",
   "southwest",
+  "plains",
   "alaska",
   "hawaii",
   "canada",
@@ -146,6 +148,31 @@ export const parks: Park[] = [
     nonresidentSurcharge: true,
     lodgingTip:
       "园内有 Wuksachi Lodge（红杉这边）和 John Muir Lodge（国王峡谷这边）；园外最方便的是南门外的 Three Rivers，去 Giant Forest 要爬约 1 小时盘山路。Visalia 酒店多、价格低，但离得更远。",
+  },
+  {
+    code: "pinn",
+    nameZh: "尖峰石阵",
+    nameEn: "Pinnacles",
+    region: "sierra",
+    tagline: "火山岩尖峰与加州神鹫",
+    stateEn: "California",
+    hero: "pinn-high-peaks",
+    intro:
+      "2,300 万年前一座火山在今天洛杉矶北边的羚羊谷一带喷发，随后被圣安德烈亚斯断层劈成两半，西边这一半跟着太平洋板块往西北挪了约 310 公里，剩下的火山角砾岩被风雨削成一片红褐色的尖峰和石墙。巨石塌进窄峡谷，堆出能钻进去的“崖缝洞穴”（talus cave），洞里住着汤森大耳蝠；高处的岩壁是重新放归野外的加州神鹫的家，常能看到翼展近 3 米的神鹫在 High Peaks 上空盘旋。公园离旧金山湾区约 2 小时车程，东西两侧各有入口，但园内不通车，只能靠步道相连。",
+    bestMonths: [3, 4, 5, 10, 11],
+    seasonNote:
+      "2–5 月最好：山坡转绿、野花开，小溪有水，但周末和节假日人最多，早上 8 点前就可能停满。6–9 月常超过 38°C，岩石上更热，只适合清早或傍晚走短线；Bear Gulch 洞穴 5 月中到 7 月中为保护蝙蝠育幼全部关闭。10–11 月凉快人少，冬天偶有暴雨，洞里会积水临时关闭。",
+    areas: {
+      east: "东侧（Bear Gulch · 营地 · 游客中心）",
+      west: "西侧（Chaparral · West Pinnacles）",
+    },
+    gateway: { nameZh: "尖峰石阵游客中心（东侧，营地内）", lat: 36.49354, lon: -121.14665 },
+    timeZone: "America/Los_Angeles",
+    airports: ["SJC", "SFO", "OAK", "MRY"],
+    nearby: ["seki", "yose"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内没有酒店，唯一的过夜地方是东侧的 Pinnacles Campground（帐篷位、房车位和全年开放的帆布帐篷小屋，提前 6 个月在 Recreation.gov 订，春天周末很早订满），西侧不能过夜。住园外的话，去东侧住 Hollister（到东门约 45 分钟）或更远的 Gilroy，去西侧住 Soledad（约 25 分钟）或 Salinas、Monterey（约 1 小时–1 小时 15 分）；King City 在两侧之间，到东门约 50 分钟、西门约 45 分钟。两边都想走的，一天走一侧最省事。",
   },
   {
     code: "chis",
@@ -659,6 +686,34 @@ export const parks: Park[] = [
       "南缘村里有 El Tovar、Bright Angel、Maswik 等几家园内酒店，加上 Yavapai Lodge，要提早订；园外最近的是南门外的 Tusayan（约 10 分钟），再远是 Williams 和 Flagstaff（约 1–1.5 小时）。去东边沙漠观景塔方向，可以住 Cameron。2026 年 8 月底山洪后南缘缺水，园内酒店暂停过夜接待，NPS 预计感恩节前后恢复供水，之后分阶段重开。",
   },
   {
+    code: "grba",
+    nameZh: "大盆地",
+    nameEn: "Great Basin",
+    region: "vegas",
+    tagline: "古狐尾松、大理石溶洞与满天银河",
+    stateEn: "Nevada",
+    hero: "grba-alpine-lakes",
+    intro:
+      "大盆地是北美最大的内流区，荒漠谷地和一道道南北走向的山脉相间，公园守着其中的 Snake 山脉：从海拔约 1,600 米的鼠尾草荒漠，一路升到 3,982 米的惠勒峰（Wheeler Peak）。山脚的 Lehman Caves 是内华达最长的洞穴，大理石里长满钟乳石、石笋和少见的洞穴盾；山顶附近的狐尾松林里有活了几千年的大盆地狐尾松，是地球上最长寿的树之一。这里地处偏远、空气干燥，是美国本土星空最暗的地方之一。",
+    bestMonths: [6, 7, 8, 9],
+    seasonNote:
+      "6–9 月最好：惠勒峰景观道全线通车（通常阵亡将士纪念日前后通到顶、11 月初第一场大雪后关上段），高山湖、狐尾松步道雪化了，夏天每周有护林员观星活动；7–8 月午后常有雷暴。9 月中下旬山杨变黄，9 月新月前后有天文节。冬天只有山下一段景观道、Lehman Caves 和最低的营地开放，适合穿雪鞋。",
+    areas: {
+      lehman: "Lehman Caves 游客中心一带",
+      "scenic-drive": "惠勒峰景观道（高山湖 · 狐尾松 · 惠勒峰）",
+      "baker-creek": "Baker Creek",
+      south: "南部（Lexington Arch）",
+      baker: "Baker 小镇",
+    },
+    gateway: { nameZh: "Lehman Caves 游客中心", lat: 39.00561, lon: -114.21987 },
+    timeZone: "America/Los_Angeles",
+    airports: ["SLC", "LAS", "SGU"],
+    nearby: ["zion", "brca", "care"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内没有酒店，只有五个营地（都要在 Recreation.gov 预订，营地里没有饮用水），夏天要早订。最近的住处在园外 8 公里的小镇 Baker：Stargazer Inn、Whispering Elms 汽车旅馆都只有几间房，州界上的 Border Inn（约 15 分钟）全年营业；房间少，夏天和天文节前后很早订满。再找不到就住约 1 小时 15 分外的 Ely（内华达这一带最大的镇，酒店、超市都有），或者犹他一侧约 1 小时 40 分的 Delta。附近只有 Baker 和 Border Inn 两个加油站，路上很长一段没有补给，在 Ely 或 Delta 加满再来。",
+  },
+  {
     code: "ante",
     kind: "site",
     agency: "纳瓦霍部落公园（Navajo Nation Parks & Recreation）",
@@ -884,7 +939,7 @@ export const parks: Park[] = [
     stateEn: "New Mexico",
     hero: "cave-big-room",
     intro:
-      "地面上是约 2.6 亿年前海底礁石抬升成的瓜达卢普山脊，地下藏着 119 个以上的洞穴，是含硫酸的地下水溶蚀石灰岩形成的。主角卡尔斯巴德洞窟可以从天然入口一路走下约 230 米，也可以坐电梯直达 Big Room——北美按体积最大的单个洞厅；4–10 月每天傍晚还能在洞口看几十万只蝙蝠飞出觅食。1995 年列入世界遗产。",
+      "地面上是约 2.6 亿年前海底礁石抬升成的瓜达卢佩山脊，地下藏着 119 个以上的洞穴，是含硫酸的地下水溶蚀石灰岩形成的。主角卡尔斯巴德洞窟可以从天然入口一路走下约 230 米，也可以坐电梯直达 Big Room——北美按体积最大的单个洞厅；4–10 月每天傍晚还能在洞口看几十万只蝙蝠飞出觅食。1995 年列入世界遗产。",
     bestMonths: [4, 5, 8, 9, 10],
     seasonNote:
       "洞里常年约 13°C，一年四季都能去；想看蝙蝠出洞要 4–10 月，8–9 月最多；夏天地面常到 32–40°C，8–9 月多午后雷雨，冬天偶尔下雪结冰。",
@@ -901,7 +956,7 @@ export const parks: Park[] = [
     nearby: ["whsa"],
     nonresidentSurcharge: false,
     lodgingTip:
-      "园内没有住宿和露营地，只能凭免费许可证在背包野营区过夜。最近的是公园大门外的 White's City，只有一家老旅馆和 RV 营地，上山到游客中心约 15 分钟；多数人住约 35 分钟车程的 Carlsbad，连锁酒店多，但常被油田工人订走，平日也不便宜，最好提前几周订。从埃尔帕索飞进飞出的，第一晚或最后一晚可以住埃尔帕索机场附近（到洞窟约 2.5 小时），路上正好经过瓜达卢普山国家公园。",
+      "园内没有住宿和露营地，只能凭免费许可证在背包野营区过夜。最近的是公园大门外的 White's City，只有一家老旅馆和 RV 营地，上山到游客中心约 15 分钟；多数人住约 35 分钟车程的 Carlsbad，连锁酒店多，但常被油田工人订走，平日也不便宜，最好提前几周订。从埃尔帕索飞进飞出的，第一晚或最后一晚可以住埃尔帕索机场附近（到洞窟约 2.5 小时），路上正好经过瓜达卢佩山国家公园。",
   },
   {
     code: "pefo",
@@ -930,6 +985,174 @@ export const parks: Park[] = [
     nonresidentSurcharge: false,
     lodgingTip:
       "园内没有酒店和营地（只能背包进荒野区过夜，当天在游客中心领免费许可证）。最近的是西边约 30 分钟车程的 Holbrook，66 号公路沿线的老汽车旅馆多，招牌是能住进水泥“帐篷”的 Wigwam Motel；再往西约 1 小时的 Winslow 有修复的老铁路酒店 La Posada；从新墨西哥过来可以住 Gallup（到北入口约 1 小时 15 分，夏天比亚利桑那快 1 小时）。凤凰城或弗拉格斯塔夫机场进出、或者接着去大峡谷，就住 Flagstaff（约 2 小时）。一般不难订，提前几周就够。",
+  },
+  {
+    code: "sagu",
+    nameZh: "巨人柱",
+    nameEn: "Saguaro",
+    region: "southwest",
+    tagline: "索诺兰沙漠的巨人柱仙人掌森林",
+    stateEn: "Arizona",
+    hero: "sagu-valley-view-overlook",
+    intro:
+      "巨人柱仙人掌（saguaro）只长在索诺兰沙漠，能活一两百年、高 12 米以上，五六十岁以后才长出第一根“手臂”，是美国西部最有代表性的剪影。公园分成图森市两边的两个园区：西区（Tucson Mountain District）海拔低，巨人柱最密，夕阳下的仙人掌森林和 Signal Hill 的古代岩画最有名；东区（Rincon Mountain District）有一条 13 公里的铺装环线穿过老仙人掌林，背后的林孔山从沙漠一直升到 2,600 多米的松林“天空之岛”。",
+    bestMonths: [10, 11, 12, 1, 2, 3, 4],
+    seasonNote:
+      "10 月到次年 4 月白天 18–30°C，最舒服，也是护林员活动最多的时候；巨人柱 5 月底到 7 月开花，但白天常到 38–43°C，只能清早或傍晚活动；6 月中到 9 月是季风雨季，午后雷暴常引发山洪、冲坏西区的砂石路。",
+    areas: {
+      west: "西区 · 图森山（Tucson Mountain District）",
+      east: "东区 · 林孔山（Rincon Mountain District）",
+      sabino: "Sabino Canyon（图森东北，园外）",
+    },
+    gateway: { nameZh: "图森市中心（东西两区之间）", lat: 32.2217, lon: -110.9747 },
+    timeZone: "America/Phoenix",
+    airports: ["TUS", "PHX"],
+    nearby: ["grca", "pefo", "whsa"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内没有酒店和车能开进去的营地（只有要走进山里的背包营地），大家都住图森：只去一边的话，西区住图森山脚的度假村或 Gilbert Ray 县营地，东区住城东 Tanque Verde / Broadway 一带；两边都去、想吃得方便，住市中心或大学一带最省事，到两个园区都约 25–35 分钟。10 月到次年 4 月是旺季，2 月初的宝石矿物展期间全城酒店最贵、最难订。",
+  },
+  {
+    code: "gumo",
+    nameZh: "瓜达卢佩山",
+    nameEn: "Guadalupe Mountains",
+    region: "southwest",
+    tagline: "得州最高峰与远古海底礁石",
+    stateEn: "Texas",
+    hero: "gumo-el-capitan-viewpoint",
+    intro:
+      "瓜达卢佩山是约 2.6 亿年前二叠纪海底的一段巨大礁石（Capitan 礁），被抬升后成了从奇瓦瓦沙漠里拔地而起的石灰岩山脉，南端的 El Capitan 绝壁是西得州公路上最醒目的地标。旁边的瓜达卢佩峰海拔 2,667 米，是得州最高点；山里的 McKittrick 峡谷有溪水和枫树，10 月底到 11 月初满谷红叶。公园几乎没有穿过山里的公路，大部分要靠走：东边的 Pine Springs、McKittrick 峡谷，西边的白色石膏沙丘，北边的 Dog Canyon 各从不同的路进去。",
+    bestMonths: [3, 4, 10, 11],
+    seasonNote:
+      "春秋最适合爬山，10 月底到 11 月初是 McKittrick 峡谷的红叶季，也是一年里人最多的时候，周末停车场和营地常满；夏天白天常到 32–38°C，午后多雷暴，山顶易遭雷击；一年四季都常刮大风（阵风可达 100 公里/时左右），冬春最猛；冬天偶尔下小雪，一般一天就化。",
+    areas: {
+      "pine-springs": "Pine Springs · 瓜达卢佩峰",
+      frijole: "Frijole Ranch",
+      mckittrick: "McKittrick 峡谷",
+      highway: "62/180 号公路观景点",
+      "salt-basin": "Salt Basin 沙丘（西侧）",
+      "dog-canyon": "Dog Canyon（北侧）",
+    },
+    gateway: { nameZh: "Pine Springs 游客中心", lat: 31.89362, lon: -104.82206 },
+    timeZone: "America/Denver",
+    airports: ["ELP", "CNM", "MAF"],
+    nearby: ["cave", "whsa"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内没有酒店，只有 Pine Springs 和 Dog Canyon 两个只有厕所和饮用水的简易营地（全部要在 Recreation.gov 预约，春秋周末很快订满）。不露营的话，最近的是东北约 35 英里（约 45 分钟）的 White's City，只有一家老旅馆；多数人住约 1 小时车程的 Carlsbad，正好和卡尔斯巴德洞窟一起玩；从南边来可以住约 1 小时的 Van Horn（I-10 边的小镇），从埃尔帕索来单程约 2 小时。园内和附近都没有加油站和餐馆，进山前加满油、带好吃的。",
+  },
+  {
+    code: "bibe",
+    nameZh: "大弯",
+    nameEn: "Big Bend",
+    region: "southwest",
+    tagline: "格兰德河大拐弯、沙漠与天空岛",
+    stateEn: "Texas",
+    hero: "bibe-santa-elena-canyon",
+    intro:
+      "格兰德河在得州西南角拐了一个大弯，公园沿着这段美墨界河延伸约 190 公里，面积约 3,240 平方公里。园里三种地貌叠在一起：占公园大部分的奇瓦瓦沙漠、中间拔地而起的奇索斯山（美国唯一一座整个在国家公园里的山脉，山上是松树、橡树林），和河上切出的圣埃伦娜、Boquillas 等石灰岩大峡谷。这里离大城市很远，也是美国本土光污染最少的国家公园之一（国际暗夜公园）；周五到周一还能从园里的口岸坐小船过河，去墨西哥小村 Boquillas 吃顿午饭。",
+    bestMonths: [2, 3, 10, 11],
+    seasonNote:
+      "10 月到次年 4 月是旺季，3 月春假和感恩节、圣诞节前后最挤，营地和山上的小屋天天满；2–4 月沙漠开花。5–9 月极热，河边下午常到 40°C 以上（5–6 月最热），只适合清早活动或上奇索斯山（盆地海拔约 1,650 米，凉快约 10°C）；7–9 月是雨季，午后雷暴常引发山洪、冲断土路。冬天偶有寒潮，山上会结冰、下雪。",
+    areas: {
+      chisos: "奇索斯山 · 盆地（Chisos Basin）",
+      west: "Ross Maxwell 观景道 · 圣埃伦娜峡谷（西南部）",
+      east: "格兰德河村 · Boquillas（东部）",
+      north: "Panther Junction · 北部",
+      terlingua: "园外：Terlingua · 河路 FM 170",
+    },
+    gateway: { nameZh: "Panther Junction 游客中心（公园总部）", lat: 29.32784, lon: -103.20593 },
+    timeZone: "America/Chicago",
+    airports: ["MAF", "ELP", "SAT", "AUS"],
+    nearby: ["gumo", "cave"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内只有奇索斯山小屋（Chisos Mountains Lodge）一家，在海拔约 1,650 米的盆地里，72 间房，11–4 月要提前半年以上订（石头小木屋要提前一两年）；2026 年小屋的餐厅关着，只有餐车和小超市。园外住得最多的是西门外的 Terlingua / Study Butte：汽车旅馆、土坯小屋、帐篷和房车营地都有，到 Panther Junction 约 40 分钟、到圣埃伦娜峡谷约 1 小时；北边的 Marathon 小镇（老牌 Gage 酒店）到 Panther Junction 约 1 小时 10 分钟；Alpine 连锁酒店多、便宜些，但单程要开约 1 小时 45 分钟。园里只有 Panther Junction 和格兰德河村两处加油站，园外最近的在 Study Butte 和 Marathon，进园前加满。",
+  },
+  {
+    code: "badl",
+    nameZh: "恶地",
+    nameEn: "Badlands",
+    region: "plains",
+    tagline: "大草原上被雨水切开的彩色岩壁",
+    stateEn: "South Dakota",
+    hero: "badl-pinnacles-overlook",
+    intro:
+      "大平原中间突然裂开一道几十公里长的“恶地之墙”（Badlands Wall）：几千万年沉积下来的泥岩、火山灰被雨水切成尖塔、沟壑和一层层红黄白相间的条纹，每年还在以大约 2.5 厘米的速度往后退。岩层里埋着大量古哺乳动物化石；墙下和墙北是美国面积最大的混合草原保护区之一，野牛、大角羊、草原犬鼠和叉角羚都常见。2026 年 7 月公园宣布获得国际暗夜公园认证，夏夜能看到清晰的银河。",
+    bestMonths: [5, 6, 9, 10],
+    seasonNote:
+      "5–6 月和 9 月到 10 月上旬最舒服；7–8 月白天常到 35°C 以上、午后多雷暴，徒步要赶早；冬季寒冷多风雪，Loop Road 偶尔因冰雪临时封路，园内酒店和餐厅 10 月中到次年 4 月中关门。",
+    areas: {
+      "cedar-pass": "Cedar Pass（游客中心 · Door / Notch 步道）",
+      "loop-road": "Badlands Loop Road 观景点",
+      "sage-creek": "Sage Creek 荒野区（看野牛）",
+      "south-unit": "南园区（Stronghold · White River）",
+      gateway: "园外：Wall 镇 · I-90 沿线",
+    },
+    gateway: { nameZh: "Ben Reifel 游客中心", lat: 43.74908, lon: -101.94166 },
+    timeZone: "America/Denver",
+    airports: ["RAP", "DEN"],
+    nearby: ["wica", "thro"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内只有 Cedar Pass Lodge（4 月中到 10 月中营业，小木屋数量少，旺季要早订）和旁边的 Cedar Pass 营地，住这里看日出日落、参加晚上的星空讲解最方便。其次是北边 I-90 出口的 Wall 镇，汽车旅馆多、价格适中，到 Pinnacles 入口约 15 分钟；东南角的 Interior 小村只有几家旅馆。从拉皮德城当天往返单程约 1 小时 15 分，适合和黑山、拉什莫尔山一起玩的人把拉皮德城当大本营。",
+  },
+  {
+    code: "wica",
+    nameZh: "风洞",
+    nameEn: "Wind Cave",
+    region: "plains",
+    tagline: "地下的方解石“蜂窝”，地上的野牛草原",
+    stateEn: "South Dakota",
+    hero: "wica-bison-flats",
+    intro:
+      "1903 年设立，是美国最早的国家公园之一，也是世界上第一座为保护洞穴设立的国家公园。地底已测绘出 160 多英里（约 260 公里）的通道，是世界上最长的洞穴之一，洞壁上满是薄片交错、像蜂窝一样的方解石“箱格”（boxwork），全世界已知的箱格大部分都在这里；进洞只能跟护林员导览。地面上是黑山南缘的混合草原和黄松林，野牛、马鹿、叉角羚和成片的草原犬鼠城就在公路边。",
+    bestMonths: [5, 6, 7, 8, 9],
+    seasonNote:
+      "5–9 月洞穴导览班次最多，天然入口导览只在 5 月到 9 月开，烛光导览和野洞探险只在夏天；9–10 月马鹿发情求偶、黄昏能听到鸣叫；冬天洞里照样 12°C 左右，导览每天只有两三场，地面偶尔因暴风雪临时封路。北边卡斯特州立公园的 Needles 公路冬季不通车。",
+    areas: {
+      "visitor-center": "游客中心 · 洞穴导览",
+      "bison-flats": "南部草原（US-385 · Bison Flats）",
+      north: "北部（Rankin Ridge · NPS 5/6 砂石路）",
+      "custer-state-park": "园外：卡斯特州立公园",
+      rushmore: "园外：拉什莫尔山 · 疯马",
+    },
+    gateway: { nameZh: "风洞游客中心", lat: 43.55656, lon: -103.47831 },
+    timeZone: "America/Denver",
+    airports: ["RAP", "DEN"],
+    nearby: ["badl", "thro"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内只有 Elk Mountain 营地，没有酒店。住南边约 15 分钟的 Hot Springs 离洞最近；想顺路玩卡斯特州立公园、拉什莫尔山和疯马，住北边约 30 分钟的 Custer 镇或州立公园里的几家度假木屋（State Game Lodge、Sylvan Lake Lodge 等，一般 5–10 月营业）更方便，Keystone、Hill City 离拉什莫尔山近；拉皮德城到游客中心约 1 小时，旅馆、超市最多。每年 8 月上中旬 Sturgis 摩托车集会（2026 年 8 月 7–16 日，2027 年 8 月 6–15 日）期间整个黑山的房价暴涨，要很早订。",
+  },
+  {
+    code: "thro",
+    nameZh: "西奥多·罗斯福",
+    nameEn: "Theodore Roosevelt",
+    region: "plains",
+    tagline: "北达科他恶地里的野马和野牛",
+    stateEn: "North Dakota",
+    hero: "thro-wind-canyon",
+    intro:
+      "小密苏里河切开北达科他西部的草原，留下一片层层叠叠的恶地：灰色的膨润土、黑色的褐煤层和烧红的“熔渣岩”一层压一层。1880 年代年轻的西奥多·罗斯福在这里打猎、经营牧场，后来当上总统、成了美国保护自然的推手。公园分成三块：Medora 镇边的 South Unit 有 58 公里的景观环路，野牛、野马和草原犬鼠沿路就能看到；往北约 110 公里的 North Unit 更陡峭、更安静，有大角羊；两者之间的 Elkhorn Ranch 是罗斯福的牧场旧址。",
+    bestMonths: [5, 6, 9],
+    seasonNote:
+      "全年开放、24 小时都能进。6 月草最绿、野花多、小野马刚出生；7–8 月白天常到 30°C 以上、午后多雷暴，也是 Medora 音乐剧的季节；9 月凉爽、人少，下旬河边的三叶杨变黄，麋鹿开始发情鸣叫。冬天常在 -20°C 以下，下雪结冰时景观路会部分封闭。注意 North Unit 用中部时间，比 South Unit 和 Medora 早一小时。",
+    areas: {
+      "south-unit": "South Unit · 景观环路（Medora）",
+      "painted-canyon": "彩绘峡谷（I-94 旁）",
+      "petrified-forest": "石化林（South Unit 西侧，砂石路进）",
+      elkhorn: "Elkhorn Ranch 园区（罗斯福牧场旧址）",
+      "north-unit": "North Unit（Watford City 以南）",
+      medora: "Medora 小镇（园外）",
+    },
+    gateway: { nameZh: "South Unit 游客中心（Medora）", lat: 46.9165, lon: -103.52621 },
+    timeZone: "America/Denver",
+    airports: ["BIS", "DIK", "XWA", "BIL"],
+    nearby: ["badl", "wica"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内没有酒店，只有 Cottonwood（South Unit）和 Juniper（North Unit）两个营地，2026 年 5 月起都要在 Recreation.gov 预订。多数人住 South Unit 门口的 Medora：镇上的酒店、汽车旅馆大多由西奥多·罗斯福 Medora 基金会经营，6 月初到 9 月中音乐剧季最难订；冬天只有 Rough Riders Hotel 和 Hotel 1883 两家开；订不到就住东边约 25 分钟的 Belfield 或 45 分钟的 Dickinson（连锁酒店最多）。去 North Unit 住 Watford City，到入口约 20 分钟；从 Medora 当天来回 North Unit 单程约 1 小时 15 分。Elkhorn Ranch 附近没有住处。",
   },
   {
     code: "dena",

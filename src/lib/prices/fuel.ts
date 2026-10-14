@@ -28,6 +28,10 @@ export const gasSnapshot: Record<string, StateFuel> = {
   WY: { regular: 4.55, midGrade: 4.86, premium: 5.17, diesel: 6.24 },
   NM: { regular: 4.42, midGrade: 4.85, premium: 5.17, diesel: 6.11 },
   HI: { regular: 5.63, midGrade: 5.89, premium: 6.13, diesel: 7.22 },
+  // 2026-10-05 补的（新加的得州、南北达科他的公园）
+  TX: { regular: 3.91, midGrade: 4.39, premium: 4.77, diesel: 5.74 },
+  SD: { regular: 4.19, midGrade: 4.43, premium: 5.02, diesel: 5.98 },
+  ND: { regular: 4.16, midGrade: 4.6, premium: 5.19, diesel: 6.06 },
   AB: canadian(1.77),
   BC: canadian(1.99),
 };
@@ -78,6 +82,14 @@ export const parkState: Record<string, string> = {
   blca: "CO",
   havo: "HI",
   hale: "HI",
+  pinn: "CA",
+  grba: "NV",
+  sagu: "AZ",
+  gumo: "TX",
+  bibe: "TX",
+  badl: "SD",
+  wica: "SD",
+  thro: "ND",
   glba: "AK",
   katm: "AK",
   lacl: "AK",
@@ -86,7 +98,7 @@ export const parkState: Record<string, string> = {
 };
 
 /** 价格页列出的州：公园所在的州，加上常见出发地内华达（拉斯维加斯）、爱达荷（黄石西门）；最后是加拿大的两个省 */
-export const TRIP_STATES = ["CA", "NV", "UT", "AZ", "NM", "CO", "OR", "WA", "WY", "ID", "MT", "AK", "HI", "AB", "BC"];
+export const TRIP_STATES = ["CA", "NV", "UT", "AZ", "NM", "TX", "CO", "OR", "WA", "WY", "ID", "MT", "SD", "ND", "AK", "HI", "AB", "BC"];
 
 /** 租来的中型 SUV / 轿车，每加仑大约跑多少英里 */
 export const MILES_PER_GALLON = 25;

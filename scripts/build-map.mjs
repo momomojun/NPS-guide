@@ -45,9 +45,15 @@ const VIEWS = {
       "Colorado",
       "New Mexico",
       "Texas",
+      "South Dakota",
+      "North Dakota",
+      "Nebraska",
+      "Kansas",
+      "Oklahoma",
       "British Columbia",
       "Alberta",
       "Saskatchewan",
+      "Manitoba",
     ],
     /** 有公园的州（省）填底色，其余只画边界 */
     focus: [
@@ -62,11 +68,14 @@ const VIEWS = {
       "Arizona",
       "Colorado",
       "New Mexico",
+      "Texas",
+      "South Dakota",
+      "North Dakota",
       "British Columbia",
       "Alberta",
     ],
-    /** 视野按经纬度框取：南边到埃尔帕索以南，东边到卡尔斯巴德洞窟以东，北边到贾斯珀以北 */
-    bounds: { west: -124.9, east: -103.4, south: 31.3, north: 53.6 },
+    /** 视野按经纬度框取：南边到大弯以南，东边到南北达科他的恶地、西奥多·罗斯福以东，北边到贾斯珀以北 */
+    bounds: { west: -124.9, east: -99.6, south: 28.6, north: 53.6 },
     labels: {
       Washington: "WASHINGTON",
       Oregon: "OREGON",
@@ -78,6 +87,9 @@ const VIEWS = {
       Arizona: "ARIZONA",
       Colorado: "COLORADO",
       "New Mexico": "NEW MEXICO",
+      Texas: "TEXAS",
+      "South Dakota": "SOUTH DAKOTA",
+      "North Dakota": "NORTH DAKOTA",
       "British Columbia": "BRITISH COLUMBIA",
       Alberta: "ALBERTA",
     },

@@ -43,6 +43,14 @@ import { gatesOfTheArctic } from "../src/data/attractions/gaar.ts";
 import { kobukValley } from "../src/data/attractions/kova.ts";
 import { katmai } from "../src/data/attractions/katm.ts";
 import { lakeClark } from "../src/data/attractions/lacl.ts";
+import { pinnacles } from "../src/data/attractions/pinn.ts";
+import { greatBasin } from "../src/data/attractions/grba.ts";
+import { bigBend } from "../src/data/attractions/bibe.ts";
+import { theodoreRoosevelt } from "../src/data/attractions/thro.ts";
+import { badlands } from "../src/data/attractions/badl.ts";
+import { windCave } from "../src/data/attractions/wica.ts";
+import { saguaro } from "../src/data/attractions/sagu.ts";
+import { guadalupeMountains } from "../src/data/attractions/gumo.ts";
 import { lodgingOptions } from "../src/data/lodging.ts";
 import { parks } from "../src/data/parks.ts";
 
@@ -93,6 +101,14 @@ export const attractions = [
   ...kobukValley,
   ...katmai,
   ...lakeClark,
+  ...pinnacles,
+  ...greatBasin,
+  ...bigBend,
+  ...theodoreRoosevelt,
+  ...badlands,
+  ...windCave,
+  ...saguaro,
+  ...guadalupeMountains,
 ];
 
 /** 补给点的查询范围在外包框四边各放宽这么多度，门户小镇都在里面 */

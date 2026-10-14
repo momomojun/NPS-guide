@@ -19,10 +19,10 @@ A Chinese-language trip planner for U.S. national parks and the Canadian Rockies
 ![MapLibre GL](https://img.shields.io/badge/MapLibre_GL-6-1c1b18)
 ![PWA](https://img.shields.io/badge/PWA-offline-1c1b18?logo=pwa&logoColor=white)
 <br>
-![40 national parks](https://img.shields.io/badge/national_parks-40-a04c2e)
+![48 national parks](https://img.shields.io/badge/national_parks-48-a04c2e)
 ![4 scenic sites](https://img.shields.io/badge/scenic_sites-4-a04c2e)
-![645 attractions](https://img.shields.io/badge/attractions-645-a04c2e)
-![246 trails](https://img.shields.io/badge/trails-246-a04c2e)
+![768 attractions](https://img.shields.io/badge/attractions-768-a04c2e)
+![298 trails](https://img.shields.io/badge/trails-298-a04c2e)
 ![72 creator routes](https://img.shields.io/badge/creator_routes-72-a04c2e)
 
 </div>
@@ -39,7 +39,7 @@ NPS Guide 把这些按日期串起来：选好公园和日子，它告诉你那�
 
 ## 功能
 
-- **景点地图**：37 座美国国家公园（阿拉斯加的 8 座和夏威夷的 2 座都齐了）、加拿大落基山 3 座国家公园和 4 处园外名胜，共 645 个景点，地图和列表联动；246 条徒步路线按 OpenStreetMap 真实步道画出；只能坐小飞机、坐船进去的体验（卡特迈看熊、冰川湾游船）按“出发地 + 往返”算时间；每个景点最多 6 张照片、Google 评分和园内热度排名；普通地图、卫星图和 3D 地形随时切换。
+- **景点地图**：45 座美国国家公园（西部、阿拉斯加和夏威夷的都齐了，还有得州和南北达科他的）、加拿大落基山 3 座国家公园和 4 处园外名胜，共 768 个景点，地图和列表联动；298 条徒步路线按 OpenStreetMap 真实步道画出；只能坐小飞机、坐船进去的体验（卡特迈看熊、冰川湾游船）按“出发地 + 往返”算时间；每个景点最多 6 张照片、Google 评分和园内热度排名；普通地图、卫星图和 3D 地形随时切换。
 - **一键生成攻略**：选公园（可以几座顺路的一起，比如盐湖城进出、先大提顿再黄石）、月份或日期、天数、从哪个机场或城市出发，自动挑景点、排出每天几点到哪、定好每晚住处（园内酒店、门户小镇或民宿区，附 Airbnb 链接）。
 - **按日期提醒**：按当天日出日落安排日出 / 日落观景点；季节性关闭、许可证和预约写明原因和替代方案；Tioga Road、向阳大道这些冬天封闭的山路按近 20 年的开通、关闭日期算出“往年这一天通没通车”；16 天天气预报和 NWS 预警；NPS 实时公告附中文翻译，对到具体哪天哪个景点；旺季早上就停满的热门步道口（精致拱门、洛根山口……）排在一早，晚了会提醒；看星空的晚上月亮碍不碍事，暗夜公园哪几晚最暗；赶上一年里人最多的时候也会说。
 - **要提前订的**：按行程日期算出园内住宿、营地、许可证抽签（天使降临、半穹顶、The Wave……）、入园预约和船票各自哪天开订、还剩几天，错过了还有什么机会；可以一键加到手机日历，开放前提醒。
@@ -112,12 +112,13 @@ NPS Guide 把这些按日期串起来：选好公园和日子，它告诉你那�
 
 ## 覆盖的公园
 
-**美国国家公园**（37 座）
+**美国国家公园**（45 座）
 
 | 片区 | 公园 | 代码 | 2026 年非居民附加费 |
 |---|---|---|---|
-| 加州 · 内华达山脉 | 优胜美地 Yosemite | `yose` | $100 / 人 |
-| 加州 · 内华达山脉 | 红杉与国王峡谷 Sequoia & Kings Canyon | `seki` | $100 / 人 |
+| 加州中部 · 内华达山脉 | 优胜美地 Yosemite | `yose` | $100 / 人 |
+| 加州中部 · 内华达山脉 | 红杉与国王峡谷 Sequoia & Kings Canyon | `seki` | $100 / 人 |
+| 加州中部 · 内华达山脉 | 尖峰石阵 Pinnacles | `pinn` | — |
 | 南加州 | 海峡群岛 Channel Islands | `chis` | — |
 | 南加州 | 约书亚树 Joshua Tree | `jotr` | — |
 | 加州北部 · 俄勒冈 | 红木 Redwood | `redw` | — |
@@ -137,12 +138,19 @@ NPS Guide 把这些按日期串起来：选好公园和日子，它告诉你那�
 | 拉斯维加斯周边 | 锡安 Zion | `zion` | $100 / 人 |
 | 拉斯维加斯周边 | 布莱斯峡谷 Bryce Canyon | `brca` | $100 / 人 |
 | 拉斯维加斯周边 | 大峡谷 Grand Canyon | `grca` | $100 / 人 |
+| 拉斯维加斯周边 | 大盆地 Great Basin | `grba` | — |
 | 犹他东部 · 摩押 | 拱门 Arches | `arch` | — |
 | 犹他东部 · 摩押 | 峡谷地 Canyonlands | `cany` | — |
 | 犹他东部 · 摩押 | 圆顶礁 Capitol Reef | `care` | — |
-| 亚利桑那 · 新墨西哥 | 石化林 Petrified Forest | `pefo` | — |
-| 亚利桑那 · 新墨西哥 | 白沙 White Sands | `whsa` | — |
-| 亚利桑那 · 新墨西哥 | 卡尔斯巴德洞窟 Carlsbad Caverns | `cave` | — |
+| 亚利桑那 · 新墨西哥 · 得州 | 石化林 Petrified Forest | `pefo` | — |
+| 亚利桑那 · 新墨西哥 · 得州 | 白沙 White Sands | `whsa` | — |
+| 亚利桑那 · 新墨西哥 · 得州 | 卡尔斯巴德洞窟 Carlsbad Caverns | `cave` | — |
+| 亚利桑那 · 新墨西哥 · 得州 | 巨人柱 Saguaro | `sagu` | — |
+| 亚利桑那 · 新墨西哥 · 得州 | 瓜达卢佩山 Guadalupe Mountains | `gumo` | — |
+| 亚利桑那 · 新墨西哥 · 得州 | 大弯 Big Bend | `bibe` | — |
+| 大平原 · 南北达科他 | 恶地 Badlands | `badl` | — |
+| 大平原 · 南北达科他 | 风洞 Wind Cave | `wica` | — |
+| 大平原 · 南北达科他 | 西奥多·罗斯福 Theodore Roosevelt | `thro` | — |
 | 阿拉斯加 | 德纳里 Denali | `dena` | — |
 | 阿拉斯加 | 基奈峡湾 Kenai Fjords | `kefj` | — |
 | 阿拉斯加 | 兰格尔–圣伊莱亚斯 Wrangell–St. Elias | `wrst` | — |
@@ -234,9 +242,9 @@ npm run dev                  # 打开 http://localhost:3000
 
 ## English
 
-**NPS Guide** is an unofficial, Chinese-language (Simplified & Traditional) trip planner for 37 U.S. national parks in the West, Alaska and Hawaiʻi: Yosemite, Sequoia & Kings Canyon, Channel Islands, Joshua Tree, Redwood, Lassen Volcanic, Crater Lake, Mount Rainier, Olympic, North Cascades, Yellowstone, Grand Teton, Glacier, Rocky Mountain, Mesa Verde, Great Sand Dunes, Black Canyon of the Gunnison, Death Valley, Zion, Bryce Canyon, Grand Canyon, Arches, Canyonlands, Capitol Reef, Petrified Forest, White Sands, Carlsbad Caverns, Denali, Kenai Fjords, Wrangell–St. Elias, Glacier Bay, Katmai, Lake Clark, Gates of the Arctic, Kobuk Valley, Hawaiʻi Volcanoes and Haleakalā. It also covers Banff, Jasper and Yoho in the Canadian Rockies, and four famous non-park sites listed separately: Antelope Canyon, Horseshoe Bend, Monument Valley and The Wave.
+**NPS Guide** is an unofficial, Chinese-language (Simplified & Traditional) trip planner for 45 U.S. national parks in the West, Texas, the Dakotas, Alaska and Hawaiʻi: Yosemite, Sequoia & Kings Canyon, Channel Islands, Joshua Tree, Redwood, Lassen Volcanic, Crater Lake, Mount Rainier, Olympic, North Cascades, Yellowstone, Grand Teton, Glacier, Rocky Mountain, Mesa Verde, Great Sand Dunes, Black Canyon of the Gunnison, Death Valley, Zion, Bryce Canyon, Grand Canyon, Arches, Canyonlands, Capitol Reef, Petrified Forest, White Sands, Carlsbad Caverns, Denali, Kenai Fjords, Wrangell–St. Elias, Glacier Bay, Katmai, Lake Clark, Gates of the Arctic, Kobuk Valley, Hawaiʻi Volcanoes, Haleakalā, Pinnacles, Great Basin, Saguaro, Guadalupe Mountains, Big Bend, Badlands, Wind Cave and Theodore Roosevelt. It also covers Banff, Jasper and Yoho in the Canadian Rockies, and four famous non-park sites listed separately: Antelope Canyon, Horseshoe Bend, Monument Valley and The Wave.
 
-- **Attraction maps**: 645 curated sights, 246 hiking trails traced on real OpenStreetMap paths, photo galleries, satellite and 3D terrain views.
+- **Attraction maps**: 768 curated sights, 298 hiking trails traced on real OpenStreetMap paths, photo galleries, satellite and 3D terrain views.
 - **Auto-generated itineraries**: pick parks, dates and an arrival airport, and get a day-by-day plan with times, drive durations, sunrise and sunset stops, and nightly lodging.
 - **Date-aware alerts**: seasonal closures, permits and reservations, the odds that a mountain road (Tioga Road, Going-to-the-Sun Road…) is open on your date based on 20 years of opening and closing dates, a 16-day forecast, NWS warnings, and live NPS alerts translated into Chinese.
 - **Booking timeline**: when each lodge, campground, permit lottery, timed entry or boat ticket on your trip opens for booking, with calendar (.ics) reminders; mandatory shuttles (Zion, Grand Canyon, Mariposa Grove, Moraine Lake, Kennecott) are built into the timings.

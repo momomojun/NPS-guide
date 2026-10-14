@@ -22,8 +22,9 @@ const LABEL_SIDE: Record<string, Side> = {
   lavo: "right",
   yose: "right",
   seki: "left",
-  // 左下角是夏威夷小图
+  // 海峡群岛右边是洛杉矶，尖峰石阵右边紧挨着优胜美地、红杉：都标在别处
   chis: "above",
+  pinn: "left",
   yell: "right",
   grte: "left",
   deva: "below",
@@ -40,7 +41,7 @@ const LABEL_SIDE: Record<string, Side> = {
   jasp: "right",
   yoho: "left",
   jotr: "right",
-  // 右边就是地图边缘
+  // 右边是丹佛
   romo: "left",
   glac: "right",
   // 左边就是小图边框
@@ -51,6 +52,9 @@ const LABEL_SIDE: Record<string, Side> = {
   lacl: "left",
   // 夏威夷小图：夏威夷火山在大岛东南角，右边就是小图边框
   havo: "left",
+  hale: "left",
+  // 风洞右边紧挨着恶地
+  wica: "left",
   // 白沙、卡尔斯巴德洞窟挨着地图右下角，石化林右边是新墨西哥的州名
   whsa: "left",
   cave: "above",
@@ -190,24 +194,27 @@ export function WestMap({
         ))}
       </MapDeclutter>
 
-      <div className="mt-6 w-full border border-line bg-paper p-4 sm:absolute sm:top-0 sm:right-0 sm:mt-0 sm:w-[36%]">
+      {/* 阿拉斯加、夏威夷两张小图放在主图下面一排：主图往东扩到南北达科他以后，右上角压着的正好是北达科他 */}
+      <div className="mt-6 grid items-start gap-4 sm:grid-cols-[3fr_2fr]">
+      <div className="w-full border border-line bg-paper p-4">
         <p className="eyebrow break-keep text-mute">{alaskaLabel}</p>
         <MapDeclutter className="relative mt-2" style={{ aspectRatio: `${alaskaMap.width} / ${alaskaMap.height}` }}>
-          <Shapes view={alaskaMap} cityNames={cityNames} textScale={3} />
+          <Shapes view={alaskaMap} cityNames={cityNames} textScale={2} />
           {alaskaParks.map((park) => (
             <Marker key={park.code} park={park} view={alaskaMap} compact />
           ))}
         </MapDeclutter>
       </div>
 
-      <div className="mt-4 w-1/2 border border-line bg-paper p-3 sm:absolute sm:bottom-0 sm:left-0 sm:mt-0 sm:w-[22%]">
+      <div className="w-1/2 border border-line bg-paper p-3 sm:w-full">
         <p className="eyebrow break-keep text-mute">{hawaiiLabel}</p>
         <MapDeclutter className="relative mt-2" style={{ aspectRatio: `${hawaiiMap.width} / ${hawaiiMap.height}` }}>
-          <Shapes view={hawaiiMap} cityNames={cityNames} textScale={4} />
+          <Shapes view={hawaiiMap} cityNames={cityNames} textScale={2.5} />
           {hawaiiParks.map((park) => (
             <Marker key={park.code} park={park} view={hawaiiMap} compact />
           ))}
         </MapDeclutter>
+      </div>
       </div>
     </div>
   );

@@ -613,6 +613,10 @@ const EXCLUDE = {
     "Turning a river into the heart of a mountain",
   ],
   "blca-night-sky": ["Rock faces can appear to dramatically change color"],
+  // Buck Hill 搜到的只有山顶匍匐圆柏的特写
+  "thro-buck-hill": ["Juniperus horizontalis"],
+  // 一个小孩站在前面看河，做首图不合适
+  "thro-wind-canyon": ["Overlooking the Little Missouri River (52708623085)"],
 };
 
 /**

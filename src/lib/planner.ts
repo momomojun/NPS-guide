@@ -353,6 +353,8 @@ export type LodgingLookup = (day: number) => { from?: LodgingPoint; to?: Lodging
 
 /** 最忙那天在这么久以内都算一样轻松（和自动生成攻略正常节奏的上限一样），再比各天平不平均（平方和），见 splitIntoDays */
 const SPLIT_COMFORT_MIN = 9 * 60;
+/** 从出发地开到第一个景点不到这么久，第一天就不能空着 */
+const LEADING_EMPTY_MIN = 8 * 60;
 
 /**
  * 把排好顺序的景点切成 dayCount 天，让最忙的一天尽量轻松（线性划分，动态规划）；最忙那天一样时，
@@ -376,14 +378,19 @@ export function splitIntoDays(sequence: PlanStop[], dayCount: number, lodgingFor
     const lodging = { ...lodgingFor?.(day), previous: sequence[i - 1] };
     const drive = lodging.drive ?? 1;
     if (j <= i) {
-      // 没安排景点的一天：要换地方（比如最后一天开回机场）也得开车，按从前一个景点开到当晚住处估；连住同一家是休息日
       const { from, to } = lodging;
+      if (!sequence[i - 1]) {
+        // 行程第一天就没景点：第一个景点就在路上、半天能开到的（费尔班克斯到育空河 3 个多小时），不让第一天空着，
+        // 不然第二天要从住处（Coldfoot）折回去看路上的景点；远到一天只够赶路的才可以空着，按路过第一个景点估。
+        // 还没定住处时也一样（这时候没法知道空着的一天要开多久，算成 0 的话总会把第一天空出来）
+        if (!sequence[i]) return 0;
+        const toFirst = from ? morningMinutes(lodging, sequence[i]) * drive : 0;
+        if (toFirst < LEADING_EMPTY_MIN) return Infinity;
+        return toFirst + (to ? eveningMinutes(lodging, sequence[i]) * drive : 0);
+      }
+      // 中间、最后没安排景点的一天：要换地方（比如最后一天开回机场）也得开车，按从前一个景点开到当晚住处估；连住同一家是休息日
       if (!to || from?.id === to.id) return 0;
-      if (sequence[i - 1]) return eveningMinutes(lodging, sequence[i - 1]) * drive;
-      // 第一天就没景点、却要从机场开到住处（费尔班克斯到 Coldfoot 6 小时）：按路过第一个景点估。
-      // 不算的话这一天算成 0，切分时会把它空着，第二天再从住处折回去看路上的景点
-      if (!from || !sequence[i]) return 0;
-      return (morningMinutes(lodging, sequence[i]) + eveningMinutes(lodging, sequence[i])) * drive;
+      return eveningMinutes(lodging, sequence[i - 1]) * drive;
     }
     return (
       duration[j] -
