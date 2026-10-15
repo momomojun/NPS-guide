@@ -194,7 +194,6 @@ export const yosemite: Attraction[] = [
     mustSee: true,
     summary: "海拔约 2,199 米，站在山谷上方俯瞰全景，半穹顶就在正对面，还能看到弗纳尔和内华达瀑布。",
     tips: [
-      "2026 年 9 月 23 日起 Glacier Point Road 因 Dome Fire 烟雾和灭火作业临时封闭，NPS 说不是季末封路，重开时间看火情；四英里步道仍可以徒步上来",
       "从山谷开车约 1 小时",
       "冬季 Glacier Point Road 只通到 Badger Pass 滑雪场，冰川点不通车",
       "日落前后车位紧张，早点到",
@@ -629,9 +628,6 @@ export const yosemite: Attraction[] = [
     lon: -119.61708,
     start: { lat: 37.54856, lon: -119.63368, nameZh: "Chilnualna Falls 步道口（Wawona）" },
     durationMin: 330,
-    openMonths: [],
-    closedNote:
-      "2026 年 9 月 Dome Fire 在瀑布以北不远处起火，步道和往 Buena Vista、Crescent Lakes 的步道都关闭，重开时间以 NPS 公告为准；可以改去附近马里波萨巨杉林的步道。",
     trail: {},
     hike: { distanceMi: 8.2, gainFt: 2400, difficulty: "hard" },
     bestMonths: [4, 5, 6],

@@ -17,6 +17,7 @@ import { localize } from "@/i18n/convert";
 import { getDictionary } from "@/i18n/dictionaries";
 import { parkVisits } from "@/lib/visits";
 import { headerPhoto } from "@/components/site/header-photo";
+import { tempClosures } from "@/data/closures";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/plan">): Promise<Metadata> {
   const { locale } = await params;
@@ -83,6 +84,9 @@ export default async function PlanPage({ params }: PageProps<"/[locale]/plan">) 
           difficulty: dict.difficulty,
           timeOfDay: dict.timeOfDay,
           shuttleNames: Object.fromEntries(shuttleSystems.map((system) => [system.id, localize(system.nameZh, locale)])),
+          closureReasons: Object.fromEntries(
+            tempClosures.flatMap((closure) => closure.attractions.map((id) => [id, localize(closure.reasonZh, locale)])),
+          ),
           shuttleParking: Object.fromEntries(
             shuttleSystems.flatMap((system) =>
               system.hub.parkingZh ? [[system.id, localize(system.hub.parkingZh, locale)]] : [],

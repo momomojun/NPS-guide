@@ -2,7 +2,16 @@ import { Fragment } from "react";
 import type { ParkActivity } from "@/data/activities";
 import type { AttractionWithPhoto } from "@/data/attractions";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { formatMonths } from "@/i18n/format";
+import { fill, formatMonths } from "@/i18n/format";
+
+/** 公园页列出来的临时关闭（原因已经转成当前语言） */
+export interface ParkClosure {
+  ids: string[];
+  reason: string;
+  /** 预计哪天重开；null 是没公布 */
+  reopen: string | null;
+  checked: string;
+}
 
 /** 开放月份和说明都一样的景点（比如同一条冬天不通车的观景路上的几个观景台）合成一条，说明只写一次 */
 function groupByNote(list: AttractionWithPhoto[]): AttractionWithPhoto[][] {
@@ -34,16 +43,20 @@ function Names({ group, className }: { group: AttractionWithPhoto[]; className: 
 export function ActivitiesSection({
   activities,
   attractions,
+  closures,
   dict,
 }: {
   activities: ParkActivity[];
   attractions: AttractionWithPhoto[];
+  closures: ParkClosure[];
   dict: Dictionary;
 }) {
   const t = dict.park.activities;
   const closedNow = attractions.filter((a) => a.openMonths?.length === 0);
   const seasonal = attractions.filter((a) => a.openMonths && a.openMonths.length > 0);
-  if (activities.length === 0 && closedNow.length === 0 && seasonal.length === 0) return null;
+  if (activities.length === 0 && closedNow.length === 0 && closures.length === 0 && seasonal.length === 0) return null;
+  const md = (date: string) => ({ m: Number(date.slice(5, 7)), d: Number(date.slice(8, 10)) });
+  const byId = new Map(attractions.map((a) => [a.id, a]));
   const hasAttraction = (id: string) => attractions.some((a) => a.id === id);
 
   return (
@@ -85,14 +98,26 @@ export function ActivitiesSection({
         </div>
       )}
 
-      {(closedNow.length > 0 || seasonal.length > 0) && (
+      {(closedNow.length > 0 || closures.length > 0 || seasonal.length > 0) && (
         <div className={activities.length > 0 ? "lg:col-span-5" : "lg:col-span-8"}>
           <h3 className="font-serif text-2xl">{t.openingTitle}</h3>
           <p className="mt-2 text-xs leading-6 text-mute">{t.openingChecked}</p>
-          {closedNow.length > 0 && (
+          {(closedNow.length > 0 || closures.length > 0) && (
             <div className="mt-6 border-l-2 border-clay-600 bg-clay-50 px-5 py-4">
               <p className="text-xs tracking-[0.1em] text-clay-700">{t.closedNow}</p>
               <ul className="mt-3 space-y-3">
+                {closures.map((closure) => (
+                  <li key={closure.ids.join()} className="text-sm leading-6">
+                    <Names
+                      group={closure.ids.flatMap((id) => byId.get(id) ?? [])}
+                      className="font-serif text-base hover:text-clay-700"
+                    />
+                    <span className="ml-2 text-xs text-clay-700">
+                      {closure.reopen ? fill(t.reopenOn, md(closure.reopen)) : fill(t.reopenUnknown, md(closure.checked))}
+                    </span>
+                    <span className="mt-0.5 block text-xs leading-6 text-clay-800">{closure.reason}</span>
+                  </li>
+                ))}
                 {groupByNote(closedNow).map((group) => (
                   <li key={group[0].id} className="text-sm leading-6">
                     <Names group={group} className="font-serif text-base hover:text-clay-700" />

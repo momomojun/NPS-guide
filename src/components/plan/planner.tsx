@@ -15,7 +15,7 @@ import type { Photo } from "@/data/attractions/types";
 import { climate } from "@/data/climate.generated";
 import type { LodgingOption } from "@/data/lodging";
 import type { ServicePoint } from "@/data/services.generated";
-import { fill, formatBig, formatDuration } from "@/i18n/format";
+import { fill, formatBig, formatDuration, formatMonths } from "@/i18n/format";
 import { crowdOf } from "@/lib/crowd";
 import { addDays, monthOf, nominalDate } from "@/lib/dates";
 import { airbnbUrl } from "@/lib/airbnb";
@@ -23,7 +23,7 @@ import { alertsForStop, type AlertsResponse } from "@/lib/alert-match";
 import type { BookingRule } from "@/data/bookings";
 import { bookingsForTrip } from "@/lib/booking";
 import { flightKey, useFlightStore } from "@/lib/flight-store";
-import { generateTrip, guideParks } from "@/lib/generate-trip";
+import { closedKind, generateTrip, guideParks } from "@/lib/generate-trip";
 import { moonNight } from "@/lib/moon";
 import { drivingMinutesFrom, drivingRoute, type DrivingRoute } from "@/lib/osrm-client";
 import { learnDrive, learnPace, NEUTRAL_PACE, paceAdjusts, pacedMinutes } from "@/lib/personal-pace";
@@ -82,6 +82,7 @@ import type { DayView, DragSpot, PlannerPark, PlannerText, ResolvedLodging, Star
 import { alertCovers, type DayWeather } from "./weather";
 import { weatherNotes } from "./weather-line";
 import { PageHeader } from "@/components/site/page-header";
+import { closedAllDays } from "@/lib/closures";
 
 const LODGING_COLOR = "#2f4a5a";
 /** 地图显示整个行程（每天一种颜色） */
@@ -208,6 +209,38 @@ export function Planner({
     const byMonth = stop?.openMonths !== undefined && tripMonth !== null && !stop.openMonths.includes(tripMonth);
     if (!note?.note || stop?.openMonths?.length === 0 || (byMonth && !note.decides)) return undefined;
     return fill(text.plan.roads.stop, { road: note.name, note: note.note });
+  };
+  // 施工、山洪这类临时关闭（出发这几天都关着）：说原因和什么时候重开
+  const closureNote = (id: string, dates = Array.from({ length: trip.dayCount }, (_, day) => dateOf(day))) => {
+    const state = closedAllDays(id, dates);
+    if (!state) return undefined;
+    const reopen = state.closure.reopen;
+    const until = reopen
+      ? fill(t.warnings.reopenOn, { m: Number(reopen.slice(5, 7)), d: Number(reopen.slice(8, 10)) })
+      : t.warnings.reopenUnknown;
+    return `${until}：${text.closureReasons[id] ?? state.closure.reasonZh}`;
+  };
+  // 出发前表单里列的“去不了的景点”：和自动生成攻略用同一套判断，热门的（必去、园内热度前 8）排前面
+  const unavailableOf = (input: { parks: string[]; month: number; startDate: string; days: number }) => {
+    const tripDates = input.startDate ? Array.from({ length: input.days }, (_, day) => addDays(input.startDate, day)) : [];
+    const closureDates = tripDates.length > 0 ? tripDates : [addDays(nominalDate(input.month), 0)];
+    return attractions
+      .filter((a) => input.parks.includes(a.park))
+      .flatMap((a) => {
+        const kind = closedKind(a, input.month, tripDates, closureDates);
+        if (!kind) return [];
+        const road = roadFor(a.id);
+        const reason =
+          kind === "closure"
+            ? closureNote(a.id, closureDates)
+            : kind === "road" && road
+              ? fill(t.wizard.roadUnlikely, { road: text.roadNames[road.id] ?? road.id })
+              : kind === "tour"
+                ? t.wizard.tourOff
+                : a.closedNote ?? fill(t.warnings.closed, { months: formatMonths(a.openMonths ?? [], text.units) });
+        return [{ id: a.id, name: a.nameZh, reason: reason ?? "", popular: Boolean(a.mustSee) || (a.hotRank ?? 99) <= 8, rank: a.hotRank ?? 99 }];
+      })
+      .sort((x, y) => Number(y.popular) - Number(x.popular) || x.rank - y.rank);
   };
   // 有固定班次、出发这几天都不开的游船和导览团：说哪几天才开
   const tourClosedNote = (id: string) => {
@@ -1047,6 +1080,7 @@ export function Planner({
               busy={generating}
               error={generateError}
               onGenerate={generate}
+              unavailableOf={unavailableOf}
             />
           </div>
         )}
@@ -1198,7 +1232,7 @@ export function Planner({
           nameOf={(id) => byId.get(id)?.nameZh ?? id}
           tripIds={allIds}
           dated={Boolean(trip.startDate)}
-          closedNoteOf={(id) => roadClosedNote(id) ?? tourClosedNote(id) ?? byId.get(id)?.closedNote}
+          closedNoteOf={(id) => closureNote(id) ?? roadClosedNote(id) ?? tourClosedNote(id) ?? byId.get(id)?.closedNote}
           activities={activities.filter((activity) => guideParkList.some((p) => p.code === activity.park))}
           attractionExists={(id) => byId.has(id)}
           stargazing={stargazing}

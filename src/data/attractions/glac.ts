@@ -15,7 +15,7 @@ const SWIFTCURRENT_PICNIC_PARKING = {
 const SUN_ROAD_CLOSED =
   "翻越洛根山口的高山路段每年要扫雪到 6 月中到 7 月上旬才全线通车（2026 年 6 月 22 日），通常到 10 月第三个周一关闭（2026 年 10 月 19 日），初雪可能更早封路；其余时间西侧只能开到 Lake McDonald Lodge（春秋可到 Avalanche），东侧一般只到 Rising Sun 一带，可以改去麦克唐纳湖、雪松步道，或走 2 号公路绕到东侧的圣玛丽湖和 Many Glacier。";
 const TWO_MEDICINE_CLOSED =
-  "Two Medicine 路平常约 5 月底通车、10 月后看积雪关闭；2026 年因道路改造，9 月 8 日起封到 Running Eagle Falls 步道口，9 月中下旬起从 49 号公路路口全封，露营地整年关闭。改造工程预计 2027 年底完工（可能拖到 2028 年），施工期间随时可能封路，出发前看 NPS 施工公告；这段时间可以改去东侧的圣玛丽湖和 Many Glacier。";
+  "Two Medicine 路平常约 5 月底通车、10 月后看积雪关闭（2026 年 9 月起的道路改造见临时关闭）；这段时间可以改去东侧的圣玛丽湖和 Many Glacier。";
 
 export const glacier: Attraction[] = [
   {

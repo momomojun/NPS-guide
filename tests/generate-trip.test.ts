@@ -266,3 +266,26 @@ test("瓜达卢佩山 + 卡尔斯巴德洞窟 4 天（埃尔帕索进出）：�
   assert.ok(!planned(trip).includes("gumo-dog-canyon"), planned(trip).join());
   assert.ok(guide.skipped?.tooFar?.includes("gumo-dog-canyon"));
 });
+
+test("12 月去红杉与国王峡谷：Cedar Grove 那边的 Zumwalt Meadow 去不了，列在“这个月不开放”里，不排进行程", () => {
+  const { trip, guide } = generate({ parks: ["seki"], month: 12, days: 3, airport: "FAT" });
+  assert.ok(!planned(trip).includes("seki-zumwalt-meadow"));
+  assert.ok(guide.skipped?.closed?.includes("seki-zumwalt-meadow"));
+});
+
+test("临时关闭：巨人柱 Bajada 环线山洪后封着，10 月下旬的攻略不排，列为去不了", () => {
+  const { trip, guide } = generate({ parks: ["sagu"], start: "2026-10-20", days: 2, airport: "PHX" });
+  for (const id of ["sagu-bajada-loop", "sagu-valley-view-overlook", "sagu-signal-hill"]) {
+    assert.ok(!planned(trip).includes(id), id);
+    assert.ok(guide.skipped?.closed?.includes(id), id);
+  }
+});
+
+test("临时关闭只关到某一天的：关着的那天不排，挪到重开以后（Moose-Wilson Road 11 月 16 日重开）", () => {
+  const { trip, timelines } = generate({ parks: ["grte"], start: "2026-11-14", days: 4, airport: "JAC" });
+  const day = trip.days.findIndex((items) => items.some((item) => item.id === "grte-moose-wilson-road"));
+  if (day >= 0) {
+    assert.ok(day >= 2, `排在了第 ${day + 1} 天（还关着）`);
+    assert.ok(!timelines[day].entries.some((entry) => entry.warnings.includes("tempClosed")));
+  }
+});

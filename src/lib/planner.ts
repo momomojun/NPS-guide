@@ -1,5 +1,6 @@
 import type { AttractionKind, EntryHours, ParkingRule, TimeOfDay } from "../data/attractions/types";
 import { lastBusMinutes, shuttleLeg, shuttleOptions, type ShuttleRide } from "./shuttle";
+import { closureOn } from "./closures";
 import { aroundMinutes } from "./roads";
 import { departuresOn, weekdayOf, type Departures } from "./tours";
 import { gatewayNode, travelMinutes } from "./travel";
@@ -469,7 +470,11 @@ export type StopWarning =
   | "noService"
   | "afterHours"
   | "offTime"
-  | "parkingFull";
+  | "parkingFull"
+  /** 这天临时关闭（施工、山洪、山火……，见 data/closures.ts） */
+  | "tempClosed"
+  /** 没公布重开时间的临时关闭，离核对那天已经很久，可能已经开了 */
+  | "maybeClosed";
 
 export interface TimelineEntry {
   id: string;
@@ -734,7 +739,20 @@ export function buildTimeline(stops: PlanStop[], context: DayContext): DayTimeli
     stops.map((stop) => entryWindow(stop, context.date)),
     stops.map((stop) => parkingOn(stop, context.date)),
   );
-  return withShuttles(timeline, stops, legs, back, context.date, context.sun);
+  return withClosures(withShuttles(timeline, stops, legs, back, context.date, context.sun), context.date);
+}
+
+/** 这天临时关闭的景点加上提醒 */
+function withClosures(timeline: DayTimeline, date: string | null | undefined): DayTimeline {
+  if (!date) return timeline;
+  let changed = false;
+  const entries = timeline.entries.map((entry) => {
+    const state = closureOn(entry.id, date);
+    if (!state) return entry;
+    changed = true;
+    return { ...entry, warnings: [...entry.warnings, state.certain ? ("tempClosed" as const) : ("maybeClosed" as const)] };
+  });
+  return changed ? { ...timeline, entries } : timeline;
 }
 
 /**

@@ -263,7 +263,6 @@ export const hawaiiVolcanoes: Attraction[] = [
     summary:
       "沿 2018 年地震震裂、现在只许步行和骑车的老环山公路走约 1.6 公里，到 Keanakākoʻi 火山口和旁边的观景点。名字意思是“石斧洞”，夏威夷人曾在这里采坚硬的玄武岩做石斧；这里离 Halemaʻumaʻu 最近，喷发时能近看熔岩喷泉，晴天还能看到冒纳罗亚和冒纳凯阿。",
     tips: [
-      "2026 年 10 月 1 日起，山顶地震增多、火山活动不稳，Keanakākoʻi 这一侧（老环山公路、附近观景点和通到这里的火山口边缘步道）临时关闭，Devastation 停车场照常开放；出发前看公园公告",
       "喷发期间车位极少，满了就去别的观景台；最后约 270 米是松散的火山渣路",
     ],
     photoFile: "HAVO 20211006 Keanakakoi side of Kilauea and visitors J Wei (51563438966).jpg",
@@ -397,7 +396,6 @@ export const hawaiiVolcanoes: Attraction[] = [
     summary:
       "从 11 号公路岔进去的单车道山路：先经过熔岩树模（Tree Molds）和被熔岩包围的古老森林 Kīpukapuaulu（当地人叫“鸟园”，能看到 ʻapapane 等夏威夷特有的鸟），再穿过 koa、ʻōhiʻa 林爬到海拔约 2,030 米的冒纳罗亚观景台，1937 年修的八角形石亭里能俯瞰 Kīlauea 和远处的大海。",
     tips: [
-      "2026 年 9 月 23 日到 10 月 29 日，第二道牛栏（Kīpukapuaulu 往上约 3 公里）到观景台一段因伐树全封，车、人、自行车都不能进，为之后的道路整修做准备；Kīpukapuaulu 步道也因危险树木关闭，重开时间未定",
       "路窄弯多、只有一条车道，会车要靠边让；大巴、房车只能开到 Kīpukapuaulu 的掉头处",
     ],
     photoFile: "Taking in the view from Mauna Loa Lookout (27702549919).jpg",

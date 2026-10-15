@@ -18,6 +18,15 @@ export interface WizardPlace {
   lon: number;
 }
 
+/** 出发前表单里列出来的去不了的景点 */
+export interface UnavailableStop {
+  id: string;
+  name: string;
+  reason: string;
+  /** 必去或者园内热度前几名 */
+  popular: boolean;
+}
+
 export interface WizardInput {
   /** 第一个是主要的公园，后面是顺路一起玩的 */
   parks: string[];
@@ -161,6 +170,7 @@ export function TripWizard({
   busy,
   error,
   onGenerate,
+  unavailableOf,
 }: {
   parks: PlannerPark[];
   airports: Record<string, Airport>;
@@ -168,6 +178,8 @@ export function TripWizard({
   busy: boolean;
   error: string | null;
   onGenerate: (input: WizardInput) => void;
+  /** 这几座公园、这个月（或这几天）去不了的景点，热门的在前 */
+  unavailableOf: (input: { parks: string[]; month: number; startDate: string; days: number }) => UnavailableStop[];
 }) {
   const t = text.plan.wizard;
   const nextMonth = (new Date().getMonth() + 1) % 12 + 1;
@@ -201,6 +213,12 @@ export function TripWizard({
   const destinationValue = sameReturn ? originValue : (destination ?? originValue);
 
   const field = "mt-3 block w-full border-b border-ink/30 bg-transparent py-1.5 text-sm focus:border-ink focus:outline-none";
+  const tripMonth = startDate ? Number(startDate.slice(5, 7)) : month;
+  const unavailable = unavailableOf({ parks: selectedParks.map((p) => p.code), month: tripMonth, startDate, days });
+  // 不多的话全列出来；多了只列热门的，其余收起来
+  const showAll = unavailable.length <= 6;
+  const popularUnavailable = unavailable.filter((stop) => showAll || stop.popular);
+  const otherUnavailable = unavailable.filter((stop) => !showAll && !stop.popular);
   const submit = (event: FormEvent) => {
     event.preventDefault();
     if (!originValue || !destinationValue) return;
@@ -286,6 +304,37 @@ export function TripWizard({
           </select>
         </label>
       </div>
+
+      {/* 先说这个月（这几天）去不了哪些热门景点：想去的地方去不了，就换个时间 */}
+      {unavailable.length > 0 && (
+        <div className="border-l-2 border-clay-600 bg-clay-50/70 px-5 py-4">
+          <p className="text-sm text-clay-800">
+            {fill(startDate ? t.unavailableDated : t.unavailableMonth, { month: tripMonth, n: unavailable.length })}
+          </p>
+          {popularUnavailable.length > 0 && (
+            <ul className="mt-3 space-y-2.5">
+              {popularUnavailable.map((stop) => (
+                <li key={stop.id} className="text-sm leading-6">
+                  <span className="font-serif text-base">{stop.name}</span>
+                  <span className="block text-xs leading-5 text-ink-soft">{stop.reason}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          {otherUnavailable.length > 0 && (
+            <details className="mt-3 text-xs leading-6 text-ink-soft">
+              <summary className="cursor-pointer text-clay-800">{fill(t.unavailableOthers, { n: otherUnavailable.length })}</summary>
+              <ul className="mt-2 space-y-2">
+                {otherUnavailable.map((stop) => (
+                  <li key={stop.id}>
+                    <span className="text-ink">{stop.name}</span>：{stop.reason}
+                  </li>
+                ))}
+              </ul>
+            </details>
+          )}
+        </div>
+      )}
 
       {companions.length > 0 && (
         <div>

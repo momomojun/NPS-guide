@@ -32,6 +32,7 @@ import { fill, formatMonths } from "@/i18n/format";
 import { isUsingDemoKey } from "@/lib/datagov";
 import { roadsOf } from "@/lib/roads";
 import { parkVisits } from "@/lib/visits";
+import { tempClosures } from "@/data/closures";
 
 // 不写 generateStaticParams：页面每次请求时渲染，接口数据由 fetch 缓存兜住，
 // 这样 build 不会一次性调几十次接口，接口失败也不会把错误页缓存下来。
@@ -79,8 +80,23 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
     )
     .slice(0, 5)
     .map(({ a }) => a);
+  // 还没重开的临时关闭（施工、山洪……），公园页“开放情况”里列出来
+  const today = new Date().toISOString().slice(0, 10);
+  const parkClosures = tempClosures
+    .filter((closure) => closure.attractions.some((id) => attractions.some((a) => a.id === id)))
+    .filter((closure) => !closure.reopen || closure.reopen > today)
+    .map((closure) => ({
+      ids: closure.attractions.filter((id) => attractions.some((a) => a.id === id)),
+      reason: localize(closure.reasonZh, locale),
+      reopen: closure.reopen,
+      checked: closure.checked,
+    }));
   const hasSeasonInfo =
-    parkActivities.length > 0 || attractions.some((a) => a.openMonths) || parkRoads.length > 0 || visits !== null;
+    parkActivities.length > 0 ||
+    attractions.some((a) => a.openMonths) ||
+    parkClosures.length > 0 ||
+    parkRoads.length > 0 ||
+    visits !== null;
   // “适用于”只写没收录的地名会让人以为只管那几处，所以有这一行时把对上的景点和住宿也列上
   const targetName = (id: string) =>
     attractions.find((a) => a.id === id)?.nameZh ?? localize(lodgingOptions.find((l) => l.id === id)?.nameZh ?? id, locale);
@@ -315,7 +331,7 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
         <section id="activities" className="cv-auto [--cv-h:3000px] scroll-mt-28 border-t border-line">
           <div className={`${container} py-20 lg:py-28`}>
             <p className="eyebrow mb-12 text-mute">{t.activities.eyebrow}</p>
-            <ActivitiesSection activities={parkActivities} attractions={attractions} dict={dict} />
+            <ActivitiesSection activities={parkActivities} attractions={attractions} closures={parkClosures} dict={dict} />
             {visits && <VisitsSection visits={visits} locale={locale} dict={dict} />}
             {parkRoads.length > 0 && <RoadsSection roads={parkRoads} attractions={attractions} dict={dict} />}
           </div>

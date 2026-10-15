@@ -12,6 +12,7 @@ import {
   type SunWindow,
   type TimelineEntry,
 } from "./planner";
+import { closedAllDays } from "./closures";
 import { addDays } from "./dates";
 import { moonNight } from "./moon";
 import { acrossClosedRoad, bestRoadDay, openChance, ROAD_LIKELY, roadDecides, roadFor, roadStatus } from "./roads";
@@ -155,21 +156,40 @@ function score(stop: GuideStop, month: number, parkSize: number): number {
   return value;
 }
 
+/** 去不了的原因：游船导览这几天不开、临时关闭、季节性山路往年这几天多半没通、不在开放月份 */
+export type ClosedKind = "tour" | "closure" | "road" | "season";
+
+/**
+ * 出发这几天（tripDates，只定了月份时是空的）去不去得了。closureDates 是看临时关闭用的日期：
+ * 定了日期就是那几天，只定了月份时是那个月的大概日期。自动生成攻略不排去不了的，出发前表单里也用它列出“去不了的热门景点”
+ */
+export function closedKind(
+  stop: Pick<GuideStop, "id" | "openMonths">,
+  month: number,
+  tripDates: string[],
+  closureDates: (string | null)[],
+): ClosedKind | null {
+  // 有固定班次的游船、导览团：出发这几天都不开（比如冰川的红色老爷车团 6 月 20 日才开）
+  if (tripDates.length > 0 && !tripDates.some((date) => runsOn(stop.id, date, true))) return "tour";
+  // 施工、山洪这类临时关闭，出发这几天都关着（只关几天的，排进去以后按“这天去不了”挪到开着的日子）
+  if (closedAllDays(stop.id, closureDates)) return "closure";
+  // 季节性道路：定了日期就看这几天里最有把握的一天，往年通车的年份不到一半就当去不了；
+  // 路通了就能去的景点不再按开放月份算（月份只是粗算），路通了还要等步道化雪的两个都要看
+  const byMonth = stop.openMonths !== undefined && !stop.openMonths.includes(month);
+  const road = roadFor(stop.id);
+  const best = road && tripDates.length > 0 ? bestRoadDay(road, tripDates) : null;
+  if (!road || !best) return byMonth ? "season" : null;
+  if (best.chance < ROAD_LIKELY) return "road";
+  return byMonth && (!roadDecides(road, stop.id) || stop.openMonths?.length === 0) ? "season" : null;
+}
+
 export function generateTrip(input: GenerateInput, context: GenerateContext): { trip: Trip; guide: GuideInfo } {
   const skipped: Required<GuideSkipped> = { permit: [], closed: [], tooHard: [], noTime: [], tooFar: [], across: [] };
   const available: GuideStop[] = [];
-  // 季节性道路：定了日期就看这几天里最有把握的一天，往年通车的年份不到一半就当去不了；
-  // 路通了就能去的景点不再按开放月份算（月份只是粗算），路通了还要等步道化雪的两个都要看
   const tripDates = input.startDate ? Array.from({ length: input.days }, (_, day) => addDays(input.startDate, day)) : [];
-  const closed = (stop: GuideStop) => {
-    // 有固定班次的游船、导览团：出发这几天都不开（比如冰川的红色老爷车团 6 月 20 日才开）
-    if (tripDates.length > 0 && !tripDates.some((date) => runsOn(stop.id, date, true))) return true;
-    const byMonth = stop.openMonths !== undefined && !stop.openMonths.includes(input.month);
-    const road = roadFor(stop.id);
-    const best = road && tripDates.length > 0 ? bestRoadDay(road, tripDates) : null;
-    if (!road || !best) return byMonth;
-    return (byMonth && (!roadDecides(road, stop.id) || stop.openMonths?.length === 0)) || best.chance < ROAD_LIKELY;
-  };
+  // 临时关闭按日期看；只定了月份时按那个月的大概日期
+  const closureDates = tripDates.length > 0 ? tripDates : Array.from({ length: input.days }, (_, day) => context.dateFor?.(day) ?? null);
+  const closed = (stop: GuideStop) => closedKind(stop, input.month, tripDates, closureDates) !== null;
   // 只定了月份：按每年公布的日期举行的（满月徒步、卢塞罗湖导览）不知道这个月哪天有，不自动排；
   // 攻略说明的特别活动里列了日期，可以自己加进去
   const datedTour = (stop: GuideStop) => {
@@ -280,7 +300,12 @@ export function generateTrip(input: GenerateInput, context: GenerateContext): { 
    */
   const mistimed = (entry: TimelineEntry) =>
     entry.warnings.some(
-      (warning) => warning === "noService" || warning === "missDeparture" || warning === "afterHours" || warning === "offTime",
+      (warning) =>
+        warning === "noService" ||
+        warning === "missDeparture" ||
+        warning === "afterHours" ||
+        warning === "offTime" ||
+        warning === "tempClosed",
     ) ||
     (entry.warnings.includes("missSunset") && onlyAt(stopById.get(entry.id)!) === "sunset");
   const missed = (timeline: ReturnType<typeof buildTimeline>) => timeline.entries.filter(mistimed).length;

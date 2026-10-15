@@ -90,9 +90,6 @@ export const whiteSands: Attraction[] = [
     lon: -106.23807,
     start: { lat: 32.79358, lon: -106.23932, nameZh: "Interdune Boardwalk 停车场" },
     durationMin: 30,
-    openMonths: [],
-    closedNote:
-      "2024 年 4 月一架美国空军 F-16 坠毁在园内，善后期间沙丘大道第 3–5.5 英里划为安全走廊：可以开车通过，但不能停车、下车，木栈道随之关闭，2026 年仍未重开（以 NPS 公告为准）。可以改走前面的沙丘生命自然步道、干湖步道，或直接开到沙丘中心看纯白的沙丘。",
     trail: {},
     hike: { distanceMi: 0.4, difficulty: "easy" },
     summary:

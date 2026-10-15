@@ -115,9 +115,6 @@ export const mesaVerde: Attraction[] = [
     durationMin: 45,
     hours: SITE_HOURS,
     hike: { distanceMi: 0.75, difficulty: "easy", loop: true },
-    openMonths: [],
-    closedNote:
-      "2026 年 9 月中旬 NPS 公告：去 Far View Sites 和 Cedar Tree Tower 的支路因道路施工暂时封闭，车辆和行人都不能进，重新开放日期以 NPS 的 Current Conditions 页面为准；可以去 Mesa Top Loop 看同样是台地顶村落的半地穴屋和 Mesa Top Sites。",
     summary:
       "公元 900–1300 年前后台地顶的农耕村落：远景屋（Far View House）、烟斗神龛屋、郊狼村、一座干涸的蓄水池和石塔，散落在矮松林里，一条约 1.2 公里的平坦土路串起六处遗址。",
     tips: ["说明崖居出现之前和之后，也有人一直住在台地顶上种地", "停车位只能停 7.6 米以下的车"],

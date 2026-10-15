@@ -8,9 +8,7 @@ import type { Attraction } from "./types";
 // Golden Gate Road 全段）封闭，Valley View、Signal Hill、Sendero Esperanza 这几个只能从环线开进去的步道口暂时开不到，
 // 修好才重开，NPS 没给日期；红山游客中心后面的 Javelina Wash 小路也被冲坏关闭。Kinney Road 沿线（红山游客中心、
 // Desert Discovery 步道、King Canyon 步道口、沙漠博物馆）不受影响。东区全部开放。
-// 这是临时封闭，按惯例只写在提示里，openMonths 不改。
-const BAJADA_CLOSED_TIP =
-  "2026 年 9 月起 Bajada 环线（Hohokam Road、Golden Gate Road）因山洪冲坏路面封闭，修好才重开，出发前看 NPS 公告；封路期间只能走 Cactus Wren 等步道从园外徒步进来";
+// 这是临时封闭，写在 src/data/closures.ts（按日期，自动生成攻略不排），开放月份不改。
 const KING_CANYON_TH = { lat: 32.24719, lon: -111.16709, nameZh: "King Canyon 步道口（Kinney Road，沙漠博物馆对面）" };
 /** 东区 Cactus Forest 环线 5:00–20:30 开放（NPS operating hours），20:30 锁大门；步道 24 小时开放，可以走进来 */
 const LOOP_DRIVE_HOURS = [{ open: "05:00", close: "20:30" }];
@@ -83,7 +81,6 @@ export const saguaro: Attraction[] = [
     summary:
       "1930 年代民间资源保护队修的小路，下到两条干河床再缓缓爬上山脊，往返约 1.3 公里。尽头的长椅上能俯瞰满坡的巨人柱一直铺到 Avra 河谷，北边是锯齿状的 Picacho Peak，是西区看日落最好的地方之一。",
     tips: [
-      BAJADA_CLOSED_TIP,
       "步道口在 Hohokam Road（单行砂石路）边，车位只有十来个，停满了就先去环线上别的地方转一圈再回来",
       "看完日落天很快就黑，带头灯；环线只在白天让车开",
     ],
@@ -107,7 +104,6 @@ export const saguaro: Attraction[] = [
     summary:
       "公园里看古代岩画最好的地方：野餐区旁一段约 270 米的石阶小路爬上一座黑色火山岩小山，山顶的石头上刻满了霍霍坎人（Hohokam）约 800 年前留下的螺旋纹、人形和动物，最有名的是一块大螺旋。山顶四周是一望无际的巨人柱。",
     tips: [
-      BAJADA_CLOSED_TIP,
       "只能看、不能摸，也不要踩到刻着画的石头上；石阶不平，不能推轮椅",
       "10 月下旬的周五下午有护林员讲岩画（看 NPS 活动日历，封路的话会取消）",
     ],
@@ -128,7 +124,6 @@ export const saguaro: Attraction[] = [
     summary:
       "西区约 10 公里的砂石环线：从 Kinney Road 转进单行的 Hohokam Road，接 Golden Gate Road 绕一圈回来，一路穿过巨人柱最密的山坡，沿途有 Valley View、Signal Hill 和几处野餐区，路况好的时候普通轿车慢慢开就行。",
     tips: [
-      BAJADA_CLOSED_TIP,
       "只在白天让车开；Hohokam Road 是单行道，车长超过 40 英尺（约 12 米）的房车不能进",
       "雨后常被冲出坑和沙，低底盘车慢开；Golden Gate Road 往东到 Picture Rocks Road 那段已经永久改成步道",
     ],

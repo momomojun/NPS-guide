@@ -65,7 +65,7 @@ const roads: Omit<SeasonalRoad, "years" | "checked">[] = [
     nameEn: "Glacier Point Road",
     attractions: ["yose-glacier-point", "yose-taft-point", "yose-sentinel-dome", "yose-washburn-point"],
     noteZh:
-      "从 41 号公路通往冰川点的支路。冬季只扫雪到 Badger Pass 滑雪场，再往里要穿雪鞋或越野滑雪；每年 4 月中旬开始扫雪。2026 年 9 月 23 日起因 Dome Fire 临时封闭。",
+      "从 41 号公路通往冰川点的支路。冬季只扫雪到 Badger Pass 滑雪场，再往里要穿雪鞋或越野滑雪；每年 4 月中旬开始扫雪。",
     source: "https://www.nps.gov/yose/planyourvisit/seasonal.htm",
   },
   {

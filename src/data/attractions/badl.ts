@@ -81,9 +81,6 @@ export const badlands: Attraction[] = [
       ],
     },
     hike: { distanceMi: 1.5, difficulty: "moderate" },
-    openMonths: [],
-    closedNote:
-      "2026 年 8 月 31 日起 Notch 步道和步道两侧 30 米内全部封闭，NPS 在修已经不安全的那段木梯，没有公布重开日期，出发前看 NPS 公告。可以改走同一个停车场的 Door、Window 步道，或者去 Saddle Pass 爬一段恶地之墙。",
     bestTime: ["morning"],
     bestMonths: [5, 6, 9, 10],
     summary:

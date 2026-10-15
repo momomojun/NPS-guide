@@ -16,6 +16,7 @@ import {
 import type { AttractionWithPhoto } from "@/data/attractions";
 import type { ParkAlert } from "@/lib/alert-match";
 import { fill, formatDuration, formatMonths } from "@/i18n/format";
+import { closureOn } from "@/lib/closures";
 import { monthOf } from "@/lib/dates";
 import { moonNight } from "@/lib/moon";
 import { entryWindow, lodgingLeg, onlyAt, parkingOn, type TimelineEntry } from "@/lib/planner";
@@ -126,6 +127,18 @@ export function DayCard({
   const { day, rows, sun, timeline, from } = view;
   const duration = (minutes: number) => formatDuration(minutes, text.units);
   const month = view.date ? monthOf(view.date) : null;
+  // 临时关闭（施工、山洪……）：说为什么、什么时候重开
+  const closureText = (id: string, warning: "tempClosed" | "maybeClosed") => {
+    const state = closureOn(id, view.date);
+    if (!state) return "";
+    const { closure } = state;
+    const md = (date: string) => ({ m: Number(date.slice(5, 7)), d: Number(date.slice(8, 10)) });
+    if (warning === "maybeClosed") {
+      return fill(t.warnings.maybeClosed, { checked: fill(t.roads.monthDay, md(closure.checked)), reason: text.closureReasons[id] ?? closure.reasonZh });
+    }
+    const until = closure.reopen ? fill(t.warnings.reopenOn, md(closure.reopen)) : t.warnings.reopenUnknown;
+    return fill(t.warnings.tempClosed, { until, reason: text.closureReasons[id] ?? closure.reasonZh });
+  };
   const isTarget = (index: number) => drag.target?.day === day && drag.target.index === index;
   const isSource = (index: number) => drag.source?.day === day && drag.source.index === index;
 
@@ -398,7 +411,12 @@ export function DayCard({
                     ...entry.warnings
                       .filter((w) => w !== "parkingFull" || !parking)
                       .map((w) => ({
-                        text: w === "offTime" && onlyAt(stop) === "sunrise" ? t.warnings.offTimeSunrise : t.warnings[w],
+                        text:
+                          w === "tempClosed" || w === "maybeClosed"
+                            ? closureText(stop.id, w)
+                            : w === "offTime" && onlyAt(stop) === "sunrise"
+                              ? t.warnings.offTimeSunrise
+                              : t.warnings[w],
                         tone: "warn" as Tone,
                       })),
                   ];

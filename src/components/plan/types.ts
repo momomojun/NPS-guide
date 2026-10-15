@@ -10,6 +10,8 @@ export type PlannerText = Pick<
 > & {
   /** 班车线 id → 当前语言的名字 */
   shuttleNames: Record<string, string>;
+  /** 临时关闭的原因（按景点 id，已经转成当前语言） */
+  closureReasons: Record<string, string>;
   /** 班车线 id → 换乘点怎么停车（当前语言） */
   shuttleParking: Record<string, string>;
   /** 季节性道路 id → 当前语言的名字 */

@@ -157,9 +157,6 @@ export const jasper: Attraction[] = [
     durationMin: 90,
     trail: {},
     hike: { difficulty: "easy" },
-    openMonths: [],
-    closedNote:
-      "2024 年山火后峡谷两侧山坡不稳，从第一桥停车场到第五桥路口一段禁止进入，2026 年整季关闭、重开时间未定（以 Parks Canada 公告为准），冬季的峡谷冰上徒步也去不了；可以改去同在玛琳湖路上的药湖和玛琳湖。",
     summary:
       "玛琳河在石灰岩里切出的窄深峡谷，最窄处只有 2 米、深超过 50 米，沿峡谷有几座桥可以俯瞰激流和瀑布；冬天河面结冰后能下到峡谷底走冰上徒步。",
     tips: ["2026 年仍关闭；下游的第五桥野餐区可以去，但往上游的峡谷步道不通"],
@@ -310,9 +307,7 @@ export const jasper: Attraction[] = [
     durationMin: 90,
     trail: {},
     hike: { distanceMi: 1, gainFt: 230, difficulty: "moderate" },
-    openMonths: [],
-    closedNote:
-      "2024 年山火后 Cavell 路两侧山坡不稳，2026 年整季关闭，车辆和行人都不能进，冰川之路和 Cavell 草甸步道也关闭；Parks Canada 计划 2026 年秋到 2027 年春加固边坡，重开时间以公告为准。可以改去冰原大道上的阿萨巴斯卡冰川看冰川。",
+    openMonths: [6, 7, 8, 9, 10],
     summary:
       "贾斯珀镇南边的雪峰，北壁挂着像张开翅膀的天使冰川（Angel Glacier）。冰川之路（Path of the Glacier）往返约 1.6 公里，走到冰碛湖边，湖里常漂着冰块。",
     tips: ["平常 Cavell 路约 6 月中到 10 月中开放，14 公里山路窄而弯，车长限 7.5 米、不能带拖挂车，停车位少，早上去"],
