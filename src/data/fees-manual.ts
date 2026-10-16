@@ -22,7 +22,7 @@ export const manualFees: Record<string, ManualFees> = {
     currency: "USD",
     perPerson: 80.5,
     note:
-      "只能跟授权导览团进，这里按最便宜的下羚羊普通团估算（约 $80.50/人，含纳瓦霍部落公园门票 $15）；上羚羊约 $100–150/人（正午场最贵），羚羊峡谷 X 成人 $62/人。国家公园年卡不适用。",
+      "只能跟授权导览团进，这里按最便宜的下羚羊普通团估算（约 $80.50/人，含纳瓦霍部落公园门票 $15）；上羚羊约 $100–150/人（正午场最贵），羚羊峡谷 X 成人 $62/人。国家公园年卡不适用。从鲍威尔湖划船、坐游船进去的不用这笔，另付格伦峡谷国家休闲区门票（每车 $30，国家公园年卡可用）。",
     source: "https://navajonationparks.org/guided-tour-operators/antelope-canyon-tour-operators/",
     checked: "2026-09-28",
   },

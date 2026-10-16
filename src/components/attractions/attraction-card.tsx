@@ -6,6 +6,7 @@ import type { AttractionWithPhoto } from "@/data/attractions";
 import { googleMapsUrl, googleSnapshotDate } from "@/data/attractions/google";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { fill, formatCount, formatDuration, formatKm, formatMeters, formatMonths } from "@/i18n/format";
+import { CelebrityShots } from "./celebrity-shots";
 import { KIND_COLORS } from "./kinds";
 import { PhotoGallery } from "./photo-gallery";
 
@@ -219,6 +220,7 @@ export function AttractionCard({
         )}
 
         <CreatorNotes attraction={a} text={text} routesHref={routesHref} />
+        <CelebrityShots shots={a.celebrityShots} text={text} />
 
         {tips.length > 0 && (
           <details className="group/tips border-t border-line pt-4 text-sm">

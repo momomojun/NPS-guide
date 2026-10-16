@@ -51,6 +51,13 @@ import { badlands } from "../src/data/attractions/badl.ts";
 import { windCave } from "../src/data/attractions/wica.ts";
 import { saguaro } from "../src/data/attractions/sagu.ts";
 import { guadalupeMountains } from "../src/data/attractions/gumo.ts";
+import { shenandoah } from "../src/data/attractions/shen.ts";
+import { newRiverGorge } from "../src/data/attractions/neri.ts";
+import { acadia } from "../src/data/attractions/acad.ts";
+import { everglades } from "../src/data/attractions/ever.ts";
+import { biscayne } from "../src/data/attractions/bisc.ts";
+import { dryTortugas } from "../src/data/attractions/drto.ts";
+import { greatSmokyMountains } from "../src/data/attractions/grsm.ts";
 import { lodgingOptions } from "../src/data/lodging.ts";
 import { parks } from "../src/data/parks.ts";
 
@@ -109,6 +116,13 @@ export const attractions = [
   ...windCave,
   ...saguaro,
   ...guadalupeMountains,
+  ...shenandoah,
+  ...newRiverGorge,
+  ...acadia,
+  ...everglades,
+  ...biscayne,
+  ...dryTortugas,
+  ...greatSmokyMountains,
 ];
 
 /** 补给点的查询范围在外包框四边各放宽这么多度，门户小镇都在里面 */

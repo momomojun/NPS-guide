@@ -17,6 +17,7 @@ export function closureOn(id: string, date: string | null | undefined): ClosureS
   if (!date) return null;
   for (const closure of byAttraction.get(id) ?? []) {
     if (date < closure.from) continue;
+    if (closure.weekdays && !closure.weekdays.includes(new Date(`${date}T12:00:00Z`).getUTCDay())) continue;
     if (closure.reopen) {
       if (date < closure.reopen) return { closure, certain: true };
       continue;
@@ -36,3 +37,6 @@ export function closedAllDays(id: string, dates: (string | null | undefined)[]):
 }
 
 export const closuresOf = (id: string) => byAttraction.get(id) ?? [];
+
+/** 每周关的那几天，写成“周三”“周六、周日” */
+export const weekdaysZh = (weekdays: number[]) => weekdays.map((day) => `周${"日一二三四五六"[day]}`).join("、");

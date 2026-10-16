@@ -9,6 +9,9 @@ export type RegionId =
   | "utah"
   | "southwest"
   | "plains"
+  | "appalachia"
+  | "newengland"
+  | "florida"
   | "alaska"
   | "hawaii"
   | "canada";
@@ -83,6 +86,9 @@ export const regionOrder: RegionId[] = [
   "utah",
   "southwest",
   "plains",
+  "appalachia",
+  "newengland",
+  "florida",
   "alaska",
   "hawaii",
   "canada",
@@ -725,11 +731,11 @@ export const parks: Park[] = [
     stateEn: "Arizona",
     hero: "ante-upper-antelope-canyon",
     intro:
-      "纳瓦霍保留地上的砂岩狭缝峡谷，千万年的山洪和风沙把岩壁冲刷成流动的波纹，晴天正午阳光从窄缝射下，在谷底形成光束。所有区域都只能跟纳瓦霍授权的导览团进：上羚羊峡谷谷底平坦、光束最有名，下羚羊峡谷要上下几段钢梯、更窄更弯；订不到还可以去人少的羚羊峡谷 X 和水洞峡谷。各家导览都按亚利桑那时间（不实行夏令时）发团。",
+      "纳瓦霍保留地上的砂岩狭缝峡谷，千万年的山洪和风沙把岩壁冲刷成流动的波纹，晴天正午阳光从窄缝射下，在谷底形成光束。陆路只能跟纳瓦霍授权的导览团进：上羚羊峡谷谷底平坦、光束最有名，下羚羊峡谷要上下几段钢梯、更窄更弯；订不到还可以去人少的羚羊峡谷 X 和水洞峡谷。峡谷注入鲍威尔湖的那一段也能从水上进：从 Antelope Point 划皮划艇进去，或坐码头的游船，归格伦峡谷国家休闲区管，不用订纳瓦霍的导览团。各家导览都按亚利桑那时间（不实行夏令时）发团。",
     bestMonths: [4, 5, 6, 7, 8, 9],
     seasonNote:
       "全年都能跟团进（感恩节、圣诞节、元旦等纳瓦霍节日关闭）；上羚羊的光束约 3 月底到 10 月初出现、6–7 月最明显，7–9 月雨季有山洪风险时会临时取消导览。",
-    areas: { upper: "上羚羊峡谷", lower: "下羚羊峡谷", "more-slots": "其他狭缝峡谷" },
+    areas: { upper: "上羚羊峡谷", lower: "下羚羊峡谷", "more-slots": "其他狭缝峡谷", lake: "鲍威尔湖 · 水上部分" },
     gateway: { nameZh: "羚羊峡谷部落公园入口（98 号公路）", lat: 36.89716, lon: -111.40849 },
     timeZone: "America/Phoenix",
     airports: ["LAS", "PHX", "PGA", "FLG", "SLC"],
@@ -754,7 +760,7 @@ export const parks: Park[] = [
       "科罗拉多河在佩吉以南绕着一座砂岩孤峰转了约 270 度，从约 300 米高的崖边往下看，河水像一只绿色的马蹄。观景台属于格伦峡谷国家休闲区，停车场归佩吉市管、按车收费，从停车场走约 1.2 公里硬化路面就到。附近的格伦峡谷大坝、Carl Hayden 游客中心和鲍威尔湖 Wahweap 观景点，加起来半天就能看完。",
     bestMonths: [3, 4, 5, 9, 10, 11],
     seasonNote: "全年开放；春秋最舒服，夏天崖顶几乎没有遮阴、正午很热，日落时人最多。",
-    areas: { "horseshoe-bend": "马蹄湾", dam: "格伦峡谷大坝", "lake-powell": "鲍威尔湖 Wahweap" },
+    areas: { "horseshoe-bend": "马蹄湾", dam: "格伦峡谷大坝", "lake-powell": "鲍威尔湖 Wahweap", river: "科罗拉多河 · Lees Ferry" },
     gateway: { nameZh: "Carl Hayden 游客中心（格伦峡谷大坝）", lat: 36.93575, lon: -111.48559 },
     timeZone: "America/Phoenix",
     airports: ["LAS", "PHX", "PGA", "FLG", "SLC"],
@@ -1153,6 +1159,208 @@ export const parks: Park[] = [
     nonresidentSurcharge: false,
     lodgingTip:
       "园内没有酒店，只有 Cottonwood（South Unit）和 Juniper（North Unit）两个营地，2026 年 5 月起都要在 Recreation.gov 预订。多数人住 South Unit 门口的 Medora：镇上的酒店、汽车旅馆大多由西奥多·罗斯福 Medora 基金会经营，6 月初到 9 月中音乐剧季最难订；冬天只有 Rough Riders Hotel 和 Hotel 1883 两家开；订不到就住东边约 25 分钟的 Belfield 或 45 分钟的 Dickinson（连锁酒店最多）。去 North Unit 住 Watford City，到入口约 20 分钟；从 Medora 当天来回 North Unit 单程约 1 小时 15 分。Elkhorn Ranch 附近没有住处。",
+  },
+  {
+    code: "grsm",
+    nameZh: "大烟山",
+    nameEn: "Great Smoky Mountains",
+    region: "appalachia",
+    tagline: "云雾缭绕的阿巴拉契亚老山与山谷农庄",
+    stateEn: "Tennessee · North Carolina",
+    hero: "grsm-kuwohi",
+    intro:
+      "横跨田纳西和北卡两州、约 2,100 平方公里的阿巴拉契亚山地，是美国游客最多的国家公园（2025 年约 1,150 万人次）。山上终年湿润，植物蒸腾出的水汽让一层层山脊总罩着蓝色的雾，“大烟山”因此得名；这里是全世界蝾螈种类最多的地方之一，林子里有约 1,900 头黑熊。除了瀑布和老林步道，Cades Cove、Cataloochee 等山谷里还保留着 19 世纪移民留下的木屋、教堂和磨坊。公园不收门票，但 2023 年起停车超过 15 分钟要买停车证（Parking Tag）。",
+    bestMonths: [4, 5, 6, 9, 10],
+    seasonNote:
+      "4–5 月野花遍地、瀑布水量大；6 月高处杜鹃开花，夏天低处闷热潮湿、午后常有雷阵雨，山顶凉快；10 月中旬到 11 月初红叶从高处往低处走，是一年最挤的时候，周末进出 Gatlinburg 要排长队。12–3 月人少，但 Kuwohi 路、Roaring Fork 等支路关闭，Newfound Gap 公路遇冰雪会临时封。",
+    areas: {
+      sugarlands: "Sugarlands · Roaring Fork（Gatlinburg 入口）",
+      "newfound-gap": "Newfound Gap 公路 · 主脊（Kuwohi）",
+      elkmont: "Little River 路 · Elkmont",
+      "cades-cove": "Cades Cove（Townsend 一侧）",
+      oconaluftee: "Oconaluftee（北卡 Cherokee 入口）",
+      "deep-creek": "Deep Creek（Bryson City）",
+      cataloochee: "Cataloochee 谷（东北角）",
+      gatlinburg: "园外：Gatlinburg · Pigeon Forge",
+      parkway: "园外：蓝岭公路（北卡段）",
+    },
+    gateway: { nameZh: "Sugarlands 游客中心（Gatlinburg 入口）", lat: 35.68563, lon: -83.5366 },
+    timeZone: "America/New_York",
+    airports: ["TYS", "AVL", "ATL", "CLT"],
+    nearby: ["shen", "neri"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内只有走路上山才能到的 LeConte Lodge（要提前一年抢），其余都住园外。田纳西一侧的 Gatlinburg 紧挨 Sugarlands 入口，酒店、餐馆最多，但秋季和夏季周末镇上堵车厉害；Pigeon Forge 便宜一些、离公园再远 20–30 分钟；想去 Cades Cove 住 Townsend 最近，安静。Wears Valley 和 Gatlinburg 周围山坡上有大量带热水浴缸的整栋小木屋，适合一家人。北卡一侧住 Cherokee（Oconaluftee 入口外）或 Bryson City（Deep Creek 旁），看 Cataloochee 的麋鹿住 Maggie Valley。两侧之间走 Newfound Gap 公路翻山约 1 小时 15 分钟，排行程时尽量一侧连着玩。",
+  },
+  {
+    code: "shen",
+    nameZh: "仙纳度",
+    nameEn: "Shenandoah",
+    region: "appalachia",
+    tagline: "蓝岭山脊上的天际线公路",
+    stateEn: "Virginia",
+    hero: "shen-old-rag",
+    intro:
+      "公园沿着弗吉尼亚北部的蓝岭（Blue Ridge）山脊延伸约 170 公里，离华盛顿特区只有 1.5–2 小时车程。整条山脊只有一条路：天际线公路（Skyline Drive），限速 35 英里/时，路边 70 多个观景台，西边俯瞰仙纳度河谷、东边是弗吉尼亚丘陵；阿巴拉契亚步道（Appalachian Trail）有约 160 公里和它并行。园里大多是短步道：上 Stony Man、Hawksbill 看日落，下到峡谷里看瀑布，在 Big Meadows 草甸上看鹿；最有名的是园界东侧要攀爬花岗岩巨石的 Old Rag。10 月中下旬满山红叶，是一年里最挤的时候。",
+    bestMonths: [5, 6, 9, 10],
+    seasonNote:
+      "4–6 月瀑布水量大、山花开（5 月野杜鹃、6 月山月桂）；7–8 月山上比河谷凉快约 5°C，但常有雾和午后雷雨；10 月中下旬是红叶高峰，周末天际线公路和热门步道口都很挤。园里的酒店、餐厅、营地大多 3–4 月开、11 月关，冬天只有公路和步道；天际线公路没有固定的冬季封路，但下雪结冰时会临时分段封闭，雪后可能好几天才重开。",
+    areas: {
+      north: "北区（Front Royal 入口–Thornton Gap，0–31.5 英里）",
+      central: "中区（Thornton Gap–Swift Run Gap，31.5–65.5 英里）",
+      south: "南区（Swift Run Gap–Rockfish Gap，65.5–105 英里）",
+      "old-rag": "园界东侧 · Old Rag（不通天际线公路）",
+      luray: "园外：Luray 小镇（西侧河谷）",
+    },
+    gateway: { nameZh: "Luray 小镇（Thornton Gap 入口西侧）", lat: 38.66541, lon: -78.45963 },
+    timeZone: "America/New_York",
+    airports: ["IAD", "DCA", "CHO"],
+    nearby: ["neri", "grsm"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内住宿都在天际线公路中段，由 Delaware North 经营：Skyland（41.7 英里，公路最高处，看日落最好）、Big Meadows Lodge（51 英里，旁边就是游客中心、草甸和加油站）和 Lewis Mountain 小木屋（57.5 英里），大约 3–5 月开到 11 月，10 月红叶季的周末很早订满。园外最方便的是西边河谷里的 Luray（到 Thornton Gap 入口约 15 分钟），周边 Page 县有大量带热水浴缸的山间小木屋；从华盛顿来、先玩北段的可以住 Front Royal；南段住 Charlottesville 或 Waynesboro，Harrisonburg 连锁酒店多、便宜。园里只有 Big Meadows 一处加油站，充电桩只在 Skyland，进山前加满、充满。",
+  },
+  {
+    code: "neri",
+    nameZh: "新河峡谷",
+    nameEn: "New River Gorge",
+    region: "appalachia",
+    tagline: "钢拱大桥、砂岩崖壁和美东最野的激流",
+    stateEn: "West Virginia",
+    hero: "neri-canyon-rim",
+    intro:
+      "2020 年底升格为国家公园（全称 New River Gorge National Park and Preserve），是美国最新的国家公园之一。公园沿新河延伸约 85 公里，河水在阿巴拉契亚高原上切出平均深约 300 米的峡谷；峡谷北端横跨着 1977 年建成的新河峡谷大桥，桥面离河面约 267 米，曾是世界上跨度最大的单跨钢拱桥。崖顶的砂岩峭壁是美东最有名的攀岩地，谷底的下游河段是 III–V 级的激流漂流；林子里还散落着 Thurmond、Kaymoor、Nuttallburg 这些百年前的煤矿小镇遗址。",
+    bestMonths: [5, 6, 9, 10],
+    seasonNote:
+      "5 月中下旬紫色杜鹃花开、6–8 月漂流季最热闹，10 月中旬红叶最盛，10 月第三个周六的桥日（Bridge Day）能走上大桥；但秋叶季周末步道口很难停车。冬天公园照常开放，游客中心大多关闭，偶尔冰雪会让峡谷里的小路难开。",
+    areas: {
+      bridge: "大桥一带（Canyon Rim · Fayette Station）",
+      lansing: "北岸：Endless Wall · Nuttallburg",
+      fayetteville: "南岸：Fayetteville · Long Point · Kaymoor",
+      river: "峡谷下游河段（漂流）",
+      thurmond: "中段：Thurmond 小镇",
+      grandview: "Grandview（Beckley 附近）",
+      sandstone: "南段：Sandstone 瀑布 · Hinton",
+      babcock: "园外：Babcock 州立公园",
+    },
+    gateway: { nameZh: "Canyon Rim 游客中心（大桥北端）", lat: 38.07005, lon: -81.07594 },
+    timeZone: "America/New_York",
+    airports: ["CRW", "ROA", "CLT", "IAD"],
+    nearby: ["shen", "grsm"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内没有酒店，只有 8 处免费、先到先得、没有自来水的小营地（多在河边）。大多数人住大桥南边的 Fayetteville（走路就有餐馆，到 Canyon Rim、Long Point、Kaymoor 都在 10 分钟内）或旁边的 Oak Hill；大桥北边的 Adventures on the Gorge、Minden 的 ACE Adventure Resort 是漂流公司的度假村，有小木屋和营地，订漂流时一起订最方便。去 Grandview、Sandstone 瀑布住南边约 30 分钟的 Beckley（连锁酒店最多）或 Hinton 更顺路。桥日（10 月第三个周六）和红叶季的周末，Fayetteville 一带要提前几个月订。",
+  },
+  {
+    code: "acad",
+    nameZh: "阿卡迪亚",
+    nameEn: "Acadia",
+    region: "newengland",
+    tagline: "缅因海岸的粉色花岗岩与日出",
+    stateEn: "Maine",
+    hero: "acad-bass-harbor-light",
+    intro:
+      "冰川把缅因海岸的粉色花岗岩磨成圆顶山和峡湾，海浪又在山脚凿出崖壁、海蚀洞和卵石滩。公园大部分在荒漠山岛（Mount Desert Island）上：东侧的 Park Loop Road 沿海岸串起沙滩、雷鸣洞和水獭崖，再绕到乔丹池和卡迪拉克山顶，秋冬早上这里常是美国最早看到日出的地方之一；岛上还有洛克菲勒家族修的 70 多公里马车道和石桥，不许开车，只能走路、骑车、骑马。西侧人少，有 Bass Harbor 灯塔和潮池；隔海的 Schoodic 半岛更安静。",
+    bestMonths: [6, 7, 8, 9, 10],
+    seasonNote:
+      "6–10 月最好：7–8 月最暖、人最多，停车场一早就满；9 月到 10 月中天气清爽，10 月上中旬是红叶季，周末又挤起来。Park Loop Road 和卡迪拉克山顶路 4 月 15 日到 12 月 1 日开，冬天只有一小段和 Schoodic 环线通车；Island Explorer 免费班车大约 5 月下旬到 10 月中旬。5 月下旬到 10 月下旬开车上卡迪拉克山顶要提前在 Recreation.gov 订分时段车证。",
+    areas: {
+      east: "荒漠山岛东侧（Park Loop Road · 卡迪拉克山 · 乔丹池 · 巴尔港）",
+      west: "荒漠山岛西侧（Bass Harbor · Echo Lake · Southwest Harbor）",
+      schoodic: "Schoodic 半岛（隔海，开车约 1 小时）",
+    },
+    gateway: { nameZh: "Hulls Cove 游客中心（巴尔港北边）", lat: 44.40848, lon: -68.246 },
+    timeZone: "America/New_York",
+    airports: ["BGR", "BHB", "PWM", "BOS"],
+    nonresidentSurcharge: true,
+    lodgingTip:
+      "园内只有营地（Blackwoods、Seawall、Schoodic Woods，提前在 Recreation.gov 订），没有酒店。大多数人住巴尔港（Bar Harbor）：酒店、民宿、餐馆最多，到 Hulls Cove 游客中心约 5 分钟、到 Sand Beach 约 15 分钟，Island Explorer 班车也从镇中心发车；7–8 月和 10 月红叶季很早订满、价格高。想安静一点住西侧的 Southwest Harbor 或 Northeast Harbor（到 Bass Harbor 灯塔 10–15 分钟）；想便宜住岛外的 Trenton（约 20 分钟）或 Ellsworth（约 35 分钟）。去 Schoodic 半岛的那天可以住 Winter Harbor 一带。",
+  },
+  {
+    code: "ever",
+    nameZh: "大沼泽地",
+    nameEn: "Everglades",
+    region: "florida",
+    tagline: "草河、鳄鱼与红树林",
+    stateEn: "Florida",
+    hero: "ever-anhinga-trail",
+    intro:
+      "大沼泽地其实是一条极宽极浅的“草河”：雨季的水从奥基乔比湖一带漫过锯齿草原，每天只往南流几百米，最后经红树林流进佛罗里达湾和墨西哥湾。公园约 6,100 平方公里，是美国本土最大的亚热带荒野，也是世界遗产和国际重要湿地；短吻鳄、美洲鳄、海牛、成群的涉禽和濒危的佛罗里达豹都住在这里，南佛罗里达是世界上唯一短吻鳄和美洲鳄同处一地的地方。公园三个入口互不相通：迈阿密西边 Tamiami Trail 上的 Shark Valley，Homestead 一侧一路开到海边 Flamingo 的主园路，和西北角 Everglades City 的万岛群。",
+    bestMonths: [12, 1, 2, 3],
+    seasonNote:
+      "12 月到次年 4 月是旱季：凉快、少雨、蚊子少，水退到少数水塘边，鳄鱼和涉禽最集中，也是游客最多的时候，Shark Valley 停车场旺季上午 10 点前就满。5–11 月是雨季：湿热，几乎天天午后雷阵雨，蚊子极多（Flamingo 一带夏天尤其厉害），护林员活动也少；6–11 月是飓风季，8–10 月最要留意天气预报。",
+    areas: {
+      "royal-palm": "Homestead 主入口 · Royal Palm",
+      "main-road": "主园路（Pa-hay-okee 到 West Lake）",
+      flamingo: "Flamingo · 佛罗里达湾",
+      "shark-valley": "Shark Valley（Tamiami Trail）",
+      "gulf-coast": "Gulf Coast · Everglades City（万岛群）",
+      tamiami: "园外：Tamiami Trail · Big Cypress",
+      homestead: "园外：Homestead · Florida City",
+    },
+    gateway: { nameZh: "Ernest F. Coe 游客中心（Homestead 主入口）", lat: 25.39526, lon: -80.5831 },
+    // 首页地图：主入口和比斯坎的游客中心只隔 25 公里，圆点画在公园中部（Pa-hay-okee 和 West Lake 之间），免得叠在一起
+    mapAt: { lat: 25.32, lon: -80.93 },
+    timeZone: "America/New_York",
+    airports: ["MIA", "FLL", "RSW"],
+    nearby: ["bisc", "drto"],
+    nonresidentSurcharge: true,
+    lodgingTip:
+      "园内能住的只有海边的 Flamingo：2023 年新建的 Flamingo Lodge（24 间集装箱改造的套房和单间）、环保帐篷、船屋和营地，离 Homestead 主入口还要开约 1 小时，冬季早订，夏天蚊子极多。去 Royal Palm、Flamingo 一侧多数人住 Florida City / Homestead：连锁汽车旅馆集中在收费公路出口，到 Ernest F. Coe 游客中心约 15 分钟，也顺路去比斯坎和佛罗里达群岛（到 Key Largo 约 30 分钟）。Shark Valley 一侧没有住宿，从迈阿密西郊开过去约 40 分钟；去 Gulf Coast 住 Everglades City 的小旅馆，或者西北约 45 分钟的那不勒斯（Naples）。三个入口之间都要绕到园外：Homestead 到 Shark Valley 约 1 小时，Shark Valley 到 Everglades City 约 1 小时。园内没有给汽车加油的地方，进去前在 Florida City 加满。",
+  },
+  {
+    code: "bisc",
+    nameZh: "比斯坎",
+    nameEn: "Biscayne",
+    region: "florida",
+    tagline: "迈阿密门口的海上公园：礁岛、珊瑚礁与高脚屋",
+    stateEn: "Florida",
+    hero: "bisc-boca-chita",
+    intro:
+      "公园就在迈阿密市中心南边，约 95% 是水面：浅浅的比斯坎湾、佛罗里达礁岛群最北端的一串礁岛，和外侧的珊瑚礁。陆上只有 Homestead 东边 Convoy Point 的游客中心和一段海堤步道，真正的看点都要坐船：Boca Chita 岛上 1938 年建的装饰灯塔、Elliott Key 的热带硬木林、湾里的 Stiltsville 高脚屋，还有礁盘上的沉船和珊瑚。不开自己的船的话，就跟公园合作的 Biscayne National Park Institute 出海浮潜、划船或上岛。",
+    bestMonths: [12, 1, 2, 3, 4, 5],
+    seasonNote:
+      "12–4 月是旱季，凉爽、蚊子少，最舒服，但冷锋过境时风大，船团可能取消；5–9 月风小水清，浮潜最好，只是湿热、午后常有雷雨；6–11 月是飓风季。岛上夏秋蚊子很凶（尤其 Elliott Key）。",
+    areas: {
+      "convoy-point": "Convoy Point（陆上 · 游客中心）",
+      keys: "外侧礁岛与珊瑚礁（坐船，Convoy Point 出发）",
+      "north-bay": "北湾 · Boca Chita · Stiltsville（坐船，Coconut Grove 出发）",
+      homestead: "Homestead 一带（园外）",
+    },
+    gateway: { nameZh: "Dante Fascell 游客中心（Convoy Point）", lat: 25.46447, lon: -80.33476 },
+    timeZone: "America/New_York",
+    airports: ["MIA", "FLL"],
+    nearby: ["ever", "drto"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "园内没有开车能到的住处：Boca Chita 和 Elliott Key 两个岛上的营地只能自己开船去，先到先得。坐 Convoy Point 出发的船团住 Homestead / Florida City 最方便（约 15–20 分钟），这里也是去大沼泽地主入口的门户，汽车旅馆多、比迈阿密便宜；坐 Coconut Grove（Dinner Key）出发的 Boca Chita、Stiltsville 船团就住 Coconut Grove 或迈阿密市区，走路或几分钟车程就到码头。接着往礁岛群走的可以住 Key Largo，到 Convoy Point 约 50 分钟。",
+  },
+  {
+    code: "drto",
+    nameZh: "干龟",
+    nameEn: "Dry Tortugas",
+    region: "florida",
+    tagline: "海中央的六角形砖砌要塞",
+    stateEn: "Florida",
+    hero: "drto-ferry",
+    intro:
+      "Key West 以西约 110 公里，七个小沙岛和四周的珊瑚礁，公园 99% 是海。主角是 Garden Key 上的杰斐逊堡（Fort Jefferson）：1846 年开建、用了 1,600 多万块砖，是美洲最大的砖砌建筑，修了快 30 年也没完工；南北战争后当过军事监狱，因林肯遇刺案被判刑的 Samuel Mudd 医生就关在这里。要塞外的护城河墙边就能浮潜，1 月底到 7 月初成群的乌燕鸥在旁边的 Bush Key 筑巢。只能从 Key West 坐渡轮或水上飞机来，绝大多数人当天来回。",
+    bestMonths: [4, 5, 6],
+    seasonNote:
+      "4–6 月海面相对平静、水清，春季（3–5 月）候鸟迁徙是观鸟高峰；12–3 月冷锋多，风大浪高，渡轮更颠、偶尔停航；6–11 月是飓风季，夏天湿热，有热带风暴时停航。渡轮全年每天开，冬春旺季和节假日常提前几周订满。",
+    areas: {
+      tortugas: "干龟群岛（坐渡轮 · 水上飞机）",
+      "key-west": "Key West",
+      keys: "海外公路（迈阿密开往 Key West 的路上）",
+    },
+    gateway: { nameZh: "Key West Bight 渡轮码头（Yankee Freedom 出发处）", lat: 24.56251, lon: -81.79894 },
+    mapAt: { lat: 24.6286, lon: -82.87322 },
+    timeZone: "America/New_York",
+    airports: ["EYW", "MIA", "FLL"],
+    nearby: ["ever", "bisc"],
+    nonresidentSurcharge: false,
+    lodgingTip:
+      "公园里唯一能过夜的是 Garden Key 上的原始营地（8 个营位加一片空地，要坐渡轮带上全部的水和装备，渡轮的露营票提前 6 个月放、很快卖完），其余的人都住 Key West 当天来回。渡轮 7:00 就要报到，住 Key West 老城最方便，走路 10–15 分钟到码头，但房价是全佛州最贵的一档，冬季和周末更贵；新城、Stock Island 的连锁酒店便宜些，开车到码头 10–15 分钟，市政停车楼 $40/天。往回 40 分钟的 Big Pine Key 一带有带厨房的整套房子；从迈阿密开车过来约 3.5–4 小时，可以在 Key Largo 或 Marathon 住一晚分两段开。",
   },
   {
     code: "dena",

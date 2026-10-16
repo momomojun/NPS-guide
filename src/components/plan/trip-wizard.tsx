@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useSyncExternalStore, type FormEvent } from "react";
+import { useEffect, useState, useSyncExternalStore, type FormEvent } from "react";
 import { IconArrowRight } from "@/components/icons";
 import { buttonLarge } from "@/components/ui";
 import type { Airport } from "@/data/airports";
@@ -171,6 +171,7 @@ export function TripWizard({
   error,
   onGenerate,
   unavailableOf,
+  onSelection,
 }: {
   parks: PlannerPark[];
   airports: Record<string, Airport>;
@@ -180,6 +181,8 @@ export function TripWizard({
   onGenerate: (input: WizardInput) => void;
   /** 这几座公园、这个月（或这几天）去不了的景点，热门的在前 */
   unavailableOf: (input: { parks: string[]; month: number; startDate: string; days: number }) => UnavailableStop[];
+  /** 选的公园、出发日期变了（近期出发的话，行程页去读这几座公园的实时公告） */
+  onSelection?: (selection: { parks: string[]; startDate: string }) => void;
 }) {
   const t = text.plan.wizard;
   const nextMonth = (new Date().getMonth() + 1) % 12 + 1;
@@ -214,6 +217,13 @@ export function TripWizard({
 
   const field = "mt-3 block w-full border-b border-ink/30 bg-transparent py-1.5 text-sm focus:border-ink focus:outline-none";
   const tripMonth = startDate ? Number(startDate.slice(5, 7)) : month;
+  const selectionKey = `${selectedParks.map((p) => p.code).join(",")}|${startDate}`;
+  useEffect(() => {
+    const [codes, date] = selectionKey.split("|");
+    onSelection?.({ parks: codes.split(","), startDate: date });
+    // 只在选的公园、日期变了的时候通知
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectionKey]);
   const unavailable = unavailableOf({ parks: selectedParks.map((p) => p.code), month: tripMonth, startDate, days });
   // 不多的话全列出来；多了只列热门的，其余收起来
   const showAll = unavailable.length <= 6;

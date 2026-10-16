@@ -86,6 +86,11 @@ export interface Attraction {
   /** 进去的时间有限制的（洞穴入场时间、公园大门开关）；游客中心、游船这类没写的按一般的开放时间算 */
   hours?: EntryHours[];
   mustSee?: boolean;
+  /**
+   * 和这个景点是同一件事的另一种去法、一般只选一个（干龟的水上飞机和渡轮）：自动生成攻略里那个景点能去时不排这个，
+   * 那个去不了（这几天不开、太累）才排这个
+   */
+  alternativeTo?: string;
   /** 不在国家公园范围内，但常和公园一起玩 */
   outsidePark?: boolean;
   /** 一两句话：为什么值得去 */

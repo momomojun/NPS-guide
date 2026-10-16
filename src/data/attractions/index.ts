@@ -1,3 +1,4 @@
+import { celebrityShots, type CelebrityShot } from "../celebrities";
 import { creatorRoutes, type CreatorLanguage } from "../creators";
 import { parkingRules } from "../parking";
 import { bryceCanyon } from "./brca";
@@ -51,6 +52,13 @@ import { badlands } from "./badl";
 import { windCave } from "./wica";
 import { saguaro } from "./sagu";
 import { guadalupeMountains } from "./gumo";
+import { shenandoah } from "./shen";
+import { newRiverGorge } from "./neri";
+import { acadia } from "./acad";
+import { everglades } from "./ever";
+import { biscayne } from "./bisc";
+import { dryTortugas } from "./drto";
+import { greatSmokyMountains } from "./grsm";
 import { trails, type TrailPath } from "./trails.generated";
 import type { Attraction, GooglePlace, ParkingRule, Photo } from "./types";
 import { yellowstone } from "./yell";
@@ -74,6 +82,8 @@ export interface AttractionWithPhoto extends Attraction {
   /** 博主对这个景点的看法（creators.ts），和出现在几条博主路线里 */
   creatorNotes?: CreatorNote[];
   creatorRouteCount?: number;
+  /** 明星在这里公开发过的照片（celebrities.ts） */
+  celebrityShots?: CelebrityShot[];
   /** 旺季早上就停满的停车场（parking.ts） */
   parking?: ParkingRule;
 }
@@ -154,6 +164,13 @@ const withData: AttractionWithPhoto[] = [
   ...windCave,
   ...saguaro,
   ...guadalupeMountains,
+  ...shenandoah,
+  ...newRiverGorge,
+  ...acadia,
+  ...everglades,
+  ...biscayne,
+  ...dryTortugas,
+  ...greatSmokyMountains,
 ].map((attraction) => ({
   ...attraction,
   photo: gallery[attraction.id]?.[0],
@@ -180,6 +197,7 @@ export const attractions: AttractionWithPhoto[] = withData.map((attraction) => (
   hotRank: hotRanks.get(attraction.id),
   creatorNotes: creatorNotes.get(attraction.id),
   creatorRouteCount: creatorRouteCounts.get(attraction.id),
+  celebrityShots: celebrityShots.filter((shot) => shot.attraction === attraction.id),
 }));
 
 export function getParkAttractions(parkCode: string): AttractionWithPhoto[] {

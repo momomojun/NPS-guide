@@ -10,7 +10,7 @@ import { IconArrowRight } from "@/components/icons";
 import { Reveal } from "@/components/site/reveal";
 import { buttonLarge } from "@/components/ui";
 import { attractions } from "@/data/attractions";
-import { alaskaMap, hawaiiMap, westMap } from "@/data/map.generated";
+import { alaskaMap, eastMap, hawaiiMap, westMap } from "@/data/map.generated";
 import { isSite, parks } from "@/data/parks";
 import { hasLocale } from "@/i18n/config";
 import { localizePark } from "@/i18n/content";
@@ -88,7 +88,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
     { value: attractions.filter((a) => a.trailLine).length, label: t.stats.trails },
   ];
   const cityNames = Object.fromEntries(
-    [...westMap.cities, ...alaskaMap.cities, ...hawaiiMap.cities].map((city) => [city.id, localize(city.nameZh, locale)]),
+    [...westMap.cities, ...eastMap.cities, ...alaskaMap.cities, ...hawaiiMap.cities].map((city) => [city.id, localize(city.nameZh, locale)]),
   );
   const finalPhoto = photoOf(FINAL_PHOTO);
 
@@ -295,6 +295,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
                   weight: popularity(park.code),
                 }))}
               cityNames={cityNames}
+              eastLabel={`Eastern US · ${t.mapEast}`}
               alaskaLabel={`Alaska · ${dict.regions.alaska}`}
               hawaiiLabel={`Hawaiʻi · ${dict.regions.hawaii}`}
             />

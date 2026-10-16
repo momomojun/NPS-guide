@@ -16,7 +16,7 @@ import {
 import type { AttractionWithPhoto } from "@/data/attractions";
 import type { ParkAlert } from "@/lib/alert-match";
 import { fill, formatDuration, formatMonths } from "@/i18n/format";
-import { closureOn } from "@/lib/closures";
+import { closureOn, weekdaysZh } from "@/lib/closures";
 import { monthOf } from "@/lib/dates";
 import { moonNight } from "@/lib/moon";
 import { entryWindow, lodgingLeg, onlyAt, parkingOn, type TimelineEntry } from "@/lib/planner";
@@ -136,7 +136,12 @@ export function DayCard({
     if (warning === "maybeClosed") {
       return fill(t.warnings.maybeClosed, { checked: fill(t.roads.monthDay, md(closure.checked)), reason: text.closureReasons[id] ?? closure.reasonZh });
     }
-    const until = closure.reopen ? fill(t.warnings.reopenOn, md(closure.reopen)) : t.warnings.reopenUnknown;
+    const until =
+      closure.weekdays && closure.reopen
+        ? fill(t.warnings.weekly, { days: weekdaysZh(closure.weekdays), ...md(closure.reopen) })
+        : closure.reopen
+          ? fill(t.warnings.reopenOn, md(closure.reopen))
+          : t.warnings.reopenUnknown;
     return fill(t.warnings.tempClosed, { until, reason: text.closureReasons[id] ?? closure.reasonZh });
   };
   const isTarget = (index: number) => drag.target?.day === day && drag.target.index === index;

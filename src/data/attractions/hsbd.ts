@@ -1,5 +1,11 @@
 import type { Attraction } from "./types";
 
+// 皮划艇、漂流的季节（各家都是 3–10 月营业）
+const PADDLE_MONTHS = [3, 4, 5, 6, 7, 8, 9, 10];
+const LEES_FERRY_RAMP = { lat: 36.86576, lon: -111.58646, nameZh: "Lees Ferry 下水坡道（backhaul 船在这里上船）" };
+const RIVER_CLOSED =
+  "做 backhaul 的船公司和向导团一般 3 月初到 10 月中下旬营业，冬季停航（10 月底、11 月去要先打电话问还开不开）；冬天峡谷里很冷，大坝下放的河水常年冰凉。冬天可以从崖顶的马蹄湾观景台看，或者去 Lees Ferry 河边走走。";
+
 export const horseshoeBend: Attraction[] = [
   {
     id: "hsbd-horseshoe-bend",
@@ -71,5 +77,81 @@ export const horseshoeBend: Attraction[] = [
       "岸边岩壁上一圈浅色的“浴缸圈”是以前的高水位线，这些年鲍威尔湖水位很低",
     ],
     photoFile: "Lake Powell from Wahweap Overlook, Page, Arizona - April 2026.jpg",
+  },
+  {
+    id: "hsbd-horseshoe-bend-kayak",
+    park: "hsbd",
+    nameZh: "皮划艇漂马蹄湾（Lees Ferry 坐船上溯再漂回）",
+    nameEn: "Horseshoe Bend Kayak (Lees Ferry backhaul)",
+    kind: "experience",
+    area: "river",
+    lat: 36.88026,
+    lon: -111.51395,
+    start: LEES_FERRY_RAMP,
+    durationMin: 360,
+    bestTime: ["morning"],
+    openMonths: PADDLE_MONTHS,
+    closedNote: RIVER_CLOSED,
+    bestMonths: [4, 5, 6, 9, 10],
+    permit:
+      "大坝下面没有下水点，要提前订 backhaul 船（Kayak the Colorado 每人 $80 起，自己带船不加钱；Wilderness River Adventures 也做）；想有向导带可以订 Colorado River Kayak Tours 的半日团（2026 年 $199/人，含 $80 backhaul，8:00、13:00 两班）。到了 Lees Ferry 在坡道上方的自助亭免费填 Backcountry River 许可；另付格伦峡谷门票每车 $30（国家公园年卡可用）",
+    summary:
+      "从崖顶往下看的马蹄湾，也能在河面上从里面看。在 Lees Ferry 坐 backhaul 快艇逆流开约 16 公里，在马蹄湾上游的岩画海滩（Petroglyph Beach）下船，再顺着约每小时 5 公里的水流自己划回来，一路是没有急流的平水，绕着马蹄湾转一圈，两边是两三百米高的砂岩崖壁。",
+    tips: [
+      "从岩画海滩划回 Lees Ferry 约 16 公里，算上上岸看岩画、游泳、去 Waterholes 峡谷下游口走走，一般 5–6 小时；想短一点可以让船长在下游一点放你下来，从大坝下方（约 24 公里）划回要 6–9 小时",
+      "河水是大坝从湖底放出来的，夏天也很冰；NPS 规定大坝到大峡谷公园界之间划船全程要穿救生衣",
+      "峡谷里的风一阵一阵的，顶风时靠岸等 15–30 分钟再走；风速 30 公里/时以上不适合新手。出发前可以查当天大坝放水量（Bureau of Reclamation 电话 928-645-3978）",
+      "Lees Ferry 以下就是大峡谷，没有许可不能再往下划；坡道下游不远有急流，回来时别错过上岸点",
+      "Lees Ferry 离佩吉约 50 分钟车程，按亚利桑那时间；沿途 5 处河边营地有厕所、先到先得，想过夜不用另申请",
+    ],
+    photoFile: "Colorado river horseshoe bend turn3.jpg",
+  },
+  {
+    id: "hsbd-glen-canyon-float",
+    park: "hsbd",
+    nameZh: "格伦峡谷半日漂流（马蹄湾谷底）",
+    nameEn: "Horseshoe Bend Half-Day Rafting Trip",
+    kind: "experience",
+    area: "river",
+    lat: 36.88685,
+    lon: -111.52589,
+    start: { lat: 36.90248, lon: -111.47477, nameZh: "Wilderness River Adventures 河运总部（佩吉 199 Kaibab Rd，坐大巴去 Lees Ferry）" },
+    durationMin: 300,
+    openMonths: PADDLE_MONTHS,
+    closedNote:
+      "半日漂流只在 3 月 1 日到 10 月 31 日开（2026 年时刻表），冬季停航；冬天可以从崖顶的马蹄湾观景台看。",
+    bestMonths: [4, 5, 6, 9, 10],
+    permit:
+      "在 lakepowell.com 预订（Wilderness River Adventures 经营）：2026 年成人（16 岁以上）$129、4–15 岁 $113.82，另付公园门票每人 $15；不满 8 位全价乘客当班取消",
+    summary:
+      "不想自己划，可以坐带马达的大橡皮艇：从佩吉坐大巴到 Lees Ferry，上船逆流开到马蹄湾上游的岩画海滩，听向导讲古普韦布洛人的岩画，再一路顺流漂回来，从谷底仰望马蹄湾的崖壁，全程平水、没有急流，4 岁以上就能参加。",
+    tips: [
+      "大巴出发前 45 分钟到佩吉的河运总部签到（6–7 月下午 15:00 那班要提前 1 小时），全程约 5 小时，带上签好的乘客声明；回程大巴沿朱红悬崖、Navajo 大桥开回佩吉",
+      "每人只能带一个小背包；春秋早上河上冷，带防风外套；夏天带帽子、防晒和水，中途可以在海滩下水",
+      "不许带酒、硬壳冷藏箱，船上和大巴上不能抽烟（含电子烟）",
+    ],
+    photoFile: "Grand Canyon National Park Lees Ferry Launch Ramp 0608 (6176486711).jpg",
+  },
+  {
+    id: "hsbd-glen-canyon-dam-cruise",
+    park: "hsbd",
+    nameZh: "鲍威尔湖大坝游船（Wahweap）",
+    nameEn: "Glen Canyon Dam Scenic Cruise (Wahweap)",
+    kind: "experience",
+    area: "lake-powell",
+    lat: 36.94352,
+    lon: -111.48856,
+    start: { lat: 36.99561, lon: -111.48953, nameZh: "Lake Powell Resort 大堂（Wahweap，游船在这里报到）" },
+    durationMin: 120,
+    permit:
+      "在 lakepowell.com 预订（Lake Powell Resorts & Marinas 经营）：成人 $99、3–12 岁 $45；另付格伦峡谷门票每车 $30、7 天有效（国家公园年卡可用）",
+    summary:
+      "从 Lake Powell Resort 旁的 Wahweap 湾开船，约 90 分钟开到格伦峡谷大坝的湖面一侧，从水上看 216 米高的大坝和钢拱桥，一路讲大坝和鲍威尔湖的历史；船上有咖啡、水和柠檬水。",
+    tips: [
+      "开船前 45 分钟到 Lake Powell Resort 大堂报到，开船前 15 分钟登船；提前 24 小时以上取消才全额退款",
+      "同一家还有时间更长的 Navajo Canyon 游船（成人 $105），开进一条崖壁高出水面约 180 米的支流峡谷；去彩虹桥和羚羊峡谷的游船官网写着“暂停，另行通知”（2026 年水位很低，彩虹桥的码头已经和岸边断开）",
+      "游船都能坐轮椅，船上不卖吃的，需要的话自己带",
+    ],
+    photoFile: "A238, Glen Canyon Dam from Lake Powell, Arizona, USA, 2008.JPG",
   },
 ];

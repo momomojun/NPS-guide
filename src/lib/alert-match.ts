@@ -76,3 +76,33 @@ export function alertsForStop(stop: AlertTarget, alerts: ParkAlert[]): ParkAlert
     return serious && area.length >= 4 && !GENERIC.has(area) && title.includes(` ${area} `);
   });
 }
+
+/** 实时公告管多少天内出发的行程：公告说的是现在的情况，再远的不知道那时候开没开 */
+export const LIVE_ALERT_DAYS = 14;
+
+/** 只封一部分、只封夜间、只是延误或者限制的公告不算关闭 */
+const PARTIAL = /\b(overnight|parts?|partial|partially|delays?|restrictions?|limited|nightly|lane)\b/i;
+
+/**
+ * 公告里明确说关了的景点：关闭类（Park Closure）公告、标题里写着 closed / closure，
+ * 不是夜间封路、部分关闭、延误这类。要拿来直接不排景点，所以比 alertsForStop 严：
+ * 标题里要有景点的全名，或者景点所在的片区（“Trail Ridge Road closed” 关的是 Trail Ridge 片区的所有景点）；
+ * 只撞上一个词的不算（“Kīlauea 一侧关闭” 不等于 Kīlauea 观景台关闭）。景点 id → 那条公告
+ */
+export function closedByAlerts(stops: AlertTarget[], alerts: ParkAlert[]): Map<string, ParkAlert> {
+  const closing = alerts.filter(
+    (alert) => alert.category === "Park Closure" && /\bclos(ed|ure|ures|ing)\b/i.test(alert.title) && !PARTIAL.test(alert.title),
+  );
+  const result = new Map<string, ParkAlert>();
+  for (const stop of stops) {
+    const name = normalize(stop.nameEn).trim().replace(/^the /, "");
+    const area = areaPhrase(stop.area);
+    const alert = closing.find((candidate) => {
+      if (candidate.park !== stop.park) return false;
+      const title = normalize(candidate.title);
+      return title.includes(` ${name} `) || (area.length >= 4 && !GENERIC.has(area) && title.includes(` ${area} `));
+    });
+    if (alert) result.set(stop.id, alert);
+  }
+  return result;
+}

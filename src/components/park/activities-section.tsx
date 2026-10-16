@@ -3,6 +3,7 @@ import type { ParkActivity } from "@/data/activities";
 import type { AttractionWithPhoto } from "@/data/attractions";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { fill, formatMonths } from "@/i18n/format";
+import { addDays } from "@/lib/dates";
 
 /** 公园页列出来的临时关闭（原因已经转成当前语言） */
 export interface ParkClosure {
@@ -10,6 +11,9 @@ export interface ParkClosure {
   reason: string;
   /** 预计哪天重开；null 是没公布 */
   reopen: string | null;
+  /** 只在每周这几天关（“周三”），从哪天起 */
+  weekdays?: string;
+  from?: string;
   checked: string;
 }
 
@@ -113,7 +117,17 @@ export function ActivitiesSection({
                       className="font-serif text-base hover:text-clay-700"
                     />
                     <span className="ml-2 text-xs text-clay-700">
-                      {closure.reopen ? fill(t.reopenOn, md(closure.reopen)) : fill(t.reopenUnknown, md(closure.checked))}
+                      {closure.weekdays && closure.from && closure.reopen
+                        ? fill(t.weekly, {
+                            days: closure.weekdays,
+                            fm: md(closure.from).m,
+                            fd: md(closure.from).d,
+                            // 恢复的前一天是最后一个关的日子
+                            ...md(addDays(closure.reopen, -1)),
+                          })
+                        : closure.reopen
+                          ? fill(t.reopenOn, md(closure.reopen))
+                          : fill(t.reopenUnknown, md(closure.checked))}
                     </span>
                     <span className="mt-0.5 block text-xs leading-6 text-clay-800">{closure.reason}</span>
                   </li>

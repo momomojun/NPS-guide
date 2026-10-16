@@ -19,7 +19,7 @@ import { fill, formatBig, formatDuration, formatMonths } from "@/i18n/format";
 import { crowdOf } from "@/lib/crowd";
 import { addDays, monthOf, nominalDate } from "@/lib/dates";
 import { airbnbUrl } from "@/lib/airbnb";
-import { alertsForStop, type AlertsResponse } from "@/lib/alert-match";
+import { alertsForStop, closedByAlerts, LIVE_ALERT_DAYS, type AlertsResponse, type ParkAlert } from "@/lib/alert-match";
 import type { BookingRule } from "@/data/bookings";
 import { bookingsForTrip } from "@/lib/booking";
 import { flightKey, useFlightStore } from "@/lib/flight-store";
@@ -39,7 +39,7 @@ import {
 } from "@/lib/planner";
 import { formatClock, minutesOfDay, sunTimes } from "@/lib/sun";
 import { moveItem, setNight } from "@/lib/trip-edit";
-import { bestRoadDay, roadFor } from "@/lib/roads";
+import { bestRoadDay, ROAD_LIKELY, roadFor } from "@/lib/roads";
 import { datedSchedule, runsOn, tourScheduleOf, tourSeason } from "@/lib/tours";
 import { planTrip } from "@/lib/trip-plan";
 import {
@@ -220,19 +220,34 @@ export function Planner({
       : t.warnings.reopenUnknown;
     return `${until}：${text.closureReasons[id] ?? state.closure.reasonZh}`;
   };
+  // 实时公告管不管这趟：出发日期定了、而且在今天起两周内
+  const liveWindow = (startDate: string) =>
+    startDate && todayDate && startDate <= addDays(todayDate, LIVE_ALERT_DAYS) ? addDays(todayDate, LIVE_ALERT_DAYS) : null;
+  const alertsUrlFor = (codes: string[]) => (codes.length ? `/api/alerts?parks=${[...codes].sort().join(",")}&locale=${locale}` : null);
+  // 出发前的表单选了哪几座公园：近期出发的话读这几座公园的实时公告
+  const [wizardParks, setWizardParks] = useState<string[]>([]);
+  const wizardAlertsUrl = alertsUrlFor(wizardParks);
+  const wizardAlerts = useJson<AlertsResponse>(wizardAlertsUrl);
+  const alertNote = (alert: ParkAlert | undefined) =>
+    alert ? fill(t.wizard.alertClosed, { title: alert.title }) : undefined;
   // 出发前表单里列的“去不了的景点”：和自动生成攻略用同一套判断，热门的（必去、园内热度前 8）排前面
   const unavailableOf = (input: { parks: string[]; month: number; startDate: string; days: number }) => {
     const tripDates = input.startDate ? Array.from({ length: input.days }, (_, day) => addDays(input.startDate, day)) : [];
     const closureDates = tripDates.length > 0 ? tripDates : [addDays(nominalDate(input.month), 0)];
-    return attractions
-      .filter((a) => input.parks.includes(a.park))
+    const stops = attractions.filter((a) => input.parks.includes(a.park));
+    const until = liveWindow(input.startDate);
+    const liveByStop = until && wizardAlerts ? closedByAlerts(stops, wizardAlerts.alerts) : new Map<string, ParkAlert>();
+    const live = until ? { ids: new Set(liveByStop.keys()), until } : undefined;
+    return stops
       .flatMap((a) => {
-        const kind = closedKind(a, input.month, tripDates, closureDates);
+        const kind = closedKind(a, input.month, tripDates, closureDates, live);
         if (!kind) return [];
         const road = roadFor(a.id);
         const reason =
           kind === "closure"
             ? closureNote(a.id, closureDates)
+            : kind === "alert"
+              ? alertNote(liveByStop.get(a.id))
             : kind === "road" && road
               ? fill(t.wizard.roadUnlikely, { road: text.roadNames[road.id] ?? road.id })
               : kind === "tour"
@@ -429,6 +444,19 @@ export function Planner({
     });
   const hasEmptyNight = trip.nights.slice(1).some((night) => night === null) && plannedCount > 0;
 
+  const liveClosuresFor = async (input: { parks: string[]; startDate: string }, stops: AttractionWithPhoto[]) => {
+    const until = liveWindow(input.startDate);
+    if (!until) return undefined;
+    try {
+      const url = alertsUrlFor(input.parks)!;
+      const data = url === wizardAlertsUrl && wizardAlerts ? wizardAlerts : ((await (await fetch(url)).json()) as AlertsResponse);
+      return { byStop: closedByAlerts(stops, data.alerts), until };
+    } catch {
+      // 公告读不到就按临时关闭的数据排，行程页照样会显示读到的公告
+      return undefined;
+    }
+  };
+
   // 自动生成攻略：查出发地、回程地到各景点的车程，再挑景点、排每天、定住宿
   const generate = async (input: WizardInput) => {
     if (allIds.length > 0 && !window.confirm(t.wizard.replaceConfirm)) return;
@@ -458,6 +486,8 @@ export function Planner({
           ? { sunrise: minutesOfDay(sun.sunrise, park.timeZone), sunset: minutesOfDay(sun.sunset, park.timeZone) }
           : NOMINAL_SUN;
       };
+      // 近期出发（两周内）：生成前读一次 NPS 实时公告，公告里说关了的景点先不排
+      const live = await liveClosuresFor(input, stops);
       const { trip: generated } = generateTrip(
         {
           ...input,
@@ -479,6 +509,7 @@ export function Planner({
           sunFor,
           dateFor,
           zoneFor: (code) => parkByCode.get(code)?.timeZone,
+          live: live && { ids: new Set(live.byStop.keys()), until: live.until },
         },
       );
       updateTrip(() => generated);
@@ -792,6 +823,19 @@ export function Planner({
     }
   }
   const alertsLater = affected.size > 0 && affectedSoon.size === 0;
+  // 攻略说明里因为实时公告没排进去的：说是哪条公告
+  const liveClosed =
+    trip.startDate && liveWindow(trip.startDate)
+      ? closedByAlerts(attractions.filter((a) => stopParks.includes(a.park)), parkAlerts)
+      : new Map<string, ParkAlert>();
+  // 往年这几天本来就多半没通的季节性山路，说往年的情况（和自动生成攻略的判断顺序一样）
+  const roadUnlikely = (id: string) => {
+    const road = roadFor(id);
+    const dates = Array.from({ length: trip.dayCount }, (_, day) => dateOf(day)!);
+    const best = road && trip.startDate ? bestRoadDay(road, dates) : null;
+    return Boolean(best && best.chance < ROAD_LIKELY);
+  };
+  const liveNote = (id: string) => (roadUnlikely(id) ? undefined : alertNote(liveClosed.get(id)));
 
   // 天气：定了具体日期、16 天以内的用预报（每天一个地点：第一站，没有就用住处），其他用往年同期
   const weatherPlace = (view: DayView) => view.rows[0]?.stop ?? view.to ?? view.from;
@@ -1081,6 +1125,11 @@ export function Planner({
               error={generateError}
               onGenerate={generate}
               unavailableOf={unavailableOf}
+              // 近期出发才读实时公告
+              onSelection={({ parks: codes, startDate }) => {
+                const wanted = liveWindow(startDate) ? [...codes].sort() : [];
+                if (wanted.join() !== wizardParks.join()) setWizardParks(wanted);
+              }}
             />
           </div>
         )}
@@ -1232,7 +1281,9 @@ export function Planner({
           nameOf={(id) => byId.get(id)?.nameZh ?? id}
           tripIds={allIds}
           dated={Boolean(trip.startDate)}
-          closedNoteOf={(id) => closureNote(id) ?? roadClosedNote(id) ?? tourClosedNote(id) ?? byId.get(id)?.closedNote}
+          closedNoteOf={(id) =>
+            closureNote(id) ?? liveNote(id) ?? roadClosedNote(id) ?? tourClosedNote(id) ?? byId.get(id)?.closedNote
+          }
           activities={activities.filter((activity) => guideParkList.some((p) => p.code === activity.park))}
           attractionExists={(id) => byId.has(id)}
           stargazing={stargazing}

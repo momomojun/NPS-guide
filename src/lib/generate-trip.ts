@@ -48,6 +48,8 @@ export interface GuideStop extends PlanStop {
   permit?: string;
   lottery?: boolean;
   outsidePark?: boolean;
+  /** 二选一的另一个景点（attractions/types.ts） */
+  alternativeTo?: string;
   hike?: { difficulty: "easy" | "moderate" | "hard" };
   /** 园内片区 */
   area?: string;
@@ -72,6 +74,14 @@ export interface GenerateContext {
   dateFor?: (day: number) => string | null;
   /** 公园所在的时区（定了日期时，看星空的景点按月亮挑晚上）；不给就不挑 */
   zoneFor?: (park: string) => string | undefined;
+  /** NPS 实时公告里说关了的景点（近期出发才给）：出发那天在 until 之前就当关着 */
+  live?: LiveClosures;
+}
+
+/** 实时公告说关了的景点：公告只说现在的情况，until（今天起两周）之后的日子不管 */
+export interface LiveClosures {
+  ids: Set<string>;
+  until: string;
 }
 
 /** 没排进去的景点和原因，攻略说明里列出来 */
@@ -157,7 +167,7 @@ function score(stop: GuideStop, month: number, parkSize: number): number {
 }
 
 /** 去不了的原因：游船导览这几天不开、临时关闭、季节性山路往年这几天多半没通、不在开放月份 */
-export type ClosedKind = "tour" | "closure" | "road" | "season";
+export type ClosedKind = "tour" | "closure" | "alert" | "road" | "season";
 
 /**
  * 出发这几天（tripDates，只定了月份时是空的）去不去得了。closureDates 是看临时关闭用的日期：
@@ -168,6 +178,7 @@ export function closedKind(
   month: number,
   tripDates: string[],
   closureDates: (string | null)[],
+  live?: LiveClosures,
 ): ClosedKind | null {
   // 有固定班次的游船、导览团：出发这几天都不开（比如冰川的红色老爷车团 6 月 20 日才开）
   if (tripDates.length > 0 && !tripDates.some((date) => runsOn(stop.id, date, true))) return "tour";
@@ -178,8 +189,11 @@ export function closedKind(
   const byMonth = stop.openMonths !== undefined && !stop.openMonths.includes(month);
   const road = roadFor(stop.id);
   const best = road && tripDates.length > 0 ? bestRoadDay(road, tripDates) : null;
+  if (best && best.chance < ROAD_LIKELY) return "road";
+  // 近期出发：NPS 实时公告说关了（还没写进临时关闭数据的突发封路，比如下雪封了 Trail Ridge Road）。
+  // 放在季节性山路后面：往年这几天本来就多半没通的（10 月中的旧瀑布河公路），说往年的情况更具体
+  if (live?.ids.has(stop.id) && tripDates.length > 0 && tripDates[0] < live.until) return "alert";
   if (!road || !best) return byMonth ? "season" : null;
-  if (best.chance < ROAD_LIKELY) return "road";
   return byMonth && (!roadDecides(road, stop.id) || stop.openMonths?.length === 0) ? "season" : null;
 }
 
@@ -189,7 +203,7 @@ export function generateTrip(input: GenerateInput, context: GenerateContext): { 
   const tripDates = input.startDate ? Array.from({ length: input.days }, (_, day) => addDays(input.startDate, day)) : [];
   // 临时关闭按日期看；只定了月份时按那个月的大概日期
   const closureDates = tripDates.length > 0 ? tripDates : Array.from({ length: input.days }, (_, day) => context.dateFor?.(day) ?? null);
-  const closed = (stop: GuideStop) => closedKind(stop, input.month, tripDates, closureDates) !== null;
+  const closed = (stop: GuideStop) => closedKind(stop, input.month, tripDates, closureDates, context.live) !== null;
   // 只定了月份：按每年公布的日期举行的（满月徒步、卢塞罗湖导览）不知道这个月哪天有，不自动排；
   // 攻略说明的特别活动里列了日期，可以自己加进去
   const datedTour = (stop: GuideStop) => {
@@ -206,6 +220,12 @@ export function generateTrip(input: GenerateInput, context: GenerateContext): { 
     ) {
       skipped.tooHard.push(stop.id);
     } else available.push(stop);
+  }
+  // 二选一的（干龟的水上飞机和渡轮）：主选项能去就不排另一个
+  const availableIds = new Set(available.map((stop) => stop.id));
+  for (let i = available.length - 1; i >= 0; i--) {
+    const alternativeTo = available[i].alternativeTo;
+    if (alternativeTo && availableIds.has(alternativeTo)) available.splice(i, 1);
   }
 
   // 热度名次是按公园排的，按各自公园的景点数折算

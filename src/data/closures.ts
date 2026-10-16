@@ -15,6 +15,11 @@ export interface TempClosure {
    * 不填的话，核对那天起 UNKNOWN_REOPEN_DAYS 天内当关着，再往后只提醒“可能还关着，出发前看公告”
    */
   longTerm?: boolean;
+  /**
+   * 只在每周这几天关（0 是星期日）：大烟山 Cades Cove 环路 5–9 月每个周三不让车进。
+   * 不填就是 from 到 reopen 之间天天关。每年都有、但下一年还没公布的，按往年的规律另写一条
+   */
+  weekdays?: number[];
   /** 为什么关、有什么替代 */
   reasonZh: string;
   source: string;
@@ -110,7 +115,7 @@ export const tempClosures: TempClosure[] = [
     reasonZh:
       "山洪冲毁了路面：Cottonwood 营地到圣埃伦娜峡谷的铺装路、Hot Springs Road 都封着（Old Maverick Road、River Road 也封了），重开时间未定，开车到不了这两个步道口；可以去奇索斯盆地的 Window、Lost Mine 步道，或者 Boquillas 峡谷。",
     source: "https://www.nps.gov/bibe/planyourvisit/conditions.htm",
-    checked: "2026-10-13",
+    checked: "2026-10-15",
   },
   {
     attractions: ["sagu-bajada-loop", "sagu-valley-view-overlook", "sagu-signal-hill"],
@@ -128,14 +133,6 @@ export const tempClosures: TempClosure[] = [
     reasonZh:
       "Moose-Wilson Road 北段（LSR 保护区到 Moose）施工封闭到 11 月 15 日，之后接着冬季封路；保护区可以从南边 Teton Village 一侧开进去。",
     source: "https://www.nps.gov/grte/planyourvisit/conditions.htm",
-    checked: "2026-10-13",
-  },
-  {
-    attractions: ["olym-rialto-beach"],
-    from: "2026-07-08",
-    reopen: "2026-10-16",
-    reasonZh: "Mora Road 修洪水冲坏的路段，在营地处全封（车、自行车、行人都不行），去不了 Rialto Beach；可以改去 Second Beach 或 Ruby Beach。",
-    source: "https://www.nps.gov/olym/planyourvisit/current-road-conditions.htm",
     checked: "2026-10-13",
   },
   {
@@ -157,21 +154,34 @@ export const tempClosures: TempClosure[] = [
     checked: "2026-10-13",
   },
   {
-    attractions: ["noca-cascade-pass"],
-    from: "2026-10-13",
-    reopen: null,
-    reasonZh:
-      "Cascade River Road 养护，在第 20 英里（Eldorado）关门，离步道口还有约 5 公里，只能走路或骑车上去；接着就是冬季封路，一般 6 月底到 7 月初才通到步道口。",
-    source: "https://www.nps.gov/noca/planyourvisit/conditions.htm",
-    checked: "2026-10-13",
-  },
-  {
     attractions: ["glac-two-medicine-lake", "glac-running-eagle-falls"],
     from: "2026-09-08",
     reopen: null,
+    longTerm: true,
     reasonZh:
       "Two Medicine 路改造：9 月 8 日起封到 Running Eagle Falls 步道口，9 月中下旬起从 49 号公路路口全封，露营地整年关闭；工程预计 2027 年底完工（可能拖到 2028 年），2027 年夏天能不能进还没公布；可以改去东侧的圣玛丽湖和 Many Glacier。",
     source: "https://www.nps.gov/glac/planyourvisit/conditions.htm",
-    checked: "2026-10-13",
+    checked: "2026-10-15",
+  },
+  {
+    attractions: ["grsm-cades-cove", "grsm-abrams-falls"],
+    from: "2026-05-06",
+    reopen: "2026-10-01",
+    weekdays: [3],
+    reasonZh:
+      "Cades Cove 环路 5 月初到 9 月底每个周三全天不让机动车进（Vehicle-free Wednesdays），只能走路或骑车（环路一圈约 18 公里，路口有租车店）；Abrams Falls 的步道口在环路中段，也开不过去。想开车看就换一天。",
+    source: "https://www.nps.gov/grsm/planyourvisit/cades-cove-vehicle-free-days.htm",
+    checked: "2026-10-15",
+  },
+  {
+    // 2023 年起每年都有，2027 年的日期还没公布，按往年 5 月第一个到 9 月最后一个周三估
+    attractions: ["grsm-cades-cove", "grsm-abrams-falls"],
+    from: "2027-05-05",
+    reopen: "2027-09-30",
+    weekdays: [3],
+    reasonZh:
+      "Cades Cove 环路每年 5 月初到 9 月底的周三全天不让机动车进（2027 年的日期按往年估，还没公布），只能走路或骑车；Abrams Falls 的步道口在环路中段，也开不过去。想开车看就换一天。",
+    source: "https://www.nps.gov/grsm/planyourvisit/cades-cove-vehicle-free-days.htm",
+    checked: "2026-10-15",
   },
 ];

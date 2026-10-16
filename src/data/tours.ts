@@ -546,4 +546,133 @@ export const tourSchedules: TourSchedule[] = [
       "官方要求发车前 15 分钟到上车点，旺季停车再多留 30 分钟；感恩节、圣诞节、元旦停开。下过雨溪水大时改走 Highwater 线，只到第 2 站和 Sabino Dam。",
     sources: ["https://sabinocanyoncrawler.com/"],
   },
+  {
+    id: "shen-rapidan-camp",
+    scheduleYear: 2026,
+    // Recreation.gov 2026 年 8–10 月的场次：周四到周一 10:00、14:00 两班，最后一天 10 月 25 日（周日）；
+    // 5–7 月的场次已经查不到，按官方“5 月下旬起、每周四到周日”和 8 月以后的周一场次估
+    periods: [
+      { from: "05-21", to: "10-25", departures: ["10:00", "14:00"], days: ["Thu", "Fri", "Sat", "Sun", "Mon"] },
+    ],
+    checkInMin: 15,
+    daysZh: "只在周四到周一开，周二、周三没有导览",
+    meetZh: "Byrd 游客中心（天际线公路 51 英里）门前的旗杆",
+    noteZh:
+      "坐公园的面包车走约 30 分钟土路下到营地，全程约 2.5 小时（含往返车程）；官方介绍写周四到周日，2026 年 8–10 月实际也有周一的场次。",
+    sources: [
+      "https://www.recreation.gov/ticket/facility/251745",
+      "https://www.nps.gov/shen/planyourvisit/rangerprograms.htm",
+    ],
+  },
+  {
+    id: "ever-flamingo-boat-tour",
+    scheduleYear: 2026,
+    // NPS：荒野线全年单数整点（9、11、13、15 点），佛罗里达湾线 11–4 月双数整点（10、12、14、16 点）；两条线合在一起
+    periods: [
+      { from: "11-01", to: "04-30", departures: ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"] },
+      { from: "05-01", to: "10-31", departures: ["09:00", "11:00", "13:00", "15:00"] },
+    ],
+    checkInMin: 15,
+    meetZh: "Flamingo 码头的游船售票亭（Marina Activities Booth）",
+    noteZh:
+      "11–4 月整点都有船：单数整点是钻红树林水道的荒野线，双数整点是佛罗里达湾线；5–10 月只有荒野线。11 月 14 日到 2 月 26 日每天 14:00 的佛罗里达湾线有护林员随船。佛罗里达湾线哪天开始、哪天结束 NPS 只写了“11 月到 4 月”，按整月算。",
+    sources: [
+      "https://www.nps.gov/ever/planyourvisit/flamingo-ranger-guided-tours.htm",
+      "https://www.nps.gov/ever/planyourvisit/guidedtours.htm",
+    ],
+  },
+  {
+    id: "ever-shark-valley-tram",
+    scheduleYear: 2026,
+    // Shark Valley Tram Tours：2025-12-20 到 2026-04-30 每小时一班，2026-05-01 到 12-18 一天 4 班（周末和节假日周加开 16:00）
+    periods: [
+      { from: "12-19", to: "04-30", departures: ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"] },
+      { from: "05-01", to: "12-18", departures: ["09:30", "11:00", "12:30", "14:00"] },
+    ],
+    checkInMin: 20,
+    meetZh: "Shark Valley 游客中心旁的电车售票处",
+    noteZh:
+      "5 月到 12 月中旬的周六、周日和节假日那一周还加开 16:00 一班（这里没算进去）。冬季时刻表 2026 年从 12 月几号开始官网还没写，按 2025 年的 12 月 20 日前后算成 12 月 19 日。旺季停车场上午 10 点前就可能停满，订了早班也要提前到。",
+    sources: ["https://www.sharkvalleytramtours.com/hours-and-rates/"],
+  },
+  {
+    id: "bisc-heritage-cruise",
+    scheduleYear: 2026,
+    periods: [{ from: "01-01", to: "12-31", departures: ["09:30", "13:30"] }],
+    checkInMin: 30,
+    meetZh: "Convoy Point 的 Dante Fascell 游客中心二楼商店（9700 SW 328th St, Homestead）",
+    noteZh: "3.5 小时，按当天风浪在 Elliott Key、Boca Chita 或 Adams Key 其中一个岛上停约 1 小时；官网没写哪几天开，订票日历上看。",
+    sources: ["https://www.biscaynenationalparkinstitute.org/heritage-of-biscayne-cruise/"],
+  },
+  {
+    id: "bisc-snorkel",
+    scheduleYear: 2026,
+    periods: [{ from: "01-01", to: "12-31", departures: ["09:15", "13:30"] }],
+    checkInMin: 30,
+    meetZh: "Convoy Point 的 Dante Fascell 游客中心二楼商店",
+    noteZh: "3.5 小时；风浪大时取消，订票日历上看哪天有位子。",
+    sources: ["https://www.biscaynenationalparkinstitute.org/snorkeling/snorkel-experience-2/"],
+  },
+  {
+    id: "bisc-jones-lagoon",
+    scheduleYear: 2026,
+    periods: [{ from: "01-01", to: "12-31", departures: ["09:00", "13:30"] }],
+    checkInMin: 30,
+    meetZh: "Convoy Point 的 Dante Fascell 游客中心二楼商店",
+    noteZh: "约 3.5 小时（含单程 30–45 分钟的快艇），每船最多 6 人。",
+    sources: ["https://www.biscaynenationalparkinstitute.org/paddling/jones-lagoon-paddle-eco-adventure/"],
+  },
+  {
+    id: "bisc-boca-chita",
+    scheduleYear: 2026,
+    // 11 月 1 日到 5 月 31 日 9:15，6 月 1 日到 10 月 31 日 13:30（跨年的一段拆成两段写）
+    periods: [
+      { from: "01-01", to: "05-31", departures: ["09:15"] },
+      { from: "06-01", to: "10-31", departures: ["13:30"] },
+      { from: "11-01", to: "12-31", departures: ["09:15"] },
+    ],
+    checkInMin: 30,
+    meetZh: "Dinner Key Marina 9 号码头（3400 Pan American Dr, Coconut Grove，Miami Watersports 和 7 号码头牌子之间）",
+    noteZh: "3.5 小时，在 Boca Chita 岛上约 1 小时；6–8 月多 1 小时湾里的入门浮潜，约 4.5 小时。",
+    sources: ["https://www.biscaynenationalparkinstitute.org/island-experiences/boca-chita-key-heritage-cruise/"],
+  },
+  {
+    id: "bisc-stiltsville",
+    scheduleYear: 2026,
+    periods: [{ from: "01-01", to: "12-31", departures: ["12:30", "15:00"], days: ["Thu", "Fri", "Sat", "Sun"] }],
+    checkInMin: 30,
+    daysZh: "只在周四到周日开",
+    meetZh: "Dinner Key Marina 9 号码头（Coconut Grove）",
+    noteZh: "2 小时，船最多 40 人，不靠岸。",
+    sources: ["https://www.biscaynenationalparkinstitute.org/stiltsville-guided-tour-from-coconut-grove/"],
+  },
+  {
+    id: "drto-ferry",
+    scheduleYear: 2026,
+    periods: [{ from: "01-01", to: "12-31", departures: ["08:00"] }],
+    checkInMin: 60,
+    meetZh: "Key West Bight 渡轮码头（100 Grinnell St）；停车在 300 Grinnell St 的市政停车楼",
+    noteZh:
+      "每天一班：7:00 报到（露营 6:00）、7:30 登船、8:00 开，约 10:15–10:30 到 Garden Key，15:00 离岛，约 17:15–17:30 回到 Key West（看风浪）；风浪太大时船长会取消。",
+    sources: [
+      "https://www.drytortugas.com/",
+      "https://www.historictours.com/key-west/yankee-freedom-ferry-tickets",
+    ],
+  },
+  {
+    id: "hsbd-glen-canyon-float",
+    scheduleYear: 2026,
+    periods: [
+      { from: "03-01", to: "05-15", departures: ["10:00"] },
+      { from: "05-16", to: "05-31", departures: ["08:00", "11:30"] },
+      { from: "06-01", to: "07-31", departures: ["08:00", "15:00"] },
+      { from: "08-01", to: "09-30", departures: ["08:00", "10:00"] },
+      { from: "10-01", to: "10-31", departures: ["10:00"] },
+    ],
+    checkInMin: 45,
+    meetZh: "佩吉 199 Kaibab Rd 的 Wilderness River Adventures 河运总部（签到后坐大巴去 Lees Ferry 上船）",
+    noteZh:
+      "6–7 月下午 15:00 那班要 14:00 签到、20:00 才回到佩吉；不满 8 位全价乘客当班取消。回程大巴经 Navajo 大桥、朱红悬崖开回佩吉。",
+    sources: ["https://www.lakepowell.com/things-to-do/horseshoe-bend-rafting-trip"],
+  },
 ];

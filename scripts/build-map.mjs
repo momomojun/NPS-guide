@@ -1,4 +1,4 @@
-// 首页的线描地图：美国西部和加拿大落基山（本土的公园）+ 阿拉斯加、夏威夷两张小图。
+// 首页的线描地图：美国西部和加拿大落基山（本土西部的公园）+ 美国东部、阿拉斯加、夏威夷三张小图。
 // 州界、省界来自 Natural Earth（公共领域），按 Albers 等积圆锥投影、化简后输出 SVG 路径，
 // 公园和参考城市的位置也一起投影好。
 // 输出 src/data/map.generated.ts。重新跑：npm run data:map
@@ -27,7 +27,15 @@ const CITIES = [
   // 阿拉斯加小图只标安克雷奇：费尔班克斯离德纳里太近，标签会挤在一起
   { id: "anc", nameZh: "安克雷奇", nameEn: "Anchorage", lat: 61.2181, lon: -149.9003, map: "alaska" },
   { id: "hnl", nameZh: "檀香山", nameEn: "Honolulu", lat: 21.3069, lon: -157.8583, map: "hawaii" },
+  // 东部小图：迈阿密紧挨着大沼泽地、比斯坎，华盛顿紧挨着仙纳度，都不标
+  { id: "nyc", nameZh: "纽约", nameEn: "New York", lat: 40.7128, lon: -74.006, map: "east" },
+  { id: "bos", nameZh: "波士顿", nameEn: "Boston", lat: 42.3601, lon: -71.0589, map: "east" },
+  { id: "atl", nameZh: "亚特兰大", nameEn: "Atlanta", lat: 33.749, lon: -84.388, map: "east" },
+  { id: "chi", nameZh: "芝加哥", nameEn: "Chicago", lat: 41.8781, lon: -87.6298, map: "east" },
 ];
+
+/** 东部片区的公园画在东部小图上 */
+const EAST_REGIONS = ["appalachia", "newengland", "florida"];
 
 const VIEWS = {
   west: {
@@ -119,6 +127,16 @@ const VIEWS = {
       return meanLon > -166 && meanLon < -129 && ring.length > 20;
     },
   },
+  east: {
+    projection: { lon0: -81, lat0: 37, lat1: 29.5, lat2: 45.5 },
+    /** 范围里的州、省都画（按 bounds 自动挑），有公园的州自动填底色 */
+    states: "auto",
+    focus: "auto",
+    labels: {},
+    /** 西边到阿肯色、明尼苏达（以后加温泉、航海家），北边到苏必利尔湖的罗亚尔岛，南边到干龟，东边到缅因 */
+    bounds: { west: -95.8, east: -66.6, south: 24.2, north: 49.3 },
+    margin: 0.02,
+  },
   hawaii: {
     projection: { lon0: -157.5, lat0: 20.5, lat1: 19, lat2: 22 },
     states: ["Hawaii"],
@@ -133,7 +151,23 @@ const VIEWS = {
 };
 
 /** 公园画在哪张图上 */
-const viewOf = (park) => (park.region === "alaska" || park.region === "hawaii" ? park.region : "west");
+const viewOf = (park) =>
+  park.region === "alaska" || park.region === "hawaii" ? park.region : EAST_REGIONS.includes(park.region) ? "east" : "west";
+
+/** 射线法：点在不在多边形（经纬度）里 */
+function inside([lon, lat], rings) {
+  let hit = false;
+  for (const ring of rings) {
+    for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+      const [xi, yi] = ring[i];
+      const [xj, yj] = ring[j];
+      if (yi > lat !== yj > lat && lon < ((xj - xi) * (lat - yi)) / (yj - yi) + xi) hit = !hit;
+    }
+  }
+  return hit;
+}
+
+const parkAt = (park) => park.mapAt ?? park.gateway;
 
 const rad = Math.PI / 180;
 
@@ -219,6 +253,21 @@ const output = {};
 for (const [viewId, view] of Object.entries(VIEWS)) {
   const project = albers(view.projection);
   const projected = new Map();
+  const viewParks = parks.filter((park) => viewOf(park) === viewId);
+  if (view.states === "auto") {
+    // 有一部分在视野里的州、省（框外留一点边，免得边上的州只画了一半就断掉）
+    const { west, east, south, north } = view.bounds;
+    view.states = [...usStates]
+      .filter(([, geometry]) =>
+        ringsOf(geometry).some((ring) => ring.some(([lon, lat]) => lon > west - 1 && lon < east + 1 && lat > south - 1 && lat < north + 1)),
+      )
+      .map(([name]) => name);
+  }
+  if (view.focus === "auto") {
+    view.focus = view.states.filter((name) =>
+      viewParks.some((park) => inside([parkAt(park).lon, parkAt(park).lat], ringsOf(usStates.get(name)))),
+    );
+  }
   for (const name of view.states) {
     const geometry = usStates.get(name);
     if (!geometry) throw new Error(`找不到州：${name}`);
@@ -272,10 +321,8 @@ for (const [viewId, view] of Object.entries(VIEWS)) {
 
   const place = (lon, lat) => toView(project(lon, lat)).map(round);
   const parkPoints = Object.fromEntries(
-    parks
-      .filter((park) => viewOf(park) === viewId)
-      // 只能飞进去的公园，gateway 是开车能到的出发城镇，圆点画在 mapAt（公园本身的位置）
-      .map((park) => [park.code, place((park.mapAt ?? park.gateway).lon, (park.mapAt ?? park.gateway).lat)]),
+    // 只能飞进去的公园，gateway 是开车能到的出发城镇，圆点画在 mapAt（公园本身的位置）
+    viewParks.map((park) => [park.code, place(parkAt(park).lon, parkAt(park).lat)]),
   );
   const cities = CITIES.filter((city) => city.map === viewId).map(({ id, nameZh, nameEn, lat, lon }) => {
     const [x, y] = place(lon, lat);
@@ -305,6 +352,8 @@ export const westMap: MapView = ${JSON.stringify(output.west)};
 export const alaskaMap: MapView = ${JSON.stringify(output.alaska)};
 
 export const hawaiiMap: MapView = ${JSON.stringify(output.hawaii)};
+
+export const eastMap: MapView = ${JSON.stringify(output.east)};
 `,
 );
 console.log(`已写入 ${OUTPUT.pathname}`);

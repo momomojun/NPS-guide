@@ -19,13 +19,15 @@ import { Reveal } from "@/components/site/reveal";
 import { activities } from "@/data/activities";
 import { bookingRules } from "@/data/bookings";
 import { getParkAttractions } from "@/data/attractions";
+import { CelebrityShotItem } from "@/components/attractions/celebrity-shots";
+import { celebrityShots } from "@/data/celebrities";
 import { creatorRoutes, type CreatorRoute } from "@/data/creators";
 import { lodgingOptions } from "@/data/lodging";
 import { getPark, isSite, npsCodeOf } from "@/data/parks";
 import type { RoadYear } from "@/data/roads";
 import { shuttleSystems } from "@/data/shuttles";
 import { hasLocale } from "@/i18n/config";
-import { localizeActivity, localizeAttraction, localizePark } from "@/i18n/content";
+import { localizeActivity, localizeAttraction, localizeCelebrity, localizePark } from "@/i18n/content";
 import { localize } from "@/i18n/convert";
 import { getDictionary } from "@/i18n/dictionaries";
 import { fill, formatMonths } from "@/i18n/format";
@@ -33,6 +35,7 @@ import { isUsingDemoKey } from "@/lib/datagov";
 import { roadsOf } from "@/lib/roads";
 import { parkVisits } from "@/lib/visits";
 import { tempClosures } from "@/data/closures";
+import { weekdaysZh } from "@/lib/closures";
 
 // 不写 generateStaticParams：页面每次请求时渲染，接口数据由 fetch 缓存兜住，
 // 这样 build 不会一次性调几十次接口，接口失败也不会把错误页缓存下来。
@@ -90,6 +93,7 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
       reason: localize(closure.reasonZh, locale),
       reopen: closure.reopen,
       checked: closure.checked,
+      ...(closure.weekdays ? { weekdays: weekdaysZh(closure.weekdays), from: closure.from } : {}),
     }));
   const hasSeasonInfo =
     parkActivities.length > 0 ||
@@ -143,6 +147,11 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
     [t.highlights, fill(t.highlightsValue, { n: attractions.length })],
   ];
 
+  // 明星同款：能对上景点的按景点的先后排在前面，只知道在这座公园的排后面
+  const parkCelebs = celebrityShots
+    .filter((shot) => shot.park === park.code)
+    .map((shot) => localizeCelebrity(shot, locale))
+    .sort((a, b) => Number(!a.attraction) - Number(!b.attraction) || b.date.localeCompare(a.date));
   const parkCreators = creatorRoutes
     .filter((route) => route.parks.includes(park.code))
     .sort((a, b) => b.views - a.views);
@@ -229,6 +238,7 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
           ...(hasBookings ? [{ id: "bookings", label: t.nav.bookings }] : []),
           { id: "attractions", label: t.nav.attractions },
           ...(parkCreators.length > 0 ? [{ id: "creators", label: t.nav.creators }] : []),
+          ...(parkCelebs.length > 0 ? [{ id: "celebs", label: t.nav.celebs }] : []),
           { id: "live", label: t.nav.live },
         ]}
         actions={
@@ -406,6 +416,31 @@ export default async function ParkPage({ params }: PageProps<"/[locale]/parks/[c
             <Link href={`/${locale}/routes?park=${park.code}`} className="link-line mt-12 inline-flex items-center gap-2 text-xs tracking-[0.1em]">
               {fill(r.parkMore, { n: parkCreators.length })} <IconArrowRight />
             </Link>
+          </div>
+        </section>
+      )}
+
+      {parkCelebs.length > 0 && (
+        <section id="celebs" className="cv-auto [--cv-h:1500px] scroll-mt-28 border-t border-line">
+          <div className={`${container} py-20 lg:py-28`}>
+            <p className="eyebrow text-mute">{t.celebsEyebrow}</p>
+            <h2 className="mt-5 font-serif text-[clamp(2rem,3.5vw,3.2rem)] leading-tight">{t.celebsTitle}</h2>
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-ink-soft">{t.celebsText}</p>
+            <ul className="mt-12 grid gap-x-12 gap-y-10 md:grid-cols-2">
+              {parkCelebs.map((shot) => {
+                const stop = shot.attraction ? attractions.find((a) => a.id === shot.attraction) : undefined;
+                return (
+                  <li key={shot.id} className="border-t border-ink pt-4">
+                    {stop && (
+                      <a href={`#attraction-${stop.id}`} className="eyebrow mb-2 block text-mute hover:text-clay-700">
+                        {stop.nameZh}
+                      </a>
+                    )}
+                    <CelebrityShotItem shot={shot} text={dict} />
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </section>
       )}

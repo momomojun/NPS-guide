@@ -1,6 +1,7 @@
 import "server-only";
 import type { ParkActivity } from "@/data/activities";
 import type { AttractionWithPhoto } from "@/data/attractions";
+import type { CelebrityShot } from "@/data/celebrities";
 import type { LodgingOption } from "@/data/lodging";
 import type { Park } from "@/data/parks";
 import type { Locale } from "./config";
@@ -20,11 +21,28 @@ export function localizeAttraction(attraction: AttractionWithPhoto, locale: Loca
     closedNote: attraction.closedNote && t(attraction.closedNote),
     start: attraction.start && { ...attraction.start, nameZh: t(attraction.start.nameZh) },
     creatorNotes: attraction.creatorNotes?.map((note) => ({ ...note, text: t(note.text) })),
+    celebrityShots: attraction.celebrityShots?.map((shot) => localizeCelebrity(shot, locale)),
     parking: attraction.parking && {
       ...attraction.parking,
       noteZh: t(attraction.parking.noteZh),
       ...(attraction.parking.lot ? { lot: t(attraction.parking.lot) } : {}),
     },
+  };
+}
+
+export function localizeCelebrity(shot: CelebrityShot, locale: Locale): CelebrityShot {
+  if (locale === "zh-Hans") return shot;
+  const t = (text: string) => localize(text, locale);
+  return {
+    ...shot,
+    nameZh: t(shot.nameZh),
+    group: shot.group && t(shot.group),
+    countryZh: t(shot.countryZh),
+    placeZh: t(shot.placeZh),
+    shotZh: t(shot.shotZh),
+    howToZh: t(shot.howToZh),
+    tipsZh: shot.tipsZh.map(t),
+    noteZh: shot.noteZh && t(shot.noteZh),
   };
 }
 

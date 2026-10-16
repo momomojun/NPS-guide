@@ -8,7 +8,7 @@ import { parks } from "../src/data/parks";
 import { seasonalRoads } from "../src/data/roads";
 import { addDays, nominalDate } from "../src/lib/dates";
 import { openChance, roadFor, roadStatus } from "../src/lib/roads";
-import { generateTrip, type Pace } from "../src/lib/generate-trip";
+import { generateTrip, type LiveClosures, type Pace } from "../src/lib/generate-trip";
 import { buildTimeline, NOMINAL_SUN, type LodgingPoint, type PlanStop } from "../src/lib/planner";
 import { minutesOfDay, sunTimes } from "../src/lib/sun";
 import { departuresOn } from "../src/lib/tours";
@@ -33,7 +33,11 @@ interface Options {
   pace?: Pace;
 }
 
-function generate({ parks: codes, start = "", month, days, airport, pace = "normal" }: Options) {
+function generate(options: Options) {
+  return generateWith(options);
+}
+
+function generateWith({ parks: codes, start = "", month, days, airport, pace = "normal" }: Options, live?: LiveClosures) {
   const park = parks.find((p) => p.code === codes[0])!;
   const stops = attractions.filter((a) => codes.includes(a.park));
   const minutes = MINUTES[`${codes.join()}|${airport}`] ?? {};
@@ -53,7 +57,7 @@ function generate({ parks: codes, start = "", month, days, airport, pace = "norm
     .map((option) => ({ id: option.id, lat: option.lat, lon: option.lon, inPark: option.inPark, rental: option.rental, airbnb: option.airbnb }));
   const result = generateTrip(
     { parks: codes, month: tripMonth, startDate: start, days, origin: endpoint("origin"), destination: endpoint("destination"), pace, lodgingPref: "any" },
-    { stops, lodging, sunFor, dateFor },
+    { stops, lodging, sunFor, dateFor, live },
   );
   return { ...result, timelines: timelinesOf(result.trip, stops, sunFor, dateFor) };
 }
@@ -288,4 +292,14 @@ test("临时关闭只关到某一天的：关着的那天不排，挪到重开�
     assert.ok(day >= 2, `排在了第 ${day + 1} 天（还关着）`);
     assert.ok(!timelines[day].entries.some((entry) => entry.warnings.includes("tempClosed")));
   }
+});
+
+test("近期出发：实时公告说关了的景点（下雪封了 Trail Ridge Road）不排，列为去不了", () => {
+  const ids = new Set(attractions.filter((a) => a.park === "romo" && a.area === "trail-ridge").map((a) => a.id));
+  const { trip, guide } = generateWith({ parks: ["romo"], start: "2027-07-01", days: 3, airport: "DEN" }, { ids, until: "2027-07-10" });
+  for (const id of ids) assert.ok(!planned(trip).includes(id), id);
+  assert.ok(guide.skipped?.closed?.includes("romo-rainbow-curve"));
+  // 出发那天已经过了公告管的两周：照常排
+  const later = generateWith({ parks: ["romo"], start: "2027-07-01", days: 3, airport: "DEN" }, { ids, until: "2027-06-20" });
+  assert.ok(planned(later.trip).some((id) => ids.has(id)));
 });

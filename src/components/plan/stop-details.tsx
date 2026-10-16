@@ -10,6 +10,7 @@ import {
   linkButton,
   PopularityBadge,
 } from "@/components/attractions/attraction-card";
+import { CelebrityShots } from "@/components/attractions/celebrity-shots";
 import { PhotoGallery } from "@/components/attractions/photo-gallery";
 import { IconTrail } from "@/components/icons";
 import type { AttractionWithPhoto } from "@/data/attractions";
@@ -82,6 +83,7 @@ export function StopDetails({
           </p>
         )}
         <CreatorNotes attraction={stop} text={text} routesHref={routesHref} compact />
+        <CelebrityShots shots={stop.celebrityShots} text={text} compact />
         {tips.length > 0 && (
           <div className="border-t border-line pt-3">
             <p className="text-xs tracking-[0.1em] text-mute">{t.tips}</p>

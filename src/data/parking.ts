@@ -327,6 +327,41 @@ export const parkingRules: Record<string, ParkingRule> = Object.fromEntries([
     noteZh: "停满了就停 Pine Springs 游客中心的停车场，沿营地连接小路走到步道口；不要停在 62/180 号公路边。",
     source: "https://www.nps.gov/gumo/planyourvisit/parking.htm",
   }),
+  ...lot(["acad-sand-beach", "acad-beehive"], {
+    lot: "Sand Beach 停车场",
+    fullBy: "09:00",
+    freeAfter: "17:00",
+    months: [6, 7, 8, 9],
+    noteZh:
+      "蜂巢山步道口就在停车场对面。停满了可以停 Park Loop Road 右侧车道划好的路边车位，或者坐 Island Explorer 的 Loop Road 线（在下层停车场右边上下车）；护林员有时会在路口临时封停车场。",
+    source: "https://www.nps.gov/acad/learn/news/safe-and-enjoyable-labor-day-weekend.htm",
+  }),
+  ...lot(["acad-jordan-pond", "acad-jordan-pond-house"], {
+    lot: "乔丹池一带（北停车场、乔丹池屋停车场）",
+    fullBy: "08:00",
+    freeAfter: "17:00",
+    months: [6, 7, 8, 9],
+    noteZh:
+      "乔丹池屋 11:00–16:00 最难停车。停满了就坐 Island Explorer（Jordan Pond 线从巴尔港 Village Green 发车，Loop Road 线也停），或者先去别处、下午 4 点以后再来；不许停在路边草地上。",
+    source: "https://www.nps.gov/acad/learn/news/safe-and-enjoyable-labor-day-weekend.htm",
+  }),
+  ...lot(["acad-carriage-roads"], {
+    lot: "鹰湖马车道停车场（233 号公路）",
+    fullBy: "08:00",
+    freeAfter: "17:00",
+    months: [6, 7, 8, 9],
+    noteZh: "停满了可以从巴尔港镇上骑车过来（约 5 公里），或者坐 Bicycle Express 班车连人带车到鹰湖入口；也可以改从 Hulls Cove 游客中心旁的马车道入口出发。",
+    source: "https://www.nps.gov/acad/learn/news/safe-and-enjoyable-labor-day-weekend.htm",
+  }),
+  ...lot(["ever-shark-valley-tram"], {
+    lot: "Shark Valley 停车场",
+    fullBy: "10:00",
+    freeAfter: "15:00",
+    months: [12, 1, 2, 3, 4],
+    noteZh:
+      "停满了在大门外排队，出一辆进一辆，最忙的周末和节假日要等一个多小时；可以先去东边 Tamiami Trail 上坐风扇船，下午 3 点以后再回来。这里没有公共交通，坐网约车来的回程常叫不到车。",
+    source: "https://www.nps.gov/ever/planyourvisit/svdirections.htm",
+  }),
 ]);
 
 /** 整理的日期 */
